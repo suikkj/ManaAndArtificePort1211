@@ -219,7 +219,7 @@ implements GeoEntity {
             ItemStack tokenPrice = this.getRandomOpposingToken(thisFaction);
             if (tokenPrice.isEmpty() || opposingItemPrice.isEmpty()) continue;
             tokenPrice.setCount(32 + rand.nextInt(32));
-            MerchantOffer offer = new MerchantOffer(opposingItemPrice, tokenPrice, output, 1, 0, 1.0f);
+            MerchantOffer offer = new MerchantOffer(new net.minecraft.world.item.trading.ItemCost(opposingItemPrice.getItem(), opposingItemPrice.getCount()), java.util.Optional.of(new net.minecraft.world.item.trading.ItemCost(tokenPrice.getItem(), tokenPrice.getCount())), output, 1, 0, 1.0f);
             givenMerchantOffers.add(offer);
         }
         List all_factions = Registries.Factions.getValues().stream().toList();
@@ -228,7 +228,7 @@ implements GeoEntity {
             output = ItemTornJournalPage.getRandomPage(rand, selected);
             if (output.isEmpty()) continue;
             ItemStack fragmentPrice = new ItemStack((ItemLike)ItemInit.ENTITY_ENTRAPMENT_CRYSTAL.get());
-            MerchantOffer offer = new MerchantOffer(fragmentPrice, ItemStack.EMPTY, output, 1, 1, 1.0f);
+            MerchantOffer offer = new MerchantOffer(new net.minecraft.world.item.trading.ItemCost(fragmentPrice.getItem(), fragmentPrice.getCount()), java.util.Optional.empty(), output, 1, 1, 1.0f);
             givenMerchantOffers.add(offer);
         }
         ItemStack costItem = new ItemStack((ItemLike)ItemInit.SPELL_PART_THESIS.get());
@@ -239,7 +239,7 @@ implements GeoEntity {
             }
             ItemStack stack = new ItemStack((ItemLike)ItemInit.THAUMATURGIC_LINK.get());
             ThaumaturgicLink.setStructureKey(serverLevel, stack, (Holder<Structure>)structureFeature);
-            MerchantOffer offer = new MerchantOffer(costItem.copy(), costItemB.copy(), stack, 1, 0, 1.0f);
+            MerchantOffer offer = new MerchantOffer(new net.minecraft.world.item.trading.ItemCost(costItem.copy().getItem(), costItem.copy().getCount()), java.util.Optional.of(new net.minecraft.world.item.trading.ItemCost(costItemB.copy().getItem(), costItemB.copy().getCount())), stack, 1, 0, 1.0f);
             givenMerchantOffers.add(offer);
         });
         BiomeUtils.getAllBiomes(serverLevel).forEach(biome -> {
@@ -248,7 +248,7 @@ implements GeoEntity {
             }
             ItemStack stack = new ItemStack((ItemLike)ItemInit.THAUMATURGIC_LINK.get());
             ThaumaturgicLink.setBiomeKey(serverLevel, stack, (Holder<Biome>)biome);
-            MerchantOffer offer = new MerchantOffer(costItem.copy(), costItemB.copy(), stack, 1, 0, 1.0f);
+            MerchantOffer offer = new MerchantOffer(new net.minecraft.world.item.trading.ItemCost(costItem.copy().getItem(), costItem.copy().getCount()), java.util.Optional.of(new net.minecraft.world.item.trading.ItemCost(costItemB.copy().getItem(), costItemB.copy().getCount())), stack, 1, 0, 1.0f);
             givenMerchantOffers.add(offer);
         });
         NeoForge.EVENT_BUS.post(new BrokerSelectingTradesEvent((Merchant)this, givenMerchantOffers, newTrades, maxNumbers, (ImmutableList<Item>)ImmutableList.copyOf(allFactionItems)));

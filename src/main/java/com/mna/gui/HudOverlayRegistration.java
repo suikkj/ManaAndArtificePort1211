@@ -31,29 +31,29 @@ public class HudOverlayRegistration {
     @OnlyIn(value=Dist.CLIENT)
     @SubscribeEvent
     public static void onRegistrGuiOverlays(RegisterGuiLayersEvent event) {
-        event.registerAboveAll("mna_overlays", (gui, mStack, partialTicks, screenWidth, screenHeight) -> {
+        event.registerAboveAll(com.mna.api.tools.RLoc.create("mna_overlays"), (gui, mStack, partialTicks, screenWidth, screenHeight) -> {
             com.mojang.blaze3d.systems.RenderSystem.enableBlend(); com.mojang.blaze3d.systems.RenderSystem.disableDepthTest();
             Minecraft mc = Minecraft.getInstance();
             if (mc.player.hasEffect(com.mna.api.tools.MAEffects.holder(EffectInit.MIST_FORM.get()))) {
                 HUDOverlayRenderer.instance.renderTextureOverlay(GuiTextures.Overlay.MIST_FORM, 0.8f);
             }
         });
-        event.registerAboveAll("mna_main_hud", (gui, mStack, partialTicks, screenWidth, screenHeight) -> {
+        event.registerAboveAll(com.mna.api.tools.RLoc.create("mna_main_hud"), (gui, mStack, partialTicks, screenWidth, screenHeight) -> {
             com.mojang.blaze3d.systems.RenderSystem.enableBlend(); com.mojang.blaze3d.systems.RenderSystem.disableDepthTest();
             if (ClientConfigValues.ShowHudMode == ClientConfigValues.HudMode.AlwaysShow || HudOverlayRegistration.shouldConditionalShow()) {
                 HUDOverlayRenderer.instance.renderHUD(mStack, screenWidth, screenHeight, partialTicks);
             }
         });
-        event.registerAboveAll("mna_pinned_recipe", (gui, mStack, partialTicks, screenWidth, screenHeight) -> {
+        event.registerAboveAll(com.mna.api.tools.RLoc.create("mna_pinned_recipe"), (gui, mStack, partialTicks, screenWidth, screenHeight) -> {
             com.mojang.blaze3d.systems.RenderSystem.enableBlend(); com.mojang.blaze3d.systems.RenderSystem.disableDepthTest();
             HUDOverlayRenderer.instance.renderPinnedRecipe(mStack, screenWidth, screenHeight);
             HUDOverlayRenderer.instance.renderPinnedDiagnostics(mStack, screenWidth, screenHeight);
         });
-        event.registerAboveAll("mna_cantrip_timer", (gui, mStack, partialTicks, screenWidth, screenHeight) -> {
+        event.registerAboveAll(com.mna.api.tools.RLoc.create("mna_cantrip_timer"), (gui, mStack, partialTicks, screenWidth, screenHeight) -> {
             com.mojang.blaze3d.systems.RenderSystem.enableBlend(); com.mojang.blaze3d.systems.RenderSystem.disableDepthTest();
             HUDOverlayRenderer.instance.renderCantripTimer(mStack, screenWidth, screenHeight, partialTicks);
         });
-        event.registerAboveAll("mna_manaweave_timer", (gui, mStack, partialTicks, screenWidth, screenHeight) -> {
+        event.registerAboveAll(com.mna.api.tools.RLoc.create("mna_manaweave_timer"), (gui, mStack, partialTicks, screenWidth, screenHeight) -> {
             com.mojang.blaze3d.systems.RenderSystem.enableBlend(); com.mojang.blaze3d.systems.RenderSystem.disableDepthTest();
             Minecraft mc = Minecraft.getInstance();
             LocalPlayer player = mc.player;
@@ -75,7 +75,7 @@ public class HudOverlayRegistration {
                 }
             }
         });
-        event.registerAboveAll("mna_spellbook_chord_hud", (gui, mStack, partialTicks, screenWidth, screenHeight) -> {
+        event.registerAboveAll(com.mna.api.tools.RLoc.create("mna_spellbook_chord_hud"), (gui, mStack, partialTicks, screenWidth, screenHeight) -> {
             com.mojang.blaze3d.systems.RenderSystem.enableBlend(); com.mojang.blaze3d.systems.RenderSystem.disableDepthTest();
             Minecraft mc = Minecraft.getInstance();
             LocalPlayer player = mc.player;

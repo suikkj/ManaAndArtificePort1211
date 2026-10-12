@@ -84,7 +84,6 @@ import net.minecraft.world.entity.item.PrimedTnt;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.enchantment.ProtectionEnchantment;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.EntityBasedExplosionDamageCalculator;
@@ -134,14 +133,14 @@ extends Explosion {
         }
         for (ServerPlayer serverplayerentity : world.players()) {
             if (!(serverplayerentity.distanceToSqr(x, y, x) < 4096.0)) continue;
-            serverplayerentity.connection.send((Packet)new ClientboundExplodePacket(x, y, z, radius, explosion.getToBlow(), explosion.getHitPlayers().get(serverplayerentity)));
+            serverplayerentity.connection.send((Packet)new ClientboundExplodePacket(x, y, z, radius, explosion.getToBlow(), explosion.getHitPlayers().get(serverplayerentity), mode, null, null, net.minecraft.core.registries.BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.GENERIC_EXPLODE)));
         }
         world.playSound(null, x, y, z, SoundEvents.GENERIC_EXPLODE, SoundSource.NEUTRAL, (float)(0.9 + Math.random() * 0.2), (float)(0.9 + Math.random() * 0.2));
         return explosion;
     }
 
     public MAExplosion(Level level, @Nullable Entity source, DamageSource damagesource, @Nullable ExplosionDamageCalculator damageCalculator, double x, double y, double z, float radius, boolean doFire, Explosion.BlockInteraction interactionMode, float damage) {
-        super(level, source, damagesource, damageCalculator, x, y, z, radius, doFire, interactionMode);
+        super(level, source, x, y, z, radius, doFire, interactionMode);
         this.damage = damage;
         this.level = level;
         this.source = source;
@@ -248,7 +247,7 @@ extends Explosion {
             double d13;
             double d12;
             Entity entity = (Entity)list.get(k2);
-            if (entity.ignoreExplosion() || !((d12 = (double)(Mth.sqrt((float)((float)entity.distanceToSqr(vector3d))) / f2)) <= 1.0) || (d13 = (double)Mth.sqrt((float)((float)((d5 = entity.getX() - this.x) * d5 + (d7 = (entity instanceof PrimedTnt ? entity.getY() : entity.getEyeY()) - this.y) * d7 + (d9 = entity.getZ() - this.z) * d9)))) == 0.0) continue;
+            if (entity.ignoreExplosion(this) || !((d12 = (double)(Mth.sqrt((float)((float)entity.distanceToSqr(vector3d))) / f2)) <= 1.0) || (d13 = (double)Mth.sqrt((float)((float)((d5 = entity.getX() - this.x) * d5 + (d7 = (entity instanceof PrimedTnt ? entity.getY() : entity.getEyeY()) - this.y) * d7 + (d9 = entity.getZ() - this.z) * d9)))) == 0.0) continue;
             d5 /= d13;
             d7 /= d13;
             d9 /= d13;
@@ -256,9 +255,6 @@ extends Explosion {
             double d10 = (1.0 - d12) * d14;
             entity.hurt(this.getDamageSource(), this.damage);
             double d11 = d10;
-            if (entity instanceof LivingEntity) {
-                d11 = ProtectionEnchantment.getExplosionKnockbackAfterDampener((LivingEntity)((LivingEntity)entity), (double)d10);
-            }
             entity.setDeltaMovement(entity.getDeltaMovement().add(d5 * d11, d7 * d11, d9 * d11));
             if (!(entity instanceof Player) || (playerentity = (Player)entity).isSpectator() || playerentity.isCreative() && playerentity.getAbilities().flying) continue;
             this.hitPlayers.put(playerentity, new Vec3(d5 * d10, d7 * d10, d9 * d10));

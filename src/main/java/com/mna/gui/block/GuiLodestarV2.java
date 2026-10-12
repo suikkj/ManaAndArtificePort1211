@@ -172,7 +172,7 @@ extends GuiJEIDisable<ContainerLodestar> {
 
     private void insertNode(LodestarNode node) {
         this.nodes.add(node);
-        this.addWidget((GuiEventListener)node);
+        this.addWidget(node);
     }
 
     private void deleteNode(LodestarNode node) {
@@ -489,7 +489,7 @@ extends GuiJEIDisable<ContainerLodestar> {
             return true;
         }
         if (this.canBackgroundScroll) {
-            Iterator<Object> mouseScaled = this.getScaledMouseCoordinates(x, y);
+            com.mojang.datafixers.util.Pair<Integer,Integer> mouseScaled = this.getScaledMouseCoordinates(x, y);
             for (LodestarNode lodestarNode : this.nodes) {
                 if (!lodestarNode.mouseClicked(((Integer)mouseScaled.getFirst()).intValue(), ((Integer)mouseScaled.getSecond()).intValue(), button)) continue;
                 return true;

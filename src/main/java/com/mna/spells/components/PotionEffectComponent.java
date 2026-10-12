@@ -35,7 +35,7 @@ import com.mna.api.tools.MNACap;
 public abstract class PotionEffectComponent
 extends SpellEffect {
     protected final MobEffect effect;
-    protected final RegistryObject<? extends MobEffect> registry_effect;
+    protected final net.minecraft.core.Holder<MobEffect> registry_effect;
     protected final boolean modifiesMagnitude;
     protected final boolean modifiesDuration;
     private ArrayList<SpellReagent> permanenceReagents;
@@ -66,7 +66,7 @@ extends SpellEffect {
         }
     }
 
-    public PotionEffectComponent(ResourceLocation guiIcon, RegistryObject<? extends MobEffect> effect, AttributeValuePair ... attributeValuePairs) {
+    public PotionEffectComponent(ResourceLocation guiIcon, net.minecraft.core.Holder<MobEffect> effect, AttributeValuePair ... attributeValuePairs) {
         super(guiIcon, attributeValuePairs);
         this.effect = null;
         this.registry_effect = effect;

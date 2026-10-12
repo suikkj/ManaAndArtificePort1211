@@ -277,7 +277,7 @@ IAnimPacketSync<WanderingWizard> {
         for (ManaweavingPattern pattern : ManaweavingPatternSerializer.ALL_RECIPES.values()) {
             ItemStack stack = new ItemStack((ItemLike)ItemInit.RECIPE_SCRAP_MANAWEAVING_PATTERN.get());
             ManaweavingPatternPaper.setRecipe(stack, pattern);
-            MerchantOffer offer = new MerchantOffer(costItem.copy(), stack, 5, 0, 1.0f);
+            MerchantOffer offer = new MerchantOffer(new net.minecraft.world.item.trading.ItemCost(costItem.copy().getItem(), costItem.copy().getCount()), stack, 5, 0, 1.0f);
             givenMerchantOffers.add(offer);
         }
         StructureUtils.getAllStructures(serverLevel).forEach(structureFeature -> {
@@ -286,7 +286,7 @@ IAnimPacketSync<WanderingWizard> {
             }
             ItemStack stack = new ItemStack((ItemLike)ItemInit.THAUMATURGIC_LINK.get());
             ThaumaturgicLink.setStructureKey(serverLevel, stack, (Holder<Structure>)structureFeature);
-            MerchantOffer offer = new MerchantOffer(costItem.copy(), stack, 1, 0, 1.0f);
+            MerchantOffer offer = new MerchantOffer(new net.minecraft.world.item.trading.ItemCost(costItem.copy().getItem(), costItem.copy().getCount()), stack, 1, 0, 1.0f);
             givenMerchantOffers.add(offer);
         });
         BiomeUtils.getAllBiomes(serverLevel).forEach(biome -> {
@@ -295,11 +295,11 @@ IAnimPacketSync<WanderingWizard> {
             }
             ItemStack stack = new ItemStack((ItemLike)ItemInit.THAUMATURGIC_LINK.get());
             ThaumaturgicLink.setBiomeKey(serverLevel, stack, (Holder<Biome>)biome);
-            MerchantOffer offer = new MerchantOffer(costItem.copy(), stack, 1, 0, 1.0f);
+            MerchantOffer offer = new MerchantOffer(new net.minecraft.world.item.trading.ItemCost(costItem.copy().getItem(), costItem.copy().getCount()), stack, 1, 0, 1.0f);
             givenMerchantOffers.add(offer);
         });
-        givenMerchantOffers.add(new MerchantOffer(costItem.copy(), new ItemStack((ItemLike)Items.MAP), 1, 0, 1.0f));
-        givenMerchantOffers.add(new MerchantOffer(costItem.copy(), new ItemStack((ItemLike)Items.COMPASS), 1, 0, 1.0f));
+        givenMerchantOffers.add(new MerchantOffer(new net.minecraft.world.item.trading.ItemCost(costItem.copy().getItem(), costItem.copy().getCount()), new ItemStack((ItemLike)Items.MAP), 1, 0, 1.0f));
+        givenMerchantOffers.add(new MerchantOffer(new net.minecraft.world.item.trading.ItemCost(costItem.copy().getItem(), costItem.copy().getCount()), new ItemStack((ItemLike)Items.COMPASS), 1, 0, 1.0f));
         NeoForge.EVENT_BUS.post(new WanderingWizardSelectingTradesEvent((Merchant)this, givenMerchantOffers, newTrades, maxNumbers));
     }
 

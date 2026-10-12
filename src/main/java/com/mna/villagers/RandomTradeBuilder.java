@@ -93,7 +93,7 @@ public class RandomTradeBuilder {
 
     public VillagerTrades.ItemListing build() {
         Random rnd = new Random();
-        return (entity, random) -> !this.canBuild() ? null : new MerchantOffer(this.price.apply(rnd), this.price2.apply(rnd), this.forSale.apply(rnd), this.maxTrades, this.xp, this.priceMult);
+        return (entity, random) -> !this.canBuild() ? null : new MerchantOffer(new net.minecraft.world.item.trading.ItemCost(this.price.apply(rnd).getItem(), this.price.apply(rnd).getCount()), java.util.Optional.of(new net.minecraft.world.item.trading.ItemCost(this.price2.apply(rnd).getItem(), this.price2.apply(rnd).getCount())), this.forSale.apply(rnd), this.maxTrades, this.xp, this.priceMult);
     }
 
     public static Function<Random, ItemStack> createFunction(Item item, int min, int max) {

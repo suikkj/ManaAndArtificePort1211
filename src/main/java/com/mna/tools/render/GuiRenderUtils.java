@@ -98,6 +98,7 @@ public class GuiRenderUtils {
         Vec3[] points = new Vec3[num_points + 1];
         if (dst_x < src_x && smartDouble) {
             int i;
+            float pct_per_point;
             pct_per_point = 1.0f / (float)(num_points / 2);
             float midScale = delta.y < 0.0 ? 0.3f : 0.6f;
             Vec3 mid = start.add(delta.scale((double)midScale));
@@ -114,7 +115,7 @@ public class GuiRenderUtils {
                 points[i + num_points / 2] = MathUtils.bezierVector3d(mid, end, seg_b_control_1, seg_b_control_2, (float)i * pct_per_point);
             }
         } else {
-            pct_per_point = 1.0f / (float)num_points;
+            float pct_per_point = 1.0f / (float)num_points;
             Vec3 seg_a_control_1 = start.add(20.0, 0.0, 0.0);
             Vec3 seg_a_control_2 = end.subtract(20.0, 0.0, 0.0);
             for (int i = 0; i < num_points; ++i) {
