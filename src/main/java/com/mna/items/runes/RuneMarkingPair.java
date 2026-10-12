@@ -153,7 +153,7 @@ MNADyeableItem {
     @Override
     public void setArea(ItemStack stack, BlockPos corner_a, BlockPos corner_b) {
         CompoundTag nbt = MNAItemData.element(stack, "mark");
-        this.writeAABB(nbt, new AABB(corner_a, corner_b));
+        this.writeAABB(nbt, new AABB(net.minecraft.world.phys.Vec3.atLowerCornerOf(corner_a), net.minecraft.world.phys.Vec3.atLowerCornerOf(corner_b)));
     }
 
     @Override

@@ -57,21 +57,6 @@ implements IFactionSpecific {
         this.tickEffect(player, world);
     }
 
-    public ICapabilityProvider initCapabilities(final ItemStack stack, CompoundTag nbt) {
-        return CurioItemCapability.createProvider(new ICurioItem(){
-
-            public void curioTick(String identifier, int index, LivingEntity livingEntity) {
-                if (livingEntity instanceof Player) {
-                    ArcaneCrown.this.tickEffect((Player)livingEntity, livingEntity.level());
-                }
-            }
-
-            public ItemStack getStack() {
-                return stack;
-            }
-        });
-    }
-
     @Override
     public float getMaxIre() {
         return 5.0E-4f;

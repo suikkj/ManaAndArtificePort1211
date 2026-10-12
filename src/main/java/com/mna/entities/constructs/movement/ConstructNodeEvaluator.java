@@ -128,6 +128,11 @@ extends NodeEvaluator {
         return super.getNode(x, y, z);
     }
 
+    @Override
+    public net.minecraft.world.level.pathfinder.Target getTarget(double x, double y, double z) {
+        return this.getTargetNodeAt(x, y, z);
+    }
+
     public Node getStart() {
         if (this.flying && !this.isInWater) {
             return this.getStart_flying();
@@ -780,11 +785,6 @@ extends NodeEvaluator {
 
     private static boolean doesBlockHavePartialCollision(PathType pBlockPathType) {
         return pBlockPathType == PathType.FENCE || pBlockPathType == PathType.DOOR_WOOD_CLOSED || pBlockPathType == PathType.DOOR_IRON_CLOSED;
-    }
-
-    @Override
-    public PathType getPathType(net.minecraft.world.level.pathfinder.PathfindingContext context, int x, int y, int z) {
-        return this.getBlockPathType((BlockGetter)context.level(), x, y, z);
     }
 
     @Override

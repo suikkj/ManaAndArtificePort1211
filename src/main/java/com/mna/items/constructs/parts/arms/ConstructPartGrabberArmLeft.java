@@ -45,7 +45,7 @@ extends ItemConstructPart {
             builder.put((Attributes.BLOCK_INTERACTION_RANGE), new AttributeModifier(ManaAndArtificeMod.REACH_DISTANCE_ID, (double)this.reachIncrease, AttributeModifier.Operation.ADD_VALUE));
             this.defaultModifiers = builder.build();
         }
-        return slot == EquipmentSlot.MAINHAND ? this.defaultModifiers : super.getDefaultAttributeModifiers();
+        return this.defaultModifiers;
     }
 }
 

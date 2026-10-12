@@ -209,7 +209,7 @@ MNADyeableItem {
                     if (!spell.isEmpty()) {
                         stack.set(DataComponents.ITEM_NAME, spell.getHoverName());
                     } else {
-                        stack.resetHoverName();
+                        stack.remove(DataComponents.CUSTOM_NAME);
                     }
                 }
             }

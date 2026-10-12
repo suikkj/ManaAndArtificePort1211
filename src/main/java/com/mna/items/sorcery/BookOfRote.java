@@ -110,7 +110,7 @@ extends SpellBook {
                         player.sendSystemMessage((Component)Component.translatable((String)"item.mna.book_of_rote.part_not_rote", (Object[])new Object[]{shapeName}));
                         return InteractionResultHolder.fail(held);
                     }
-                    modified_attrs.addAll(((ModifiedSpellPart)recipe.getShape()).getContainedAttributes().stream().filter(a -> ((ModifiedSpellPart)recipe.getShape()).getValueWithoutMultipliers((Attribute)(a)) != ((ModifiedSpellPart)recipe.getShape()).getDefaultValue((Attribute)(a))).collect(Collectors.toList()));
+                    modified_attrs.addAll((java.util.List)((ModifiedSpellPart)recipe.getShape()).getContainedAttributes().stream().filter(a -> ((ModifiedSpellPart)recipe.getShape()).getValueWithoutMultipliers((Attribute)(a)) != ((ModifiedSpellPart)recipe.getShape()).getDefaultValue((Attribute)(a))).collect(Collectors.toList()));
                     for (IModifiedSpellPart<SpellEffect> component : recipe.getComponents()) {
                         if (!rote.isRote(component.getPart())) {
                             String componentName = Component.translatable((String)component.getPart().getRegistryName().toString()).getString();
@@ -152,7 +152,7 @@ extends SpellBook {
     }
 
     public int getColor(ItemStack stack) {
-        CompoundTag compoundnbt = stack.getTagElement("display");
+        CompoundTag compoundnbt = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getCompound("display");
         return compoundnbt != null && compoundnbt.contains("color", 99) ? compoundnbt.getInt("color") : 11278103;
     }
 }

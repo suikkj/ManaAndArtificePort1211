@@ -15,7 +15,7 @@ public class FilledBucketFilter
 extends ItemFilter {
     @Override
     public boolean IsValidItem(ItemStack stack) {
-        return stack.getItem() instanceof BucketItem && ((BucketItem)stack.getItem()).getFluid() != null;
+        return stack.getItem() instanceof BucketItem;
     }
 }
 

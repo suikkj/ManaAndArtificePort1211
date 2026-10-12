@@ -151,7 +151,7 @@ extends SpellBook {
     }
 
     public int getColor(ItemStack stack) {
-        CompoundTag compoundnbt = stack.getTagElement("display");
+        CompoundTag compoundnbt = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getCompound("display");
         return compoundnbt != null && compoundnbt.contains("color", 99) ? compoundnbt.getInt("color") : 5841080;
     }
 }

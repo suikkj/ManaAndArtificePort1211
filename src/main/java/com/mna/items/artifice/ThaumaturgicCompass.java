@@ -144,7 +144,7 @@ extends CompassItem {
         stackTag.putInt(trackingType, trackType.ordinal());
         stackTag.putString(trackingKey, trackedID.toString());
         stackTag.put("LodestonePos", (Tag)NbtUtils.writeBlockPos((BlockPos)position));
-        ((com.mojang.serialization.Codec)Level.RESOURCE_KEY_CODEC).encodeStart((DynamicOps)NbtOps.INSTANCE, dimension).resultOrPartial(arg_0 -> ((Logger)ManaAndArtifice.LOGGER).error(arg_0)).ifPresent(inbt -> stackTag.put("LodestoneDimension", inbt));
+        ((com.mojang.serialization.Codec)Level.RESOURCE_KEY_CODEC).encodeStart((DynamicOps)NbtOps.INSTANCE, dimension).resultOrPartial(arg_0 -> ((Logger)ManaAndArtifice.LOGGER).error(arg_0)).ifPresent(inbt -> stackTag.put("LodestoneDimension", (Tag)inbt));
         stackTag.putBoolean("LodestoneTracked", true);
     }
 

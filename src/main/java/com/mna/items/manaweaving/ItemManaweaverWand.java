@@ -104,7 +104,7 @@ IRadialMenuItem {
                 Vector3f[] looks = magic.getRememberedLooks();
                 int useTicks = this.getUseDuration(stack) - timeLeft;
                 if (points.length > 0) {
-                    ManaweavingPattern pattern = ItemManaweaverWand.getStoredPattern(worldIn.level(), stack);
+                    ManaweavingPattern pattern = ItemManaweaverWand.getStoredPattern(worldIn, stack);
                     if (pattern == null) {
                         pattern = ManaweavingPattern.match(worldIn, progression.getTier(), points, looks);
                     } else if (useTicks < ItemManaweaverWand.getAutoweaveTicks((LivingEntity)player)) {
@@ -305,7 +305,7 @@ IRadialMenuItem {
 
     @Override
     public void appendHoverText(ItemStack stack, net.minecraft.world.item.Item.TooltipContext worldIn, List<Component> tooltip, TooltipFlag flagIn) {
-        ManaweavingPattern stored = ItemManaweaverWand.getStoredPattern(worldIn.level(), stack);
+        ManaweavingPattern stored = ItemManaweaverWand.getStoredPattern(worldIn, stack);
         if (stored != null) {
             tooltip.add((Component)Component.translatable((String)"item.mna.manaweaver_wand.auto", (Object[])new Object[]{Component.translatable((String)stored.getId().toString()).getString()}).withStyle(ChatFormatting.GOLD));
         } else {

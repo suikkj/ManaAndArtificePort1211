@@ -261,7 +261,7 @@ public class ItemInit {
     public static final DeferredHolder<Item, ? extends LootPouch> HERBALIST_POUCH = ITEMS.register("herbalist_pouch", () -> new LootPouch(MATags.Items.HERBALIST_POUCH_ITEMS));
     public static final DeferredHolder<Item, ? extends LootPouch> INSCRIPTIONIST_POUCH = ITEMS.register("inscriptionist_pouch", () -> new LootPouch(MATags.Items.INSCRIPTIONIST_POUCH_ITEMS));
     public static final DeferredHolder<Item, ? extends LootPouch> WEAVERS_POUCH = ITEMS.register("weaver_pouch", () -> new LootPouch(MATags.Items.WEAVER_POUCH_ITEMS, is -> {
-        if (is.getItem() == MANAWEAVE_BOTTLE.get()) {
+        if (is.getItem() == ItemInit.MANAWEAVE_BOTTLE.get()) {
             ItemManaweaveBottle.setRandomPattern(is);
         }
     }));

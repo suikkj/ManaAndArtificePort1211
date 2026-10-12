@@ -51,7 +51,6 @@ implements IRelic {
     }
 
     @Override
-    @Override
     public FluidStack getFluidTagData(ItemStack stack) {
         return this.containedStack;
     }
@@ -75,7 +74,7 @@ implements IRelic {
     public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
         FluidStack flStack = this.getFluidTagData(itemStack);
         ItemStack bucket = flStack.getFluid().getFluidType().getBucket(flStack);
-        int burnTime = CommonHooks.getBurnTime((ItemStack)bucket, recipeType);
+        int burnTime = ((ItemStack)bucket).getBurnTime(recipeType);
         return burnTime;
     }
 }

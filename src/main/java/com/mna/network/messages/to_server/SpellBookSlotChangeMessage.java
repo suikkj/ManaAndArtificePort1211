@@ -71,8 +71,8 @@ extends BaseServerMessage implements CustomPacketPayload {
         buf.writeInt(msg.hand.ordinal());
         if (msg.context != null) {
             buf.writeBoolean(true);
-            buf.writeUtf(msg.context.getIdentifier());
-            buf.writeInt(msg.context.getIndex());
+            buf.writeUtf(msg.context.identifier());
+            buf.writeInt(msg.context.index());
         } else {
             buf.writeBoolean(false);
         }

@@ -25,8 +25,13 @@ extends GeoModel<FeyArmorItem> {
         Player player;
         IPlayerProgression progression;
         LivingEntity livingEntity = FeyArmorItem.renderEntity;
-        if (livingEntity instanceof Player && (progression = (IPlayerProgression)(player = MNACap.<IPlayerProgression>get((Player)livingEntity, PlayerProgressionProvider.PROGRESSION)).orElse(null)) != null && progression.getAlliedFaction() == Factions.FEY && (magic = (IPlayerMagic)player.getData(PlayerMagicProvider.MAGIC.get())) != null && magic.getCastingResource().getRegistryName().equals(CastingResourceIDs.WINTER_ICE)) {
-            return ResourceLocation.fromNamespaceAndPath("mna", "textures/item/armor/model/fey_armor_winter.png");
+        if (livingEntity instanceof Player) {
+            Player player = (Player)livingEntity;
+            IPlayerProgression progression = MNACap.get(player, PlayerProgressionProvider.PROGRESSION).orElse(null);
+            IPlayerMagic magic = (IPlayerMagic)player.getData(PlayerMagicProvider.MAGIC.get());
+            if (progression != null && progression.getAlliedFaction() == Factions.FEY && magic != null && magic.getCastingResource().getRegistryName().equals(CastingResourceIDs.WINTER_ICE)) {
+                return ResourceLocation.fromNamespaceAndPath("mna", "textures/item/armor/model/fey_armor_winter.png");
+            }
         }
         return ResourceLocation.fromNamespaceAndPath("mna", "textures/item/armor/model/fey_armor.png");
     }

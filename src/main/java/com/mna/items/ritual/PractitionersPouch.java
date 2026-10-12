@@ -826,7 +826,7 @@ MNADyeableItem {
             }
         }
         ResourceLocation ritualID = ritual.getId();
-        RitualEffect matchedEffect = Registries.RitualEffect.getValues().stream().filter(r -> r.matchRitual(ritualID)).findFirst();
+        RitualEffect matchedEffect = Registries.RitualEffect.getValues().stream().filter(r -> r.matchRitual(ritualID)).findFirst().orElse(null);
         if (matchedEffect == null) {
             context.getPlayer().sendSystemMessage((Component)Component.translatable((String)"mna:ritual-start-failed"));
             return InteractionResult.FAIL;

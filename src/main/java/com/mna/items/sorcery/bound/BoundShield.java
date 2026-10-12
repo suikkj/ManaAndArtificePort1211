@@ -84,7 +84,7 @@ INoCreativeTab {
         return UseAnim.BLOCK;
     }
 
-    public boolean canPerformAction(ItemStack stack, ItemAbilities toolAction) {
+    public boolean canPerformAction(ItemStack stack, net.neoforged.neoforge.common.ItemAbility toolAction) {
         return toolAction == ItemAbilities.SHIELD_BLOCK;
     }
 

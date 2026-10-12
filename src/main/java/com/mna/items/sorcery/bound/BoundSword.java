@@ -75,7 +75,7 @@ INoCreativeTab {
     }
 
     public Multimap<net.minecraft.world.entity.ai.attributes.Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack) {
-        Multimap baseAttrs = super.getDefaultAttributeModifiers();
+        Multimap baseAttrs = this.defaultModifiers;
         if (slot != EquipmentSlot.MAINHAND) {
             return baseAttrs;
         }

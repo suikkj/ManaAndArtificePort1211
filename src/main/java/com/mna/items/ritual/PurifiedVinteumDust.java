@@ -50,7 +50,7 @@ extends TieredItem {
             return InteractionResult.FAIL;
         }
         if (!context.getLevel().isClientSide && context.getPlayer().isShiftKeyDown() && context.getLevel().getBlockState(context.getClickedPos()).getBlock() == BlockInit.CHALK_RUNE.get()) {
-            this.commandRitualEntity(context, (NonNullList<RitualBlockPos>)NonNullList.create());
+            this.commandRitualEntity(context, (NonNullList<RitualBlockPos>)(NonNullList)NonNullList.create());
             return InteractionResult.SUCCESS;
         }
         MatchedRitual ritualMatch = RitualRecipe.matchAnyInWorld(context.getClickedPos(), context.getLevel());

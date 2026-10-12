@@ -2,6 +2,7 @@
 package com.mna.items.relic;
 
 import java.util.function.Supplier;
+import net.minecraft.resources.ResourceLocation;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import com.mna.api.items.IRelic;
@@ -106,7 +107,7 @@ IRelic {
     }
 
     public Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers(EquipmentSlot p_43274_) {
-        return p_43274_ == EquipmentSlot.MAINHAND ? this.defaultModifiers : (com.google.common.collect.Multimap)super.getDefaultAttributeModifiers();
+        return this.defaultModifiers;
     }
 
     public static NonNullList<ItemStack> getRunes(ItemStack itemStack) {

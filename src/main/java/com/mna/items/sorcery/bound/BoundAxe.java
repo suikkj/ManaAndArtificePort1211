@@ -53,6 +53,8 @@ public class BoundAxe
 extends AxeItem
 implements IBoundItem,
 INoCreativeTab {
+    private static final net.minecraft.resources.ResourceLocation BASE_RANGE_ID = net.minecraft.resources.ResourceLocation.fromNamespaceAndPath("mna", "base_range");
+
     public AnimatableInstanceCache animCache = GeckoLibUtil.createInstanceCache((GeoAnimatable)this);
 
     public BoundAxe(float attackDamageIn, float attackSpeedIn) {
@@ -85,7 +87,7 @@ INoCreativeTab {
     }
 
     public Multimap<net.minecraft.world.entity.ai.attributes.Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack) {
-        Multimap baseAttrs = super.getDefaultAttributeModifiers();
+        Multimap baseAttrs = this.defaultModifiers;
         if (slot != EquipmentSlot.MAINHAND) {
             return baseAttrs;
         }

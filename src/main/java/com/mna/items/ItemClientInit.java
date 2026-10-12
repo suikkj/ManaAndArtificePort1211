@@ -81,7 +81,7 @@ public class ItemClientInit {
 
     @SubscribeEvent
     public static void registerItemColors(RegisterColorHandlersEvent.Item event) {
-        event.register((stack, layer) -> layer > 0 ? -1 : ((MNADyeableItem)stack.getItem()).getColor(stack), new ItemLike[]{(ItemLike)ItemInit.MAGE_BOOTS.get(), (ItemLike)ItemInit.MAGE_ROBES.get(), (ItemLike)ItemInit.MAGE_LEGGINGS.get(), (ItemLike)ItemInit.MAGE_HOOD.get(), (ItemLike)ItemInit.PRACTITIONERS_POUCH.get(), (ItemLike)ItemInit.SPELL_BOOK.get(), (ItemLike)ItemInit.RECIPE_COPY_BOOK.get(), (ItemLike)ItemInit.GRIMOIRE.get(), (ItemLike)ItemInit.ROTE_BOOK.get(), (ItemLike)ItemInit.BANGLE.get(), (ItemLike)ItemInit.RUNE_MARKING.get(), (ItemLike)ItemInit.RUNE_MARKING_PAIR.get()});
+        event.register((stack, layer) -> layer > 0 ? -1 : MNADyeableItem.getColor(stack), new ItemLike[]{(ItemLike)ItemInit.MAGE_BOOTS.get(), (ItemLike)ItemInit.MAGE_ROBES.get(), (ItemLike)ItemInit.MAGE_LEGGINGS.get(), (ItemLike)ItemInit.MAGE_HOOD.get(), (ItemLike)ItemInit.PRACTITIONERS_POUCH.get(), (ItemLike)ItemInit.SPELL_BOOK.get(), (ItemLike)ItemInit.RECIPE_COPY_BOOK.get(), (ItemLike)ItemInit.GRIMOIRE.get(), (ItemLike)ItemInit.ROTE_BOOK.get(), (ItemLike)ItemInit.BANGLE.get(), (ItemLike)ItemInit.RUNE_MARKING.get(), (ItemLike)ItemInit.RUNE_MARKING_PAIR.get()});
     }
 }
 

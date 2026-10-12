@@ -89,7 +89,7 @@ extends SectionBase {
                     elemArray = newArray;
                 }
                 this.rawText = elemArray.toString();
-                parsed = Component.Serializer.fromJson((String)this.rawText);
+                parsed = Component.Serializer.fromJson((String)this.rawText, net.minecraft.core.RegistryAccess.EMPTY);
                 this.formatted = true;
             }
         } else if (element.has("value")) {

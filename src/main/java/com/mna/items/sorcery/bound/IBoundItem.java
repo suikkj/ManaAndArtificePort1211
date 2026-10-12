@@ -56,14 +56,16 @@ IShowHud {
 
     default public ItemStack createFromSpell(LivingEntity caster, Item outputItem, ItemStack originalItem, ISpellDefinition spell) {
         CompoundTag nbt = new CompoundTag();
-        originalItem.save(nbt);
+        com.mna.api.tools.MNAItemData.save(originalItem, nbt);
         ItemStack bound = new ItemStack((ItemLike)outputItem);
         bound.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().put("original_item", (Tag)nbt);
         bound.set(DataComponents.ITEM_NAME, originalItem.getHoverName());
         spell.writeToNBT(bound.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag());
         CuriosInterop.GetSingleItem(caster, BoundCharm.class).ifPresent(slotResult -> {
             java.util.Map<net.minecraft.core.Holder<net.minecraft.world.item.enchantment.Enchantment>, Integer> enchantments = EnchantmentUtils.enchantmentMap((ItemStack)slotResult.stack());
-            EnchantmentHelper.setEnchantments((Map)enchantments, (ItemStack)bound);
+            net.minecraft.world.item.enchantment.ItemEnchantments.Mutable __em = new net.minecraft.world.item.enchantment.ItemEnchantments.Mutable(net.minecraft.world.item.enchantment.ItemEnchantments.EMPTY);
+            enchantments.forEach(__em::set);
+            ((ItemStack)bound).set(DataComponents.ENCHANTMENTS, __em.toImmutable());
         });
         NeoForge.EVENT_BUS.post(new BoundItemSummonedEvent(bound));
         return bound;

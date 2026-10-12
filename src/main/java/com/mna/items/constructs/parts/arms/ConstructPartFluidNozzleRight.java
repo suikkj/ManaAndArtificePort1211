@@ -138,7 +138,7 @@ extends ItemConstructPart {
         if (equipped.isEmpty()) {
             return false;
         }
-        java.util.Optional<net.neoforged.neoforge.fluids.capability.IFluidHandler> fluid = FluidUtil.getFluidHandler((ItemStack)((SlotResult)equipped.get()).stack());
+        java.util.Optional<net.neoforged.neoforge.fluids.capability.IFluidHandlerItem> fluid = FluidUtil.getFluidHandler((ItemStack)((SlotResult)equipped.get()).stack());
         if (!fluid.isPresent()) {
             return false;
         }
