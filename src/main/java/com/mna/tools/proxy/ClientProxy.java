@@ -198,7 +198,7 @@ ClientAdvancements.Listener {
         return false;
     }
 
-    public void onPlaySound(SoundInstance inst, WeighedSoundEvents weight) {
+    public void onPlaySound(SoundInstance inst, WeighedSoundEvents weight, float range) {
         if (inst.getLocation().equals(Music.Construct.DANCE_MIX.getLocation())) {
             this.activeDanceMix = inst;
         }

@@ -232,7 +232,7 @@ public class MultiblockConfiguration {
         MultiblockConfiguration mbc = new MultiblockConfiguration();
         manager.get(structureFile).ifPresent(template -> {
             mbc.size = template.getSize();
-            template.palettes.forEach(p -> p.blocks().forEach(bi -> {
+            com.mna.tools.MNAReflection.structurePalettes(template).forEach(p -> p.blocks().forEach(bi -> {
                 int index = MultiblockConfiguration.updateBlockStateIndex(bi.state(), blockIndex, false);
                 if (index == -1) {
                     return;

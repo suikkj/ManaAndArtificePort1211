@@ -40,4 +40,24 @@ public final class MNAReflection {
         } catch (Throwable t) {
         }
     }
+
+    public static int containerCounter(net.minecraft.server.level.ServerPlayer player) {
+        try {
+            java.lang.reflect.Field f = net.minecraft.server.level.ServerPlayer.class.getDeclaredField("containerCounter");
+            f.setAccessible(true);
+            return f.getInt(player);
+        } catch (Throwable t) {
+            return 0;
+        }
+    }
+
+    public static java.util.List<net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate.Palette> structurePalettes(net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate template) {
+        try {
+            java.lang.reflect.Field f = net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate.class.getDeclaredField("palettes");
+            f.setAccessible(true);
+            return (java.util.List<net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate.Palette>)f.get(template);
+        } catch (Throwable t) {
+            return java.util.List.of();
+        }
+    }
 }

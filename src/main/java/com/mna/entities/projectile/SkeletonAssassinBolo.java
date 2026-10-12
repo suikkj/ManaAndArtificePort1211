@@ -70,6 +70,11 @@ implements GeoEntity {
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return this.animCache;
     }
+
+    @Override
+    protected ItemStack getDefaultPickupItem() {
+        return ItemStack.EMPTY;
+    }
 }
 
 

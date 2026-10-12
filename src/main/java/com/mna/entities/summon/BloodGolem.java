@@ -170,7 +170,7 @@ implements GeoEntity {
     }
 
     public static AttributeSupplier.Builder getGlobalAttributes() {
-        return Mob.createMobAttributes().add(Attributes.MAX_HEALTH, 24.0).add(Attributes.MOVEMENT_SPEED, (double)0.3f).add(Attributes.ATTACK_DAMAGE, 6.0).add(Attributes.ATTACK_SPEED, 40.0).add(Attributes.ATTACK_KNOCKBACK, 1.0).add(Attributes.FOLLOW_RANGE, 32.0).add(Attributes.KNOCKBACK_RESISTANCE, (double)0.8f).add((Attribute)Attributes.STEP_HEIGHT.get(), 1.0);
+        return Mob.createMobAttributes().add(Attributes.MAX_HEALTH, 24.0).add(Attributes.MOVEMENT_SPEED, (double)0.3f).add(Attributes.ATTACK_DAMAGE, 6.0).add(Attributes.ATTACK_SPEED, 40.0).add(Attributes.ATTACK_KNOCKBACK, 1.0).add(Attributes.FOLLOW_RANGE, 32.0).add(Attributes.KNOCKBACK_RESISTANCE, (double)0.8f).add(Attributes.STEP_HEIGHT, 1.0);
     }
 
     public AnimatableInstanceCache getAnimatableInstanceCache() {

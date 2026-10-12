@@ -2,6 +2,7 @@
 package com.mna.entities.constructs.ai.conditionals;
 
 import com.mna.Registries;
+import net.minecraft.core.component.DataComponents;
 import com.mna.api.entities.construct.IConstruct;
 import com.mna.api.entities.construct.ai.ConstructAITask;
 import com.mna.api.entities.construct.ai.parameter.ConstructAITaskParameter;

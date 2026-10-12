@@ -143,7 +143,7 @@ extends Goal {
     }
 
     private boolean isTeleportFriendlyBlock(BlockPos pos) {
-        PathType pathnodetype = WalkNodeEvaluator.getPathTypeStatic((Mob)this.mob, (BlockPos)pos);
+        PathType pathnodetype = WalkNodeEvaluator.getPathTypeStatic(this.tameable, (BlockPos)pos);
         if (pathnodetype != PathType.WALKABLE) {
             return false;
         }

@@ -151,7 +151,7 @@ extends Entity
                             if ("x".equals(s) || "y".equals(s) || "z".equals(s)) continue;
                             compoundnbt.put(s, inbt.copy());
                         }
-                        tileentity.loadAdditional(compoundnbt, com.mna.api.tools.MNAItemData.provider());
+                        com.mna.api.tools.MNATileAccess.loadAdditional(tileentity, compoundnbt, com.mna.api.tools.MNAItemData.provider());
                         tileentity.setChanged();
                     }
                 } else if (this.dropItem && this.level().getGameRules().getBoolean(GameRules.RULE_DOENTITYDROPS)) {

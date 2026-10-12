@@ -206,7 +206,7 @@ implements GeoEntity {
         }
         givenMerchantOffers.clear();
         if (allFactionItems == null) {
-            allFactionItems = BuiltInRegistries.ITEM.getValues().stream().filter(i -> i instanceof IFactionSpecific).collect(Collectors.toList());
+            allFactionItems = BuiltInRegistries.ITEM.stream().filter(i -> i instanceof IFactionSpecific).collect(Collectors.toList());
         }
         Random rand = new Random();
         ServerLevel serverLevel = (ServerLevel)this.level();
@@ -283,7 +283,8 @@ implements GeoEntity {
         super.setTradingPlayer(player);
         if (player != null) {
             this.getOffers();
-            this.customerLimitedOffers = new MerchantOffers(this.offers.createTag());
+            this.customerLimitedOffers = new MerchantOffers();
+            this.customerLimitedOffers.addAll(this.offers);
             MNACap.get(player, PlayerProgressionProvider.PROGRESSION).ifPresent(p -> {
                 for (int i = 0; i < this.customerLimitedOffers.size(); ++i) {
                     MerchantOffer offer = (MerchantOffer)this.customerLimitedOffers.get(i);

@@ -123,7 +123,7 @@ implements ISpellSigil<SpellSigil> {
         this.entityData.set(MAGNITUDE, ((int)spell.getShape().getValue(Attribute.MAGNITUDE)));
         this.entityData.set(PERMANENT, false);
         this.entityData.set(COOLDOWN, false);
-        this.entityData.set(CHARGES, (byte)1);
+        this.entityData.set(CHARGES, 1);
         this.entityData.set(PLAYERLESS, false);
         this.entityData.set(CAST_WITH_BONUS, (byte)0);
     }
@@ -396,7 +396,7 @@ implements ISpellSigil<SpellSigil> {
         builder.define(PERMANENT, false);
         builder.define(COOLDOWN, false);
         builder.define(CHARGES, 1);
-        builder.define(PLAYERLESS, (byte)1);
+        builder.define(PLAYERLESS, false);
         builder.define(SIZE, (byte)1);
         builder.define(CAST_WITH_BONUS, (byte)0);
     }

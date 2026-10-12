@@ -135,13 +135,13 @@ public class PlayerMagicSerializer implements IAttachmentSerializer<Tag, com.mna
             items.add(inventory.getItem(i));
         }
         CompoundTag inv = new CompoundTag();
-        MNAItemData.saveItems(inv, items, provider);
+        MNAItemData.saveItems(inv, items);
         return inv;
     }
 
     private void readInventory(Container inventory, CompoundTag nbt, HolderLookup.Provider provider) {
         NonNullList<ItemStack> items = NonNullList.withSize(inventory.getContainerSize(), ItemStack.EMPTY);
-        MNAItemData.loadItems(nbt, items, provider);
+        MNAItemData.loadItems(nbt, items);
         for (int i = 0; i < items.size(); ++i) {
             if (inventory.getContainerSize() <= i) continue;
             inventory.setItem(i, items.get(i));

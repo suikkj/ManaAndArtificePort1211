@@ -25,7 +25,7 @@ public class ConstructDecorationModels {
     protected ConstructMutexedModel TUBE_RIGHT;
 
     public List<ResourceLocation> getModelIdentifiers() {
-        List<ResourceLocation> all = this.eye_models.entrySet().stream().flatMap(e -> ((List)e.getValue()).stream()).map(m -> m.rLoc).collect(Collectors.toList());
+        List<ResourceLocation> all = this.eye_models.entrySet().stream().flatMap(e -> ((List<ConstructMutexedModel>)e.getValue()).stream()).map(m -> m.rLoc).collect(Collectors.toList());
         all.add(this.TUBE_LEFT.rLoc);
         all.add(this.TUBE_RIGHT.rLoc);
         return all;

@@ -33,6 +33,11 @@ implements RecipeSerializer<T> {
         buffer.writeInt(((AMRecipeBase)recipe).getTier());
     }
 
+    @Override
+    public net.minecraft.network.codec.StreamCodec<net.minecraft.network.RegistryFriendlyByteBuf, T> streamCodec() {
+        return net.minecraft.network.codec.StreamCodec.of((buf, recipe) -> this.toNetwork(buf, recipe), buf -> this.fromNetwork(null, buf));
+    }
+
     protected abstract T readExtra(ResourceLocation var1, JsonObject var2);
 
     protected abstract T readExtra(ResourceLocation var1, FriendlyByteBuf var2);

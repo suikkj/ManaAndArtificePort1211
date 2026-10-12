@@ -2,7 +2,7 @@
 package com.mna.blocks.tileentities.pylon;
 
 import com.mna.api.affinity.Affinity;
-import com.mna.entities.rituals.SpellRune;
+import com.mna.entities.sorcery.targeting.SpellSigil;
 import com.mna.api.blocks.tile.pylon.PylonTileBase;
 import com.mna.api.entities.construct.ConstructCapability;
 import com.mna.api.items.ChargeableItem;
@@ -119,7 +119,7 @@ extends PylonTileBase {
     }
 
     private void chargeSigils() {
-        this.forAllEntities(EntityInit.SPELL_RUNE.get(), false, (SpellRune e) -> {
+        this.forAllEntities(EntityInit.SPELL_RUNE.get(), false, (SpellSigil e) -> {
             if (e.isPermanent()) {
                 e.addCharge();
             }

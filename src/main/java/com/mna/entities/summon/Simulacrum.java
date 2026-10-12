@@ -350,7 +350,7 @@ implements OwnableEntity {
 
     public Player getOwner() {
         LivingEntity resolved;
-        if (this.__owner == null && (resolved = super.getOwner()) instanceof Player) {
+        if (this.__owner == null && (resolved = null) instanceof Player) {
             Player player;
             this.__owner = player = (Player)resolved;
         }

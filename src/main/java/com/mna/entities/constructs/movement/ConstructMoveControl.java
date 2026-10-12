@@ -22,6 +22,7 @@
 package com.mna.entities.constructs.movement;
 
 import com.mna.entities.constructs.animated.Construct;
+import net.minecraft.world.level.pathfinder.WalkNodeEvaluator;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.BlockTags;

@@ -241,7 +241,7 @@ extends BlockEntity {
         this.bb = null;
         int axisStacks = this.countStacksAlongAxis(this.getLevitateDir().getOpposite());
         BlockPos bbOffset = this.getBlockPos().relative(this.getLevitateDir(), (axisStacks + 1) * 50);
-        this.bb = new AABB(this.getBlockPos(), bbOffset.offset(this.getLevitateDir().getStepX() == 0 ? 1 : 0, this.getLevitateDir().getStepY() == 0 ? 1 : 0, this.getLevitateDir().getStepZ() == 0 ? 1 : 0));
+        this.bb = new AABB(net.minecraft.world.phys.Vec3.atLowerCornerOf(this.getBlockPos()), net.minecraft.world.phys.Vec3.atLowerCornerOf(bbOffset.offset(this.getLevitateDir().getStepX() == 0 ? 1 : 0, this.getLevitateDir().getStepY() == 0 ? 1 : 0, this.getLevitateDir().getStepZ() == 0 ? 1 : 0)));
     }
 
     private int countStacksAlongAxis(Direction axis) {

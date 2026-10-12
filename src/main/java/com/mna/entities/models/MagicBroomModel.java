@@ -50,7 +50,7 @@ extends EntityModel<T> {
         this.bone.xRot = ((MagicBroom)(entity)).getRotation();
     }
 
-    public void renderToBuffer(PoseStack poseStack, VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
+    public void renderToBuffer(PoseStack poseStack, VertexConsumer buffer, int packedLight, int packedOverlay, int color) {
         this.bone.render(poseStack, buffer, packedLight, packedOverlay);
     }
 }

@@ -121,6 +121,11 @@ extends AbstractArrow {
     public boolean isInGround() {
         return this.inGround;
     }
+
+    @Override
+    protected ItemStack getDefaultPickupItem() {
+        return ItemStack.EMPTY;
+    }
 }
 
 

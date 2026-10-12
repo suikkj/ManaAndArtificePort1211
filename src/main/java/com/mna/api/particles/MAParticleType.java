@@ -86,7 +86,7 @@ implements ParticleOptions {
         super(false);
     }
 
-    public MAParticleType(ParticleColor color, ParticleFloat scale, ParticleInt life, ParticleInt lifePadding, ParticleFloat gravity, ParticleBoolean physics, ParticleItemStack stack, IParticleMoveType mover, ParticleBoolean depthDisable) {
+    public MAParticleType(ParticleColor color, ParticleFloat scale, ParticleInt life, ParticleInt lifePadding, ParticleFloat gravity, ParticleBoolean physics, ParticleItemStack stack, IParticleMoveType mover, boolean depthDisable) {
         this.color = color;
         this.scale = scale;
         this.life = life;
@@ -95,7 +95,7 @@ implements ParticleOptions {
         this.physics = physics;
         this.stack = stack;
         this.mover = mover;
-        this.depthDisable = depthDisable;
+        this.disableDepthTest = depthDisable;
     }
 
     public MAParticleType(ParticleType<MAParticleType> type) {

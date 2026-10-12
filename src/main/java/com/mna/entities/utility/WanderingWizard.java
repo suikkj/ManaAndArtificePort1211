@@ -255,7 +255,7 @@ IAnimPacketSync<WanderingWizard> {
                 totalCount.increment();
                 boolean bl = isFinal = totalCount.getValue() >= merchantoffers.size();
                 if (count.getValue() >= 10 || isFinal) {
-                    ServerMessageDispatcher.sendWanderingWizardContainerMessage(((ServerPlayer)player).containerCounter, packetOffers, level, this.getVillagerXp(), this.showProgressBar(), this.canRestock(), isFinal, (ServerPlayer)player);
+                    ServerMessageDispatcher.sendWanderingWizardContainerMessage(com.mna.tools.MNAReflection.containerCounter((ServerPlayer)player), packetOffers, level, this.getVillagerXp(), this.showProgressBar(), this.canRestock(), isFinal, (ServerPlayer)player);
                     count.setValue(0);
                     packetOffers.clear();
                 }

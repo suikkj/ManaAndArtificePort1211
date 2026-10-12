@@ -104,7 +104,8 @@ extends ConstructAITask<ConstructUseItemOnBlock> {
                         if (result.consumesAction()) {
                             output = ((ItemStack)useResult.getObject()).copy();
                         } else {
-                            result = state.useItemOn(player.getItemInHand(playerHand), c.level(), player, playerHand, simResult);
+                            net.minecraft.world.ItemInteractionResult __uir = state.useItemOn(player.getItemInHand(playerHand), c.level(), player, playerHand, simResult);
+                            result = __uir.consumesAction() ? InteractionResult.sidedSuccess(c.level().isClientSide) : InteractionResult.PASS;
                             if (result.consumesAction()) {
                                 output = player.getItemInHand(playerHand).copy();
                             }

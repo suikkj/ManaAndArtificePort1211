@@ -149,6 +149,26 @@ extends NodeEvaluator {
         return this.getNeighbors_ground(p_77640_, current);
     }
 
+    @Override
+    public PathType getPathTypeOfMob(net.minecraft.world.level.pathfinder.PathfindingContext context, int x, int y, int z, Mob mob) {
+        return this.getBlockPathType((BlockGetter)context.level(), x, y, z, mob);
+    }
+
+    @Override
+    public PathType getPathType(net.minecraft.world.level.pathfinder.PathfindingContext context, int x, int y, int z) {
+        return this.getBlockPathType((BlockGetter)context.level(), x, y, z);
+    }
+
+    @Override
+    public PathType getPathTypeOfMob(net.minecraft.world.level.pathfinder.PathfindingContext context, int x, int y, int z, Mob mob) {
+        return this.getBlockPathType((BlockGetter)context.level(), x, y, z, mob);
+    }
+
+    @Override
+    public PathType getPathType(net.minecraft.world.level.pathfinder.PathfindingContext context, int x, int y, int z) {
+        return this.getBlockPathType((BlockGetter)context.level(), x, y, z);
+    }
+
     public PathType getBlockPathType(BlockGetter blockGetter, int x, int y, int z, Mob mob) {
         if (this.flying && !this.isInWater) {
             return this.getBlockPathType_flying(blockGetter, x, y, z, mob);

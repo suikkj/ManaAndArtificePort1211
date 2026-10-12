@@ -122,7 +122,7 @@ extends EntityModel<T> {
         }
     }
 
-    public void renderToBuffer(PoseStack poseStack, VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
+    public void renderToBuffer(PoseStack poseStack, VertexConsumer buffer, int packedLight, int packedOverlay, int color) {
         this.main.render(poseStack, buffer, packedLight, packedOverlay);
     }
 }

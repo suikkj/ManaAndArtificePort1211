@@ -121,6 +121,11 @@ extends AbstractArrow {
             this.remove(Entity.RemovalReason.DISCARDED);
         }
     }
+
+    @Override
+    protected ItemStack getDefaultPickupItem() {
+        return ItemStack.EMPTY;
+    }
 }
 
 

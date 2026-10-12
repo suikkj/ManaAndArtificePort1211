@@ -260,7 +260,6 @@ extends ThrownWeapon {
     }
 
     public void loadAdditional(CompoundTag nbt, net.minecraft.core.HolderLookup.Provider registries) {
-        super.loadAdditional(nbt, registries);
         if (nbt.contains("itemData")) {
             this.itemData = nbt.getCompound("itemData");
         }

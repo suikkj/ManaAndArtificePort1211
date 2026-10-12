@@ -90,7 +90,7 @@ implements BlockEntityRenderer<ElementalSentryTile> {
         float f6 = Mth.lerp((float)partialTicks, (float)tileEntityIn.pageTurningSpeed, (float)tileEntityIn.nextPageTurningSpeed);
         this.modelBook.setupAnim(f, Mth.clamp((float)f4, (float)0.0f, (float)1.0f), Mth.clamp((float)f5, (float)0.0f, (float)1.0f), f6);
         VertexConsumer ivertexbuilder = bufferIn.getBuffer(RenderType.entitySolid((ResourceLocation)affinityMaterials.getOrDefault(tileEntityIn.getAffinity(), affinityMaterials.get(Affinity.ARCANE))));
-        this.modelBook.renderToBuffer(matrixStackIn, ivertexbuilder, combinedLightIn, combinedOverlayIn, 1.0f, 1.0f, 1.0f, 1.0f);
+        this.modelBook.renderToBuffer(matrixStackIn, ivertexbuilder, combinedLightIn, combinedOverlayIn, -1);
         matrixStackIn.popPose();
         matrixStackIn.pushPose();
         matrixStackIn.translate(0.5f, 0.01f, 0.5f);

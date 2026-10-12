@@ -32,7 +32,8 @@ extends Event {
         return this.AuraEnchantment;
     }
     public static class Tick
-    extends AuraEvent {
+    extends AuraEvent
+    implements net.neoforged.bus.api.ICancellableEvent {
         private final LivingEntity wearer;
 
         public Tick(com.mna.enchantments.base.MAEnchantmentBase aurEnchantment, LivingEntity wearer) {
