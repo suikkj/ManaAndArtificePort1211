@@ -305,7 +305,7 @@ extends BlockEntity {
 
     public CompoundTag getUpdateTag(net.minecraft.core.HolderLookup.Provider registries) {
         CompoundTag tag = new CompoundTag();
-        this.saveAdditional(tag);
+        this.saveAdditional(tag, this.level.registryAccess());
         return tag;
     }
 

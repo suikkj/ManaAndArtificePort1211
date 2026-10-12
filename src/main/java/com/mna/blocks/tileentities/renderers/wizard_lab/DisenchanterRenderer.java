@@ -42,7 +42,7 @@ extends WizardLabRenderer<DisenchanterTile> {
             Vec3 start = Vec3.upFromBottomCenterOf((Vec3i)animatable.getBlockPos(), (double)1.0);
             Vec3 end = Vec3.upFromBottomCenterOf((Vec3i)animatable.getBlockPos(), (double)2.0);
             poseStack.translate(0.5, 2.0, 0.5);
-            WorldRenderUtil.renderBeam(animatable.getLevel(), partialTick, poseStack, bufferSource, packedLight, end, start, beamPct, new int[]{200, 200, 255}, 255, 0.065f, MARenderTypes.RITUAL_BEAM_RENDER_TYPE);
+            WorldRenderUtils.renderBeam(animatable.getLevel(), partialTick, poseStack, bufferSource, packedLight, end, start, beamPct, new int[]{200, 200, 255}, 255, 0.065f, MARenderTypes.RITUAL_BEAM_RENDER_TYPE);
             poseStack.popPose();
         }
         super.actuallyRender(poseStack, animatable, model, renderType, bufferSource, buffer, isReRender, partialTick, packedLight, packedOverlay, colour);

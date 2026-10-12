@@ -19,7 +19,7 @@ implements INoCreeperLingering {
 
     public boolean applyEffectTick(LivingEntity living, int amplifier) {
         if (living.level().isClientSide()) {
-            return;
+            return true;
 
         return true;
     }

@@ -2,6 +2,7 @@
 package com.mna.blocks.tileentities.pylon;
 
 import com.mna.api.affinity.Affinity;
+import com.mna.entities.rituals.SpellRune;
 import com.mna.api.blocks.tile.pylon.PylonTileBase;
 import com.mna.api.entities.construct.ConstructCapability;
 import com.mna.api.items.ChargeableItem;

@@ -624,7 +624,7 @@ IFactionSpecific {
         if (this.shape != null) {
             this.shape.getContainedAttributes().forEach(a -> this.shape.setValue((Attribute)(a), this.shape.getMaximumValue((Attribute)(a))));
         }
-        this.components.forEach((Consumer<ModifiedSpellPart<SpellEffect>>)((Consumer<ModifiedSpellPart>)c -> c.getContainedAttributes().forEach(a -> c.setValue((Attribute)((a)), this.shape.getMaximumValue((Attribute)((a)))))));
+        ((java.util.List<ModifiedSpellPart<SpellEffect>>)this.components).forEach(c -> c.getContainedAttributes().forEach(a -> c.setValue((Attribute)((a)), this.shape.getMaximumValue((Attribute)((a))))));
         this.recalculateSpellNumbers();
     }
 

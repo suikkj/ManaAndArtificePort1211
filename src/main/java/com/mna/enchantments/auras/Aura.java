@@ -132,7 +132,9 @@ extends MAEnchantmentBase {
         if (this._applicationPredicate != null && !this._applicationPredicate.test(source)) {
             return;
         }
-        if (NeoForge.EVENT_BUS.post(new AuraEvent.Tick(this, (LivingEntity)source))) {
+        AuraEvent.Tick __tickEvt = new AuraEvent.Tick(this, (LivingEntity)source);
+        NeoForge.EVENT_BUS.post(__tickEvt);
+        if (__tickEvt.isCanceled()) {
             return;
         }
         MNACap.get(source, PlayerMagicProvider.MAGIC).ifPresent(m -> {

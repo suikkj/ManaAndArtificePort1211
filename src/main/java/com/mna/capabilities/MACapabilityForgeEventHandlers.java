@@ -197,7 +197,7 @@ public class MACapabilityForgeEventHandlers {
         if (event.getLevel() instanceof Level) {
             MNACap.get((Level)event.getLevel(), WorldMagicProvider.MAGIC).ifPresent(w -> {
                 if (WardingCandleBlock.shouldEntityBeBlocked(event.getEntityType()) && w.isWithinWardingCandle(event.getPos())) {
-                    event.setCanGrief(false);
+                    // [PORT 1.21.1] MobSpawnEvent.SpawnPlacementCheck nao tem setResult/setCanGrief; bloqueio de spawn perdido
                 }
             });
         }
@@ -211,7 +211,7 @@ public class MACapabilityForgeEventHandlers {
         if (com.mna.tools.MATools.canChangeDimensions(event.getEntity())) {
             MNACap.get(event.getEntity().level(), WorldMagicProvider.MAGIC).ifPresent(w -> {
                 if (w.isWithinWardingCandle(event.getEntity().blockPosition()) && !GeneralConfigValues.WardingCandleWhitelist.contains(BuiltInRegistries.ENTITY_TYPE.getKey(event.getEntity().getType()).toString())) {
-                    event.setCanceled(true);
+                    event.setCanGrief(false);
                 }
             });
         }

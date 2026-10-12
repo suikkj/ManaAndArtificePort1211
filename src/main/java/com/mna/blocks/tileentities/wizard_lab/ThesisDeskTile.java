@@ -85,7 +85,7 @@ ISelectSpellComponents {
     @Override
     protected void onCraftStart(Player crafter) {
         if (crafter instanceof ServerPlayer) {
-            this.getItem(1).hurt(this.getInkDamage(), this.level.random, (ServerPlayer)crafter);
+            com.mna.api.tools.MNAItemData.hurt(this.getItem(1), this.getInkDamage(), this.level.random);
             if (this.getItem(1).getDamageValue() >= this.getItem(1).getMaxDamage()) {
                 this.setItem(1, ItemStack.EMPTY);
             }

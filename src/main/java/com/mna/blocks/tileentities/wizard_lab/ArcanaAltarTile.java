@@ -658,7 +658,7 @@ MenuProvider {
             this.requestingStack.clear();
             ListTag itemList = tag.getList("requestingStack", 8);
             itemList.forEach(t -> {
-                ResourceLocation rLoc = new ResourceLocation(((StringTag)t).getAsString());
+                ResourceLocation rLoc = ResourceLocation.parse(((StringTag)t).getAsString());
                 Item item = (Item)BuiltInRegistries.ITEM.get(rLoc);
                 if (item != null) {
                     this.requestingStack.add(item);

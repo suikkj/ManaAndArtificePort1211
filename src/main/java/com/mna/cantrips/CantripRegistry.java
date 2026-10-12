@@ -207,7 +207,7 @@ implements ICantripRegistry {
     }
 
     public static void dispel(Player player, ICantrip cantrip, InteractionHand hand) {
-        player.removeEffectsCuredBy(net.neoforged.neoforge.common.EffectCure.MILK);
+        player.removeEffectsCuredBy(net.neoforged.neoforge.common.EffectCures.MILK);
         SpellRecipe recipe = new SpellRecipe();
         recipe.setShape(Shapes.SELF);
         recipe.addComponent(Components.TRUE_INVISIBILITY);

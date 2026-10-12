@@ -36,13 +36,12 @@ implements INoCreeperLingering {
                     entity.level().getEntities((Entity)entity, entity.getBoundingBox().inflate((double)radius)).forEach(e -> {
                         if (e != entity && e.isAlive() && e instanceof LivingEntity) {
                             ((LivingEntity)e).addEffect(new MobEffectInstance(com.mna.api.tools.MAEffects.holder(this), 60, amplifier - 1));
-
-        return true;
-    }
+                        }
                     });
                 }
             }
         }
+        return true;
     }
 }
 

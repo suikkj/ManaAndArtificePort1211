@@ -45,12 +45,6 @@ extends SpawnEggItem {
         UNADDED_EGGS.add(this);
     }
 
-    public ModSpawnEggItem(java.util.function.Supplier<? extends EntityType<?>> entityTypeSupplier, int color_a, int color_b, Item.Properties properties) {
-        super(null, color_a, color_b, properties);
-        this.entityTypeSupplier = Lazy.of(entityTypeSupplier);
-        UNADDED_EGGS.add(this);
-    }
-
     public static void initUnaddedEggs() {
         Map EGGS = (Map)ObfuscationReflectionHelper.getPrivateValue(SpawnEggItem.class, null, (String)"BY_ID");
         DefaultDispenseItemBehavior defaultDispenseItemBehavior = new DefaultDispenseItemBehavior(){};

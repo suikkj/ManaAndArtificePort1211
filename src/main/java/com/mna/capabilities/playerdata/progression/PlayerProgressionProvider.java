@@ -107,7 +107,7 @@ public class PlayerProgressionProvider {
                 ListTag progressionSteps = cnbt.getList("progression_completion", 8);
                 Iterator it = progressionSteps.iterator();
                 while (it.hasNext()) {
-                    instance.addTierProgressionComplete(new ResourceLocation(((Tag)it.next()).getAsString()));
+                    instance.addTierProgressionComplete(ResourceLocation.parse(((Tag)it.next()).getAsString()));
                 }
             }
             for (Map.Entry f : Registries.Factions.getEntries()) {

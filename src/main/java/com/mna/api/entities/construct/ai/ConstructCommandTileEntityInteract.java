@@ -103,7 +103,7 @@ extends ConstructAITask<ConstructCommandTileEntityInteract<T, V>> {
         this._cached_te_ref = null;
         T te = this.getTileEntity();
         if (te != null && this.teClass.isInstance(te)) {
-            this._cached_te_ref = te;
+            this._cached_te_ref = (T)te;
             this.construct.getDiagnostics().pushTaskUpdate(this.getId(), this.guiIcon, IConstructDiagnostics.Status.RUNNING, Vec3.atCenterOf((Vec3i)this.blockPos));
         }
     }
@@ -116,7 +116,7 @@ extends ConstructAITask<ConstructCommandTileEntityInteract<T, V>> {
         }
         AbstractGolem c = this.getConstructAsEntity();
         if (this._cached_te_ref == null && c.level().isLoaded(this.blockPos) && this.teClass.isInstance(te = c.level().getBlockEntity(this.blockPos))) {
-            this._cached_te_ref = te;
+            this._cached_te_ref = (T)te;
         }
         return this._cached_te_ref;
     }

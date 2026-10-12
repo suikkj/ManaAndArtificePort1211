@@ -216,7 +216,7 @@ Consumer<FriendlyByteBuf> {
     }
 
     public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt) {
-        this.load(pkt.getTag());
+        this.loadAdditional(pkt.getTag(), this.level.registryAccess());
     }
 
     @Override

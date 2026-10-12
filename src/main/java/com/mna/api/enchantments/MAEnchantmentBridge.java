@@ -92,7 +92,7 @@ public final class MAEnchantmentBridge {
 
     /** HolderSet de itens a partir de uma tag (para EnchantmentDefinition). */
     public static HolderSet<Item> itemTag(net.minecraft.tags.TagKey<Item> tag) {
-        return net.minecraft.core.HolderSet.emptyNamed(net.minecraft.core.registries.BuiltInRegistries.ITEM, tag);
+        return net.minecraft.core.HolderSet.emptyNamed((net.minecraft.core.HolderOwner<Item>)(Object)net.minecraft.core.registries.BuiltInRegistries.ITEM, tag);
     }
 
     public static HolderSet<Item> itemTag(net.minecraft.resources.ResourceLocation tag) {

@@ -306,7 +306,7 @@ implements ICastingResourceGuiRegistry {
             public int getFrameV() {
                 Minecraft mc = Minecraft.getInstance();
                 Holder biome = mc.level.getBiome(mc.player.blockPosition());
-                if (biome.value().coldEnoughToSnow(mc.player.blockPosition())) {
+                if (biome.value().getBaseTemperature() < 0.15f) {
                     return 96;
                 }
                 if (biome.is(BiomeTags.SNOW_GOLEM_MELTS)) {
@@ -329,7 +329,7 @@ implements ICastingResourceGuiRegistry {
             public ItemStack getBadgeItem() {
                 Minecraft mc = Minecraft.getInstance();
                 Holder biome = mc.level.getBiome(mc.player.blockPosition());
-                if (biome.value().coldEnoughToSnow(mc.player.blockPosition())) {
+                if (biome.value().getBaseTemperature() < 0.15f) {
                     return HUD_BRIMSTONE_COLD.get();
                 }
                 if (biome.is(BiomeTags.SNOW_GOLEM_MELTS)) {

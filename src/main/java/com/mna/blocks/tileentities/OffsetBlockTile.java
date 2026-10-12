@@ -69,7 +69,6 @@ implements IOffsetTile {
     }
 
     public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt) {
-        super.onDataPacket(net, pkt);
         this.offset = NbtUtils.readBlockPos(pkt.getTag(), "offset").orElse(null);
     }
 

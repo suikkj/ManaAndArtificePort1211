@@ -122,7 +122,7 @@ public final class AttributeValuePair {
     }
 
     public static ImmutableList<AttributeValuePair> deepCopy(ImmutableList<AttributeValuePair> source) {
-        Object[] values = new AttributeValuePair[source.size()];
+        AttributeValuePair[] values = new AttributeValuePair[source.size()];
         int index = 0;
         for (AttributeValuePair pair : source) {
             values[index++] = pair.deepCopy();

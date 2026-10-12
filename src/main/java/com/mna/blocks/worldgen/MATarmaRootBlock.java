@@ -39,7 +39,9 @@ IDontCreateBlockItem {
         return SHAPE.move(vec3d.x, vec3d.y, vec3d.z);
     }
 
-    public void playerWillDestroy(Level worldIn, BlockPos pos, BlockState state, Player player) {
+    public BlockState playerWillDestroy(Level worldIn, BlockPos pos, BlockState state, Player player) {
+        super.playerWillDestroy(worldIn, pos, state, player);
+        return state;
         super.playerWillDestroy(worldIn, pos, state, player);
         if (player.getMainHandItem().isEmpty()) {
             player.hurt(player.damageSources().cactus(), 1.0f);

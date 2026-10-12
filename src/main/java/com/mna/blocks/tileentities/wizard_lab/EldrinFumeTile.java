@@ -91,7 +91,7 @@ extends WizardLabTile {
             return false;
         }
         FuelStatus fuelValues = this.getFuelValues(this.level, this.getItem(1));
-        if (fuelValues.getAffinity() != Affinity.UNKNOWN && fuelValues.getMoteBurnTime() > 0.0f && CommonHooks.getBurnTime((ItemStack)this.getItem(0), null) > 0) {
+        if (fuelValues.getAffinity() != Affinity.UNKNOWN && fuelValues.getMoteBurnTime() > 0.0f && ((ItemStack)this.getItem(0)).getBurnTime(null) > 0) {
             IWorldMagic worldMagic = MNACap.get((IWorldMagic)player.level(), WorldMagicProvider.MAGIC).orElse(null);
             if (worldMagic == null) {
                 return false;

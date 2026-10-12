@@ -60,13 +60,13 @@ public class PlayerMagicSerializer implements IAttachmentSerializer<Tag, com.mna
                 instance.setDidAllowFlying(cnbt.getBoolean("did_allow_flying"));
             }
             if (cnbt.contains("rift")) {
-                this.readInventory(instance.getRiftInventory(), cnbt.getCompound("rift"));
+                this.readInventory(instance.getRiftInventory(), cnbt.getCompound("rift"), provider);
             }
             if (cnbt.contains("grimoire")) {
-                this.readInventory(instance.getGrimoireInventory(), cnbt.getCompound("grimoire"));
+                this.readInventory(instance.getGrimoireInventory(), cnbt.getCompound("grimoire"), provider);
             }
             if (cnbt.contains("rote")) {
-                this.readInventory(instance.getRoteInventory(), cnbt.getCompound("rote"));
+                this.readInventory(instance.getRoteInventory(), cnbt.getCompound("rote"), provider);
             }
             if (cnbt.contains("magic_xp")) {
                 instance.setMagicXP(cnbt.getInt("magic_xp"));
@@ -107,9 +107,9 @@ public class PlayerMagicSerializer implements IAttachmentSerializer<Tag, com.mna
         nbt.putInt("air_jumps", instance.getAirJumps());
         nbt.putInt("ember_cooldown", instance.getEmberCooldown());
         nbt.putInt("spell_color_override", instance.getParticleColorOverride());
-        nbt.put("rift", this.saveInventory(instance.getRiftInventory()));
-        nbt.put("grimoire", this.saveInventory(instance.getGrimoireInventory()));
-        nbt.put("rote", this.saveInventory(instance.getRoteInventory()));
+        nbt.put("rift", this.saveInventory(instance.getRiftInventory(), provider));
+        nbt.put("grimoire", this.saveInventory(instance.getGrimoireInventory(), provider));
+        nbt.put("rote", this.saveInventory(instance.getRoteInventory(), provider));
         nbt.putBoolean("did_allow_flying", instance.didAllowFlying());
         for (Affinity aff : Affinity.values()) {
             nbt.putFloat("affinity_" + aff.toString().toLowerCase(), instance.getAffinityDepth(aff));
@@ -129,7 +129,7 @@ public class PlayerMagicSerializer implements IAttachmentSerializer<Tag, com.mna
         return nbt;
     }
 
-    private CompoundTag saveInventory(Container inventory) {
+    private CompoundTag saveInventory(Container inventory, HolderLookup.Provider provider) {
         NonNullList<ItemStack> items = NonNullList.create();
         for (int i = 0; i < inventory.getContainerSize(); ++i) {
             items.add(inventory.getItem(i));
@@ -139,7 +139,7 @@ public class PlayerMagicSerializer implements IAttachmentSerializer<Tag, com.mna
         return inv;
     }
 
-    private void readInventory(Container inventory, CompoundTag nbt) {
+    private void readInventory(Container inventory, CompoundTag nbt, HolderLookup.Provider provider) {
         NonNullList<ItemStack> items = NonNullList.withSize(inventory.getContainerSize(), ItemStack.EMPTY);
         MNAItemData.loadItems(nbt, items, provider);
         for (int i = 0; i < items.size(); ++i) {

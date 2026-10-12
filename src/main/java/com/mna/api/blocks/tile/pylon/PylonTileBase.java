@@ -514,7 +514,7 @@ MenuProvider {
     }
 
     public ClientboundBlockEntityDataPacket getUpdatePacket() {
-        return ClientboundBlockEntityDataPacket.create((BlockEntity)this, () -> {
+        return ClientboundBlockEntityDataPacket.create((BlockEntity)this, (be, reg) -> {
             CompoundTag tag = new CompoundTag();
             tag.putInt("powerLevel", this.powerUpTicks);
             tag.putInt("radius", this.radius);

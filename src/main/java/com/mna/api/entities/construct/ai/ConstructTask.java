@@ -78,7 +78,7 @@ public class ConstructTask {
         Class<? extends ConstructAITask<?>> aiClass = this.getAIClass();
         ConstructAITask<?> inst = null;
         try {
-            Constructor<ConstructAITask<?>> ctor = aiClass.getConstructor(IConstruct.class, ResourceLocation.class);
+            Constructor<? extends ConstructAITask<?>> ctor = aiClass.getConstructor(IConstruct.class, ResourceLocation.class);
             if (ctor != null) {
                 inst = ctor.newInstance(construct, this.icon_texture);
             } else {

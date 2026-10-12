@@ -38,7 +38,7 @@ import net.minecraft.client.resources.model.ModelResourceLocation;
 public class BlockClientInit {
     @SubscribeEvent
     public static void onClientSetupEvent(FMLClientSetupEvent event) {
-        BlockInit.BLOCKS.getEntries().stream().map(RegistryObject::get).forEach(block -> {
+        BlockInit.BLOCKS.getEntries().stream().map(h -> h.get()).forEach(block -> {
             if (block instanceof ICutoutBlock || block instanceof FlowerPotBlock) {
                 ItemBlockRenderTypes.setRenderLayer((Block)block, (RenderType)RenderType.cutout());
             } else if (block instanceof ITranslucentBlock) {

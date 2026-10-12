@@ -12,7 +12,7 @@ package com.mna.enchantments.base;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ItemStack;
 
-public abstract class MADamageEnchantmentBase extends com.mna.enchantments.framework.MAEnchantmentBase {
+public abstract class MADamageEnchantmentBase extends com.mna.enchantments.base.MAEnchantmentBase {
     /**
      * [PORT 1.21.1] DamageEnchantment foi removido (dano agora e DataComponent
      * ENCHANTMENT_ENTITY_DAMAGE). Classe mantida como marcador de familia.

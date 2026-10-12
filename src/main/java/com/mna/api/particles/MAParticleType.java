@@ -86,7 +86,7 @@ implements ParticleOptions {
         super(false);
     }
 
-    public MAParticleType(java.awt.Color color, float scale, int life, int lifePadding, float gravity, float physics, ItemStack stack, org.joml.Vector3f mover, boolean depthDisable) {
+    public MAParticleType(ParticleColor color, ParticleFloat scale, ParticleInt life, ParticleInt lifePadding, ParticleFloat gravity, ParticleBoolean physics, ParticleItemStack stack, IParticleMoveType mover, ParticleBoolean depthDisable) {
         this.color = color;
         this.scale = scale;
         this.life = life;
