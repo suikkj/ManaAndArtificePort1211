@@ -241,8 +241,12 @@ perderam o `getResult()/setResult()` herdado. Migrados para enum próprio
 | ✅ _fix13/_fix15 (efeitos: add/removeAttributeModifiers 1.21.1 + `IMNAEffectHook`/`MAEffectHooks` via MobEffectEvent; handleUpdateTag(Provider); Enchantments curto; RecipeHolder sites) | 2.097 | −41 |
 | ✅ _fix16 (ContainerMagiciansWorkbench: RecipeBookMenu<CraftingInput,CraftingRecipe> + getRecipeFor/assemble novos; LargeContainer: `MNAMenuAccess` reflexão p/ campos private; CantripRegistry: TriConsumer method-refs + curePotionEffects→EffectCure) | 2.097 | −106 |
 | ✅ _fix17 (BuiltInRegistries.ENCHANTMENT não existe → `MNAEnchantmentRegistry` (registryAccess do server) + overloads por ResourceKey no `MNAEnchantmentHelper`; ItemEldritchOrb/ManaweavingRecipe/EffectDisjunction/EnchantmentBehaviors migrados) | 1.937 | −160 |
-| ✅ _fix18/_fix19 (allowedEnchantments → `ArrayList<ResourceKey<Enchantment>>` em MagicStaff/BoneScythe/FortuneRing/HellfireTrident/AstroBlade; RLoc `fromNamespaceAndPath`; renames 1.21.1 MOB_LOOTING→LOOTING, BLOCK_EFFICIENCY→EFFICIENCY, FISHING_SPEED→LURE, POWER_ARROWS→POWER; `getDefaultAttributeModifiers()` no-arg) | **1.881** | −56 |
-| **➜ ATUAL** | **1.881** | **−45.059 desde o início (46.940)** |
+| ✅ _fix18/_fix19 (allowedEnchantments → `ArrayList<ResourceKey<Enchantment>>` em MagicStaff/BoneScythe/FortuneRing/HellfireTrident/AstroBlade; RLoc `fromNamespaceAndPath`; renames 1.21.1 MOB_LOOTING→LOOTING, BLOCK_EFFICIENCY→EFFICIENCY, FISHING_SPEED→LURE, POWER_ARROWS→POWER; `getDefaultAttributeModifiers()` no-arg) | 1.881 | −56 |
+| ✅ _fix20 (hurtAndBreak lambda→slot, `ResourceLocation(a,b)`→`fromNamespaceAndPath` ×15) | 1.852 | −29 |
+| ✅ _fix20b/_fix21 (MNAItemData: reparo de linhas automutiladas + imports ×22; TooltipContext→`.level()` ×15; ClipContext null→cast ×16) | 1.809 | −43 |
+| ✅ _fix22/_fix23 (FallingBlockEntity.blockState via `MNAFallingBlocks`; EffectHelper/LanternWraith/WitchHunter `Holder<MobEffect>`; `symbol: get()` → `value()`/holder direto ×11 arq) | 1.770 | −39 |
+| ✅ _fix24 (ModelManager.getModel/RegisterAdditional → `ModelResourceLocation.standalone` ×10 arq) | **1.751** | −19 |
+| **➜ ATUAL** | **1.751** | **−45.189 desde o início (46.940)** |
 
 ### 🔴 Bug de medição que quase passou (2026-10-11)
 Ao migrar `getEnchantmentLevel`, um `.replace()` removeu o `(` de abertura de
@@ -325,47 +329,47 @@ Verificação por `grep` no `_build_last.log` do build atual (1.881 erros):
 
 ---
 
-## 🔜 FILA ATUAL DE ERROS — checada no build 1.881 (2026-10-12)
+## 🔜 FILA ATUAL DE ERROS — checada no build 1.751 (2026-10-12, pós lotes _fix20–_fix24)
 
 **Regra:** sempre que um lote for aplicado, re-verificar esta seção com
 `grep 'error:' _build_last.log` e ATUALIZAR as contagens — nada sai daqui sem
 evidência de queda no build.
 
-### Maiores arquivos (por contagem)
+**Caiu nesta rodada (✓ resolvidos):** `new ResourceLocation(a,b)` privado (15→0), `EquipmentSlot is not a functional interface` (14→0), `symbol: MNAItemData` (14→0), `TooltipContext cannot be converted` (15→0), `ClipContext is ambiguous` (15→0), `blockState has private access in FallingBlockEntity` (14→0), `Holder<MobEffect> cannot be converted` (14→0), `symbol: get()` (18→0), `ResourceLocation cannot be converted` (19→0).
+
+### Maiores arquivos (por contagem — build 1.751)
 - [ ] `Construct.java` (31)
 - [ ] `DemonLord.java` (29)
 - [ ] `GuiOcculus.java` (27)
 - [ ] `ItemInteractionsInit.java` (21)
-- [ ] `PractitionersPouch.java` (19)
 - [ ] `BlockUtils.java` (19)
 - [ ] `ConstructNodeEvaluator.java` (18)
+- [ ] `PractitionersPouch.java` (18)
 - [ ] `GuiLodestarV2.java` (17)
 - [ ] `FaerieQueen.java` (17)
 - [ ] `GuiGuideBook.java` (16)
 - [ ] `HUDOverlayRenderer.java` (15)
-- [ ] `VillagerRegistry.java` (15)
+- [ ] `MAParticleType.java` (15)
 
-### Padrões (prioridade de lote; contagens do build 1.881)
+### Padrões (prioridade de lote; contagens do build 1.751)
 - [ ] `inference variable T has incompatible equality constraints` (90) — chamadas `MNACap.get(...)`/holders em tipos concretos; analisar por arquivo
 - [ ] `Object cannot be converted to X` (77) — resíduos de raw types do CFR
 - [ ] `invalid method reference` (37) — method-refs em interfaces raw (padrão `(TriConsumer)((TriConsumer)X::m)`)
 - [ ] `Entity cannot be converted to X` (30) — casts em renderers/GeckoLib (setupAnim/render)
-- [ ] `ResourceLocation cannot be converted` (19) — API que agora pede `ResourceKey` (ex.: `dimension()`)
-- [ ] `symbol: get()` (18) — `.get()` em tipo errado (resíduo de Optional/Holder)
 - [ ] `RecipeHolder<CAP#1>` (16) — mais sites `getRecipes()/byKey` → `.value()`/`.id()`
-- [ ] **`new ResourceLocation(a,b)` private (15)** — trocar por `ResourceLocation.fromNamespaceAndPath(...)`
-- [ ] **`ClipContext is ambiguous` (15)** — `new ClipContext(...)` com args raw; tipar `Vec3`/`ClipContext.Block/Fluid`
-- [ ] `Matrix3f cannot be converted to Pose` (15) — B4 residual
-- [ ] **`TooltipContext cannot be converted` (15)** — `appendHoverText` com `Item.TooltipContext` errado
-- [ ] **`symbol: MNAItemData` (14)** — arquivos usando `MNAItemData.*` sem import (faltou nos lotes 8/17)
-- [ ] `symbol: level` (14) — vars renomeadas (`world`→`level`)
-- [ ] `Holder<MobEffect> cannot be converted` (14) — mais sites `MobEffectInstance`/`hasEffect`/`getEffect`
-- [ ] **`blockState has private access in FallingBlockEntity` (14)** — usar getter/reflexão
-- [ ] **`EquipmentSlot is not a functional interface` (14)** — `hurtAndBreak(n, ent, e -> {})` → `hurtAndBreak(n, ent, slot)`
-- [ ] `MACapabilityForgeEventHandlers` (13) — `event.addCapability` não existe → registrar handlers via `RegisterCapabilitiesEvent` (NeoForge)
+- [ ] `Matrix3f cannot be converted to Pose` (15) — B4 residual (WorldRenderUtils)
+- [ ] `symbol: level` (14) — vars renomeadas (`world`→`level`) em contextos migrados
+- [ ] **`symbol: getValue()` (13)** — resíduo de Holder/RegistryObject (`getValue()`→`value()`/`get()`)
+- [ ] **`symbol: hasTag()` (13)** — `ItemStack.hasTag()` residual → `has(DataComponents.CUSTOM_DATA)` (mesmo padrão do getTag)
+- [ ] **`symbol: Type` (13)** — campo/enum `Type` sombreando (padrão do CodexBreadcrumb) ou import faltando
+- [ ] **`put(Item,CauldronInteraction)` (13)** — API de CauldronInteraction mudou (map.put com Holder<Item>?)
+- [ ] `MobEffect cannot be converted` (12) — mais sites MobEffect↔Holder
+- [ ] **`AbstractContainerMenu cannot be converted` (12)** — resíduos de menus (RecipeBookMenu/ctores)
+- [ ] **`orElse(ItemStack)` (12)** — Optional com tipo errado (resíduo de parseOptional/holders)
+- [ ] `MACapabilityForgeEventHandlers` (13→verificar) — `event.addCapability` não existe → `RegisterCapabilitiesEvent` (NeoForge)
 - [ ] `EntityInit` (12) — B17 residual
 - [ ] `DamageEventHandler` (10) — B16 residual
-- [ ] `ModelResourceLocation` (19) — B3 residual
+- [ ] `ModelResourceLocation` (19→verificar) — B3 residual (após _fix24)
 
 ---
 
