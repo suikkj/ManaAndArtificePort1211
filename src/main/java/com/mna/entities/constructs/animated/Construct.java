@@ -552,7 +552,7 @@ IItemHandlerModifiable {
                             this.setDeltaMovement(this.getDeltaMovement().add(0.0, (double)(0.01f * this.getBuoyancy()), 0.0));
                         }
                     } else {
-                        double depth = this.getFluidTypeHeight(NeoForgeMod.WATER_TYPE);
+                        double depth = this.getFluidTypeHeight((NeoForgeMod.WATER_TYPE).value());
                         float yCap = depth > 0.25 || this.horizontalCollision ? 0.05f : 0.001f;
                         Vec3 newDelta = this.getDeltaMovement().add(0.0, 0.01 * (double)this.getBuoyancy(), 0.0);
                         if (newDelta.y > (double)yCap) {
@@ -980,7 +980,7 @@ IItemHandlerModifiable {
         return false;
     }
 
-    public boolean canBreatheUnderwater() {
+    public boolean mnaCanBreatheUnderwater() {
         return true;
     }
 
@@ -3387,7 +3387,7 @@ IItemHandlerModifiable {
             if (!Construct.this.canSwim() || Construct.this.hasControllingPassenger()) {
                 return false;
             }
-            return Construct.this.isInWater() && Construct.this.getFluidTypeHeight(NeoForgeMod.WATER_TYPE) > Construct.this.getFluidJumpThreshold() || Construct.this.isInLava();
+            return Construct.this.isInWater() && Construct.this.getFluidTypeHeight((NeoForgeMod.WATER_TYPE).value()) > Construct.this.getFluidJumpThreshold() || Construct.this.isInLava();
         }
 
         public void tick() {

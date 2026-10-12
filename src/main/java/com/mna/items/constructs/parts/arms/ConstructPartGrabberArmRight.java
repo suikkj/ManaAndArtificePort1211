@@ -42,7 +42,7 @@ extends ItemConstructPart {
     public Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers(EquipmentSlot slot) {
         if (this.defaultModifiers == null) {
             ImmutableMultimap.Builder builder = ImmutableMultimap.builder();
-            builder.put((Attributes.BLOCK_INTERACTION_RANGE), new AttributeModifier(ManaAndArtificeMod.REACH_DISTANCE_UUID, (double)this.reachIncrease, AttributeModifier.Operation.ADD_VALUE));
+            builder.put((Attributes.BLOCK_INTERACTION_RANGE), new AttributeModifier(ManaAndArtificeMod.REACH_DISTANCE_ID, (double)this.reachIncrease, AttributeModifier.Operation.ADD_VALUE));
             this.defaultModifiers = builder.build();
         }
         return slot == EquipmentSlot.MAINHAND ? this.defaultModifiers : super.getDefaultAttributeModifiers(slot);

@@ -57,7 +57,7 @@ extends BaseServerMessage implements CustomPacketPayload {
         try {
             int count = buf.readInt();
             for (int i = 0; i < count; ++i) {
-                msg._roteInventory.add(net.minecraft.world.item.ItemStack.OPTIONAL_STREAM_CODEC.decode(buf));
+                msg._roteInventory.add(net.minecraft.world.item.ItemStack.OPTIONAL_STREAM_CODEC.decode((net.minecraft.network.RegistryFriendlyByteBuf)buf));
             }
         }
         catch (IllegalArgumentException | IndexOutOfBoundsException e) {

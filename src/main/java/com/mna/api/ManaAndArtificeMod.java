@@ -52,6 +52,7 @@ public class ManaAndArtificeMod {
     public static final String ID = "mna";
     public static final Logger LOGGER = LogManager.getLogger();
     public static final UUID REACH_DISTANCE_UUID = UUID.fromString("cfb81e6d-8447-4e92-8683-ae23800cecca");
+    public static final net.minecraft.resources.ResourceLocation REACH_DISTANCE_ID = net.minecraft.resources.ResourceLocation.fromNamespaceAndPath("mna", "reach_distance");
     private static java.util.function.Supplier<net.neoforged.neoforge.attachment.AttachmentType<IPlayerMagic>> __magicCap;
     private static java.util.function.Supplier<net.neoforged.neoforge.attachment.AttachmentType<IPlayerProgression>> __progressionCap;
     private static java.util.function.Supplier<net.neoforged.neoforge.attachment.AttachmentType<IWorldMagic>> __worldMagicCap;

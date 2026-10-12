@@ -179,7 +179,7 @@ extends AbstractGolem {
         this.entityData.set(CONTAINER_POSITION, pos);
     }
 
-    public boolean canBreatheUnderwater() {
+    public boolean mnaCanBreatheUnderwater() {
         return true;
     }
 

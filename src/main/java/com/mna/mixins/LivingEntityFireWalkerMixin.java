@@ -30,7 +30,7 @@ implements IForgeLivingEntity {
         if (state.getTags().anyMatch(t -> t == FluidTags.LAVA) && ((DemonArmorItem)ItemInit.DEMON_ARMOR_CHEST.get()).isSetEquipped(self)) {
             cir.setReturnValue(!self.isCrouching());
         }
-        if (state.getTags().anyMatch(t -> t == FluidTags.WATER) && self.hasEffect(com.mna.api.tools.MAEffects.holder(EffectInit.WATER_WALKING.get())) && self.getFluidTypeHeight(NeoForgeMod.WATER_TYPE) < self.getFluidJumpThreshold() * 1.5) {
+        if (state.getTags().anyMatch(t -> t == FluidTags.WATER) && self.hasEffect(com.mna.api.tools.MAEffects.holder(EffectInit.WATER_WALKING.get())) && self.getFluidTypeHeight((NeoForgeMod.WATER_TYPE).value()) < self.getFluidJumpThreshold() * 1.5) {
             cir.setReturnValue(!self.isCrouching());
         }
     }

@@ -777,7 +777,7 @@ extends GuiJEIDisable<ContainerGuideBook> {
             if (rr.getType().equals("spell_part")) {
                 ISpellComponent part = this.lookupSpell(rr.getResourceLocations()[0]);
                 if (part == null) continue;
-                btn = new ImageSpellPartButton(x, y, 28, 18, 56, 0, 18, GuiTextures.Items.GUIDE_BOOK_WIDGETS, 256, 256, button -> this.displayRecipe(rr, true), part.getGuiIcon(), part.getRegistryName());
+                ImageButton btn = new ImageSpellPartButton(x, y, 28, 18, 56, 0, 18, GuiTextures.Items.GUIDE_BOOK_WIDGETS, 256, 256, button -> this.displayRecipe(rr, true), part.getGuiIcon(), part.getRegistryName());
                 this.addRenderableWidget(btn);
                 this.relatedTabs.add(btn);
             } else {
@@ -787,7 +787,7 @@ extends GuiJEIDisable<ContainerGuideBook> {
                     stack = pattern.get() instanceof AMRecipeBase ? ((AMRecipeBase)pattern.get()).getGuiRepresentationStack() : ((Recipe)pattern.get()).getResultItem(this.minecraft.level.registryAccess());
                 }
                 if (!stack.isEmpty()) {
-                    btn = new ImageItemStackButton(x, y, 28, 18, 56, 0, 18, GuiTextures.Items.GUIDE_BOOK_WIDGETS, 256, 256, button -> this.displayRecipe(rr, true), this::setTooltip, stack);
+                    ImageButton btn = new ImageItemStackButton(x, y, 28, 18, 56, 0, 18, GuiTextures.Items.GUIDE_BOOK_WIDGETS, 256, 256, button -> this.displayRecipe(rr, true), this::setTooltip, stack);
                     this.addRenderableWidget(btn);
                     this.relatedTabs.add(btn);
                 }

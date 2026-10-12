@@ -21,7 +21,7 @@ public class TrickeryBracelet
 extends ChargeableItem
 implements IPreEnchantedItem<TrickeryBracelet> {
     private static final float MAX_IRE = 1.6666666E-4f;
-    private static final AttributeModifier TRICKERY_SPEED_BOOST = new AttributeModifier(UUID.fromString("4c9ebd60-cb05-4ad3-99db-0f2d99b32013"), 0.25, AttributeModifier.Operation.ADD_VALUE);
+    private static final AttributeModifier TRICKERY_SPEED_BOOST = new AttributeModifier(ResourceLocation.fromNamespaceAndPath("mna", "4c9ebd60-cb05-4ad3-99db-0f2d99b32013"), 0.25, AttributeModifier.Operation.ADD_VALUE);
 
     public TrickeryBracelet() {
         super(new Item.Properties().setNoRepair().rarity(Rarity.UNCOMMON), 6000.0f);

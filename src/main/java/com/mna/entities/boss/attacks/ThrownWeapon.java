@@ -168,7 +168,7 @@ extends AbstractHurtingProjectile
     }
 
     public void readSpawnData(FriendlyByteBuf additionalData) {
-        this.renderStack = net.minecraft.world.item.ItemStack.OPTIONAL_STREAM_CODEC.decode(additionalData);
+        this.renderStack = net.minecraft.world.item.ItemStack.OPTIONAL_STREAM_CODEC.decode((net.minecraft.network.RegistryFriendlyByteBuf)additionalData);
         String trailParticle = additionalData.readUtf();
         try {
             this.trailParticle = ParticleArgument.readParticle((StringReader)new StringReader(trailParticle), (HolderLookup)this.level().holderLookup(Registries.PARTICLE_TYPE));

@@ -59,7 +59,7 @@ extends AbstractHorse {
         return false;
     }
 
-    public boolean canBreatheUnderwater() {
+    public boolean mnaCanBreatheUnderwater() {
         return true;
     }
 

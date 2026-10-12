@@ -244,8 +244,8 @@ implements Comparable<LootDrop> {
         drop.minDrop = buf.readInt();
         drop.maxDrop = buf.readInt();
         drop.fortuneLevel = buf.readInt();
-        drop.item = net.minecraft.world.item.ItemStack.OPTIONAL_STREAM_CODEC.decode(buf);
-        drop.smeltedItem = net.minecraft.world.item.ItemStack.OPTIONAL_STREAM_CODEC.decode(buf);
+        drop.item = net.minecraft.world.item.ItemStack.OPTIONAL_STREAM_CODEC.decode((net.minecraft.network.RegistryFriendlyByteBuf)buf);
+        drop.smeltedItem = net.minecraft.world.item.ItemStack.OPTIONAL_STREAM_CODEC.decode((net.minecraft.network.RegistryFriendlyByteBuf)buf);
         drop.chance = buf.readFloat();
         drop.sortIndex = buf.readFloat();
         drop.enchanted = buf.readBoolean();

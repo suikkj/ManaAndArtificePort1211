@@ -57,7 +57,7 @@ IRelic {
         ImmutableMultimap.Builder builder = ImmutableMultimap.builder();
         builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_ID, 10.0, AttributeModifier.Operation.ADD_VALUE));
         builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_ID, -3.0, AttributeModifier.Operation.ADD_VALUE));
-        builder.put(Attributes.ATTACK_KNOCKBACK, new AttributeModifier(UUID.fromString("e6b1b07c-9824-4d3e-be88-24714cc3fe0c"), 2.0, AttributeModifier.Operation.ADD_VALUE));
+        builder.put(Attributes.ATTACK_KNOCKBACK, new AttributeModifier(ResourceLocation.fromNamespaceAndPath("mna", "e6b1b07c-9824-4d3e-be88-24714cc3fe0c"), 2.0, AttributeModifier.Operation.ADD_VALUE));
         this.defaultModifiers = builder.build();
     }
 

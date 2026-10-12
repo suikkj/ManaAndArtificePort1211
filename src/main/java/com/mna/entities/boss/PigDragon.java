@@ -343,7 +343,7 @@ extends BossMonster<PigDragon> {
 
     private class DiveBomb
     extends Goal {
-        private static final AttributeModifier DIVE_BONUS = new AttributeModifier(UUID.fromString("22b8d8eb-16a3-4ee3-80b7-73b19b8e9006"), 1.0, AttributeModifier.Operation.ADD_VALUE);
+        private static final AttributeModifier DIVE_BONUS = new AttributeModifier(ResourceLocation.fromNamespaceAndPath("mna", "22b8d8eb-16a3-4ee3-80b7-73b19b8e9006"), 1.0, AttributeModifier.Operation.ADD_VALUE);
 
         private DiveBomb() {
         }
