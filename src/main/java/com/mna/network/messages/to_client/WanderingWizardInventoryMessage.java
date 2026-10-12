@@ -77,7 +77,9 @@ extends BaseClientMessage implements CustomPacketPayload {
         AbstractContainerMenu container = player.containerMenu;
         if (this.containerId == container.containerId && container instanceof ContainerWanderingWizard) {
             ContainerWanderingWizard wwContainer = (ContainerWanderingWizard)container;
-            wwContainer.setClientSideOffers(new MerchantOffers(this.offers.createTag()));
+            MerchantOffers __mo = new MerchantOffers();
+            __mo.addAll(this.offers);
+            wwContainer.setClientSideOffers(__mo);
             wwContainer.setXp(this.xp);
             wwContainer.setFinalized(this.isFinalized);
         }

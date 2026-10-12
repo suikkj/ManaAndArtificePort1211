@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class FireproofMixin {
     @Inject(at={@At(value="RETURN")}, method={"fireImmune"}, cancellable=true)
     public void mna$fireImmune(CallbackInfoReturnable<Boolean> cir) {
-        ItemEntity self = (ItemEntity)this;
+        ItemEntity self = (ItemEntity)(Object)this;
         ItemStack stack = self.getItem();
         int level = com.mna.api.enchantments.MNAEnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.FIREPROOF, stack);
         if (level > 0) {

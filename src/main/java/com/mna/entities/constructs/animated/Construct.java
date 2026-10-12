@@ -388,7 +388,7 @@ IItemHandlerModifiable {
                 this.regenerate(1.0f);
                 if (!this.forceEndDefeated) {
                     LivingEntity owner = this.getOwner() == null ? this : this.getOwner();
-                    List<Mob> nearbyHostiles = this.level().getEntitiesOfClass(Mob.class, this.getBoundingBox().inflate(16.0), arg_0 -> this.lambda$tickDefeated$0((LivingEntity)owner, arg_0));
+                    List<Mob> nearbyHostiles = this.level().getEntitiesOfClass(Mob.class, this.getBoundingBox().inflate(16.0), arg_0 -> !SummonUtils.isTargetFriendly((Entity)arg_0, (LivingEntity)owner) && this.getSensing().hasLineOfSight((Entity)arg_0));
                     if (nearbyHostiles.size() > 0) {
                         this.defeatedCounter += 5;
                     }
@@ -3329,9 +3329,6 @@ IItemHandlerModifiable {
         return this.getOwnerId();
     }
 
-    private   boolean lambda$tickDefeated$0(LivingEntity owner, Mob e) {
-        return !SummonUtils.isTargetFriendly((Entity)e, owner) && this.getSensing().hasLineOfSight((Entity)e);
-    }
 
     static enum ActionFlags {
         RANGED_ATTACK(1),

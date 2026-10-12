@@ -104,7 +104,7 @@ public class ItemInteractionsInit {
 
     static ItemInteractionResult fillFluidJug(BlockState pBlockState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, ItemStack stack, FluidStack toInsert, Predicate<BlockState> pStatePredicate, SoundEvent pFillSound) {
         if (!pStatePredicate.test(pBlockState)) {
-            return ItemInteractionResult.PASS;
+            return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
         }
         if (!pLevel.isClientSide()) {
             MutableBoolean success = new MutableBoolean(false);

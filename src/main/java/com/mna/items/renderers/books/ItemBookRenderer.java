@@ -138,7 +138,7 @@ extends BlockEntityWithoutLevelRenderer {
             float f = (float)(i >> 16 & 0xFF) / 255.0f;
             float f1 = (float)(i >> 8 & 0xFF) / 255.0f;
             float f2 = (float)(i & 0xFF) / 255.0f;
-            p_229112_2_.putBulkData(matrixstack$entry, bakedquad, f, f1, f2, p_229112_5_, p_229112_6_);
+            p_229112_2_.putBulkData(matrixstack$entry, bakedquad, f, f1, f2, 1.0f, p_229112_5_, p_229112_6_);
         }
     }
 }

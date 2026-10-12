@@ -21,7 +21,7 @@ import org.spongepowered.asm.mixin.injection.At;
 public class PlayerElytra {
     @ModifyExpressionValue(method={"tryToStartFallFlying"}, at={@At(value="INVOKE", target="Lnet/minecraft/world/item/ItemStack;canElytraFly(Lnet/minecraft/world/entity/LivingEntity;)Z", remap=false)})
     public boolean elytraOverride(boolean original) {
-        return original || EffectSoar.canSoar((LivingEntity)this);
+        return original || EffectSoar.canSoar((LivingEntity)(Object)this);
     }
 }
 

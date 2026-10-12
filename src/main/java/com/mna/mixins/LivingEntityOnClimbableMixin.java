@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class LivingEntityOnClimbableMixin {
     @Inject(at={@At(value="RETURN")}, method={"onClimbable"}, cancellable=true)
     public void mna$onClimbable(CallbackInfoReturnable<Boolean> cir) {
-        LivingEntity self = (LivingEntity)this;
+        LivingEntity self = (LivingEntity)(Object)this;
         if (self.hasEffect(com.mna.api.tools.MAEffects.holder(EffectInit.SPIDER_CLIMBING.get())) && self.horizontalCollision) {
             cir.setReturnValue(true);
         }

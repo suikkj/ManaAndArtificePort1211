@@ -305,7 +305,7 @@ IRadialMenuItem {
 
     @Override
     public void appendHoverText(ItemStack stack, net.minecraft.world.item.Item.TooltipContext worldIn, List<Component> tooltip, TooltipFlag flagIn) {
-        ManaweavingPattern stored = ItemManaweaverWand.getStoredPattern(worldIn, stack);
+        ManaweavingPattern stored = ItemManaweaverWand.getStoredPattern((net.minecraft.world.level.Level)null, stack);
         if (stored != null) {
             tooltip.add((Component)Component.translatable((String)"item.mna.manaweaver_wand.auto", (Object[])new Object[]{Component.translatable((String)stored.getId().toString()).getString()}).withStyle(ChatFormatting.GOLD));
         } else {

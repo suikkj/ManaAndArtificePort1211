@@ -41,7 +41,7 @@ public class ClientPacketListenerMixin {
     @Inject(at={@At(value="RETURN")}, method={"handleRemoveMobEffect"})
     public void mna$handleRemoveMobEffect(ClientboundRemoveMobEffectPacket packet, CallbackInfo cir) {
         Entity entity = packet.getEntity((Level)this.level);
-        if (entity instanceof LivingEntity && packet.getEffect() == EffectInit.REDUCE.get()) {
+        if (entity instanceof LivingEntity && packet.getEffect().value() == EffectInit.REDUCE.get()) {
             entity.refreshDimensions();
         }
     }
@@ -50,7 +50,7 @@ public class ClientPacketListenerMixin {
     public void mna$handleUpdateMobEffect(ClientboundUpdateMobEffectPacket packet, CallbackInfo cir) {
         MobEffect mobeffect;
         Entity entity = this.level.getEntity(packet.getEntityId());
-        if (entity != null && entity instanceof LivingEntity && (mobeffect = packet.getEffect()) != null && entity instanceof LivingEntity && mobeffect == EffectInit.REDUCE.get()) {
+        if (entity != null && entity instanceof LivingEntity && (mobeffect = packet.getEffect().value()) != null && entity instanceof LivingEntity && mobeffect == EffectInit.REDUCE.get()) {
             entity.refreshDimensions();
         }
     }

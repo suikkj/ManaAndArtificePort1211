@@ -120,7 +120,7 @@ extends BaseClientMessage implements CustomPacketPayload {
             Entity entity = world.getEntity(this.getEntityID());
             if (entity != null && entity instanceof Player) {
                 Player resolvedPlayer = (Player)entity;
-                MNACap.get(resolvedPlayer, ParticleAuraProvider.AURA).ifPresent(a -> a.load(this.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag()));
+                MNACap.get(resolvedPlayer, ParticleAuraProvider.AURA).ifPresent(a -> a.load(new CompoundTag()));
             }
         }
     }

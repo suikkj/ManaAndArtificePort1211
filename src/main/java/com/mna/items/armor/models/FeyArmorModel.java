@@ -21,9 +21,6 @@ extends GeoModel<FeyArmorItem> {
     }
 
     public ResourceLocation getTextureResource(FeyArmorItem object) {
-        IPlayerMagic magic;
-        Player player;
-        IPlayerProgression progression;
         LivingEntity livingEntity = FeyArmorItem.renderEntity;
         if (livingEntity instanceof Player) {
             Player player = (Player)livingEntity;

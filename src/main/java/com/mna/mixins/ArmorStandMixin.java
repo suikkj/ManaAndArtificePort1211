@@ -31,7 +31,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class ArmorStandMixin {
     @Inject(method={"interactAt(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/InteractionResult;"}, at={@At(value="HEAD")}, cancellable=true)
     public void mna_convertToConstructStand(Player player, Vec3 vector, InteractionHand hand, CallbackInfoReturnable<InteractionResult> callback) {
-        ArmorStand self = (ArmorStand)this;
+        ArmorStand self = (ArmorStand)(Object)this;
         ItemStack stack = player.getItemInHand(hand);
         if (ConstructAssemblyStand.checkAndConvert(self, stack, player, hand)) {
             callback.setReturnValue(InteractionResult.SUCCESS);

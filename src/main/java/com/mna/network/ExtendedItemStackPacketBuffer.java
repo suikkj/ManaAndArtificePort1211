@@ -78,7 +78,7 @@ extends FriendlyByteBuf {
         }
         this.readerIndex(i);
         try {
-            return NbtIo.read((DataInput)new ByteBufInputStream(this.copy()), (NbtAccounter)new NbtAccounter(0x200000L));
+            return NbtIo.read((DataInput)new ByteBufInputStream(this.copy()), (NbtAccounter)NbtAccounter.create(0x200000L));
         }
         catch (IOException ioexception) {
             throw new EncoderException((Throwable)ioexception);
@@ -110,7 +110,7 @@ extends FriendlyByteBuf {
     public <T> void writeExtendedCollection(Collection<T> p_178353_, BiConsumer<ExtendedItemStackPacketBuffer, T> p_178354_) {
         this.writeVarInt(p_178353_.size());
         for (T t : p_178353_) {
-            p_178354_.accept(this, (ExtendedItemStackPacketBuffer)(t));
+            p_178354_.accept(this, (ExtendedItemStackPacketBuffer)(Object)t);
         }
     }
 }

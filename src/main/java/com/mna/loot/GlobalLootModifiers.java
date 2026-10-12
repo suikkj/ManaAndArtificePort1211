@@ -51,9 +51,9 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 
 @EventBusSubscriber(modid="mna", bus=EventBusSubscriber.Bus.MOD)
 public class GlobalLootModifiers {
-    public static final DeferredRegister<Codec<? extends IGlobalLootModifier>> LOOT_MODIFIERS = DeferredRegister.create((ResourceKey)NeoForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, (String)"mna");
-    public static final DeferredHolder<Codec<? extends IGlobalLootModifier>, ? extends Codec<? extends IGlobalLootModifier>> DROPS_CHIMERITE = LOOT_MODIFIERS.register("drops_chimerite", AddChimeriteModifier.CODEC);
-    public static final DeferredHolder<Codec<? extends IGlobalLootModifier>, ? extends Codec<? extends IGlobalLootModifier>> BEHEADING = LOOT_MODIFIERS.register("beheading", BeheadingModifier.CODEC);
+    public static final DeferredRegister<com.mojang.serialization.MapCodec<? extends IGlobalLootModifier>> LOOT_MODIFIERS = DeferredRegister.create((ResourceKey)NeoForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, (String)"mna");
+    public static final DeferredHolder<com.mojang.serialization.MapCodec<? extends IGlobalLootModifier>, ? extends com.mojang.serialization.MapCodec<? extends IGlobalLootModifier>> DROPS_CHIMERITE = LOOT_MODIFIERS.register("drops_chimerite", AddChimeriteModifier.CODEC);
+    public static final DeferredHolder<com.mojang.serialization.MapCodec<? extends IGlobalLootModifier>, ? extends com.mojang.serialization.MapCodec<? extends IGlobalLootModifier>> BEHEADING = LOOT_MODIFIERS.register("beheading", BeheadingModifier.CODEC);
 
     @SubscribeEvent
     public static final void init(FMLCommonSetupEvent event) {

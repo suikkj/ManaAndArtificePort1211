@@ -41,7 +41,7 @@ extends LootItemConditionalFunction {
     }
 
     protected ItemStack run(ItemStack stack, LootContext context) {
-        List parts = ItemInit.ITEMS.getEntries().stream().filter(i -> i.isPresent() && i.get() instanceof ItemConstructPart && ((ItemConstructPart)i.get()).canBeInLoot(context)).map(i -> (ItemConstructPart)i.get()).collect(Collectors.toList());
+        List parts = ItemInit.ITEMS.getEntries().stream().filter(i -> i.isBound() && i.get() instanceof ItemConstructPart && ((ItemConstructPart)i.get()).canBeInLoot(context)).map(i -> (ItemConstructPart)i.get()).collect(Collectors.toList());
         if (parts.size() == 0) {
             return ItemStack.EMPTY;
         }

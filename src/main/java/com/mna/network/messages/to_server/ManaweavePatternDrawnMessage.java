@@ -105,11 +105,11 @@ extends BaseServerMessage implements CustomPacketPayload {
         if (!player.level().isLoaded(messagePos)) {
             return;
         }
-        Recipe pattern = player.level().getRecipeManager().byKey(this.getPatternID()).orElse(null);
-        if (!(pattern instanceof IManaweavePattern)) {
+        net.minecraft.world.item.crafting.RecipeHolder<?> pattern = player.level().getRecipeManager().byKey(this.getPatternID()).orElse(null);
+        if (!(pattern.value() instanceof IManaweavePattern)) {
             return;
         }
-        if (!EventDispatcher.DispatchManaweavePatternDrawn((IManaweavePattern)pattern, (LivingEntity)player)) {
+        if (!EventDispatcher.DispatchManaweavePatternDrawn((IManaweavePattern)pattern.value(), (LivingEntity)player)) {
             return;
         }
         BlockPos storedPos = ItemManaweaverWand.getStoredBlockPos(player.getItemInHand(this.getHand()));

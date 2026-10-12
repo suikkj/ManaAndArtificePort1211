@@ -45,7 +45,7 @@ extends MagicStaff {
         if (!player.level().isClientSide() && entity instanceof LivingEntity && !SummonUtils.isTargetFriendly((Entity)(living = (LivingEntity)entity), (LivingEntity)player) && (woodlandCreatures = MATags.getEntitiesOnTag(MATags.EntityTypes.WOODLAND_CREATURES)).size() > 0 && (summon = woodlandCreatures.get((int)(Math.random() * (double)woodlandCreatures.size()))) != null) {
             Entity summonInst;
             BlockPos summonPos = entity.blockPosition().offset(new Vec3i((int)(-2.0 + Math.random() * 4.0), 0, (int)(-2.0 + Math.random() * 4.0)));
-            if (player.level().getBlockState(summonPos).isPathfindable((BlockGetter)player.level(), summonPos, PathComputationType.LAND) && (summonInst = summon.create(player.level())) instanceof Mob) {
+            if (player.level().getBlockState(summonPos).isPathfindable(PathComputationType.LAND) && (summonInst = summon.create(player.level())) instanceof Mob) {
                 Mob summonMob = (Mob)summonInst;
                 summonInst.setPos(Vec3.atBottomCenterOf((Vec3i)summonPos));
                 SummonUtils.setSummon(summonMob, (LivingEntity)player, 60);

@@ -62,7 +62,7 @@ extends BaseClientMessage implements CustomPacketPayload {
         if (!magicCap.isPresent()) {
             return;
         }
-        IPlayerMagic magicProperties = (IPlayerMagic)magicCap;
+        IPlayerMagic magicProperties = (IPlayerMagic)magicCap.get();
         if (magicProperties == null) {
             return;
         }

@@ -60,8 +60,8 @@ extends BaseClientMessage implements CustomPacketPayload {
     @Override
     public void Handle(Level world, Player player) {
         world.getRecipeManager().byKey(this.structureID).ifPresent(r -> {
-            if (r instanceof MultiblockDefinition) {
-                MultiblockDefinition mbd = (MultiblockDefinition)r;
+            if (r.value() instanceof MultiblockDefinition) {
+                MultiblockDefinition mbd = (MultiblockDefinition)r.value();
                 mbd.deserializeCoreBlocks(this._data);
             }
         });
