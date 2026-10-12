@@ -38,10 +38,10 @@ public class BlockItemRegistration {
                     helper.register(BuiltInRegistries.BLOCK.getKey(block), blockItem);
                 }
             });
-            helper.register(net.minecraft.core.registries.Registries.ITEM, ResourceLocation.fromNamespaceAndPath("mna", "aum"), () -> (Item)new BlockItem((Block)BlockInit.AUM.get(), new Item.Properties()));
-            helper.register(net.minecraft.core.registries.Registries.ITEM, ResourceLocation.fromNamespaceAndPath("mna", "cerublossom"), () -> (Item)new BlockItem((Block)BlockInit.CERUBLOSSOM.get(), new Item.Properties()));
-            helper.register(net.minecraft.core.registries.Registries.ITEM, ResourceLocation.fromNamespaceAndPath("mna", "tarma_root"), () -> (Item)new BlockItem((Block)BlockInit.TARMA_ROOT.get(), new Item.Properties()));
-            helper.register(net.minecraft.core.registries.Registries.ITEM, ResourceLocation.fromNamespaceAndPath("mna", "desert_nova"), () -> (Item)new BlockItem((Block)BlockInit.DESERT_NOVA.get(), new Item.Properties()));
+            helper.register(ResourceLocation.fromNamespaceAndPath("mna", "aum"), (Item)new BlockItem((Block)BlockInit.AUM.get(), new Item.Properties()));
+            helper.register(ResourceLocation.fromNamespaceAndPath("mna", "cerublossom"), (Item)new BlockItem((Block)BlockInit.CERUBLOSSOM.get(), new Item.Properties()));
+            helper.register(ResourceLocation.fromNamespaceAndPath("mna", "tarma_root"), (Item)new BlockItem((Block)BlockInit.TARMA_ROOT.get(), new Item.Properties()));
+            helper.register(ResourceLocation.fromNamespaceAndPath("mna", "desert_nova"), (Item)new BlockItem((Block)BlockInit.DESERT_NOVA.get(), new Item.Properties()));
         });
         ManaAndArtifice.LOGGER.info("M&A -> Block Items Registered");
     }

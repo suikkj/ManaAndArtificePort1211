@@ -97,8 +97,8 @@ extends BaseClientMessage implements CustomPacketPayload {
     }
 
     public static AuraSyncMessageToClient fromPlayer(Player player) {
-        java.util.Optional<ParticleAuraProvider> aura = MNACap.get(player, ParticleAuraProvider.AURA);
-        CompoundTag tag = aura.isPresent() ? ((ParticleAura)aura.get()).save() : new CompoundTag();
+        java.util.Optional<com.mna.capabilities.particles.ParticleAura> aura = MNACap.get(player, ParticleAuraProvider.AURA);
+        CompoundTag tag = aura.isPresent() ? aura.get().save() : new CompoundTag();
         AuraSyncMessageToClient msg = new AuraSyncMessageToClient(player.getId(), tag);
         return msg;
     }
@@ -114,7 +114,7 @@ extends BaseClientMessage implements CustomPacketPayload {
             BlockEntity be = world.getBlockEntity(this.getBlockPos());
             if (be != null && be instanceof ParticleEmitterTile) {
                 ParticleEmitterTile peTile = (ParticleEmitterTile)be;
-                peTile.setData(this.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag());
+                peTile.setData(this.tag.copy());
             }
         } else {
             Entity entity = world.getEntity(this.getEntityID());

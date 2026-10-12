@@ -232,7 +232,7 @@ implements ISpellHelper {
 
     public static SpellCastingResult Affect(@Nullable ItemStack stack, ISpellDefinition recipe, Level world, SpellSource source, SpellTarget targetHint, SpellContext context) {
         try {
-            Object efct;
+            net.minecraft.world.effect.MobEffectInstance efct = null;
             if (!recipe.isValid()) {
                 return SpellCastingResultCode.INVALID_RECIPE.createResult();
             }
@@ -301,12 +301,12 @@ implements ISpellHelper {
                 world.playSound(null, (Entity)source.getCaster(), spellSound, SoundSource.PLAYERS, 0.5f, pitch);
             }
             if (!world.isClientSide) {
-                world.getChunkAt(BlockPos.containing(MNACap.get((Position)source.getOrigin())), ChunkMagicProvider.MAGIC).ifPresent(cm -> cm.addResidualMagic(recipe.getManaCost()));
+                com.mna.api.tools.MNACap.get(world.getChunkAt(BlockPos.containing(source.getOrigin())), com.mna.capabilities.CapabilitiesInit.CHUNK_MAGIC).ifPresent(cm -> cm.addResidualMagic(recipe.getManaCost()));
             }
             if (shape.spawnsTargetEntity()) {
-                efct = source.getCaster();
-                if (efct instanceof Player) {
-                    Player player = (Player)efct;
+                net.minecraft.world.entity.Entity efctEntity = source.getCaster();
+                if (efctEntity instanceof Player) {
+                    Player player = (Player)efctEntity;
                     EntityUtil.suppressInvisibilityEffects((LivingEntity)player);
                 }
                 HashMap<SpellEffect, ComponentApplicationResult> targetResult = new HashMap<SpellEffect, ComponentApplicationResult>();

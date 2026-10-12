@@ -175,21 +175,21 @@ extends TextureSheetParticle {
 
     protected float getU0() {
         if (this.stack != null && !this.stack.isEmpty()) {
-            return this.sprite.getU((double)((this.uo + 1.0f) / 4.0f * 16.0f));
+            return this.sprite.getU((this.uo + 1.0f) / 4.0f * 16.0f);
         }
         return super.getU0();
     }
 
     protected float getU1() {
         if (this.stack != null && !this.stack.isEmpty()) {
-            return this.sprite.getU((double)(this.uo / 4.0f * 16.0f));
+            return this.sprite.getU(this.uo / 4.0f * 16.0f);
         }
         return super.getU1();
     }
 
     protected float getV0() {
         if (this.stack != null && !this.stack.isEmpty()) {
-            return this.sprite.getV((double)(this.vo / 4.0f * 16.0f));
+            return this.sprite.getV(this.vo / 4.0f * 16.0f);
         }
         return super.getV0();
     }

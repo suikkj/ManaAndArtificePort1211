@@ -174,7 +174,7 @@ public class ManaAndArtifice {
             }
 
             public float unclampedCall(ItemStack stack, @Nullable ClientLevel world, @Nullable LivingEntity living, int some_number) {
-                LivingEntity entity;
+                net.minecraft.world.entity.Entity entity;
                 Object object = entity = living != null ? living : (LivingEntity)stack.getEntityRepresentation();
                 if (entity == null) {
                     return 0.0f;
