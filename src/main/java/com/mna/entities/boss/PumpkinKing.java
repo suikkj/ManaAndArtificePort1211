@@ -126,7 +126,7 @@ implements IAnimPacketSync<PumpkinKing> {
         this.goalSelector.addGoal(5, (Goal)new RandomStrollGoal((PathfinderMob)this, (double)0.35f));
         this.goalSelector.addGoal(8, (Goal)new LookAtPlayerGoal((Mob)this, Player.class, 8.0f));
         this.targetSelector.addGoal(1, (Goal)new HurtByTargetGoal((PathfinderMob)this, new Class[0]));
-        this.targetSelector.addGoal(2, (Goal)new NearestAttackableTargetGoal(this, Player.class, 10, true, false, le -> true));
+        this.targetSelector.addGoal(2, (Goal)new NearestAttackableTargetGoal<Player>(this, Player.class, 10, true, false, le -> true));
     }
 
     @Override

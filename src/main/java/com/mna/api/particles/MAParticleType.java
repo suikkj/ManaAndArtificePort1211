@@ -28,8 +28,6 @@ import com.mna.api.particles.parameters.ParticleInt;
 import com.mna.api.particles.parameters.ParticleItemStack;
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import com.mojang.datafixers.kinds.App;
-import com.mojang.datafixers.kinds.Applicative;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import javax.annotation.Nullable;
@@ -51,7 +49,7 @@ implements ParticleOptions {
     private IParticleMoveType mover;
     private ParticleItemStack stack;
     public boolean disableDepthTest;
-    public static final com.mojang.serialization.MapCodec<MAParticleType> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group((App)Codec.INT.fieldOf("color").forGetter(d -> d.color != null ? d.color.getColor() : 1), (App)Codec.FLOAT.fieldOf("scale").forGetter(d -> Float.valueOf(d.scale != null ? d.scale.value() : 1.0f)), (App)Codec.INT.fieldOf("life").forGetter(d -> d.life != null ? d.life.value() : 20), (App)Codec.INT.fieldOf("lifePadding").forGetter(d -> d.lifePadding != null ? d.lifePadding.value() : 0), (App)Codec.FLOAT.fieldOf("gravity").forGetter(d -> Float.valueOf(d.gravity != null ? d.gravity.value() : 0.0f)), (App)Codec.BOOL.fieldOf("physics").forGetter(d -> d.physics != null ? d.physics.value() : false), (App)Codec.BOOL.fieldOf("disableDepthTest").forGetter(d -> d.disableDepthTest)).apply((Applicative)instance, MAParticleType::new));
+    public static final com.mojang.serialization.MapCodec<MAParticleType> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(Codec.INT.fieldOf("color").forGetter(d -> d.color != null ? d.color.getColor() : 1), Codec.FLOAT.fieldOf("scale").forGetter(d -> Float.valueOf(d.scale != null ? d.scale.value() : 1.0f)), Codec.INT.fieldOf("life").forGetter(d -> d.life != null ? d.life.value() : 20), Codec.INT.fieldOf("lifePadding").forGetter(d -> d.lifePadding != null ? d.lifePadding.value() : 0), Codec.FLOAT.fieldOf("gravity").forGetter(d -> Float.valueOf(d.gravity != null ? d.gravity.value() : 0.0f)), Codec.BOOL.fieldOf("physics").forGetter(d -> d.physics != null ? d.physics.value() : false), Codec.BOOL.fieldOf("disableDepthTest").forGetter(d -> d.disableDepthTest)).apply(instance, MAParticleType::new));
 
     /** [PORT 1.21.1] ParticleOptions$Deserializer foi REMOVIDO; leitura virou StreamCodec. */
     static final net.minecraft.network.codec.StreamCodec<net.minecraft.network.RegistryFriendlyByteBuf, MAParticleType> STREAM_CODEC = net.minecraft.network.codec.StreamCodec.of((buf, value) -> value.writeToNetwork(buf), MAParticleType::readFromNetwork);

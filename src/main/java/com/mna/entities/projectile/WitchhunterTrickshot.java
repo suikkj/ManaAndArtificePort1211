@@ -122,7 +122,7 @@ extends Entity {
         if (this.level().isClientSide()) {
             return;
         }
-        MobEffect effect = this.getEffect();
+        MobEffect effect = this.getEffect().value();
         if (effect == null) {
             return;
         }

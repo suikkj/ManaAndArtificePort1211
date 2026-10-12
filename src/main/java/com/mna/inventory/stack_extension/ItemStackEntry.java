@@ -17,8 +17,6 @@ package com.mna.inventory.stack_extension;
 
 import com.mna.ManaAndArtifice;
 import com.mna.inventory.stack_extension.SlotInfoTable;
-import com.mojang.datafixers.kinds.App;
-import com.mojang.datafixers.kinds.Applicative;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.DynamicOps;
@@ -30,7 +28,7 @@ import net.minecraft.world.item.ItemStack;
 import org.apache.logging.log4j.Logger;
 
 public class ItemStackEntry {
-    public static Codec<ItemStackEntry> CODEC = RecordCodecBuilder.create(instance -> instance.group((App)ItemStack.CODEC.fieldOf("item").forGetter(o -> o.stack), (App)Codec.LONG.fieldOf("count").forGetter(o -> o.count), (App)SlotInfoTable.CODEC.optionalFieldOf("info").forGetter(o -> o.info == null || o.info.isEmpty() ? Optional.empty() : Optional.of(o.info))).apply((Applicative)instance, (a, b, c) -> new ItemStackEntry((ItemStack)a, (long)b, c.orElse(new SlotInfoTable()))));
+    public static Codec<ItemStackEntry> CODEC = RecordCodecBuilder.create(instance -> instance.group(ItemStack.CODEC.fieldOf("item").forGetter(o -> o.stack), Codec.LONG.fieldOf("count").forGetter(o -> o.count), SlotInfoTable.CODEC.optionalFieldOf("info").forGetter(o -> o.info == null || o.info.isEmpty() ? Optional.empty() : Optional.of(o.info))).apply(instance, (a, b, c) -> new ItemStackEntry((ItemStack)a, (long)b, c.orElse(new SlotInfoTable()))));
     public static ItemStackEntry EMPTY = new ItemStackEntry(ItemStack.EMPTY);
     private ItemStack stack;
     private long count;

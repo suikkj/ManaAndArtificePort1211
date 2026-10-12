@@ -3,8 +3,6 @@ package com.mna.loot.modifiers;
 
 import com.google.common.base.Suppliers;
 import com.mna.enchantments.framework.EnchantmentInit;
-import com.mojang.datafixers.kinds.App;
-import com.mojang.datafixers.kinds.Applicative;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
@@ -26,7 +24,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 
 public class BeheadingModifier
 extends LootModifier {
-    public static final Supplier<com.mojang.serialization.MapCodec<BeheadingModifier>> CODEC = Suppliers.memoize(() -> RecordCodecBuilder.create(inst -> BeheadingModifier.codecStart((RecordCodecBuilder.Instance)inst).and((App)Codec.FLOAT.fieldOf("chancePerLevel").forGetter(m -> Float.valueOf(m.chancePerLevel))).and((App)BuiltInRegistries.ENTITY_TYPE.getCodec().fieldOf("mobType").forGetter(m -> m.mobType)).and((App)BuiltInRegistries.ITEM.getCodec().fieldOf("head").forGetter(m -> m.head)).apply((Applicative)inst, BeheadingModifier::new)));
+    public static final Supplier<com.mojang.serialization.MapCodec<BeheadingModifier>> CODEC = Suppliers.memoize(() -> RecordCodecBuilder.create(inst -> BeheadingModifier.codecStart((RecordCodecBuilder.Instance)inst).and(Codec.FLOAT.fieldOf("chancePerLevel").forGetter(m -> Float.valueOf(m.chancePerLevel))).and(BuiltInRegistries.ENTITY_TYPE.getCodec().fieldOf("mobType").forGetter(m -> m.mobType)).and(BuiltInRegistries.ITEM.getCodec().fieldOf("head").forGetter(m -> m.head)).apply(inst, BeheadingModifier::new)));
     private final float chancePerLevel;
     private final Item head;
     private final EntityType<?> mobType;

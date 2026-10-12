@@ -12,8 +12,6 @@
 package com.mna.inventory.stack_extension;
 
 import com.mna.inventory.stack_extension.SlotInfoBase;
-import com.mojang.datafixers.kinds.App;
-import com.mojang.datafixers.kinds.Applicative;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import java.util.HashMap;
@@ -24,7 +22,7 @@ import javax.annotation.Nullable;
 import net.minecraft.nbt.CompoundTag;
 
 public class SlotInfoTable {
-    public static Codec<SlotInfoTable> CODEC = RecordCodecBuilder.create(instance -> instance.group((App)CompoundTag.CODEC.listOf().fieldOf("info").forGetter(o -> o.info.values().stream().map(SlotInfoBase::getTag).collect(Collectors.toList()))).apply((Applicative)instance, SlotInfoTable::new));
+    public static Codec<SlotInfoTable> CODEC = RecordCodecBuilder.create(instance -> instance.group(CompoundTag.CODEC.listOf().fieldOf("info").forGetter(o -> o.info.values().stream().map(SlotInfoBase::getTag).collect(Collectors.toList()))).apply(instance, SlotInfoTable::new));
     private final Map<String, SlotInfoBase<?>> info = new HashMap();
 
     public SlotInfoTable() {

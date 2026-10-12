@@ -27,8 +27,8 @@ import net.minecraft.client.resources.model.ModelResourceLocation;
 public class BlockItemRegistration {
     @SubscribeEvent
     public static void onRegisterItems(RegisterEvent event) {
-        event.register(BuiltInRegistries.ITEM.getRegistryKey(), helper -> {
-            BlockInit.BLOCKS.getEntries().stream().filter(b -> !(b.get() instanceof IDontCreateBlockItem) && !(b.get() instanceof FlowerPotBlock)).map(RegistryObject::get).forEach(block -> {
+        event.register(BuiltInRegistries.ITEM.key(), helper -> {
+            BlockInit.BLOCKS.getEntries().stream().filter(b -> !(b.get() instanceof IDontCreateBlockItem) && !(b.get() instanceof FlowerPotBlock)).map(b -> b.get()).forEach(block -> {
                 Item.Properties properties = new Item.Properties();
                 if (block instanceof IOffsetPlace) {
                     OffsetPlacerItem blockItem = new OffsetPlacerItem((Block)block, properties, ((IOffsetPlace)block)::adjustPlacement);
@@ -38,10 +38,10 @@ public class BlockItemRegistration {
                     helper.register(BuiltInRegistries.BLOCK.getKey(block), blockItem);
                 }
             });
-            helper.register(ResourceKey.create(ResourceKey.createRegistryKey(ResourceLocation.fromNamespaceAndPath("mna", "aum"))), ResourceLocation.fromNamespaceAndPath("mna", "aum"), () -> new BlockItem((Block)BlockInit.AUM.get(), new Item.Properties()));
-            helper.register(ResourceKey.create(ResourceKey.createRegistryKey(ResourceLocation.fromNamespaceAndPath("mna", "cerublossom"))), ResourceLocation.fromNamespaceAndPath("mna", "cerublossom"), () -> new BlockItem((Block)BlockInit.CERUBLOSSOM.get(), new Item.Properties()));
-            helper.register(ResourceKey.create(ResourceKey.createRegistryKey(ResourceLocation.fromNamespaceAndPath("mna", "tarma_root"))), ResourceLocation.fromNamespaceAndPath("mna", "tarma_root"), () -> new BlockItem((Block)BlockInit.TARMA_ROOT.get(), new Item.Properties()));
-            helper.register(ResourceKey.create(ResourceKey.createRegistryKey(ResourceLocation.fromNamespaceAndPath("mna", "desert_nova"))), ResourceLocation.fromNamespaceAndPath("mna", "desert_nova"), () -> new BlockItem((Block)BlockInit.DESERT_NOVA.get(), new Item.Properties()));
+            helper.register(net.minecraft.core.registries.Registries.ITEM, ResourceLocation.fromNamespaceAndPath("mna", "aum"), () -> new BlockItem((Block)BlockInit.AUM.get(), new Item.Properties()));
+            helper.register(net.minecraft.core.registries.Registries.ITEM, ResourceLocation.fromNamespaceAndPath("mna", "cerublossom"), () -> new BlockItem((Block)BlockInit.CERUBLOSSOM.get(), new Item.Properties()));
+            helper.register(net.minecraft.core.registries.Registries.ITEM, ResourceLocation.fromNamespaceAndPath("mna", "tarma_root"), () -> new BlockItem((Block)BlockInit.TARMA_ROOT.get(), new Item.Properties()));
+            helper.register(net.minecraft.core.registries.Registries.ITEM, ResourceLocation.fromNamespaceAndPath("mna", "desert_nova"), () -> new BlockItem((Block)BlockInit.DESERT_NOVA.get(), new Item.Properties()));
         });
         ManaAndArtifice.LOGGER.info("M&A -> Block Items Registered");
     }

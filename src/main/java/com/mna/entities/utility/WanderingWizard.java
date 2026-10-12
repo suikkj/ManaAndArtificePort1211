@@ -392,7 +392,7 @@ IAnimPacketSync<WanderingWizard> {
         this.goalSelector.addGoal(10, (Goal)new LookAtPlayerGoal((Mob)this, Mob.class, 8.0f));
         this.goalSelector.addGoal(11, new PlayIdleAnimationGoal<WanderingWizard>(this, WanderingWizard::canPlayIdleAnim, WanderingWizard::onIdleAnimStart, WanderingWizard::onIdleAnimStop, new Pair("animation.WanderingWizard.read_scroll", 187)));
         this.targetSelector.addGoal(2, (Goal)new HurtByTargetGoal((PathfinderMob)this, new Class[0]));
-        this.targetSelector.addGoal(3, (Goal)new NearestAttackableTargetGoal(this, Mob.class, 5, false, false, p_234199_0_ -> p_234199_0_ instanceof Enemy && !(p_234199_0_ instanceof Creeper)));
+        this.targetSelector.addGoal(3, (Goal)new NearestAttackableTargetGoal<Mob>(this, Mob.class, 5, false, false, p_234199_0_ -> p_234199_0_ instanceof Enemy && !(p_234199_0_ instanceof Creeper)));
     }
 
     public State state() {

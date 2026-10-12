@@ -78,6 +78,7 @@ public class AnimusBlock
 extends Mob
 implements Enemy,
 PlayerRideableJumping {
+    private int mnaNoJumpDelay = 0;
     protected static final EntityDataAccessor<BlockPos> ORIGIN = SynchedEntityData.defineId(AnimusBlock.class, (EntityDataSerializer)EntityDataSerializers.BLOCK_POS);
     protected static final EntityDataAccessor<Integer> BLOCK_STATE_ID = SynchedEntityData.defineId(AnimusBlock.class, (EntityDataSerializer)EntityDataSerializers.INT);
     protected static final EntityDataAccessor<Integer> DURATION = SynchedEntityData.defineId(AnimusBlock.class, (EntityDataSerializer)EntityDataSerializers.INT);
@@ -195,7 +196,7 @@ PlayerRideableJumping {
 
     protected void onEffectAdded(MobEffectInstance pEffectInstance, Entity pEntity) {
         super.onEffectAdded(pEffectInstance, pEntity);
-        MobEffect effect = pEffectInstance.getEffect();
+        MobEffect effect = pEffectInstance.getEffect().value();
         if (effect == EffectInit.LEVITATION.get() || effect == MobEffects.LEVITATION || effect == EffectInit.SOAR.get()) {
             this.setNoGravity(true);
         }
@@ -203,7 +204,7 @@ PlayerRideableJumping {
 
     protected void onEffectRemoved(MobEffectInstance pEffectInstance) {
         super.onEffectRemoved(pEffectInstance);
-        MobEffect effect = pEffectInstance.getEffect();
+        MobEffect effect = pEffectInstance.getEffect().value();
         if (!(effect != EffectInit.LEVITATION.get() && effect != MobEffects.LEVITATION && effect != EffectInit.SOAR.get() || this.fallTile != null && MATags.isBlockIn(this.fallTile.getBlock(), MATags.Blocks.ANIMUS_FLYING))) {
             this.setNoGravity(false);
         }
@@ -317,7 +318,7 @@ PlayerRideableJumping {
                 areaeffectcloud.setRadiusOnUse(-0.5f);
                 areaeffectcloud.setWaitTime(10);
                 areaeffectcloud.setRadiusPerTick(-areaeffectcloud.getRadius() / (float)areaeffectcloud.getDuration());
-                areaeffectcloud.setPotion(new Potion(new MobEffectInstance[]{new MobEffectInstance(MobEffects.POISON, 1200, 0)}));
+                areaeffectcloud.setPotionContents(new net.minecraft.world.item.alchemy.PotionContents(java.util.Optional.empty(), java.util.Optional.empty(), java.util.List.of(new MobEffectInstance(MobEffects.POISON, 1200, 0))));
                 this.level().addFreshEntity((Entity)areaeffectcloud);
                 this.remove(Entity.RemovalReason.DISCARDED);
             } else {
@@ -452,8 +453,8 @@ PlayerRideableJumping {
 
     public void aiStep() {
         LivingEntity livingentity;
-        if (this.noJumpDelay > 0) {
-            --this.noJumpDelay;
+        if (this.mnaNoJumpDelay > 0) {
+            --this.mnaNoJumpDelay;
         }
         if (this.isControlledByLocalInstance()) {
             this.lerpSteps = 0;
@@ -473,7 +474,7 @@ PlayerRideableJumping {
             this.setDeltaMovement(this.getDeltaMovement().scale(0.98));
         }
         if (this.lerpHeadSteps > 0) {
-            this.yHeadRot += (float)Mth.wrapDegrees((double)(this.lyHeadRot - (double)this.yHeadRot)) / (float)this.lerpHeadSteps;
+            this.yHeadRot += (float)Mth.wrapDegrees((double)(this.yHeadRotO - (double)this.yHeadRot)) / (float)this.lerpHeadSteps;
             --this.lerpHeadSteps;
         }
         Vec3 vec31 = this.getDeltaMovement();
@@ -510,9 +511,9 @@ PlayerRideableJumping {
             if (!flag || this.onGround() && !(d7 > d8)) {
                 if (!this.isInLava() || this.onGround() && !(d7 > d8)) {
                     if (fluidType.isAir() || this.onGround() && !(d7 > d8)) {
-                        if ((this.onGround() || flag && d7 <= d8) && this.noJumpDelay == 0) {
+                        if ((this.onGround() || flag && d7 <= d8) && this.mnaNoJumpDelay == 0) {
                             this.jumpFromGround();
-                            this.noJumpDelay = 10;
+                            this.mnaNoJumpDelay = 10;
                         }
                     } else {
                         this.jumpInFluid(fluidType);
@@ -524,7 +525,7 @@ PlayerRideableJumping {
                 this.jumpInFluid((NeoForgeMod.WATER_TYPE).value());
             }
         } else {
-            this.noJumpDelay = 0;
+            this.mnaNoJumpDelay = 0;
         }
         this.level().getProfiler().pop();
         this.level().getProfiler().push("travel");
@@ -657,7 +658,7 @@ PlayerRideableJumping {
         this.goalSelector.addGoal(2, (Goal)new AttackGoal(this));
         this.goalSelector.addGoal(3, (Goal)new FaceRandomGoal(this));
         this.goalSelector.addGoal(5, (Goal)new HopGoal(this));
-        this.targetSelector.addGoal(1, (Goal)new NearestAttackableTargetGoal(this, Mob.class, 10, true, false, e -> !(e instanceof AnimusBlock) && e instanceof Enemy && Math.abs(e.getY() - this.getY()) <= 4.0));
+        this.targetSelector.addGoal(1, (Goal)new NearestAttackableTargetGoal<Mob>(this, Mob.class, 10, true, false, e -> !(e instanceof AnimusBlock) && e instanceof Enemy && Math.abs(e.getY() - this.getY()) <= 4.0));
     }
 
     static class MoveHelperController

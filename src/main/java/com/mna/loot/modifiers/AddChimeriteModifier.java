@@ -4,8 +4,6 @@ package com.mna.loot.modifiers;
 import com.google.common.base.Suppliers;
 import com.mna.capabilities.playerdata.magic.PlayerMagicProvider;
 import com.mna.items.ItemInit;
-import com.mojang.datafixers.kinds.App;
-import com.mojang.datafixers.kinds.Applicative;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
@@ -28,7 +26,7 @@ import com.mna.api.enchantments.MNAEnchantmentHelper;
 
 public class AddChimeriteModifier
 extends LootModifier {
-    public static final Supplier<com.mojang.serialization.MapCodec<AddChimeriteModifier>> CODEC = Suppliers.memoize(() -> RecordCodecBuilder.create(inst -> AddChimeriteModifier.codecStart((RecordCodecBuilder.Instance)inst).and((App)Codec.INT.fieldOf("numChimerite").forGetter(m -> m.numChimerite)).and((App)Codec.INT.fieldOf("magicLevel").forGetter(m -> m.magicLevel)).and((App)Codec.FLOAT.fieldOf("chance").forGetter(m -> Float.valueOf(m.chance))).and((App)Codec.FLOAT.fieldOf("fortuneBonusChance").forGetter(m -> Float.valueOf(m.fortuneBonusChance))).and((App)BuiltInRegistries.ITEM.getCodec().fieldOf("dropsWith").forGetter(m -> m.dropsWith)).apply((Applicative)inst, AddChimeriteModifier::new)));
+    public static final Supplier<com.mojang.serialization.MapCodec<AddChimeriteModifier>> CODEC = Suppliers.memoize(() -> RecordCodecBuilder.create(inst -> AddChimeriteModifier.codecStart((RecordCodecBuilder.Instance)inst).and(Codec.INT.fieldOf("numChimerite").forGetter(m -> m.numChimerite)).and(Codec.INT.fieldOf("magicLevel").forGetter(m -> m.magicLevel)).and(Codec.FLOAT.fieldOf("chance").forGetter(m -> Float.valueOf(m.chance))).and(Codec.FLOAT.fieldOf("fortuneBonusChance").forGetter(m -> Float.valueOf(m.fortuneBonusChance))).and(BuiltInRegistries.ITEM.getCodec().fieldOf("dropsWith").forGetter(m -> m.dropsWith)).apply(inst, AddChimeriteModifier::new)));
     private final Item dropsWith;
     private final int numChimerite;
     private final int magicLevel;

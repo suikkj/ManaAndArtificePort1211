@@ -119,12 +119,12 @@ CrossbowAttackMob {
             } else if (MATags.isItemIn(this.heldItem.getItem(), MATags.Items.ANIMUS_BOWS)) {
                 this.goalSelector.addGoal(4, (Goal)this.genericRangedGoal);
             } else {
-                Multimap attrs = this.heldItem.getItem().getAttributeModifiers(EquipmentSlot.MAINHAND, this.heldItem);
-                attrs.forEach((a, m) -> {
+                net.minecraft.world.item.component.ItemAttributeModifiers attrs = this.heldItem.getOrDefault(net.minecraft.core.component.DataComponents.ATTRIBUTE_MODIFIERS, net.minecraft.world.item.component.ItemAttributeModifiers.EMPTY);
+                attrs.modifiers().forEach(entry -> {
                     try {
-                        AttributeInstance ai = this.getAttribute((Attribute)a);
+                        AttributeInstance ai = this.getAttribute(entry.attribute());
                         if (ai != null) {
-                            ai.addPermanentModifier(m);
+                            ai.addPermanentModifier(entry.modifier());
                         }
                     }
                     catch (Throwable throwable) {

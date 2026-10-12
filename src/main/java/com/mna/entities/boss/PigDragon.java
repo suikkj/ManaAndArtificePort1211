@@ -116,8 +116,8 @@ extends BossMonster<PigDragon> {
         this.targetSelector.addGoal(2, (Goal)new DiveBomb());
         this.targetSelector.addGoal(3, (Goal)new PigDragonFly());
         this.targetSelector.addGoal(1, (Goal)new BossMonster.ThreatTableHurtByTargetGoal((PathfinderMob)this, new Class[0]));
-        this.targetSelector.addGoal(2, (Goal)new NearestAttackableTargetGoal(this, Player.class, 10, true, false, le -> true));
-        this.targetSelector.addGoal(3, (Goal)new NearestAttackableTargetGoal(this, BossMonster.class, 10, true, false, le -> le != this));
+        this.targetSelector.addGoal(2, (Goal)new NearestAttackableTargetGoal<Player>(this, Player.class, 10, true, false, le -> true));
+        this.targetSelector.addGoal(3, (Goal)new NearestAttackableTargetGoal<BossMonster>(this, BossMonster.class, 10, true, false, le -> le != this));
     }
 
     @Override
