@@ -369,6 +369,7 @@ public class SpellModifierRadialSelect {
         OPENING,
         NORMAL,
         CLOSING,
+        CLOSED,
 
     }
 }

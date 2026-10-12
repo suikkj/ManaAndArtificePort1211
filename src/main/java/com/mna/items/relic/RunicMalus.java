@@ -106,7 +106,7 @@ IRelic {
     }
 
     public Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers(EquipmentSlot p_43274_) {
-        return p_43274_ == EquipmentSlot.MAINHAND ? this.defaultModifiers : super.getDefaultAttributeModifiers();
+        return p_43274_ == EquipmentSlot.MAINHAND ? this.defaultModifiers : (com.google.common.collect.Multimap)super.getDefaultAttributeModifiers();
     }
 
     public static NonNullList<ItemStack> getRunes(ItemStack itemStack) {

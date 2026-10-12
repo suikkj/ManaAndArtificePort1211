@@ -309,11 +309,11 @@ extends BossMonster<Odin> {
     }
 
     public void hideAxe() {
-        this.entityData.set(DATA_AXE_SLOT, 2);
+        this.entityData.set(DATA_AXE_SLOT, (byte)2);
     }
 
     public void showAxe() {
-        this.entityData.set(DATA_AXE_SLOT, 1);
+        this.entityData.set(DATA_AXE_SLOT, (byte)1);
     }
 
     private void setOfferingAxe() {

@@ -28,7 +28,7 @@ extends BlockEntity {
     }
 
     public AABB getRenderBoundingBox() {
-        return new AABB(this.worldPosition, this.worldPosition.offset(1, 6, 1));
+        return new AABB(net.minecraft.world.phys.Vec3.atLowerCornerOf(this.worldPosition), net.minecraft.world.phys.Vec3.atLowerCornerOf(this.worldPosition.offset(1, 6, 1)));
     }
 }
 

@@ -373,6 +373,7 @@ public class GenericRadialMenu {
         OPENING,
         NORMAL,
         CLOSING,
+        CLOSED,
 
     }
 }

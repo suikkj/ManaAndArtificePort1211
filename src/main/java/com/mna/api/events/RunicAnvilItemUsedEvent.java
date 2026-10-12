@@ -13,7 +13,8 @@ import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.Event;
 
 public class RunicAnvilItemUsedEvent
-extends Event {
+extends Event
+implements net.neoforged.bus.api.ICancellableEvent {
     public ItemStack pattern;
     public ItemStack material;
     public ItemStack catalyst;

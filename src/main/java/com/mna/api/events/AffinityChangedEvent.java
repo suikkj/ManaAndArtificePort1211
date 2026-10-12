@@ -12,7 +12,8 @@ import net.minecraft.world.entity.player.Player;
 import net.neoforged.bus.api.Event;
 
 public class AffinityChangedEvent
-extends Event {
+extends Event
+implements net.neoforged.bus.api.ICancellableEvent {
     private final Player player;
     private final Affinity affinity;
     private final float currentAmount;

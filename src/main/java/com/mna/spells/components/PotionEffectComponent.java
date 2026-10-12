@@ -106,7 +106,7 @@ extends SpellEffect {
                     }
                     target.getLivingEntity().addEffect(new MobEffectInstance(this.getEffect(), duration, amp, false, false));
                 }
-                if (this.getEffect().getCategory() == MobEffectCategory.HARMFUL && source.hasCasterReference()) {
+                if (this.getEffect().value().getCategory() == MobEffectCategory.HARMFUL && source.hasCasterReference()) {
                     target.getLivingEntity().setLastHurtByMob(source.getCaster());
                 }
                 return ComponentApplicationResult.SUCCESS;
@@ -168,7 +168,7 @@ extends SpellEffect {
 
     @Override
     public SpellPartTags getUseTag() {
-        switch (this.getEffect().getCategory()) {
+        switch (this.getEffect().value().getCategory()) {
             case BENEFICIAL: {
                 return SpellPartTags.FRIENDLY;
             }

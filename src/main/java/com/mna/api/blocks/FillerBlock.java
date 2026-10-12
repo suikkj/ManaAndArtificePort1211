@@ -107,7 +107,7 @@ EntityBlock {
         BlockPos offsetPos = this.getOffsetPos((BlockGetter)world, pos);
         if (!world.isEmptyBlock(offsetPos) && !offsetPos.equals(pos)) {
             BlockHitResult brtr = new BlockHitResult(rayTrace.getLocation(), rayTrace.getDirection(), offsetPos, rayTrace.isInside());
-            return world.getBlockState(offsetPos).use(world, player, hand, brtr);
+            return world.getBlockState(offsetPos).getBlock().use(world.getBlockState(offsetPos), world, offsetPos, player, hand, brtr);
         }
         return InteractionResult.CONSUME;
     }

@@ -16,7 +16,8 @@ import net.neoforged.bus.api.Event;
  * [PORT 1.21.1] @Event.HasResult removido do bus; este evento nao usa resultado.
  */
 public class EldrinPowerTransferredEvent
-extends Event {
+extends Event
+implements net.neoforged.bus.api.ICancellableEvent {
     final Affinity affinity;
     final float amount;
     final Vec3 from;

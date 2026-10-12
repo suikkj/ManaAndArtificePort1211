@@ -37,7 +37,7 @@ implements ICanContainSpell {
         if (castRes.getResult() == InteractionResult.SUCCESS && !world.isClientSide && player.getUseItem() != held) {
             held.shrink(1);
             if (held.isEmpty() && !player.isCreative()) {
-                player.broadcastBreakEvent(hand == InteractionHand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
+                player.onEquippedItemBroken(held, hand == InteractionHand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
             }
         }
         return castRes;

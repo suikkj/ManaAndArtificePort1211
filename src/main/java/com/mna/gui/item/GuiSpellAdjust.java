@@ -238,7 +238,7 @@ extends GuiJEIDisable<ContainerSpellAdjustments> {
         float complexityWidth = (float)this.font.width(complexity) * this.textScaleFactor;
         float padding = 2.0f;
         float summaryXPos = (float)(this.imageWidth / 2) - (complexityHeaderWidth + complexityWidth + padding) / 2.0f;
-        float summaryYPos = (Boolean)this.minecraft.options.forceUnicodeFont.get() != false ? 180.0f : 182.0f;
+        float summaryYPos = 182.0f;
         pGuiGraphics.drawString(this.font, complexityHeader, (int)(summaryXPos / this.textScaleFactor), (int)(summaryYPos / this.textScaleFactor), textColor, false);
         summaryXPos += complexityHeaderWidth + padding;
         if (((ContainerSpellAdjustments)this.menu).getComplexity((Player)this.minecraft.player) <= (float)this.playerProgression.getTierMaxComplexity()) {
@@ -247,7 +247,7 @@ extends GuiJEIDisable<ContainerSpellAdjustments> {
             pGuiGraphics.drawString(this.font, complexity, (int)(summaryXPos / this.textScaleFactor), (int)(summaryYPos / this.textScaleFactor), ChatFormatting.RED.getColor().intValue(), false);
         }
         summaryXPos = (float)(this.imageWidth / 2) - (headerWidth + manaCostWidth + padding) / 2.0f;
-        float f = (Boolean)this.minecraft.options.forceUnicodeFont.get() != false ? 180 : 184;
+        float f = 184;
         Objects.requireNonNull(this.font);
         summaryYPos = f + 9.0f * this.textScaleFactor;
         pGuiGraphics.drawString(this.font, header, (int)(summaryXPos / this.textScaleFactor), (int)(summaryYPos / this.textScaleFactor), textColor, false);
