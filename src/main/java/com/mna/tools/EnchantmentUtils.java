@@ -52,7 +52,7 @@ public class EnchantmentUtils {
         if (fortuneRing != null) {
             CuriosApi.getCuriosHelper().findFirstCurio((LivingEntity)player, fortuneRing).ifPresent(t -> {
                 Map enchants = EnchantmentUtils.enchantmentMap((ItemStack)t.stack());
-                fortune_level.add((Number)enchants.getOrDefault(Enchantments.BLOCK_FORTUNE, 0));
+                fortune_level.add((Number)enchants.getOrDefault(Enchantments.FORTUNE, 0));
             });
         }
         return fortune_level.intValue();

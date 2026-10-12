@@ -121,11 +121,11 @@ extends FallingBlockEntity
         this.entityData.set(MAXAGE, age);
     }
 
-    public void writeSpawnData(FriendlyByteBuf buffer) {
+    public void writeSpawnData(net.minecraft.network.RegistryFriendlyByteBuf buffer) {
         buffer.writeInt(Block.getId((BlockState)this.getBlockState()));
     }
 
-    public void readSpawnData(FriendlyByteBuf additionalData) {
+    public void readSpawnData(net.minecraft.network.RegistryFriendlyByteBuf additionalData) {
         int stateId = additionalData.readInt();
         this.getBlockState() = Block.stateById((int)stateId);
         if (this.getBlockState() == null) {

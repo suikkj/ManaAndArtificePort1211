@@ -78,7 +78,7 @@ extends UtilityEntityBase
     protected void addAdditionalSaveData(CompoundTag pCompound) {
     }
 
-    public void writeSpawnData(FriendlyByteBuf buffer) {
+    public void writeSpawnData(net.minecraft.network.RegistryFriendlyByteBuf buffer) {
         if (this.focus != null) {
             buffer.writeBoolean(true);
             buffer.writeInt(this.focus.getId());
@@ -87,7 +87,7 @@ extends UtilityEntityBase
         }
     }
 
-    public void readSpawnData(FriendlyByteBuf additionalData) {
+    public void readSpawnData(net.minecraft.network.RegistryFriendlyByteBuf additionalData) {
         if (additionalData.readBoolean()) {
             int entityID = additionalData.readInt();
             Entity e = this.level().getEntity(entityID);

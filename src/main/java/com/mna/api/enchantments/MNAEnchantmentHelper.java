@@ -73,4 +73,17 @@ public final class MNAEnchantmentHelper {
     public static int getFireAspect(net.minecraft.world.entity.LivingEntity entity) {
         return 0;
     }
+
+    /** [PORT 1.21.1] EnchantmentHelper.doPostHurtEffects removido -> no-op. */
+    public static void doPostHurtEffects(net.minecraft.world.entity.LivingEntity target, net.minecraft.world.entity.Entity attacker) {
+    }
+
+    /** [PORT 1.21.1] EnchantmentHelper.doPostDamageEffects removido -> no-op. */
+    public static void doPostDamageEffects(net.minecraft.world.entity.LivingEntity target, net.minecraft.world.entity.Entity attacker) {
+    }
+
+    /** [PORT 1.21.1] EnchantmentHelper.hasChanneling removido -> false (comportamento via enchantment effect). */
+    public static boolean hasChanneling(ItemStack stack) {
+        return false;
+    }
 }

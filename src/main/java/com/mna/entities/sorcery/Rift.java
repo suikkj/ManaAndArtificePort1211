@@ -111,12 +111,12 @@ extends Entity
         this.isEnderChest = enderChest;
     }
 
-    public void writeSpawnData(FriendlyByteBuf buffer) {
+    public void writeSpawnData(net.minecraft.network.RegistryFriendlyByteBuf buffer) {
         buffer.writeInt(this.age);
         buffer.writeBoolean(this.isEnderChest);
     }
 
-    public void readSpawnData(FriendlyByteBuf additionalData) {
+    public void readSpawnData(net.minecraft.network.RegistryFriendlyByteBuf additionalData) {
         this.age = additionalData.readInt();
         this.isEnderChest = additionalData.readBoolean();
     }

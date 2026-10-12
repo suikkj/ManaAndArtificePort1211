@@ -191,11 +191,11 @@ extends ThrowableItemProjectile
         }
     }
 
-    public void writeSpawnData(FriendlyByteBuf buffer) {
-        buffer.writeItemStack(this.defaultStack, true);
+    public void writeSpawnData(net.minecraft.network.RegistryFriendlyByteBuf buffer) {
+        net.minecraft.world.item.ItemStack.OPTIONAL_STREAM_CODEC.encode(buffer, this.defaultStack);
     }
 
-    public void readSpawnData(FriendlyByteBuf additionalData) {
+    public void readSpawnData(net.minecraft.network.RegistryFriendlyByteBuf additionalData) {
         this.defaultStack = net.minecraft.world.item.ItemStack.OPTIONAL_STREAM_CODEC.decode((net.minecraft.network.RegistryFriendlyByteBuf)additionalData);
     }
 }

@@ -1370,7 +1370,7 @@ IItemHandlerModifiable {
             this.goalSelector.removeGoal(this.current);
         }
         this.resetActions();
-        Construct myCommand = cmd.duplicate();
+        ConstructAITask<?> myCommand = cmd.duplicate();
         if (cmd.isOneOff()) {
             ((ConstructAITask)(myCommand)).setOneOff(player);
         }
@@ -1968,7 +1968,7 @@ IItemHandlerModifiable {
         boolean yChanged = pVec.y != vec3.y;
         boolean zChanged = pVec.z != vec3.z;
         boolean falling = this.onGround() || yChanged && pVec.y < 0.0;
-        float stepHeight = this.getStepHeight();
+        float stepHeight = this.maxUpStep();
         if (stepHeight > 0.0f && falling && (xChanged || zChanged)) {
             Vec3 vec33;
             Vec3 vec31 = Construct.collideBoundingBox((Entity)this, new Vec3(pVec.x, (double)stepHeight, pVec.z), aabb, this.level(), list);

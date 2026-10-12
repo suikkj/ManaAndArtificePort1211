@@ -178,11 +178,11 @@ CrossbowAttackMob {
         return HumanoidArm.LEFT;
     }
 
-    public void writeSpawnData(FriendlyByteBuf buffer) {
-        buffer.writeItemStack(this.heldItem, false);
+    public void writeSpawnData(net.minecraft.network.RegistryFriendlyByteBuf buffer) {
+        net.minecraft.world.item.ItemStack.OPTIONAL_STREAM_CODEC.encode(buffer, this.heldItem);
     }
 
-    public void readSpawnData(FriendlyByteBuf additionalData) {
+    public void readSpawnData(net.minecraft.network.RegistryFriendlyByteBuf additionalData) {
         this.heldItem = net.minecraft.world.item.ItemStack.OPTIONAL_STREAM_CODEC.decode((net.minecraft.network.RegistryFriendlyByteBuf)additionalData);
     }
 

@@ -374,7 +374,7 @@ implements IAnimPacketSync<PumpkinKing> {
         return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 300.0).add(Attributes.MOVEMENT_SPEED, (double)0.6f).add(Attributes.FOLLOW_RANGE, 40.0).add(Attributes.ARMOR, 4.0);
     }
 
-    public void readSpawnData(FriendlyByteBuf additionalData) {
+    public void readSpawnData(net.minecraft.network.RegistryFriendlyByteBuf additionalData) {
         this.setYRot(additionalData.readFloat());
         this.yRotO = additionalData.readFloat();
         this.setXRot(additionalData.readFloat());
@@ -383,7 +383,7 @@ implements IAnimPacketSync<PumpkinKing> {
         this.yBodyRotO = this.yRotO;
     }
 
-    public void writeSpawnData(FriendlyByteBuf buffer) {
+    public void writeSpawnData(net.minecraft.network.RegistryFriendlyByteBuf buffer) {
         buffer.writeFloat(this.getYRot());
         buffer.writeFloat(this.yRotO);
         buffer.writeFloat(this.getXRot());

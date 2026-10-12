@@ -17,13 +17,13 @@ public class DelayedEventQueue {
 
     @SubscribeEvent
     public static void worldTick(LevelTickEvent event) {
-        if (event.level.isClientSide()) {
+        if (event.getLevel().isClientSide()) {
             return;
         }
-        if (!_events.containsKey(event.level.dimension())) {
+        if (!_events.containsKey(event.getLevel().dimension())) {
             return;
         }
-        ArrayList<IDelayedEvent> worldDelayedEvents = _events.get(event.level.dimension());
+        ArrayList<IDelayedEvent> worldDelayedEvents = _events.get(event.getLevel().dimension());
         for (int i = 0; i < worldDelayedEvents.size(); ++i) {
             if (!worldDelayedEvents.get(i).tick()) continue;
             worldDelayedEvents.remove(i);

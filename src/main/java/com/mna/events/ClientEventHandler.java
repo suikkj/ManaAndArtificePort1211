@@ -169,7 +169,7 @@ public class ClientEventHandler {
     }
 
     @SubscribeEvent
-    public static void handleKeys(TickEvent.ClientTickEvent ev) {
+    public static void handleKeys(net.neoforged.neoforge.client.event.ClientTickEvent ev) {
         Minecraft mc = Minecraft.getInstance();
         if (mc.screen == null) {
             ClientEventHandler.handleRadialKeyDown();
@@ -326,7 +326,7 @@ public class ClientEventHandler {
     }
 
     @SubscribeEvent
-    public static void clientTick(TickEvent.ClientTickEvent event) {
+    public static void clientTick(net.neoforged.neoforge.client.event.ClientTickEvent event) {
         Level world;
         if (Minecraft.getInstance().isPaused()) {
         }
@@ -686,7 +686,7 @@ public class ClientEventHandler {
         matrixStack.popPose();
         matrixStack.pushPose();
         matrixStack.translate(-projectedView.x, -projectedView.y, -projectedView.z);
-        ClientEventHandler.renderDistantWellsprings((Level)mc.level, mc.getFrameTime(), matrixStack, (MultiBufferSource)buffers, (Player)mc.player);
+        ClientEventHandler.renderDistantWellsprings((Level)mc.level, mc.getTimer().getGameTimeDeltaPartialTick(false), matrixStack, (MultiBufferSource)buffers, (Player)mc.player);
         matrixStack.popPose();
         buffers.endBatch();
     }

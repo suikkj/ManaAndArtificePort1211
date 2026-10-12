@@ -52,6 +52,11 @@ IDontCreateBlockItem {
             entity.hurt(entity.damageSources().cactus(), 1.0f);
         }
     }
+
+    @Override
+    protected com.mojang.serialization.MapCodec<MATarmaRootBlock> codec() {
+        return simpleCodec(MATarmaRootBlock::new);
+    }
 }
 
 

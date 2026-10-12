@@ -39,7 +39,7 @@ extends SpellEffect {
             return ComponentApplicationResult.FAIL;
         }
         int removeUpto = (int)modificationData.getValue(Attribute.LESSER_MAGNITUDE) + (int)modificationData.getValue(Attribute.MAGNITUDE);
-        Collection activeEffects = target.getLivingEntity().getActiveEffects().stream().filter(e -> !e.isAmbient() && e.getDuration() >= 220 && e.getEffect().isBeneficial() && e.getAmplifier() <= removeUpto - 1).collect(Collectors.toList());
+        Collection activeEffects = target.getLivingEntity().getActiveEffects().stream().filter(e -> !e.isAmbient() && e.getDuration() >= 220 && e.getEffect().value().isBeneficial() && e.getAmplifier() <= removeUpto - 1).collect(Collectors.toList());
         MutableInt removedEffects = new MutableInt(0);
         activeEffects.forEach(ae -> {
             if (target.getLivingEntity().removeEffect(ae.getEffect())) {

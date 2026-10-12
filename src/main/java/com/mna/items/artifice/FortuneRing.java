@@ -42,7 +42,7 @@ extends SpellModifierRing {
 
     private ArrayList<net.minecraft.resources.ResourceKey<Enchantment>> getAllowedEnchantments() {
         if (this.allowedEnchantments.size() == 0) {
-            this.allowedEnchantments.add(Enchantments.BLOCK_FORTUNE);
+            this.allowedEnchantments.add(Enchantments.FORTUNE);
         }
         return this.allowedEnchantments;
     }

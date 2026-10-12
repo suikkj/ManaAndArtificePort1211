@@ -901,7 +901,7 @@ public class CommonEventHandler {
 
     @SubscribeEvent
     public static void onLivingGearChange(LivingEquipmentChangeEvent event) {
-        int newLoyalty = EnchantmentHelper.getItemEnchantmentLevel(event.getEntity().level().registryAccess().holderOrThrow(Enchantments.LOYALTY), event.getFrom());
+        int newLoyalty = com.mna.api.enchantments.MNAEnchantmentHelper.getItemEnchantmentLevel(event.getEntity().level().registryAccess().holderOrThrow(Enchantments.LOYALTY), event.getFrom());
         SummonUtils.setBonusSummons(event.getEntity(), newLoyalty);
     }
 
@@ -991,18 +991,18 @@ public class CommonEventHandler {
     @SubscribeEvent
     public static void onWorldTick(LevelTickEvent event) {
         if (true) {
-            MNACap.get(event.level, WorldMagicProvider.MAGIC).ifPresent(m -> m.getWellspringRegistry().resetDiminishing());
+            MNACap.get(event.getLevel(), WorldMagicProvider.MAGIC).ifPresent(m -> m.getWellspringRegistry().resetDiminishing());
             int chunkRadius = 5;
             float decayRate = 0.01f;
             HashSet<Long> tickedChunks = new HashSet<Long>();
-            for (Player player : event.level.players()) {
+            for (Player player : event.getLevel().players()) {
                 ChunkPos chunkPos = player.chunkPosition();
                 for (int i = -chunkRadius; i <= chunkRadius; ++i) {
                     for (int j = -chunkRadius; j <= chunkRadius; ++j) {
                         long currentChunkCoord;
-                        if (!event.level.hasChunk(chunkPos.x + i, chunkPos.z + j) || tickedChunks.contains(currentChunkCoord = new ChunkPos(chunkPos.x + i, chunkPos.z + j).toLong())) continue;
+                        if (!event.getLevel().hasChunk(chunkPos.x + i, chunkPos.z + j) || tickedChunks.contains(currentChunkCoord = new ChunkPos(chunkPos.x + i, chunkPos.z + j).toLong())) continue;
                         tickedChunks.add(currentChunkCoord);
-                        LevelChunk chunkData = event.level.getChunk(chunkPos.x + i, chunkPos.z + j);
+                        LevelChunk chunkData = event.getLevel().getChunk(chunkPos.x + i, chunkPos.z + j);
                         IChunkMagic chunkMagic = (IChunkMagic)chunkData.getData(ChunkMagicProvider.MAGIC.get());
                         if (chunkMagic == null || !(chunkMagic.getResidualMagic() > 0.0f)) continue;
                         chunkMagic.removeResidualMagic(decayRate);

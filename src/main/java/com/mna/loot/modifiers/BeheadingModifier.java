@@ -26,7 +26,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 
 public class BeheadingModifier
 extends LootModifier {
-    public static final Supplier<Codec<BeheadingModifier>> CODEC = Suppliers.memoize(() -> RecordCodecBuilder.create(inst -> BeheadingModifier.codecStart((RecordCodecBuilder.Instance)inst).and((App)Codec.FLOAT.fieldOf("chancePerLevel").forGetter(m -> Float.valueOf(m.chancePerLevel))).and((App)BuiltInRegistries.ENTITY_TYPE.getCodec().fieldOf("mobType").forGetter(m -> m.mobType)).and((App)BuiltInRegistries.ITEM.getCodec().fieldOf("head").forGetter(m -> m.head)).apply((Applicative)inst, BeheadingModifier::new)));
+    public static final Supplier<com.mojang.serialization.MapCodec<BeheadingModifier>> CODEC = Suppliers.memoize(() -> RecordCodecBuilder.create(inst -> BeheadingModifier.codecStart((RecordCodecBuilder.Instance)inst).and((App)Codec.FLOAT.fieldOf("chancePerLevel").forGetter(m -> Float.valueOf(m.chancePerLevel))).and((App)BuiltInRegistries.ENTITY_TYPE.getCodec().fieldOf("mobType").forGetter(m -> m.mobType)).and((App)BuiltInRegistries.ITEM.getCodec().fieldOf("head").forGetter(m -> m.head)).apply((Applicative)inst, BeheadingModifier::new)));
     private final float chancePerLevel;
     private final Item head;
     private final EntityType<?> mobType;
@@ -43,13 +43,13 @@ extends LootModifier {
         int level;
         Entity dead = (Entity)context.getParamOrNull(LootContextParams.THIS_ENTITY);
         Entity killer = (Entity)context.getParamOrNull(LootContextParams.KILLER_ENTITY);
-        if (dead != null && killer != null && killer instanceof LivingEntity && dead.getType().equals(this.mobType) && (level = Math.max(EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.BEHEADING, (killerLiving = (LivingEntity)killer).getMainHandItem()), EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.BEHEADING, killerLiving.getOffhandItem()))) > 0 && Math.random() < (double)((float)level * this.chancePerLevel) && generatedLoot.stream().noneMatch(i -> i.getItem() == this.head)) {
+        if (dead != null && killer != null && killer instanceof LivingEntity && dead.getType().equals(this.mobType) && (level = Math.max(com.mna.api.enchantments.MNAEnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.BEHEADING, (killerLiving = (LivingEntity)killer).getMainHandItem()), com.mna.api.enchantments.MNAEnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.BEHEADING, killerLiving.getOffhandItem()))) > 0 && Math.random() < (double)((float)level * this.chancePerLevel) && generatedLoot.stream().noneMatch(i -> i.getItem() == this.head)) {
             generatedLoot.add(new ItemStack((ItemLike)this.head));
         }
         return generatedLoot;
     }
 
-    public Codec<? extends IGlobalLootModifier> codec() {
+    public com.mojang.serialization.MapCodec<? extends IGlobalLootModifier> codec() {
         return CODEC.get();
     }
 }

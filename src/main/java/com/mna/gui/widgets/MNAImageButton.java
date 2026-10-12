@@ -19,7 +19,7 @@ import net.neoforged.api.distmarker.OnlyIn;
  */
 @OnlyIn(Dist.CLIENT)
 public class MNAImageButton extends ImageButton {
-    private final ResourceLocation texture;
+    protected final ResourceLocation resourceLocation;
     private final int texWidth;
     private final int texHeight;
     private final int u;
@@ -33,7 +33,7 @@ public class MNAImageButton extends ImageButton {
         super(x, y, width, height,
                 new WidgetSprites(texture, texture, texture, texture),
                 onPress, message);
-        this.texture = texture;
+        this.resourceLocation = texture;
         this.texWidth = texWidth;
         this.texHeight = texHeight;
         this.u = u;
@@ -58,7 +58,7 @@ public class MNAImageButton extends ImageButton {
     @Override
     public void renderWidget(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
         int vOffset = this.isHoveredOrFocused() ? this.hoverOffsetV : 0;
-        guiGraphics.blit(this.texture, this.getX(), this.getY(), 0,
+        guiGraphics.blit(this.resourceLocation, this.getX(), this.getY(), 0,
                 (float) this.u, (float) (this.v + vOffset),
                 this.width, this.height, this.texWidth, this.texHeight);
     }

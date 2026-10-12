@@ -74,7 +74,7 @@ extends ConstructAITask<ConstructGuard> {
         if (this.doMove(1.25f)) {
             AbstractGolem c = this.construct.asEntity();
             Vec3 desiredPoint = Vec3.atBottomCenterOf((Vec3i)this.guard_point);
-            BlockHitResult bhr = c.level().clip(new ClipContext(Vec3.atBottomCenterOf((Vec3i)this.guard_point.above(Math.min((int)c.getStepHeight(), 1) + 1)), desiredPoint, ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, (Entity)c));
+            BlockHitResult bhr = c.level().clip(new ClipContext(Vec3.atBottomCenterOf((Vec3i)this.guard_point.above(Math.min((int)c.maxUpStep(), 1) + 1)), desiredPoint, ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, (Entity)c));
             Vec3 guardPos = bhr != null && bhr.getType() != HitResult.Type.MISS ? bhr.getLocation() : desiredPoint;
             this.construct.asEntity().setPos(guardPos);
             this.leashReturning = false;

@@ -161,13 +161,13 @@ extends AbstractHurtingProjectile
         return false;
     }
 
-    public void writeSpawnData(FriendlyByteBuf buffer) {
-        buffer.writeItemStack(this.renderStack, true);
+    public void writeSpawnData(net.minecraft.network.RegistryFriendlyByteBuf buffer) {
+        net.minecraft.world.item.ItemStack.OPTIONAL_STREAM_CODEC.encode(buffer, this.renderStack);
         buffer.writeUtf(this.trailParticle.writeToString());
         buffer.writeFloat(this.renderScale);
     }
 
-    public void readSpawnData(FriendlyByteBuf additionalData) {
+    public void readSpawnData(net.minecraft.network.RegistryFriendlyByteBuf additionalData) {
         this.renderStack = net.minecraft.world.item.ItemStack.OPTIONAL_STREAM_CODEC.decode((net.minecraft.network.RegistryFriendlyByteBuf)additionalData);
         String trailParticle = additionalData.readUtf();
         try {

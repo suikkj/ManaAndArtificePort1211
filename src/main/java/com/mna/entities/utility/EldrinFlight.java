@@ -204,7 +204,7 @@ extends Entity
         compound.put("control_b", (Tag)control_b);
     }
 
-    public void writeSpawnData(FriendlyByteBuf buffer) {
+    public void writeSpawnData(net.minecraft.network.RegistryFriendlyByteBuf buffer) {
         if (this.player != null) {
             buffer.writeInt(this.player.getId());
         } else {
@@ -233,7 +233,7 @@ extends Entity
         }
     }
 
-    public void readSpawnData(FriendlyByteBuf additionalData) {
+    public void readSpawnData(net.minecraft.network.RegistryFriendlyByteBuf additionalData) {
         Entity e = this.level().getEntity(additionalData.readInt());
         if (e instanceof Player) {
             this.player = (Player)e;

@@ -37,7 +37,7 @@ extends Creeper {
     }
 
     public boolean canBeAffected(MobEffectInstance pEffectInstance) {
-        return pEffectInstance != null && pEffectInstance.getEffect().isBeneficial();
+        return pEffectInstance != null && pEffectInstance.getEffect().value().isBeneficial();
     }
 }
 

@@ -178,11 +178,11 @@ extends Entity
         this.setDeltaMovement(0.0, speed, 0.0);
     }
 
-    public void writeSpawnData(FriendlyByteBuf buffer) {
+    public void writeSpawnData(net.minecraft.network.RegistryFriendlyByteBuf buffer) {
         buffer.writeInt(Block.getId((BlockState)this.getBlockState()));
     }
 
-    public void readSpawnData(FriendlyByteBuf additionalData) {
+    public void readSpawnData(net.minecraft.network.RegistryFriendlyByteBuf additionalData) {
         int stateId = additionalData.readInt();
         this.blockState = Block.stateById((int)stateId);
         if (this.blockState == null) {

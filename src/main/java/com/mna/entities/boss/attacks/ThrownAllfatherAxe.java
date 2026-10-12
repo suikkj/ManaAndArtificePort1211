@@ -225,7 +225,7 @@ extends ThrownWeapon {
     }
 
     @Override
-    public void writeSpawnData(FriendlyByteBuf buffer) {
+    public void writeSpawnData(net.minecraft.network.RegistryFriendlyByteBuf buffer) {
         super.writeSpawnData(buffer);
         if (this.getOwner() != null) {
             buffer.writeInt(this.getOwner().getId());
@@ -235,7 +235,7 @@ extends ThrownWeapon {
     }
 
     @Override
-    public void readSpawnData(FriendlyByteBuf additionalData) {
+    public void readSpawnData(net.minecraft.network.RegistryFriendlyByteBuf additionalData) {
         super.readSpawnData(additionalData);
         int ownerID = additionalData.readInt();
         if (ownerID > -1) {

@@ -233,7 +233,7 @@ public class BlockUtils {
         }
         if (fortuneLevel > 0) {
             ItemStack stack = new ItemStack((ItemLike)Items.DIAMOND_PICKAXE);
-            stack.enchant(Enchantments.BLOCK_FORTUNE, fortuneLevel);
+            stack.enchant(BuiltInRegistries.ENCHANTMENT.getHolderOrThrow(Enchantments.FORTUNE), fortuneLevel);
             Block.dropResources((BlockState)world.getBlockState(pos), (Level)world, (BlockPos)pos, (BlockEntity)world.getBlockEntity(pos), (Entity)playerEntity, (ItemStack)stack);
             doDrops = false;
         } else if (silkTouch) {
@@ -278,7 +278,7 @@ public class BlockUtils {
         }
         ItemStack stack = new ItemStack((ItemLike)Items.DIAMOND_PICKAXE);
         if (fortuneLevel > 0) {
-            stack.enchant(Enchantments.BLOCK_FORTUNE, fortuneLevel);
+            stack.enchant(BuiltInRegistries.ENCHANTMENT.getHolderOrThrow(Enchantments.FORTUNE), fortuneLevel);
             drops.addAll(Block.getDrops((BlockState)state, (ServerLevel)((ServerLevel)world), (BlockPos)pos, (BlockEntity)world.getBlockEntity(pos), (Entity)playerEntity, (ItemStack)stack));
         } else if (silkTouch) {
             stack.enchant(Enchantments.SILK_TOUCH, 1);

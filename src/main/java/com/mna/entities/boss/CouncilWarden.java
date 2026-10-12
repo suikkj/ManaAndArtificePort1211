@@ -526,7 +526,7 @@ implements IFactionEnemy<CouncilWarden> {
     }
 
     private boolean lowerBuffs(Player target) {
-        List<MobEffectInstance> beneficialEffects = target.getActiveEffects().stream().filter(e -> e.getEffect().isBeneficial()).toList();
+        List<MobEffectInstance> beneficialEffects = target.getActiveEffects().stream().filter(e -> e.getEffect().value().isBeneficial()).toList();
         if (beneficialEffects.size() == 0) {
             return false;
         }

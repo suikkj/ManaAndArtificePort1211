@@ -16,7 +16,7 @@ public class FireproofMixin {
     public void mna$fireImmune(CallbackInfoReturnable<Boolean> cir) {
         ItemEntity self = (ItemEntity)this;
         ItemStack stack = self.getItem();
-        int level = EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.FIREPROOF, stack);
+        int level = com.mna.api.enchantments.MNAEnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.FIREPROOF, stack);
         if (level > 0) {
             cir.setReturnValue(true);
         }

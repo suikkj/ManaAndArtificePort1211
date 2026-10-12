@@ -33,6 +33,11 @@ IDontCreateBlockItem {
         Vec3 vec3d = state.getOffset(worldIn, pos);
         return SHAPE.move(vec3d.x, vec3d.y, vec3d.z);
     }
+
+    @Override
+    protected com.mojang.serialization.MapCodec<MAFlowerBlock> codec() {
+        return simpleCodec(MAFlowerBlock::new);
+    }
 }
 
 

@@ -188,6 +188,11 @@ SimpleWaterloggedBlock {
         }
         return super.getDrops(state, builder);
     }
+
+    @Override
+    protected com.mojang.serialization.MapCodec<FluidJugBlock> codec() {
+        return com.mojang.serialization.MapCodec.unit(this);
+    }
 }
 
 

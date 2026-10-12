@@ -137,14 +137,14 @@ public class GenericRadialMenu {
 
     public void close() {
         this.state = State.CLOSING;
-        this.startAnimation = (double)this.minecraft.level.getGameTime() + (double)this.minecraft.getFrameTime();
+        this.startAnimation = (double)this.minecraft.level.getGameTime() + (double)this.minecraft.getTimer().getGameTimeDeltaPartialTick(false);
         this.animProgress = 1.0f;
         this.setHovered(-1);
     }
 
     public void tick() {
         if (this.state == State.INITIALIZING) {
-            this.startAnimation = (double)this.minecraft.level.getGameTime() + (double)this.minecraft.getFrameTime();
+            this.startAnimation = (double)this.minecraft.level.getGameTime() + (double)this.minecraft.getTimer().getGameTimeDeltaPartialTick(false);
             this.state = State.OPENING;
             this.animProgress = 0.0f;
         }

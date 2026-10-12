@@ -74,9 +74,9 @@ public class FluidParameterRegistry {
             if (entity instanceof LivingEntity) {
                 LivingEntity living = (LivingEntity)entity;
                 if (isFriendly.booleanValue()) {
-                    return living.getActiveEffects().stream().anyMatch(effect -> !effect.getEffect().isBeneficial() && effect.isCurativeItem(new ItemStack((ItemLike)Items.MILK_BUCKET)));
+                    return living.getActiveEffects().stream().anyMatch(effect -> !effect.getEffect().value().isBeneficial() && effect.isCurativeItem(new ItemStack((ItemLike)Items.MILK_BUCKET)));
                 }
-                return living.getActiveEffects().stream().anyMatch(effect -> effect.getEffect().isBeneficial() && effect.isCurativeItem(new ItemStack((ItemLike)Items.MILK_BUCKET)));
+                return living.getActiveEffects().stream().anyMatch(effect -> effect.getEffect().value().isBeneficial() && effect.isCurativeItem(new ItemStack((ItemLike)Items.MILK_BUCKET)));
             }
             return false;
         }, null));

@@ -90,12 +90,12 @@ extends Entity
     protected void addAdditionalSaveData(CompoundTag pCompound) {
     }
 
-    public void writeSpawnData(FriendlyByteBuf buffer) {
+    public void writeSpawnData(net.minecraft.network.RegistryFriendlyByteBuf buffer) {
         buffer.writeFloat(this.amount);
         buffer.writeInt(this.textColor);
     }
 
-    public void readSpawnData(FriendlyByteBuf additionalData) {
+    public void readSpawnData(net.minecraft.network.RegistryFriendlyByteBuf additionalData) {
         this.amount = additionalData.readFloat();
         this.textColor = additionalData.readInt();
     }

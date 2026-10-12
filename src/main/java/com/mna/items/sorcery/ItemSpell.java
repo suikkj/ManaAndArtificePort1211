@@ -213,7 +213,7 @@ implements IShowHud {
     public int getUseDuration(ItemStack stack) {
         SpellRecipe recipe = SpellRecipe.fromNBT(stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag());
         int base = recipe.getMaxChannelTime();
-        if (EnchantmentHelper.hasChanneling((ItemStack)stack)) {
+        if (com.mna.api.enchantments.MNAEnchantmentHelper.hasChanneling((ItemStack)stack)) {
             base *= 2;
         }
         return base;

@@ -397,6 +397,11 @@ IBlockExtension {
         fireblock.setFireInfo(Blocks.BEEHIVE, 5, 20);
         fireblock.setFireInfo(Blocks.BEE_NEST, 30, 20);
     }
+
+    @Override
+    protected com.mojang.serialization.MapCodec<HellfireBlock> codec() {
+        return com.mojang.serialization.MapCodec.unit(this);
+    }
 }
 
 

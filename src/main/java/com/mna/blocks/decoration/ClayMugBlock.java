@@ -108,5 +108,10 @@ implements IDontCreateBlockItem {
         }
         return InteractionResult.SUCCESS;
     }
+
+    @Override
+    protected com.mojang.serialization.MapCodec<ClayMugBlock> codec() {
+        return com.mojang.serialization.MapCodec.unit(this);
+    }
 }
 

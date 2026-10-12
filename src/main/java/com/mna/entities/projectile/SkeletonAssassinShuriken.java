@@ -90,8 +90,8 @@ extends AbstractArrow {
             if (entity instanceof LivingEntity) {
                 LivingEntity livingentity = (LivingEntity)entity;
                 if (!this.level().isClientSide() && entity1 instanceof LivingEntity) {
-                    EnchantmentHelper.doPostHurtEffects((LivingEntity)livingentity, (Entity)entity1);
-                    EnchantmentHelper.doPostDamageEffects((LivingEntity)((LivingEntity)entity1), (Entity)livingentity);
+                    com.mna.api.enchantments.MNAEnchantmentHelper.doPostHurtEffects((LivingEntity)livingentity, (Entity)entity1);
+                    com.mna.api.enchantments.MNAEnchantmentHelper.doPostDamageEffects((LivingEntity)((LivingEntity)entity1), (Entity)livingentity);
                 }
             }
             this.playSound(SFX.Entity.SkeletonAssassin.SHURIKEN_IMPACT, 1.0f, (float)(0.9 + Math.random() * 0.2));

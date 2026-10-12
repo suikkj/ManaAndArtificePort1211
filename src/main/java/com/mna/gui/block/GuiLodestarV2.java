@@ -291,7 +291,7 @@ extends GuiJEIDisable<ContainerLodestar> {
         this.scroll_accum_x += deltaX / (double)Zoom;
         this.scroll_accum_y += deltaY / (double)Zoom;
         if (Math.abs(this.scroll_accum_x) > 1.0 || Math.abs(this.scroll_accum_y) > 1.0) {
-            Object node;
+            net.minecraft.client.gui.components.AbstractWidget node;
             int i;
             int dX = (int)(Math.floor(Math.abs(this.scroll_accum_x)) * Math.signum(this.scroll_accum_x));
             int dY = (int)(Math.floor(Math.abs(this.scroll_accum_y)) * Math.signum(this.scroll_accum_y));
@@ -617,7 +617,7 @@ extends GuiJEIDisable<ContainerLodestar> {
             return this.actionsList.mouseScrolled(mouseX, mouseY, delta, 0.0);
         }
         if (this.isMouseWithinStage(mouseX, mouseY)) {
-            Object node;
+            net.minecraft.client.gui.components.AbstractWidget node;
             int i;
             Pair<Integer, Integer> scaledMousePre = this.getScaledMouseCoordinates(mouseX, mouseY);
             float zoomAmt = (float)(0.2 * Math.signum(delta));

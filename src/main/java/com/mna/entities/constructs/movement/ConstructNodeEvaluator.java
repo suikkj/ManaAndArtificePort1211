@@ -281,7 +281,7 @@ extends NodeEvaluator {
     }
 
     private double getMobJumpHeight() {
-        return Math.max(1.125, (double)this.mob.getStepHeight());
+        return Math.max(1.125, (double)this.mob.maxUpStep());
     }
 
     private Node getNodeAndUpdateCostToMax(int pX, int pY, int pZ, PathType pType, float pCostMalus) {
@@ -459,7 +459,7 @@ extends NodeEvaluator {
         PathType blockpathtypes = this.getCachedBlockType(this.mob, current.x, current.y + 1, current.z);
         PathType blockpathtypes1 = this.getCachedBlockType(this.mob, current.x, current.y, current.z);
         if (this.mob.getPathfindingMalus(blockpathtypes) >= 0.0f && blockpathtypes1 != PathType.STICKY_HONEY) {
-            j = Mth.floor((float)Math.max(1.0f, this.mob.getStepHeight()));
+            j = Mth.floor((float)Math.max(1.0f, this.mob.maxUpStep()));
         }
         if (this.isNeighborValid(node = this.findAcceptedNode(current.x, current.y, current.z + 1, j, d0 = this.getFloorLevel(new BlockPos(current.x, current.y, current.z)), Direction.SOUTH, blockpathtypes1), current)) {
             neighbors[i++] = node;

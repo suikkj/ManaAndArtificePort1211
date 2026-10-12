@@ -28,7 +28,7 @@ import com.mna.api.enchantments.MNAEnchantmentHelper;
 
 public class AddChimeriteModifier
 extends LootModifier {
-    public static final Supplier<Codec<AddChimeriteModifier>> CODEC = Suppliers.memoize(() -> RecordCodecBuilder.create(inst -> AddChimeriteModifier.codecStart((RecordCodecBuilder.Instance)inst).and((App)Codec.INT.fieldOf("numChimerite").forGetter(m -> m.numChimerite)).and((App)Codec.INT.fieldOf("magicLevel").forGetter(m -> m.magicLevel)).and((App)Codec.FLOAT.fieldOf("chance").forGetter(m -> Float.valueOf(m.chance))).and((App)Codec.FLOAT.fieldOf("fortuneBonusChance").forGetter(m -> Float.valueOf(m.fortuneBonusChance))).and((App)BuiltInRegistries.ITEM.getCodec().fieldOf("dropsWith").forGetter(m -> m.dropsWith)).apply((Applicative)inst, AddChimeriteModifier::new)));
+    public static final Supplier<com.mojang.serialization.MapCodec<AddChimeriteModifier>> CODEC = Suppliers.memoize(() -> RecordCodecBuilder.create(inst -> AddChimeriteModifier.codecStart((RecordCodecBuilder.Instance)inst).and((App)Codec.INT.fieldOf("numChimerite").forGetter(m -> m.numChimerite)).and((App)Codec.INT.fieldOf("magicLevel").forGetter(m -> m.magicLevel)).and((App)Codec.FLOAT.fieldOf("chance").forGetter(m -> Float.valueOf(m.chance))).and((App)Codec.FLOAT.fieldOf("fortuneBonusChance").forGetter(m -> Float.valueOf(m.fortuneBonusChance))).and((App)BuiltInRegistries.ITEM.getCodec().fieldOf("dropsWith").forGetter(m -> m.dropsWith)).apply((Applicative)inst, AddChimeriteModifier::new)));
     private final Item dropsWith;
     private final int numChimerite;
     private final int magicLevel;
@@ -53,7 +53,7 @@ extends LootModifier {
             ItemStack toolStack = (ItemStack)context.getParamOrNull(LootContextParams.TOOL);
             int fortuneLevel = 0;
             if (toolStack != null && !toolStack.isEmpty()) {
-                fortuneLevel = MNAEnchantmentHelper.getItemEnchantmentLevel(Enchantments.BLOCK_FORTUNE, toolStack);
+                fortuneLevel = MNAEnchantmentHelper.getItemEnchantmentLevel(Enchantments.FORTUNE, toolStack);
             }
             float bonus = (float)fortuneLevel * this.fortuneBonusChance;
             MNACap.get((Player)e, PlayerMagicProvider.MAGIC).ifPresent(magic -> {
@@ -65,7 +65,7 @@ extends LootModifier {
         return generatedLoot;
     }
 
-    public Codec<? extends IGlobalLootModifier> codec() {
+    public com.mojang.serialization.MapCodec<? extends IGlobalLootModifier> codec() {
         return CODEC.get();
     }
 }
