@@ -45,7 +45,7 @@ extends BaseClientMessage implements CustomPacketPayload {
         try {
             msg.particleType = ParticleTypes.valueOf(ParticleTypes.class, buf.readUtf(Short.MAX_VALUE));
             msg.position = new Vec3(buf.readDouble(), buf.readDouble(), buf.readDouble());
-            msg.particleMeta = buf.readAnySizeNbt();
+            msg.particleMeta = buf.readNbt();
         }
         catch (IllegalArgumentException | IndexOutOfBoundsException e) {
             ManaAndArtifice.LOGGER.error("Exception while reading SpawnParticleEffectMessage: " + e);

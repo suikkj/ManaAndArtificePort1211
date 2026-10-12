@@ -82,4 +82,13 @@ public final class MNAItemData {
     public static CompoundTag saveItems(CompoundTag tag, net.minecraft.core.NonNullList<ItemStack> list) {
         return net.minecraft.world.ContainerHelper.saveAllItems(tag, list, provider());
     }
+
+    /** Equivalente ao antigo {@code stack.getOrCreateTagElement(key)} (escritas persistem). */
+    public static CompoundTag getOrCreateTagElement(ItemStack stack, String key) {
+        CustomData data = stack.get(DataComponents.CUSTOM_DATA);
+        CompoundTag tag = data == null ? new CompoundTag() : data.copyTag();
+        CompoundTag element = tag.getOrCreate(key);
+        stack.set(DataComponents.CUSTOM_DATA, CustomData.of(tag));
+        return element;
+    }
 }

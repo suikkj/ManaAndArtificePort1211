@@ -89,15 +89,15 @@ extends AbstractContainerMenu {
     }
 
     public boolean shareTeam() {
-        return ((DataSlot)this.dataSlots.get(0)).get() == 1;
+        return ((DataSlot)com.mna.gui.containers.MNAMenuAccess.dataSlots(this).get(0)).get() == 1;
     }
 
     public boolean shareFaction() {
-        return ((DataSlot)this.dataSlots.get(1)).get() == 1;
+        return ((DataSlot)com.mna.gui.containers.MNAMenuAccess.dataSlots(this).get(1)).get() == 1;
     }
 
     public boolean sharePublic() {
-        return ((DataSlot)this.dataSlots.get(2)).get() == 1;
+        return ((DataSlot)com.mna.gui.containers.MNAMenuAccess.dataSlots(this).get(2)).get() == 1;
     }
 
     public float getAmount(Affinity affinity) {
@@ -131,7 +131,7 @@ extends AbstractContainerMenu {
                 return 0.0f;
             }
         }
-        return (float)((DataSlot)this.dataSlots.get(dataSlotIndex)).get() / 100.0f;
+        return (float)((DataSlot)com.mna.gui.containers.MNAMenuAccess.dataSlots(this).get(dataSlotIndex)).get() / 100.0f;
     }
 
     public float getCapacity(Affinity affinity) {
@@ -139,19 +139,19 @@ extends AbstractContainerMenu {
     }
 
     public float getChargeRate() {
-        return (float)((DataSlot)this.dataSlots.get(9)).get() / 100.0f * 20.0f;
+        return (float)((DataSlot)com.mna.gui.containers.MNAMenuAccess.dataSlots(this).get(9)).get() / 100.0f * 20.0f;
     }
 
     public float getDispersalRate() {
-        return (float)((DataSlot)this.dataSlots.get(11)).get() / 100.0f * 20.0f;
+        return (float)((DataSlot)com.mna.gui.containers.MNAMenuAccess.dataSlots(this).get(11)).get() / 100.0f * 20.0f;
     }
 
     public float getDispersalRadius() {
-        return (float)((DataSlot)this.dataSlots.get(10)).get() / 100.0f;
+        return (float)((DataSlot)com.mna.gui.containers.MNAMenuAccess.dataSlots(this).get(10)).get() / 100.0f;
     }
 
     public void toggleShareTeam() {
-        DataSlot dataSlot = (DataSlot)this.dataSlots.get(0);
+        DataSlot dataSlot = (DataSlot)com.mna.gui.containers.MNAMenuAccess.dataSlots(this).get(0);
         if (dataSlot.get() == 1) {
             dataSlot.set(0);
         } else {
@@ -160,7 +160,7 @@ extends AbstractContainerMenu {
     }
 
     public void toggleShareFaction() {
-        DataSlot dataSlot = (DataSlot)this.dataSlots.get(1);
+        DataSlot dataSlot = (DataSlot)com.mna.gui.containers.MNAMenuAccess.dataSlots(this).get(1);
         if (dataSlot.get() == 1) {
             dataSlot.set(0);
         } else {
@@ -169,7 +169,7 @@ extends AbstractContainerMenu {
     }
 
     public void toggleSharePublic() {
-        DataSlot dataSlot = (DataSlot)this.dataSlots.get(2);
+        DataSlot dataSlot = (DataSlot)com.mna.gui.containers.MNAMenuAccess.dataSlots(this).get(2);
         if (dataSlot.get() == 1) {
             dataSlot.set(0);
         } else {

@@ -70,8 +70,8 @@ public class EntityUtil {
             magic.getCastingResource().consume(entity, manaCost);
             motion = entity.getDeltaMovement();
             float maxLength = maxSpeed;
-            lookScale = 0.06;
-            scaled_look = look.scale(lookScale);
+            double lookScale = 0.06;
+            net.minecraft.world.phys.Vec3 scaled_look = look.scale(lookScale);
             motion = motion.add(scaled_look);
             if (motion.length() > (double)maxLength) {
                 motion = motion.scale((double)maxLength / motion.length());
@@ -81,8 +81,8 @@ public class EntityUtil {
             magic.getCastingResource().consume(entity, manaCost * 0.75f);
             motion = entity.getDeltaMovement();
             float minLength = 0.1f;
-            lookScale = -0.01;
-            scaled_look = look.scale(lookScale);
+            double lookScale = -0.01;
+            net.minecraft.world.phys.Vec3 scaled_look = look.scale(lookScale);
             motion = motion.add(scaled_look);
             if (motion.length() < (double)minLength) {
                 motion = motion.scale((double)minLength / motion.length());

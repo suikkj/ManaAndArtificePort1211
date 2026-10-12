@@ -359,10 +359,10 @@ extends MAGeckoRenderer<Construct> {
         Matrix4f matrix4f = posestack$pose.pose();
         Matrix3f matrix3f = posestack$pose.normal();
         VertexConsumer vertexconsumer = bufferSource.getBuffer(BOBBER_RENDER);
-        ConstructRenderer.addVertex(vertexconsumer, matrix4f, matrix3f, this.renderStack.packedLight, 0.0f, 0, 0, 1);
-        ConstructRenderer.addVertex(vertexconsumer, matrix4f, matrix3f, this.renderStack.packedLight, 1.0f, 0, 1, 1);
-        ConstructRenderer.addVertex(vertexconsumer, matrix4f, matrix3f, this.renderStack.packedLight, 1.0f, 1, 1, 0);
-        ConstructRenderer.addVertex(vertexconsumer, matrix4f, matrix3f, this.renderStack.packedLight, 0.0f, 1, 0, 0);
+        ConstructRenderer.vertex(vertexconsumer, matrix4f, matrix3f, this.renderStack.packedLight, 0.0f, 0, 0, 1);
+        ConstructRenderer.vertex(vertexconsumer, matrix4f, matrix3f, this.renderStack.packedLight, 1.0f, 0, 1, 1);
+        ConstructRenderer.vertex(vertexconsumer, matrix4f, matrix3f, this.renderStack.packedLight, 1.0f, 1, 1, 0);
+        ConstructRenderer.vertex(vertexconsumer, matrix4f, matrix3f, this.renderStack.packedLight, 0.0f, 1, 0, 0);
         poseStack.popPose();
     }
 

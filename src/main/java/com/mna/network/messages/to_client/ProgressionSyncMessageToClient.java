@@ -76,7 +76,7 @@ extends BaseClientMessage implements CustomPacketPayload {
                 msg.completedProgressionSteps.add(buf.readResourceLocation());
             }
             if (buf.readBoolean()) {
-                msg.codex_unlocks = buf.readAnySizeNbt();
+                msg.codex_unlocks = buf.readNbt();
             }
         }
         catch (IllegalArgumentException | IndexOutOfBoundsException e) {

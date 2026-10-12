@@ -75,7 +75,7 @@ extends Screen {
     }
 
     @SubscribeEvent
-    public static void overlayEvent(CustomizeGuiOverlayEvent.Pre event) {
+    public static void overlayEvent(net.neoforged.neoforge.client.event.RenderGuiEvent.Pre event) {
         Minecraft mc = Minecraft.getInstance();
         if (mc.screen instanceof BellOfBiddingRadialSelect) {
             event.setCanceled(true);

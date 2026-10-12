@@ -85,7 +85,7 @@ public class HUDOverlayRenderer {
 
     @SubscribeEvent(receiveCanceled=true, priority=EventPriority.LOWEST)
     @OnlyIn(value=Dist.CLIENT)
-    public static void onRenderGameOverlay(CustomizeGuiOverlayEvent.Pre event) {
+    public static void onRenderGameOverlay(net.neoforged.neoforge.client.event.RenderGuiEvent.Pre event) {
         LocalPlayer entityPlayerSP = HUDOverlayRenderer.instance.mc.player;
         HUDOverlayRenderer.instance.screenWidth = HUDOverlayRenderer.instance.mc.getWindow().getGuiScaledWidth();
         HUDOverlayRenderer.instance.screenHeight = HUDOverlayRenderer.instance.mc.getWindow().getGuiScaledHeight();
@@ -97,14 +97,14 @@ public class HUDOverlayRenderer {
         }
         if (entityPlayerSP.hasEffect(com.mna.api.tools.MAEffects.holder(EffectInit.MIND_VISION.get())) || entityPlayerSP.hasEffect(com.mna.api.tools.MAEffects.holder(EffectInit.POSSESSION.get()))) {
             MutableComponent prompt = Component.translatable((String)"gui.mna.doublejumptoexitprompt");
-            int x = event.getWindow().getGuiScaledWidth() / 2;
-            int n = event.getWindow().getGuiScaledHeight();
+            int x = net.minecraft.client.Minecraft.getInstance().getWindow().getGuiScaledWidth() / 2;
+            int n = net.minecraft.client.Minecraft.getInstance().getWindow().getGuiScaledHeight();
             Objects.requireNonNull(HUDOverlayRenderer.instance.mc.font);
             int y = n - 9 - 5;
             event.getGuiGraphics().drawCenteredString(HUDOverlayRenderer.instance.mc.font, (Component)prompt, x, y, ChatFormatting.GOLD.getColor().intValue());
             event.setCanceled(true);
         }
-        if (instance.renderColdDarkFade(event.getWindow().getGuiScaledWidth(), event.getWindow().getGuiScaledHeight(), event.getGuiGraphics()) || instance.renderTeleportHud(event.getWindow().getGuiScaledWidth(), event.getWindow().getGuiScaledHeight(), event.getGuiGraphics())) {
+        if (instance.renderColdDarkFade(net.minecraft.client.Minecraft.getInstance().getWindow().getGuiScaledWidth(), net.minecraft.client.Minecraft.getInstance().getWindow().getGuiScaledHeight(), event.getGuiGraphics()) || instance.renderTeleportHud(net.minecraft.client.Minecraft.getInstance().getWindow().getGuiScaledWidth(), net.minecraft.client.Minecraft.getInstance().getWindow().getGuiScaledHeight(), event.getGuiGraphics())) {
             event.setCanceled(true);
             Minecraft.getInstance().setScreen(null);
         }

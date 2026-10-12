@@ -52,7 +52,7 @@ extends BaseServerMessage implements CustomPacketPayload {
     public static PatterningPrismPasteMessage decode(FriendlyByteBuf buf) {
         PatterningPrismPasteMessage msg = new PatterningPrismPasteMessage();
         try {
-            msg.logic = buf.readAnySizeNbt();
+            msg.logic = buf.readNbt();
             msg.hand = InteractionHand.values()[buf.readInt()];
             msg.isParticleEmitter = buf.readBoolean();
         }

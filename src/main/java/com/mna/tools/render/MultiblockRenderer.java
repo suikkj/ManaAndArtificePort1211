@@ -104,7 +104,7 @@ public class MultiblockRenderer {
             }
             guiGraphics.pose().pushPose();
             guiGraphics.pose().translate(0.0f, -Math.max(0.0f, animTime - (float)waitTime) * (float)fadeOutSpeed, 0.0f);
-            int x = event.getWindow().getGuiScaledWidth() / 2;
+            int x = net.minecraft.client.Minecraft.getInstance().getWindow().getGuiScaledWidth() / 2;
             int y = 16;
             int width = 180;
             int height = 9;

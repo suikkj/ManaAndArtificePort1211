@@ -25,7 +25,7 @@ extends AbstractContainerMenu {
     private final ParticleEmitterTile _tile;
 
     public ParticleEmissionContainer(int id, Inventory playerInv, FriendlyByteBuf buffer) {
-        this(id, playerInv, EmitterData.fromTag(buffer.readAnySizeNbt()), BlockPos.of((long)buffer.readLong()));
+        this(id, playerInv, EmitterData.fromTag(buffer.readNbt()), BlockPos.of((long)buffer.readLong()));
     }
 
     public ParticleEmissionContainer(int id, Inventory playerInventoryIn, EmitterData data, BlockPos pos) {

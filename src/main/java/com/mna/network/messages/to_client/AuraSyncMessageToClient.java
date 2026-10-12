@@ -75,7 +75,7 @@ extends BaseClientMessage implements CustomPacketPayload {
             } else {
                 msg.pos = BlockPos.of((long)buf.readLong());
             }
-            msg.tag = buf.readAnySizeNbt();
+            msg.tag = buf.readNbt();
         }
         catch (IllegalArgumentException | IndexOutOfBoundsException e) {
             ManaAndArtifice.LOGGER.error("Exception while reading MAPFXSyncRequestMessage: " + e);
