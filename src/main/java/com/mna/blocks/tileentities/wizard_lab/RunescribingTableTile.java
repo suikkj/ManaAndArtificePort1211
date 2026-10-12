@@ -194,7 +194,7 @@ Consumer<FriendlyByteBuf> {
             ((RunePattern)ItemInit.RUNE_PATTERN.get()).setHMutex(patternStack, hMutex);
             ((RunePattern)ItemInit.RUNE_PATTERN.get()).setVMutex(patternStack, vMutex);
         }
-        if ((recipe = (RunescribingRecipe)this.getLevel().getRecipeManager().getRecipeFor((RecipeType)RecipeInit.RUNESCRIBING_TYPE.get(), (Container)ContainerTools.createTemporaryContainer(patternStack), this.level).orElse(null)) != null && (playerTier < 0 || recipe.getTier() <= playerTier) && EventDispatcher.DispatchRunescribeCraft(recipe, recipe.getResultItem(), player)) {
+        if ((recipe = this.getLevel().getRecipeManager().getRecipeFor(RecipeInit.RUNESCRIBING_TYPE.get(), ContainerTools.createTemporaryContainer(patternStack).asCraftInput(), this.level).map(h -> h.value()).orElse(null)) != null && (playerTier < 0 || recipe.getTier() <= playerTier) && EventDispatcher.DispatchRunescribeCraft(recipe, recipe.getResultItem(), player)) {
             this.setItem(2, recipe.getResultItem());
             if (player instanceof ServerPlayer) {
                 CustomAdvancementTriggers.RUNESCRIBE.trigger((ServerPlayer)player, recipe.getResultItem());

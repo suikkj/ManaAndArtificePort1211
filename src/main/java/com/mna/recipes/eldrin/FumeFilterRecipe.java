@@ -1,5 +1,6 @@
  
 package com.mna.recipes.eldrin;
+import net.minecraft.world.item.crafting.CraftingInput;
 
 import net.minecraft.core.HolderLookup;
 import com.google.gson.JsonElement;
@@ -89,8 +90,8 @@ extends AMRecipeBase {
         return this.cachedGuiRepStack;
     }
 
-    public boolean matches(CraftingContainer inv, Level worldIn) {
-        return inv.getWidth() == 1 && inv.getHeight() == 1 && MATags.smartLookupItem(this.itemOrTagID).contains(inv.getItem(0).getItem());
+    public boolean matches(net.minecraft.world.item.crafting.CraftingInput inv, Level worldIn) {
+        return inv.width() == 1 && inv.height() == 1 && MATags.smartLookupItem(this.itemOrTagID).contains(inv.getItem(0).getItem());
     }
 
     @Override
@@ -98,7 +99,7 @@ extends AMRecipeBase {
         return this.getId();
     }
 
-    public ItemStack assemble(CraftingContainer pContainer, HolderLookup.Provider access) {
+    public ItemStack assemble(net.minecraft.world.item.crafting.CraftingInput pContainer, HolderLookup.Provider access) {
         return ItemStack.EMPTY;
     }
 

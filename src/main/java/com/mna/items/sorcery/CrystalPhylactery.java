@@ -163,7 +163,7 @@ implements IPhylacteryItem {
             return false;
         }
         Mob inst = (Mob)type.create(world);
-        if (!GeneralConfigValues.BossesAllowedInPhylacteries && !com.mna.api.tools.MATools.canChangeDimensions(inst)) {
+        if (!GeneralConfigValues.BossesAllowedInPhylacteries && !com.mna.tools.MATools.canChangeDimensions(inst)) {
             return false;
         }
         stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().putString(NBT_ENTITYTYPE, BuiltInRegistries.ENTITY_TYPE.getKey(type).toString());

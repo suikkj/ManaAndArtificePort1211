@@ -1,5 +1,6 @@
  
 package com.mna.recipes.manaweaving;
+import net.minecraft.world.item.crafting.CraftingInput;
 
 import net.minecraft.core.HolderLookup;
 import com.google.gson.JsonObject;
@@ -61,7 +62,7 @@ extends AMRecipeBase {
         }
     }
 
-    public boolean matches(CraftingContainer inv, Level worldIn) {
+    public boolean matches(net.minecraft.world.item.crafting.CraftingInput inv, Level worldIn) {
         return false;
     }
 
@@ -115,7 +116,7 @@ extends AMRecipeBase {
         return this.getResultItem();
     }
 
-    public ItemStack assemble(CraftingContainer p_44001_, HolderLookup.Provider access) {
+    public ItemStack assemble(net.minecraft.world.item.crafting.CraftingInput p_44001_, HolderLookup.Provider access) {
         return ItemStack.EMPTY;
     }
 

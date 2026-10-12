@@ -101,8 +101,13 @@ implements IMARecipe {
     @Override
     public abstract ItemStack getGuiRepresentationStack();
 
-    public ItemStack getResultItem() {
+    @Override
+    public ItemStack getResultItem(net.minecraft.core.HolderLookup.Provider provider) {
         return this.getResultItem();
+    }
+
+    public ItemStack getResultItem() {
+        return ItemStack.EMPTY;
     }
 
     public IFaction getFactionRequirement() {

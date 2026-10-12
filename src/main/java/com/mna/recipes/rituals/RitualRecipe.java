@@ -1,5 +1,6 @@
  
 package com.mna.recipes.rituals;
+import net.minecraft.world.item.crafting.CraftingInput;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.world.item.component.CustomData;
@@ -518,7 +519,7 @@ implements IRitualRecipe {
         return !StringUtil.isNullOrEmpty((String)this.command);
     }
 
-    public ItemStack assemble(CraftingContainer inv, HolderLookup.Provider access) {
+    public ItemStack assemble(net.minecraft.world.item.crafting.CraftingInput inv, HolderLookup.Provider access) {
         return this.getResultItem();
     }
 
@@ -534,7 +535,7 @@ implements IRitualRecipe {
         return (RecipeType)RecipeInit.RITUAL_TYPE.get();
     }
 
-    public boolean matches(CraftingContainer inv, Level worldIn) {
+    public boolean matches(net.minecraft.world.item.crafting.CraftingInput inv, Level worldIn) {
         return true;
     }
 

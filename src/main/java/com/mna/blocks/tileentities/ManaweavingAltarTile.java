@@ -271,7 +271,7 @@ implements IRequirePlayerReference<ManaweavingAltarTile> {
         }
         this.__cachedRecipe = null;
         this.__cachedRecipeOutput = ItemStack.EMPTY;
-        ManaweavingRecipe recipe = this.getLevel().getRecipeManager().getRecipeFor((RecipeType)RecipeInit.MANAWEAVING_RECIPE_TYPE.get(), (Container)this.createCraftingInventory(), this.level);
+        ManaweavingRecipe recipe = this.getLevel().getRecipeManager().getRecipeFor(RecipeInit.MANAWEAVING_RECIPE_TYPE.get(), this.createCraftingInventory().asCraftInput(), this.level).map(h -> h.value()).orElse(null);
         if (recipe != null && recipe.getTier() <= tier) {
             this.__cachedRecipe = recipe;
             this.__cachedRecipeOutput = recipe.getResultItem().copy();

@@ -1,5 +1,6 @@
  
 package com.mna.recipes.crush;
+import net.minecraft.world.item.crafting.CraftingInput;
 
 import net.minecraft.core.HolderLookup;
 import com.google.gson.JsonObject;
@@ -40,12 +41,12 @@ implements IRuneforgeRecipe {
         }
     }
 
-    public boolean matches(CraftingContainer inv, Level worldIn) {
+    public boolean matches(net.minecraft.world.item.crafting.CraftingInput inv, Level worldIn) {
         ItemStack inputStack;
-        return inv.getContainerSize() == 1 && MATags.isItemEqual(inputStack = inv.getItem(0), this.inputItem);
+        return inv.size() == 1 && MATags.isItemEqual(inputStack = inv.getItem(0), this.inputItem);
     }
 
-    public ItemStack assemble(CraftingContainer inv, HolderLookup.Provider access) {
+    public ItemStack assemble(net.minecraft.world.item.crafting.CraftingInput inv, HolderLookup.Provider access) {
         return this.getResultItem();
     }
 

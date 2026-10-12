@@ -170,7 +170,7 @@ GeoBlockEntity {
             }
         } else {
             CraftingContainer inv = this.createDummyCraftingInventory();
-            this.__cachedRecipe = this.getLevel().getRecipeManager().getRecipeFor((RecipeType)RecipeInit.RUNEFORGING_TYPE.get(), (Container)inv, this.level).orElse(null);
+            this.__cachedRecipe = this.getLevel().getRecipeManager().getRecipeFor(RecipeInit.RUNEFORGING_TYPE.get(), inv.asCraftInput(), this.level).map(h -> h.value()).orElse(null);
             this.__cachedRecipeOutput = ItemStack.EMPTY;
             if (this.__cachedRecipe == null) {
                 ItemStack rune = this.getItem(1);

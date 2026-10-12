@@ -1,5 +1,6 @@
  
 package com.mna.recipes.manaweaving;
+import net.minecraft.world.item.crafting.CraftingInput;
 
 import net.minecraft.world.item.component.CustomData;
 import net.minecraft.core.component.DataComponents;
@@ -64,7 +65,7 @@ implements IManaweavingRecipe {
     }
 
     @Override
-    public boolean matches(CraftingContainer inv, Level worldIn) {
+    public boolean matches(net.minecraft.world.item.crafting.CraftingInput inv, Level worldIn) {
         if (!(inv instanceof ItemAndPatternCraftingInventory)) {
             return false;
         }

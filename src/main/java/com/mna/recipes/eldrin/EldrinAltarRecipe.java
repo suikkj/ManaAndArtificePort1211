@@ -13,6 +13,7 @@
  *  net.minecraft.world.level.Level
  */
 package com.mna.recipes.eldrin;
+import net.minecraft.world.item.crafting.CraftingInput;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -119,7 +120,7 @@ extends ItemAndPatternRecipe {
     }
 
     @Override
-    public boolean matches(CraftingContainer inv, Level worldIn) {
+    public boolean matches(net.minecraft.world.item.crafting.CraftingInput inv, Level worldIn) {
         if (!(inv instanceof ItemAndPatternCraftingInventory)) {
             return false;
         }

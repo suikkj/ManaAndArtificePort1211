@@ -1,5 +1,6 @@
  
 package com.mna.recipes.runeforging;
+import net.minecraft.world.item.crafting.CraftingInput;
 
 import net.minecraft.core.HolderLookup;
 import com.google.gson.JsonObject;
@@ -39,15 +40,15 @@ implements IRunescribeRecipe {
         this.patternItem = ResourceLocation.parse(recipeJSON.get("output").getAsString());
     }
 
-    public boolean matches(CraftingContainer inv, Level worldIn) {
+    public boolean matches(net.minecraft.world.item.crafting.CraftingInput inv, Level worldIn) {
         ItemStack checkStack = inv.getItem(0);
-        if (inv.getContainerSize() == 1 && checkStack.getItem() == ItemInit.RUNE_PATTERN.get()) {
+        if (inv.size() == 1 && checkStack.getItem() == ItemInit.RUNE_PATTERN.get()) {
             return ((RunePattern)ItemInit.RUNE_PATTERN.get()).getHMutex(checkStack) == this.hMutex && ((RunePattern)ItemInit.RUNE_PATTERN.get()).getVMutex(checkStack) == this.vMutex;
         }
         return false;
     }
 
-    public ItemStack assemble(CraftingContainer inv, HolderLookup.Provider access) {
+    public ItemStack assemble(net.minecraft.world.item.crafting.CraftingInput inv, HolderLookup.Provider access) {
         return this.getResultItem();
     }
 

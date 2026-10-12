@@ -85,7 +85,7 @@ extends PotionEffectComponent {
 
     @Override
     protected boolean applicationPredicate(LivingEntity target) {
-        return com.mna.api.tools.MATools.canChangeDimensions(target);
+        return com.mna.tools.MATools.canChangeDimensions(target);
     }
 
     @Override

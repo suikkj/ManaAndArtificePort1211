@@ -1,5 +1,6 @@
  
 package com.mna.recipes.progression;
+import net.minecraft.world.item.crafting.CraftingInput;
 
 import net.minecraft.core.HolderLookup;
 import com.google.gson.JsonObject;
@@ -59,7 +60,7 @@ extends AMRecipeBase {
         this._description = null;
     }
 
-    public ItemStack assemble(CraftingContainer pContainer, HolderLookup.Provider access) {
+    public ItemStack assemble(net.minecraft.world.item.crafting.CraftingInput pContainer, HolderLookup.Provider access) {
         return ItemStack.EMPTY;
     }
 
@@ -82,7 +83,7 @@ extends AMRecipeBase {
         return this.getId();
     }
 
-    public boolean matches(CraftingContainer pContainer, Level pLevel) {
+    public boolean matches(net.minecraft.world.item.crafting.CraftingInput pContainer, Level pLevel) {
         return false;
     }
 

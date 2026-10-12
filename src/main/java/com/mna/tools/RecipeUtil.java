@@ -32,7 +32,7 @@ public class RecipeUtil {
             }
         }
         CraftingContainer inventory = ContainerTools.createTemporaryContainer(3, 3, (NonNullList<ItemStack>)invItems);
-        return world.getRecipeManager().getRecipeFor(RecipeType.CRAFTING, (Container)inventory, world);
+        return world.getRecipeManager().getRecipeFor(RecipeType.CRAFTING, inventory.asCraftInput(), world);
     }
 }
 

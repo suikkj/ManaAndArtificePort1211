@@ -553,7 +553,7 @@ IEldrinConsumerTile {
         for (int i = 0; i < 9; ++i) {
             craftinginventory.setItem(i, (ItemStack)stacks.get(i));
         }
-        this.__cachedRecipe = this.getLevel().getRecipeManager().getRecipeFor((RecipeType)RecipeInit.ELDRIN_ALTAR_TYPE.get(), (Container)craftinginventory, this.level);
+        this.__cachedRecipe = this.getLevel().getRecipeManager().getRecipeFor(RecipeInit.ELDRIN_ALTAR_TYPE.get(), craftinginventory.asCraftInput(), this.level).map(h -> h.value()).orElse(null);
         if (this.__cachedRecipe != null) {
             MNACap.get(crafter, PlayerProgressionProvider.PROGRESSION).ifPresent(p -> {
                 IFaction playerfaction = p.getAlliedFaction();

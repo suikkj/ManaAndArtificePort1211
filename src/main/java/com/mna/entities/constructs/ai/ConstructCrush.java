@@ -102,7 +102,7 @@ extends ConstructAITask<ConstructCrush> {
             ItemStack stack = c.getItemInHand(carrying[i]);
             if (stack.isEmpty()) continue;
             CraftingContainer inv = ContainerTools.createTemporaryContainer(stack);
-            CrushingRecipe smeltRecipe = c.level().getRecipeManager().getRecipeFor((RecipeType)RecipeInit.CRUSHING_TYPE.get(), (Container)inv, c.level()).orElse(null);
+            CrushingRecipe smeltRecipe = c.level().getRecipeManager().getRecipeFor(RecipeInit.CRUSHING_TYPE.get(), inv.asCraftInput(), c.level()).map(h -> h.value()).orElse(null);
             if (smeltRecipe == null) {
                 return new Pair(ItemStack.EMPTY, null);
             }

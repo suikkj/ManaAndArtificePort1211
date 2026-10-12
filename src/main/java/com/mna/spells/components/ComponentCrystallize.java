@@ -82,7 +82,7 @@ extends SpellEffect {
             }
             return ComponentApplicationResult.FAIL;
         }
-        if (living != null && !(living instanceof Player) && com.mna.api.tools.MATools.canChangeDimensions(living) && living.isAlive()) {
+        if (living != null && !(living instanceof Player) && com.mna.tools.MATools.canChangeDimensions(living) && living.isAlive()) {
             boolean isConstructAndIsMine = living instanceof Construct && ((Construct)living).getOwner() == source.getPlayer();
             int magnitude = (int)modificationData.getValue(Attribute.LESSER_MAGNITUDE);
             if (!(isConstructAndIsMine || this.magnitudeHealthCheck(source, target, magnitude, 20) && !SummonUtils.isSummon((Entity)living))) {

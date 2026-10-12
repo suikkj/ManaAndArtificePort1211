@@ -105,7 +105,7 @@ implements IBlockEntityExtension {
 
     private boolean cacheRecipe() {
         CraftingContainer inv = ContainerTools.createTemporaryContainer(this.getItem(0));
-        ArcaneFurnaceRecipe smeltRecipe = this.getLevel().getRecipeManager().getRecipeFor((RecipeType)RecipeInit.ARCANE_FURNACE_TYPE.get(), (Container)inv, this.level).orElse(null);
+        ArcaneFurnaceRecipe smeltRecipe = this.getLevel().getRecipeManager().getRecipeFor(RecipeInit.ARCANE_FURNACE_TYPE.get(), inv.asCraftInput(), this.level).map(h -> h.value()).orElse(null);
         this.__cachedRecipeOutput = null;
         ItemStack ingredient = this.getItem(0);
         if (this.hasRepairUpgrade()) {
@@ -123,25 +123,25 @@ implements IBlockEntityExtension {
             this.burnTime = smeltRecipe.getBurnTime() * this.getItem(0).getCount();
             ret = true;
         } else {
-            Optional cook_recipe = this.getLevel().getRecipeManager().getRecipeFor(RecipeType.CAMPFIRE_COOKING, (Container)inv, this.level);
+            Optional cook_recipe = this.getLevel().getRecipeManager().getRecipeFor(RecipeType.CAMPFIRE_COOKING, new net.minecraft.world.item.crafting.SingleRecipeInput(inv.getItem(0)), this.level);
             if (cook_recipe.isPresent()) {
-                this.__cachedRecipeOutput = ((CampfireCookingRecipe)cook_recipe.get()).assemble((Container)inv, this.level.registryAccess());
+                this.__cachedRecipeOutput = ((CampfireCookingRecipe)((net.minecraft.world.item.crafting.RecipeHolder)cook_recipe.get()).value()).assemble(new net.minecraft.world.item.crafting.SingleRecipeInput(inv.getItem(0)), this.level.registryAccess());
                 this.__cachedRecipeOutput.setCount(this.__cachedRecipeOutput.getCount() * this.getItem(0).getCount());
-                this.burnTime = ((CampfireCookingRecipe)cook_recipe.get()).getCookingTime() / 2 * this.getItem(0).getCount();
+                this.burnTime = ((CampfireCookingRecipe)((net.minecraft.world.item.crafting.RecipeHolder)cook_recipe.get()).value()).getCookingTime() / 2 * this.getItem(0).getCount();
                 ret = true;
             } else {
-                Optional furnace_recipe = this.getLevel().getRecipeManager().getRecipeFor(RecipeType.SMELTING, (Container)inv, this.level);
+                Optional furnace_recipe = this.getLevel().getRecipeManager().getRecipeFor(RecipeType.SMELTING, new net.minecraft.world.item.crafting.SingleRecipeInput(inv.getItem(0)), this.level);
                 if (furnace_recipe.isPresent()) {
-                    this.__cachedRecipeOutput = ((SmeltingRecipe)furnace_recipe.get()).assemble((Container)inv, this.level.registryAccess());
+                    this.__cachedRecipeOutput = ((SmeltingRecipe)((net.minecraft.world.item.crafting.RecipeHolder)furnace_recipe.get()).value()).assemble(new net.minecraft.world.item.crafting.SingleRecipeInput(inv.getItem(0)), this.level.registryAccess());
                     this.__cachedRecipeOutput.setCount(this.__cachedRecipeOutput.getCount() * this.getItem(0).getCount());
-                    this.burnTime = ((SmeltingRecipe)furnace_recipe.get()).getCookingTime() * 2 * this.getItem(0).getCount();
+                    this.burnTime = ((SmeltingRecipe)((net.minecraft.world.item.crafting.RecipeHolder)furnace_recipe.get()).value()).getCookingTime() * 2 * this.getItem(0).getCount();
                     ret = true;
                 } else {
-                    Optional blasting_recipe = this.getLevel().getRecipeManager().getRecipeFor(RecipeType.BLASTING, (Container)inv, this.level);
+                    Optional blasting_recipe = this.getLevel().getRecipeManager().getRecipeFor(RecipeType.BLASTING, new net.minecraft.world.item.crafting.SingleRecipeInput(inv.getItem(0)), this.level);
                     if (blasting_recipe.isPresent()) {
-                        this.__cachedRecipeOutput = ((BlastingRecipe)blasting_recipe.get()).assemble((Container)inv, this.level.registryAccess());
+                        this.__cachedRecipeOutput = ((BlastingRecipe)((net.minecraft.world.item.crafting.RecipeHolder)blasting_recipe.get()).value()).assemble(new net.minecraft.world.item.crafting.SingleRecipeInput(inv.getItem(0)), this.level.registryAccess());
                         this.__cachedRecipeOutput.setCount(this.__cachedRecipeOutput.getCount() * this.getItem(0).getCount());
-                        this.burnTime = ((BlastingRecipe)blasting_recipe.get()).getCookingTime() * 2 * this.getItem(0).getCount();
+                        this.burnTime = ((BlastingRecipe)((net.minecraft.world.item.crafting.RecipeHolder)blasting_recipe.get()).value()).getCookingTime() * 2 * this.getItem(0).getCount();
                         ret = true;
                     }
                 }

@@ -24,7 +24,7 @@ public class MATools {
             || e instanceof SkeletonHorse || e instanceof ZombieHorse;
     }
 
-    /** [PORT 1.21.1] com.mna.api.tools.MATools.canChangeDimensions(Entity) (sem args) virou canChangeDimensions(Level, Level). */
+    /** [PORT 1.21.1] com.mna.tools.MATools.canChangeDimensions(Entity) (sem args) virou canChangeDimensions(Level, Level). */
     public static boolean canChangeDimensions(net.minecraft.world.entity.Entity entity) {
         return entity.canChangeDimensions(entity.level(), entity.level());
     }

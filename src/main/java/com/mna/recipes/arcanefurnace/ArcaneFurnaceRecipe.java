@@ -1,5 +1,6 @@
  
 package com.mna.recipes.arcanefurnace;
+import net.minecraft.world.item.crafting.CraftingInput;
 
 import net.minecraft.core.HolderLookup;
 import com.google.gson.JsonObject;
@@ -73,8 +74,8 @@ extends AMRecipeBase {
         this.outputQuantity = quantity;
     }
 
-    public boolean matches(CraftingContainer inv, Level worldIn) {
-        if (inv.getContainerSize() != 1) {
+    public boolean matches(net.minecraft.world.item.crafting.CraftingInput inv, Level worldIn) {
+        if (inv.size() != 1) {
             return false;
         }
         ItemStack stack = inv.getItem(0);
@@ -92,7 +93,7 @@ extends AMRecipeBase {
         return ItemStack.EMPTY;
     }
 
-    public ItemStack assemble(CraftingContainer inv, HolderLookup.Provider access) {
+    public ItemStack assemble(net.minecraft.world.item.crafting.CraftingInput inv, HolderLookup.Provider access) {
         return this.getResultItem(access);
     }
 

@@ -1,5 +1,6 @@
  
 package com.mna.recipes.multiblock;
+import net.minecraft.world.item.crafting.CraftingInput;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.component.DataComponents;
@@ -327,11 +328,11 @@ implements IMultiblockDefinition {
         return defaultMatcher.match(world, offset, worldPos, desired, existing, true);
     }
 
-    public boolean matches(CraftingContainer inv, Level worldIn) {
+    public boolean matches(net.minecraft.world.item.crafting.CraftingInput inv, Level worldIn) {
         return false;
     }
 
-    public ItemStack assemble(CraftingContainer inv, HolderLookup.Provider access) {
+    public ItemStack assemble(net.minecraft.world.item.crafting.CraftingInput inv, HolderLookup.Provider access) {
         return ItemStack.EMPTY;
     }
 

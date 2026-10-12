@@ -1,5 +1,6 @@
  
 package com.mna.recipes.runeforging;
+import net.minecraft.world.item.crafting.CraftingInput;
 
 import net.minecraft.core.HolderLookup;
 import com.google.gson.JsonObject;
@@ -48,13 +49,13 @@ implements IRuneforgeRecipe {
         }
     }
 
-    public boolean matches(CraftingContainer inv, Level worldIn) {
+    public boolean matches(net.minecraft.world.item.crafting.CraftingInput inv, Level worldIn) {
         ItemStack patternStack = inv.getItem(0);
         ItemStack materialStack = inv.getItem(1);
-        return inv.getContainerSize() == 2 && BuiltInRegistries.ITEM.getKey(patternStack.getItem()).compareTo(this.patternItem) == 0 && (this.materialItem == null ? materialStack.getItem() == ItemInit.VINTEUM_INGOT_SUPERHEATED.get() : BuiltInRegistries.ITEM.getKey(materialStack.getItem()).compareTo(this.materialItem) == 0);
+        return inv.size() == 2 && BuiltInRegistries.ITEM.getKey(patternStack.getItem()).compareTo(this.patternItem) == 0 && (this.materialItem == null ? materialStack.getItem() == ItemInit.VINTEUM_INGOT_SUPERHEATED.get() : BuiltInRegistries.ITEM.getKey(materialStack.getItem()).compareTo(this.materialItem) == 0);
     }
 
-    public ItemStack assemble(CraftingContainer inv, HolderLookup.Provider access) {
+    public ItemStack assemble(net.minecraft.world.item.crafting.CraftingInput inv, HolderLookup.Provider access) {
         return this.getResultItem();
     }
 

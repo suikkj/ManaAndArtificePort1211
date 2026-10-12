@@ -67,7 +67,7 @@ extends SpellEffect {
         if (!source.hasCasterReference()) return ComponentApplicationResult.FAIL;
         if (!target.isEntity()) return ComponentApplicationResult.FAIL;
         if (!target.getEntity().isAlive()) return ComponentApplicationResult.FAIL;
-        if (!com.mna.api.tools.MATools.canChangeDimensions(target.getEntity())) return ComponentApplicationResult.FAIL;
+        if (!com.mna.tools.MATools.canChangeDimensions(target.getEntity())) return ComponentApplicationResult.FAIL;
         ItemStack markingRune = source.getCaster().getMainHandItem().getItem() == ItemInit.RUNE_MARKING.get() || source.getCaster().getMainHandItem().getItem() == ItemInit.BOOK_MARKS.get() ? source.getCaster().getMainHandItem() : source.getCaster().getOffhandItem();
         Item item = markingRune.getItem();
         if (!(item instanceof IPositionalItem)) {

@@ -74,7 +74,7 @@ extends WizardLabTile {
         if (stack.isEmpty()) {
             return new FuelStatus(affinity, amount, false);
         }
-        Optional<FumeFilterRecipe> recipe = level.getRecipeManager().getAllRecipesFor(RecipeInit.FUME_FILTER_TYPE.get()).stream().filter(r -> r.value().matches(ContainerTools.createTemporaryContainer(stack), level)).map(r -> r.value()).findFirst();
+        Optional<FumeFilterRecipe> recipe = level.getRecipeManager().getAllRecipesFor(RecipeInit.FUME_FILTER_TYPE.get()).stream().filter(r -> r.value().matches(ContainerTools.createTemporaryContainer(stack).asCraftInput(), level)).map(r -> r.value()).findFirst();
         if (recipe.isEmpty() || amount > 0.0f && recipe.get().getAffinity() == affinity) {
             return new FuelStatus(affinity, amount, false);
         }

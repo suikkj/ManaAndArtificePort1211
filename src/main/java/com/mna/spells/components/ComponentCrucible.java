@@ -93,8 +93,8 @@ extends SpellEffect {
     private ItemStack getFurnace(Level level, ItemStack input) {
         ItemStack output;
         CraftingContainer inv = ContainerTools.createTemporaryContainer(input);
-        Optional furnace_recipe = level.getRecipeManager().getRecipeFor(RecipeType.SMELTING, (Container)inv, level);
-        if (furnace_recipe.isPresent() && !(output = ((SmeltingRecipe)furnace_recipe.get()).assemble((Container)inv, level.registryAccess())).isEmpty()) {
+        Optional furnace_recipe = level.getRecipeManager().getRecipeFor(RecipeType.SMELTING, new net.minecraft.world.item.crafting.SingleRecipeInput(inv.getItem(0)), level);
+        if (furnace_recipe.isPresent() && !(output = ((SmeltingRecipe)((net.minecraft.world.item.crafting.RecipeHolder)furnace_recipe.get()).value()).assemble(new net.minecraft.world.item.crafting.SingleRecipeInput(inv.getItem(0)), level.registryAccess())).isEmpty()) {
             return output;
         }
         return input;

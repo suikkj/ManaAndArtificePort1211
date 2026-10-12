@@ -20,6 +20,7 @@
  *  org.joml.Vector3fc
  */
 package com.mna.recipes.manaweaving;
+import net.minecraft.world.item.crafting.CraftingInput;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.component.DataComponents;
@@ -220,11 +221,11 @@ implements IManaweavePattern {
         }
     }
 
-    public boolean matches(CraftingContainer inv, Level worldIn) {
+    public boolean matches(net.minecraft.world.item.crafting.CraftingInput inv, Level worldIn) {
         return true;
     }
 
-    public ItemStack assemble(CraftingContainer inv, HolderLookup.Provider access) {
+    public ItemStack assemble(net.minecraft.world.item.crafting.CraftingInput inv, HolderLookup.Provider access) {
         return ItemStack.EMPTY;
     }
 

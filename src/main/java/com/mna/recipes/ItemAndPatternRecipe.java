@@ -82,7 +82,7 @@ implements IItemAndPatternRecipe {
 
     protected abstract int maxPatterns();
 
-    public boolean matches(CraftingContainer inv, Level worldIn) {
+    public boolean matches(net.minecraft.world.item.crafting.CraftingInput inv, Level worldIn) {
         return true;
     }
 
@@ -136,7 +136,7 @@ implements IItemAndPatternRecipe {
         this.outputQuantity = outputQuantity;
     }
 
-    public ItemStack assemble(CraftingContainer inv, HolderLookup.Provider access) {
+    public ItemStack assemble(net.minecraft.world.item.crafting.CraftingInput inv, HolderLookup.Provider access) {
         return this.getResultItem();
     }
 

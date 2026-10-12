@@ -59,7 +59,7 @@ extends SpellEffect {
         if (!source.isPlayerCaster()) {
             return ComponentApplicationResult.FAIL;
         }
-        if (target.isLivingEntity() && target.getLivingEntity().isAlive() && com.mna.api.tools.MATools.canChangeDimensions(target.getEntity())) {
+        if (target.isLivingEntity() && target.getLivingEntity().isAlive() && com.mna.tools.MATools.canChangeDimensions(target.getEntity())) {
             int magnitude = (int)modificationData.getValue(Attribute.MAGNITUDE);
             if (!this.casterTeamCheck(source, target) || !this.magnitudeHealthCheck(source, target, magnitude, 20)) {
                 return ComponentApplicationResult.FAIL;
