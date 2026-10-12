@@ -615,7 +615,7 @@ extends Goal {
     }
 
     protected final boolean isTeleportDestinationValid(AbstractGolem c, BlockPos pos) {
-        return c.level().getBlockStates(new AABB(pos, pos.above())).allMatch(state -> state.isAir());
+        return c.level().getBlockStates(new AABB(net.minecraft.world.phys.Vec3.atLowerCornerOf(pos), net.minecraft.world.phys.Vec3.atLowerCornerOf(pos.above()))).allMatch(state -> state.isAir());
     }
 
     protected boolean doAttack() {

@@ -121,10 +121,10 @@ extends ItemAndPatternRecipe {
 
     @Override
     public boolean matches(net.minecraft.world.item.crafting.CraftingInput inv, Level worldIn) {
-        if (!(inv instanceof ItemAndPatternCraftingInventory)) {
+        if (!((Object)inv instanceof ItemAndPatternCraftingInventory)) {
             return false;
         }
-        ItemAndPatternCraftingInventory mwInv = (ItemAndPatternCraftingInventory)inv;
+        ItemAndPatternCraftingInventory mwInv = (ItemAndPatternCraftingInventory)(Object)inv;
         ArrayList<ItemStack> items = new ArrayList<ItemStack>();
         ArrayList<String> patterns = new ArrayList<String>((Collection<String>)mwInv.getPatterns());
         for (int i = 0; i < 9; ++i) {

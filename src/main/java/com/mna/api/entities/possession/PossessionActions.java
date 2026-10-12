@@ -74,10 +74,8 @@ public class PossessionActions {
         boolean isCrossbowUser = reference instanceof CrossbowAttackMob;
         if (isSkeleton || isCrossbowUser) {
             ItemStack itemstack = reference.getProjectile(reference.getItemInHand(ProjectileUtil.getWeaponHoldingHand(reference, item -> item == Items.BOW)));
-            AbstractArrow abstractarrowentity = ProjectileUtil.getMobArrow(reference, (ItemStack)itemstack, (float)1.0f);
-            if (reference.getMainHandItem().getItem() instanceof BowItem) {
-                abstractarrowentity = ((BowItem)reference.getMainHandItem().getItem()).customArrow(abstractarrowentity);
-            }
+            AbstractArrow abstractarrowentity = ProjectileUtil.getMobArrow(reference, (ItemStack)itemstack, (float)1.0f, (ItemStack)null);
+            // [PORT 1.21.1] BowItem.customArrow removido
             Vec3 fwd = Vec3.directionFromRotation((Vec2)reference.getRotationVector());
             double d0 = fwd.x;
             double d1 = fwd.y;

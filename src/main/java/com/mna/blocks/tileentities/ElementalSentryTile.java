@@ -377,7 +377,7 @@ IEldrinConsumerTile {
 
     public CompoundTag getUpdateTag(net.minecraft.core.HolderLookup.Provider registries) {
         CompoundTag tag = new CompoundTag();
-        this.saveAdditional(tag);
+        this.saveAdditional(tag, registries);
         return tag;
     }
 
@@ -386,7 +386,7 @@ IEldrinConsumerTile {
     }
 
     public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt) {
-        this.load(pkt.getTag());
+        this.loadAdditional(pkt.getTag(), this.level.registryAccess());
     }
 }
 

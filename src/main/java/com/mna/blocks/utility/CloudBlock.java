@@ -81,8 +81,8 @@ implements IDontCreateBlockItem {
             boolean no_age = MATags.isBlockIn(belowState.getBlock(), RLoc.create("construct_harvestables_no_age"));
             boolean bl = valid = no_age || MATags.isBlockIn(belowState.getBlock(), RLoc.create("construct_harvestables"));
             if (valid) {
-                if (belowState.getBlock().isRandomlyTicking(belowState)) {
-                    belowState.getBlock().randomTick(belowState, pLevel, belowPos, pRandom);
+                if (belowState.isRandomlyTicking()) {
+                    belowState.randomTick(pLevel, belowPos, pRandom);
                 }
                 pLevel.scheduleTick(belowPos, belowState.getBlock(), 1);
             }

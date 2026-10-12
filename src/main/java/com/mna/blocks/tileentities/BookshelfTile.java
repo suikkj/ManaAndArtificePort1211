@@ -83,7 +83,7 @@ extends TileEntityWithInventory {
             CompoundTag item = new CompoundTag();
             int color = -1;
             if (this.getItem(i).getItem() instanceof MNADyeableItem) {
-                color = ((MNADyeableItem)this.getItem(i).getItem()).getColor(this.getItem(i));
+                color = MNADyeableItem.getColor(this.getItem(i));
             }
             item.putString("rLoc", BuiltInRegistries.ITEM.getKey(this.getItem(i).getItem()).toString());
             if (color > -1) {

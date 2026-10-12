@@ -241,7 +241,7 @@ ISpellComponent {
                 dirs.add(d);
             }
         }
-        for (Direction direction : dirs) {
+        for (Direction direction : (java.util.List<Direction>)dirs) {
             BlockState placementState;
             BlockPlaceContext bpc;
             Direction operatingDirection;
@@ -255,7 +255,7 @@ ISpellComponent {
                 bpcPlayer.setPos(Vec3.atCenterOf((Vec3i)targetPos));
                 bpcPlayer.lookAt(EntityAnchorArgument.Anchor.FEET, Vec3.atCenterOf((Vec3i)targetPos));
             }
-            if (!existing.canBeReplaced(bpc = new BlockPlaceContext(bpcPlayer, InteractionHand.MAIN_HAND, new ItemStack((ItemLike)block), new BlockHitResult(Vec3.atCenterOf((Vec3i)targetPos), operatingDirection, targetPos, false))) || (placementState = block.getStateForPlacement(bpc)) == null || !block.canSurvive(placementState, (LevelReader)world, targetPos)) continue;
+            if (!existing.canBeReplaced(bpc = new BlockPlaceContext(bpcPlayer, InteractionHand.MAIN_HAND, new ItemStack((ItemLike)block), new BlockHitResult(Vec3.atCenterOf((Vec3i)targetPos), operatingDirection, targetPos, false))) || (placementState = block.getStateForPlacement(bpc)) == null || !placementState.canSurvive((LevelReader)world, targetPos)) continue;
             if (true) {
                 if (stateAdjuster != null) {
                     placementState = stateAdjuster.apply(targetPos, placementState);

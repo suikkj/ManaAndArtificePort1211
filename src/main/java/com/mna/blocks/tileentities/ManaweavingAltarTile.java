@@ -63,7 +63,6 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
-import net.neoforged.neoforge.capabilities.Capability;
 import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.items.IItemHandlerModifiable;
 import net.neoforged.neoforge.items.wrapper.InvWrapper;
@@ -690,7 +689,7 @@ implements IRequirePlayerReference<ManaweavingAltarTile> {
     }
 
     public AABB getRenderBoundingBox() {
-        return super.getRenderBoundingBox().expandTowards(0.0, 1.0, 0.0);
+        return new net.minecraft.world.phys.AABB(this.worldPosition).expandTowards(0.0, 1.0, 0.0);
     }
 
     private ItemAndPatternCraftingInventory createCraftingInventory() {

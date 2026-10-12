@@ -54,7 +54,7 @@ public class MATags {
             TagKey tag = TagKey.create((ResourceKey)Registries.BIOME, (ResourceLocation)tagID);
             Optional biomeTag = biomeRegistry.getTag(tag);
             if (biomeTag != null && biomeTag.isPresent()) {
-                return ((HolderSet.Named)biomeTag.get()).stream().collect(Collectors.toList());
+                return ((net.minecraft.core.HolderSet.Named<net.minecraft.world.level.biome.Biome>)biomeTag.get()).stream().collect(Collectors.toList());
             }
         }
         catch (Exception exception) {

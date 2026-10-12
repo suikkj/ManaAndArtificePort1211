@@ -1015,7 +1015,7 @@ IEldrinConsumerTile {
         this.collectedItems.clear();
         list.forEach(inbt -> {
             CompoundTag collectedItem = (CompoundTag)inbt;
-            this.collectedItems.add(CollectedItem.fromNBT(collectedItem));
+            this.collectedItems.add(CollectedItem.fromNBT(collectedItem, this.getLevel().registryAccess()));
         });
         if (compound.contains("consumedPower")) {
             this.consumedPower.clear();
@@ -1098,8 +1098,8 @@ IEldrinConsumerTile {
             return nbt;
         }
 
-        public static CollectedItem fromNBT(CompoundTag nbt) {
-            return new CollectedItem(BlockPos.of((long)nbt.getLong("pos")), ItemStack.parseOptional(this.getLevel().registryAccess(), nbt));
+        public static CollectedItem fromNBT(CompoundTag nbt, net.minecraft.core.HolderLookup.Provider provider) {
+            return new CollectedItem(BlockPos.of((long)nbt.getLong("pos")), ItemStack.parseOptional(provider, nbt));
         }
     }
 
