@@ -34,9 +34,8 @@ implements INoCreeperLingering, com.mna.api.effects.IMNAEffectHook {
             entityLivingBaseIn.setInvisible(true);
         } else {
             EntityUtil.removeInvisibility(entityLivingBaseIn);
-
+        }
         return true;
-    }
     }
 
     public boolean isDurationEffectTick(int duration, int amplifier) {

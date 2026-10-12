@@ -297,10 +297,10 @@ public class MultiblockRenderer {
         BufferBuilder fallback = (BufferBuilder)ObfuscationReflectionHelper.getPrivateValue(MultiBufferSource.BufferSource.class, original, (String)"builder");
         Map layerBuffers = (Map)ObfuscationReflectionHelper.getPrivateValue(MultiBufferSource.BufferSource.class, original, (String)"fixedBuffers");
         Object2ObjectLinkedOpenHashMap remapped = new Object2ObjectLinkedOpenHashMap();
-        for (Map.Entry e : layerBuffers.entrySet()) {
+        for (Map.Entry e : (java.util.Set<Map.Entry>)layerBuffers.entrySet()) {
             remapped.put(GhostRenderType.remap((RenderType)e.getKey()), (BufferBuilder)e.getValue());
         }
-        return new GhostBuffers(fallback, (Map<RenderType, BufferBuilder>)remapped);
+        return new GhostBuffers(new com.mojang.blaze3d.vertex.ByteBufferBuilder(256), (java.util.SequencedMap<RenderType, com.mojang.blaze3d.vertex.ByteBufferBuilder>)(java.util.SequencedMap)remapped);
     }
 
     static {
@@ -348,7 +348,7 @@ public class MultiblockRenderer {
 
     private static class GhostBuffers
     extends MultiBufferSource.BufferSource {
-        protected GhostBuffers(BufferBuilder fallback, Map<RenderType, BufferBuilder> layerBuffers) {
+        protected GhostBuffers(com.mojang.blaze3d.vertex.ByteBufferBuilder fallback, java.util.SequencedMap<RenderType, com.mojang.blaze3d.vertex.ByteBufferBuilder> layerBuffers) {
             super(fallback, layerBuffers);
         }
 

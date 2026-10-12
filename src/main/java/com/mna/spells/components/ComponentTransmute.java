@@ -107,7 +107,7 @@ extends SpellEffect {
                 if (recipe.hasReplaceBlock() && (replace = (Block)BuiltInRegistries.BLOCK.get(recipe.getReplaceBlock())) != null) {
                     context.getServerLevel().setBlock(target.getBlock(), replace.defaultBlockState(), 3);
                 }
-                if (recipe.hasLootTable() && (lootTable = context.getServerLevel().getServer().reloadableRegistries().getLootTable(recipe.getLootTable())) != null) {
+                if (recipe.hasLootTable() && (lootTable = context.getServerLevel().getServer().reloadableRegistries().getLootTable(net.minecraft.resources.ResourceKey.create(net.minecraft.core.registries.Registries.LOOT_TABLE, recipe.getLootTable()))) != null) {
                     LootParams lootparams = new LootParams.Builder(context.getServerLevel()).withParameter(LootContextParams.THIS_ENTITY, source.getCaster()).withParameter(LootContextParams.DAMAGE_SOURCE, source.getCaster().damageSources().magic()).withOptionalParameter(LootContextParams.TOOL, source.getCaster().getItemInHand(source.getHand())).withParameter(LootContextParams.ORIGIN, target.getPosition()).create(LootContextParamSets.ENTITY);
                     Vec3 isPos = Vec3.atCenterOf((Vec3i)target.getBlock());
                     lootTable.getRandomItems(lootparams).forEach(is -> {

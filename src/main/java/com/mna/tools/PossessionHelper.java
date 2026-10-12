@@ -162,7 +162,7 @@ public class PossessionHelper {
                 ent.hurt(ent.damageSources().flyIntoWall(), f2);
             }
             if (ent.onGround() && !ent.level().isClientSide()) {
-                ent.setSharedFlag(7, false);
+                ent.setInvisible(false);
             }
         } else {
             BlockPos blockpos = ent.blockPosition().below();

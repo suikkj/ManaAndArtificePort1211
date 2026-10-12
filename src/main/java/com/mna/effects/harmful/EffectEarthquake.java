@@ -23,12 +23,11 @@ IInputDisable {
         if (living.getPose() != Pose.SWIMMING) {
             living.setPose(Pose.SWIMMING);
             living.refreshDimensions();
-
-        return true;
-    }
+        }
         if (living instanceof Player) {
             ManaAndArtifice.instance.proxy.setFlightEnabled((Player)living, false);
         }
+        return true;
     }
 
     public boolean isDurationEffectTick(int duration, int amplifier) {

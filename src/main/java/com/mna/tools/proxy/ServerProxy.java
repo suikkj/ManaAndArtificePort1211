@@ -155,9 +155,10 @@ implements ISidedProxy {
     public boolean playerHasAdvancement(Player player, ResourceLocation advancementID) {
         ServerPlayer sp;
         Advancement advancement;
-        if (player instanceof ServerPlayer && (advancement = (sp = (ServerPlayer)player).level().getServer().getAdvancements().getAdvancement(advancementID)) != null) {
+        net.minecraft.advancements.AdvancementHolder __ah = null;
+        if (player instanceof ServerPlayer && (__ah = (sp = (ServerPlayer)player).level().getServer().getAdvancements().get(advancementID)) != null && (advancement = __ah.value()) != null) {
             PlayerAdvancements advancements = sp.getAdvancements();
-            AdvancementProgress progress = advancements.getOrStartProgress(advancement);
+            AdvancementProgress progress = advancements.getOrStartProgress(__ah);
             return progress.isDone();
         }
         return false;

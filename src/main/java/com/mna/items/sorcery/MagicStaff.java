@@ -254,7 +254,7 @@ implements ITieredItem<MagicStaff> {
     }
 
     public static ItemStack buildRandomSpellStaff(float chanceForForceSelf, float chanceForNoHelpfulLogic, boolean allowMessWithMori, ServerLevel level) {
-        boolean skipTags;
+        boolean skipTags = false;
         boolean forceSelf;
         Random random = new Random();
         ItemStack stack = MATags.getRandomItemFrom(MATags.Items.GENERATED_SPELL_ITEMS);
@@ -303,16 +303,17 @@ implements ITieredItem<MagicStaff> {
             }
         }
         int count = MathUtils.clamp(MathUtils.weightedRandomNumber(new int[]{89, 5, 3, 2, 1}) + 1, 1, 5);
+        final boolean __skipTagsFinal = skipTags;
         for (int i = 0; i < count; ++i) {
             SpellEffect c2 = CollectionUtils.getRandom(Registries.SpellEffect.getValues().stream().filter(comp -> {
-                if (comp.getUseTag() == SpellPartTags.DONOTUSE && !skipTags || !comp.canBeOnRandomStaff()) {
+                if (comp.getUseTag() == SpellPartTags.DONOTUSE && !__skipTagsFinal || !comp.canBeOnRandomStaff()) {
                     return false;
                 }
                 List<SpellReagent> reagents = comp.getRequiredReagents(null, null);
                 if (reagents != null && reagents.size() > 0) {
                     return false;
                 }
-                return skipTags ? true : CollectionUtils.componentMatchesShapeAndTag((Shape)((ModifiedSpellPart)randomRecipe.getShape()).getPart(), comp, (SpellPartTags)((targetTag.getValue())));
+                return __skipTagsFinal ? true : CollectionUtils.componentMatchesShapeAndTag((Shape)((ModifiedSpellPart)randomRecipe.getShape()).getPart(), comp, (SpellPartTags)((targetTag.getValue())));
             }).collect(Collectors.toList())).orElse(null);
             if (c2 == null) continue;
             if (targetTag.getValue() == SpellPartTags.NEUTRAL) {

@@ -61,9 +61,9 @@ public final class MNAReflection {
         }
     }
 
-    public static int binomialN(net.minecraft.util.valueproviders.BinomialDistributionGenerator gen) {
+    public static int binomialN(net.minecraft.world.level.storage.loot.providers.number.BinomialDistributionGenerator gen) {
         try {
-            java.lang.reflect.Field f = net.minecraft.util.valueproviders.BinomialDistributionGenerator.class.getDeclaredField("n");
+            java.lang.reflect.Field f = net.minecraft.world.level.storage.loot.providers.number.BinomialDistributionGenerator.class.getDeclaredField("n");
             f.setAccessible(true);
             Object dv = f.get(gen);
             java.lang.reflect.Method m = dv.getClass().getMethod("getInt", net.minecraft.util.RandomSource.class);

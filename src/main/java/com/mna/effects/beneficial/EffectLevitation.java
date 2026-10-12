@@ -35,10 +35,9 @@ implements INoCreeperLingering, com.mna.api.effects.IMNAEffectHook {
             } else {
                 ManaAndArtifice.instance.proxy.setFlightEnabled(player, true);
                 ManaAndArtifice.instance.proxy.setFlySpeed(player, amplifier == 1 ? 0.05f : 0.01f);
-
-        return true;
-    }
+            }
         }
+        return true;
     }
 
     public void onEffectRemoved(LivingEntity living, int p_111187_3_) {

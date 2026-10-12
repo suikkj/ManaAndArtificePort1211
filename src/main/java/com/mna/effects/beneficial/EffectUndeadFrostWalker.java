@@ -20,13 +20,12 @@ implements INoCreeperLingering {
     public boolean applyEffectTick(LivingEntity living, int amplifier) {
         if (living.level().isClientSide()) {
             return true;
-
-        return true;
-    }
+        }
         living.level().getEntitiesOfClass(LivingEntity.class, living.getBoundingBox().inflate(6.0), e -> !SummonUtils.isTargetFriendly((Entity)e, living) && e.canFreeze() && e != living).stream().map(e -> e).forEach(le -> {
             le.setTicksFrozen(le.getTicksFrozen() + 5 * amplifier);
             le.hurt(DamageHelper.createSourcedType(DamageHelper.FROST, living.level().registryAccess(), (Entity)living), (float)amplifier);
         });
+        return true;
     }
 
     public boolean isDurationEffectTick(int duration, int amplifier) {

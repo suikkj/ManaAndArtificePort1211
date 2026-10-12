@@ -913,7 +913,7 @@ MNADyeableItem {
             if (ritual == null) {
                 tooltip.add((Component)Component.translatable((String)"item.mna.practitioners_pouch.no_ritual_stored"));
             } else {
-                ChatFormatting notFoundColor;
+                ChatFormatting notFoundColor = ChatFormatting.RED;
                 boolean hasRemoteInvPatch;
                 ArrayList<ItemStack> reagents = this.getReagents(stack);
                 InventoryRitualKit irk = new InventoryRitualKit(stack);

@@ -414,7 +414,7 @@ public class BlockUtils {
     private static <S extends StateHolder<?, S>, T extends Comparable<T>> S setValueHelper(S pStateHolder, Property<T> pProperty, String pPropertyName, CompoundTag pPropertiesTag, CompoundTag pBlockStateTag) {
         Optional optional = pProperty.getValue(pPropertiesTag.getString(pPropertyName));
         if (optional.isPresent()) {
-            return (S)((net.minecraft.world.level.block.state.StateHolder)pStateHolder).setValue(pProperty, optional.get());
+            return (S)((net.minecraft.world.level.block.state.StateHolder)pStateHolder).setValue(pProperty, (Comparable)optional.get());
         }
         ManaAndArtifice.LOGGER.warn("Unable to read property: {} with value: {} for blockstate: {}", pPropertyName, pPropertiesTag.getString(pPropertyName), pBlockStateTag.toString());
         return pStateHolder;

@@ -87,7 +87,7 @@ extends SpellEffect {
     public ComponentApplicationResult ApplyEffect(SpellSource source, SpellTarget target, IModifiedSpellPart<SpellEffect> modificationData, SpellContext context) {
         if (target.isLivingEntity()) {
             int amp;
-            int duration;
+            int duration = 0;
             boolean permanent = this.checkPermanencyReagents(source, target, context);
             int n = permanent ? -1 : (duration = this.modifiesDuration() ? (int)(modificationData.getValue(Attribute.DURATION) * 20.0f) : 1);
             if (duration < 0) {

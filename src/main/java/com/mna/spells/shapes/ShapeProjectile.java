@@ -77,7 +77,7 @@ extends Shape {
         if (source.isPlayerCaster()) {
             MNACap.get(source.getPlayer(), PlayerProgressionProvider.PROGRESSION).ifPresent(m -> {
                 if (m.getAlliedFaction() == Factions.COUNCIL) {
-                    float homing = (float)MNAEnchantmentHelper.getItemEnchantmentLevel(Enchantments.POWER, stack) * 0.2f;
+                    float homing = (float)MNAEnchantmentHelper.getItemEnchantmentLevel(Enchantments.POWER, source.getCaster().getItemInHand(source.getHand())) * 0.2f;
                     projectile.setHomingStrength(homing);
                 }
             });

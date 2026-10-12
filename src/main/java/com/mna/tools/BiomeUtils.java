@@ -23,7 +23,7 @@ public class BiomeUtils {
     public static List<ResourceLocation> getAllBiomeIDs(ServerLevel world) {
         ArrayList<ResourceLocation> result = new ArrayList<ResourceLocation>();
         Registry registry = world.registryAccess().registryOrThrow(Registries.BIOME);
-        registry.entrySet().forEach(entry -> result.add(entry.getKey().location()));
+        registry.entrySet().forEach(entry -> result.add(((java.util.Map.Entry<net.minecraft.resources.ResourceKey<net.minecraft.world.level.biome.Biome>, net.minecraft.world.level.biome.Biome>)entry).getKey().location()));
         return result;
     }
 

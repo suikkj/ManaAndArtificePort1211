@@ -40,12 +40,7 @@ IDontCreateBlockItem {
     }
 
     public BlockState playerWillDestroy(Level worldIn, BlockPos pos, BlockState state, Player player) {
-        super.playerWillDestroy(worldIn, pos, state, player);
-        return state;
-        super.playerWillDestroy(worldIn, pos, state, player);
-        if (player.getMainHandItem().isEmpty()) {
-            player.hurt(player.damageSources().cactus(), 1.0f);
-        }
+        return super.playerWillDestroy(worldIn, pos, state, player);
     }
 
     public void stepOn(Level level, BlockPos pos, BlockState state, Entity entity) {

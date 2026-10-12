@@ -95,7 +95,7 @@ public class ShearHelper {
         output = new ArrayList();
         BlockHitResult brtr = new BlockHitResult(new Vec3((double)position.getX() + 0.5, (double)position.getY() + 0.5, (double)position.getZ() + 0.5), face, position, true);
         net.minecraft.world.ItemInteractionResult interRes = world.getBlockState(position).useItemOn((ItemStack)shearStack, (Level)world, (Player)entity, InteractionHand.MAIN_HAND, brtr);
-        if (interRes == net.minecraft.world.ItemInteractionResult.FAIL || interRes == net.minecraft.world.ItemInteractionResult.PASS || interRes == net.minecraft.world.ItemInteractionResult.CONSUME) {
+        if (interRes == net.minecraft.world.ItemInteractionResult.FAIL || interRes == net.minecraft.world.ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION || interRes == net.minecraft.world.ItemInteractionResult.CONSUME) {
             List shearDrops = Block.getDrops((BlockState)targetState, (ServerLevel)world, (BlockPos)position, (BlockEntity)te, (Entity)entity, (ItemStack)shearStack);
             List nonShearDrops = Block.getDrops((BlockState)targetState, (ServerLevel)world, (BlockPos)position, (BlockEntity)te, (Entity)entity, (ItemStack)ItemStack.EMPTY);
             if (shearDrops.size() != nonShearDrops.size()) {

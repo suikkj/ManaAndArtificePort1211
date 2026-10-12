@@ -137,9 +137,9 @@ public class GuiRenderUtils {
         GlStateManager._depthMask((boolean)false);
         GlStateManager._disableCull();
         Tesselator tesselator = RenderSystem.renderThreadTesselator();
-        BufferBuilder buffer = tesselator.getBuilder();
+        BufferBuilder buffer = tesselator.begin(VertexFormat.Mode.LINES, DefaultVertexFormat.POSITION_COLOR_NORMAL);
         RenderSystem.lineWidth((float)weight);
-        buffer.begin(VertexFormat.Mode.LINES, DefaultVertexFormat.POSITION_COLOR_NORMAL);
+        
         float pctPerColor = 1.0f / (float)points.length;
         for (int i = 0; i < points.length - 1; ++i) {
             Vec2 src = points[i];

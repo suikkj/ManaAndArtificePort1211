@@ -497,8 +497,8 @@ implements IFactionEnemy<CouncilWarden> {
                     this.setDeltaMovement(this.getDeltaMovement().multiply(0.6, 1.0, 0.6));
                 }
                 if (t instanceof Player) {
-                    Player playerentity;
-                    this.maybeDisableShield(playerentity, (playerentity = (Player)t).isUsingItem() ? playerentity.getUseItem() : ItemStack.EMPTY);
+                    Player playerentity = (Player)t;
+                    this.maybeDisableShield(playerentity, playerentity.isUsingItem() ? playerentity.getUseItem() : ItemStack.EMPTY);
                     if (!this.lowerBuffs(playerentity)) {
                         this.suppressEnchantments(playerentity);
                     }

@@ -484,10 +484,7 @@ extends GuiJEIDisable<ContainerOcculus> {
     static class ListEntry<T extends AMRecipeBase> {
         private T recipe;
         private IconTypes iconType;
-        final   GuiOcculus this$0;
-
         public ListEntry(T recipe, IconTypes icon) {
-            this.this$0 = this$0;
             this.recipe = recipe;
             this.iconType = icon;
         }

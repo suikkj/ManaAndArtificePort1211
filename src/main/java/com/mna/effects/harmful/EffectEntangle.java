@@ -30,11 +30,10 @@ implements INoCreeperLingering, com.mna.api.effects.IMNAEffectHook {
         if (entity instanceof Player) {
             Player player = (Player)entity;
             ManaAndArtifice.instance.proxy.setFlightEnabled(player, false);
-
-        return true;
-    }
+        }
         Vec3 scaledVel = entity.getDeltaMovement().scale((double)0.05f);
         entity.setDeltaMovement(scaledVel.x, entity.getDeltaMovement().y > 0.0 ? scaledVel.y : entity.getDeltaMovement().y - (double)0.01f, scaledVel.z);
+        return true;
     }
 
     public void onEffectAdded(LivingEntity entity, int amplifier) {

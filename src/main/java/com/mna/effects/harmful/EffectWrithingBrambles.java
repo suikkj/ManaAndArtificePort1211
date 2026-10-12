@@ -32,9 +32,7 @@ implements INoCreeperLingering, com.mna.api.effects.IMNAEffectHook {
             pLivingEntity.getPersistentData().putDouble("brambles_old_y", pos.y);
             pLivingEntity.getPersistentData().putDouble("brambles_old_z", pos.z);
             return true;
-
-        return true;
-    }
+        }
         double oldX = pLivingEntity.getPersistentData().getDouble("brambles_old_x");
         double oldY = pLivingEntity.getPersistentData().getDouble("brambles_old_y");
         double oldZ = pLivingEntity.getPersistentData().getDouble("brambles_old_z");
@@ -51,6 +49,7 @@ implements INoCreeperLingering, com.mna.api.effects.IMNAEffectHook {
             dist = 0.0;
         }
         pLivingEntity.getPersistentData().putDouble("brambles_distance", dist);
+        return true;
     }
 }
 

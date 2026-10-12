@@ -314,7 +314,7 @@ public class SpellModifierRadialSelect {
     }
 
     private void processMouse(int mouseX, int mouseY) {
-        double a;
+        double a = 0.0;
         if (!this.isReady()) {
         }
         int numItems = this.getVisibleItemCount();

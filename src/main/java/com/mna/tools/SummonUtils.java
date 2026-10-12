@@ -212,7 +212,7 @@ implements ISummonHelper {
                     if (living instanceof IFactionEnemy) {
                         return ((IFactionEnemy)living).getFaction() == summonerFactionEntity.getFaction();
                     }
-                    if (living instanceof Player && (prog = (IPlayerProgression)(targetPlayer = MNACap.get((Player)living, PlayerProgressionProvider.PROGRESSION)).orElse(null)) != null && prog.getAlliedFaction() != null && prog.getAlliedFaction().isAlliedTo(summonerFactionEntity.getFaction())) {
+                    if (living instanceof Player && (prog = (IPlayerProgression)(Object)MNACap.get((Player)living, PlayerProgressionProvider.PROGRESSION).orElse(null)) != null && prog.getAlliedFaction() != null && prog.getAlliedFaction().isAlliedTo(summonerFactionEntity.getFaction())) {
                         return true;
                     }
                 }

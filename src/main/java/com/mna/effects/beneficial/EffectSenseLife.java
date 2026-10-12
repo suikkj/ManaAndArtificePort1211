@@ -31,10 +31,9 @@ implements INoCreeperLingering {
                 player.level().getEntities((Entity)player, player.getBoundingBox().inflate((double)range), e -> e instanceof LivingEntity).forEach(e -> {
                     e.setGlowingTag(true);
                 });
-
-        return true;
-    }
+            }
         }
+        return true;
     }
 
     public boolean isDurationEffectTick(int duration, int amplifier) {

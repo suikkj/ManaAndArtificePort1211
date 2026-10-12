@@ -19,9 +19,8 @@ implements INoCreeperLingering {
     public boolean applyEffectTick(LivingEntity entity, int amplifier) {
         if (!entity.level().isClientSide() && entity instanceof ServerPlayer && entity.level().getGameTime() % 100L == 0L) {
             ServerMessageDispatcher.sendWellspringSyncMessage((ServerLevel)entity.level(), (ServerPlayer)entity);
-
+        }
         return true;
-    }
     }
 
     public boolean isDurationEffectTick(int duration, int amplifier) {

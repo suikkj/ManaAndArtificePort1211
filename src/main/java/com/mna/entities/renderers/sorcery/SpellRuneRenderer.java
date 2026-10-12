@@ -48,7 +48,7 @@ extends EntityRenderer<SpellSigil> {
     }
 
     public void render(SpellSigil entityIn, float entityYaw, float partialTicks, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn) {
-        float alpha;
+        float alpha = 255.0f;
         float scaleFactor = entityIn.getSize();
         Minecraft mc = Minecraft.getInstance();
         VertexConsumer vertexBuilder = bufferIn.getBuffer(RenderType.entityTranslucent((ResourceLocation)GuiTextures.affinityBadges.get(entityIn.getAffinity())));

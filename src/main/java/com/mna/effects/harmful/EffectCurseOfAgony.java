@@ -19,9 +19,8 @@ extends EffectWithCustomClientParticles {
     public boolean applyEffectTick(LivingEntity pLivingEntity, int pAmplifier) {
         if (pLivingEntity.level().getGameTime() % 100L == 0L) {
             pLivingEntity.hurt(pLivingEntity.damageSources().fellOutOfWorld(), 1.0f);
-
+        }
         return true;
-    }
     }
 }
 

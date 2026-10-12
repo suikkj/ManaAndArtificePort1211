@@ -76,10 +76,7 @@ ITranslucentBlock {
     }
 
     public BlockState playerWillDestroy(Level worldIn, BlockPos pos, BlockState state, Player player) {
-        super.playerWillDestroy(worldIn, pos, state, player);
-        return state;
-        super.playerWillDestroy(worldIn, pos, state, player);
-        this.removeEntities(worldIn, pos);
+        return super.playerWillDestroy(worldIn, pos, state, player);
     }
 
     public void onBlockExploded(BlockState state, Level world, BlockPos pos, Explosion explosion) {

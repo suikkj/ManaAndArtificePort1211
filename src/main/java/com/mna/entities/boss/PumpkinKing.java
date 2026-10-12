@@ -221,8 +221,8 @@ implements IAnimPacketSync<PumpkinKing> {
                 this.setDeltaMovement(this.getDeltaMovement().multiply(0.6, 1.0, 0.6));
             }
             if (entityIn instanceof Player) {
-                Player playerentity;
-                this.maybeDisableShield(playerentity, (playerentity = (Player)entityIn).isUsingItem() ? playerentity.getUseItem() : ItemStack.EMPTY);
+                Player playerentity = (Player)entityIn;
+                this.maybeDisableShield(playerentity, playerentity.isUsingItem() ? playerentity.getUseItem() : ItemStack.EMPTY);
             }
             com.mna.tools.MATools.doEnchantDamageEffects(this, entityIn);
             this.setLastHurtMob(entityIn);

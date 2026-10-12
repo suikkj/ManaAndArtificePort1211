@@ -27,10 +27,9 @@ implements INoCreeperLingering {
                 player.level().getEntities((Entity)player, player.getBoundingBox().inflate(32.0), e -> e instanceof LivingEntity).forEach(e -> {
                     e.setGlowingTag(true);
                 });
-
-        return true;
-    }
+            }
         }
+        return true;
     }
 
     @Override

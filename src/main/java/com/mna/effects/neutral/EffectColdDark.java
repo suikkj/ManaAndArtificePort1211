@@ -81,9 +81,8 @@ implements INoCreeperLingering, com.mna.api.effects.IMNAEffectHook {
     public boolean applyEffectTick(LivingEntity entityLivingBaseIn, int amplifier) {
         if (entityLivingBaseIn instanceof Player && entityLivingBaseIn.getPersistentData().contains(PD_KEY)) {
             this.trySetSleepTimer((Player)entityLivingBaseIn);
-
+        }
         return true;
-    }
     }
 }
 

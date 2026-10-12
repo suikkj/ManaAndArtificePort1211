@@ -99,7 +99,7 @@ public class NBTUtilities {
         buf.writeBytes(data);
         CompoundTag output = new CompoundTag();
         try {
-            output = NbtIo.read((DataInput)new ByteBufInputStream(buf), (NbtAccounter)NbtAccounter.UNLIMITED);
+            output = NbtIo.read((DataInput)new ByteBufInputStream(buf), (NbtAccounter)NbtAccounter.create(Long.MAX_VALUE));
         }
         catch (IOException ioexception) {
             throw new EncoderException((Throwable)ioexception);

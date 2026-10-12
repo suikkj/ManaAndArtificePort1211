@@ -94,7 +94,7 @@ public class StructureUtils {
     public static List<ResourceLocation> getAllStructureIDs(ServerLevel world) {
         ArrayList<ResourceLocation> result = new ArrayList<ResourceLocation>();
         Registry registry = world.registryAccess().registryOrThrow(Registries.STRUCTURE);
-        registry.entrySet().forEach(entry -> result.add(((ResourceKey)entry.getKey()).location()));
+        registry.entrySet().forEach(entry -> result.add(((java.util.Map.Entry<ResourceKey, Object>)entry).getKey().location()));
         return result;
     }
 

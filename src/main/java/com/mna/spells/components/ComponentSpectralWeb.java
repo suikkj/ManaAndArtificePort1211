@@ -69,7 +69,7 @@ extends SpellEffect {
         BlockPos targetBlock = target.isEntity() ? target.getEntity().blockPosition() : target.getBlock();
         Direction targetBlockFace = target.isEntity() ? Direction.UP : target.getBlockFace(this);
         ServerLevel world = context.getServerLevel();
-        return ComponentApplicationResult.fromBoolean(this.tryPlaceBlock((Player)source.getPlayer(), (ServerLevel)world, (Block)((Block)BlockInit.SPECTRAL_WEB.get()), (BlockPos)targetBlock, (Direction)targetBlockFace, (boolean)true, (pos, state) -> ComponentSpectralWeb.lambda$ApplyEffect$0(world, source, pos, state)).success);
+        return ComponentApplicationResult.fromBoolean(this.tryPlaceBlock((Player)source.getPlayer(), (ServerLevel)world, (Block)((Block)BlockInit.SPECTRAL_WEB.get()), (BlockPos)targetBlock, (Direction)targetBlockFace, (boolean)true, (pos, state) -> ComponentSpectralWeb.__lambda_ApplyEffect_0(world, source, pos, state)).success);
     }
 
     @Override
@@ -108,7 +108,7 @@ extends SpellEffect {
         return 15.0f;
     }
 
-    private static /* synthetic */ BlockState lambda$ApplyEffect$0(ServerLevel world, SpellSource source, BlockPos pos, BlockState state) {
+    private static /* synthetic */ BlockState __lambda_ApplyEffect_0(ServerLevel world, SpellSource source, BlockPos pos, BlockState state) {
         BlockState against = world.getBlockState(pos);
         if (against.getBlock() == BlockInit.CHALK_RUNE.get() && ((Boolean)against.getValue((Property)ChalkRuneBlock.METAL)).booleanValue() && source.isPlayerCaster()) {
             state = (BlockState)state.setValue(SpectralCraftingTableBlock.PERMANENT, Boolean.valueOf(true));

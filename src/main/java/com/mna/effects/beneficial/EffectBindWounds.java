@@ -22,15 +22,14 @@ implements INoCreeperLingering, com.mna.api.effects.IMNAEffectHook {
         BlockPos curPos = living.blockPosition();
         if (living.getPersistentData().contains(PERSISTENT_DATA_KEY_LASTPOS)) {
             lastPos = BlockPos.of((long)living.getPersistentData().getLong(PERSISTENT_DATA_KEY_LASTPOS));
-
-        return true;
-    }
+        }
         if (lastPos != null && !lastPos.equals(curPos)) {
             living.removeEffect(com.mna.api.tools.MAEffects.holder(this));
         } else {
             living.heal(1.0f);
         }
         living.getPersistentData().putLong(PERSISTENT_DATA_KEY_LASTPOS, curPos.asLong());
+        return true;
     }
 
     public void onEffectRemoved(LivingEntity living, int p_111187_3_) {

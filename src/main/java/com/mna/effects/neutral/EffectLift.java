@@ -77,9 +77,7 @@ INoCreeperLingering, com.mna.api.effects.IMNAEffectHook {
             float liftSpeed = 0.0175f;
             if (entityLivingBaseIn.getPersistentData().contains("lift_speed")) {
                 liftSpeed = entityLivingBaseIn.getPersistentData().getFloat("lift_speed");
-
-        return true;
-    }
+        }
             if (entityLivingBaseIn instanceof Player) {
                 IPlayerMagic magic = MNACap.get((IPlayerMagic)((Player)entityLivingBaseIn), PlayerMagicProvider.MAGIC).orElse(null);
                 forcePos = magic.getLiftPosition();
@@ -94,6 +92,7 @@ INoCreeperLingering, com.mna.api.effects.IMNAEffectHook {
             }
         }
         entityLivingBaseIn.setPos(forcePos.x, forcePos.y, forcePos.z);
+        return true;
     }
 
     @Override

@@ -25,10 +25,9 @@ implements INoCreeperLingering, com.mna.api.effects.IMNAEffectHook {
             if (mob.getTarget() == null || !mob.getTarget().isAlive()) {
                 mob.setTarget(null);
                 this.controlTarget(mob);
-
-        return true;
-    }
+            }
         }
+        return true;
     }
 
     private void controlTarget(Mob host) {

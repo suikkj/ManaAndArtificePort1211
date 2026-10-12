@@ -363,14 +363,16 @@ public class ClientEventHandler {
         if (player != null) {
             world = ManaAndArtifice.instance.proxy.getClientWorld();
             if (player.hasEffect(com.mna.api.tools.MAEffects.holder(EffectInit.CHOOSING_WELLSPRING.get()))) {
-                MNACap.get(world, WorldMagicProvider.MAGIC).ifPresent(m -> {
+                final net.minecraft.world.level.Level __worldFinal = world;
+                final net.minecraft.world.entity.player.Player __playerFinal = player;
+                MNACap.get(__worldFinal, WorldMagicProvider.MAGIC).ifPresent(m -> {
                     int dist = GeneralConfigValues.WellspringDistance;
                     int halfDist = dist / 2;
-                    HashMap<BlockPos, WellspringNode> nodes = m.getWellspringRegistry().getNearbyNodes(player.blockPosition(), 50, dist + halfDist);
-                    Vec3 start = player.position();
+                    HashMap<BlockPos, WellspringNode> nodes = m.getWellspringRegistry().getNearbyNodes(__playerFinal.blockPosition(), 50, dist + halfDist);
+                    Vec3 start = __playerFinal.position();
                     for (Map.Entry<BlockPos, WellspringNode> entry : nodes.entrySet()) {
                         BlockPos targetPos = entry.getKey();
-                        Vec3 targetVec3d = new Vec3((double)targetPos.getX(), player.getY() + 1.0, (double)targetPos.getZ());
+                        Vec3 targetVec3d = new Vec3((double)targetPos.getX(), __playerFinal.getY() + 1.0, (double)targetPos.getZ());
                         Vec3 dir = targetVec3d.subtract(start).normalize();
                         WellspringNode node = entry.getValue();
                         MAParticleType particle = null;
@@ -381,7 +383,8 @@ public class ClientEventHandler {
                             particle = new MAParticleType((ParticleType<MAParticleType>)((ParticleType)ParticleInit.SPARKLE_VELOCITY.get())).setColor(255, 255, 255);
                         }
                         particle.setScale(0.05f);
-                        world.addParticle((ParticleOptions)particle, player.getX() + dir.x() + Math.random() * 0.2 - 0.1, player.getY() + 1.0 + dir.y() + Math.random() * 0.2 - 0.1, player.getZ() + dir.z() + Math.random() * 0.2 - 0.1, dir.x, dir.y, dir.z);
+                        final MAParticleType __particleFinal = particle;
+                        __worldFinal.addParticle((ParticleOptions)__particleFinal, __playerFinal.getX() + dir.x() + Math.random() * 0.2 - 0.1, __playerFinal.getY() + 1.0 + dir.y() + Math.random() * 0.2 - 0.1, __playerFinal.getZ() + dir.z() + Math.random() * 0.2 - 0.1, dir.x, dir.y, dir.z);
                     }
                 });
             }
@@ -591,7 +594,7 @@ public class ClientEventHandler {
 
     @SubscribeEvent
     public static void playerInputEvent(MovementInputUpdateEvent event) {
-        boolean teleporting;
+        boolean teleporting = false;
         MobEffectInstance posession;
         Minecraft mc = Minecraft.getInstance();
         if (mc.player == null) {
@@ -634,7 +637,8 @@ public class ClientEventHandler {
         lastTickJump = event.getInput().jumping;
         int mask = InputDisabler.getDisableInputMask((LivingEntity)event.getEntity());
         IPlayerMagic magic = (IPlayerMagic)mc.player.getData(PlayerMagicProvider.MAGIC.get());
-        boolean bl = magic == null ? false : (teleporting = magic.getIsTeleporting() || magic.getTeleportElapsedTicks() > 0);
+        teleporting = magic != null && (magic.getIsTeleporting() || magic.getTeleportElapsedTicks() > 0);
+        boolean bl = teleporting;
         if ((mask & IInputDisable.InputMask.MOVEMENT.mask()) != 0 || teleporting) {
             event.getInput().up = false;
             event.getInput().down = false;

@@ -26,7 +26,11 @@ import com.mna.api.enchantments.MNAEnchantmentHelper;
 
 public class AddChimeriteModifier
 extends LootModifier {
-    public static final Supplier<com.mojang.serialization.MapCodec<AddChimeriteModifier>> CODEC = Suppliers.memoize(() -> RecordCodecBuilder.mapCodec(inst -> AddChimeriteModifier.codecStart((RecordCodecBuilder.Instance)inst).and(Codec.INT.fieldOf("numChimerite").forGetter((AddChimeriteModifier m) -> m.numChimerite)).and(Codec.INT.fieldOf("magicLevel").forGetter((AddChimeriteModifier m) -> m.magicLevel)).and(Codec.FLOAT.fieldOf("chance").forGetter((AddChimeriteModifier m) -> Float.valueOf(m.chance))).and(Codec.FLOAT.fieldOf("fortuneBonusChance").forGetter((AddChimeriteModifier m) -> Float.valueOf(m.fortuneBonusChance))).and(BuiltInRegistries.ITEM.byNameCodec().fieldOf("dropsWith").forGetter((AddChimeriteModifier m) -> m.dropsWith)).apply(inst, (LootItemCondition[] conditions, Integer numChimerite, Integer magicLevel, Float chance, Float fortuneBonusChance, Item dropsWith) -> new AddChimeriteModifier(conditions, numChimerite, magicLevel, chance, fortuneBonusChance, dropsWith))));
+    public static final Supplier<com.mojang.serialization.MapCodec<AddChimeriteModifier>> CODEC = Suppliers.memoize(() -> RecordCodecBuilder.mapCodec(inst -> AddChimeriteModifier.codecStart((RecordCodecBuilder.Instance)inst).and(Codec.INT.fieldOf("numChimerite").forGetter((AddChimeriteModifier m) -> m.numChimerite)).and(Codec.INT.fieldOf("magicLevel").forGetter((AddChimeriteModifier m) -> m.magicLevel)).and(Codec.FLOAT.fieldOf("chance").forGetter((AddChimeriteModifier m) -> Float.valueOf(m.chance))).and(Codec.FLOAT.fieldOf("fortuneBonusChance").forGetter((AddChimeriteModifier m) -> Float.valueOf(m.fortuneBonusChance))).and(BuiltInRegistries.ITEM.byNameCodec().fieldOf("dropsWith").forGetter((AddChimeriteModifier m) -> m.dropsWith)).apply(inst, new com.mojang.datafixers.util.Function6<LootItemCondition[], Integer, Integer, Float, Float, Item, AddChimeriteModifier>() {
+            public AddChimeriteModifier apply(LootItemCondition[] conditions, Integer numChimerite, Integer magicLevel, Float chance, Float fortuneBonusChance, Item dropsWith) {
+                return new AddChimeriteModifier(conditions, numChimerite, magicLevel, chance, fortuneBonusChance, dropsWith);
+            }
+        })));
     private final Item dropsWith;
     private final int numChimerite;
     private final int magicLevel;

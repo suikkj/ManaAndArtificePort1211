@@ -71,7 +71,8 @@ public class WorldUtils {
         Structure pStructure = (Structure)registry.get(structureLoc);
         int pStructureId = registry.getId(pStructure);
         try {
-            HolderSet holderset = (HolderSet)(Object)registry.getHolder(pStructureId).map(p_214491_ -> HolderSet.direct((Holder[])new Holder[]{p_214491_})).get();
+            java.util.Optional __opt = registry.getHolder(pStructureId);
+            HolderSet holderset = __opt.isPresent() ? HolderSet.direct((Holder)__opt.get()) : HolderSet.empty();
             Pair pair = world.getChunkSource().getGenerator().findNearestMapStructure(world, holderset, center, 100, ignoreExisting);
             if (pair != null) {
                 return (BlockPos)pair.getFirst();

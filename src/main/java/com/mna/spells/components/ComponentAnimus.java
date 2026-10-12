@@ -68,6 +68,7 @@ extends SpellEffect {
 
     public ComponentAnimus(ResourceLocation guiIcon, boolean greater) {
         super(guiIcon, new AttributeValuePair(Attribute.DURATION, 10.0f, 5.0f, 60.0f, 5.0f, 2.0f), new AttributeValuePair(Attribute.LESSER_MAGNITUDE, 0.0f, 0.0f, 500.0f, 50.0f, 0.0f), new AttributeValuePair(Attribute.DURATION, 10.0f, 5.0f, 60.0f, 5.0f, 2.0f));
+        this.greater = greater;
     }
 
     @Override

@@ -43,9 +43,8 @@ implements INoCreeperLingering, com.mna.api.effects.IMNAEffectHook {
     public boolean applyEffectTick(LivingEntity pLivingEntity, int pAmplifier) {
         if (pLivingEntity instanceof Player) {
             ((Player)pLivingEntity).causeFoodExhaustion(0.005f * (float)(pAmplifier + 1));
-
+        }
         return true;
-    }
     }
 }
 

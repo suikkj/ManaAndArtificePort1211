@@ -23,10 +23,9 @@ implements INoCreeperLingering {
                 entityLivingBaseIn.level().getEntitiesOfClass(LivingEntity.class, entityLivingBaseIn.getBoundingBox().inflate(10.0), e -> e.isAlive() && e != entityLivingBaseIn).stream().findFirst().ifPresent(t -> mob.setTarget(t));
             } else if (Math.random() < 0.75) {
                 entityLivingBaseIn.level().getEntitiesOfClass(Player.class, entityLivingBaseIn.getBoundingBox().inflate(10.0), e -> e.isAlive() && e != entityLivingBaseIn).stream().findFirst().ifPresent(t -> mob.setTarget((LivingEntity)t));
-
-        return true;
-    }
         }
+        }
+        return true;
     }
 
     public boolean isDurationEffectTick(int duration, int amplifier) {

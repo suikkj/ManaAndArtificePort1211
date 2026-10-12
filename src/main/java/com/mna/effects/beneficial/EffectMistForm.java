@@ -84,9 +84,6 @@ INoCreeperLingering, com.mna.api.effects.IMNAEffectHook {
                 if (player.horizontalCollision || player.verticalCollision) {
                     if (brtr.getType() == HitResult.Type.BLOCK) {
                         shouldNoClip = !player.level().getBlockState(brtr.getBlockPos()).canOcclude();
-
-        return true;
-    }
                 } else {
                     boolean bl = shouldNoClip = !player.level().getBlockState(player.blockPosition()).canOcclude();
                 }
@@ -101,6 +98,8 @@ INoCreeperLingering, com.mna.api.effects.IMNAEffectHook {
             }
             entityLivingBaseIn.setInvisible(true);
         }
+        }
+        return true;
     }
 
     @Override

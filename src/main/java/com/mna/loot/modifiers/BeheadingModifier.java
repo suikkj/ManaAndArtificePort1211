@@ -24,7 +24,11 @@ import net.minecraft.core.registries.BuiltInRegistries;
 
 public class BeheadingModifier
 extends LootModifier {
-    public static final Supplier<com.mojang.serialization.MapCodec<BeheadingModifier>> CODEC = Suppliers.memoize(() -> RecordCodecBuilder.mapCodec(inst -> BeheadingModifier.codecStart((RecordCodecBuilder.Instance)inst).and(Codec.FLOAT.fieldOf("chancePerLevel").forGetter((BeheadingModifier m) -> Float.valueOf(m.chancePerLevel))).and(BuiltInRegistries.ENTITY_TYPE.byNameCodec().fieldOf("mobType").forGetter((BeheadingModifier m) -> m.mobType)).and(BuiltInRegistries.ITEM.byNameCodec().fieldOf("head").forGetter((BeheadingModifier m) -> m.head)).apply(inst, BeheadingModifier::new)));
+    public static final Supplier<com.mojang.serialization.MapCodec<BeheadingModifier>> CODEC = Suppliers.memoize(() -> RecordCodecBuilder.mapCodec(inst -> BeheadingModifier.codecStart((RecordCodecBuilder.Instance)inst).and(Codec.FLOAT.fieldOf("chancePerLevel").forGetter((BeheadingModifier m) -> Float.valueOf(m.chancePerLevel))).and(BuiltInRegistries.ENTITY_TYPE.byNameCodec().fieldOf("mobType").forGetter((BeheadingModifier m) -> m.mobType)).and(BuiltInRegistries.ITEM.byNameCodec().fieldOf("head").forGetter((BeheadingModifier m) -> m.head)).apply(inst, new com.mojang.datafixers.util.Function4<LootItemCondition[], Float, EntityType<?>, Item, BeheadingModifier>() {
+            public BeheadingModifier apply(LootItemCondition[] conditions, Float chancePerLevel, EntityType<?> mobType, Item head) {
+                return new BeheadingModifier(conditions, chancePerLevel, mobType, head);
+            }
+        })));
     private final float chancePerLevel;
     private final Item head;
     private final EntityType<?> mobType;

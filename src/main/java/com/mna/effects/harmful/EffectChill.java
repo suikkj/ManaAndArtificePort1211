@@ -24,9 +24,8 @@ extends SimpleHarmfulEffect {
     public boolean applyEffectTick(LivingEntity pLivingEntity, int pAmplifier) {
         if (pLivingEntity.canFreeze()) {
             pLivingEntity.setTicksFrozen(pLivingEntity.getTicksFrozen() + 5 * pAmplifier);
-
+        }
         return true;
-    }
     }
 }
 

@@ -88,7 +88,7 @@ extends BlockItem {
                 BlockSnapshot blocksnapshot = BlockSnapshot.create((ResourceKey)worldIn.dimension(), (LevelAccessor)worldIn, (BlockPos)blockpos1);
                 worldIn.setBlock(blockpos1, ((MAWaterFlowerBlock)BlockInit.WAKEBLOOM.get()).defaultBlockState(), 11);
                 if (true) {
-                    blocksnapshot.restore(true);
+                    blocksnapshot.restore(3);
                     return InteractionResultHolder.fail(itemstack);
                 }
                 if (playerIn instanceof ServerPlayer) {

@@ -245,7 +245,7 @@ ClientAdvancements.Listener {
     public boolean playerHasAdvancement(Player player, ResourceLocation advancementID) {
         Minecraft mc = Minecraft.getInstance();
         ClientAdvancements advancements = mc.player.connection.getAdvancements();
-        this.queryAdvancement = advancements.get(advancementID);
+        this.queryAdvancement = advancements.get(advancementID) != null ? advancements.get(advancementID).value() : null;
         if (this.queryAdvancement == null) {
             return false;
         }
@@ -263,26 +263,26 @@ ClientAdvancements.Listener {
         HUDOverlayRenderer.instance.showCodexEntriesUnlocked();
     }
 
-    public void onAddAdvancementRoot(Advancement pAdvancement) {
+    public void onAddAdvancementRoot(net.minecraft.advancements.AdvancementNode pAdvancement) {
     }
 
-    public void onAddAdvancementTask(Advancement pAdvancement) {
+    public void onAddAdvancementTask(net.minecraft.advancements.AdvancementNode pAdvancement) {
     }
 
     public void onAdvancementsCleared() {
     }
 
-    public void onRemoveAdvancementRoot(Advancement pAdvancement) {
+    public void onRemoveAdvancementRoot(net.minecraft.advancements.AdvancementNode pAdvancement) {
     }
 
-    public void onRemoveAdvancementTask(Advancement pAdvancement) {
+    public void onRemoveAdvancementTask(net.minecraft.advancements.AdvancementNode pAdvancement) {
     }
 
-    public void onSelectedTabChanged(Advancement pAdvancement) {
+    public void onSelectedTabChanged(net.minecraft.advancements.AdvancementHolder pAdvancement) {
     }
 
-    public void onUpdateAdvancementProgress(Advancement pAdvancement, AdvancementProgress pProgress) {
-        if (this.queryAdvancement == pAdvancement) {
+    public void onUpdateAdvancementProgress(net.minecraft.advancements.AdvancementNode pAdvancement, AdvancementProgress pProgress) {
+        if (this.queryAdvancement != null && pAdvancement != null && this.queryAdvancement == pAdvancement.holder().value()) {
             this.progress = pProgress;
         }
     }

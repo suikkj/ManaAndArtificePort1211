@@ -528,8 +528,8 @@ public class CommonEventHandler {
             living.push(0.0, -0.2, 0.0);
         }
         if (!living.hasEffect(com.mna.api.tools.MAEffects.holder(EffectInit.SOAKED.get()))) {
-            Player player;
-            if (!(!isWet || living instanceof Player && (player = (Player)living).isSpectator())) {
+            Player player = (Player)living;
+            if (!(!isWet || living instanceof Player && player.isSpectator())) {
                 living.addEffect(new MobEffectInstance(com.mna.api.tools.MAEffects.holder(EffectInit.SOAKED.get()), 300, 0));
             }
         } else if (living.isOnFire()) {

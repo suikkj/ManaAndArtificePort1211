@@ -198,7 +198,7 @@ public class InventoryUtilities {
     public static boolean hasStackInInventory(ItemStack search, boolean ignoreDurability, boolean compareNBT, IItemHandler inventory) {
         int countToFind = search.getCount();
         for (int i = 0; i < inventory.getSlots(); ++i) {
-            boolean equal;
+            boolean equal = false;
             ItemStack stack = inventory.getStackInSlot(i);
             if (stack.isEmpty()) continue;
             boolean bl = ignoreDurability ? ItemStack.isSameItem((ItemStack)stack, (ItemStack)search) : (equal = ItemStack.isSameItem((ItemStack)stack, (ItemStack)search) && stack.getDamageValue() == search.getDamageValue());
@@ -214,7 +214,7 @@ public class InventoryUtilities {
     public static boolean removeItemFromInventory(ItemStack search, boolean ignoreDurability, boolean compareNBT, IItemHandler inventory) {
         int countToRemove = search.getCount();
         for (int i = 0; i < inventory.getSlots(); ++i) {
-            boolean equal;
+            boolean equal = false;
             ItemStack stack = inventory.getStackInSlot(i);
             if (stack.isEmpty()) continue;
             boolean bl = ignoreDurability ? ItemStack.isSameItem((ItemStack)stack, (ItemStack)search) : (equal = ItemStack.isSameItem((ItemStack)stack, (ItemStack)search) && stack.getDamageValue() == search.getDamageValue());
@@ -233,7 +233,7 @@ public class InventoryUtilities {
     public static boolean hasStackInInventory(ItemStack search, boolean ignoreDurability, boolean compareNBT, IItemHandler inventory, Direction face) {
         int countToFind = search.getCount();
         for (int i = 0; i < inventory.getSlots(); ++i) {
-            boolean equal;
+            boolean equal = false;
             ItemStack stack = inventory.extractItem(i, countToFind, true);
             if (stack.isEmpty()) continue;
             boolean bl = ignoreDurability ? ItemStack.isSameItem((ItemStack)stack, (ItemStack)search) : (equal = ItemStack.isSameItem((ItemStack)stack, (ItemStack)search) && stack.getDamageValue() == search.getDamageValue());
@@ -250,7 +250,7 @@ public class InventoryUtilities {
         int countToRemove = search.getCount();
         for (int i = 0; i < inventory.getSlots(); ++i) {
             ItemStack extracted;
-            boolean equal;
+            boolean equal = false;
             ItemStack stack = inventory.extractItem(i, countToRemove, true);
             if (stack.isEmpty()) continue;
             boolean bl = ignoreDurability ? ItemStack.isSameItem((ItemStack)stack, (ItemStack)search) : (equal = ItemStack.isSameItem((ItemStack)stack, (ItemStack)search) && stack.getDamageValue() == search.getDamageValue());
@@ -270,7 +270,7 @@ public class InventoryUtilities {
             if (inventory == null) continue;
             boolean invConsumed = false;
             for (int i = 0; i < inventory.getSlots(); ++i) {
-                boolean equal;
+                boolean equal = false;
                 ItemStack stack = inventory.extractItem(i, count, true);
                 if (stack.isEmpty()) continue;
                 boolean bl = ignoreDurability ? ItemStack.isSameItem((ItemStack)stack, (ItemStack)search) : (equal = ItemStack.isSameItem((ItemStack)stack, (ItemStack)search) && stack.getDamageValue() == search.getDamageValue());
@@ -312,7 +312,7 @@ public class InventoryUtilities {
             if (inventory == null) continue;
             boolean invConsumed = false;
             for (int i = 0; i < inventory.getSlots(); ++i) {
-                boolean equal;
+                boolean equal = false;
                 ItemStack stack = inventory.extractItem(i, count, true);
                 if (stack.isEmpty() || !(equal = search.contains(stack.getItem()))) continue;
                 if (!simulate) {
@@ -340,7 +340,7 @@ public class InventoryUtilities {
     public static int countItem(ItemStack search, IItemHandler inventory, Direction face, boolean compareNBT, boolean ignoreDurability) {
         int i = 0;
         for (int j = 0; j < inventory.getSlots(); ++j) {
-            boolean equal;
+            boolean equal = false;
             ItemStack stack = inventory.getStackInSlot(j);
             boolean bl = ignoreDurability ? ItemStack.isSameItem((ItemStack)stack, (ItemStack)search) : (equal = ItemStack.isSameItem((ItemStack)stack, (ItemStack)search) && stack.getDamageValue() == search.getDamageValue());
             if (!equal) continue;

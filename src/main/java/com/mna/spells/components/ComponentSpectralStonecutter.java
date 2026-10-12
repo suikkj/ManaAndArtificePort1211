@@ -82,7 +82,7 @@ extends SpellEffect {
             ServerLevel world = context.getServerLevel();
             BlockPos targetBlock = target.getBlock();
             Direction targetBlockFace = target.getBlockFace(this);
-            return ComponentApplicationResult.fromBoolean(this.tryPlaceBlock((Player)source.getPlayer(), (ServerLevel)world, (Block)((Block)BlockInit.SPECTRAL_STONECUTTER.get()), (BlockPos)targetBlock, (Direction)targetBlockFace, (boolean)true, (pos, state) -> ComponentSpectralStonecutter.lambda$ApplyEffect$0(world, source, pos, state)).success);
+            return ComponentApplicationResult.fromBoolean(this.tryPlaceBlock((Player)source.getPlayer(), (ServerLevel)world, (Block)((Block)BlockInit.SPECTRAL_STONECUTTER.get()), (BlockPos)targetBlock, (Direction)targetBlockFace, (boolean)true, (pos, state) -> ComponentSpectralStonecutter.__lambda_ApplyEffect_0(world, source, pos, state)).success);
         }
         if (target.isEntity() && source.isPlayerCaster() && target.getEntity() instanceof Player) {
             ((Player)target.getEntity()).openMenu(this.getContainer(context.getServerLevel().getBlockState(source.getPlayer().blockPosition()), (Level)context.getServerLevel(), source.getPlayer().blockPosition()));
@@ -131,7 +131,7 @@ extends SpellEffect {
         return SpellPartTags.UTILITY;
     }
 
-    private static /* synthetic */ BlockState lambda$ApplyEffect$0(ServerLevel world, SpellSource source, BlockPos pos, BlockState state) {
+    private static /* synthetic */ BlockState __lambda_ApplyEffect_0(ServerLevel world, SpellSource source, BlockPos pos, BlockState state) {
         BlockState against = world.getBlockState(pos);
         if (against.getBlock() == BlockInit.CHALK_RUNE.get() && ((Boolean)against.getValue((Property)ChalkRuneBlock.METAL)).booleanValue() && source.isPlayerCaster()) {
             state = (BlockState)state.setValue(SpectralCraftingTableBlock.PERMANENT, Boolean.valueOf(true));

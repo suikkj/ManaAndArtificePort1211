@@ -617,8 +617,8 @@ implements IFactionEnemy<DemonLord> {
                     this.setDeltaMovement(this.getDeltaMovement().multiply(0.6, 1.0, 0.6));
                 }
                 if (t instanceof Player) {
-                    Player playerentity;
-                    this.maybeDisableShield(playerentity, (playerentity = (Player)t).isUsingItem() ? playerentity.getUseItem() : ItemStack.EMPTY);
+                    Player playerentity = (Player)t;
+                    this.maybeDisableShield(playerentity, playerentity.isUsingItem() ? playerentity.getUseItem() : ItemStack.EMPTY);
                 }
                 this.setLastHurtMob((Entity)t);
                 if (this.random.nextFloat() < 0.4f && t instanceof Mob) {

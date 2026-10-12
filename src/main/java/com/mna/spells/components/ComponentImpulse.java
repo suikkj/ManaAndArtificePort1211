@@ -122,7 +122,7 @@ extends SpellEffect {
     }
 
     private void shootArrow(ItemStack offhandItem, float damage, Vec3 shootVector, SpellContext context, SpellSource source) {
-        AbstractArrow worroa = ProjectileUtil.getMobArrow((LivingEntity)source.getCaster(), (ItemStack)offhandItem, (float)1.0f);
+        AbstractArrow worroa = ProjectileUtil.getMobArrow((LivingEntity)source.getCaster(), (ItemStack)offhandItem, (float)1.0f, (ItemStack)null);
         worroa.shoot(shootVector.x, shootVector.y, shootVector.z, damage / 10.0f, 0.0f);
         worroa.setCritArrow(true);
         worroa.getPersistentData().putBoolean("return_on_next_arrow_shot", true);

@@ -106,10 +106,9 @@ INoCreeperLingering, com.mna.api.effects.IMNAEffectHook {
                 player.teleportTo(mob.getX() - forward.x, mob.getY(), mob.getZ() - forward.z);
                 player.resetFallDistance();
                 player.setInvisible(true);
-
-        return true;
-    }
+            }
         }
+        return true;
     }
 
     @Nullable

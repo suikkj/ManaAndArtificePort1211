@@ -308,8 +308,8 @@ public static void onLivingHurt(LivingDamageEvent.Pre event) {
         }
         if (event.getNewDamage() > 0.0f) {
             MobEffectInstance lev;
-            Player player;
-            if (hurtEntity instanceof Player && !CrystallizedWind.FindOn((LivingEntity)(player = (Player)hurtEntity)) && (lev = hurtEntity.getEffect(com.mna.api.tools.MAEffects.holder(EffectInit.LEVITATION.get()))) != null) {
+            Player player = (Player)hurtEntity;
+            if (hurtEntity instanceof Player && !CrystallizedWind.FindOn((LivingEntity)player) && (lev = hurtEntity.getEffect(com.mna.api.tools.MAEffects.holder(EffectInit.LEVITATION.get()))) != null) {
                 Player target = (Player)event.getEntity();
                 boolean wasFlying = target.getAbilities().flying;
                 int amplifier = lev.getAmplifier();
@@ -403,18 +403,23 @@ public static void onLivingDamage(LivingDamageEvent.Pre event) {
                     Player sourcePlayer = (Player)source;
                     ItemStack mhStack = sourcePlayer.getMainHandItem();
                     ItemStack ohStack = sourcePlayer.getOffhandItem();
+                    final net.minecraft.world.entity.LivingEntity __living = living;
+                    final net.minecraft.world.entity.Entity __source = source;
+                    final net.minecraft.world.entity.player.Player __sourcePlayer = sourcePlayer;
+                    final ItemStack __mhStack = mhStack;
+                    final ItemStack __ohStack = ohStack;
                     if (!event.getSource().is(DamageTypeTags.IS_PROJECTILE)) {
-                        CuriosApi.getCuriosHelper().findFirstCurio((LivingEntity)sourcePlayer, (Item)ItemInit.EMBERGLOW_BRACELET.get()).ifPresent(t -> {
-                            if (living.distanceToSqr(source) < 4.0) {
-                                living.igniteForSeconds((float)(4));
+                        CuriosApi.getCuriosHelper().findFirstCurio((LivingEntity)__sourcePlayer, (Item)ItemInit.EMBERGLOW_BRACELET.get()).ifPresent(t -> {
+                            if (__living.distanceToSqr(__source) < 4.0) {
+                                __living.igniteForSeconds((float)(4));
                             }
-                            t.stack().hurtAndBreak(1, (net.minecraft.server.level.ServerLevel)living.level(), living, damager -> CuriosApi.getCuriosHelper().onBrokenCurio(t.slotContext()));
+                            t.stack().hurtAndBreak(1, (net.minecraft.server.level.ServerLevel)__living.level(), __living, damager -> CuriosApi.getCuriosHelper().onBrokenCurio(t.slotContext()));
                         });
                     }
-                    if (sourcePlayer.isShiftKeyDown() && sourcePlayer.getMainHandItem().isEmpty()) {
-                        CuriosApi.getCuriosHelper().findFirstCurio((LivingEntity)sourcePlayer, (Item)ItemInit.TRICKERY_BRACELET.get()).ifPresent(t -> {
-                            living.knockback(5.0, sourcePlayer.getX() - living.getX(), sourcePlayer.getZ() - living.getZ());
-                            t.stack().hurtAndBreak(1, (net.minecraft.server.level.ServerLevel)living.level(), living, damager -> CuriosApi.getCuriosHelper().onBrokenCurio(t.slotContext()));
+                    if (__sourcePlayer.isShiftKeyDown() && __sourcePlayer.getMainHandItem().isEmpty()) {
+                        CuriosApi.getCuriosHelper().findFirstCurio((LivingEntity)__sourcePlayer, (Item)ItemInit.TRICKERY_BRACELET.get()).ifPresent(t -> {
+                            __living.knockback(5.0, __sourcePlayer.getX() - __living.getX(), __sourcePlayer.getZ() - __living.getZ());
+                            t.stack().hurtAndBreak(1, (net.minecraft.server.level.ServerLevel)__living.level(), __living, damager -> CuriosApi.getCuriosHelper().onBrokenCurio(t.slotContext()));
                         });
                     }
                     MNACap.get(sourcePlayer, PlayerProgressionProvider.PROGRESSION).ifPresent(p -> {
@@ -423,18 +428,18 @@ public static void onLivingDamage(LivingDamageEvent.Pre event) {
                         int appliedThorns;
                         if (p.getAlliedFaction() == Factions.UNDEAD) {
                             float souls;
-                            if (sourcePlayer.getPersistentData().getBoolean("bone_armor_set_bonus") && (souls = EntityUtil.getSoulsRestored(sourcePlayer, (Entity)living)) > 0.0f) {
-                                MNACap.get(sourcePlayer, PlayerMagicProvider.MAGIC).ifPresent(m -> {
+                            if (__sourcePlayer.getPersistentData().getBoolean("bone_armor_set_bonus") && (souls = EntityUtil.getSoulsRestored(__sourcePlayer, (Entity)__living)) > 0.0f) {
+                                MNACap.get(__sourcePlayer, PlayerMagicProvider.MAGIC).ifPresent(m -> {
                                     m.getCastingResource().restore(souls * 0.1f);
                                     m.getCastingResource().setNeedsSync();
                                 });
                             }
-                            if (CuriosApi.getCuriosHelper().findFirstCurio((LivingEntity)sourcePlayer, (Item)ItemInit.COWL_OF_CONSUMPTION.get()) != null && event.getNewDamage() >= 10.0f) {
-                                sourcePlayer.getFoodData().eat(1, 0.1f);
+                            if (CuriosApi.getCuriosHelper().findFirstCurio((LivingEntity)__sourcePlayer, (Item)ItemInit.COWL_OF_CONSUMPTION.get()) != null && event.getNewDamage() >= 10.0f) {
+                                __sourcePlayer.getFoodData().eat(1, 0.1f);
                             }
                         }
-                        if (p.getAlliedFaction() == Factions.FEY && (appliedThorns = Math.max(mhThorns = MNAEnchantmentHelper.getItemEnchantmentLevel(Enchantments.THORNS, mhStack), ohThorns = MNAEnchantmentHelper.getItemEnchantmentLevel(Enchantments.THORNS, ohStack))) > 0) {
-                            living.addEffect(new MobEffectInstance(com.mna.api.tools.MAEffects.holder(EffectInit.WRITHING_BRAMBLES.get()), 100, appliedThorns));
+                        if (p.getAlliedFaction() == Factions.FEY && (appliedThorns = Math.max(mhThorns = MNAEnchantmentHelper.getItemEnchantmentLevel(Enchantments.THORNS, __mhStack), ohThorns = MNAEnchantmentHelper.getItemEnchantmentLevel(Enchantments.THORNS, __ohStack))) > 0) {
+                            __living.addEffect(new MobEffectInstance(com.mna.api.tools.MAEffects.holder(EffectInit.WRITHING_BRAMBLES.get()), 100, appliedThorns));
                         }
                     });
                     if (living instanceof Mob) {

@@ -115,12 +115,10 @@ implements ISpellInteractibleBlock<WardingCandleBlock> {
     }
 
     public BlockState playerWillDestroy(Level worldIn, BlockPos pos, BlockState state, Player player) {
-        super.playerWillDestroy(worldIn, pos, state, player);
-        return state;
         if (!worldIn.isClientSide) {
             MNACap.get(worldIn, WorldMagicProvider.MAGIC).ifPresent(w -> w.removeWardingCandleLocation(pos));
         }
-        super.playerWillDestroy(worldIn, pos, state, player);
+        return super.playerWillDestroy(worldIn, pos, state, player);
     }
 
     @Override

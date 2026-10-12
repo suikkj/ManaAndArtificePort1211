@@ -29,11 +29,10 @@ implements INoCreeperLingering {
             if (entityLivingBaseIn.level().getGameTime() % 5L == 0L) {
                 for (ItemStack stack : this.getRepairables((Container)player.getInventory())) {
                     stack.setDamageValue(stack.getDamageValue() - 1);
-
-        return true;
-    }
+                }
             }
         }
+        return true;
     }
 
     public boolean isDurationEffectTick(int duration, int amplifier) {
