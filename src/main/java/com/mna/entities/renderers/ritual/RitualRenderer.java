@@ -173,9 +173,9 @@ extends EntityRenderer<Ritual> {
             Item renderItem;
             if (entityIn.getCurrentRitual().getDisplayIndexes()) {
                 if (posData.getReagent().isOptional()) {
-                    this.renderNameTag(entityIn, (Component)Component.literal((String)("" + this.reagentSlotCount++)), matrixStackIn, bufferIn, packedLightIn);
+                    this.renderNameTag(entityIn, (Component)Component.literal((String)("" + this.reagentSlotCount++)), matrixStackIn, bufferIn, packedLightIn, 0.0f);
                 } else {
-                    this.renderNameTag(entityIn, (Component)Component.literal((String)("" + this.reagentSlotCount++)).withStyle(ChatFormatting.GOLD), matrixStackIn, bufferIn, packedLightIn);
+                    this.renderNameTag(entityIn, (Component)Component.literal((String)("" + this.reagentSlotCount++)).withStyle(ChatFormatting.GOLD), matrixStackIn, bufferIn, packedLightIn, 0.0f);
                 }
             }
             if ((renderItem = (Item)BuiltInRegistries.ITEM.get(posData.getReagent().getResourceLocation())) == Items.AIR && (tags = BuiltInRegistries.ITEM.getTag(TagKey.create(Registries.ITEM, posData.getReagent().getResourceLocation())).orElse(null)) != null && (rnd = tags.getRandomElement(RandomSource.create((long)432L))).isPresent()) {

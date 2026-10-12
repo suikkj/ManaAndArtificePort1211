@@ -516,8 +516,8 @@ extends MAGeckoRenderer<Construct> {
         return super.shouldShowName(entity);
     }
 
-    protected void renderNameTag(Construct construct, Component name, PoseStack matrixStack, MultiBufferSource buffer, int p_225629_5_) {
-        super.renderNameTag((Entity)construct, name, matrixStack, buffer, p_225629_5_);
+    protected void renderNameTag(Construct construct, Component name, PoseStack matrixStack, MultiBufferSource buffer, int p_225629_5_, float partialTick) {
+        super.renderNameTag((Entity)construct, name, matrixStack, buffer, p_225629_5_, partialTick);
     }
 
     static {

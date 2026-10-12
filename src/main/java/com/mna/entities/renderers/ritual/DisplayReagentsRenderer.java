@@ -77,7 +77,7 @@ extends EntityRenderer<DisplayReagents> {
                 this.itemRenderer.renderStatic(renderStack, ItemDisplayContext.FIXED, packedLightIn, OverlayTexture.NO_OVERLAY, matrixStackIn, bufferIn, (Level)this.mc.level, 0);
             }
             matrixStackIn.popPose();
-            this.renderNameTag(entityIn, (Component)Component.literal((String)("" + (count + 1))), matrixStackIn, bufferIn, packedLightIn);
+            this.renderNameTag(entityIn, (Component)Component.literal((String)("" + (count + 1))), matrixStackIn, bufferIn, packedLightIn, 0.0f);
             matrixStackIn.popPose();
             ++count;
         }
