@@ -637,7 +637,7 @@ public static void onLivingDamage_Insight(LivingDamageEvent.Pre event) {
             LivingEntity living = (LivingEntity)event.getTarget();
             Optional curio = CuriosApi.getCuriosHelper().findFirstCurio(living, (Item)ItemInit.CRIT_IMMUNITY_AMULET.get());
             if (curio.isPresent()) {
-                event.setCanceled(true);
+                event.setCriticalHit(false);
             }
         }
     }

@@ -48,10 +48,6 @@ extends ThrowableItemProjectile {
         return (Item)ItemInit.MANAWEAVE_BOTTLE.get();
     }
 
-    protected double getGravity() {
-        return 0.05;
-    }
-
     protected void onHit(HitResult result) {
         super.onHit(result);
         if (!this.level().isClientSide()) {

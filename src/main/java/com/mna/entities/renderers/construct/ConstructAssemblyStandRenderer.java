@@ -47,7 +47,7 @@ extends LivingEntityRenderer<ConstructAssemblyStand, ConstructAssemblyStandModel
     public static final ResourceLocation DEFAULT_SKIN_LOCATION = ResourceLocation.parse("textures/entity/armorstand/wood.png");
 
     public ConstructAssemblyStandRenderer(EntityRendererProvider.Context p_173915_) {
-        super(p_173915_, (EntityModel)new ConstructAssemblyStandModel(p_173915_.bakeLayer(ModelLayers.ARMOR_STAND)), 0.0f);
+        super(p_173915_, new ConstructAssemblyStandModel(p_173915_.bakeLayer(ModelLayers.ARMOR_STAND)), 0.0f);
     }
 
     public void render(ConstructAssemblyStand stand, float p_115309_, float partialTick, PoseStack stack, MultiBufferSource bufferSource, int combinedLight) {

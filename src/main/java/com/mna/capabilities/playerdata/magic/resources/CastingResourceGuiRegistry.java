@@ -305,7 +305,7 @@ implements ICastingResourceGuiRegistry {
             @Override
             public int getFrameV() {
                 Minecraft mc = Minecraft.getInstance();
-                Holder biome = mc.level.getBiome(mc.player.blockPosition());
+                Holder<net.minecraft.world.level.biome.Biome> biome = mc.level.getBiome(mc.player.blockPosition());
                 if (biome.value().getBaseTemperature() < 0.15f) {
                     return 96;
                 }
@@ -328,7 +328,7 @@ implements ICastingResourceGuiRegistry {
             @Override
             public ItemStack getBadgeItem() {
                 Minecraft mc = Minecraft.getInstance();
-                Holder biome = mc.level.getBiome(mc.player.blockPosition());
+                Holder<net.minecraft.world.level.biome.Biome> biome = mc.level.getBiome(mc.player.blockPosition());
                 if (biome.value().getBaseTemperature() < 0.15f) {
                     return HUD_BRIMSTONE_COLD.get();
                 }

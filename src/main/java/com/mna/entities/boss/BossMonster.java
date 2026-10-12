@@ -464,7 +464,7 @@ AnimationController.SoundKeyframeHandler<BossMonster<?>> {
         List nearbyPlayers = this.level().getNearbyPlayers(TARGETING_CONDITIONS, (LivingEntity)this, this.getBoundingBox().inflate(20.0));
         MutableObject selection = new MutableObject(null);
         if (predicate != null) {
-            java.util.List<Player> __pl = nearbyPlayers.stream().filter(p -> predicate.test((Player)p)).collect(Collectors.toList());
+            java.util.List<Player> __pl = (java.util.List<Player>)(java.util.List)nearbyPlayers.stream().filter(p -> predicate.test((Player)p)).collect(Collectors.toList());
             if (!__pl.isEmpty()) {
                 selection.setValue(__pl.get(this.getRandom().nextInt(__pl.size())));
             }

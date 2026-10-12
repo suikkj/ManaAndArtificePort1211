@@ -56,7 +56,7 @@ extends MobRenderer<AnimusBlock, SlimeModel<AnimusBlock>> {
     private final BlockRenderDispatcher dispatcher;
 
     public AnimusBlockRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext, (EntityModel)new SlimeModel(pContext.bakeLayer(ModelLayers.SLIME)), 0.25f);
+        super(pContext, new SlimeModel(pContext.bakeLayer(ModelLayers.SLIME)), 0.25f);
         this.dispatcher = pContext.getBlockRenderDispatcher();
     }
 

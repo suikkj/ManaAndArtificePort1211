@@ -24,7 +24,7 @@ import net.neoforged.fml.common.Mod;
 public class PotionEventHandler {
     @SubscribeEvent
     public static void onPotionRemoved(MobEffectEvent.Remove event) {
-        PotionEventHandler.handlePotionRemoved(event.getEffect(), event.getEntity());
+        PotionEventHandler.handlePotionRemoved(event.getEffect().value(), event.getEntity());
         if (event.getEffect() == EffectInit.REDUCE.get()) {
             event.getEntity().refreshDimensions();
         }
@@ -32,7 +32,7 @@ public class PotionEventHandler {
 
     @SubscribeEvent
     public static void onPotionExpired(MobEffectEvent.Expired event) {
-        PotionEventHandler.handlePotionRemoved(event.getEffectInstance().getEffect(), event.getEntity());
+        PotionEventHandler.handlePotionRemoved(event.getEffectInstance().getEffect().value(), event.getEntity());
         if (event.getEffectInstance().getEffect() == EffectInit.REDUCE.get()) {
             event.getEntity().refreshDimensions();
         }

@@ -25,7 +25,7 @@ extends HumanoidMobRenderer<GreaterAnimus, GreaterAnimusModel> {
     private static final ResourceLocation GREATER_ANIMUS_LOC = RLoc.create("textures/entity/greater_animus.png");
 
     public GreaterAnimusRenderer(EntityRendererProvider.Context ctx) {
-        super(ctx, (HumanoidModel)new GreaterAnimusModel(ctx.bakeLayer(ModelLayers.ZOMBIE)), 0.0f);
+        super(ctx, new GreaterAnimusModel(ctx.bakeLayer(ModelLayers.ZOMBIE)), 0.0f);
         this.addLayer(new HandParticleLayer(this));
     }
 

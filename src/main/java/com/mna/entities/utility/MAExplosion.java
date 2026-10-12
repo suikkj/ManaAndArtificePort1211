@@ -133,7 +133,7 @@ extends Explosion {
         }
         for (ServerPlayer serverplayerentity : world.players()) {
             if (!(serverplayerentity.distanceToSqr(x, y, x) < 4096.0)) continue;
-            serverplayerentity.connection.send((Packet)new ClientboundExplodePacket(x, y, z, radius, explosion.getToBlow(), explosion.getHitPlayers().get(serverplayerentity), mode, null, null, SoundEvents.GENERIC_EXPLODE.value()));
+            serverplayerentity.connection.send((Packet)new ClientboundExplodePacket(x, y, z, radius, explosion.getToBlow(), explosion.getHitPlayers().get(serverplayerentity), mode, null, null, SoundEvents.GENERIC_EXPLODE));
         }
         world.playSound(null, x, y, z, SoundEvents.GENERIC_EXPLODE, SoundSource.NEUTRAL, (float)(0.9 + Math.random() * 0.2), (float)(0.9 + Math.random() * 0.2));
         return explosion;

@@ -73,7 +73,7 @@ extends ConstructConditional<ConstructIsFluidInContainer> {
                 return true;
             }
         }
-        handler = (net.neoforged.neoforge.fluids.capability.IFluidHandler)FluidUtil.getFluidHandler((Level)world, (BlockPos)this.pos.getPosition(), (Direction)this.pos.getDirection()).orElse(null);
+        handler = (net.neoforged.neoforge.fluids.capability.IFluidHandlerItem)FluidUtil.getFluidHandler((Level)world, (BlockPos)this.pos.getPosition(), (Direction)this.pos.getDirection()).orElse(null);
         if (handler == null) {
             this.construct.getDiagnostics().pushTaskUpdate(this.getId(), this.guiIcon, IConstructDiagnostics.Status.FAILURE, Vec3.atCenterOf((Vec3i)this.pos.getPosition()));
             return false;

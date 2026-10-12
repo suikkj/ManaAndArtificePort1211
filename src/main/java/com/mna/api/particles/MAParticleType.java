@@ -87,6 +87,7 @@ implements ParticleOptions {
     }
 
     public MAParticleType(ParticleColor color, ParticleFloat scale, ParticleInt life, ParticleInt lifePadding, ParticleFloat gravity, ParticleBoolean physics, ParticleItemStack stack, IParticleMoveType mover, boolean depthDisable) {
+        super(false);
         this.color = color;
         this.scale = scale;
         this.life = life;

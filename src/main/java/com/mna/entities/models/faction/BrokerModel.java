@@ -39,7 +39,7 @@ extends GeoModel<Broker> {
     }
 
     public void setCustomAnimations(Broker animatable, long instanceId, AnimationState<Broker> animationState) {
-        super.setCustomAnimations((GeoAnimatable)animatable, instanceId, (software.bernie.geckolib.animation.AnimationState)animationState);
+        super.setCustomAnimations(animatable, instanceId, animationState);
         GeoBone head = this.getAnimationProcessor().getBone("head");
         float f = Mth.rotLerp((float)animationState.getPartialTick(), (float)animatable.yBodyRotO, (float)animatable.yBodyRot);
         float f1 = Mth.rotLerp((float)animationState.getPartialTick(), (float)animatable.yHeadRotO, (float)animatable.yHeadRot);

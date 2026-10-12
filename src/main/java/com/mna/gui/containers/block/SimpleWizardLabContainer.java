@@ -39,7 +39,7 @@ extends AbstractContainerMenu {
     protected final Player user;
 
     public SimpleWizardLabContainer(MenuType<? extends SimpleWizardLabContainer<?, ?>> type, int i, Inventory playerInventory, FriendlyByteBuf packetBuffer) {
-        this(type, i, playerInventory, (WizardLabTile)playerInventory.player.level().getBlockEntity(packetBuffer.readBlockPos()));
+        this(type, i, playerInventory, (V)(WizardLabTile)playerInventory.player.level().getBlockEntity(packetBuffer.readBlockPos()));
     }
 
     public SimpleWizardLabContainer(MenuType<? extends SimpleWizardLabContainer<?, ?>> type, int i, Inventory playerInv, V tile) {

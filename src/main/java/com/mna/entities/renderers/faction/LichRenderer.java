@@ -19,8 +19,8 @@ extends MAGeckoRenderer<WitherLich> {
     }
 
     public boolean shouldRender(WitherLich pLivingEntity, Frustum pCamera, double pCamX, double pCamY, double pCamZ) {
-        java.util.Optional<MAPFXProvider> pfxCap = MNACap.get(pLivingEntity, MAPFXProvider.MAPFX);
-        if (pfxCap.isPresent() && ((MAPFX)pfxCap.get()).getFlag((LivingEntity)pLivingEntity, MAPFX.Flag.MIST_FORM)) {
+        java.util.Optional<MAPFX> pfxCap = MNACap.get(pLivingEntity, MAPFXProvider.MAPFX);
+        if (pfxCap.isPresent() && pfxCap.get().getFlag((LivingEntity)pLivingEntity, MAPFX.Flag.MIST_FORM)) {
             return false;
         }
         return super.shouldRender(pLivingEntity, pCamera, pCamX, pCamY, pCamZ);

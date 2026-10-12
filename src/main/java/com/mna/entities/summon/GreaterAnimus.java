@@ -224,9 +224,7 @@ CrossbowAttackMob {
     public void performRangedAttack(LivingEntity pTarget, float pDistanceFactor) {
         ItemStack itemstack = this.getProjectile(this.getItemInHand(ProjectileUtil.getWeaponHoldingHand((LivingEntity)this, item -> item instanceof BowItem)));
         AbstractArrow abstractarrow = this.getArrow(itemstack, pDistanceFactor);
-        if (this.getMainHandItem().getItem() instanceof BowItem) {
-            abstractarrow = ((BowItem)this.getMainHandItem().getItem()).customArrow(abstractarrow);
-        }
+        // [PORT 1.21.1] BowItem.customArrow removido
         double d0 = pTarget.getX() - this.getX();
         double d1 = pTarget.getY(0.3333333333333333) - abstractarrow.getY();
         double d2 = pTarget.getZ() - this.getZ();
@@ -276,22 +274,6 @@ CrossbowAttackMob {
             return AbstractIllager.IllagerArmPose.ATTACKING;
         }
         return AbstractIllager.IllagerArmPose.NEUTRAL;
-    }
-
-    protected void shootCrossbowProjectile(LivingEntity shooter, LivingEntity target, Projectile projectile, float velocity, float inaccuracy) {
-        double d0 = target.getX() - shooter.getX();
-        double d1 = target.getY(0.3333333333333333) - projectile.getY();
-        double d2 = target.getZ() - shooter.getZ();
-        double d3 = Math.sqrt(d0 * d0 + d2 * d2);
-        projectile.shoot(d0, d1 + d3 * 0.2, d2, velocity, inaccuracy);
-    }
-
-    protected void shootCrossbowProjectile(LivingEntity shooter, LivingEntity target, Projectile projectile, float velocity, float inaccuracy) {
-        double d0 = target.getX() - shooter.getX();
-        double d1 = target.getY(0.3333333333333333) - projectile.getY();
-        double d2 = target.getZ() - shooter.getZ();
-        double d3 = Math.sqrt(d0 * d0 + d2 * d2);
-        projectile.shoot(d0, d1 + d3 * 0.2, d2, velocity, inaccuracy);
     }
 
     public void shootCrossbowProjectile(LivingEntity p_33275_, ItemStack p_33276_, Projectile p_33277_, float p_33278_) {

@@ -68,14 +68,14 @@ extends MNAImageButton {
         }
         pGuiGraphics.renderItem(this.iconStack, this.getX() + this.stackXOffset, this.getY() + this.stackYOffset);
         if (this.active && this.isHovered) {
-            List lines;
+            java.util.List<Component> lines;
             if (this.includeTooltip) {
                 lines = this.iconStack.getTooltipLines(net.minecraft.world.item.Item.TooltipContext.EMPTY, ManaAndArtifice.instance.proxy.getClientPlayer(), (TooltipFlag)TooltipFlag.Default.NORMAL);
             } else {
                 lines = new ArrayList<Component>();
                 lines.add(this.iconStack.getHoverName());
             }
-            ArrayList<Object> tt = new ArrayList<Object>();
+            java.util.List<Component> tt = new java.util.ArrayList<Component>();
             for (Component comp : lines) {
                 if (!this.includeTooltip) {
                     String unformatted = ChatFormatting.stripFormatting((String)comp.getString());

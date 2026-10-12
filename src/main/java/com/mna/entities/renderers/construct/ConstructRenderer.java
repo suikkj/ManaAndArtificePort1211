@@ -379,7 +379,7 @@ extends MAGeckoRenderer<Construct> {
         float startY = deltaY * (pctFrom * pctFrom + pctFrom) * 0.5f + 0.25f;
         float startZ = deltaZ * pctFrom;
         Vec3 normal = new Vec3((double)(deltaX * pctTo - startX), (double)(deltaY * (pctTo * pctTo + pctTo) * 0.5f + 0.25f - startY), (double)(deltaZ * pctTo - startZ)).normalize();
-        vertexBuffer.addVertex(pose.pose(), startX, startY, startZ).setColor(187, 191, 191, 255).setNormal(pose.normal(), (float)normal.x, (float)normal.y, (float)normal.z);
+        vertexBuffer.addVertex(pose.pose(), startX, startY, startZ).setColor(187, 191, 191, 255).setNormal(pose, (float)normal.x, (float)normal.y, (float)normal.z);
     }
 
     @Override

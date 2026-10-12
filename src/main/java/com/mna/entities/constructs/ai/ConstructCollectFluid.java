@@ -62,7 +62,7 @@ extends ConstructBlockAreaTask<ConstructCollectFluid> {
             this.construct.fill(new FluidStack(fluid, fluidAmt), IFluidHandler.FluidAction.EXECUTE);
             if (state.getBlock() instanceof BucketPickup) {
                 BucketPickup bp = (BucketPickup)state.getBlock();
-                bp.pickupBlock((net.minecraft.world.entity.LivingEntity)null, (LevelAccessor)c.level(), this.currentTarget, state);
+                bp.pickupBlock((net.minecraft.world.entity.player.Player)null, (LevelAccessor)c.level(), this.currentTarget, state);
             }
             c.level().gameEvent((Entity)c, GameEvent.FLUID_PICKUP, this.currentTarget);
         }
