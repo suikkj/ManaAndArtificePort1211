@@ -291,10 +291,10 @@ Consumer<FriendlyByteBuf> {
 
         private void resolveRecipe(Level world) {
             world.getRecipeManager().byKey(this.recipeId).ifPresent(recipe -> {
-                if (recipe instanceof CraftingRecipe) {
+                if (recipe.value() instanceof CraftingRecipe) {
                     this.output = recipe.getResultItem(world.registryAccess());
                     this.ingredients = (Ingredient[])recipe.getIngredients().toArray((Object[])new Ingredient[0]);
-                    this.recipe = (CraftingRecipe)recipe;
+                    this.recipe = (CraftingRecipe)recipe.value();
                 }
             });
             this.hasResolved = true;

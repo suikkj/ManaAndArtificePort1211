@@ -38,7 +38,7 @@ extends AbstractHorseRenderer<SummonedSpectralHorse, HorseModel<SummonedSpectral
         if (visible && !notInvisibleToPlayer && !glowing) {
             return RenderType.entityTranslucentCull((ResourceLocation)SPECTRAL_HORSE_TEXTURE);
         }
-        return super.getRenderType((LivingEntity)entity, visible, notInvisibleToPlayer, glowing);
+        return super.getRenderType(entity, visible, notInvisibleToPlayer, glowing);
     }
 }
 

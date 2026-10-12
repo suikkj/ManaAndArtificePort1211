@@ -48,7 +48,7 @@ extends GuiJEIDisable<ContainerSpellRecipe> {
         int y = 10;
         String rawText = Component.translatable((String)"item.mna.enchanted_vellum.subtitle").getString();
         List split_string = this.font.getSplitter().splitLines(rawText, this.imageWidth - 10, Style.EMPTY);
-        for (FormattedText itp : split_string) {
+        for (FormattedText itp : (java.util.List<FormattedText>)split_string) {
             pGuiGraphics.drawString(this.font, itp.getString(), 8, y, FastColor.ARGB32.color((int)255, (int)71, (int)71, (int)71), false);
             Objects.requireNonNull(this.font);
             y += 9;

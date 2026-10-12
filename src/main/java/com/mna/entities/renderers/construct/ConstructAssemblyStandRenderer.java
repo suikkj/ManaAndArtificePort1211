@@ -51,7 +51,7 @@ extends LivingEntityRenderer<ConstructAssemblyStand, ConstructAssemblyStandModel
     }
 
     public void render(ConstructAssemblyStand stand, float p_115309_, float partialTick, PoseStack stack, MultiBufferSource bufferSource, int combinedLight) {
-        super.render((LivingEntity)stand, p_115309_, partialTick, stack, bufferSource, combinedLight);
+        super.render(stand, p_115309_, partialTick, stack, bufferSource, combinedLight);
         stack.pushPose();
         stack.mulPose(Axis.YP.rotationDegrees(180.0f));
         stack.mulPose(Axis.YP.rotationDegrees(180.0f - stand.getYRot()));

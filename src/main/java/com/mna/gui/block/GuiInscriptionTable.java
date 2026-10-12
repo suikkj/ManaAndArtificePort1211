@@ -377,7 +377,7 @@ extends SearchableGui<ContainerInscriptionTable> {
             int offsetY = 44;
             if (this.craftMessage != null) {
                 List split_string = this.font.getSplitter().splitLines(this.craftMessage.getString(), 95, Style.EMPTY);
-                for (FormattedText prop : split_string) {
+                for (FormattedText prop : (java.util.List<FormattedText>)split_string) {
                     pGuiGraphics.drawString(this.font, prop.getString(), (int)(summaryXPos / 0.5f), (int)((summaryYPos + (float)offsetY) / 0.5f), ChatFormatting.DARK_PURPLE.getColor().intValue(), false);
                     offsetY += 5;
                 }

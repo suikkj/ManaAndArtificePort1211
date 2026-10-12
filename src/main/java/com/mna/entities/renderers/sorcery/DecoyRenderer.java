@@ -35,7 +35,7 @@ extends LivingEntityRenderer<EntityDecoy, PlayerModel<EntityDecoy>> {
         if (owner != null && (s = ((AbstractClientPlayer)owner).getModelName()) == "slim") {
             this.model = this.slim;
         }
-        super.render((LivingEntity)pEntity, pEntityYaw, pPartialTicks, pPoseStack, pBuffer, pPackedLight);
+        super.render(pEntity, pEntityYaw, pPartialTicks, pPoseStack, pBuffer, pPackedLight);
     }
 
     public ResourceLocation getTextureLocation(EntityDecoy entity) {

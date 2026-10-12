@@ -88,11 +88,11 @@ extends LivingEntityRenderer<Simulacrum, PlayerModel<Simulacrum>> {
         }
         this.pass = 0;
         pPoseStack.pushPose();
-        super.render((LivingEntity)pEntity, pEntityYaw, pPartialTicks, pPoseStack, pBuffer, pPackedLight);
+        super.render(pEntity, pEntityYaw, pPartialTicks, pPoseStack, pBuffer, pPackedLight);
         pPoseStack.popPose();
         this.pass = 1;
         pPoseStack.pushPose();
-        super.render((LivingEntity)pEntity, pEntityYaw, pPartialTicks, pPoseStack, pBuffer, pPackedLight);
+        super.render(pEntity, pEntityYaw, pPartialTicks, pPoseStack, pBuffer, pPackedLight);
         pPoseStack.popPose();
         if (owner == ManaAndArtifice.instance.proxy.getClientPlayer()) {
             this.renderManaBar(pEntity, pEntityYaw, pPoseStack, pBuffer);

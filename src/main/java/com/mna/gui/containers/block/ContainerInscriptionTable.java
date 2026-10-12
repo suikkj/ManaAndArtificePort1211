@@ -205,14 +205,14 @@ extends AbstractContainerMenu {
         ModifiedSpellPart<SpellEffect> component = this.table.getCurrentComponent();
         if (shape != null) {
             world.getRecipeManager().byKey(shape.getPart().getRegistryName()).ifPresent(recipe -> {
-                for (ResourceLocation rLoc : ((ShapeRecipe)recipe).getRequiredItems()) {
+                for (ResourceLocation rLoc : ((ShapeRecipe)recipe.value()).getRequiredItems()) {
                     this.lookupAndCacheItem(rLoc);
                 }
             });
         }
         if (component != null) {
             world.getRecipeManager().byKey(component.getPart().getRegistryName()).ifPresent(recipe -> {
-                for (ResourceLocation rLoc : ((ComponentRecipe)recipe).getRequiredItems()) {
+                for (ResourceLocation rLoc : ((ComponentRecipe)recipe.value()).getRequiredItems()) {
                     this.lookupAndCacheItem(rLoc);
                 }
             });
@@ -221,7 +221,7 @@ extends AbstractContainerMenu {
             Modifier m = this.table.getCurrentModifier(i);
             if (m == null) continue;
             world.getRecipeManager().byKey(m.getRegistryName()).ifPresent(recipe -> {
-                for (ResourceLocation rLoc : ((ModifierRecipe)recipe).getRequiredItems()) {
+                for (ResourceLocation rLoc : ((ModifierRecipe)recipe.value()).getRequiredItems()) {
                     this.lookupAndCacheItem(rLoc);
                 }
             });

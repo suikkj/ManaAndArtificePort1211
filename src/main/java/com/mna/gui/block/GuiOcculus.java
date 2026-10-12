@@ -297,7 +297,7 @@ extends GuiJEIDisable<ContainerOcculus> {
             pGuiGraphics.drawString(this.font, gui_player_tier, 10, 10, 0xFFFFFF, false);
             if (this.tierConditions != null) {
                 split_lines = this.font.getSplitter().splitLines(this.tierConditions.itc.getString(), maxWidth, Style.EMPTY);
-                for (FormattedText line : split_lines) {
+                for (FormattedText line : (java.util.List<FormattedText>)split_lines) {
                     pGuiGraphics.drawString(this.font, line.getString(), tooltipX, tooltipYStart, this.tierConditions.color, false);
                     Objects.requireNonNull(this.font);
                     tooltipYStart += 9;
@@ -312,7 +312,7 @@ extends GuiJEIDisable<ContainerOcculus> {
             } else {
                 for (TextFormatData tfd : this.currentProgressionTooltip) {
                     split_lines = this.font.getSplitter().splitLines(tfd.itc.getString(), maxWidth, Style.EMPTY);
-                    for (FormattedText line : split_lines) {
+                    for (FormattedText line : (java.util.List<FormattedText>)split_lines) {
                         if (tooltipY >= tooltipYStart) {
                             Objects.requireNonNull(this.font);
                             if (tooltipY <= this.imageHeight - 9) {
@@ -748,7 +748,7 @@ extends GuiJEIDisable<ContainerOcculus> {
                 int yCoord = y + 22;
                 for (Component tc : tooltip) {
                     List lines = this.fontRenderer.getSplitter().splitLines((FormattedText)tc, (int)(47.0f / scale), Style.EMPTY);
-                    for (FormattedText line : lines) {
+                    for (FormattedText line : (java.util.List<FormattedText>)lines) {
                         int len = (int)((float)this.fontRenderer.width(line.getString()) * scale);
                         int xCoord = x + 2 + 25 - len / 2;
                         pGuiGraphics.drawString(((OcculusEntryList)OcculusEntryList.this).minecraft.font, line.getString(), (int)((float)xCoord / scale), (int)((float)yCoord / scale), 0xFFFFFF, false);
@@ -856,7 +856,7 @@ extends GuiJEIDisable<ContainerOcculus> {
                 int yCoord = y + 22;
                 for (Component tc : tooltip) {
                     List lines = this.fontRenderer.getSplitter().splitLines((FormattedText)tc, (int)(47.0f / scale), Style.EMPTY);
-                    for (FormattedText line : lines) {
+                    for (FormattedText line : (java.util.List<FormattedText>)lines) {
                         int len = (int)((float)this.fontRenderer.width(line.getString()) * scale);
                         int xCoord = x + 2 + 25 - len / 2;
                         pGuiGraphics.drawString(this.fontRenderer, line.getString(), (int)((float)xCoord / scale), (int)((float)yCoord / scale), 0xFFFFFF, false);

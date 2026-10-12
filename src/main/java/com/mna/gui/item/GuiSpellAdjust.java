@@ -189,7 +189,7 @@ extends GuiJEIDisable<ContainerSpellAdjustments> {
         int count = 0;
         int text_y = 12;
         List split_lines = this.font.getSplitter().splitLines(this.spellName, 150, Style.EMPTY);
-        for (FormattedText line : split_lines) {
+        for (FormattedText line : (java.util.List<FormattedText>)split_lines) {
             String textLine = line.getString();
             int snw = this.font.width(textLine);
             pGuiGraphics.drawString(this.font, textLine, this.imageWidth / 2 - snw / 2, text_y, textColor, false);

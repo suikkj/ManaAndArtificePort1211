@@ -660,7 +660,7 @@ extends GuiJEIDisable<ContainerGuideBook> {
                 }
                 split_lines.set(split_lines.size() - 1, Component.literal((String)disp));
                 ArrayList<Component> split_lines_cast = new ArrayList<Component>();
-                for (FormattedText split : split_lines) {
+                for (FormattedText split : (java.util.List<FormattedText>)split_lines) {
                     String s = split.getString();
                     if (s.startsWith(entryPrefix)) {
                         split_lines_cast.add((Component)Component.literal((String)entryPrefix).withStyle(ChatFormatting.AQUA).append((Component)Component.literal((String)s.substring(2)).withStyle(ChatFormatting.BLACK)));
