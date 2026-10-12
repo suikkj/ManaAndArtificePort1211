@@ -28,7 +28,7 @@ extends ConstructAITaskParameter {
     @Override
     public void loadData(CompoundTag nbt) {
         super.loadData(nbt);
-        this.stack = ItemStack.parseOptional(this.level.registryAccess(), nbt);
+        this.stack = ItemStack.parseOptional(com.mna.api.tools.MNAItemData.provider(), nbt);
     }
 
     @Override

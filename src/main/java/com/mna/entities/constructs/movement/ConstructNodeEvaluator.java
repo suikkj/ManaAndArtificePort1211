@@ -210,7 +210,7 @@ extends NodeEvaluator {
     }
 
     protected double getFloorLevel(BlockPos pos) {
-        return (this.canFloat() || this.isAmphibious()) && this.level.getFluidState(pos).is(FluidTags.WATER) ? (double)pos.getY() + 0.5 : ConstructNodeEvaluator.getFloorLevel((BlockGetter)this.level, pos);
+        return (this.canFloat() || this.isAmphibious()) && this.mob.level().getFluidState(pos).is(FluidTags.WATER) ? (double)pos.getY() + 0.5 : ConstructNodeEvaluator.getFloorLevel((BlockGetter)this.mob.level(), pos);
     }
 
     protected boolean isAmphibious() {
@@ -299,7 +299,7 @@ extends NodeEvaluator {
     }
 
     private boolean hasCollisions(AABB pBoundingBox) {
-        return this.collisionCache.computeIfAbsent(pBoundingBox, p_192973_ -> !this.level.noCollision((Entity)this.mob, pBoundingBox));
+        return this.collisionCache.computeIfAbsent(pBoundingBox, p_192973_ -> !this.mob.level().noCollision((Entity)this.mob, pBoundingBox));
     }
 
     public PathType getBlockPathTypes(BlockGetter pLevel, int pXOffset, int pYOffset, int pZOffset, EnumSet<PathType> pOutput, PathType pFallbackPathType, BlockPos pPos) {
@@ -340,11 +340,11 @@ extends NodeEvaluator {
     }
 
     private PathType getCachedBlockPathType(int pX, int pY, int pZ) {
-        return (PathType)this.pathTypeByPosCache.computeIfAbsent(BlockPos.asLong((int)pX, (int)pY, (int)pZ), p_265010_ -> this.getBlockPathType((BlockGetter)this.level, pX, pY, pZ, this.mob));
+        return (PathType)this.pathTypeByPosCache.computeIfAbsent(BlockPos.asLong((int)pX, (int)pY, (int)pZ), p_265010_ -> this.getBlockPathType((BlockGetter)this.mob.level(), pX, pY, pZ, this.mob));
     }
 
     protected PathType getCachedBlockType(Mob pEntity, int pX, int pY, int pZ) {
-        return (PathType)this.pathTypeByPosCache.computeIfAbsent(BlockPos.asLong((int)pX, (int)pY, (int)pZ), p_265015_ -> this.getBlockPathType((BlockGetter)this.level, pX, pY, pZ, pEntity));
+        return (PathType)this.pathTypeByPosCache.computeIfAbsent(BlockPos.asLong((int)pX, (int)pY, (int)pZ), p_265015_ -> this.getBlockPathType((BlockGetter)this.mob.level(), pX, pY, pZ, pEntity));
     }
 
     protected void prepare_ground(Mob mob) {
@@ -370,7 +370,7 @@ extends NodeEvaluator {
         block11: {
             blockpos$mutableblockpos = new BlockPos.MutableBlockPos();
             i = this.mob.getBlockY();
-            BlockState blockstate = this.level.getBlockState((BlockPos)blockpos$mutableblockpos.set(this.mob.getX(), (double)i, this.mob.getZ()));
+            BlockState blockstate = this.mob.level().getBlockState((BlockPos)blockpos$mutableblockpos.set(this.mob.getX(), (double)i, this.mob.getZ()));
             if (!this.mob.canStandOnFluid(blockstate.getFluidState())) {
                 if (this.canFloat() && this.mob.isInWater()) {
                     while (true) {
@@ -378,21 +378,21 @@ extends NodeEvaluator {
                             --i;
                             break block11;
                         }
-                        blockstate = this.level.getBlockState((BlockPos)blockpos$mutableblockpos.set(this.mob.getX(), (double)(++i), this.mob.getZ()));
+                        blockstate = this.mob.level().getBlockState((BlockPos)blockpos$mutableblockpos.set(this.mob.getX(), (double)(++i), this.mob.getZ()));
                     }
                 }
                 if (this.mob.onGround()) {
                     i = Mth.floor((double)(this.mob.getY() + 0.5));
                 } else {
                     BlockPos blockpos = this.mob.blockPosition();
-                    while ((this.level.getBlockState(blockpos).isAir() || this.level.getBlockState(blockpos).isPathfindable((BlockGetter)this.level, blockpos, PathComputationType.LAND)) && blockpos.getY() > this.mob.level().getMinBuildHeight()) {
+                    while ((this.mob.level().getBlockState(blockpos).isAir() || this.mob.level().getBlockState(blockpos).isPathfindable((BlockGetter)this.mob.level(), blockpos, PathComputationType.LAND)) && blockpos.getY() > this.mob.level().getMinBuildHeight()) {
                         blockpos = blockpos.below();
                     }
                     i = blockpos.above().getY();
                 }
             } else {
                 while (this.mob.canStandOnFluid(blockstate.getFluidState())) {
-                    blockstate = this.level.getBlockState((BlockPos)blockpos$mutableblockpos.set(this.mob.getX(), (double)(++i), this.mob.getZ()));
+                    blockstate = this.mob.level().getBlockState((BlockPos)blockpos$mutableblockpos.set(this.mob.getX(), (double)(++i), this.mob.getZ()));
                 }
                 --i;
             }
@@ -426,10 +426,10 @@ extends NodeEvaluator {
         if (this.canFloat() && this.mob.isInWater()) {
             i = this.mob.getBlockY();
             BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos(this.mob.getX(), (double)i, this.mob.getZ());
-            BlockState blockstate = this.level.getBlockState((BlockPos)blockpos$mutableblockpos);
+            BlockState blockstate = this.mob.level().getBlockState((BlockPos)blockpos$mutableblockpos);
             while (blockstate.is(Blocks.WATER)) {
                 blockpos$mutableblockpos.set(this.mob.getX(), (double)(++i), this.mob.getZ());
-                blockstate = this.level.getBlockState((BlockPos)blockpos$mutableblockpos);
+                blockstate = this.mob.level().getBlockState((BlockPos)blockpos$mutableblockpos);
             }
         } else {
             i = Mth.floor((double)(this.mob.getY() + 0.5));

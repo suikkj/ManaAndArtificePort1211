@@ -107,14 +107,14 @@ implements ISummonHelper {
         }
         if (overrideAI) {
             candidate.goalSelector.addGoal(0, (Goal)new FollowOwnerGoal(candidate, 1.35, 8.0f, 20.0f, 32.0f, true));
-            candidate.targetSelector.availableGoals.clear();
+            com.mna.tools.MNAGoalSelectorAccess.availableGoals(candidate.targetSelector).clear();
             candidate.targetSelector.addGoal(0, (Goal)new NeverTargetOwnerGoal(candidate));
             candidate.targetSelector.addGoal(1, new TargetDefendOwnerGoal<LivingEntity>(candidate, LivingEntity.class, 10, true, false));
-            if (!candidate.goalSelector.availableGoals.stream().anyMatch(g -> g.getGoal() instanceof MeleeAttackGoal || g.getGoal() instanceof CastSpellAtTargetGoal || g.getGoal() instanceof RangedAttackGoal || g.getGoal() instanceof RangedBowAttackGoal || g.getGoal() instanceof RangedCrossbowAttackGoal)) {
+            if (!com.mna.tools.MNAGoalSelectorAccess.availableGoals(candidate.goalSelector).stream().anyMatch(g -> g.getGoal() instanceof MeleeAttackGoal || g.getGoal() instanceof CastSpellAtTargetGoal || g.getGoal() instanceof RangedAttackGoal || g.getGoal() instanceof RangedBowAttackGoal || g.getGoal() instanceof RangedCrossbowAttackGoal)) {
                 candidate.goalSelector.addGoal(1, (Goal)new SummonMeleeFallbackGoal(candidate, 1.35f, false));
             }
             if (candidate instanceof Pillager) {
-                candidate.goalSelector.availableGoals.removeIf(g -> g.getPriority() == 2);
+                com.mna.tools.MNAGoalSelectorAccess.availableGoals(candidate.goalSelector).removeIf(g -> g.getPriority() == 2);
             }
         }
         return true;

@@ -223,7 +223,7 @@ implements IFactionEnemy<FaerieQueen> {
             this.goalSelector.addGoal(5, (Goal)new BossMonster.CastSpellAtTargetGoal(sunderSpell, moveSpeed, 500, 28.0f, 0.0f, true, 1036, 20, 28, null, this::spellCastReset, this::snapSpellCastPrecast).setUsePredicate(this::spellCastPredicate));
             this.goalSelector.addGoal(6, (Goal)new BossMonster.CastSpellAtTargetGoal(summerFireSpell, moveSpeed, 0, 28.0f, 0.0f, true, 1034, 5, 13, null, this::spellCastReset, this::simpleSpellCastPrecast).setUsePredicate(this::spellCastPredicate));
         }
-        if (this.targetSelector.availableGoals.size() == 0) {
+        if (com.mna.tools.MNAGoalSelectorAccess.availableGoals(this.targetSelector).size() == 0) {
             this.targetSelector.addGoal(1, (Goal)new BossMonster.ThreatTableHurtByTargetGoal((PathfinderMob)this, FaerieQueen.class));
             this.targetSelector.addGoal(2, (Goal)new NearestAttackableTargetGoal((Mob)this, Player.class, 10, true, false, le -> true));
             this.targetSelector.addGoal(4, (Goal)new NearestAttackableTargetGoal((Mob)this, Mob.class, 10, true, false, e -> e instanceof IFactionEnemy && ((IFactionEnemy)e).getFaction() != this.getFaction()));
@@ -375,8 +375,8 @@ implements IFactionEnemy<FaerieQueen> {
         this.hideBossBar();
         this.summonedBy = player;
         this.setInvulnerable(true);
-        this.goalSelector.availableGoals.clear();
-        this.targetSelector.availableGoals.clear();
+        com.mna.tools.MNAGoalSelectorAccess.availableGoals(this.goalSelector).clear();
+        com.mna.tools.MNAGoalSelectorAccess.availableGoals(this.targetSelector).clear();
         this.setAction(Action.FJ_WAITING_ITEM);
     }
 

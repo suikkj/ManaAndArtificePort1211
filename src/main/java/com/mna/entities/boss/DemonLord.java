@@ -269,8 +269,8 @@ implements IFactionEnemy<DemonLord> {
         this.entityData.set(SUMMONER_UUID, player.getGameProfile().getId().toString());
         this.summonedBy = player;
         this.setInvulnerable(true);
-        this.goalSelector.availableGoals.clear();
-        this.targetSelector.availableGoals.clear();
+        com.mna.tools.MNAGoalSelectorAccess.availableGoals(this.goalSelector).clear();
+        com.mna.tools.MNAGoalSelectorAccess.availableGoals(this.targetSelector).clear();
         this.setAction(Action.FJ_WAITING_ITEM);
     }
 
@@ -433,7 +433,7 @@ implements IFactionEnemy<DemonLord> {
         ((ModifiedSpellPart)thunderSpell.getComponent(0)).setValue(Attribute.RADIUS, 10.0f);
         thunderSpell.addComponent(Components.GRAVITY_WELL);
         ((ModifiedSpellPart)thunderSpell.getComponent(1)).setValue(Attribute.DURATION, 5.0f);
-        thunderSpell.writeToNBT(thunder.getTag());
+        thunderSpell.writeToNBT(com.mna.api.tools.MNAItemData.tag(thunder));
         SpellRecipe hellballSpell = new SpellRecipe();
         hellballSpell.setShape(Shapes.PROJECTILE);
         ((ModifiedSpellPart)hellballSpell.getShape()).setValue(Attribute.RADIUS, 10.0f);
@@ -444,7 +444,7 @@ implements IFactionEnemy<DemonLord> {
         hellballSpell.addComponent(Components.FLING);
         ((ModifiedSpellPart)hellballSpell.getComponent(1)).setValue(Attribute.SPEED, 3.0f);
         hellballSpell.setOverrideAffinity(Affinity.HELLFIRE);
-        hellballSpell.writeToNBT(hellball.getTag());
+        hellballSpell.writeToNBT(com.mna.api.tools.MNAItemData.tag(hellball));
         double moveSpeed = this.getAttributeValue(Attributes.MOVEMENT_SPEED);
         this.goalSelector.addGoal(0, (Goal)new FloatGoal((Mob)this));
         this.goalSelector.addGoal(0, (Goal)new PhaseTransitionGoal(this));
@@ -948,7 +948,7 @@ implements IFactionEnemy<DemonLord> {
     }
 
     public class HellballGoal
-    extends CastSpellAtTargetGoal<DemonLord> {
+    extends com.mna.api.entities.ai.CastSpellAtTargetGoal<DemonLord> {
         private boolean casting;
         private int warmupCounter;
         private int resetCounter;
