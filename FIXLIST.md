@@ -245,8 +245,15 @@ perderam o `getResult()/setResult()` herdado. Migrados para enum próprio
 | ✅ _fix20 (hurtAndBreak lambda→slot, `ResourceLocation(a,b)`→`fromNamespaceAndPath` ×15) | 1.852 | −29 |
 | ✅ _fix20b/_fix21 (MNAItemData: reparo de linhas automutiladas + imports ×22; TooltipContext→`.level()` ×15; ClipContext null→cast ×16) | 1.809 | −43 |
 | ✅ _fix22/_fix23 (FallingBlockEntity.blockState via `MNAFallingBlocks`; EffectHelper/LanternWraith/WitchHunter `Holder<MobEffect>`; `symbol: get()` → `value()`/holder direto ×11 arq) | 1.770 | −39 |
-| ✅ _fix24 (ModelManager.getModel/RegisterAdditional → `ModelResourceLocation.standalone` ×10 arq) | **1.751** | −19 |
-| **➜ ATUAL** | **1.751** | **−45.189 desde o início (46.940)** |
+| ✅ _fix24 (ModelManager.getModel/RegisterAdditional → `ModelResourceLocation.standalone` ×10 arq) | 1.751 | −19 |
+| ✅ _fix25 (SpawnPlacementTypes, `hasTag`→CUSTOM_DATA, `parseOptional.orElse`, `isAddedToLevel`, `CauldronInteraction.map().put`, mapas raw tipados, `enchantmentMap` tipado) | 1.683 | −68 |
+| ✅ _fix26 (capabilities interface-typed: CapabilitiesInit+serializers+26 consumidores; `List<Cls>` getEntitiesOfClass; `super((AbstractContainerMenu))`; casts `(Comparable)/(Property)` em setValue; `handleNeighborChanged`) | 1.632 | −51 |
+| ✅ _fix27 (Tesselator/BufferBuilder 1.21.1: `tesselator.begin`+`buildOrThrow`; `ParticleRenderType` anônimos `begin(Tesselator,TextureManager)`) | 1.598 | −34 |
+| ✅ _fix28 (IShearable; RecipeHolder `.value()/.id()` nos 18 sites raw RecipeType; `AttributeModifier.id()`; `AdvancementHolder.id()`; RecipeUtil holder) | 1.560 | −38 |
+| ✅ _fix29 (_isSameItemSameComponents_; `BuiltInRegistries.get`; `MATools.canChangeDimensions`; `setupOverlayRenderState`→RenderSystem; EntityInit register sem cast raw) | 1.529 | −31 |
+| ✅ _fix30 (migração do sistema de receitas: 14 recipes `CraftingContainer`→`CraftingInput`, getRecipeFor com `asCraftInput`/`map(h->h.value())`, `AMRecipeBase.getResultItem(Provider)`, `SingleRecipeInput` p/ cooking) | 1.492 | −37 |
+| ✅ _fix31 (`ICancellableEvent` nos eventos MNA; `setResult`→`setCanceled`; `broadcastBreakEvent`→EquipmentSlot; `doEnchantDamageEffects` no-op; `MNAItemData.getOrCreateTagElement`; `MATools.getTierLevel`; brewing via `RegisterBrewingRecipesEvent`) | **1.456** | −36 |
+| **➜ ATUAL** | **1.456** | **−45.484 desde o início (46.940)** |
 
 ### 🔴 Bug de medição que quase passou (2026-10-11)
 Ao migrar `getEnchantmentLevel`, um `.replace()` removeu o `(` de abertura de
@@ -329,47 +336,38 @@ Verificação por `grep` no `_build_last.log` do build atual (1.881 erros):
 
 ---
 
-## 🔜 FILA ATUAL DE ERROS — checada no build 1.751 (2026-10-12, pós lotes _fix20–_fix24)
+## 🔜 FILA ATUAL DE ERROS — checada no build 1.456 (2026-10-12, pós lotes _fix20–_fix31)
 
 **Regra:** sempre que um lote for aplicado, re-verificar esta seção com
 `grep 'error:' _build_last.log` e ATUALIZAR as contagens — nada sai daqui sem
 evidência de queda no build.
 
-**Caiu nesta rodada (✓ resolvidos):** `new ResourceLocation(a,b)` privado (15→0), `EquipmentSlot is not a functional interface` (14→0), `symbol: MNAItemData` (14→0), `TooltipContext cannot be converted` (15→0), `ClipContext is ambiguous` (15→0), `blockState has private access in FallingBlockEntity` (14→0), `Holder<MobEffect> cannot be converted` (14→0), `symbol: get()` (18→0), `ResourceLocation cannot be converted` (19→0).
+**Caiu nesta rodada (✓ resolvidos):** `new ResourceLocation(a,b)` privado (15→0), `EquipmentSlot is not a functional interface` (14→0), `symbol: MNAItemData` (14→0), `TooltipContext cannot be converted` (15→0), `ClipContext is ambiguous` (15→0), `blockState has private access in FallingBlockEntity` (14→0), `Holder<MobEffect> cannot be converted` (14→0), `symbol: get()` (18→0), `ResourceLocation cannot be converted` (19→0), SpawnPlacements.Type (13→0), `hasTag()` (13→0), `parseOptional.orElse` (12→0), `CauldronInteraction.put` (13→0), `symbol: getValue(ResourceLocation)` (12→0), `isSameItemSameTags` (12→0), `IForgeShearable` (13→0), `RecipeHolder<CAP#1>` nos streams (16→0 via `.value()`), `assemble/matches(CraftingContainer)` (14 recipes → CraftingInput), `canChangeDimensions()` (11→0), `setupOverlayRenderState` (12→0), `getRecipeFor(RecipeType,Container,Level)` (11→0), `doEnchantDamageEffects` (10→0), `broadcastBreakEvent(InteractionHand)` (12→0), `getOrCreateTagElement` (11→0), `addRecipe(IBrewingRecipe)` (10→0), `isCanceled()` em eventos MNA (10→0 via ICancellableEvent), `getLevel()` em Tier (4→0).
 
-### Maiores arquivos (por contagem — build 1.751)
-- [ ] `Construct.java` (31)
+### Maiores arquivos (por contagem — build 1.456)
 - [ ] `DemonLord.java` (29)
+- [ ] `Construct.java` (28)
 - [ ] `GuiOcculus.java` (27)
-- [ ] `ItemInteractionsInit.java` (21)
 - [ ] `BlockUtils.java` (19)
 - [ ] `ConstructNodeEvaluator.java` (18)
-- [ ] `PractitionersPouch.java` (18)
 - [ ] `GuiLodestarV2.java` (17)
 - [ ] `FaerieQueen.java` (17)
-- [ ] `GuiGuideBook.java` (16)
-- [ ] `HUDOverlayRenderer.java` (15)
-- [ ] `MAParticleType.java` (15)
+- [ ] `GuiGuideBook.java` (15)
 
-### Padrões (prioridade de lote; contagens do build 1.751)
-- [ ] `inference variable T has incompatible equality constraints` (90) — chamadas `MNACap.get(...)`/holders em tipos concretos; analisar por arquivo
-- [ ] `Object cannot be converted to X` (77) — resíduos de raw types do CFR
+### Padrões (prioridade de lote; contagens do build 1.456)
+- [ ] `inference variable T has incompatible equality constraints` (65) — chamadas `MNACap.get(...)`/holders em tipos concretos; analisar por arquivo
 - [ ] `invalid method reference` (37) — method-refs em interfaces raw (padrão `(TriConsumer)((TriConsumer)X::m)`)
-- [ ] `Entity cannot be converted to X` (30) — casts em renderers/GeckoLib (setupAnim/render)
-- [ ] `RecipeHolder<CAP#1>` (16) — mais sites `getRecipes()/byKey` → `.value()`/`.id()`
-- [ ] `Matrix3f cannot be converted to Pose` (15) — B4 residual (WorldRenderUtils)
-- [ ] `symbol: level` (14) — vars renomeadas (`world`→`level`) em contextos migrados
-- [ ] **`symbol: getValue()` (13)** — resíduo de Holder/RegistryObject (`getValue()`→`value()`/`get()`)
-- [ ] **`symbol: hasTag()` (13)** — `ItemStack.hasTag()` residual → `has(DataComponents.CUSTOM_DATA)` (mesmo padrão do getTag)
-- [ ] **`symbol: Type` (13)** — campo/enum `Type` sombreando (padrão do CodexBreadcrumb) ou import faltando
-- [ ] **`put(Item,CauldronInteraction)` (13)** — API de CauldronInteraction mudou (map.put com Holder<Item>?)
-- [ ] `MobEffect cannot be converted` (12) — mais sites MobEffect↔Holder
-- [ ] **`AbstractContainerMenu cannot be converted` (12)** — resíduos de menus (RecipeBookMenu/ctores)
-- [ ] **`orElse(ItemStack)` (12)** — Optional com tipo errado (resíduo de parseOptional/holders)
-- [ ] `MACapabilityForgeEventHandlers` (13→verificar) — `event.addCapability` não existe → `RegisterCapabilitiesEvent` (NeoForge)
-- [ ] `EntityInit` (12) — B17 residual
-- [ ] `DamageEventHandler` (10) — B16 residual
-- [ ] `ModelResourceLocation` (19→verificar) — B3 residual (após _fix24)
+- [ ] `bad return type in lambda` (15)
+- [ ] `symbol: level` (15) — vars renomeadas (`world`→`level`) em contextos migrados
+- [ ] `symbol: entity` (13) — idem
+- [ ] `Matrix3f cannot be converted to Pose` (13) — B4 residual (WorldRenderUtils)
+- [ ] `AbstractContainerMenu cannot be converted` (12) — resíduos de menus
+- [ ] `MobEffect cannot be converted` (11) — mais sites MobEffect↔Holder
+- [ ] `Object cannot be converted to Enum` (11)
+- [ ] `dataSlots has private access in AbstractContainerMenu` (10) — usar `MNAMenuAccess`
+- [ ] `MACapabilityForgeEventHandlers` residual — verificar
+- [ ] `EntityInit` — verificar restos de register
+- [ ] `ModelResourceLocation` (B3 residual) — verificar
 
 ---
 
