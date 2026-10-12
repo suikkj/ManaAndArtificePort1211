@@ -57,7 +57,7 @@ extends EntityRenderer<Manaweave> {
             this.RenderPattern(p, matrixStackIn, bufferIn, entityIn.tickCount, partialTicks);
         }
         matrixStackIn.popPose();
-        super.render((Entity)entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
+        super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
     }
 
     private void RenderPattern(IManaweavePattern pattern, PoseStack matrixStackIn, MultiBufferSource bufferIn, int life, float partialTicks) {

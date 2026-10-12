@@ -38,7 +38,7 @@ extends GeoEntityRenderer<SkeletonAssassinBolo> {
         if (!entity.isInGround()) {
             stack.mulPose(Axis.YP.rotationDegrees(ticks));
         }
-        super.render((Entity)entity, entityYaw, partialTicks, stack, bufferIn, packedLightIn);
+        super.render(entity, entityYaw, partialTicks, stack, bufferIn, packedLightIn);
         stack.popPose();
     }
 }

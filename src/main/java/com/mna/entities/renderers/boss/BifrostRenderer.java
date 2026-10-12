@@ -31,7 +31,7 @@ extends EntityRenderer<Bifrost> {
         if (!Minecraft.getInstance().isPaused()) {
             entityIn.spawnParticles(10, partialTicks);
         }
-        super.render((Entity)entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
+        super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
     }
 
     public ResourceLocation getTextureLocation(Bifrost entity) {

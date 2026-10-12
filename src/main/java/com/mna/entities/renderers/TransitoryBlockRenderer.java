@@ -66,7 +66,7 @@ extends EntityRenderer<StationaryBlock> {
             RenderType type = RenderType.translucent();
             blockrendererdispatcher.getModelRenderer().tesselateBlock((BlockAndTintGetter)world, blockrendererdispatcher.getBlockModel(blockstate), blockstate, blockpos, matrixStackIn, bufferIn.getBuffer(type), false, RandomSource.create(), blockstate.getSeed(entityIn.getStartPos()), OverlayTexture.NO_OVERLAY, ModelData.EMPTY, type);
             matrixStackIn.popPose();
-            super.render((Entity)entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
+            super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
         }
     }
 

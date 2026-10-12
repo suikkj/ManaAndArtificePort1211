@@ -76,7 +76,7 @@ extends EntityRenderer<Smite> {
                 this.renderWaterProjectile(entityIn, builder, matrixStackIn, packedLightIn, clr);
             }
         }
-        super.render((Entity)entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
+        super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
     }
 
     private void renderWaterProjectile(Smite entityIn, VertexConsumer builder, PoseStack matrixStackIn, int packedLightIn, int[] color) {

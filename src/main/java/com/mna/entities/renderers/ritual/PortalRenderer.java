@@ -136,7 +136,7 @@ extends EntityRenderer<Portal> {
                 this.renderDefaultPortal(entityIn, matrixStackIn, bufferIn, packedLightIn, partialTicks, portalDye != null ? portalDye : defaultColor);
             }
         }
-        super.render((Entity)entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
+        super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
     }
 
     private float getSpawnPct(Portal portal, int spawnFXDuration, float partialTick) {

@@ -73,7 +73,7 @@ extends MAGeckoRenderer<FaerieQueen> {
         if (pfxCap.isPresent() && ((MAPFX)pfxCap.get()).getFlag((LivingEntity)pLivingEntity, MAPFX.Flag.MIST_FORM)) {
             return false;
         }
-        return super.shouldRender((Entity)pLivingEntity, pCamera, pCamX, pCamY, pCamZ);
+        return super.shouldRender(pLivingEntity, pCamera, pCamX, pCamY, pCamZ);
     }
 }
 

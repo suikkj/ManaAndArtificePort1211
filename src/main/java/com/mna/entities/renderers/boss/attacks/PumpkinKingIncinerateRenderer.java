@@ -31,7 +31,7 @@ extends EntityRenderer<PumpkinKingIncinerate> {
         ClientEventHandler.fogColor[0] = 0.314f;
         ClientEventHandler.fogColor[1] = 0.14f;
         ClientEventHandler.fogColor[2] = 0.06f;
-        super.render((Entity)p_225623_1_, p_225623_2_, p_225623_3_, p_225623_4_, p_225623_5_, p_225623_6_);
+        super.render(p_225623_1_, p_225623_2_, p_225623_3_, p_225623_4_, p_225623_5_, p_225623_6_);
     }
 
     public ResourceLocation getTextureLocation(PumpkinKingIncinerate p_110775_1_) {

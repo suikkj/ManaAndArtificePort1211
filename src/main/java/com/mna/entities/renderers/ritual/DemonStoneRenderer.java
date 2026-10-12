@@ -58,7 +58,7 @@ extends EntityRenderer<DemonStone> {
             angleDegrees += 360.0f / (float)numPillars;
         }
         matrixStackIn.popPose();
-        super.render((Entity)entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
+        super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
     }
 
     public ResourceLocation getTextureLocation(DemonStone entity) {

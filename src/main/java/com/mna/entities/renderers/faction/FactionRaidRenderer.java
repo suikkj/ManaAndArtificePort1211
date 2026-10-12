@@ -54,7 +54,7 @@ extends EntityRenderer<FactionRaid> {
             WorldRenderUtils.renderRadiant(entityIn, matrixStackIn, bufferIn, green, blue, 128, 0.5f);
             matrixStackIn.popPose();
         }
-        super.render((Entity)entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
+        super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
     }
 
     private void RenderPortal(FactionRaid entityIn, float entityYaw, float partialTicks, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn) {

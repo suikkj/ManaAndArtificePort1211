@@ -27,7 +27,7 @@ extends EntityRenderer<WandClone> {
 
     public void render(WandClone entityIn, float entityYaw, float partialTicks, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn) {
         entityIn.spawnParticles();
-        super.render((Entity)entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
+        super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
     }
 
     public ResourceLocation getTextureLocation(WandClone entity) {

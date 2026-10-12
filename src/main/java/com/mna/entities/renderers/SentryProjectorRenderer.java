@@ -27,7 +27,7 @@ extends EntityRenderer<SentryProjectile> {
 
     public void render(SentryProjectile entityIn, float entityYaw, float partialTicks, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn) {
         entityIn.spawnParticles(10, partialTicks);
-        super.render((Entity)entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
+        super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
     }
 
     public ResourceLocation getTextureLocation(SentryProjectile pEntity) {

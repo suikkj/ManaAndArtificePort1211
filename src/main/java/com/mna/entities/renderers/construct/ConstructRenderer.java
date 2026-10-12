@@ -513,7 +513,7 @@ extends MAGeckoRenderer<Construct> {
         if (entity.isAway()) {
             return false;
         }
-        return super.shouldShowName((Entity)entity);
+        return super.shouldShowName(entity);
     }
 
     protected void renderNameTag(Construct construct, Component name, PoseStack matrixStack, MultiBufferSource buffer, int p_225629_5_) {

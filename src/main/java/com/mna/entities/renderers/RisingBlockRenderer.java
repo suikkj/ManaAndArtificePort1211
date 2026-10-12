@@ -70,7 +70,7 @@ extends EntityRenderer<RisingBlock> {
                 this.dispatcher.getModelRenderer().tesselateBlock((BlockAndTintGetter)level, model, blockstate, blockpos, pMatrixStack, pBuffer.getBuffer(renderType), false, RandomSource.create(), blockstate.getSeed(pEntity.getStartPos()), OverlayTexture.NO_OVERLAY, ModelData.EMPTY, renderType);
             }
             pMatrixStack.popPose();
-            super.render((Entity)pEntity, pEntityYaw, pPartialTicks, pMatrixStack, pBuffer, pPackedLight);
+            super.render(pEntity, pEntityYaw, pPartialTicks, pMatrixStack, pBuffer, pPackedLight);
         }
     }
 

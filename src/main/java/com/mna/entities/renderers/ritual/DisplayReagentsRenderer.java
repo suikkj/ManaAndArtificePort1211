@@ -81,7 +81,7 @@ extends EntityRenderer<DisplayReagents> {
             matrixStackIn.popPose();
             ++count;
         }
-        super.render((Entity)entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
+        super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
     }
 }
 

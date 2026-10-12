@@ -454,7 +454,7 @@ extends AbstractHurtingProjectile {
         Vec3 motion = this.getDeltaMovement();
         LivingEntity target = this.getTarget();
         if (this.forcedTargetID.isPresent()) {
-            target = this.level().getEntity(this.forcedTargetID.get().intValue());
+            target = (LivingEntity)this.level().getEntity(this.forcedTargetID.get().intValue());
         }
         if (this.trackForcedTarget && this.forcedTargetID.isPresent()) {
             if (target == null) {

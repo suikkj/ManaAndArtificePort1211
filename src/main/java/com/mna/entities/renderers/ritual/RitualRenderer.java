@@ -128,7 +128,7 @@ extends EntityRenderer<Ritual> {
             this.renderPatternGuide(entityIn, matrixStackIn, bufferIn);
         }
         this.renderCollectedReagents(entityIn, matrixStackIn, partialTicks, packedLightIn, bufferIn);
-        super.render((Entity)entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
+        super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
     }
 
     private void renderCollectedReagents(Ritual entityIn, PoseStack matrixStackIn, float partialTicks, int packedLightIn, MultiBufferSource bufferIn) {
