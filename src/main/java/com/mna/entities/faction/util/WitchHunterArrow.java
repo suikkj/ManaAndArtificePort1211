@@ -16,6 +16,7 @@
 package com.mna.entities.faction.util;
 
 import com.mna.entities.EntityInit;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.world.entity.Entity;
@@ -48,7 +49,7 @@ extends AbstractArrow {
         return super.canHitEntity(target);
     }
 
-    protected ItemStack getPickupItem() {
+    protected ItemStack getDefaultPickupItem() {
         return ItemStack.EMPTY;
     }
 

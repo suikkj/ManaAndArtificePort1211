@@ -56,7 +56,7 @@ INoCreativeTab {
     public AnimatableInstanceCache animCache = GeckoLibUtil.createInstanceCache((GeoAnimatable)this);
 
     public BoundAxe(float attackDamageIn, float attackSpeedIn) {
-        super((Tier)Tiers.DIAMOND, attackDamageIn, attackSpeedIn, new Item.Properties());
+        super((Tier)Tiers.DIAMOND, new Item.Properties());
     }
 
     public void initializeClient(Consumer<IClientItemExtensions> consumer) {
@@ -85,7 +85,7 @@ INoCreativeTab {
     }
 
     public Multimap<net.minecraft.world.entity.ai.attributes.Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack) {
-        Multimap baseAttrs = super.getAttributeModifiers(slot, stack);
+        Multimap baseAttrs = super.getDefaultAttributeModifiers();
         if (slot != EquipmentSlot.MAINHAND) {
             return baseAttrs;
         }
@@ -100,7 +100,7 @@ INoCreativeTab {
         int damage = (int)((ModifiedSpellPart)recipe.getShape()).getValue(Attribute.DAMAGE);
         builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_ID, (double)damage, AttributeModifier.Operation.ADD_VALUE));
         int range = (int)((ModifiedSpellPart)recipe.getShape()).getValue(Attribute.RANGE);
-        builder.put((Attributes.ENTITY_INTERACTION_RANGE), new AttributeModifier(BASE_RANGE_UUID, (double)range, AttributeModifier.Operation.ADD_VALUE));
+        builder.put((Attributes.ENTITY_INTERACTION_RANGE), new AttributeModifier(BASE_RANGE_ID, (double)range, AttributeModifier.Operation.ADD_VALUE));
         baseAttrs.forEach((a, m) -> {
             if (a == Attributes.ENTITY_INTERACTION_RANGE || a == Attributes.ATTACK_DAMAGE) {
                 return;

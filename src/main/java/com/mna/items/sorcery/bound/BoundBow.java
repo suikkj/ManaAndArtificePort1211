@@ -51,7 +51,6 @@ import software.bernie.geckolib.animation.AnimatableManager;
 import software.bernie.geckolib.animation.AnimationController;
 import software.bernie.geckolib.animation.RawAnimation;
 import software.bernie.geckolib.animation.PlayState;
-import software.bernie.geckolib.network.GeckoLibNetwork;
 import software.bernie.geckolib.util.GeckoLibUtil;
 import top.theillusivec4.curios.api.SlotTypePreset;
 import com.mna.api.tools.MNACap;
@@ -67,7 +66,7 @@ INoCreativeTab {
 
     public BoundBow() {
         super(new Item.Properties());
-        GeckoLibNetwork.registerSyncedAnimatable((GeoAnimatable)this);
+        // [PORT] GeckoLibNetwork removido no GeckoLib 4.x
     }
 
     public void initializeClient(Consumer<IClientItemExtensions> consumer) {

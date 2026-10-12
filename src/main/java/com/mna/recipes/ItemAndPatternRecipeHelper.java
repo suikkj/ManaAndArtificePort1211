@@ -22,11 +22,12 @@ import net.minecraft.world.level.Level;
 
 public class ItemAndPatternRecipeHelper {
     public static <T extends ItemAndPatternRecipe> T GetRecipe(Level world, ResourceLocation rLoc, RecipeType<T> type) {
-        List iapList = world.getRecipeManager().getRecipesFor(type, (Container)ContainerTools.createTemporaryContainer(ItemStack.EMPTY), world);
+        List<net.minecraft.world.item.crafting.RecipeHolder<T>> iapList = world.getRecipeManager().getRecipesFor(type, net.minecraft.world.item.crafting.CraftingInput.of(1, 1, java.util.List.of(ItemStack.EMPTY)), world);
         if (iapList == null || iapList.size() == 0) {
             return null;
         }
-        for (ItemAndPatternRecipe recipe : iapList) {
+        for (net.minecraft.world.item.crafting.RecipeHolder<T> __h : iapList) {
+            ItemAndPatternRecipe recipe = __h.value();
             if (recipe.getId().compareTo(rLoc) != 0) continue;
             return (T)recipe;
         }
@@ -34,7 +35,7 @@ public class ItemAndPatternRecipeHelper {
     }
 
     public static <T extends ItemAndPatternRecipe> Collection<T> getAllRecipes(Level world, RecipeType<T> type) {
-        return world.getRecipeManager().getRecipesFor(type, (Container)ContainerTools.createTemporaryContainer(ItemStack.EMPTY), world);
+        return world.getRecipeManager().getRecipesFor(type, net.minecraft.world.item.crafting.CraftingInput.of(1, 1, java.util.List.of(ItemStack.EMPTY)), world).stream().map(h -> h.value()).collect(java.util.stream.Collectors.toList());
     }
 }
 

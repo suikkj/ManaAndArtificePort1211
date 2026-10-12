@@ -6,14 +6,12 @@ import javax.annotation.Nullable;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.material.Fluid;
-import net.neoforged.neoforge.capabilities.Capability;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 import net.neoforged.neoforge.fluids.capability.IFluidHandlerItem;
 
 public class InfiniteFluidCapabilityHandler
-implements IFluidHandlerItem,
-ICapabilityProvider {
+implements IFluidHandlerItem {
     private final Fluid contained;
     private final int CAPACITY = 8000;
     public static final String FLUID_NBT_KEY = "Fluid";

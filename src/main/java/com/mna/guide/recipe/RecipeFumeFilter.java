@@ -34,7 +34,7 @@ implements ICyclingRecipeRenderer<RecipeFumeFilter> {
     public void init_cycling(ResourceLocation[] rLocs) {
         ArrayList<FumeFilterRecipe> patternList = new ArrayList<FumeFilterRecipe>();
         for (ResourceLocation rLoc : rLocs) {
-            Optional<net.minecraft.world.item.crafting.RecipeHolder<?>> pattern = this.resolveRecipe(rLoc);
+            Optional pattern = this.resolveRecipe(rLoc);
             if (!pattern.isPresent() || !(pattern.get() instanceof FumeFilterRecipe)) continue;
             patternList.add((FumeFilterRecipe)pattern.get());
         }
@@ -43,7 +43,7 @@ implements ICyclingRecipeRenderer<RecipeFumeFilter> {
 
     @Override
     public void init_internal(ResourceLocation recipeLocation) {
-        Optional<net.minecraft.world.item.crafting.RecipeHolder<?>> pattern = this.resolveRecipe(recipeLocation);
+        Optional pattern = this.resolveRecipe(recipeLocation);
         this.patterns = pattern.isPresent() && pattern.get() instanceof FumeFilterRecipe ? new FumeFilterRecipe[]{(FumeFilterRecipe)pattern.get()} : null;
     }
 

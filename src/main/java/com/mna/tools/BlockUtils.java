@@ -315,7 +315,8 @@ public class BlockUtils {
             return false;
         }
         BlockEvent.BreakEvent event = new BlockEvent.BreakEvent(world, pos, state, playerEntity);
-        return !NeoForge.EVENT_BUS.post(event);
+        NeoForge.EVENT_BUS.post(event);
+        return !event.isCanceled();
     }
 
     public static void updateBlockState(Level world, BlockPos pos, BlockState state) {
@@ -338,7 +339,9 @@ public class BlockUtils {
             return false;
         }
         Object object = playerEntity = caster instanceof Player ? (Player)caster : FakePlayerFactory.getMinecraft((ServerLevel)((ServerLevel)world));
-        if (NeoForge.EVENT_BUS.post(new BlockEvent.BreakEvent(world, pos, world.getBlockState(pos), playerEntity))) {
+        BlockEvent.BreakEvent __breakEvt = new BlockEvent.BreakEvent(world, pos, world.getBlockState(pos), playerEntity);
+        NeoForge.EVENT_BUS.post(__breakEvt);
+        if (__breakEvt.isCanceled()) {
             return false;
         }
         return BlockUtils.destroyBlockSilent(world, pos, dropBlock);
@@ -411,7 +414,7 @@ public class BlockUtils {
     private static <S extends StateHolder<?, S>, T extends Comparable<T>> S setValueHelper(S pStateHolder, Property<T> pProperty, String pPropertyName, CompoundTag pPropertiesTag, CompoundTag pBlockStateTag) {
         Optional optional = pProperty.getValue(pPropertiesTag.getString(pPropertyName));
         if (optional.isPresent()) {
-            return (S)((StateHolder)pStateHolder.setValue(pProperty, optional.get()));
+            return (S)((StateHolder)pStateHolder.setValue(pProperty, (Comparable)optional.get()));
         }
         ManaAndArtifice.LOGGER.warn("Unable to read property: {} with value: {} for blockstate: {}", pPropertyName, pPropertiesTag.getString(pPropertyName), pBlockStateTag.toString());
         return pStateHolder;

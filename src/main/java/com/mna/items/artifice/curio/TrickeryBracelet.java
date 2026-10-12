@@ -2,6 +2,7 @@
 package com.mna.items.artifice.curio;
 
 import com.mna.api.faction.IFaction;
+import net.minecraft.resources.ResourceLocation;
 import com.mna.api.items.ChargeableItem;
 import com.mna.factions.Factions;
 import com.mna.items.artifice.curio.IPreEnchantedItem;

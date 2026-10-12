@@ -107,7 +107,7 @@ extends HeldContainerBase {
     public void removed(Player player) {
         if (!player.level().isClientSide()) {
             HashMap chants = new HashMap();
-            HashMap<Enchantment, Float> bonuses = new HashMap<Enchantment, Float>();
+            HashMap<net.minecraft.core.Holder<Enchantment>, Float> bonuses = new HashMap<net.minecraft.core.Holder<Enchantment>, Float>();
             this.inventory.getAllItems().forEach(is -> {
                 if (is.isEmpty()) {
                     return;
@@ -133,7 +133,7 @@ extends HeldContainerBase {
                     if (!bonuses.containsKey(ench)) {
                         bonuses.put((net.minecraft.core.Holder<Enchantment>)ench, Float.valueOf(bonus - 1.0f));
                     } else {
-                        bonuses.put((Enchantment)ench, Float.valueOf(((Float)bonuses.get(ench)).floatValue() + bonus));
+                        bonuses.put((net.minecraft.core.Holder<Enchantment>)ench, Float.valueOf(((Float)bonuses.get(ench)).floatValue() + bonus));
                     }
                 });
             });
@@ -142,7 +142,9 @@ extends HeldContainerBase {
                     chants.put(k, (Integer)chants.get(k) + (int)Math.floor(v.floatValue()));
                 }
             });
-            EnchantmentHelper.setEnchantments(chants, (ItemStack)this.inventory.getStack());
+            net.minecraft.world.item.enchantment.ItemEnchantments.Mutable chMut = new net.minecraft.world.item.enchantment.ItemEnchantments.Mutable(net.minecraft.world.item.enchantment.ItemEnchantments.EMPTY);
+            chants.forEach(chMut::set);
+            ((ItemStack)this.inventory.getStack()).set(DataComponents.ENCHANTMENTS, chMut.toImmutable());
         }
         super.removed(player);
     }

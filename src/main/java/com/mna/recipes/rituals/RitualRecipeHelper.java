@@ -28,7 +28,7 @@ public class RitualRecipeHelper {
     }
 
     public static Collection<RitualRecipe> getAllRituals(Level world) {
-        List collection = world.getRecipeManager().getRecipesFor(RecipeInit.RITUAL_TYPE.get(), null, world).stream().map(r -> r.value()).collect(java.util.stream.Collectors.toList());
+        List<RitualRecipe> collection = world.getRecipeManager().getRecipesFor(RecipeInit.RITUAL_TYPE.get(), null, world).stream().map(r -> r.value()).collect(java.util.stream.Collectors.toList());
         return collection.stream().sorted((c1, c2) -> c2.getLowerBound() - c1.getLowerBound()).collect(Collectors.toList());
     }
 }
