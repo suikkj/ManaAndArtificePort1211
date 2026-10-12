@@ -148,7 +148,7 @@ MNADyeableItem {
             reagentData.putInt("x", ((BlockPos)reagent_positions.get(i)).getX());
             reagentData.putInt("y", ((BlockPos)reagent_positions.get(i)).getY());
             reagentData.putInt("z", ((BlockPos)reagent_positions.get(i)).getZ());
-            ((ItemStack)reagents.get(i)).save(reagentData);
+            com.mna.api.tools.MNAItemData.save((ItemStack)reagents.get(i), reagentData);
             compound.put(TAG_RITUAL_REAGENT_PREFIX + i, (Tag)reagentData);
         }
         Component baseDisplayName = new ItemStack((ItemLike)stack.getItem()).getHoverName();
@@ -211,7 +211,7 @@ MNADyeableItem {
                     if (MNAItemData.element(runeStack, "ritual_tags").getBoolean("noConsumeReagent")) {
                         ghost = true;
                     }
-                    runeStack.removeTagKey("ritual_tags");
+                    com.mna.api.tools.MNAItemData.remove(runeStack, "ritual_tags");
                     rune.setReadOnly(false);
                     rune.setGhostItem(false);
                     rune.setItem(0, runeStack.copy());
@@ -415,7 +415,7 @@ MNADyeableItem {
             if (searchCopy.has(net.minecraft.core.component.DataComponents.CUSTOM_DATA)) {
                 searchCopy.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().remove("ritual_tags");
                 if (searchCopy.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getAllKeys().size() == 0) {
-                    searchCopy.setTag(DataComponents.CUSTOM_DATA, CustomData.of(null));
+                    searchCopy.set(DataComponents.CUSTOM_DATA, CustomData.EMPTY);
                 }
             }
             if (riftInv != null) {
@@ -564,7 +564,7 @@ MNADyeableItem {
                 if (MNAItemData.element(searchCopy, "ritual_tags").getBoolean("noConsumeReagent")) continue;
                 searchCopy.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().remove("ritual_tags");
                 if (searchCopy.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().isEmpty()) {
-                    searchCopy.setTag(DataComponents.CUSTOM_DATA, CustomData.of(null));
+                    searchCopy.set(DataComponents.CUSTOM_DATA, CustomData.EMPTY);
                 }
             }
             this.consumeItem(searchCopy, inventory, riftInv, remoteInv, remoteFace, false);
@@ -679,7 +679,7 @@ MNADyeableItem {
 
     @Nullable
     private static RitualRecipe getRitual(Level world, ItemStack stack) {
-        ResourceLocation rLoc = new ResourceLocation(PractitionersPouch.getRitualRLoc(stack, PractitionersPouch.getIndex(stack)));
+        ResourceLocation rLoc = ResourceLocation.parse(PractitionersPouch.getRitualRLoc(stack, PractitionersPouch.getIndex(stack)));
         return RitualRecipe.find(world, rLoc);
     }
 
@@ -945,7 +945,7 @@ MNADyeableItem {
                     if (searchCopy.has(net.minecraft.core.component.DataComponents.CUSTOM_DATA)) {
                         searchCopy.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().remove("ritual_tags");
                         if (searchCopy.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getAllKeys().size() == 0) {
-                            searchCopy.setTag(DataComponents.CUSTOM_DATA, CustomData.of(null));
+                            searchCopy.set(DataComponents.CUSTOM_DATA, CustomData.EMPTY);
                         }
                     }
                     if (InventoryUtilities.countItem(searchCopy, (IItemHandler)irk, Direction.UP, true, true) >= listStack.getCount()) {

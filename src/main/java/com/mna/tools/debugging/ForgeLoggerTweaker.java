@@ -15,8 +15,6 @@ package com.mna.tools.debugging;
 
 import java.util.ArrayList;
 import java.util.Map;
-import java.util.logging.Filter;
-import java.util.logging.LogRecord;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Filter;
@@ -48,10 +46,6 @@ public class ForgeLoggerTweaker {
     implements Filter {
         private Level minimumLevel = Level.DEBUG;
 
-        @Override
-        public boolean isLoggable(LogRecord record) {
-            return true;
-        }
 
         public Filter.Result filter(LogEvent event) {
             if (this.minimumLevel.compareTo(event.getLevel()) < 0) {

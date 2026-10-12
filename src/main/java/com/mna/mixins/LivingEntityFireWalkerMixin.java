@@ -13,7 +13,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.neoforged.neoforge.common.NeoForgeMod;
-import net.neoforged.neoforge.common.extensions.IForgeLivingEntity;
+import net.neoforged.neoforge.common.extensions.ILivingEntityExtension;
 import net.neoforged.neoforge.fluids.FluidType;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -23,10 +23,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(value={LivingEntity.class})
 public abstract class LivingEntityFireWalkerMixin
-implements IForgeLivingEntity {
+implements ILivingEntityExtension {
     @Inject(at={@At(value="RETURN")}, method={"canStandOnFluid"}, cancellable=true)
     public void mna$canStandOnFluid(FluidState state, CallbackInfoReturnable<Boolean> cir) {
-        LivingEntity self = (LivingEntity)this;
+        LivingEntity self = (LivingEntity)(Object)this;
         if (state.getTags().anyMatch(t -> t == FluidTags.LAVA) && ((DemonArmorItem)ItemInit.DEMON_ARMOR_CHEST.get()).isSetEquipped(self)) {
             cir.setReturnValue(!self.isCrouching());
         }
@@ -37,15 +37,15 @@ implements IForgeLivingEntity {
 
     @Inject(at={@At(value="RETURN")}, method={"isAffectedByFluids"}, cancellable=true)
     public void mna$isAffectedByFluids(CallbackInfoReturnable<Boolean> cir) {
-        LivingEntity self = (LivingEntity)this;
+        LivingEntity self = (LivingEntity)(Object)this;
         if (self.isInLava() && ((DemonArmorItem)ItemInit.DEMON_ARMOR_CHEST.get()).isSetEquipped(self)) {
-            cir.setReturnValue((!self.isInLava() ? 1 : 0));
+            cir.setReturnValue(!self.isInLava());
         }
     }
 
     @Inject(at={@At(value="HEAD")}, method={"jumpInLiquid"}, cancellable=true)
     public void mna$jumpInLiquid(TagKey<Fluid> fluid, CallbackInfo ci) {
-        LivingEntity self = (LivingEntity)this;
+        LivingEntity self = (LivingEntity)(Object)this;
         if (self.isInLava() && ((DemonArmorItem)ItemInit.DEMON_ARMOR_CHEST.get()).isSetEquipped(self)) {
             ((Player)self).jumpFromGround();
             ci.cancel();

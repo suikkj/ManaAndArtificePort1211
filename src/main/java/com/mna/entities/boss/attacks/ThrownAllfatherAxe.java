@@ -199,7 +199,7 @@ extends ThrownWeapon {
     }
 
     public void setReturning() {
-        this.entityData.set(IS_RETURNING, 1);
+        this.entityData.set(IS_RETURNING, (byte)1);
         this.xPower = -this.xPower;
         this.yPower = -this.yPower;
         this.zPower = -this.zPower;
