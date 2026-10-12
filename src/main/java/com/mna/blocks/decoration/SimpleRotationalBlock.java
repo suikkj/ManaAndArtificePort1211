@@ -57,7 +57,7 @@ extends Block {
             surfaceType = 3;
             face = context.getClickedFace();
         }
-        return (BlockState)((BlockState)super.getStateForPlacement(context).setValue((Property)FACING, (Comparable)face)).setValue((Property)SURFACE_TYPE, (Comparable)Integer.valueOf(surfaceType));
+        return (BlockState)((BlockState)super.getStateForPlacement(context).setValue(FACING, face)).setValue(SURFACE_TYPE, Integer.valueOf(surfaceType));
     }
 
     public BlockState mirror(BlockState pState, Mirror pMirror) {
@@ -65,7 +65,7 @@ extends Block {
     }
 
     public BlockState rotate(BlockState pState, Rotation pRotation) {
-        return (BlockState)pState.setValue((Property)FACING, (Comparable)pRotation.rotate((Direction)pState.getValue((Property)FACING)));
+        return (BlockState)pState.setValue(FACING, pRotation.rotate((Direction)pState.getValue(FACING)));
     }
 }
 

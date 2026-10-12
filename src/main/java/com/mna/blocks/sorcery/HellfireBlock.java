@@ -64,7 +64,7 @@ IBlockExtension {
 
     public HellfireBlock() {
         super(BlockBehaviour.Properties.of().mapColor(DyeColor.LIME).noOcclusion().noCollission().instabreak().lightLevel(state -> 15).sound(SoundType.WOOL), 3.0f);
-        this.registerDefaultState((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)this.stateDefinition.any()).setValue((Property)AGE, (Comparable)Integer.valueOf(0))).setValue((Property)NORTH, (Comparable)Boolean.valueOf(false))).setValue((Property)EAST, (Comparable)Boolean.valueOf(false))).setValue((Property)SOUTH, (Comparable)Boolean.valueOf(false))).setValue((Property)WEST, (Comparable)Boolean.valueOf(false))).setValue((Property)UP, (Comparable)Boolean.valueOf(false)));
+        this.registerDefaultState((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)this.stateDefinition.any()).setValue(AGE, Integer.valueOf(0))).setValue(NORTH, Boolean.valueOf(false))).setValue(EAST, Boolean.valueOf(false))).setValue(SOUTH, Boolean.valueOf(false))).setValue(WEST, Boolean.valueOf(false))).setValue(UP, Boolean.valueOf(false)));
         this.shapesCache = ImmutableMap.copyOf(this.stateDefinition.getPossibleStates().stream().filter(p_242674_0_ -> (Integer)p_242674_0_.getValue((Property)AGE) == 0).collect(Collectors.toMap(Function.identity(), HellfireBlock::calculateShape)));
     }
 
@@ -93,7 +93,7 @@ IBlockExtension {
     }
 
     public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
-        return this.shapesCache.get(state.setValue((Property)AGE, (Comparable)Integer.valueOf(0)));
+        return this.shapesCache.get(state.setValue(AGE, Integer.valueOf(0)));
     }
 
     public BlockState getStateForPlacement(BlockPlaceContext context) {
@@ -108,7 +108,7 @@ IBlockExtension {
             for (Direction direction : Direction.values()) {
                 BooleanProperty booleanproperty = FACING_TO_PROPERTY_MAP.get(direction);
                 if (booleanproperty == null) continue;
-                blockstate1 = (BlockState)blockstate1.setValue((Property)booleanproperty, (Comparable)Boolean.valueOf(this.canCatchFire(blockReader, pos.relative(direction), direction.getOpposite())));
+                blockstate1 = (BlockState)blockstate1.setValue(booleanproperty, Boolean.valueOf(this.canCatchFire(blockReader, pos.relative(direction), direction.getOpposite())));
             }
             return blockstate1;
         }
@@ -135,7 +135,7 @@ IBlockExtension {
                 boolean flag1;
                 int j = Math.min(15, i + rand.nextInt(3) / 2);
                 if (i != j) {
-                    state = (BlockState)state.setValue((Property)AGE, (Comparable)Integer.valueOf(j));
+                    state = (BlockState)state.setValue(AGE, Integer.valueOf(j));
                     worldIn.setBlock(pos, state, 4);
                 }
                 if (!flag) {
@@ -213,7 +213,7 @@ IBlockExtension {
     }
 
     private BlockState getFireWithAge(LevelAccessor world, BlockPos pos, int age) {
-        return (BlockState)this.getStateForPlacement((BlockGetter)world, pos).setValue((Property)AGE, (Comparable)Integer.valueOf(age));
+        return (BlockState)this.getStateForPlacement((BlockGetter)world, pos).setValue(AGE, Integer.valueOf(age));
     }
 
     private boolean areNeighborsFlammable(BlockGetter worldIn, BlockPos pos) {

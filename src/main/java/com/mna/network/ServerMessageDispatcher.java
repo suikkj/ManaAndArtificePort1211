@@ -79,7 +79,7 @@ public class ServerMessageDispatcher {
     }
 
     public static void sendMagicSyncMessage(ServerPlayer player) {
-        java.util.Optional<PlayerMagicProvider> magic = MNACap.get(player, PlayerMagicProvider.MAGIC);
+        java.util.Optional<com.mna.api.capabilities.IPlayerMagic> magic = MNACap.get(player, PlayerMagicProvider.MAGIC);
         if (!magic.isPresent()) {
             return;
         }

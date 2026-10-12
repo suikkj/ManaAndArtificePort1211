@@ -104,7 +104,7 @@ implements EntityBlock {
 
     public RuneforgeBlock() {
         super(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).strength(3.0f).noOcclusion().isSuffocating(BlockInit.NEVER).requiresCorrectToolForDrops(), false, new BlockPos[0]);
-        this.registerDefaultState((BlockState)((BlockState)((BlockState)this.defaultBlockState().setValue((Property)ACTIVE, (Comparable)Boolean.valueOf(false))).setValue((Property)REPAIR, (Comparable)Boolean.valueOf(false))).setValue((Property)MATERIAL, (Comparable)Integer.valueOf(0)));
+        this.registerDefaultState((BlockState)((BlockState)((BlockState)this.defaultBlockState().setValue(ACTIVE, Boolean.valueOf(false))).setValue(REPAIR, Boolean.valueOf(false))).setValue(MATERIAL, Integer.valueOf(0)));
     }
 
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
@@ -127,7 +127,7 @@ implements EntityBlock {
 
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        return (BlockState)this.defaultBlockState().setValue((Property)FACING, (Comparable)context.getHorizontalDirection().getOpposite());
+        return (BlockState)this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
     }
 
     public InteractionResult use(BlockState state, Level worldIn, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult p_225533_6_) {
@@ -141,7 +141,7 @@ implements EntityBlock {
                         if (player instanceof ServerPlayer) {
                             CriteriaTriggers.ITEM_USED_ON_BLOCK.trigger((ServerPlayer)player, pos, activeStack);
                         }
-                        worldIn.setBlock(pos, (BlockState)state.setValue((Property)MATERIAL, (Comparable)Integer.valueOf(1)), 3);
+                        worldIn.setBlock(pos, (BlockState)state.setValue(MATERIAL, Integer.valueOf(1)), 3);
                         worldIn.playSound(null, pos, SFX.Spell.Buff.FIRE, SoundSource.BLOCKS, 1.0f, 1.0f);
                         worldIn.playSound(null, pos, SoundEvents.FIRE_AMBIENT, SoundSource.BLOCKS, 1.0f, 1.0f);
                         if (!player.isCreative()) {

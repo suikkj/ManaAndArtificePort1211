@@ -70,7 +70,7 @@ implements EntityBlock {
         if (state == null) {
             return null;
         }
-        return (BlockState)state.setValue((Property)FACING, (Comparable)face);
+        return (BlockState)state.setValue(FACING, face);
     }
 
     public int getLightEmission(BlockState state, BlockGetter world, BlockPos pos) {

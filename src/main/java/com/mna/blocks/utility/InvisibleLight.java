@@ -62,7 +62,7 @@ extends WaterloggableBlock
 implements IDontCreateBlockItem {
     public InvisibleLight() {
         super(BlockBehaviour.Properties.of().strength(0.0f).noOcclusion().lightLevel(state -> 15).replaceable().noCollission().noLootTable().air().isSuffocating(BlockInit.NEVER), false);
-        this.registerDefaultState((BlockState)this.defaultBlockState().setValue((Property)BlockStateProperties.DELAY, (Comparable)Integer.valueOf(4)));
+        this.registerDefaultState((BlockState)this.defaultBlockState().setValue(BlockStateProperties.DELAY, Integer.valueOf(4)));
     }
 
     @Override
@@ -95,7 +95,7 @@ implements IDontCreateBlockItem {
     public void tick(BlockState state, ServerLevel worldIn, BlockPos pos, RandomSource rand) {
         int delay = (Integer)state.getValue((Property)BlockStateProperties.DELAY);
         if (delay > 1) {
-            worldIn.setBlockAndUpdate(pos, (BlockState)state.setValue((Property)BlockStateProperties.DELAY, (Comparable)Integer.valueOf(delay - 1)));
+            worldIn.setBlockAndUpdate(pos, (BlockState)state.setValue(BlockStateProperties.DELAY, Integer.valueOf(delay - 1)));
             worldIn.scheduleTick(new BlockPos((Vec3i)pos), (Block)this, 2400, TickPriority.EXTREMELY_LOW);
         } else {
             worldIn.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);

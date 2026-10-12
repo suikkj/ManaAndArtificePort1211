@@ -86,7 +86,7 @@ ISpellInteractibleBlock<BrazierBlock> {
 
     public BrazierBlock() {
         super(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(3.0f, 10.0f).noOcclusion().randomTicks().sound(SoundType.LANTERN).isSuffocating(BlockInit.NEVER), false);
-        this.registerDefaultState((BlockState)((BlockState)this.defaultBlockState().setValue((Property)ACTIVE, (Comparable)Boolean.valueOf(false))).setValue((Property)AUTO_ACTIVATE, (Comparable)Boolean.valueOf(false)));
+        this.registerDefaultState((BlockState)((BlockState)this.defaultBlockState().setValue(ACTIVE, Boolean.valueOf(false))).setValue(AUTO_ACTIVATE, Boolean.valueOf(false)));
     }
 
     @Override
@@ -103,9 +103,9 @@ ISpellInteractibleBlock<BrazierBlock> {
         if (((Boolean)state.getValue((Property)AUTO_ACTIVATE)).booleanValue()) {
             BlockState newstate = state;
             if (worldIn.isNight() && !((Boolean)state.getValue((Property)ACTIVE)).booleanValue()) {
-                newstate = (BlockState)state.setValue((Property)ACTIVE, (Comparable)Boolean.valueOf(true));
+                newstate = (BlockState)state.setValue(ACTIVE, Boolean.valueOf(true));
             } else if (worldIn.isDay() && ((Boolean)state.getValue((Property)ACTIVE)).booleanValue()) {
-                newstate = (BlockState)state.setValue((Property)ACTIVE, (Comparable)Boolean.valueOf(false));
+                newstate = (BlockState)state.setValue(ACTIVE, Boolean.valueOf(false));
             }
             worldIn.setBlock(pos, newstate, 1);
             worldIn.sendBlockUpdated(pos, state, newstate, 2);
@@ -117,7 +117,7 @@ ISpellInteractibleBlock<BrazierBlock> {
         if (!worldIn.isClientSide) {
             BlockState newstate = state;
             if (player.isCrouching()) {
-                newstate = (BlockState)state.setValue((Property)AUTO_ACTIVATE, (Comparable)Boolean.valueOf((Boolean)state.getValue((Property)AUTO_ACTIVATE) == false));
+                newstate = (BlockState)state.setValue(AUTO_ACTIVATE, Boolean.valueOf((Boolean)state.getValue(AUTO_ACTIVATE) == false));
                 if (((Boolean)newstate.getValue((Property)AUTO_ACTIVATE)).booleanValue()) {
                     player.sendSystemMessage((Component)Component.translatable((String)"block.mna.brazier.auto_on"));
                 } else {
@@ -125,7 +125,7 @@ ISpellInteractibleBlock<BrazierBlock> {
                 }
                 worldIn.scheduleTick(pos, (Block)this, 20);
             } else {
-                newstate = (BlockState)state.setValue((Property)ACTIVE, (Comparable)Boolean.valueOf((Boolean)state.getValue((Property)ACTIVE) == false));
+                newstate = (BlockState)state.setValue(ACTIVE, Boolean.valueOf((Boolean)state.getValue(ACTIVE) == false));
             }
             worldIn.setBlock(pos, newstate, 1);
             worldIn.sendBlockUpdated(pos, state, newstate, 2);
@@ -166,7 +166,7 @@ ISpellInteractibleBlock<BrazierBlock> {
             if (newFacing == null) {
                 newFacing = Direction.DOWN;
             }
-            superState = (BlockState)superState.setValue((Property)FACING, (Comparable)newFacing);
+            superState = (BlockState)superState.setValue(FACING, newFacing);
         }
         return superState;
     }
@@ -186,7 +186,7 @@ ISpellInteractibleBlock<BrazierBlock> {
 
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        return (BlockState)this.defaultBlockState().setValue((Property)FACING, (Comparable)context.getClickedFace().getOpposite());
+        return (BlockState)this.defaultBlockState().setValue(FACING, context.getClickedFace().getOpposite());
     }
 
     public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {

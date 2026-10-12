@@ -102,7 +102,7 @@ extends PylonTileBase {
                 }
                 continue;
             }
-            this.level.setBlockAndUpdate(uPos, (BlockState)uState.setValue((Property)BlockStateProperties.DELAY, (Comparable)Integer.valueOf(4)));
+            this.level.setBlockAndUpdate(uPos, (BlockState)uState.setValue(BlockStateProperties.DELAY, Integer.valueOf(4)));
             if (this.level.getBlockTicks().hasScheduledTick(uPos, ((Block)BlockInit.INVISIBLE_LIGHT_BLOCK.get()))) continue;
             this.level.scheduleTick(uPos, (Block)BlockInit.INVISIBLE_LIGHT_BLOCK.get(), 1200, TickPriority.EXTREMELY_LOW);
         }

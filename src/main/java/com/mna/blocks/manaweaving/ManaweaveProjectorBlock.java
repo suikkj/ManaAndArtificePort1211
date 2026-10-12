@@ -80,7 +80,7 @@ EntityBlock {
 
     public ManaweaveProjectorBlock() {
         super(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).strength(3.0f).noOcclusion().isSuffocating(BlockInit.NEVER), false);
-        this.registerDefaultState((BlockState)((BlockState)this.defaultBlockState().setValue((Property)FILL_LEVEL, (Comparable)Integer.valueOf(0))).setValue((Property)PROJECTING, (Comparable)Boolean.valueOf(false)));
+        this.registerDefaultState((BlockState)((BlockState)this.defaultBlockState().setValue(FILL_LEVEL, Integer.valueOf(0))).setValue(PROJECTING, Boolean.valueOf(false)));
     }
 
     public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {

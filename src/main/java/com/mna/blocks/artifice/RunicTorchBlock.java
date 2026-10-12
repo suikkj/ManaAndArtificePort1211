@@ -65,7 +65,7 @@ implements EntityBlock {
 
     public RunicTorchBlock(BlockBehaviour.Properties properties) {
         super(properties, new BlockPos(0, 1, 0));
-        this.registerDefaultState((BlockState)((BlockState)this.defaultBlockState().setValue((Property)HorizontalDirectionalBlock.FACING, (Comparable)Direction.NORTH)).setValue((Property)BlockStateProperties.LIT, (Comparable)Boolean.valueOf(true)));
+        this.registerDefaultState((BlockState)((BlockState)this.defaultBlockState().setValue(HorizontalDirectionalBlock.FACING, Direction.NORTH)).setValue(BlockStateProperties.LIT, Boolean.valueOf(true)));
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
@@ -79,7 +79,7 @@ implements EntityBlock {
         Direction direction = context.getHorizontalDirection().getOpposite();
         BlockState base = super.getStateForPlacement(context);
         if (base != null) {
-            return (BlockState)((BlockState)super.getStateForPlacement(context).setValue((Property)HorizontalDirectionalBlock.FACING, (Comparable)direction)).setValue((Property)BlockStateProperties.LIT, (Comparable)Boolean.valueOf(context.getLevel().hasNeighborSignal(context.getClickedPos())));
+            return (BlockState)((BlockState)super.getStateForPlacement(context).setValue(HorizontalDirectionalBlock.FACING, direction)).setValue(BlockStateProperties.LIT, Boolean.valueOf(context.getLevel().hasNeighborSignal(context.getClickedPos())));
         }
         return null;
     }

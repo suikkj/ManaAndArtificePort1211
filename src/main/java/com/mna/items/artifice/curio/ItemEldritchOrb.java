@@ -96,7 +96,7 @@ extends ChargeableItem {
         if (caster.level().isClientSide()) {
             return false;
         }
-        List targets = caster.level().getEntitiesOfClass(Mob.class, caster.getBoundingBox().inflate(5.0)).stream().filter(e -> e.isAlive() && e.getSensing().hasLineOfSight((Entity)caster) && !SummonUtils.isTargetFriendly((Entity)e, (LivingEntity)caster)).collect(Collectors.toList());
+        List<Mob> targets = caster.level().getEntitiesOfClass(Mob.class, caster.getBoundingBox().inflate(5.0)).stream().filter(e -> e.isAlive() && e.getSensing().hasLineOfSight((Entity)caster) && !SummonUtils.isTargetFriendly((Entity)e, (LivingEntity)caster)).collect(Collectors.toList());
         if (targets.size() <= 0) {
             return false;
         }

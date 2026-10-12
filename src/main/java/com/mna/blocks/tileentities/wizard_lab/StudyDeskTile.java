@@ -193,8 +193,8 @@ implements IEldrinConsumerTile {
         if (!player.isCreative() && player.totalExperience < this.getXPCost(player)) {
             return CantStartReason.NOT_ENOUGH_XP;
         }
-        java.util.Optional<PlayerRoteSpellsProvider> rote = MNACap.get(player, PlayerRoteSpellsProvider.ROTE);
-        java.util.Optional<PlayerProgressionProvider> progression = MNACap.get(player, PlayerProgressionProvider.PROGRESSION);
+        java.util.Optional<com.mna.api.capabilities.IPlayerRoteSpells> rote = MNACap.get(player, PlayerRoteSpellsProvider.ROTE);
+        java.util.Optional<com.mna.api.capabilities.IPlayerProgression> progression = MNACap.get(player, PlayerProgressionProvider.PROGRESSION);
         if (!rote.isPresent() || !progression.isPresent()) {
             return CantStartReason.MISSING_CAPABILITY;
         }

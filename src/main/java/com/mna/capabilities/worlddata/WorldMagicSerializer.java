@@ -19,7 +19,7 @@ import net.minecraft.nbt.Tag;
 import net.neoforged.neoforge.attachment.IAttachmentHolder;
 import net.neoforged.neoforge.attachment.IAttachmentSerializer;
 
-public class WorldMagicSerializer implements IAttachmentSerializer<Tag, WorldMagic> {
+public class WorldMagicSerializer implements IAttachmentSerializer<Tag, com.mna.api.capabilities.IWorldMagic> {
     @Override
     public WorldMagic read(IAttachmentHolder holder, Tag nbt, HolderLookup.Provider provider) {
         WorldMagic instance = new WorldMagic(false);
@@ -99,7 +99,7 @@ public class WorldMagicSerializer implements IAttachmentSerializer<Tag, WorldMag
     }
 
     @Override
-    public Tag write(WorldMagic instance, HolderLookup.Provider provider) {
+    public Tag write(com.mna.api.capabilities.IWorldMagic instance, HolderLookup.Provider provider) {
         CompoundTag nbt_main = new CompoundTag();
         IRitualTeleportLocation[] locations = instance.getAllTeleportLocations();
         CompoundTag teleport_locations = new CompoundTag();

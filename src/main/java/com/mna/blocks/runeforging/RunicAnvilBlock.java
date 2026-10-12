@@ -86,7 +86,7 @@ EntityBlock {
 
     public RunicAnvilBlock() {
         super(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).strength(2.0f, 3.0f).noOcclusion().sound(SoundType.ANVIL).isSuffocating(BlockInit.NEVER), false);
-        this.registerDefaultState((BlockState)((BlockState)this.stateDefinition.any()).setValue((Property)ACTIVE, (Comparable)Boolean.valueOf(false)));
+        this.registerDefaultState((BlockState)((BlockState)this.stateDefinition.any()).setValue(ACTIVE, Boolean.valueOf(false)));
     }
 
     @Override
@@ -97,7 +97,7 @@ EntityBlock {
 
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        return (BlockState)super.getStateForPlacement(context).setValue((Property)FACING, (Comparable)context.getHorizontalDirection().getOpposite());
+        return (BlockState)super.getStateForPlacement(context).setValue(FACING, context.getHorizontalDirection().getOpposite());
     }
 
     public RenderShape getRenderShape(BlockState blockState) {

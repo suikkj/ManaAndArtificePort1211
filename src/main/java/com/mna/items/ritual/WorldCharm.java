@@ -32,7 +32,7 @@ extends TieredItem {
 
     public boolean SetWorldTarget(Player entity, ItemStack stack) {
         CompoundTag nbt = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
-        java.util.Optional<PlayerMagicProvider> magic = MNACap.get(entity, PlayerMagicProvider.MAGIC);
+        java.util.Optional<com.mna.api.capabilities.IPlayerMagic> magic = MNACap.get(entity, PlayerMagicProvider.MAGIC);
         if (magic.isPresent()) {
             nbt.putString(KEY_WORLD_TARGET_REGISTRY_NAME, entity.level().dimension().registry().toString());
             nbt.putString(KEY_WORLD_TARGET_LOCATION, entity.level().dimension().location().toString());

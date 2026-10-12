@@ -82,7 +82,7 @@ extends MultiblockTile {
                 int hX = (int)((Math.ceil((float)r.getSize().getX() / 2.0f) + 1.0) * (double)sanctumScale);
                 int hZ = (int)((Math.ceil((float)r.getSize().getZ() / 2.0f) + 1.0) * (double)sanctumScale);
                 AABB bb = new AABB(pos).expandTowards((double)hZ, (double)((float)(r.getSize().getY() + 1) * sanctumScale), (double)hZ).expandTowards((double)(-hX), 0.0, (double)(-hZ));
-                List entities = tile.getLevel().getEntitiesOfClass(LivingEntity.class, bb);
+                List<LivingEntity> entities = tile.getLevel().getEntitiesOfClass(LivingEntity.class, bb);
                 if (entities.size() > 0) {
                     entities.forEach(entity -> {
                         if (entity instanceof Player) {

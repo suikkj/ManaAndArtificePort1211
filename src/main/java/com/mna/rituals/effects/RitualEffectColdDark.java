@@ -85,8 +85,8 @@ extends RitualEffect {
         if (other_pos == null || coffin_facing == null) {
             return false;
         }
-        context.getLevel().setBlockAndUpdate(top_pos, (BlockState)((BlockState)((CoffinBlock)(BlockInit.COFFIN.get())).defaultBlockState().setValue((Property)BedBlock.PART, (Comparable)BedPart.FOOT)).setValue((Property)BedBlock.FACING, (Comparable)coffin_facing));
-        context.getLevel().setBlockAndUpdate(other_pos, (BlockState)((BlockState)((CoffinBlock)(BlockInit.COFFIN.get())).defaultBlockState().setValue((Property)BedBlock.PART, (Comparable)BedPart.HEAD)).setValue((Property)BedBlock.FACING, (Comparable)coffin_facing));
+        context.getLevel().setBlockAndUpdate(top_pos, (BlockState)((BlockState)((CoffinBlock)(BlockInit.COFFIN.get())).defaultBlockState().setValue(BedBlock.PART, BedPart.FOOT)).setValue(BedBlock.FACING, coffin_facing));
+        context.getLevel().setBlockAndUpdate(other_pos, (BlockState)((BlockState)((CoffinBlock)(BlockInit.COFFIN.get())).defaultBlockState().setValue(BedBlock.PART, BedPart.HEAD)).setValue(BedBlock.FACING, coffin_facing));
         BlockEntity te = context.getLevel().getBlockEntity(other_pos);
         if (te == null || !(te instanceof CoffinTile)) {
             return false;

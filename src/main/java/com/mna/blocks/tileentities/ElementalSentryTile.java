@@ -226,7 +226,7 @@ IEldrinConsumerTile {
         if (this.findTargetCounter >= 100 || force) {
             this.findTargetCounter = 0;
             Vec3 myPos = new Vec3((double)this.getBlockPos().getX(), (double)this.getBlockPos().getY(), (double)this.getBlockPos().getZ());
-            List potentialTargets = this.getLevel().getEntitiesOfClass(LivingEntity.class, new AABB(this.getBlockPos()).inflate(32.0), e -> {
+            List<LivingEntity> potentialTargets = this.getLevel().getEntitiesOfClass(LivingEntity.class, new AABB(this.getBlockPos()).inflate(32.0), e -> {
                 LivingEntity summoner;
                 boolean subPredicate;
                 Vec3 theirpos = new Vec3(e.getX(), e.getEyeY(), e.getZ());
@@ -250,11 +250,11 @@ IEldrinConsumerTile {
 
     public void forceTarget(LivingEntity target) {
         if (!this.getLevel().isClientSide() && !((Boolean)this.getBlockState().getValue((Property)ElementalSentryBlock.TARGET_OVERRIDE)).booleanValue()) {
-            this.getLevel().setBlock(this.getBlockPos(), (BlockState)this.getBlockState().setValue((Property)ElementalSentryBlock.TARGET_OVERRIDE, (Comparable)Boolean.valueOf(true)), 3);
+            this.getLevel().setBlock(this.getBlockPos(), (BlockState)this.getBlockState().setValue(ElementalSentryBlock.TARGET_OVERRIDE, Boolean.valueOf(true)), 3);
         }
         if (this.target != target) {
             this.target = target;
-            this.getLevel().setBlockAndUpdate(this.getBlockPos(), (BlockState)this.getBlockState().setValue((Property)ElementalSentryBlock.SHOOTING, (Comparable)Boolean.valueOf(false)));
+            this.getLevel().setBlockAndUpdate(this.getBlockPos(), (BlockState)this.getBlockState().setValue(ElementalSentryBlock.SHOOTING, Boolean.valueOf(false)));
         }
     }
 
@@ -263,7 +263,7 @@ IEldrinConsumerTile {
         this.ticksSinceTargetChange = 0;
         this.warmupCounter = 0;
         this.shootCounter = 0;
-        this.getLevel().setBlockAndUpdate(this.getBlockPos(), (BlockState)this.getBlockState().setValue((Property)ElementalSentryBlock.SHOOTING, (Comparable)Boolean.valueOf(false)));
+        this.getLevel().setBlockAndUpdate(this.getBlockPos(), (BlockState)this.getBlockState().setValue(ElementalSentryBlock.SHOOTING, Boolean.valueOf(false)));
     }
 
     private int getPowerupTime() {
@@ -336,7 +336,7 @@ IEldrinConsumerTile {
         }
         if (!this.getLevel().isClientSide() && this.consumeFuel()) {
             if (!((Boolean)this.getBlockState().getValue((Property)ElementalSentryBlock.SHOOTING)).booleanValue()) {
-                this.getLevel().setBlockAndUpdate(this.getBlockPos(), (BlockState)this.getBlockState().setValue((Property)ElementalSentryBlock.SHOOTING, (Comparable)Boolean.valueOf(true)));
+                this.getLevel().setBlockAndUpdate(this.getBlockPos(), (BlockState)this.getBlockState().setValue(ElementalSentryBlock.SHOOTING, Boolean.valueOf(true)));
             }
             if (this.warmupCounter < this.getPowerupTime()) {
                 ++this.warmupCounter;
@@ -344,7 +344,7 @@ IEldrinConsumerTile {
             }
             this.warmupCounter = 0;
             this.shootCounter = 0;
-            this.getLevel().setBlockAndUpdate(this.getBlockPos(), (BlockState)this.getBlockState().setValue((Property)ElementalSentryBlock.SHOOTING, (Comparable)Boolean.valueOf(false)));
+            this.getLevel().setBlockAndUpdate(this.getBlockPos(), (BlockState)this.getBlockState().setValue(ElementalSentryBlock.SHOOTING, Boolean.valueOf(false)));
             this.getLevel().playSound(null, this.getBlockPos(), this.getShootSound(), SoundSource.BLOCKS, 1.0f, (float)((double)0.8f + Math.random() * (double)0.4f));
             Vec3 myPos = this.getPointInFront();
             SentryProjectile projectile = new SentryProjectile(this.getLevel(), myPos.x(), myPos.y(), myPos.z(), this.selectedAffinity);

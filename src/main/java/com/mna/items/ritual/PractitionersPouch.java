@@ -192,9 +192,9 @@ MNADyeableItem {
             BlockPos pos = center.offset(runePos.getX(), offset ? 1 : 0, runePos.getZ());
             BlockState existing = world.getBlockState(pos);
             if (existing.canBeReplaced(bpc = new BlockPlaceContext(world, null, InteractionHand.MAIN_HAND, stack, new BlockHitResult(Vec3.atCenterOf((Vec3i)pos), Direction.UP, pos, true)))) {
-                world.setBlockAndUpdate(pos, (BlockState)((BlockState)((BlockState)((Block)BlockInit.CHALK_RUNE.get()).defaultBlockState().setValue((Property)ChalkRuneBlock.RUNEINDEX, (Comparable)Integer.valueOf((int)Math.floor(Math.random() * (double)(ChalkRuneBlock.RUNEINDEX.getPossibleValues().size() - 1))))).setValue((Property)ChalkRuneBlock.METAL, (Comparable)Boolean.valueOf(false))).setValue((Property)ChalkRuneBlock.ACTIVATED, (Comparable)Boolean.valueOf(true)));
+                world.setBlockAndUpdate(pos, (BlockState)((BlockState)((BlockState)((Block)BlockInit.CHALK_RUNE.get()).defaultBlockState().setValue(ChalkRuneBlock.RUNEINDEX, Integer.valueOf((int)Math.floor(Math.random() * (double)(ChalkRuneBlock.RUNEINDEX.getPossibleValues().size() - 1))))).setValue(ChalkRuneBlock.METAL, Boolean.valueOf(false))).setValue(ChalkRuneBlock.ACTIVATED, Boolean.valueOf(true)));
             } else if (existing.getBlock() == BlockInit.CHALK_RUNE.get()) {
-                world.setBlockAndUpdate(pos, (BlockState)existing.setValue((Property)ChalkRuneBlock.ACTIVATED, (Comparable)Boolean.valueOf(true)));
+                world.setBlockAndUpdate(pos, (BlockState)existing.setValue(ChalkRuneBlock.ACTIVATED, Boolean.valueOf(true)));
             } else {
                 return false;
             }

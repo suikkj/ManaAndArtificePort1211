@@ -64,7 +64,7 @@ ISelectSpellComponents {
     @Override
     public void setItem(int index, ItemStack stack) {
         if (!this.getLevel().isClientSide() && index == 2) {
-            this.getLevel().setBlock(this.getBlockPos(), (BlockState)this.getBlockState().setValue((Property)ThesisDeskBlock.BOOK, (Comparable)Boolean.valueOf(!stack.isEmpty())), 2);
+            this.getLevel().setBlock(this.getBlockPos(), (BlockState)this.getBlockState().setValue(ThesisDeskBlock.BOOK, Boolean.valueOf(!stack.isEmpty())), 2);
         }
         super.setItem(index, stack);
     }
@@ -78,7 +78,7 @@ ISelectSpellComponents {
         if (!this.hasStack(0) || this.getItem(0).getCount() < this.getPaperCount() || !this.hasStack(1) || this.getItem(1).getMaxDamage() - this.getItem(1).getDamageValue() < this.getInkDamage()) {
             return false;
         }
-        java.util.Optional<PlayerRoteSpellsProvider> roteData = MNACap.get(player, PlayerRoteSpellsProvider.ROTE);
+        java.util.Optional<com.mna.api.capabilities.IPlayerRoteSpells> roteData = MNACap.get(player, PlayerRoteSpellsProvider.ROTE);
         return player.isCreative() || roteData.isPresent() && ((IPlayerRoteSpells)roteData.get()).isRote(this.selectedComponent);
     }
 

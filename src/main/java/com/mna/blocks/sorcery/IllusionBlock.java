@@ -69,7 +69,7 @@ EntityBlock {
         if (context.getPlayer().isCrouching()) {
             face = face.getOpposite();
         }
-        return (BlockState)super.getStateForPlacement(context).setValue((Property)BlockStateProperties.FACING, (Comparable)face);
+        return (BlockState)super.getStateForPlacement(context).setValue(BlockStateProperties.FACING, face);
     }
 
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {

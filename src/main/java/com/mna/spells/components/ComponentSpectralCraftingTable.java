@@ -133,7 +133,7 @@ extends SpellEffect {
     private static /* synthetic */ BlockState lambda$ApplyEffect$0(ServerLevel world, SpellSource source, BlockPos pos, BlockState state) {
         BlockState against = world.getBlockState(pos);
         if (against.getBlock() == BlockInit.CHALK_RUNE.get() && ((Boolean)against.getValue((Property)ChalkRuneBlock.METAL)).booleanValue() && source.isPlayerCaster()) {
-            state = (BlockState)state.setValue((Property)SpectralCraftingTableBlock.PERMANENT, (Comparable)Boolean.valueOf(true));
+            state = (BlockState)state.setValue(SpectralCraftingTableBlock.PERMANENT, Boolean.valueOf(true));
         }
         return state;
     }

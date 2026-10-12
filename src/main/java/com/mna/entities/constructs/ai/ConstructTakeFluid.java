@@ -90,7 +90,7 @@ extends ConstructCommandBlockInteract<ConstructTakeFluid> {
         if (!containedFluid.isEmpty() && ((LayeredCauldronBlock)state.getBlock()).isFull(state)) {
             if (this.construct.isFluidValid(0, containedFluid)) {
                 this.construct.fill(containedFluid, IFluidHandler.FluidAction.EXECUTE);
-                c.level().setBlock(this.blockPos, (BlockState)state.setValue((Property)LayeredCauldronBlock.LEVEL, (Comparable)Integer.valueOf(0)), 3);
+                c.level().setBlock(this.blockPos, (BlockState)state.setValue(LayeredCauldronBlock.LEVEL, Integer.valueOf(0)), 3);
                 this.pushDiagnosticMessage(this.translate("mna.constructs.feedback.take_fluid_in_tank_success", this.translate(containedFluid), this.translate(state)));
                 this.exitCode = 0;
             } else {

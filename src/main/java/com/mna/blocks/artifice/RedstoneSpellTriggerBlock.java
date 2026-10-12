@@ -43,7 +43,7 @@ implements ISpellInteractibleBlock<RedstoneSpellTriggerBlock> {
 
     public RedstoneSpellTriggerBlock() {
         super(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(3.0f));
-        this.registerDefaultState((BlockState)this.defaultBlockState().setValue((Property)OUTPUT_POWER, (Comparable)Integer.valueOf(0)));
+        this.registerDefaultState((BlockState)this.defaultBlockState().setValue(OUTPUT_POWER, Integer.valueOf(0)));
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
@@ -52,7 +52,7 @@ implements ISpellInteractibleBlock<RedstoneSpellTriggerBlock> {
 
     @Override
     public boolean onHitBySpell(Level world, BlockPos pos, ISpellDefinition spell) {
-        world.setBlockAndUpdate(pos, (BlockState)this.defaultBlockState().setValue((Property)OUTPUT_POWER, (Comparable)Integer.valueOf(15)));
+        world.setBlockAndUpdate(pos, (BlockState)this.defaultBlockState().setValue(OUTPUT_POWER, Integer.valueOf(15)));
         world.updateNeighborsAt(pos, (Block)this);
         if (!world.isClientSide) {
             world.scheduleTick(new BlockPos((Vec3i)pos), (Block)this, 10);
@@ -67,7 +67,7 @@ implements ISpellInteractibleBlock<RedstoneSpellTriggerBlock> {
     public void tick(BlockState state, ServerLevel worldIn, BlockPos pos, RandomSource rand) {
         int power = (Integer)state.getValue((Property)OUTPUT_POWER);
         if (power > 0) {
-            worldIn.setBlockAndUpdate(pos, (BlockState)state.setValue((Property)OUTPUT_POWER, (Comparable)Integer.valueOf(power - 1)));
+            worldIn.setBlockAndUpdate(pos, (BlockState)state.setValue(OUTPUT_POWER, Integer.valueOf(power - 1)));
             worldIn.updateNeighborsAt(pos, (Block)this);
             worldIn.scheduleTick(new BlockPos((Vec3i)pos), (Block)this, 10);
         }

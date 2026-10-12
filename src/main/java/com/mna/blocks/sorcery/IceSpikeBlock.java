@@ -146,7 +146,7 @@ EntityBlock {
         Direction[] random_values = new Direction[]{Direction.EAST, Direction.WEST, Direction.NORTH, Direction.SOUTH};
         BlockState state = super.getStateForPlacement(context);
         if ((Integer)state.getValue((Property)FacingBlock.SURFACE_TYPE) != 3) {
-            state = (BlockState)state.setValue((Property)FACING, (Comparable)random_values[(int)(Math.random() * (double)random_values.length)]);
+            state = (BlockState)state.setValue(FACING, random_values[(int)(Math.random() * (double)random_values.length)]);
         }
         return state;
     }

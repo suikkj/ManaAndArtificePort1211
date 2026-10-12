@@ -75,7 +75,7 @@ EntityBlock {
     public RefractionLensBlock(Affinity affinity) {
         super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.HAT).noOcclusion().strength(3.0f).isViewBlocking(BlockInit.NEVER), new BlockPos(-1, 0, -1), new BlockPos(-1, 0, 0), new BlockPos(-1, 0, 1), new BlockPos(0, 0, -1), new BlockPos(0, 0, 1), new BlockPos(1, 0, -1), new BlockPos(1, 0, 0), new BlockPos(1, 0, 1));
         this.affinity = affinity;
-        this.registerDefaultState((BlockState)this.defaultBlockState().setValue((Property)INVALID, (Comparable)Boolean.valueOf(false)));
+        this.registerDefaultState((BlockState)this.defaultBlockState().setValue(INVALID, Boolean.valueOf(false)));
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {

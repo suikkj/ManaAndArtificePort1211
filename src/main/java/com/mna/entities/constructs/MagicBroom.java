@@ -300,7 +300,7 @@ extends AbstractGolem {
                 this.abort = false;
                 return false;
             }
-            List list = MagicBroom.this.level().getEntitiesOfClass(ItemEntity.class, MagicBroom.this.getBoundingBox().inflate(16.0, 4.0, 16.0), e -> {
+            List<ItemEntity> list = MagicBroom.this.level().getEntitiesOfClass(ItemEntity.class, MagicBroom.this.getBoundingBox().inflate(16.0, 4.0, 16.0), e -> {
                 if (MagicBroom.this.getSensing().hasLineOfSight((Entity)e)) {
                     return ITEM_SELECTOR.test((ItemEntity)e);
                 }
@@ -331,12 +331,12 @@ extends AbstractGolem {
             ItemStack itemstack = MagicBroom.this.getItemBySlot(EquipmentSlot.MAINHAND);
             ItemEntity pickupTarget = null;
             if (itemstack.isEmpty()) {
-                List list = MagicBroom.this.level().getEntitiesOfClass(ItemEntity.class, new AABB(this.originPos).inflate(16.0, 4.0, 16.0), e -> !this.ignoredEntityIDs.contains(e.getId()) && ITEM_SELECTOR.test((ItemEntity)e));
+                List<ItemEntity> list = MagicBroom.this.level().getEntitiesOfClass(ItemEntity.class, new AABB(this.originPos).inflate(16.0, 4.0, 16.0), e -> !this.ignoredEntityIDs.contains(e.getId()) && ITEM_SELECTOR.test((ItemEntity)e));
                 if (!list.isEmpty()) {
                     pickupTarget = (ItemEntity)list.get(0);
                 }
             } else {
-                List list = MagicBroom.this.level().getEntitiesOfClass(ItemEntity.class, new AABB(this.originPos).inflate(16.0, 4.0, 16.0), item -> !this.ignoredEntityIDs.contains(item.getId()) && !item.hasPickUpDelay() && item.isAlive() && item.getItem().getItem() == itemstack.getItem());
+                List<ItemEntity> list = MagicBroom.this.level().getEntitiesOfClass(ItemEntity.class, new AABB(this.originPos).inflate(16.0, 4.0, 16.0), item -> !this.ignoredEntityIDs.contains(item.getId()) && !item.hasPickUpDelay() && item.isAlive() && item.getItem().getItem() == itemstack.getItem());
                 if (!list.isEmpty() && itemstack.getCount() < itemstack.getMaxStackSize()) {
                     pickupTarget = (ItemEntity)list.get(0);
                 }
@@ -353,7 +353,7 @@ extends AbstractGolem {
             this.last_pos = null;
             this.originPos = MagicBroom.this.getContainerPosition();
             this.abort = false;
-            List list = MagicBroom.this.level().getEntitiesOfClass(ItemEntity.class, MagicBroom.this.getBoundingBox().inflate(16.0, 1.0, 16.0), e -> {
+            List<ItemEntity> list = MagicBroom.this.level().getEntitiesOfClass(ItemEntity.class, MagicBroom.this.getBoundingBox().inflate(16.0, 1.0, 16.0), e -> {
                 if (MagicBroom.this.getSensing().hasLineOfSight((Entity)e)) {
                     return ITEM_SELECTOR.test((ItemEntity)e);
                 }

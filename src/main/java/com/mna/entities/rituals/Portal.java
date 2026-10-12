@@ -162,7 +162,7 @@ extends Entity {
         if (entityIn.isShiftKeyDown()) {
             return;
         }
-        java.util.Optional<PlayerMagicProvider> magicContainer = MNACap.get(entityIn, PlayerMagicProvider.MAGIC);
+        java.util.Optional<com.mna.api.capabilities.IPlayerMagic> magicContainer = MNACap.get(entityIn, PlayerMagicProvider.MAGIC);
         if (!magicContainer.isPresent()) {
             return;
         }

@@ -84,7 +84,7 @@ extends SpellEffect {
             return ComponentApplicationResult.FAIL;
         }
         if (context.getServerLevel().isEmptyBlock(blockTarget) && context.getServerLevel().getEntities((Entity)null, new AABB(blockTarget), e -> e instanceof LivingEntity).size() == 0) {
-            BlockState placeState = (BlockState)((TransitoryTileBlock)BlockInit.TRANSITORY_TILE.get()).defaultBlockState().setValue((Property)TransitoryTileBlock.DURATION, (Comparable)Integer.valueOf((int)modificationData.getValue(Attribute.DURATION)));
+            BlockState placeState = (BlockState)((TransitoryTileBlock)BlockInit.TRANSITORY_TILE.get()).defaultBlockState().setValue(TransitoryTileBlock.DURATION, Integer.valueOf((int)modificationData.getValue(Attribute.DURATION)));
             Player player = source.isPlayerCaster() ? source.getPlayer() : FakePlayerFactory.getMinecraft((ServerLevel)context.getServerLevel());
             BlockUtils.placeBlock(context.getServerLevel(), blockTarget, target.getBlockFace(this), placeState, player);
             context.getServerLevel().scheduleTick(blockTarget, (Block)BlockInit.TRANSITORY_TILE.get(), 20);

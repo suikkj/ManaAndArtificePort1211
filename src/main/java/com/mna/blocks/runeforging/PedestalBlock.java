@@ -100,7 +100,7 @@ IManaweaveNotifiable {
     public PedestalBlock(boolean withSign) {
         super(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).strength(3.0f).noOcclusion().sound(SoundType.STONE).isSuffocating(BlockInit.NEVER), false);
         this.showSign = withSign;
-        this.registerDefaultState((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)this.defaultBlockState().setValue((Property)HorizontalDirectionalBlock.FACING, (Comparable)Direction.NORTH)).setValue((Property)SHOW_SIGN, (Comparable)Boolean.valueOf(this.showSign))).setValue((Property)CONNECTED, (Comparable)Boolean.valueOf(false))).setValue((Property)PipeBlock.NORTH, (Comparable)Boolean.valueOf(false))).setValue((Property)PipeBlock.SOUTH, (Comparable)Boolean.valueOf(false))).setValue((Property)PipeBlock.EAST, (Comparable)Boolean.valueOf(false))).setValue((Property)PipeBlock.WEST, (Comparable)Boolean.valueOf(false))).setValue((Property)BRIMSTONE, (Comparable)Boolean.valueOf(false)));
+        this.registerDefaultState((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)this.defaultBlockState().setValue(HorizontalDirectionalBlock.FACING, Direction.NORTH)).setValue(SHOW_SIGN, Boolean.valueOf(this.showSign))).setValue(CONNECTED, Boolean.valueOf(false))).setValue(PipeBlock.NORTH, Boolean.valueOf(false))).setValue(PipeBlock.SOUTH, Boolean.valueOf(false))).setValue(PipeBlock.EAST, Boolean.valueOf(false))).setValue(PipeBlock.WEST, Boolean.valueOf(false))).setValue(BRIMSTONE, Boolean.valueOf(false)));
     }
 
     @Override
@@ -165,12 +165,12 @@ IManaweaveNotifiable {
     }
 
     private BlockState updateStateBasedOnNeighbors(LevelReader world, BlockPos pos, BlockState state) {
-        state = (BlockState)state.setValue((Property)PipeBlock.EAST, (Comparable)Boolean.valueOf(false));
-        state = (BlockState)state.setValue((Property)PipeBlock.WEST, (Comparable)Boolean.valueOf(false));
-        state = (BlockState)state.setValue((Property)PipeBlock.NORTH, (Comparable)Boolean.valueOf(false));
-        state = (BlockState)state.setValue((Property)PipeBlock.SOUTH, (Comparable)Boolean.valueOf(false));
-        state = (BlockState)state.setValue((Property)CONNECTED, (Comparable)Boolean.valueOf(false));
-        state = (BlockState)state.setValue((Property)BRIMSTONE, (Comparable)Boolean.valueOf(false));
+        state = (BlockState)state.setValue(PipeBlock.EAST, Boolean.valueOf(false));
+        state = (BlockState)state.setValue(PipeBlock.WEST, Boolean.valueOf(false));
+        state = (BlockState)state.setValue(PipeBlock.NORTH, Boolean.valueOf(false));
+        state = (BlockState)state.setValue(PipeBlock.SOUTH, Boolean.valueOf(false));
+        state = (BlockState)state.setValue(CONNECTED, Boolean.valueOf(false));
+        state = (BlockState)state.setValue(BRIMSTONE, Boolean.valueOf(false));
         for (Direction offset : CONNECTION_DIRS) {
             BlockState neighborState = world.getBlockState(pos.offset(offset.getNormal()));
             state = this.calculateStateForSingleNeighbor(state, neighborState, offset);
@@ -184,23 +184,23 @@ IManaweaveNotifiable {
             boolean didConnect = false;
             if (neighborDir == Direction.EAST || neighborDir == Direction.WEST) {
                 if (offset == Direction.NORTH) {
-                    state = (BlockState)state.setValue((Property)PipeBlock.NORTH, (Comparable)Boolean.valueOf(true));
+                    state = (BlockState)state.setValue(PipeBlock.NORTH, Boolean.valueOf(true));
                     didConnect = true;
                 } else if (offset == Direction.SOUTH) {
-                    state = (BlockState)state.setValue((Property)PipeBlock.SOUTH, (Comparable)Boolean.valueOf(true));
+                    state = (BlockState)state.setValue(PipeBlock.SOUTH, Boolean.valueOf(true));
                     didConnect = true;
                 }
             } else if (offset == Direction.EAST) {
-                state = (BlockState)state.setValue((Property)PipeBlock.EAST, (Comparable)Boolean.valueOf(true));
+                state = (BlockState)state.setValue(PipeBlock.EAST, Boolean.valueOf(true));
                 didConnect = true;
             } else if (offset == Direction.WEST) {
-                state = (BlockState)state.setValue((Property)PipeBlock.WEST, (Comparable)Boolean.valueOf(true));
+                state = (BlockState)state.setValue(PipeBlock.WEST, Boolean.valueOf(true));
                 didConnect = true;
             }
             if (didConnect) {
-                state = (BlockState)state.setValue((Property)CONNECTED, (Comparable)Boolean.valueOf(true));
+                state = (BlockState)state.setValue(CONNECTED, Boolean.valueOf(true));
                 if ((Integer)neighborState.getValue((Property)RuneforgeBlock.MATERIAL) == 1) {
-                    state = (BlockState)state.setValue((Property)BRIMSTONE, (Comparable)Boolean.valueOf(true));
+                    state = (BlockState)state.setValue(BRIMSTONE, Boolean.valueOf(true));
                 }
             }
         }
@@ -209,12 +209,12 @@ IManaweaveNotifiable {
 
     @Override
     public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor worldIn, BlockPos currentPos, BlockPos facingPos) {
-        stateIn = (BlockState)stateIn.setValue((Property)PipeBlock.EAST, (Comparable)Boolean.valueOf(false));
-        stateIn = (BlockState)stateIn.setValue((Property)PipeBlock.WEST, (Comparable)Boolean.valueOf(false));
-        stateIn = (BlockState)stateIn.setValue((Property)PipeBlock.NORTH, (Comparable)Boolean.valueOf(false));
-        stateIn = (BlockState)stateIn.setValue((Property)PipeBlock.SOUTH, (Comparable)Boolean.valueOf(false));
-        stateIn = (BlockState)stateIn.setValue((Property)CONNECTED, (Comparable)Boolean.valueOf(false));
-        stateIn = (BlockState)stateIn.setValue((Property)BRIMSTONE, (Comparable)Boolean.valueOf(false));
+        stateIn = (BlockState)stateIn.setValue(PipeBlock.EAST, Boolean.valueOf(false));
+        stateIn = (BlockState)stateIn.setValue(PipeBlock.WEST, Boolean.valueOf(false));
+        stateIn = (BlockState)stateIn.setValue(PipeBlock.NORTH, Boolean.valueOf(false));
+        stateIn = (BlockState)stateIn.setValue(PipeBlock.SOUTH, Boolean.valueOf(false));
+        stateIn = (BlockState)stateIn.setValue(CONNECTED, Boolean.valueOf(false));
+        stateIn = (BlockState)stateIn.setValue(BRIMSTONE, Boolean.valueOf(false));
         stateIn = this.calculateStateForSingleNeighbor(stateIn, facingState, facing);
         stateIn = this.updateStateBasedOnNeighbors((LevelReader)worldIn, currentPos, stateIn);
         return super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);
@@ -227,7 +227,7 @@ IManaweaveNotifiable {
             return null;
         }
         state = this.updateStateBasedOnNeighbors((LevelReader)context.getLevel(), context.getClickedPos(), state);
-        return (BlockState)state.setValue((Property)HorizontalDirectionalBlock.FACING, (Comparable)context.getHorizontalDirection().getOpposite());
+        return (BlockState)state.setValue(HorizontalDirectionalBlock.FACING, context.getHorizontalDirection().getOpposite());
     }
 
     public void neighborChanged(BlockState state, Level world, BlockPos pos, Block block, BlockPos neighborPos, boolean isBreak) {
@@ -240,7 +240,7 @@ IManaweaveNotifiable {
 
     public void onNeighborChange(BlockState state, LevelReader world, BlockPos pos, BlockPos neighbor) {
         if (world.getBlockState(neighbor).getBlock() == BlockInit.RUNEFORGE.get()) {
-            state.neighborChanged((Level)world, pos, world.getBlockState(neighbor).getBlock(), neighbor, false);
+            state.handleNeighborChanged((Level)world, pos, world.getBlockState(neighbor).getBlock(), neighbor, false);
         }
         super.onNeighborChange(state, world, pos, neighbor);
     }

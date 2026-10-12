@@ -86,7 +86,7 @@ extends FallingBlockEntity
             boolean flag4 = this.getBlockState().canSurvive((LevelReader)this.level(), myPosition);
             if (flag2 && flag4) {
                 if (this.getBlockState().hasProperty((Property)BlockStateProperties.WATERLOGGED) && this.level().getFluidState(myPosition).getType() == Fluids.WATER) {
-                    com.mna.api.tools.MNAFallingBlocks.setBlockState(this, (BlockState)this.getBlockState().setValue((Property)BlockStateProperties.WATERLOGGED, (Comparable)Boolean.valueOf(true)));
+                    com.mna.api.tools.MNAFallingBlocks.setBlockState(this, (BlockState)this.getBlockState().setValue(BlockStateProperties.WATERLOGGED, Boolean.valueOf(true)));
                 }
                 if (this.level().setBlock(myPosition, this.getBlockState(), 3)) {
                     BlockEntity tileentity;

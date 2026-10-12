@@ -29,7 +29,7 @@ public class MetalRitualRune
 extends Rune {
     public InteractionResult useOn(UseOnContext context) {
         if (context.getLevel().getBlockState(context.getClickedPos()).isFaceSturdy((BlockGetter)context.getLevel(), context.getClickedPos(), Direction.UP) && (context.getLevel().isEmptyBlock(context.getClickedPos().above()) || context.getLevel().isWaterAt(context.getClickedPos().above()))) {
-            context.getLevel().setBlockAndUpdate(context.getClickedPos().above(), (BlockState)((BlockState)((BlockState)((BlockState)((Block)BlockInit.CHALK_RUNE.get()).defaultBlockState().setValue((Property)ChalkRuneBlock.RUNEINDEX, (Comparable)Integer.valueOf((int)Math.floor(Math.random() * (double)(ChalkRuneBlock.RUNEINDEX.getPossibleValues().size() - 1))))).setValue((Property)ChalkRuneBlock.METAL, (Comparable)Boolean.valueOf(true))).setValue((Property)ChalkRuneBlock.ACTIVATED, (Comparable)Boolean.valueOf(false))).setValue((Property)BlockStateProperties.WATERLOGGED, (Comparable)Boolean.valueOf(context.getLevel().isWaterAt(context.getClickedPos().above()))));
+            context.getLevel().setBlockAndUpdate(context.getClickedPos().above(), (BlockState)((BlockState)((BlockState)((BlockState)((Block)BlockInit.CHALK_RUNE.get()).defaultBlockState().setValue(ChalkRuneBlock.RUNEINDEX, Integer.valueOf((int)Math.floor(Math.random() * (double)(ChalkRuneBlock.RUNEINDEX.getPossibleValues().size() - 1))))).setValue(ChalkRuneBlock.METAL, Boolean.valueOf(true))).setValue(ChalkRuneBlock.ACTIVATED, Boolean.valueOf(false))).setValue(BlockStateProperties.WATERLOGGED, Boolean.valueOf(context.getLevel().isWaterAt(context.getClickedPos().above()))));
             context.getItemInHand().shrink(1);
             return InteractionResult.SUCCESS;
         }

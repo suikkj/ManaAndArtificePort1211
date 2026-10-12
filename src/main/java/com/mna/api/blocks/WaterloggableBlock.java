@@ -49,7 +49,7 @@ extends Block
 implements SimpleWaterloggedBlock {
     public WaterloggableBlock(BlockBehaviour.Properties properties, boolean startWaterlogged) {
         super(properties);
-        this.registerDefaultState((BlockState)this.defaultBlockState().setValue((Property)BlockStateProperties.WATERLOGGED, (Comparable)Boolean.valueOf(startWaterlogged)));
+        this.registerDefaultState((BlockState)this.defaultBlockState().setValue(BlockStateProperties.WATERLOGGED, Boolean.valueOf(startWaterlogged)));
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
@@ -61,10 +61,10 @@ implements SimpleWaterloggedBlock {
         BlockPos blockpos = context.getClickedPos();
         BlockState blockstate = context.getLevel().getBlockState(blockpos);
         if (blockstate.is((Block)this)) {
-            return (BlockState)blockstate.setValue((Property)BlockStateProperties.WATERLOGGED, (Comparable)Boolean.valueOf(false));
+            return (BlockState)blockstate.setValue(BlockStateProperties.WATERLOGGED, Boolean.valueOf(false));
         }
         FluidState fluidstate = context.getLevel().getFluidState(blockpos);
-        BlockState blockstate1 = (BlockState)this.defaultBlockState().setValue((Property)BlockStateProperties.WATERLOGGED, (Comparable)Boolean.valueOf(fluidstate.getType() == Fluids.WATER));
+        BlockState blockstate1 = (BlockState)this.defaultBlockState().setValue(BlockStateProperties.WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER));
         return blockstate1;
     }
 

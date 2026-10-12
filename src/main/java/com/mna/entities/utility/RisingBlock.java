@@ -134,13 +134,13 @@ extends Entity
         if (!blockstate.is(Blocks.MOVING_PISTON)) {
             this.discard();
             if (block instanceof DoorBlock && this.blockState.hasProperty((Property)DoorBlock.HALF)) {
-                this.blockState = (BlockState)this.blockState.setValue((Property)DoorBlock.HALF, (Comparable)DoubleBlockHalf.LOWER);
+                this.blockState = (BlockState)this.blockState.setValue(DoorBlock.HALF, DoubleBlockHalf.LOWER);
             }
             boolean flag2 = blockstate.canBeReplaced((BlockPlaceContext)new DirectionalPlaceContext(this.level(), myPosition, Direction.UP, ItemStack.EMPTY, Direction.UP));
             boolean flag4 = this.blockState.canSurvive((LevelReader)this.level(), myPosition);
             if (flag2 && flag4) {
                 if (this.blockState.hasProperty((Property)BlockStateProperties.WATERLOGGED) && this.level().getFluidState(myPosition).getType() == Fluids.WATER) {
-                    this.blockState = (BlockState)this.blockState.setValue((Property)BlockStateProperties.WATERLOGGED, (Comparable)Boolean.valueOf(true));
+                    this.blockState = (BlockState)this.blockState.setValue(BlockStateProperties.WATERLOGGED, Boolean.valueOf(true));
                 }
                 if (this.level().setBlock(myPosition, this.blockState, 3)) {
                     BlockEntity tileentity;

@@ -340,7 +340,7 @@ public class HUDOverlayRenderer {
             LocalPlayer p = mc.player;
             if (p == null) {
             }
-            java.util.Optional<PlayerMagicProvider> cap = MNACap.get(p, PlayerMagicProvider.MAGIC);
+            java.util.Optional<com.mna.api.capabilities.IPlayerMagic> cap = MNACap.get(p, PlayerMagicProvider.MAGIC);
             if (!cap.isPresent()) {
             }
             magic = (IPlayerMagic)cap.get();

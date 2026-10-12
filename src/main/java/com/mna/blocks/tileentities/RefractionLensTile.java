@@ -136,17 +136,17 @@ extends MultiblockTile {
             entry.ifPresent(n -> {
                 if (n.getAffinity().getShiftAffinity() == this.affinity || n.getAffinity() == Affinity.UNKNOWN) {
                     if (!m.getWellspringRegistry().claimNode((ServerLevel)this.getLevel(), this.placedBy, this.placedByFaction, this.getBlockPos(), this.affinity)) {
-                        this.getLevel().setBlockAndUpdate(this.getBlockPos(), (BlockState)this.getBlockState().setValue((Property)RefractionLensBlock.INVALID, (Comparable)Boolean.valueOf(true)));
+                        this.getLevel().setBlockAndUpdate(this.getBlockPos(), (BlockState)this.getBlockState().setValue(RefractionLensBlock.INVALID, Boolean.valueOf(true)));
                     } else {
-                        this.getLevel().setBlockAndUpdate(this.getBlockPos(), (BlockState)this.getBlockState().setValue((Property)RefractionLensBlock.INVALID, (Comparable)Boolean.valueOf(false)));
+                        this.getLevel().setBlockAndUpdate(this.getBlockPos(), (BlockState)this.getBlockState().setValue(RefractionLensBlock.INVALID, Boolean.valueOf(false)));
                     }
                 } else {
-                    this.getLevel().setBlockAndUpdate(this.getBlockPos(), (BlockState)this.getBlockState().setValue((Property)RefractionLensBlock.INVALID, (Comparable)Boolean.valueOf(true)));
+                    this.getLevel().setBlockAndUpdate(this.getBlockPos(), (BlockState)this.getBlockState().setValue(RefractionLensBlock.INVALID, Boolean.valueOf(true)));
                     ManaAndArtifice.instance.proxy.showDidYouKnow(crafter, ShowDidYouKnow.Messages.LENS_CAPTURE);
                 }
             });
             if (!entry.isPresent()) {
-                this.getLevel().setBlockAndUpdate(this.getBlockPos(), (BlockState)this.getBlockState().setValue((Property)RefractionLensBlock.INVALID, (Comparable)Boolean.valueOf(true)));
+                this.getLevel().setBlockAndUpdate(this.getBlockPos(), (BlockState)this.getBlockState().setValue(RefractionLensBlock.INVALID, Boolean.valueOf(true)));
             }
         });
     }

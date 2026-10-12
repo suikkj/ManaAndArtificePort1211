@@ -47,7 +47,7 @@ public final class SpellAdjusters {
         if (context.caster == null) {
             return;
         }
-        java.util.Optional<PlayerMagicProvider> magicContainer = MNACap.get(context.caster, PlayerMagicProvider.MAGIC);
+        java.util.Optional<com.mna.api.capabilities.IPlayerMagic> magicContainer = MNACap.get(context.caster, PlayerMagicProvider.MAGIC);
         if (!magicContainer.isPresent()) {
             return;
         }

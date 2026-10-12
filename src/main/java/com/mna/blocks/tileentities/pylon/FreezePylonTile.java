@@ -60,7 +60,7 @@ extends PylonTileBase {
                         } else {
                             int amt = flState.getAmount();
                             BlockState snowState = Blocks.SNOW.defaultBlockState();
-                            if ((snowState = (BlockState)snowState.setValue((Property)SnowLayerBlock.LAYERS, (Comparable)Integer.valueOf(Math.min(Math.max(amt, 1), 8)))).canSurvive((LevelReader)level, cPos)) {
+                            if ((snowState = (BlockState)snowState.setValue(SnowLayerBlock.LAYERS, Integer.valueOf(Math.min(Math.max(amt, 1), 8)))).canSurvive((LevelReader)level, cPos)) {
                                 level.setBlock(cPos, snowState, 3);
                             }
                         }

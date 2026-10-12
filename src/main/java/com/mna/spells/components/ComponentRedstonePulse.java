@@ -72,7 +72,7 @@ extends SpellEffect {
         if (context.getServerLevel().isEmptyBlock(blockTarget) && context.getServerLevel().getEntities(null, new AABB(blockTarget)).size() == 0) {
             int power = (int)modificationData.getValue(Attribute.LESSER_MAGNITUDE);
             int duration = (int)modificationData.getValue(Attribute.DURATION);
-            BlockState placeState = (BlockState)((PulseBlock)BlockInit.REDSTONE_PULSE.get()).defaultBlockState().setValue((Property)PulseBlock.OUTPUT_POWER, (Comparable)Integer.valueOf(power));
+            BlockState placeState = (BlockState)((PulseBlock)BlockInit.REDSTONE_PULSE.get()).defaultBlockState().setValue(PulseBlock.OUTPUT_POWER, Integer.valueOf(power));
             Player player = source.isPlayerCaster() ? source.getPlayer() : FakePlayerFactory.getMinecraft((ServerLevel)context.getServerLevel());
             BlockUtils.placeBlock(context.getServerLevel(), blockTarget, target.getBlockFace(this), placeState, player);
             context.getServerLevel().scheduleTick(blockTarget, (Block)BlockInit.REDSTONE_PULSE.get(), duration * 20);

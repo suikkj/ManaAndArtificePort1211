@@ -86,7 +86,7 @@ implements IDontCreateBlockItem {
     }
 
     public BlockState getStateForPlacement(BlockPlaceContext ctx) {
-        return (BlockState)((BlockState)this.defaultBlockState().setValue((Property)FACING, (Comparable)ctx.getHorizontalDirection())).setValue((Property)HAS_LIQUID, (Comparable)Boolean.valueOf(ctx.getItemInHand().getItem() == ItemInit.MANA_TEA.get()));
+        return (BlockState)((BlockState)this.defaultBlockState().setValue(FACING, ctx.getHorizontalDirection())).setValue(HAS_LIQUID, Boolean.valueOf(ctx.getItemInHand().getItem() == ItemInit.MANA_TEA.get()));
     }
 
     public boolean propagatesSkylightDown(BlockState p_49928_, BlockGetter p_49929_, BlockPos p_49930_) {

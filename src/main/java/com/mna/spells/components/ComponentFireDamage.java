@@ -114,7 +114,7 @@ implements IDamageComponent {
                         f2.set(furnace, burnTime);
                         BlockState state = context.getServerLevel().getBlockState(target.getBlock());
                         if (state.hasProperty((Property)AbstractFurnaceBlock.LIT)) {
-                            context.getServerLevel().setBlock(target.getBlock(), (BlockState)state.setValue((Property)AbstractFurnaceBlock.LIT, (Comparable)Boolean.valueOf(true)), 3);
+                            context.getServerLevel().setBlock(target.getBlock(), (BlockState)state.setValue(AbstractFurnaceBlock.LIT, Boolean.valueOf(true)), 3);
                         }
                     }
                     catch (Throwable throwable) {}

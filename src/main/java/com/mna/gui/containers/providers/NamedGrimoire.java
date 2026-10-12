@@ -17,7 +17,7 @@ public class NamedGrimoire
 implements MenuProvider {
     @Nullable
     public AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
-        java.util.Optional<PlayerMagicProvider> magicContainer = MNACap.get(player, PlayerMagicProvider.MAGIC);
+        java.util.Optional<com.mna.api.capabilities.IPlayerMagic> magicContainer = MNACap.get(player, PlayerMagicProvider.MAGIC);
         if (magicContainer.isPresent()) {
             return new ContainerGrimoire(i, inventory, ((IPlayerMagic)magicContainer.get()).getGrimoireInventory());
         }

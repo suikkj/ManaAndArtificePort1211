@@ -86,7 +86,7 @@ EntityBlock {
 
     public ThesisDeskBlock() {
         super(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).instrument(NoteBlockInstrument.BASS).noOcclusion().isSuffocating(BlockInit.NEVER), new BlockPos(0, 1, 0));
-        this.registerDefaultState((BlockState)this.defaultBlockState().setValue((Property)BOOK, (Comparable)Boolean.valueOf(false)));
+        this.registerDefaultState((BlockState)this.defaultBlockState().setValue(BOOK, Boolean.valueOf(false)));
     }
 
     @Override

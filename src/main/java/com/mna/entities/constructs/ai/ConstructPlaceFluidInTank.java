@@ -97,7 +97,7 @@ extends ConstructCommandBlockInteract<ConstructPlaceFluidInTank> {
             FluidStack drainStack = new FluidStack(constructFluid.getFluid(), 1000);
             if (constructFluid.getAmount() >= 1000 && this.construct.drain(drainStack, IFluidHandler.FluidAction.SIMULATE).getAmount() == drainStack.getAmount()) {
                 this.construct.drain(drainStack, IFluidHandler.FluidAction.EXECUTE);
-                c.level().setBlock(this.blockPos, constructFluid.isFluidEqual(new FluidStack((Fluid)Fluids.LAVA, 1000)) ? (BlockState)Blocks.LAVA_CAULDRON.defaultBlockState().setValue((Property)LayeredCauldronBlock.LEVEL, (Comparable)Integer.valueOf(3)) : (BlockState)Blocks.WATER_CAULDRON.defaultBlockState().setValue((Property)LayeredCauldronBlock.LEVEL, (Comparable)Integer.valueOf(3)), 3);
+                c.level().setBlock(this.blockPos, constructFluid.isFluidEqual(new FluidStack((Fluid)Fluids.LAVA, 1000)) ? (BlockState)Blocks.LAVA_CAULDRON.defaultBlockState().setValue(LayeredCauldronBlock.LEVEL, Integer.valueOf(3)) : (BlockState)Blocks.WATER_CAULDRON.defaultBlockState().setValue(LayeredCauldronBlock.LEVEL, Integer.valueOf(3)), 3);
                 this.pushDiagnosticMessage(this.translate("mna.constructs.feedback.place_fluid_in_tank_success", this.translate(containedFluid), this.translate(state)));
                 this.exitCode = 0;
             }

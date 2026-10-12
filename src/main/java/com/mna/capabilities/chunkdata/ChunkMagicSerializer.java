@@ -14,7 +14,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.attachment.IAttachmentHolder;
 import net.neoforged.neoforge.attachment.IAttachmentSerializer;
 
-public class ChunkMagicSerializer implements IAttachmentSerializer<Tag, ChunkMagic> {
+public class ChunkMagicSerializer implements IAttachmentSerializer<Tag, com.mna.api.capabilities.IChunkMagic> {
     @Override
     public ChunkMagic read(IAttachmentHolder holder, Tag nbt, HolderLookup.Provider provider) {
         ChunkMagic resolved = new ChunkMagic();
@@ -47,7 +47,7 @@ public class ChunkMagicSerializer implements IAttachmentSerializer<Tag, ChunkMag
     }
 
     @Override
-    public Tag write(ChunkMagic resolved, HolderLookup.Provider provider) {
+    public Tag write(com.mna.api.capabilities.IChunkMagic resolved, HolderLookup.Provider provider) {
         CompoundTag nbt = new CompoundTag();
         nbt.putFloat("residualMagic", resolved.getResidualMagic());
         ListTag positions = new ListTag();

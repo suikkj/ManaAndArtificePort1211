@@ -57,7 +57,7 @@ extends BlockEntity {
                 this.scanForNearbyPylons(8);
             }
             if (this.tickCount % 2 == 0) {
-                List players = this.level.getEntitiesOfClass(Player.class, new AABB(this.getBlockPos()).inflate(2.0));
+                List<Player> players = this.level.getEntitiesOfClass(Player.class, new AABB(this.getBlockPos()).inflate(2.0));
                 for (Player player : players) {
                     Vec3 pos = player.position();
                     this.getLevel().addParticle((ParticleOptions)new MAParticleType((ParticleType<MAParticleType>)((ParticleType)ParticleInit.SPARKLE_LERP_POINT.get())), pos.x(), pos.y() + (double)1.2f, pos.z(), (double)((float)blockPos.getX() + 0.5f), (double)((float)blockPos.getY() + 0.5f), (double)((float)blockPos.getZ() + 0.5f));
@@ -97,7 +97,7 @@ extends BlockEntity {
         boolean hasChange = false;
         int fillAmt = (int)Math.floor(this.mana / 100.0f * 4.0f);
         if ((Integer)state.getValue((Property)ManaweaveProjectorBlock.FILL_LEVEL) != fillAmt) {
-            state = (BlockState)state.setValue((Property)ManaweaveProjectorBlock.FILL_LEVEL, (Comparable)Integer.valueOf(fillAmt));
+            state = (BlockState)state.setValue(ManaweaveProjectorBlock.FILL_LEVEL, Integer.valueOf(fillAmt));
             hasChange = true;
         }
         if (hasChange) {
@@ -107,7 +107,7 @@ extends BlockEntity {
     }
 
     private void getManaFromAllNearby() {
-        List players = this.level.getEntitiesOfClass(Player.class, new AABB(this.getBlockPos()).inflate(2.0));
+        List<Player> players = this.level.getEntitiesOfClass(Player.class, new AABB(this.getBlockPos()).inflate(2.0));
         for (Player player : players) {
             this.getManaFromPlayer(player);
         }
@@ -148,7 +148,7 @@ extends BlockEntity {
         if (stealAmount == 0.0f) {
             return;
         }
-        java.util.Optional<PlayerMagicProvider> magicContainer = MNACap.get(player, PlayerMagicProvider.MAGIC);
+        java.util.Optional<com.mna.api.capabilities.IPlayerMagic> magicContainer = MNACap.get(player, PlayerMagicProvider.MAGIC);
         if (magicContainer.isPresent()) {
             IPlayerMagic magic = (IPlayerMagic)magicContainer.get();
             if (magic.getCastingResource().getAmount() < stealAmount) {

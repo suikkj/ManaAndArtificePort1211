@@ -66,7 +66,7 @@ SimpleWaterloggedBlock {
 
     public FluidJugBlock(boolean is_infinite, ResourceLocation fluidType) {
         super(BlockBehaviour.Properties.of().mapColor(MapColor.CLAY).noOcclusion().strength(2.0f));
-        this.registerDefaultState((BlockState)this.defaultBlockState().setValue((Property)BlockStateProperties.WATERLOGGED, (Comparable)Boolean.valueOf(false)));
+        this.registerDefaultState((BlockState)this.defaultBlockState().setValue(BlockStateProperties.WATERLOGGED, Boolean.valueOf(false)));
         this.is_infinite = is_infinite;
         this.infinite_fluid_type = fluidType;
     }
@@ -95,14 +95,14 @@ SimpleWaterloggedBlock {
     }
 
     public BlockState getStateForPlacement(BlockPlaceContext ctx) {
-        BlockState base = (BlockState)this.defaultBlockState().setValue((Property)FACING, (Comparable)ctx.getHorizontalDirection());
+        BlockState base = (BlockState)this.defaultBlockState().setValue(FACING, ctx.getHorizontalDirection());
         BlockPos blockpos = ctx.getClickedPos();
         BlockState blockstate = ctx.getLevel().getBlockState(blockpos);
         if (blockstate.is((Block)this)) {
-            return (BlockState)blockstate.setValue((Property)BlockStateProperties.WATERLOGGED, (Comparable)Boolean.valueOf(false));
+            return (BlockState)blockstate.setValue(BlockStateProperties.WATERLOGGED, Boolean.valueOf(false));
         }
         FluidState fluidstate = ctx.getLevel().getFluidState(blockpos);
-        return (BlockState)base.setValue((Property)BlockStateProperties.WATERLOGGED, (Comparable)Boolean.valueOf(fluidstate.getType() == Fluids.WATER));
+        return (BlockState)base.setValue(BlockStateProperties.WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER));
     }
 
     public FluidState getFluidState(BlockState state) {

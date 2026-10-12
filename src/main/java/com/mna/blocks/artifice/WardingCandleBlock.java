@@ -49,13 +49,13 @@ implements ISpellInteractibleBlock<WardingCandleBlock> {
 
     public WardingCandleBlock() {
         super(BlockBehaviour.Properties.of().mapColor(MapColor.SAND).noOcclusion().strength(1.0f).isSuffocating(BlockInit.NEVER), false);
-        this.registerDefaultState((BlockState)this.defaultBlockState().setValue((Property)ACTIVE, (Comparable)Boolean.valueOf(false)));
+        this.registerDefaultState((BlockState)this.defaultBlockState().setValue(ACTIVE, Boolean.valueOf(false)));
     }
 
     public InteractionResult use(BlockState state, Level worldIn, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult p_225533_6_) {
         if (!worldIn.isClientSide) {
             BlockState newstate = state;
-            newstate = (BlockState)state.setValue((Property)ACTIVE, (Comparable)Boolean.valueOf((Boolean)state.getValue((Property)ACTIVE) == false));
+            newstate = (BlockState)state.setValue(ACTIVE, Boolean.valueOf((Boolean)state.getValue(ACTIVE) == false));
             if (((Boolean)newstate.getValue((Property)ACTIVE)).booleanValue()) {
                 if (player.getItemInHand(handIn).getItem() != Items.FLINT_AND_STEEL) {
                     return InteractionResult.FAIL;
@@ -125,7 +125,7 @@ implements ISpellInteractibleBlock<WardingCandleBlock> {
     public boolean onHitBySpell(Level world, BlockPos pos, ISpellDefinition spell) {
         BlockState existing;
         if (!world.isClientSide && spell.getAffinity().containsKey(Affinity.FIRE) && (existing = world.getBlockState(pos)).hasProperty((Property)ACTIVE) && !((Boolean)existing.getValue((Property)ACTIVE)).booleanValue()) {
-            BlockState newState = (BlockState)existing.setValue((Property)ACTIVE, (Comparable)Boolean.valueOf(true));
+            BlockState newState = (BlockState)existing.setValue(ACTIVE, Boolean.valueOf(true));
             MNACap.get(world, WorldMagicProvider.MAGIC).ifPresent(w -> w.addWardingCandleLocation(pos));
             world.setBlock(pos, newState, 1);
             world.sendBlockUpdated(pos, existing, newState, 2);

@@ -87,7 +87,7 @@ EntityBlock {
 
     public RunescribingTableBlock() {
         super(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).instrument(NoteBlockInstrument.BASS).strength(2.0f).noOcclusion().isSuffocating(BlockInit.NEVER), new BlockPos(0, 1, 0));
-        this.registerDefaultState((BlockState)((BlockState)this.defaultBlockState().setValue((Property)HAS_CHISEL, (Comparable)Boolean.valueOf(false))).setValue((Property)HAS_HAMMER, (Comparable)Boolean.valueOf(false)));
+        this.registerDefaultState((BlockState)((BlockState)this.defaultBlockState().setValue(HAS_CHISEL, Boolean.valueOf(false))).setValue(HAS_HAMMER, Boolean.valueOf(false)));
     }
 
     @Override

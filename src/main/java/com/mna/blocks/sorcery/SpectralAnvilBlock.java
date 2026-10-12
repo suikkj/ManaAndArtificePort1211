@@ -92,7 +92,7 @@ SimpleWaterloggedBlock {
 
     public SpectralAnvilBlock(BlockBehaviour.Properties p_i48450_1_) {
         super(p_i48450_1_);
-        this.registerDefaultState((BlockState)((BlockState)this.defaultBlockState().setValue((Property)SpectralCraftingTableBlock.PERMANENT, (Comparable)Boolean.valueOf(false))).setValue((Property)BlockStateProperties.WATERLOGGED, (Comparable)Boolean.valueOf(false)));
+        this.registerDefaultState((BlockState)((BlockState)this.defaultBlockState().setValue(SpectralCraftingTableBlock.PERMANENT, Boolean.valueOf(false))).setValue(BlockStateProperties.WATERLOGGED, Boolean.valueOf(false)));
     }
 
     @Nullable
@@ -105,7 +105,7 @@ SimpleWaterloggedBlock {
         BlockState base = super.getStateForPlacement(pContext);
         BlockPos blockpos = pContext.getClickedPos();
         BlockState blockstate = pContext.getLevel().getBlockState(blockpos);
-        base = blockstate.is((Block)this) ? (BlockState)base.setValue((Property)BlockStateProperties.WATERLOGGED, (Comparable)Boolean.valueOf(false)) : (BlockState)base.setValue((Property)BlockStateProperties.WATERLOGGED, (Comparable)Boolean.valueOf((fluidstate = pContext.getLevel().getFluidState(blockpos)).getType() == Fluids.WATER));
+        base = blockstate.is((Block)this) ? (BlockState)base.setValue(BlockStateProperties.WATERLOGGED, Boolean.valueOf(false)) : (BlockState)base.setValue(BlockStateProperties.WATERLOGGED, Boolean.valueOf((fluidstate = pContext.getLevel().getFluidState(blockpos)).getType() == Fluids.WATER));
         return base;
     }
 

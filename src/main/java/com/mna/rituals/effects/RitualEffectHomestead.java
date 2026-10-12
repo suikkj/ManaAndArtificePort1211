@@ -31,7 +31,7 @@ extends RitualEffect {
         if (context.getCaster() == null) {
             return false;
         }
-        java.util.Optional<WorldMagicProvider> worldMagicContainer = MNACap.get(context.getLevel(), WorldMagicProvider.MAGIC);
+        java.util.Optional<com.mna.api.capabilities.IWorldMagic> worldMagicContainer = MNACap.get(context.getLevel(), WorldMagicProvider.MAGIC);
         if (worldMagicContainer.isPresent()) {
             IWorldMagic worldMagic = (IWorldMagic)worldMagicContainer.get();
             ArrayList<ResourceLocation> runes = new ArrayList<ResourceLocation>();

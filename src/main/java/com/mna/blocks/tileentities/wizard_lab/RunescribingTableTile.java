@@ -227,9 +227,9 @@ Consumer<FriendlyByteBuf> {
     public void setItem(int index, ItemStack stack) {
         if (!this.getLevel().isClientSide()) {
             if (index == 0) {
-                this.getLevel().setBlock(this.getBlockPos(), (BlockState)this.getBlockState().setValue((Property)RunescribingTableBlock.HAS_HAMMER, (Comparable)Boolean.valueOf(!stack.isEmpty())), 2);
+                this.getLevel().setBlock(this.getBlockPos(), (BlockState)this.getBlockState().setValue(RunescribingTableBlock.HAS_HAMMER, Boolean.valueOf(!stack.isEmpty())), 2);
             } else if (index == 1) {
-                this.getLevel().setBlock(this.getBlockPos(), (BlockState)this.getBlockState().setValue((Property)RunescribingTableBlock.HAS_CHISEL, (Comparable)Boolean.valueOf(!stack.isEmpty())), 2);
+                this.getLevel().setBlock(this.getBlockPos(), (BlockState)this.getBlockState().setValue(RunescribingTableBlock.HAS_CHISEL, Boolean.valueOf(!stack.isEmpty())), 2);
             }
         }
         super.setItem(index, stack);

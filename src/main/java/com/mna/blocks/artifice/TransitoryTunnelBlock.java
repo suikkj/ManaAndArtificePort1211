@@ -93,7 +93,7 @@ EntityBlock {
         if ((Integer)state.getValue((Property)FACE_VISIBILITY_MASK) == mask) {
             return;
         }
-        worldIn.setBlock(pos, (BlockState)state.setValue((Property)FACE_VISIBILITY_MASK, (Comparable)Integer.valueOf(mask)), 3);
+        worldIn.setBlock(pos, (BlockState)state.setValue(FACE_VISIBILITY_MASK, Integer.valueOf(mask)), 3);
     }
 
     public static int getStateBasedOnSurroundings(Level world, BlockPos pos) {

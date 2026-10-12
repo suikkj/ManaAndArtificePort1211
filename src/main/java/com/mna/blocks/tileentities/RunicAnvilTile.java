@@ -119,7 +119,7 @@ GeoBlockEntity {
                 return 5;
             }
             this.completeCraftingAndReset(crafter, allowDurability);
-            this.getLevel().setBlockAndUpdate(this.getBlockPos(), (BlockState)this.getBlockState().setValue((Property)RunicAnvilBlock.ACTIVE, (Comparable)Boolean.valueOf(false)));
+            this.getLevel().setBlockAndUpdate(this.getBlockPos(), (BlockState)this.getBlockState().setValue(RunicAnvilBlock.ACTIVE, Boolean.valueOf(false)));
             this.getLevel().sendBlockUpdated(this.getBlockPos(), this.getBlockState(), this.getBlockState(), 2);
             return 4;
         }
@@ -166,7 +166,7 @@ GeoBlockEntity {
         if (this.cacheSpecialRecipes(playerTier)) {
             boolean isActive = (Boolean)this.getBlockState().getValue((Property)RunicAnvilBlock.ACTIVE);
             if (!isActive) {
-                this.getLevel().setBlock(this.worldPosition, (BlockState)this.getBlockState().setValue((Property)RunicAnvilBlock.ACTIVE, (Comparable)Boolean.valueOf(true)), 3);
+                this.getLevel().setBlock(this.worldPosition, (BlockState)this.getBlockState().setValue(RunicAnvilBlock.ACTIVE, Boolean.valueOf(true)), 3);
             }
         } else {
             CraftingContainer inv = this.createDummyCraftingInventory();
@@ -188,10 +188,10 @@ GeoBlockEntity {
             boolean isActive = (Boolean)this.getBlockState().getValue((Property)RunicAnvilBlock.ACTIVE);
             if (!this.__cachedRecipeOutput.isEmpty()) {
                 if (!isActive) {
-                    this.getLevel().setBlock(this.worldPosition, (BlockState)this.getBlockState().setValue((Property)RunicAnvilBlock.ACTIVE, (Comparable)Boolean.valueOf(true)), 3);
+                    this.getLevel().setBlock(this.worldPosition, (BlockState)this.getBlockState().setValue(RunicAnvilBlock.ACTIVE, Boolean.valueOf(true)), 3);
                 }
             } else if (isActive) {
-                this.level.setBlock(this.worldPosition, (BlockState)this.getBlockState().setValue((Property)RunicAnvilBlock.ACTIVE, (Comparable)Boolean.valueOf(false)), 0);
+                this.level.setBlock(this.worldPosition, (BlockState)this.getBlockState().setValue(RunicAnvilBlock.ACTIVE, Boolean.valueOf(false)), 0);
             }
         }
         this.getLevel().sendBlockUpdated(this.getBlockPos(), this.getBlockState(), this.getBlockState(), 3);

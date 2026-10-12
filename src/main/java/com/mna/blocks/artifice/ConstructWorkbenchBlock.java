@@ -120,7 +120,7 @@ implements EntityBlock {
 
     public ConstructWorkbenchBlock() {
         super(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).noOcclusion().isSuffocating(BlockInit.NEVER).strength(3.0f).lightLevel(b -> 15), false, new BlockPos[0]);
-        this.registerDefaultState((BlockState)((BlockState)this.defaultBlockState().setValue((Property)FACING, (Comparable)Direction.NORTH)).setValue((Property)HAS_PART, (Comparable)Boolean.valueOf(false)));
+        this.registerDefaultState((BlockState)((BlockState)this.defaultBlockState().setValue(FACING, Direction.NORTH)).setValue(HAS_PART, Boolean.valueOf(false)));
     }
 
     @Override
@@ -132,7 +132,7 @@ implements EntityBlock {
 
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        BlockState state = (BlockState)this.defaultBlockState().setValue((Property)FACING, (Comparable)context.getHorizontalDirection().getOpposite());
+        BlockState state = (BlockState)this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
         BlockPos pos = context.getClickedPos();
         for (BlockPos offset : this.getOffsets(state)) {
             FluidState flState;

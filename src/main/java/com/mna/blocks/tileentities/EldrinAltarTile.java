@@ -493,7 +493,7 @@ IEldrinConsumerTile {
         if (!this.cacheRecipe(player, false)) {
             return false;
         }
-        java.util.Optional<PlayerProgressionProvider> progression = MNACap.get(player, PlayerProgressionProvider.PROGRESSION);
+        java.util.Optional<com.mna.api.capabilities.IPlayerProgression> progression = MNACap.get(player, PlayerProgressionProvider.PROGRESSION);
         if (!progression.isPresent()) {
             return false;
         }

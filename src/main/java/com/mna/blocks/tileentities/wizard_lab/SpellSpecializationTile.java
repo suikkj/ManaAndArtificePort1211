@@ -58,7 +58,7 @@ ISelectSpellComponents {
         if (this.selectedPart == null) {
             return false;
         }
-        java.util.Optional<PlayerRoteSpellsProvider> rote = MNACap.get(player, PlayerRoteSpellsProvider.ROTE);
+        java.util.Optional<com.mna.api.capabilities.IPlayerRoteSpells> rote = MNACap.get(player, PlayerRoteSpellsProvider.ROTE);
         if (!rote.isPresent()) {
             return false;
         }

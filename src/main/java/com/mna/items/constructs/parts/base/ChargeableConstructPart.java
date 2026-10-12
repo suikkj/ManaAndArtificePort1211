@@ -63,7 +63,7 @@ implements IShowHud {
             living.stopUsingItem();
             return;
         }
-        java.util.Optional<PlayerMagicProvider> cap = MNACap.get((Player)living, PlayerMagicProvider.MAGIC);
+        java.util.Optional<com.mna.api.capabilities.IPlayerMagic> cap = MNACap.get((Player)living, PlayerMagicProvider.MAGIC);
         if (!cap.isPresent()) {
             living.stopUsingItem();
             return;

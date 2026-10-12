@@ -69,7 +69,7 @@ implements IDamageComponent {
         }
         while (Math.random() < (double)branchChance) {
             Vec3 checkTargetPosition = lastTargetPosition;
-            List entities = context.getServerLevel().getEntitiesOfClass(LivingEntity.class, new AABB(BlockPos.containing((Position)lastTargetPosition)).inflate((double)branchRadius), e -> {
+            List<LivingEntity> entities = context.getServerLevel().getEntitiesOfClass(LivingEntity.class, new AABB(BlockPos.containing((Position)lastTargetPosition)).inflate((double)branchRadius), e -> {
                 if (source.hasCasterReference() && e == source.getCaster()) {
                     return false;
                 }

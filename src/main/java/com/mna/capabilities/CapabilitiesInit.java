@@ -30,22 +30,22 @@ public class CapabilitiesInit {
         DeferredRegister.create(NeoForgeRegistries.ATTACHMENT_TYPES, "mna");
 
     // Player data
-    public static final Supplier<AttachmentType<PlayerMagic>> PLAYER_MAGIC =
-        ATTACHMENT_TYPES.register("player_magic", () -> AttachmentType.builder((Supplier<PlayerMagic>) PlayerMagic::new)
+    public static final Supplier<AttachmentType<com.mna.api.capabilities.IPlayerMagic>> PLAYER_MAGIC =
+        ATTACHMENT_TYPES.register("player_magic", () -> AttachmentType.<com.mna.api.capabilities.IPlayerMagic>builder(() -> new PlayerMagic())
             .serialize(new PlayerMagicSerializer()).copyOnDeath().build());
-    public static final Supplier<AttachmentType<PlayerProgression>> PLAYER_PROGRESSION =
-        ATTACHMENT_TYPES.register("player_progression", () -> AttachmentType.builder((Supplier<PlayerProgression>) PlayerProgression::new)
+    public static final Supplier<AttachmentType<com.mna.api.capabilities.IPlayerProgression>> PLAYER_PROGRESSION =
+        ATTACHMENT_TYPES.register("player_progression", () -> AttachmentType.<com.mna.api.capabilities.IPlayerProgression>builder(() -> new PlayerProgression())
             .serialize(new PlayerProgressionSerializer()).copyOnDeath().build());
-    public static final Supplier<AttachmentType<PlayerRoteSpells>> PLAYER_ROTE_SPELLS =
-        ATTACHMENT_TYPES.register("player_rote_spells", () -> AttachmentType.builder((Supplier<PlayerRoteSpells>) PlayerRoteSpells::new)
+    public static final Supplier<AttachmentType<com.mna.api.capabilities.IPlayerRoteSpells>> PLAYER_ROTE_SPELLS =
+        ATTACHMENT_TYPES.register("player_rote_spells", () -> AttachmentType.<com.mna.api.capabilities.IPlayerRoteSpells>builder(() -> new PlayerRoteSpells())
             .serialize(new PlayerRoteSpellsSerializer()).copyOnDeath().build());
 
     // World / Chunk data
-    public static final Supplier<AttachmentType<WorldMagic>> WORLD_MAGIC =
-        ATTACHMENT_TYPES.register("world_magic", () -> AttachmentType.builder((Supplier<WorldMagic>) WorldMagic::new)
+    public static final Supplier<AttachmentType<com.mna.api.capabilities.IWorldMagic>> WORLD_MAGIC =
+        ATTACHMENT_TYPES.register("world_magic", () -> AttachmentType.<com.mna.api.capabilities.IWorldMagic>builder(() -> new WorldMagic())
             .serialize(new WorldMagicSerializer()).build());
-    public static final Supplier<AttachmentType<ChunkMagic>> CHUNK_MAGIC =
-        ATTACHMENT_TYPES.register("chunk_magic", () -> AttachmentType.builder((Supplier<ChunkMagic>) ChunkMagic::new)
+    public static final Supplier<AttachmentType<com.mna.api.capabilities.IChunkMagic>> CHUNK_MAGIC =
+        ATTACHMENT_TYPES.register("chunk_magic", () -> AttachmentType.<com.mna.api.capabilities.IChunkMagic>builder(() -> new ChunkMagic())
             .serialize(new ChunkMagicSerializer()).build());
 
     // Entity / transient

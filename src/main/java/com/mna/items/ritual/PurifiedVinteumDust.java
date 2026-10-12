@@ -93,7 +93,7 @@ extends TieredItem {
     void updateBlockStates(UseOnContext context, NonNullList<RitualBlockPos> matchedPositions, boolean activated) {
         for (RitualBlockPos position : matchedPositions) {
             BlockState state = context.getLevel().getBlockState(position.getBlockPos());
-            BlockState newState = (BlockState)state.setValue((Property)ChalkRuneBlock.ACTIVATED, (Comparable)Boolean.valueOf(activated));
+            BlockState newState = (BlockState)state.setValue(ChalkRuneBlock.ACTIVATED, Boolean.valueOf(activated));
             context.getLevel().setBlockAndUpdate(position.getBlockPos(), newState);
             context.getLevel().sendBlockUpdated(position.getBlockPos(), state, newState, 2);
         }

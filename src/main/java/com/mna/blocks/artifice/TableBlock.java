@@ -76,7 +76,7 @@ extends Block {
 
     public TableBlock(BlockBehaviour.Properties pProperties) {
         super(pProperties);
-        this.registerDefaultState((BlockState)((BlockState)this.defaultBlockState().setValue((Property)FACING, (Comparable)Direction.NORTH)).setValue(SHAPE, (Comparable)(TableShape.STANDALONE)));
+        this.registerDefaultState((BlockState)((BlockState)this.defaultBlockState().setValue(FACING, Direction.NORTH)).setValue(SHAPE, (TableShape.STANDALONE)));
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
@@ -238,7 +238,7 @@ extends Block {
                 calculatedShape = TableShape.CROSS;
             }
         }
-        return (BlockState)((BlockState)input.setValue((Property)FACING, (Comparable)calculatedFacing)).setValue(SHAPE, (Comparable)(calculatedShape));
+        return (BlockState)((BlockState)input.setValue(FACING, calculatedFacing)).setValue(SHAPE, (calculatedShape));
     }
 
     private boolean canConnectTo(BlockGetter blockGetter, BlockPos myPos, Direction dir) {

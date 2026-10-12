@@ -23,7 +23,7 @@ import com.mna.api.tools.MNAItemData;
  * Attachments serializer para PlayerMagic.
  * (Lógica movida de PlayerMagicProvider; dados serao persistidos via AttachmentType.)
  */
-public class PlayerMagicSerializer implements IAttachmentSerializer<Tag, PlayerMagic> {
+public class PlayerMagicSerializer implements IAttachmentSerializer<Tag, com.mna.api.capabilities.IPlayerMagic> {
 
     @Override
     public PlayerMagic read(IAttachmentHolder holder, Tag nbt, HolderLookup.Provider provider) {
@@ -98,7 +98,7 @@ public class PlayerMagicSerializer implements IAttachmentSerializer<Tag, PlayerM
     }
 
     @Override
-    public Tag write(PlayerMagic instance, HolderLookup.Provider provider) {
+    public Tag write(com.mna.api.capabilities.IPlayerMagic instance, HolderLookup.Provider provider) {
         CompoundTag nbt = new CompoundTag();
         nbt.putString("casting_resource_id", instance.getCastingResource().getRegistryName().toString());
         instance.getCastingResource().writeNBT(nbt);

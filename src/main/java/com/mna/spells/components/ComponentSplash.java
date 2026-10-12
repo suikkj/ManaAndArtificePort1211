@@ -51,12 +51,12 @@ extends SpellEffect {
             BlockPos block = target.getBlock();
             BlockState targetState = context.getServerLevel().getBlockState(block);
             if (targetState.getBlock() == Blocks.CAULDRON) {
-                context.getLevel().setBlock(block, (BlockState)Blocks.WATER_CAULDRON.defaultBlockState().setValue((Property)LayeredCauldronBlock.LEVEL, (Comparable)Integer.valueOf(3)), 3);
+                context.getLevel().setBlock(block, (BlockState)Blocks.WATER_CAULDRON.defaultBlockState().setValue(LayeredCauldronBlock.LEVEL, Integer.valueOf(3)), 3);
                 context.addAffectedBlock(this, block);
                 return ComponentApplicationResult.SUCCESS;
             }
             if (targetState.getBlock() == Blocks.WATER_CAULDRON) {
-                context.getLevel().setBlock(block, (BlockState)targetState.setValue((Property)LayeredCauldronBlock.LEVEL, (Comparable)Integer.valueOf(3)), 3);
+                context.getLevel().setBlock(block, (BlockState)targetState.setValue(LayeredCauldronBlock.LEVEL, Integer.valueOf(3)), 3);
                 context.addAffectedBlock(this, block);
                 return ComponentApplicationResult.SUCCESS;
             }
@@ -77,7 +77,7 @@ extends SpellEffect {
                     context.addAffectedBlock(this, block);
                     context.getServerLevel().setBlock(block, Blocks.WATER.defaultBlockState(), 3);
                     if (!GeneralConfigValues.SplashCreatesSources) {
-                        DelayedEventQueue.pushEvent(context.getLevel(), new TimedDelayedEvent<BlockPos>("water_fix", 20, block, (s, i) -> context.getServerLevel().setBlock(i, (BlockState)Blocks.WATER.defaultBlockState().setValue((Property)LiquidBlock.LEVEL, (Comparable)Integer.valueOf(15)), 3)));
+                        DelayedEventQueue.pushEvent(context.getLevel(), new TimedDelayedEvent<BlockPos>("water_fix", 20, block, (s, i) -> context.getServerLevel().setBlock(i, (BlockState)Blocks.WATER.defaultBlockState().setValue(LiquidBlock.LEVEL, Integer.valueOf(15)), 3)));
                     }
                     context.getServerLevel().scheduleTick(block, Blocks.WATER, 3);
                 } else if (!this.setBlockWaterlogged((Level)context.getServerLevel(), block, targetState)) {
@@ -90,7 +90,7 @@ extends SpellEffect {
 
     private boolean setBlockWaterlogged(Level world, BlockPos pos, BlockState state) {
         if (state.hasProperty((Property)BlockStateProperties.WATERLOGGED) && !((Boolean)state.getValue((Property)BlockStateProperties.WATERLOGGED)).booleanValue()) {
-            world.setBlock(pos, (BlockState)state.setValue((Property)BlockStateProperties.WATERLOGGED, (Comparable)Boolean.valueOf(true)), 3);
+            world.setBlock(pos, (BlockState)state.setValue(BlockStateProperties.WATERLOGGED, Boolean.valueOf(true)), 3);
             return true;
         }
         return false;

@@ -73,13 +73,13 @@ implements IBlockEntityExtension {
         super.setItem(index, stack);
         if (!this.getLevel().isClientSide()) {
             boolean active = false;
-            this.getLevel().setBlock(this.getBlockPos(), (BlockState)((BlockState)((BlockState)((BlockState)this.getBlockState().setValue((Property)RuneforgeBlock.ACTIVE, (Comparable)Boolean.valueOf(false))).setValue((Property)RuneforgeBlock.ORE_DOUBLING, (Comparable)Boolean.valueOf(this.hasMultiUpgrade()))).setValue((Property)RuneforgeBlock.REPAIR, (Comparable)Boolean.valueOf(this.hasRepairUpgrade()))).setValue((Property)RuneforgeBlock.SPEED, (Comparable)Boolean.valueOf(this.hasSpeedUpgrade())), 1);
+            this.getLevel().setBlock(this.getBlockPos(), (BlockState)((BlockState)((BlockState)((BlockState)this.getBlockState().setValue(RuneforgeBlock.ACTIVE, Boolean.valueOf(false))).setValue(RuneforgeBlock.ORE_DOUBLING, Boolean.valueOf(this.hasMultiUpgrade()))).setValue(RuneforgeBlock.REPAIR, Boolean.valueOf(this.hasRepairUpgrade()))).setValue(RuneforgeBlock.SPEED, Boolean.valueOf(this.hasSpeedUpgrade())), 1);
             if (!this.ignoreRecipeCheck) {
                 active = this.cacheRecipe();
             }
             if (active) {
                 this.smeltTicks = 0;
-                this.getLevel().setBlock(this.getBlockPos(), (BlockState)this.getBlockState().setValue((Property)RuneforgeBlock.ACTIVE, (Comparable)Boolean.valueOf(true)), 3);
+                this.getLevel().setBlock(this.getBlockPos(), (BlockState)this.getBlockState().setValue(RuneforgeBlock.ACTIVE, Boolean.valueOf(true)), 3);
             }
             this.getLevel().sendBlockUpdated(this.getBlockPos(), this.getBlockState(), this.getBlockState(), 3);
         }
@@ -89,7 +89,7 @@ implements IBlockEntityExtension {
     public ItemStack removeItem(int index, int count) {
         ItemStack output = super.removeItem(index, count);
         if (!output.isEmpty()) {
-            this.getLevel().setBlock(this.getBlockPos(), (BlockState)this.getBlockState().setValue((Property)RuneforgeBlock.ACTIVE, (Comparable)Boolean.valueOf(false)), 3);
+            this.getLevel().setBlock(this.getBlockPos(), (BlockState)this.getBlockState().setValue(RuneforgeBlock.ACTIVE, Boolean.valueOf(false)), 3);
         } else {
             this.getLevel().setBlock(this.getBlockPos(), this.getBlockState(), 3);
         }
@@ -214,7 +214,7 @@ implements IBlockEntityExtension {
     public ItemStack removeItemNoUpdate(int index) {
         ItemStack ret = super.removeItemNoUpdate(index);
         if (!this.getLevel().isClientSide()) {
-            this.getLevel().setBlock(this.getBlockPos(), (BlockState)this.getBlockState().setValue((Property)RuneforgeBlock.ACTIVE, (Comparable)Boolean.valueOf(false)), 3);
+            this.getLevel().setBlock(this.getBlockPos(), (BlockState)this.getBlockState().setValue(RuneforgeBlock.ACTIVE, Boolean.valueOf(false)), 3);
             this.smeltTicks = 0;
         }
         return ret;
@@ -345,7 +345,7 @@ implements IBlockEntityExtension {
             this.__cachedRecipe = null;
             this.ignoreRecipeCheck = false;
             this.resetSelf();
-            this.getLevel().setBlock(this.getBlockPos(), (BlockState)this.getBlockState().setValue((Property)RuneforgeBlock.ACTIVE, (Comparable)Boolean.valueOf(false)), 2);
+            this.getLevel().setBlock(this.getBlockPos(), (BlockState)this.getBlockState().setValue(RuneforgeBlock.ACTIVE, Boolean.valueOf(false)), 2);
         }
     }
 
@@ -354,7 +354,7 @@ implements IBlockEntityExtension {
         this.burnTime = 0;
         this.isRepairing = false;
         if (!this.getLevel().isClientSide()) {
-            this.getLevel().setBlock(this.getBlockPos(), (BlockState)this.getBlockState().setValue((Property)RuneforgeBlock.ACTIVE, (Comparable)Boolean.valueOf(false)), 2);
+            this.getLevel().setBlock(this.getBlockPos(), (BlockState)this.getBlockState().setValue(RuneforgeBlock.ACTIVE, Boolean.valueOf(false)), 2);
         }
     }
 

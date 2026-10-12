@@ -305,7 +305,7 @@ OwnableEntity {
     public void onAddedToLevel() {
         super.onAddedToLevel();
         if (!this.level().isClientSide()) {
-            List existing = this.level().getEntitiesOfClass(BloodTendril.class, this.getBoundingBox().inflate(6.0));
+            List<BloodTendril> existing = this.level().getEntitiesOfClass(BloodTendril.class, this.getBoundingBox().inflate(6.0));
             existing.sort((a, b) -> b.tickCount - a.tickCount);
             int removeCount = existing.size() - 4;
             for (int i = 0; i < removeCount; ++i) {

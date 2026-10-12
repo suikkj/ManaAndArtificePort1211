@@ -62,7 +62,7 @@ implements EntityBlock,
 ITranslucentBlock {
     public SpectralLadderBlock(BlockBehaviour.Properties blockProps) {
         super(blockProps);
-        this.registerDefaultState((BlockState)this.defaultBlockState().setValue((Property)SpectralCraftingTableBlock.PERMANENT, (Comparable)Boolean.valueOf(false)));
+        this.registerDefaultState((BlockState)this.defaultBlockState().setValue(SpectralCraftingTableBlock.PERMANENT, Boolean.valueOf(false)));
     }
 
     public boolean isLadder(BlockState state, LevelReader level, BlockPos pos, LivingEntity entity) {

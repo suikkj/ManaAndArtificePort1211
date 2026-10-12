@@ -202,7 +202,7 @@ implements ISpellInteractibleEntity<Spellbreaker> {
                 }
                 case "rally": {
                     this.playSound(SFX.Entity.Spellbreaker.RALLY, 1.0f, 1.0f);
-                    List allies = this.level().getEntitiesOfClass(Monster.class, this.getBoundingBox().inflate(10.0), e -> e.isAlive() && e instanceof Spellbreaker);
+                    List<Monster> allies = this.level().getEntitiesOfClass(Monster.class, this.getBoundingBox().inflate(10.0), e -> e.isAlive() && e instanceof Spellbreaker);
                     for (Monster m : allies) {
                         m.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 300, 1, false, true));
                         m.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 100, 1, false, false));

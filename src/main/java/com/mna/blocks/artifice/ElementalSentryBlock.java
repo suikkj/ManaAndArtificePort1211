@@ -67,7 +67,7 @@ EntityBlock {
 
     public ElementalSentryBlock(Affinity shootAffinity) {
         super(BlockBehaviour.Properties.of().noOcclusion().strength(6.0f, 30.0f).noCollission().isSuffocating(BlockInit.NEVER), false);
-        this.registerDefaultState((BlockState)((BlockState)this.defaultBlockState().setValue((Property)SHOOTING, (Comparable)Boolean.valueOf(false))).setValue((Property)TARGET_OVERRIDE, (Comparable)Boolean.valueOf(false)));
+        this.registerDefaultState((BlockState)((BlockState)this.defaultBlockState().setValue(SHOOTING, Boolean.valueOf(false))).setValue(TARGET_OVERRIDE, Boolean.valueOf(false)));
         this.shootAffinity = shootAffinity;
     }
 
@@ -89,7 +89,7 @@ EntityBlock {
         for (Direction dir : offsets) {
             BlockState offsetState = context.getLevel().getBlockState(context.getClickedPos().offset(dir.getNormal()));
             if (!(offsetState.getBlock() instanceof SeerStoneBlock)) continue;
-            state = (BlockState)state.setValue((Property)TARGET_OVERRIDE, (Comparable)Boolean.valueOf(true));
+            state = (BlockState)state.setValue(TARGET_OVERRIDE, Boolean.valueOf(true));
             break;
         }
         return state;
@@ -114,9 +114,9 @@ EntityBlock {
             break;
         }
         if (!found && ((Boolean)state.getValue((Property)TARGET_OVERRIDE)).booleanValue()) {
-            world.setBlock(pos, (BlockState)state.setValue((Property)TARGET_OVERRIDE, (Comparable)Boolean.valueOf(false)), 3);
+            world.setBlock(pos, (BlockState)state.setValue(TARGET_OVERRIDE, Boolean.valueOf(false)), 3);
         } else if (found && !((Boolean)state.getValue((Property)TARGET_OVERRIDE)).booleanValue()) {
-            world.setBlock(pos, (BlockState)state.setValue((Property)TARGET_OVERRIDE, (Comparable)Boolean.valueOf(true)), 3);
+            world.setBlock(pos, (BlockState)state.setValue(TARGET_OVERRIDE, Boolean.valueOf(true)), 3);
         }
     }
 

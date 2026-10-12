@@ -61,7 +61,7 @@ implements EntityBlock {
     }
 
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        return (BlockState)super.getStateForPlacement(context).setValue((Property)FACING, (Comparable)context.getClickedFace());
+        return (BlockState)super.getStateForPlacement(context).setValue(FACING, context.getClickedFace());
     }
 
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
@@ -77,7 +77,7 @@ implements EntityBlock {
     }
 
     public BlockState rotate(BlockState pState, Rotation pRotation) {
-        return (BlockState)pState.setValue((Property)FACING, (Comparable)pRotation.rotate((Direction)pState.getValue((Property)FACING)));
+        return (BlockState)pState.setValue(FACING, pRotation.rotate((Direction)pState.getValue(FACING)));
     }
 }
 

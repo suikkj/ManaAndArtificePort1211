@@ -67,14 +67,14 @@ implements IDontCreateBlockItem {
             BlockPos belowPos = (BlockPos)below.getSecond();
             if (belowState.getBlock() == Blocks.CAULDRON) {
                 if (pRandom.nextFloat() <= 0.17578125f) {
-                    pLevel.setBlock(belowPos, (BlockState)Blocks.WATER_CAULDRON.defaultBlockState().setValue((Property)LayeredCauldronBlock.LEVEL, (Comparable)Integer.valueOf(1)), 3);
+                    pLevel.setBlock(belowPos, (BlockState)Blocks.WATER_CAULDRON.defaultBlockState().setValue(LayeredCauldronBlock.LEVEL, Integer.valueOf(1)), 3);
                 }
                 return;
             }
             if (belowState.getBlock() == Blocks.WATER_CAULDRON) {
                 int existingFillLevel = (Integer)belowState.getValue((Property)LayeredCauldronBlock.LEVEL);
                 if (existingFillLevel < 3 && pRandom.nextFloat() <= 1.0f) {
-                    pLevel.setBlock(belowPos, (BlockState)belowState.setValue((Property)LayeredCauldronBlock.LEVEL, (Comparable)Integer.valueOf(existingFillLevel + 1)), 3);
+                    pLevel.setBlock(belowPos, (BlockState)belowState.setValue(LayeredCauldronBlock.LEVEL, Integer.valueOf(existingFillLevel + 1)), 3);
                 }
                 return;
             }

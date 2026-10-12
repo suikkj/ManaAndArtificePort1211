@@ -66,7 +66,7 @@ IWizardLabConnect {
 
     public WizardLabBlock(BlockBehaviour.Properties blockProperties, BlockPos ... offsets) {
         super(blockProperties, false, offsets);
-        this.registerDefaultState((BlockState)((BlockState)this.defaultBlockState().setValue((Property)LEFT, (Comparable)Boolean.valueOf(false))).setValue((Property)RIGHT, (Comparable)Boolean.valueOf(false)));
+        this.registerDefaultState((BlockState)((BlockState)this.defaultBlockState().setValue(LEFT, Boolean.valueOf(false))).setValue(RIGHT, Boolean.valueOf(false)));
     }
 
     @Nullable
@@ -149,8 +149,8 @@ IWizardLabConnect {
         BlockState leftNeighborState = blockgetter.getBlockState(blockpos.offset(leftDir.getStepX(), leftDir.getStepY(), leftDir.getStepZ()));
         BlockState rightNeighborState = blockgetter.getBlockState(blockpos.offset(rightDir.getStepX(), rightDir.getStepY(), rightDir.getStepZ()));
         BlockState baseState = super.getStateForPlacement(context);
-        BlockState disconnectedState = (BlockState)baseState.setValue((Property)HorizontalDirectionalBlock.FACING, (Comparable)blockFacingDirection);
-        return (BlockState)((BlockState)((BlockState)baseState.setValue((Property)HorizontalDirectionalBlock.FACING, (Comparable)blockFacingDirection)).setValue((Property)LEFT, (Comparable)Boolean.valueOf(this.canConnectToDirection(disconnectedState, leftNeighborState, leftDir)))).setValue((Property)RIGHT, (Comparable)Boolean.valueOf(this.canConnectToDirection(disconnectedState, rightNeighborState, rightDir)));
+        BlockState disconnectedState = (BlockState)baseState.setValue(HorizontalDirectionalBlock.FACING, blockFacingDirection);
+        return (BlockState)((BlockState)((BlockState)baseState.setValue(HorizontalDirectionalBlock.FACING, blockFacingDirection)).setValue(LEFT, Boolean.valueOf(this.canConnectToDirection(disconnectedState, leftNeighborState, leftDir)))).setValue(RIGHT, Boolean.valueOf(this.canConnectToDirection(disconnectedState, rightNeighborState, rightDir)));
     }
 
     @Override
@@ -159,7 +159,7 @@ IWizardLabConnect {
         if (((Boolean)myState.getValue((Property)BlockStateProperties.WATERLOGGED)).booleanValue()) {
             accessor.scheduleTick(myPos, (Fluid)Fluids.WATER, Fluids.WATER.getTickDelay((LevelReader)accessor));
         }
-        return (prop = this.directionToLeftRightProperty(myState, direction)) != null ? (BlockState)myState.setValue((Property)prop, (Comparable)Boolean.valueOf(this.canConnectToDirection(myState, otherState, direction))) : myState;
+        return (prop = this.directionToLeftRightProperty(myState, direction)) != null ? (BlockState)myState.setValue(prop, Boolean.valueOf(this.canConnectToDirection(myState, otherState, direction))) : myState;
     }
 
     @Nullable

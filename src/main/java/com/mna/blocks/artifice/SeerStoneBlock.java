@@ -46,7 +46,7 @@ implements EntityBlock {
 
     public SeerStoneBlock() {
         super(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).strength(3.0f).noOcclusion().isSuffocating(BlockInit.NEVER), false);
-        this.registerDefaultState((BlockState)((BlockState)this.stateDefinition.any()).setValue((Property)HAS_TARGET, (Comparable)Boolean.valueOf(false)));
+        this.registerDefaultState((BlockState)((BlockState)this.stateDefinition.any()).setValue(HAS_TARGET, Boolean.valueOf(false)));
     }
 
     public void setPlacedBy(Level worldIn, BlockPos pos, BlockState state, LivingEntity placer, ItemStack stack) {

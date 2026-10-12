@@ -123,7 +123,7 @@ EntityBlock {
     public void neighborChanged(BlockState pState, Level pLevel, BlockPos pPos, Block pNeighborBlock, BlockPos pNeighborPos, boolean pMovedByPiston) {
         BlockPos offsetPos = this.getOffsetPos((BlockGetter)pLevel, pPos);
         if (!pLevel.isEmptyBlock(offsetPos) && !offsetPos.equals(pPos)) {
-            pLevel.getBlockState(offsetPos).neighborChanged(pLevel, offsetPos, pNeighborBlock, pNeighborPos, pMovedByPiston);
+            pLevel.getBlockState(offsetPos).handleNeighborChanged(pLevel, offsetPos, pNeighborBlock, pNeighborPos, pMovedByPiston);
         }
         super.neighborChanged(pState, pLevel, pPos, pNeighborBlock, pNeighborPos, pMovedByPiston);
     }

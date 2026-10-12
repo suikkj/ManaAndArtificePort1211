@@ -98,7 +98,7 @@ extends ConstructBlockAreaTask<ConstructHarvest> {
         });
         inWorld.spawnAfterBreak((ServerLevel)world, pos, ItemStack.EMPTY, true);
         if (!world.isClientSide) {
-            BlockState newBlock = (BlockState)inWorld.setValue((Property)ageProp.get(), (Comparable)Integer.valueOf(0));
+            BlockState newBlock = (BlockState)inWorld.setValue(ageProp.get(), Integer.valueOf(0));
             world.levelEvent(2001, pos, Block.getId((BlockState)newBlock));
             world.setBlockAndUpdate(pos, newBlock);
         }

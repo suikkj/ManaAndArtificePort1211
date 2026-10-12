@@ -32,7 +32,7 @@ extends TieredItem {
 
     public boolean SetPlayerTarget(Player entity, ItemStack stack) {
         CompoundTag nbt = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
-        java.util.Optional<PlayerMagicProvider> magic = MNACap.get(entity, PlayerMagicProvider.MAGIC);
+        java.util.Optional<com.mna.api.capabilities.IPlayerMagic> magic = MNACap.get(entity, PlayerMagicProvider.MAGIC);
         if (magic.isPresent()) {
             nbt.putString(KEY_PLAYER_TARGET_UUID, entity.getUUID().toString());
             nbt.putInt(KEY_PLAYER_TARGET_SALT, ((IPlayerMagic)magic.get()).getTeleportSalt());

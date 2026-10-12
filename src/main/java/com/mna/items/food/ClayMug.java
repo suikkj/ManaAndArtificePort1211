@@ -82,7 +82,7 @@ extends TieredItem {
             BlockState state = world.getBlockState(blockpos);
             if (state.isFaceSturdy((BlockGetter)world, blockpos, Direction.UP) && world.isEmptyBlock(blockpos.above())) {
                 world.playSound(player, (double)blockpos.getX(), (double)blockpos.getY(), (double)blockpos.getZ(), SoundEvents.STONE_PLACE, SoundSource.BLOCKS, 1.0f, 1.0f);
-                world.setBlock(blockpos.above(), (BlockState)((BlockState)((Block)BlockInit.CLAY_MUG.get()).defaultBlockState().setValue((Property)ClayMugBlock.HAS_LIQUID, (Comparable)Boolean.valueOf(false))).setValue((Property)HorizontalDirectionalBlock.FACING, (Comparable)Direction.fromYRot((double)player.getYRot()).getOpposite()), 3);
+                world.setBlock(blockpos.above(), (BlockState)((BlockState)((Block)BlockInit.CLAY_MUG.get()).defaultBlockState().setValue(ClayMugBlock.HAS_LIQUID, Boolean.valueOf(false))).setValue(HorizontalDirectionalBlock.FACING, Direction.fromYRot((double)player.getYRot()).getOpposite()), 3);
                 itemstack.shrink(1);
                 return InteractionResultHolder.success(itemstack);
             }

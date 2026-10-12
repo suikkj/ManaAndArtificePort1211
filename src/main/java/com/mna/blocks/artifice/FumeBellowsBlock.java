@@ -120,13 +120,13 @@ implements EntityBlock {
         BlockState leftNeighborState = blockgetter.getBlockState(blockpos.offset(leftDir.getStepX(), leftDir.getStepY(), leftDir.getStepZ()));
         BlockState rightNeighborState = blockgetter.getBlockState(blockpos.offset(rightDir.getStepX(), rightDir.getStepY(), rightDir.getStepZ()));
         BlockState baseState = super.getStateForPlacement(context);
-        return (BlockState)((BlockState)baseState.setValue((Property)FUME_LEFT, (Comparable)Boolean.valueOf(leftNeighborState.getBlock() instanceof EldrinFumeBlock))).setValue((Property)FUME_RIGHT, (Comparable)Boolean.valueOf(rightNeighborState.getBlock() instanceof EldrinFumeBlock));
+        return (BlockState)((BlockState)baseState.setValue(FUME_LEFT, Boolean.valueOf(leftNeighborState.getBlock() instanceof EldrinFumeBlock))).setValue(FUME_RIGHT, Boolean.valueOf(rightNeighborState.getBlock() instanceof EldrinFumeBlock));
     }
 
     @Override
     public BlockState updateShape(BlockState myState, Direction direction, BlockState otherState, LevelAccessor accessor, BlockPos myPos, BlockPos otherPos) {
         BooleanProperty prop = this.directionToLeftRightProperty(myState = super.updateShape(myState, direction, otherState, accessor, myPos, otherPos), direction);
-        return prop != null ? (BlockState)myState.setValue((Property)prop, (Comparable)Boolean.valueOf(otherState.getBlock() instanceof EldrinFumeBlock)) : myState;
+        return prop != null ? (BlockState)myState.setValue(prop, Boolean.valueOf(otherState.getBlock() instanceof EldrinFumeBlock)) : myState;
     }
 
     @Nullable

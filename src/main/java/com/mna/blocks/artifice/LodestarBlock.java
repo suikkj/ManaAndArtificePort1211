@@ -69,7 +69,7 @@ implements EntityBlock {
         Direction face;
         int surfaceType;
         if (this.low_tier) {
-            return (BlockState)((BlockState)((BlockState)super.getStateForPlacement(context).setValue((Property)FACING, (Comparable)context.getHorizontalDirection().getOpposite())).setValue((Property)SURFACE_TYPE, (Comparable)Integer.valueOf(3))).setValue((Property)LOW_TIER, (Comparable)Boolean.valueOf(this.low_tier));
+            return (BlockState)((BlockState)((BlockState)super.getStateForPlacement(context).setValue(FACING, context.getHorizontalDirection().getOpposite())).setValue(SURFACE_TYPE, Integer.valueOf(3))).setValue(LOW_TIER, Boolean.valueOf(this.low_tier));
         }
         if (context.getClickedFace() == Direction.UP) {
             surfaceType = 1;
@@ -81,7 +81,7 @@ implements EntityBlock {
             surfaceType = 3;
             face = context.getClickedFace();
         }
-        return (BlockState)((BlockState)((BlockState)super.getStateForPlacement(context).setValue((Property)FACING, (Comparable)face)).setValue((Property)SURFACE_TYPE, (Comparable)Integer.valueOf(surfaceType))).setValue((Property)LOW_TIER, (Comparable)Boolean.valueOf(this.low_tier));
+        return (BlockState)((BlockState)((BlockState)super.getStateForPlacement(context).setValue(FACING, face)).setValue(SURFACE_TYPE, Integer.valueOf(surfaceType))).setValue(LOW_TIER, Boolean.valueOf(this.low_tier));
     }
 
     public InteractionResult use(BlockState state, Level worldIn, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit) {

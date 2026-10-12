@@ -114,7 +114,7 @@ extends ChanneledSpellEntity {
     }
 
     protected List<Entity> targetEntities(float radius_h, float radius_v) {
-        List possibleTargets = this.level().getEntitiesOfClass(Entity.class, new AABB(this.getX() - (double)radius_h, this.getY(), this.getZ() - (double)radius_h, this.getX() + (double)radius_h, this.getY() + (double)radius_v, this.getZ() + (double)radius_h));
+        List<Entity> possibleTargets = this.level().getEntitiesOfClass(Entity.class, new AABB(this.getX() - (double)radius_h, this.getY(), this.getZ() - (double)radius_h, this.getX() + (double)radius_h, this.getY() + (double)radius_v, this.getZ() + (double)radius_h));
         ArrayList<Entity> targets = new ArrayList<Entity>();
         double dirX = Math.cos(Math.PI / 180 * (double)this.getXRot());
         double dirZ = Math.sin(Math.PI / 180 * (double)this.getYRot());

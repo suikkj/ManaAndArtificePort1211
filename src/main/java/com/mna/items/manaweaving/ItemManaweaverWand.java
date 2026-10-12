@@ -146,7 +146,7 @@ IRadialMenuItem {
                         this.PlayLoopingSound(SFX.Loops.MANAWEAVING, playerIn);
                     }
                     ManaweavingPattern pattern = ItemManaweaverWand.getStoredPattern(worldIn, itemstack);
-                    java.util.Optional<PlayerProgressionProvider> progression = MNACap.get(playerIn, PlayerProgressionProvider.PROGRESSION);
+                    java.util.Optional<com.mna.api.capabilities.IPlayerProgression> progression = MNACap.get(playerIn, PlayerProgressionProvider.PROGRESSION);
                     if (pattern != null && progression.isPresent() && ((IPlayerProgression)progression.get()).getTier() < pattern.getTier()) {
                         ItemManaweaverWand.setStoredPattern(itemstack, null);
                     }
@@ -248,8 +248,8 @@ IRadialMenuItem {
     }
 
     public void onUseTick(Level pLevel, LivingEntity player, ItemStack stack, int count) {
-        java.util.Optional<PlayerMagicProvider> magicContainer = MNACap.get(player, PlayerMagicProvider.MAGIC);
-        java.util.Optional<PlayerProgressionProvider> progContainer = MNACap.get(player, PlayerProgressionProvider.PROGRESSION);
+        java.util.Optional<com.mna.api.capabilities.IPlayerMagic> magicContainer = MNACap.get(player, PlayerMagicProvider.MAGIC);
+        java.util.Optional<com.mna.api.capabilities.IPlayerProgression> progContainer = MNACap.get(player, PlayerProgressionProvider.PROGRESSION);
         if (magicContainer.isPresent()) {
             IPlayerMagic magic = (IPlayerMagic)magicContainer.get();
             if (!magic.isMagicUnlocked()) {

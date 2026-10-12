@@ -452,7 +452,7 @@ GeoBlockEntity {
             modelStateFlag |= 4;
         }
         if (this.level != null) {
-            this.level.setBlockAndUpdate(this.getBlockPos(), (BlockState)this.getBlockState().setValue((Property)InscriptionTableBlock.CONTAINED_RESOURCES, (Comparable)Integer.valueOf(modelStateFlag)));
+            this.level.setBlockAndUpdate(this.getBlockPos(), (BlockState)this.getBlockState().setValue(InscriptionTableBlock.CONTAINED_RESOURCES, Integer.valueOf(modelStateFlag)));
         }
     }
 

@@ -83,7 +83,7 @@ implements EntityBlock {
 
     public BookStandBlock() {
         super(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).instrument(NoteBlockInstrument.BASS).noOcclusion().strength(3.0f).isSuffocating(BlockInit.NEVER), new BlockPos(0, 1, 0));
-        this.registerDefaultState((BlockState)((BlockState)((BlockState)((BlockState)this.defaultBlockState().setValue((Property)LEFT, (Comparable)Boolean.valueOf(false))).setValue((Property)RIGHT, (Comparable)Boolean.valueOf(false))).setValue((Property)BlockStateProperties.WATERLOGGED, (Comparable)Boolean.valueOf(false))).setValue((Property)BOOK, (Comparable)Boolean.valueOf(false)));
+        this.registerDefaultState((BlockState)((BlockState)((BlockState)((BlockState)this.defaultBlockState().setValue(LEFT, Boolean.valueOf(false))).setValue(RIGHT, Boolean.valueOf(false))).setValue(BlockStateProperties.WATERLOGGED, Boolean.valueOf(false))).setValue(BOOK, Boolean.valueOf(false)));
     }
 
     @Override
@@ -104,7 +104,7 @@ implements EntityBlock {
                         if (!player.addItem(bookStack)) {
                             player.spawnAtLocation(bookStack);
                         }
-                        level.setBlock(pos, (BlockState)state.setValue((Property)BOOK, (Comparable)Boolean.valueOf(false)), 3);
+                        level.setBlock(pos, (BlockState)state.setValue(BOOK, Boolean.valueOf(false)), 3);
                     } else if (!ManaAndArtificeMod.checkMagicUnlock((ServerLevel)level, player)) {
                         ((ServerPlayer)((ServerPlayer)player)).openMenu((MenuProvider)new NamedGuideBook());
                     }
@@ -113,7 +113,7 @@ implements EntityBlock {
                     insertStack.setCount(1);
                     book_stand.setItem(0, insertStack);
                     handItem.shrink(1);
-                    level.setBlock(pos, (BlockState)state.setValue((Property)BOOK, (Comparable)Boolean.valueOf(true)), 3);
+                    level.setBlock(pos, (BlockState)state.setValue(BOOK, Boolean.valueOf(true)), 3);
                 }
             }
         }

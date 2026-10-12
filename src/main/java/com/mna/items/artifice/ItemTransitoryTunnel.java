@@ -68,7 +68,7 @@ extends TieredItem {
         for (BlockPos operator : processedPositions) {
             int mask = TransitoryTunnelBlock.getStateBasedOnSurroundings(world, operator);
             BlockState existing = ((TransitoryTunnelBlock)BlockInit.TRANSITORY_TUNNEL.get()).defaultBlockState();
-            BlockState newstate = (BlockState)((TransitoryTunnelBlock)BlockInit.TRANSITORY_TUNNEL.get()).defaultBlockState().setValue((Property)TransitoryTunnelBlock.FACE_VISIBILITY_MASK, (Comparable)Integer.valueOf(mask));
+            BlockState newstate = (BlockState)((TransitoryTunnelBlock)BlockInit.TRANSITORY_TUNNEL.get()).defaultBlockState().setValue(TransitoryTunnelBlock.FACE_VISIBILITY_MASK, Integer.valueOf(mask));
             world.setBlock(operator, newstate, 1);
             world.sendBlockUpdated(operator, existing, newstate, 3);
         }

@@ -304,7 +304,7 @@ extends Entity {
                 if (runeState.getBlock() != BlockInit.CHALK_RUNE.get() || (tecr = (ChalkRuneTile)this.level().getBlockEntity(((RitualBlockPos)positions.get(i)).getBlockPos())) == null) continue;
                 if (((Boolean)runeState.getValue((Property)ChalkRuneBlock.METAL)).booleanValue()) {
                     tecr.setReadOnly(false);
-                    this.level().setBlockAndUpdate(((RitualBlockPos)positions.get(i)).getBlockPos(), (BlockState)runeState.setValue((Property)ChalkRuneBlock.ACTIVATED, (Comparable)Boolean.valueOf(false)));
+                    this.level().setBlockAndUpdate(((RitualBlockPos)positions.get(i)).getBlockPos(), (BlockState)runeState.setValue(ChalkRuneBlock.ACTIVATED, Boolean.valueOf(false)));
                     continue;
                 }
                 if (!tecr.isGhostItem()) {
@@ -456,7 +456,7 @@ extends Entity {
                 if (te == null || !(te instanceof ChalkRuneTile)) continue;
                 if (this.level().getBlockState(pos.getBlockPos()).getBlock() == BlockInit.CHALK_RUNE.get()) {
                     ((ChalkRuneTile)te).setReadOnly(false);
-                    this.level().setBlockAndUpdate(pos.getBlockPos(), (BlockState)this.level().getBlockState(pos.getBlockPos()).setValue((Property)ChalkRuneBlock.ACTIVATED, (Comparable)Boolean.valueOf(false)));
+                    this.level().setBlockAndUpdate(pos.getBlockPos(), (BlockState)this.level().getBlockState(pos.getBlockPos()).setValue(ChalkRuneBlock.ACTIVATED, Boolean.valueOf(false)));
                     continue;
                 }
                 this.level().setBlockAndUpdate(pos.getBlockPos(), Blocks.AIR.defaultBlockState());

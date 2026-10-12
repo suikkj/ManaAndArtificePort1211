@@ -557,7 +557,7 @@ MenuProvider {
         if (!this.getItem(2).isEmpty()) {
             return false;
         }
-        java.util.Optional<PlayerProgressionProvider> lazyProgression = MNACap.get(crafter, PlayerProgressionProvider.PROGRESSION);
+        java.util.Optional<com.mna.api.capabilities.IPlayerProgression> lazyProgression = MNACap.get(crafter, PlayerProgressionProvider.PROGRESSION);
         if (!lazyProgression.isPresent()) {
             return false;
         }

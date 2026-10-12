@@ -385,7 +385,7 @@ implements IRadialInventorySelect {
         }
         BlockPos adjClickPos = clickPos;
         this.getCommandingEntities(context.getLevel(), context.getPlayer(), stack).forEach(commandedEntity -> {
-            List entities = context.getLevel().getEntitiesOfClass(ItemEntity.class, new AABB(adjClickPos.above()));
+            List<ItemEntity> entities = context.getLevel().getEntitiesOfClass(ItemEntity.class, new AABB(adjClickPos.above()));
             if (entities.size() > 0) {
                 this.issueWearCommand(stack, context.getPlayer(), (ItemEntity)entities.get(0), context.getHand());
             }

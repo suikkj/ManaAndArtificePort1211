@@ -247,8 +247,8 @@ implements GeoBlockEntity {
         ItemStack output = this.construct.setPart(stack);
         if (!this.getLevel().isClientSide()) {
             this.setChanged();
-            this.getLevel().sendBlockUpdated(this.getBlockPos(), this.getBlockState(), (BlockState)this.getBlockState().setValue((Property)ConstructWorkbenchBlock.HAS_PART, (Comparable)Boolean.valueOf(!this.construct.isEmpty())), 3);
-            this.getLevel().setBlock(this.getBlockPos(), (BlockState)this.getBlockState().setValue((Property)ConstructWorkbenchBlock.HAS_PART, (Comparable)Boolean.valueOf(!this.construct.isEmpty())), 3);
+            this.getLevel().sendBlockUpdated(this.getBlockPos(), this.getBlockState(), (BlockState)this.getBlockState().setValue(ConstructWorkbenchBlock.HAS_PART, Boolean.valueOf(!this.construct.isEmpty())), 3);
+            this.getLevel().setBlock(this.getBlockPos(), (BlockState)this.getBlockState().setValue(ConstructWorkbenchBlock.HAS_PART, Boolean.valueOf(!this.construct.isEmpty())), 3);
         }
         return output;
     }
@@ -266,8 +266,8 @@ implements GeoBlockEntity {
         }
         if (!this.getLevel().isClientSide()) {
             this.setChanged();
-            this.getLevel().sendBlockUpdated(this.getBlockPos(), this.getBlockState(), (BlockState)this.getBlockState().setValue((Property)ConstructWorkbenchBlock.HAS_PART, (Comparable)Boolean.valueOf(!this.construct.isEmpty())), 3);
-            this.getLevel().setBlock(this.getBlockPos(), (BlockState)this.getBlockState().setValue((Property)ConstructWorkbenchBlock.HAS_PART, (Comparable)Boolean.valueOf(!this.construct.isEmpty())), 3);
+            this.getLevel().sendBlockUpdated(this.getBlockPos(), this.getBlockState(), (BlockState)this.getBlockState().setValue(ConstructWorkbenchBlock.HAS_PART, Boolean.valueOf(!this.construct.isEmpty())), 3);
+            this.getLevel().setBlock(this.getBlockPos(), (BlockState)this.getBlockState().setValue(ConstructWorkbenchBlock.HAS_PART, Boolean.valueOf(!this.construct.isEmpty())), 3);
         }
         return output;
     }
@@ -276,8 +276,8 @@ implements GeoBlockEntity {
         if (!this.getLevel().isClientSide()) {
             this.construct = data.copy();
             this.constructName = name;
-            this.getLevel().sendBlockUpdated(this.getBlockPos(), this.getBlockState(), (BlockState)this.getBlockState().setValue((Property)ConstructWorkbenchBlock.HAS_PART, (Comparable)Boolean.valueOf(!this.construct.isEmpty())), 3);
-            this.getLevel().setBlock(this.getBlockPos(), (BlockState)this.getBlockState().setValue((Property)ConstructWorkbenchBlock.HAS_PART, (Comparable)Boolean.valueOf(!this.construct.isEmpty())), 3);
+            this.getLevel().sendBlockUpdated(this.getBlockPos(), this.getBlockState(), (BlockState)this.getBlockState().setValue(ConstructWorkbenchBlock.HAS_PART, Boolean.valueOf(!this.construct.isEmpty())), 3);
+            this.getLevel().setBlock(this.getBlockPos(), (BlockState)this.getBlockState().setValue(ConstructWorkbenchBlock.HAS_PART, Boolean.valueOf(!this.construct.isEmpty())), 3);
         }
     }
 

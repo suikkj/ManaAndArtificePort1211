@@ -65,7 +65,7 @@ implements EntityBlock,
 ITranslucentBlock {
     public SpectralFenceBlock(BlockBehaviour.Properties blockProps) {
         super(blockProps);
-        this.registerDefaultState((BlockState)((BlockState)this.defaultBlockState().setValue((Property)SpectralCraftingTableBlock.PERMANENT, (Comparable)Boolean.valueOf(false))).setValue((Property)BlockStateProperties.WATERLOGGED, (Comparable)Boolean.valueOf(false)));
+        this.registerDefaultState((BlockState)((BlockState)this.defaultBlockState().setValue(SpectralCraftingTableBlock.PERMANENT, Boolean.valueOf(false))).setValue(BlockStateProperties.WATERLOGGED, Boolean.valueOf(false)));
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {

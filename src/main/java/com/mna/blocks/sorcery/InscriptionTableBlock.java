@@ -97,7 +97,7 @@ ICutoutBlock {
 
     public InscriptionTableBlock() {
         super(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).instrument(NoteBlockInstrument.BASS).strength(2.0f).randomTicks().noOcclusion().isSuffocating(BlockInit.NEVER), new BlockPos(0, 1, 0));
-        this.registerDefaultState((BlockState)((BlockState)this.defaultBlockState().setValue((Property)HorizontalDirectionalBlock.FACING, (Comparable)Direction.NORTH)).setValue((Property)CONTAINED_RESOURCES, (Comparable)Integer.valueOf(0)));
+        this.registerDefaultState((BlockState)((BlockState)this.defaultBlockState().setValue(HorizontalDirectionalBlock.FACING, Direction.NORTH)).setValue(CONTAINED_RESOURCES, Integer.valueOf(0)));
     }
 
     @Override

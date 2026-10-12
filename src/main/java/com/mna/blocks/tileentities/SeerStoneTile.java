@@ -127,7 +127,7 @@ Consumer<FriendlyByteBuf> {
         if (this.findTargetCounter >= 100 || force) {
             this.findTargetCounter = 0;
             Vec3 myPos = new Vec3((double)this.getBlockPos().getX(), (double)this.getBlockPos().getY(), (double)this.getBlockPos().getZ());
-            List potentialTargets = this.getLevel().getEntitiesOfClass(LivingEntity.class, this.searchArea, e -> {
+            List<LivingEntity> potentialTargets = this.getLevel().getEntitiesOfClass(LivingEntity.class, this.searchArea, e -> {
                 LivingEntity summoner;
                 if (SummonUtils.isSummon((Entity)e) && (summoner = SummonUtils.getSummoner(e)) != null && this.ownerInfo.isFriendlyTo(summoner)) {
                     return false;
@@ -150,7 +150,7 @@ Consumer<FriendlyByteBuf> {
                     if (be == null || !(be instanceof ElementalSentryTile)) continue;
                     ((ElementalSentryTile)be).forceTarget(this.target);
                 }
-                this.getLevel().setBlockAndUpdate(this.getBlockPos(), (BlockState)this.getBlockState().setValue((Property)SeerStoneBlock.HAS_TARGET, (Comparable)Boolean.valueOf(true)));
+                this.getLevel().setBlockAndUpdate(this.getBlockPos(), (BlockState)this.getBlockState().setValue(SeerStoneBlock.HAS_TARGET, Boolean.valueOf(true)));
                 this.getLevel().updateNeighborsAtExceptFromFacing(this.getBlockPos(), this.getBlockState().getBlock(), Direction.UP);
                 this.getLevel().updateNeighborsAtExceptFromFacing(this.getBlockPos().below(), this.getBlockState().getBlock(), Direction.UP);
             }
@@ -238,7 +238,7 @@ Consumer<FriendlyByteBuf> {
 
     private void clearTarget() {
         this.target = null;
-        this.getLevel().setBlockAndUpdate(this.getBlockPos(), (BlockState)this.getBlockState().setValue((Property)SeerStoneBlock.HAS_TARGET, (Comparable)Boolean.valueOf(false)));
+        this.getLevel().setBlockAndUpdate(this.getBlockPos(), (BlockState)this.getBlockState().setValue(SeerStoneBlock.HAS_TARGET, Boolean.valueOf(false)));
         this.getLevel().updateNeighborsAtExceptFromFacing(this.getBlockPos(), this.getBlockState().getBlock(), Direction.UP);
         this.getLevel().updateNeighborsAtExceptFromFacing(this.getBlockPos().below(), this.getBlockState().getBlock(), Direction.UP);
     }

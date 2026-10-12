@@ -34,7 +34,7 @@ extends WaterloggableBlock {
 
     protected FacingBlock(BlockBehaviour.Properties builder) {
         super(builder, false);
-        this.registerDefaultState((BlockState)((BlockState)this.stateDefinition.any()).setValue((Property)FACING, (Comparable)Direction.NORTH));
+        this.registerDefaultState((BlockState)((BlockState)this.stateDefinition.any()).setValue(FACING, Direction.NORTH));
     }
 
     @Override
@@ -57,7 +57,7 @@ extends WaterloggableBlock {
             surfaceType = 3;
             face = context.getClickedFace();
         }
-        return (BlockState)((BlockState)super.getStateForPlacement(context).setValue((Property)FACING, (Comparable)face)).setValue((Property)SURFACE_TYPE, (Comparable)Integer.valueOf(surfaceType));
+        return (BlockState)((BlockState)super.getStateForPlacement(context).setValue(FACING, face)).setValue(SURFACE_TYPE, Integer.valueOf(surfaceType));
     }
 }
 

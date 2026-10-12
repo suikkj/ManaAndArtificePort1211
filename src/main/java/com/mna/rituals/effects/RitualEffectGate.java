@@ -55,7 +55,7 @@ extends RitualEffect {
                 context.getCaster().sendSystemMessage((Component)Component.translatable((String)"mna:rituals/return.world_not_found"));
                 return false;
             }
-            java.util.Optional<WorldMagicProvider> worldMagicContainer = MNACap.get(targetWorld, WorldMagicProvider.MAGIC);
+            java.util.Optional<com.mna.api.capabilities.IWorldMagic> worldMagicContainer = MNACap.get(targetWorld, WorldMagicProvider.MAGIC);
             if (worldMagicContainer.isPresent()) {
                 IWorldMagic worldMagic = (IWorldMagic)worldMagicContainer.get();
                 ItemStack reagentEight = reagents.get(8);

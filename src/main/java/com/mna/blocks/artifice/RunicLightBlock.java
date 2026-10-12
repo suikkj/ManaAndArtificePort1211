@@ -62,7 +62,7 @@ implements EntityBlock {
 
     public RunicLightBlock(BlockBehaviour.Properties properties) {
         super(properties, false, new BlockPos(0, 1, 0));
-        this.registerDefaultState((BlockState)((BlockState)this.defaultBlockState().setValue((Property)HorizontalDirectionalBlock.FACING, (Comparable)Direction.NORTH)).setValue((Property)BlockStateProperties.LIT, (Comparable)Boolean.valueOf(true)));
+        this.registerDefaultState((BlockState)((BlockState)this.defaultBlockState().setValue(HorizontalDirectionalBlock.FACING, Direction.NORTH)).setValue(BlockStateProperties.LIT, Boolean.valueOf(true)));
     }
 
     @Override
@@ -75,7 +75,7 @@ implements EntityBlock {
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
         Direction direction = context.getHorizontalDirection().getOpposite();
-        return (BlockState)((BlockState)super.getStateForPlacement(context).setValue((Property)HorizontalDirectionalBlock.FACING, (Comparable)direction)).setValue((Property)BlockStateProperties.LIT, (Comparable)Boolean.valueOf(context.getLevel().hasNeighborSignal(context.getClickedPos())));
+        return (BlockState)((BlockState)super.getStateForPlacement(context).setValue(HorizontalDirectionalBlock.FACING, direction)).setValue(BlockStateProperties.LIT, Boolean.valueOf(context.getLevel().hasNeighborSignal(context.getClickedPos())));
     }
 
     public void animateTick(BlockState stateIn, Level worldIn, BlockPos pos, RandomSource rand) {

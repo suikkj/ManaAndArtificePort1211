@@ -91,7 +91,7 @@ implements IOffsetPlace {
             FluidState flState;
             BlockPos offsetPos = pos.offset((Vec3i)offset);
             if (context.getLevel().isEmptyBlock(offsetPos) || (flState = context.getLevel().getFluidState(offsetPos)) == null || flState.isEmpty() || flState.getType() != Fluids.WATER && flState.getType() != Fluids.FLOWING_WATER) continue;
-            return (BlockState)this.defaultBlockState().setValue((Property)BlockStateProperties.WATERLOGGED, (Comparable)Boolean.valueOf(true));
+            return (BlockState)this.defaultBlockState().setValue(BlockStateProperties.WATERLOGGED, Boolean.valueOf(true));
         }
         return this.defaultBlockState();
     }

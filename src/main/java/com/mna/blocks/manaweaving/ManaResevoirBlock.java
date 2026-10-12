@@ -59,7 +59,7 @@ EntityBlock {
 
     public ManaResevoirBlock() {
         super(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).strength(3.0f).noOcclusion().isSuffocating(BlockInit.NEVER), false);
-        this.registerDefaultState((BlockState)this.defaultBlockState().setValue((Property)FILL_LEVEL, (Comparable)Integer.valueOf(0)));
+        this.registerDefaultState((BlockState)this.defaultBlockState().setValue(FILL_LEVEL, Integer.valueOf(0)));
     }
 
     public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {

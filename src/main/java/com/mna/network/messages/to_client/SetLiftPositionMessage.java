@@ -58,7 +58,7 @@ extends BaseClientMessage implements CustomPacketPayload {
     @Override
     public void Handle(Level world, Player player) {
         Player clientPlayer = ManaAndArtifice.instance.proxy.getClientPlayer();
-        java.util.Optional<PlayerMagicProvider> magicCap = MNACap.get(clientPlayer, PlayerMagicProvider.MAGIC);
+        java.util.Optional<com.mna.api.capabilities.IPlayerMagic> magicCap = MNACap.get(clientPlayer, PlayerMagicProvider.MAGIC);
         if (!magicCap.isPresent()) {
             return;
         }

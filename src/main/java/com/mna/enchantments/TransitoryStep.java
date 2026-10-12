@@ -48,7 +48,7 @@ extends MAEnchantmentBase {
             MNACap.get(source, PlayerMagicProvider.MAGIC).ifPresent(m -> {
                 if (m.getCastingResource().hasEnoughAbsolute((LivingEntity)source, 10.0f)) {
                     m.getCastingResource().consume((LivingEntity)source, 10.0f);
-                    source.level().setBlockAndUpdate(target, (BlockState)((TransitoryTileBlock)BlockInit.TRANSITORY_TILE.get()).defaultBlockState().setValue((Property)TransitoryTileBlock.DURATION, (Comparable)Integer.valueOf(1)));
+                    source.level().setBlockAndUpdate(target, (BlockState)((TransitoryTileBlock)BlockInit.TRANSITORY_TILE.get()).defaultBlockState().setValue(TransitoryTileBlock.DURATION, Integer.valueOf(1)));
                     source.level().scheduleTick(target, (Block)BlockInit.TRANSITORY_TILE.get(), 20);
                     success.setTrue();
                 }

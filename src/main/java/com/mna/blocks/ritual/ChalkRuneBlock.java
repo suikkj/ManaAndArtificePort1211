@@ -110,7 +110,7 @@ EntityBlock {
 
     public ChalkRuneBlock() {
         super(BlockBehaviour.Properties.of().mapColor(MapColor.WOOL).strength(0.1f).noCollission().noOcclusion().sound(SoundType.WOOL).isSuffocating(BlockInit.NEVER), false);
-        this.registerDefaultState((BlockState)((BlockState)((BlockState)this.defaultBlockState().setValue((Property)ACTIVATED, (Comparable)Boolean.valueOf(false))).setValue((Property)METAL, (Comparable)Boolean.valueOf(false))).setValue((Property)RUNEINDEX, (Comparable)Integer.valueOf((int)Math.random() * 15)));
+        this.registerDefaultState((BlockState)((BlockState)((BlockState)this.defaultBlockState().setValue(ACTIVATED, Boolean.valueOf(false))).setValue(METAL, Boolean.valueOf(false))).setValue(RUNEINDEX, Integer.valueOf((int)Math.random() * 15)));
     }
 
     public RenderShape getRenderShape(BlockState blockState) {
@@ -208,7 +208,7 @@ EntityBlock {
     @Nullable
     private IRitualReagent getReagentFromNearbyRitual(Level world, BlockPos pos) {
         AABB bb = new AABB(pos).inflate(5.0);
-        List rituals = world.getEntitiesOfClass(Ritual.class, bb);
+        List<Ritual> rituals = world.getEntitiesOfClass(Ritual.class, bb);
         if (rituals == null || rituals.size() != 1) {
             return null;
         }
@@ -266,7 +266,7 @@ EntityBlock {
         if (world.isClientSide) {
             return;
         }
-        List rituals = world.getEntities((EntityTypeTest)EntityInit.RITUAL_ENTITY.get(), new AABB(pos).inflate(16.0), e -> true);
+        List<Ritual> rituals = world.getEntities((net.minecraft.world.level.entity.EntityTypeTest<Ritual, ?>)EntityInit.RITUAL_ENTITY.get(), new AABB(pos).inflate(16.0), e -> true);
         for (Ritual ritual : rituals) {
             ritual.checkForExplosion(false);
         }

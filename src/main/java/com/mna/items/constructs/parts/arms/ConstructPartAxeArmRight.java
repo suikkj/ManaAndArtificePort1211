@@ -112,7 +112,7 @@ extends ItemConstructPart {
     @Nullable
     public static BlockState getAxeStrippingState(BlockState originalState) {
         Block block = STRIPPABLES.get(originalState.getBlock());
-        return block != null ? (BlockState)block.defaultBlockState().setValue((Property)RotatedPillarBlock.AXIS, (Comparable)((Direction.Axis)originalState.getValue((Property)RotatedPillarBlock.AXIS))) : null;
+        return block != null ? (BlockState)block.defaultBlockState().setValue(RotatedPillarBlock.AXIS, ((Direction.Axis)originalState.getValue(RotatedPillarBlock.AXIS))) : null;
     }
 
     public boolean canPerformAction(ItemStack stack, ItemAbilities toolAction) {

@@ -42,7 +42,7 @@ implements IDontCreateBlockItem {
         if (worldIn.isClientSide) {
             return InteractionResult.SUCCESS;
         }
-        java.util.Optional<WorldMagicProvider> worldMagicContainer = MNACap.get(worldIn, WorldMagicProvider.MAGIC);
+        java.util.Optional<com.mna.api.capabilities.IWorldMagic> worldMagicContainer = MNACap.get(worldIn, WorldMagicProvider.MAGIC);
         if (worldMagicContainer.isPresent()) {
             IWorldMagic worldMagic = (IWorldMagic)worldMagicContainer.get();
             List<ResourceLocation> reagents = worldMagic.getRitualTeleportBlockReagents(pos);

@@ -59,7 +59,7 @@ implements IDontCreateBlockItem {
 
     public PulseBlock() {
         super(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(0.0f).noCollission().noLootTable());
-        this.registerDefaultState((BlockState)this.defaultBlockState().setValue((Property)OUTPUT_POWER, (Comparable)Integer.valueOf(1)));
+        this.registerDefaultState((BlockState)this.defaultBlockState().setValue(OUTPUT_POWER, Integer.valueOf(1)));
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {

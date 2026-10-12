@@ -18,7 +18,7 @@ import net.minecraft.resources.ResourceLocationException;
 import net.neoforged.neoforge.attachment.IAttachmentHolder;
 import net.neoforged.neoforge.attachment.IAttachmentSerializer;
 
-public class PlayerProgressionSerializer implements IAttachmentSerializer<Tag, PlayerProgression> {
+public class PlayerProgressionSerializer implements IAttachmentSerializer<Tag, com.mna.api.capabilities.IPlayerProgression> {
     @Override
     public PlayerProgression read(IAttachmentHolder holder, Tag nbt, HolderLookup.Provider provider) {
         PlayerProgression instance = new PlayerProgression();
@@ -74,7 +74,7 @@ public class PlayerProgressionSerializer implements IAttachmentSerializer<Tag, P
     }
 
     @Override
-    public Tag write(PlayerProgression instance, HolderLookup.Provider provider) {
+    public Tag write(com.mna.api.capabilities.IPlayerProgression instance, HolderLookup.Provider provider) {
         CompoundTag nbt = new CompoundTag();
         nbt.putInt("tier", instance.getTier());
         nbt.putInt("ally_cooldown", instance.getAllyCooldown());

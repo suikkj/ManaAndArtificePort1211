@@ -12,7 +12,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.attachment.IAttachmentHolder;
 import net.neoforged.neoforge.attachment.IAttachmentSerializer;
 
-public class PlayerRoteSpellsSerializer implements IAttachmentSerializer<Tag, PlayerRoteSpells> {
+public class PlayerRoteSpellsSerializer implements IAttachmentSerializer<Tag, com.mna.api.capabilities.IPlayerRoteSpells> {
     @Override
     public PlayerRoteSpells read(IAttachmentHolder holder, Tag nbt, HolderLookup.Provider provider) {
         PlayerRoteSpells instance = new PlayerRoteSpells();
@@ -40,7 +40,7 @@ public class PlayerRoteSpellsSerializer implements IAttachmentSerializer<Tag, Pl
     }
 
     @Override
-    public Tag write(PlayerRoteSpells instance, HolderLookup.Provider provider) {
+    public Tag write(com.mna.api.capabilities.IPlayerRoteSpells instance, HolderLookup.Provider provider) {
         CompoundTag nbt = new CompoundTag();
         ListTag roteData = new ListTag();
         ListTag masteryData = new ListTag();
