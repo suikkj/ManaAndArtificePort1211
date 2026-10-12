@@ -809,7 +809,7 @@ IEldrinConsumerTile {
         for (CollectedItem ci : this.collectedItems) {
             ItemStack stack = ci.stack;
             this.lastCraftItems.add(stack.copy());
-            Optional<ItemStack> existing = this.lastCraftItemsMerged.stream().filter(is -> ItemStack.isSameItemSameTags((ItemStack)is, (ItemStack)stack)).findFirst();
+            Optional<ItemStack> existing = this.lastCraftItemsMerged.stream().filter(is -> ItemStack.isSameItemSameComponents((ItemStack)is, (ItemStack)stack)).findFirst();
             if (existing.isPresent()) {
                 existing.get().setCount(existing.get().getCount() + stack.getCount());
                 continue;

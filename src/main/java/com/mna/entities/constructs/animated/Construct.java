@@ -2577,7 +2577,7 @@ IItemHandlerModifiable {
         if (compound.contains("fluidType")) {
             String fluidType = compound.getString("fluidType");
             ResourceLocation fLoc = ResourceLocation.parse(fluidType);
-            this.setStoredFluid((Fluid)BuiltInRegistries.FLUID.getValue(fLoc));
+            this.setStoredFluid((Fluid)BuiltInRegistries.FLUID.get(fLoc));
         }
         if (compound.contains("fluidAmt")) {
             this.setStoredFluidAmount(compound.getInt("fluidAmt"));
@@ -2636,7 +2636,7 @@ IItemHandlerModifiable {
         String id = (String)this.entityData.get(FLUIDTYPE);
         if (id != null && !id.isEmpty()) {
             ResourceLocation rLoc = ResourceLocation.parse(id);
-            this.__cachedFluid = (Fluid)BuiltInRegistries.FLUID.getValue(rLoc);
+            this.__cachedFluid = (Fluid)BuiltInRegistries.FLUID.get(rLoc);
         } else {
             this.__cachedFluid = null;
         }

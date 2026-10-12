@@ -64,7 +64,7 @@ implements IFluidHandler {
             this.infiniteFluid = FluidStack.EMPTY;
             Block block = this.getBlockState().getBlock();
             if (block instanceof FluidJugBlock && BuiltInRegistries.FLUID.containsKey(flType = ((FluidJugBlock)block).getFluidType())) {
-                this.infiniteFluid = new FluidStack((Fluid)BuiltInRegistries.FLUID.getValue(flType), this.capacity);
+                this.infiniteFluid = new FluidStack((Fluid)BuiltInRegistries.FLUID.get(flType), this.capacity);
             }
         }
         return this.infiniteFluid;

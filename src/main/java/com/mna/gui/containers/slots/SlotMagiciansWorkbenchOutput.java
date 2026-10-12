@@ -97,7 +97,7 @@ extends Slot {
     private boolean searchAndDecrement(Player player, ItemStack itemstack1) {
         for (int n = ContainerMagiciansWorkbench.INVENTORY_STORAGE_START; n <= ContainerMagiciansWorkbench.INVENTORY_STORAGE_END; ++n) {
             ItemStack wbStack = this.workbench.getWorkbench().getItem(n);
-            if (wbStack == null || !ItemStack.isSameItemSameTags((ItemStack)itemstack1, (ItemStack)wbStack)) continue;
+            if (wbStack == null || !ItemStack.isSameItemSameComponents((ItemStack)itemstack1, (ItemStack)wbStack)) continue;
             this.doStandardDecrement(player, this.workbench.getWorkbench(), wbStack, n);
             return true;
         }

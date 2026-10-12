@@ -180,7 +180,7 @@ extends LargeContainer {
             while (!stack.isEmpty() && !(wrap ? i < startIndex : i >= endIndex)) {
                 Slot slot = (Slot)this.slots.get(i);
                 ItemStack itemstack = slot.getItem();
-                if (this.slotsActive.get(i).booleanValue() && !itemstack.isEmpty() && ItemStack.isSameItemSameTags((ItemStack)itemstack, (ItemStack)stack)) {
+                if (this.slotsActive.get(i).booleanValue() && !itemstack.isEmpty() && ItemStack.isSameItemSameComponents((ItemStack)itemstack, (ItemStack)stack)) {
                     int maxSize;
                     int j = itemstack.getCount() + stack.getCount();
                     if (j <= (maxSize = slot.getMaxStackSize())) {

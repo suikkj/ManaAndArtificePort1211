@@ -85,7 +85,7 @@ public class InventoryUtilities {
                 emptySlot = i;
                 continue;
             }
-            if (!ItemStack.isSameItemSameTags((ItemStack)inventoryStack, (ItemStack)insertStack) || inventoryStack.getCount() >= handler.getSlotLimit(i)) continue;
+            if (!ItemStack.isSameItemSameComponents((ItemStack)inventoryStack, (ItemStack)insertStack) || inventoryStack.getCount() >= handler.getSlotLimit(i)) continue;
             int spaceAvailable = handler.getSlotLimit(i) - inventoryStack.getCount();
             ItemStack split = insertStack.split(Math.min(quantity, spaceAvailable));
             ItemStack remainder = handler.insertItem(i, split, simulate);
@@ -127,7 +127,7 @@ public class InventoryUtilities {
             player.setItemSlot(EquipmentSlot.OFFHAND, toMerge);
             return ItemStack.EMPTY;
         }
-        if (ItemStack.isSameItemSameTags((ItemStack)toMerge, (ItemStack)summonerOffhand) && summonerOffhand.getCount() < summonerOffhand.getMaxStackSize()) {
+        if (ItemStack.isSameItemSameComponents((ItemStack)toMerge, (ItemStack)summonerOffhand) && summonerOffhand.getCount() < summonerOffhand.getMaxStackSize()) {
             int toAdd = Math.min(summonerOffhand.getMaxStackSize() - summonerOffhand.getCount(), toMerge.getCount());
             summonerOffhand.setCount(summonerOffhand.getCount() + toAdd);
             toMerge.setCount(toMerge.getCount() - toAdd);

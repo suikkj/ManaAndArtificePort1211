@@ -132,7 +132,7 @@ implements ILootrBridge {
                 CustomAdvancementTriggers.OPEN_CACHE.trigger((ServerPlayer)player, this.tier);
             }
             if (this.isBuff) {
-                MobEffect effect = (MobEffect)BuiltInRegistries.MOB_EFFECT.getValue(this.buff);
+                MobEffect effect = (MobEffect)BuiltInRegistries.MOB_EFFECT.get(this.buff);
                 if (effect != null) {
                     player.addEffect(new MobEffectInstance(effect, this.duration, this.amplifier, false, false, true));
                 } else {

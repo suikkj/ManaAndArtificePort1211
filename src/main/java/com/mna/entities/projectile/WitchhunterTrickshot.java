@@ -113,7 +113,7 @@ extends Entity {
     public MobEffect getEffect() {
         if (this.cachedEffect == null) {
             ResourceLocation effectID = ResourceLocation.parse((String)this.entityData.get(EFFECT_ID));
-            this.cachedEffect = (MobEffect)BuiltInRegistries.MOB_EFFECT.getValue(effectID);
+            this.cachedEffect = (MobEffect)BuiltInRegistries.MOB_EFFECT.get(effectID);
         }
         return this.cachedEffect;
     }

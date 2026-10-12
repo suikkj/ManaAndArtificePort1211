@@ -72,7 +72,7 @@ extends BaseClientMessage implements CustomPacketPayload {
 
     @Override
     public void Handle(Level world, Player player) {
-        ParticleType resolvedType = (ParticleType)BuiltInRegistries.PARTICLE_TYPE.getValue(this.type);
+        ParticleType resolvedType = (ParticleType)BuiltInRegistries.PARTICLE_TYPE.get(this.type);
         if (resolvedType == null || !(resolvedType instanceof MAParticleType)) {
             return;
         }

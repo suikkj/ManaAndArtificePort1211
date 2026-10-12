@@ -58,7 +58,7 @@ extends Item {
         CompoundTag nbt = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
         if (nbt.contains("entityType")) {
             String entityID = nbt.getString("entityType");
-            EntityType type = (EntityType)BuiltInRegistries.ENTITY_TYPE.getValue(ResourceLocation.parse(entityID));
+            EntityType type = (EntityType)BuiltInRegistries.ENTITY_TYPE.get(ResourceLocation.parse(entityID));
             if (type != null) {
                 Entity e = type.create(ManaAndArtifice.instance.proxy.getClientWorld());
                 tooltip.add((Component)Component.translatable((String)"item.mna.entrapment_crystal.trapped", (Object[])new Object[]{e.getDisplayName().getString()}));

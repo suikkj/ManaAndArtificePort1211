@@ -136,7 +136,7 @@ Consumer<FriendlyByteBuf> {
     }
 
     public Pair<AutoCraftResult, ItemStack> craftFromRemembered(ItemStack desiredItem) {
-        Optional<RememberedRecipe> remembered = this.rememberedRecipes.stream().filter(rr -> ItemStack.isSameItemSameTags((ItemStack)rr.output, (ItemStack)desiredItem)).findFirst();
+        Optional<RememberedRecipe> remembered = this.rememberedRecipes.stream().filter(rr -> ItemStack.isSameItemSameComponents((ItemStack)rr.output, (ItemStack)desiredItem)).findFirst();
         if (!remembered.isPresent()) {
             return new Pair(AutoCraftResult.NO_RECIPE, ItemStack.EMPTY);
         }

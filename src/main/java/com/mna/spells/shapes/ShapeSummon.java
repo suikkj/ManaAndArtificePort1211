@@ -130,7 +130,7 @@ extends ShapeRaytrace {
         summonName.append((Component)Component.translatable((String)type.getDescriptionId()));
         Mob summon = (Mob)type.create(world);
         summon.setPos(Vec3.atBottomCenterOf((Vec3i)superTarget.getBlock().above()));
-        if (!GeneralConfigValues.SummonBosses && !summon.canChangeDimensions()) {
+        if (!GeneralConfigValues.SummonBosses && !com.mna.api.tools.MATools.canChangeDimensions(summon)) {
             return false;
         }
         int magnitude = (int)modificationData.getValue(Attribute.MAGNITUDE);

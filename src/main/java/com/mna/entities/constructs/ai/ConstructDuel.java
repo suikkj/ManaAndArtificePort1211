@@ -103,7 +103,7 @@ extends ConstructEntityAreaTask<Construct, ConstructDuel> {
             return false;
         }
         ItemStack theirBanner = candidate.getConstructData().getBanner();
-        return !ItemStack.isSameItemSameTags((ItemStack)theirBanner, (ItemStack)myBanner);
+        return !ItemStack.isSameItemSameComponents((ItemStack)theirBanner, (ItemStack)myBanner);
     }
 
     @Override

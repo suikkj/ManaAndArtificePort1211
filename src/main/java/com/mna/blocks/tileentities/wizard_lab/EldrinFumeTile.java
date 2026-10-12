@@ -310,7 +310,7 @@ extends WizardLabTile {
         } else {
             return false;
         }
-        return (existing = this.getItem(index)).isEmpty() || existing.getCount() < existing.getMaxStackSize() && ItemStack.isSameItemSameTags((ItemStack)stack, (ItemStack)existing);
+        return (existing = this.getItem(index)).isEmpty() || existing.getCount() < existing.getMaxStackSize() && ItemStack.isSameItemSameComponents((ItemStack)stack, (ItemStack)existing);
     }
 
     @Override

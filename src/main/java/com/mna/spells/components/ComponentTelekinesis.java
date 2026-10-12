@@ -80,7 +80,7 @@ extends SpellEffect {
         ItemEntity ie;
         if (precision == 1) {
             LivingEntity living;
-            return !(e instanceof Player) && e instanceof LivingEntity && (living = (LivingEntity)e).isAlive() && living.canChangeDimensions() && this.magnitudeHealthCheck(source, target, magnitude, 20);
+            return !(e instanceof Player) && e instanceof LivingEntity && (living = (LivingEntity)e).isAlive() && com.mna.api.tools.MATools.canChangeDimensions(living) && this.magnitudeHealthCheck(source, target, magnitude, 20);
         }
         return e instanceof ItemEntity && !(ie = (ItemEntity)e).hasPickUpDelay();
     }

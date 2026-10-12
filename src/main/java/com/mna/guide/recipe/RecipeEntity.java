@@ -55,7 +55,7 @@ extends RecipeRendererBase {
 
     @Override
     protected void init_internal(ResourceLocation recipeLocation) {
-        this._entity = (EntityType)BuiltInRegistries.ENTITY_TYPE.getValue(recipeLocation);
+        this._entity = (EntityType)BuiltInRegistries.ENTITY_TYPE.get(recipeLocation);
         if (this._entity != null) {
             Entity e = this._entity.create(ManaAndArtifice.instance.proxy.getClientWorld());
             if (e instanceof LivingEntity) {

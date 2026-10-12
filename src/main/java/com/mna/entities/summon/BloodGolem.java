@@ -139,7 +139,7 @@ implements GeoEntity {
                     this.maybeDisableShield(player, this.getMainHandItem(), player.isUsingItem() ? player.getUseItem() : ItemStack.EMPTY);
                 }
                 this.setLastHurtMob(pEntity);
-                if ((!(MATools.isUndead(living))) && living.canChangeDimensions()) {
+                if ((!(MATools.isUndead(living))) && com.mna.api.tools.MATools.canChangeDimensions(living)) {
                     float postAttackHealth = living.getHealth();
                     float actualDamage = preAttackHealth - postAttackHealth;
                     LivingEntity summoner = SummonUtils.getSummoner((LivingEntity)this);

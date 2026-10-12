@@ -181,7 +181,7 @@ public static void onLivingAttack(LivingIncomingDamageEvent event) {
             boolean shouldReflect = false;
             boolean shouldReflectAtShooter = false;
             Entity sourceEntity = source.getEntity();
-            if (living.hasEffect(com.mna.api.tools.MAEffects.holder(EffectInit.WIND_WALL.get())) && (sourceEntity == null || sourceEntity.canChangeDimensions())) {
+            if (living.hasEffect(com.mna.api.tools.MAEffects.holder(EffectInit.WIND_WALL.get())) && (sourceEntity == null || com.mna.api.tools.MATools.canChangeDimensions(sourceEntity))) {
                 shouldReflect = true;
                 MobEffectInstance windWall = living.getEffect(com.mna.api.tools.MAEffects.holder(EffectInit.WIND_WALL.get()));
                 if (windWall != null) {

@@ -150,7 +150,7 @@ implements IPhylacteryItem {
         String type = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getString(NBT_ENTITYTYPE);
         ResourceLocation rLoc = ResourceLocation.parse(type);
         try {
-            EntityType resolvedType = (EntityType)BuiltInRegistries.ENTITY_TYPE.getValue(rLoc);
+            EntityType resolvedType = (EntityType)BuiltInRegistries.ENTITY_TYPE.get(rLoc);
             return resolvedType;
         }
         catch (ClassCastException ex) {
@@ -163,7 +163,7 @@ implements IPhylacteryItem {
             return false;
         }
         Mob inst = (Mob)type.create(world);
-        if (!GeneralConfigValues.BossesAllowedInPhylacteries && !inst.canChangeDimensions()) {
+        if (!GeneralConfigValues.BossesAllowedInPhylacteries && !com.mna.api.tools.MATools.canChangeDimensions(inst)) {
             return false;
         }
         stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().putString(NBT_ENTITYTYPE, BuiltInRegistries.ENTITY_TYPE.getKey(type).toString());
