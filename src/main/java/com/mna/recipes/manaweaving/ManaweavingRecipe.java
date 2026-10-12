@@ -84,12 +84,12 @@ implements IManaweavingRecipe {
         return this.getResultItem().copy();
     }
 
-    public boolean matches(Map<Enchantment, Integer> runeEnchantment) {
+    public boolean matches(Map<net.minecraft.core.Holder<Enchantment>, Integer> runeEnchantment) {
         if (runeEnchantment.size() != 1 || this.enchantment == null) {
             return false;
         }
-        for (Enchantment ench : runeEnchantment.keySet()) {
-            if (!this.enchantment.equals(com.mna.api.enchantments.MNAEnchantmentRegistry.idOf(ench)) || this.enchantmentMagnitude != runeEnchantment.get(ench)) continue;
+        for (net.minecraft.core.Holder<Enchantment> ench : runeEnchantment.keySet()) {
+            if (!this.enchantment.equals(com.mna.api.enchantments.MNAEnchantmentRegistry.idOf(ench.value())) || this.enchantmentMagnitude != runeEnchantment.get(ench)) continue;
             return true;
         }
         return false;

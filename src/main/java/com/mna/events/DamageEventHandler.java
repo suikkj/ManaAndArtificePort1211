@@ -344,7 +344,7 @@ public static void onLivingDamage(LivingDamageEvent.Pre event) {
         if (entity instanceof Player) {
             Player player = (Player)entity;
             if (player.getPersistentData().getBoolean("hellfiretrident")) {
-                if (player.autoSpinAttackTicks > 0 && event.getSource().getMsgId() == "player") {
+                if (event.getSource().getMsgId() == "player") {
                     event.setNewDamage(event.getNewDamage() * 2.0f);
                 }
                 player.getPersistentData().putBoolean("hellfiretrident", false);
@@ -479,7 +479,7 @@ public static void onLivingDamage(LivingDamageEvent.Pre event) {
     @SubscribeEvent(priority=EventPriority.HIGHEST)
     public static void onLivingDeath(LivingDeathEvent event) {
         Player playerCause;
-        Entity causeOfDeath = event.getDamageSource().getEntity();
+        Entity causeOfDeath = event.getSource().getEntity();
         if (event.getEntity() instanceof Player) {
             Player player = (Player)event.getEntity();
             Optional curio = CuriosApi.getCuriosHelper().findFirstCurio((LivingEntity)player, (Item)ItemInit.CRIT_IMMUNITY_AMULET.get());
@@ -553,7 +553,7 @@ public static void onLivingDamage(LivingDamageEvent.Pre event) {
                         if (!added) {
                             ItemStack backPhylactery = ItemStack.EMPTY;
                             List results = CuriosApi.getCuriosHelper().findCurios((LivingEntity)((Player)causeOfDeath), is -> is.getItem() == ItemInit.STAFF_PHYLACTERY.get() || is.getItem() == ItemInit.CRYSTAL_PHYLACTERY.get());
-                            for (SlotResult sr : results) {
+                            for (SlotResult sr : (java.util.List<SlotResult>)results) {
                                 if (sr.stack().isEmpty()) continue;
                                 backPhylactery = sr.stack();
                                 break;
@@ -610,7 +610,7 @@ public static void onLivingDamage(LivingDamageEvent.Pre event) {
     public static void onPlayerAttackTarget(AttackEntityEvent event) {
         if (event.getEntity().hasEffect(com.mna.api.tools.MAEffects.holder(EffectInit.MIST_FORM.get()))) {
             event.setCanceled(true);
-            event.setResult(Result.DENY);
+            event.setCanceled(true);
         } else {
             EntityUtil.suppressInvisibilityEffects((LivingEntity)event.getEntity());
         }
@@ -637,7 +637,7 @@ public static void onLivingDamage_Insight(LivingDamageEvent.Pre event) {
             LivingEntity living = (LivingEntity)event.getTarget();
             Optional curio = CuriosApi.getCuriosHelper().findFirstCurio(living, (Item)ItemInit.CRIT_IMMUNITY_AMULET.get());
             if (curio.isPresent()) {
-                event.setResult(Result.DENY);
+                event.setCanceled(true);
             }
         }
     }
@@ -713,7 +713,7 @@ public static void onLivingDamage_Insight(LivingDamageEvent.Pre event) {
         if (player.isCreative() || player.isSpectator()) {
             return false;
         }
-        if (event.getDamageSource().is(DamageTypeTags.IS_DROWNING)) {
+        if (event.getSource().is(DamageTypeTags.IS_DROWNING)) {
             ItemStack charmStack = new ItemStack((ItemLike)ItemInit.DROWN_CHARM.get());
             boolean consumed_charm = false;
             if (CuriosInterop.IsItemInCurioSlot((Item)ItemInit.DROWN_CHARM.get(), (LivingEntity)player, SlotTypePreset.CHARM)) {
@@ -746,7 +746,7 @@ public static void onLivingDamage_Insight(LivingDamageEvent.Pre event) {
         if (player.isCreative() || player.isSpectator()) {
             return false;
         }
-        if (event.getDamageSource().is(DamageTypeTags.IS_FIRE) || event.getDamageSource().is(DamageTypes.LAVA)) {
+        if (event.getSource().is(DamageTypeTags.IS_FIRE) || event.getSource().is(DamageTypes.LAVA)) {
             boolean consumed_charm = false;
             ItemStack charmStack = new ItemStack((ItemLike)ItemInit.BURN_CHARM.get());
             if (CuriosInterop.IsItemInCurioSlot((Item)ItemInit.BURN_CHARM.get(), (LivingEntity)player, SlotTypePreset.CHARM)) {

@@ -35,7 +35,7 @@ import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.functions.EnchantRandomlyFunction;
 import net.minecraft.world.level.storage.loot.functions.EnchantWithLevelsFunction;
 import net.minecraft.world.level.storage.loot.functions.LootItemFunction;
-import net.minecraft.world.level.storage.loot.functions.LootingEnchantFunction;
+import net.minecraft.world.level.storage.loot.functions.EnchantedCountIncreaseFunction;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.functions.SetItemDamageFunction;
 import net.minecraft.world.level.storage.loot.functions.SmeltItemFunction;
@@ -51,18 +51,18 @@ public class LootFunctionHelper {
     public static void applyFunction(ServerLevel serverLevel, LootItemFunction lootFunction, LootDrop lootDrop) {
         LootContext randContext = new LootContext.Builder(new LootParams.Builder(serverLevel).create(LootContextParamSets.EMPTY)).create(null);
         if (lootFunction instanceof SetItemCountFunction) {
-            lootDrop.minDrop = LootFunctionHelper.getMin(serverLevel, ((SetItemCountFunction)lootFunction).value);
+            lootDrop.minDrop = LootFunctionHelper.getMin(serverLevel, valueOf((SetItemCountFunction)lootFunction));
             if (lootDrop.minDrop < 0) {
                 lootDrop.minDrop = 0;
             }
             lootDrop.item.setCount(Math.max(lootDrop.minDrop, 1));
-            lootDrop.maxDrop = LootFunctionHelper.getMax(serverLevel, ((SetItemCountFunction)lootFunction).value);
+            lootDrop.maxDrop = LootFunctionHelper.getMax(serverLevel, valueOf((SetItemCountFunction)lootFunction));
         } else if (lootFunction instanceof SetItemDamageFunction) {
             ((SetItemDamageFunction)lootFunction).run(lootDrop.item, randContext);
         } else if (lootFunction instanceof EnchantRandomlyFunction || lootFunction instanceof EnchantWithLevelsFunction) {
             lootDrop.enchanted = true;
         } else if (!(lootFunction instanceof SmeltItemFunction)) {
-            if (lootFunction instanceof LootingEnchantFunction) {
+            if (lootFunction instanceof EnchantedCountIncreaseFunction) {
                 lootDrop.addConditional(Conditional.affectedByLooting);
             } else if (lootFunction instanceof ICustomLootFunction) {
                 ((ICustomLootFunction)lootFunction).apply(lootDrop);
@@ -83,7 +83,7 @@ public class LootFunctionHelper {
             return randomRange.getInt(randContext);
         }
         if (randomRange instanceof UniformGenerator) {
-            return Mth.floor((float)((UniformGenerator)randomRange).min.getInt(randContext));
+            return Mth.floor((float)((UniformGenerator)randomRange).min().getInt(randContext));
         }
         if (randomRange instanceof BinomialDistributionGenerator) {
             return 0;
@@ -97,12 +97,23 @@ public class LootFunctionHelper {
             return randomRange.getInt(randContext);
         }
         if (randomRange instanceof UniformGenerator) {
-            return Mth.floor((float)((UniformGenerator)randomRange).max.getInt(randContext));
+            return Mth.floor((float)((UniformGenerator)randomRange).max().getInt(randContext));
         }
         if (randomRange instanceof BinomialDistributionGenerator) {
             return ((BinomialDistributionGenerator)randomRange).n.getInt(randContext);
         }
         return IntStream.iterate(0, i -> randomRange.getInt(randContext)).limit(100L).max().orElse(0);
+    }
+
+    /** [PORT 1.21.1] SetItemCountFunction.value virou private. */
+    private static NumberProvider valueOf(SetItemCountFunction f) {
+        try {
+            java.lang.reflect.Field fld = SetItemCountFunction.class.getDeclaredField("value");
+            fld.setAccessible(true);
+            return (NumberProvider)fld.get(f);
+        } catch (Throwable t) {
+            return null;
+        }
     }
 }
 

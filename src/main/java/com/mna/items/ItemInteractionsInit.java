@@ -9,7 +9,7 @@
  *  net.minecraft.sounds.SoundSource
  *  net.minecraft.stats.Stats
  *  net.minecraft.world.InteractionHand
- *  net.minecraft.world.InteractionResult
+ *  net.minecraft.world.ItemInteractionResult
  *  net.minecraft.world.entity.Entity
  *  net.minecraft.world.entity.player.Player
  *  net.minecraft.world.item.Item
@@ -45,7 +45,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemItemInteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -80,10 +80,10 @@ public class ItemInteractionsInit {
             }
             LayeredCauldronBlock.lowerFillLevel((BlockState)state, (Level)world, (BlockPos)pos);
         }
-        return InteractionResult.sidedSuccess((boolean)world.isClientSide);
+        return ItemInteractionResult.sidedSuccess((boolean)world.isClientSide);
     };
 
-    static InteractionResult emptyFluidJug(BlockState pBlockState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, ItemStack stack, FluidStack toExtract, BlockState targetState, SoundEvent pFillSound) {
+    static ItemInteractionResult emptyFluidJug(BlockState pBlockState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, ItemStack stack, FluidStack toExtract, BlockState targetState, SoundEvent pFillSound) {
         if (!pLevel.isClientSide()) {
             MutableBoolean success = new MutableBoolean(false);
             FluidUtil.getFluidHandler((ItemStack)stack).ifPresent(h -> {
@@ -97,14 +97,14 @@ public class ItemInteractionsInit {
                     success.setTrue();
                 }
             });
-            return success.getValue() != false ? InteractionResult.SUCCESS : InteractionResult.FAIL;
+            return success.getValue() != false ? ItemInteractionResult.SUCCESS : ItemInteractionResult.FAIL;
         }
-        return InteractionResult.CONSUME;
+        return ItemInteractionResult.CONSUME;
     }
 
-    static InteractionResult fillFluidJug(BlockState pBlockState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, ItemStack stack, FluidStack toInsert, Predicate<BlockState> pStatePredicate, SoundEvent pFillSound) {
+    static ItemInteractionResult fillFluidJug(BlockState pBlockState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, ItemStack stack, FluidStack toInsert, Predicate<BlockState> pStatePredicate, SoundEvent pFillSound) {
         if (!pStatePredicate.test(pBlockState)) {
-            return InteractionResult.PASS;
+            return ItemInteractionResult.PASS;
         }
         if (!pLevel.isClientSide()) {
             MutableBoolean success = new MutableBoolean(false);
@@ -119,9 +119,9 @@ public class ItemInteractionsInit {
                     success.setTrue();
                 }
             });
-            return success.getValue() != false ? InteractionResult.SUCCESS : InteractionResult.FAIL;
+            return success.getValue() != false ? ItemInteractionResult.SUCCESS : ItemInteractionResult.FAIL;
         }
-        return InteractionResult.CONSUME;
+        return ItemInteractionResult.CONSUME;
     }
 
     @SubscribeEvent
@@ -142,7 +142,7 @@ public class ItemInteractionsInit {
         CauldronInteraction.EMPTY.map().put((Item)ItemInit.FLUID_JUG.get(), (blockState, level, pos, player, hand, stack) -> {
             FluidStack contained = ((FluidJug)ItemInit.FLUID_JUG.get()).getFluidTagData(stack);
             if (contained.isEmpty() || contained.getAmount() < 1000 || contained.getFluid() != Fluids.WATER && contained.getFluid() != Fluids.LAVA) {
-                return InteractionResult.FAIL;
+                return ItemInteractionResult.FAIL;
             }
             FluidStack toExtract = contained.copy();
             toExtract.setAmount(1000);

@@ -73,7 +73,7 @@ extends Boat {
         this.underwaterControl();
         this.handleSpecialLavaProperties();
         super.tick();
-        if (this.level().isClientSide() && this.getPassengers().size() > 0 && this.status != Boat.Status.IN_AIR && this.status != Boat.Status.ON_LAND) {
+        if (this.level().isClientSide() && this.getPassengers().size() > 0 && this.getStatus() != Boat.Status.IN_AIR && this.getStatus() != Boat.Status.ON_LAND) {
             float RADIUS = 3.0f;
             Vec3 OFFSET = new Vec3(-1.0, -0.25, -1.0);
             Vec3 VELOCITY = new Vec3((double)-0.01f + Math.random() * (double)0.02f, (double)-0.01f + Math.random() * (double)0.02f, (double)-0.01f + Math.random() * (double)0.02f);

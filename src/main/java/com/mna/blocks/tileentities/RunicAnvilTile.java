@@ -239,7 +239,7 @@ GeoBlockEntity {
             compatible = false;
             break;
         }
-        Map existingEnchants = EnchantmentUtils.enchantmentMap((ItemStack)this.__cachedRecipeOutput);
+        Map<net.minecraft.core.Holder<Enchantment>, Integer> existingEnchants = EnchantmentUtils.enchantmentMap((ItemStack)this.__cachedRecipeOutput);
         block2: for (Map.Entry ee : existingEnchants.entrySet()) {
             for (Map.Entry entry : enchantments.entrySet()) {
                 Aura aura;
@@ -261,7 +261,7 @@ GeoBlockEntity {
                     compatible = false;
                     continue block2;
                 }
-                if (((Enchantment)entry.getKey()).isCompatibleWith((Enchantment)ee.getKey())) continue;
+                if (Enchantment.areCompatible((net.minecraft.core.Holder<Enchantment>)entry.getKey(), (net.minecraft.core.Holder<Enchantment>)ee.getKey())) continue;
                 compatible = false;
                 continue block2;
             }
@@ -272,7 +272,9 @@ GeoBlockEntity {
                     enchantments.put(e, i);
                 }
             });
-            EnchantmentHelper.setEnchantments((Map)enchantments, (ItemStack)this.__cachedRecipeOutput);
+            it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap<net.minecraft.core.Holder<Enchantment>> enchMap = new it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap<net.minecraft.core.Holder<Enchantment>>();
+            enchantments.forEach((k, v) -> enchMap.put((net.minecraft.core.Holder<Enchantment>)k, (int)v));
+            EnchantmentHelper.setEnchantments((ItemStack)this.__cachedRecipeOutput, new net.minecraft.world.item.enchantment.ItemEnchantments(enchMap, true));
             return 0;
         }
         this.__cachedRecipeOutput = ItemStack.EMPTY;
@@ -333,7 +335,7 @@ GeoBlockEntity {
     }
 
     private CraftingContainer createDummyCraftingInventory() {
-        return ContainerTools.createTemporaryContainer(2, 1, (NonNullList<ItemStack>)NonNullList.of(null, (Object[])new ItemStack[]{this.getItem(0), this.getItem(1)}));
+        return ContainerTools.createTemporaryContainer(2, 1, (NonNullList<ItemStack>)NonNullList.of(ItemStack.EMPTY, new ItemStack[]{this.getItem(0), this.getItem(1)}));
     }
 
     @Override
