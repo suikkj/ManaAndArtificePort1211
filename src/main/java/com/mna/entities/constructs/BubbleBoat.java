@@ -73,7 +73,7 @@ extends Boat {
         this.underwaterControl();
         this.handleSpecialLavaProperties();
         super.tick();
-        if (this.level().isClientSide() && this.getPassengers().size() > 0 && this.getStatus() != Boat.Status.IN_AIR && this.getStatus() != Boat.Status.ON_LAND) {
+        if (this.level().isClientSide() && this.getPassengers().size() > 0 && this.mnaStatus() != Boat.Status.IN_AIR && this.mnaStatus() != Boat.Status.ON_LAND) {
             float RADIUS = 3.0f;
             Vec3 OFFSET = new Vec3(-1.0, -0.25, -1.0);
             Vec3 VELOCITY = new Vec3((double)-0.01f + Math.random() * (double)0.02f, (double)-0.01f + Math.random() * (double)0.02f, (double)-0.01f + Math.random() * (double)0.02f);
@@ -109,11 +109,11 @@ extends Boat {
         return false;
     }
 
-    public boolean ignoreExplosion() {
+    public boolean ignoreExplosion(net.minecraft.world.level.Explosion explosion) {
         if (this.isBrimstone()) {
             return true;
         }
-        return super.ignoreExplosion();
+        return super.ignoreExplosion(explosion);
     }
 
     public boolean fireImmune() {
@@ -138,8 +138,8 @@ extends Boat {
     }
 
     private void underwaterControl() {
-        this.outOfControlTicks = 0.0f;
-        if ((this.status == Boat.Status.UNDER_WATER || this.status == Boat.Status.UNDER_FLOWING_WATER) && this.getPassengers().size() > 0) {
+        this.mnaSetOutOfControlTicks(0.0f);
+        if ((this.mnaStatus() == Boat.Status.UNDER_WATER || this.mnaStatus() == Boat.Status.UNDER_FLOWING_WATER) && this.getPassengers().size() > 0) {
             double yVel = Math.min(this.getDeltaMovement().y + (double)0.2f, 2.0);
             this.setDeltaMovement(new Vec3(this.getDeltaMovement().x, yVel, this.getDeltaMovement().z));
         }
@@ -183,6 +183,26 @@ extends Boat {
 
     public double getPassengersRidingOffset() {
         return 0.3;
+    }
+
+    /** [PORT 1.21.1] Boat.status/getStatus/outOfControlTicks viraram private. */
+    private Boat.Status mnaStatus() {
+        try {
+            java.lang.reflect.Method m = Boat.class.getDeclaredMethod("getStatus");
+            m.setAccessible(true);
+            return (Boat.Status)m.invoke(this);
+        } catch (Throwable t) {
+            return Boat.Status.IN_WATER;
+        }
+    }
+
+    private void mnaSetOutOfControlTicks(float v) {
+        try {
+            java.lang.reflect.Field f = Boat.class.getDeclaredField("outOfControlTicks");
+            f.setAccessible(true);
+            f.setFloat(this, v);
+        } catch (Throwable t) {
+        }
     }
 }
 

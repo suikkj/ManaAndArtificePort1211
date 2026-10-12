@@ -22,7 +22,7 @@ public class ParticleItemStack {
     }
 
     public String serialize() {
-        return this.value.serializeNBT().toString();
+        return this.value.save(com.mna.api.tools.MNAItemData.provider()).toString();
     }
 
     @Nullable

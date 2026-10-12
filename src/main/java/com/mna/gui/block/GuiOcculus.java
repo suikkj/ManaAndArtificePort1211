@@ -175,12 +175,13 @@ extends GuiJEIDisable<ContainerOcculus> {
     }
 
     private <T extends AMRecipeBase> List<ListEntry<AMRecipeBase>> getRecipes(RecipeManager recipeManager, IconTypes iconType, RecipeType<T> recipeType, @Nullable List<ListEntry<AMRecipeBase>> appendTo, @Nullable Function<T, Boolean> predicate) {
-        List recipes = recipeManager.getAllRecipesFor(recipeType);
+        List<net.minecraft.world.item.crafting.RecipeHolder<T>> recipes = recipeManager.getAllRecipesFor(recipeType);
         if (appendTo == null) {
             appendTo = new ArrayList<ListEntry<AMRecipeBase>>();
         }
-        for (AMRecipeBase recipe : recipes) {
-            if (predicate != null && !predicate.apply(recipe).booleanValue()) continue;
+        for (net.minecraft.world.item.crafting.RecipeHolder<T> __h : recipes) {
+            AMRecipeBase recipe = __h.value();
+            if (predicate != null && !predicate.apply((T)recipe).booleanValue()) continue;
             appendTo.add(new ListEntry(this, recipe, iconType));
         }
         return appendTo;
@@ -215,7 +216,7 @@ extends GuiJEIDisable<ContainerOcculus> {
         for (ListEntry<AMRecipeBase> entry : recipes) {
             oel.addIcon(entry.getRecipe(), entry.getIcon());
         }
-        this.addWidget((GuiEventListener)oel);
+        this.addWidget(oel);
         this.setupViewButton(iconType, displayStack);
     }
 

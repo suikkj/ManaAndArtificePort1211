@@ -90,13 +90,13 @@ public class CuriosInterop {
 
     public static boolean IsItemInCurioSlot(Item item, LivingEntity entity, SlotTypePreset slot) {
         MutableBoolean exists = new MutableBoolean(false);
-        CuriosApi.getCuriosInventory((LivingEntity)entity).ifPresent(handler -> handler.findFirstCurio(item).ifPresent(slotResult -> exists.setValue(slotResult.slotContext().getIdentifier().equalsIgnoreCase(slot.getIdentifier()))));
+        CuriosApi.getCuriosInventory((LivingEntity)entity).ifPresent(handler -> handler.findFirstCurio(item).ifPresent(slotResult -> exists.setValue(slotResult.slotContext().identifier().equalsIgnoreCase(slot.identifier()))));
         return exists.booleanValue();
     }
 
     public static Optional<SlotResult> GetSingleItem(LivingEntity entity, Item ... items) {
         Optional output = Optional.empty();
-        java.util.Optional<Object> curioInventory = CuriosApi.getCuriosInventory((LivingEntity)entity);
+        var curioInventory = CuriosApi.getCuriosInventory((LivingEntity)entity);
         if (curioInventory.isPresent()) {
             for (Item item : items) {
                 Optional slotRes = ((ICuriosItemHandler)curioInventory.get()).findFirstCurio(item);
@@ -111,7 +111,7 @@ public class CuriosInterop {
     public static Optional<SlotResult> GetSingleItem(LivingEntity entity, Class<? extends Item> clazz) {
         Optional slotRes;
         Optional output = Optional.empty();
-        java.util.Optional<Object> curioInventory = CuriosApi.getCuriosInventory((LivingEntity)entity);
+        var curioInventory = CuriosApi.getCuriosInventory((LivingEntity)entity);
         if (curioInventory.isPresent() && (slotRes = ((ICuriosItemHandler)curioInventory.get()).findFirstCurio(is -> clazz.isInstance(is.getItem()))).isPresent()) {
             output = slotRes;
         }
@@ -120,7 +120,7 @@ public class CuriosInterop {
 
     public static ItemStack GetNthCurio(LivingEntity entity, String identifier, int n) {
         Optional slotResult;
-        java.util.Optional<Object> inv = CuriosApi.getCuriosInventory((LivingEntity)entity);
+        var inv = CuriosApi.getCuriosInventory((LivingEntity)entity);
         if (inv.isPresent() && (slotResult = ((ICuriosItemHandler)inv.get()).findCurio(identifier, n)).isPresent()) {
             return ((SlotResult)slotResult.get()).stack();
         }
@@ -139,8 +139,8 @@ public class CuriosInterop {
 
     public static ItemStack getCurioFromSlot(LivingEntity entity, SlotContext curioSlotContext) {
         Optional slotResult;
-        java.util.Optional<Object> inv = CuriosApi.getCuriosInventory((LivingEntity)entity);
-        if (inv.isPresent() && (slotResult = ((ICuriosItemHandler)inv.get()).findCurio(curioSlotContext.getIdentifier(), curioSlotContext.index())).isPresent()) {
+        var inv = CuriosApi.getCuriosInventory((LivingEntity)entity);
+        if (inv.isPresent() && (slotResult = ((ICuriosItemHandler)inv.get()).findCurio(curioSlotContext.identifier(), curioSlotContext.index())).isPresent()) {
             return ((SlotResult)slotResult.get()).stack();
         }
         return ItemStack.EMPTY;

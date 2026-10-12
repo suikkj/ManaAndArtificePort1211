@@ -1056,7 +1056,7 @@ IItemHandlerModifiable {
     }
 
     public boolean handHasCapability(InteractionHand hand, ConstructCapability capability) {
-        Optional<Object> part = Optional.empty();
+        Optional<ItemConstructPart> part = Optional.empty();
         part = hand == InteractionHand.MAIN_HAND ? this.constructCapabilities.getPart(ConstructSlot.LEFT_ARM) : this.constructCapabilities.getPart(ConstructSlot.RIGHT_ARM);
         if (!part.isPresent()) {
             return false;
@@ -1864,7 +1864,7 @@ IItemHandlerModifiable {
     protected void dropAllDeathLoot(DamageSource damageSourceIn) {
         super.dropAllDeathLoot((net.minecraft.server.level.ServerLevel)this.level(), damageSourceIn);
         if (this.level().getGameRules().getBoolean(GameRules.RULE_DOMOBLOOT)) {
-            ArrayList drops = new ArrayList();
+            ArrayList<ItemStack> drops = new ArrayList<ItemStack>();
             for (ConstructSlot slot : ConstructSlot.values()) {
                 this.constructCapabilities.getPart(slot).ifPresent(p -> {
                     if (!this.level().isClientSide()) {
@@ -1994,7 +1994,7 @@ IItemHandlerModifiable {
         if (flag) {
             builder.add(worldborder.getCollisionShape());
         }
-        Iterable blockVoxels = pLevel.getBlockCollisions(pEntity, pCollisionBox.expandTowards(pVec));
+        Iterable<VoxelShape> blockVoxels = pLevel.getBlockCollisions(pEntity, pCollisionBox.expandTowards(pVec));
         List<VoxelShape> filtered = StreamSupport.stream(blockVoxels.spliterator(), false).filter(shape -> {
             if (pEntity != null) {
                 BlockPos blockPos = new BlockPos((int)shape.min(Direction.Axis.X), (int)shape.min(Direction.Axis.Y), (int)shape.min(Direction.Axis.Z));

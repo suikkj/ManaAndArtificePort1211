@@ -155,20 +155,10 @@ extends Screen {
                 ItemStack inSlot = activeSpells[i];
                 int index = i++;
                 LocalPlayer player = this.minecraft.player;
-                ItemStackRadialMenuItem item = new ItemStackRadialMenuItem(this.menu, inSlot, (Component)Component.translatable((String)"gui.mna.spellbook.empty"), (Player)player, inHand, index){
-                    final   Player val$player;
-                    final   ItemStack val$inHand;
-                    final   int val$index;
-                    {
-                        this.val$player = player;
-                        this.val$inHand = itemStack;
-                        this.val$index = n;
-                        super(owner, stack, altText);
-                    }
-
+                ItemStackRadialMenuItem item = new ItemStackRadialMenuItem(this.menu, inSlot, (Component)Component.translatable((String)"gui.mna.spellbook.empty")){
                     @Override
                     public boolean onClick() {
-                        SpellBook.setSlot(this.val$player, this.val$inHand, this.val$index, SpellRadialSelect.this.hand, SpellRadialSelect.this.curioSlotContext, true);
+                        SpellBook.setSlot(player, inSlot, index, SpellRadialSelect.this.hand, SpellRadialSelect.this.curioSlotContext, true);
                         SpellRadialSelect.this.menu.close();
                         return true;
                     }

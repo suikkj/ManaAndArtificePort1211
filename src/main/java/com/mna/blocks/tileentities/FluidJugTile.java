@@ -20,7 +20,6 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluid;
-import net.neoforged.neoforge.capabilities.Capability;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
@@ -33,7 +32,6 @@ implements IFluidHandler {
     private FluidStack infiniteFluid = null;
     private FluidStack containedFluid = FluidStack.EMPTY;
     private int capacity = 16000;
-    IFluidHandler holder = () -> this;
 
     public FluidJugTile(BlockEntityType<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);
@@ -158,12 +156,12 @@ implements IFluidHandler {
 
     public void loadAdditional(CompoundTag tag, net.minecraft.core.HolderLookup.Provider registries) {
         super.loadAdditional(tag, registries);
-        this.containedFluid = FluidStack.loadFluidStackFromNBT((CompoundTag)tag);
+        this.containedFluid = FluidStack.parseOptional(registries, tag);
     }
 
     protected void saveAdditional(CompoundTag tag, net.minecraft.core.HolderLookup.Provider registries) {
         super.saveAdditional(tag, registries);
-        this.containedFluid.writeToNBT(tag);
+        this.containedFluid.save(registries, tag);
     }
 
     public CompoundTag getUpdateTag(net.minecraft.core.HolderLookup.Provider registries) {
