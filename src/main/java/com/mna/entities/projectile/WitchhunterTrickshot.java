@@ -122,7 +122,7 @@ extends Entity {
         if (this.level().isClientSide()) {
             return;
         }
-        net.minecraft.core.Holder<MobEffect> effect = this.getEffect();
+        MobEffect effect = this.getEffect();
         if (effect == null) {
             return;
         }
@@ -132,7 +132,7 @@ extends Entity {
                 effect.applyInstantenousEffect((Entity)this.shooter, (Entity)this, e2, this.effectMagnitude, 0.5);
                 continue;
             }
-            e2.addEffect(new MobEffectInstance(effect, this.effectDuration, this.effectMagnitude));
+            e2.addEffect(new MobEffectInstance(net.minecraft.core.registries.BuiltInRegistries.MOB_EFFECT.wrapAsHolder(effect), this.effectDuration, this.effectMagnitude));
         }
     }
 

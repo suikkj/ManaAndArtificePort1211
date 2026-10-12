@@ -47,7 +47,7 @@ extends BaseClientMessage implements CustomPacketPayload {
         WanderingWizardInventoryMessage msg = new WanderingWizardInventoryMessage();
         try {
             msg.containerId = buf.readVarInt();
-            msg.offers = MerchantOffers.createFromStream((FriendlyByteBuf)buf);
+            msg.offers = net.minecraft.world.item.trading.MerchantOffers.STREAM_CODEC.decode((net.minecraft.network.RegistryFriendlyByteBuf)buf);
             msg.level = buf.readVarInt();
             msg.xp = buf.readVarInt();
             msg.hasXPBar = buf.readBoolean();
@@ -64,7 +64,7 @@ extends BaseClientMessage implements CustomPacketPayload {
 
     public static void encode(WanderingWizardInventoryMessage message, FriendlyByteBuf buf) {
         buf.writeVarInt(message.containerId);
-        message.offers.writeToStream(buf);
+        net.minecraft.world.item.trading.MerchantOffers.STREAM_CODEC.encode((net.minecraft.network.RegistryFriendlyByteBuf)buf, message.offers);
         buf.writeVarInt(message.level);
         buf.writeVarInt(message.xp);
         buf.writeBoolean(message.hasXPBar);

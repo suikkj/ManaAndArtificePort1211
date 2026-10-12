@@ -716,7 +716,7 @@ MNADyeableItem {
             stc = stc.append((Component)Component.translatable((String)translationKey)).withStyle(ChatFormatting.GOLD);
             stack.set(DataComponents.ITEM_NAME, (Component)stc);
         } else {
-            stack.resetHoverName();
+            stack.remove(DataComponents.CUSTOM_NAME);
         }
     }
 
@@ -980,7 +980,7 @@ MNADyeableItem {
     @Override
     public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt) {
         if (nbt != null && nbt.contains(NBT_ID)) {
-            stack.setTag(DataComponents.CUSTOM_DATA, CustomData.of(nbt));
+            stack.set(DataComponents.CUSTOM_DATA, CustomData.of(nbt));
         }
         return null;
     }

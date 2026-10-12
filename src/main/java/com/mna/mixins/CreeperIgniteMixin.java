@@ -26,7 +26,7 @@ public class CreeperIgniteMixin {
 
     @ModifyVariable(method={"setSwellDir(I)V"}, at=@At(value="HEAD"), ordinal=0)
     private int mna$modifyParamSetSwellDir(int dir) {
-        Creeper self = (Creeper)this;
+        Creeper self = (Creeper)(Object)this;
         if (self.hasEffect(com.mna.api.tools.MAEffects.holder(EffectInit.SOAKED.get()))) {
             return -1;
         }
@@ -35,7 +35,7 @@ public class CreeperIgniteMixin {
 
     @Inject(at={@At(value="HEAD")}, method={"ignite"}, cancellable=true)
     public void mna$ignite(CallbackInfo cir) {
-        Creeper self = (Creeper)this;
+        Creeper self = (Creeper)(Object)this;
         if (self.hasEffect(com.mna.api.tools.MAEffects.holder(EffectInit.SOAKED.get()))) {
             self.getEntityData().set(CreeperIgniteMixin.getSwellDir(), -1);
             cir.cancel();
@@ -44,7 +44,7 @@ public class CreeperIgniteMixin {
 
     @Inject(at={@At(value="HEAD")}, method={"tick"})
     public void mna$tick(CallbackInfo cir) {
-        Creeper self = (Creeper)this;
+        Creeper self = (Creeper)(Object)this;
         if (self.isIgnited() && self.hasEffect(com.mna.api.tools.MAEffects.holder(EffectInit.SOAKED.get()))) {
             self.getEntityData().set(CreeperIgniteMixin.getIgnitedData(), false);
             self.getEntityData().set(CreeperIgniteMixin.getSwellDir(), -1);

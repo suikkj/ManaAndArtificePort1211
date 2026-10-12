@@ -56,7 +56,7 @@ INoCreativeTab {
     public AnimatableInstanceCache animCache = GeckoLibUtil.createInstanceCache((GeoAnimatable)this);
 
     public BoundSword(float attackDamageIn, float attackSpeedIn) {
-        super((Tier)Tiers.DIAMOND, (int)attackDamageIn, attackSpeedIn, new Item.Properties());
+        super((Tier)Tiers.DIAMOND, new Item.Properties());
     }
 
     public int getDamage(ItemStack stack) {
@@ -75,7 +75,7 @@ INoCreativeTab {
     }
 
     public Multimap<net.minecraft.world.entity.ai.attributes.Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack) {
-        Multimap baseAttrs = super.getAttributeModifiers(slot, stack);
+        Multimap baseAttrs = super.getDefaultAttributeModifiers();
         if (slot != EquipmentSlot.MAINHAND) {
             return baseAttrs;
         }

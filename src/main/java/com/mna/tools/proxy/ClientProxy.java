@@ -245,7 +245,7 @@ ClientAdvancements.Listener {
     public boolean playerHasAdvancement(Player player, ResourceLocation advancementID) {
         Minecraft mc = Minecraft.getInstance();
         ClientAdvancements advancements = mc.player.connection.getAdvancements();
-        this.queryAdvancement = advancements.getAdvancements().get(advancementID);
+        this.queryAdvancement = advancements.get(advancementID);
         if (this.queryAdvancement == null) {
             return false;
         }
@@ -299,7 +299,7 @@ ClientAdvancements.Listener {
 
     @Override
     public float getPartialTick() {
-        return Minecraft.getInstance().getPartialTick();
+        return Minecraft.getInstance().getTimer().getGameTimeDeltaPartialTick(false);
     }
 
     @Override

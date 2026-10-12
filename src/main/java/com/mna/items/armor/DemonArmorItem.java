@@ -131,16 +131,16 @@ IBrokenArmorReplaceable<DemonArmorItem> {
                 int sprint_time = player.getPersistentData().getInt(demon_armor_sprint_time_key);
                 AttributeInstance attr = player.getAttribute(Attributes.MOVEMENT_SPEED);
                 if (sprint_time == 0) {
-                    if (!attr.hasModifier(runSpeed_1)) {
+                    if (!attr.hasModifier(runSpeed_1.id())) {
                         attr.addTransientModifier(runSpeed_1);
                         player.playSound(SFX.Event.Artifact.DEMON_ARMOR_SPRINT_START, 1.0f, 0.8f);
                     }
                 } else if (sprint_time == 30) {
-                    if (!attr.hasModifier(runSpeed_2)) {
+                    if (!attr.hasModifier(runSpeed_2.id())) {
                         attr.addTransientModifier(runSpeed_2);
                         player.playSound(SFX.Event.Artifact.DEMON_ARMOR_SPRINT_START, 1.0f, 1.0f);
                     }
-                } else if (sprint_time == 60 && !attr.hasModifier(runSpeed_3)) {
+                } else if (sprint_time == 60 && !attr.hasModifier(runSpeed_3.id())) {
                     attr.addTransientModifier(runSpeed_3);
                     player.playSound(SFX.Event.Artifact.DEMON_ARMOR_SPRINT_START, 1.0f, 1.2f);
                 }

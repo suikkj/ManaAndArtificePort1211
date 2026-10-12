@@ -34,7 +34,7 @@ implements ICyclingRecipeRenderer<RecipeFumeFilter> {
     public void init_cycling(ResourceLocation[] rLocs) {
         ArrayList<FumeFilterRecipe> patternList = new ArrayList<FumeFilterRecipe>();
         for (ResourceLocation rLoc : rLocs) {
-            Optional<Recipe<?>> pattern = this.resolveRecipe(rLoc);
+            Optional<net.minecraft.world.item.crafting.RecipeHolder<?>> pattern = this.resolveRecipe(rLoc);
             if (!pattern.isPresent() || !(pattern.get() instanceof FumeFilterRecipe)) continue;
             patternList.add((FumeFilterRecipe)pattern.get());
         }
@@ -43,7 +43,7 @@ implements ICyclingRecipeRenderer<RecipeFumeFilter> {
 
     @Override
     public void init_internal(ResourceLocation recipeLocation) {
-        Optional<Recipe<?>> pattern = this.resolveRecipe(recipeLocation);
+        Optional<net.minecraft.world.item.crafting.RecipeHolder<?>> pattern = this.resolveRecipe(recipeLocation);
         this.patterns = pattern.isPresent() && pattern.get() instanceof FumeFilterRecipe ? new FumeFilterRecipe[]{(FumeFilterRecipe)pattern.get()} : null;
     }
 
@@ -51,7 +51,7 @@ implements ICyclingRecipeRenderer<RecipeFumeFilter> {
         if (recipeLocation.getNamespace().equals("mna") && !recipeLocation.getPath().startsWith("fume_filter/")) {
             recipeLocation = ResourceLocation.fromNamespaceAndPath(recipeLocation.getNamespace(), "fume_filter/" + recipeLocation.getPath());
         }
-        return this.minecraft.level.getRecipeManager().byKey(recipeLocation);
+        return (Optional)this.minecraft.level.getRecipeManager().byKey(recipeLocation);
     }
 
     @Override

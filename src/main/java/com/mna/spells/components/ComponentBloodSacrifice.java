@@ -84,9 +84,9 @@ extends SpellEffect {
             if (amount > 19.0f && tgt instanceof ZombieVillager) {
                 ZombieVillager zomb = (ZombieVillager)tgt;
                 if (source.isPlayerCaster()) {
-                    zomb.startConverting(source.getPlayer().getGameProfile().getId(), 20);
+                    com.mna.tools.MNAReflection.startConverting(zomb, source.getPlayer().getGameProfile().getId(), 20);
                 } else {
-                    zomb.startConverting(null, 20);
+                    com.mna.tools.MNAReflection.startConverting(zomb, null, 20);
                 }
             }
             return ComponentApplicationResult.SUCCESS;
