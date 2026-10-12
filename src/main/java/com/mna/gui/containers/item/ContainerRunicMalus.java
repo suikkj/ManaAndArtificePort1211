@@ -19,6 +19,7 @@
 package com.mna.gui.containers.item;
 
 import com.mna.tools.EnchantmentUtils;
+import net.minecraft.core.component.DataComponents;
 import com.mna.gui.containers.ContainerInit;
 import com.mna.gui.containers.HeldContainerBase;
 import com.mna.gui.containers.slots.BaseSlot;
@@ -143,7 +144,7 @@ extends HeldContainerBase {
                 }
             });
             net.minecraft.world.item.enchantment.ItemEnchantments.Mutable chMut = new net.minecraft.world.item.enchantment.ItemEnchantments.Mutable(net.minecraft.world.item.enchantment.ItemEnchantments.EMPTY);
-            chants.forEach(chMut::set);
+            chants.forEach((k, v) -> chMut.set(k, v));
             ((ItemStack)this.inventory.getStack()).set(DataComponents.ENCHANTMENTS, chMut.toImmutable());
         }
         super.removed(player);

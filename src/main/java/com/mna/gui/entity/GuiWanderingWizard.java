@@ -115,7 +115,6 @@ extends SearchableGui<ContainerWanderingWizard> {
     private void initialize() {
         this.hasinitialized = true;
         this.list = new WanderingWizardOffersList(((ContainerWanderingWizard)this.menu).getOffers());
-        this.addWidget((GuiEventListener)this.list);
         int tbWidth = 130;
         int x = this.leftPos + 6;
         int y = this.topPos + 6;

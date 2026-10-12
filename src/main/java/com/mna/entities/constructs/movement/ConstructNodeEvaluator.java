@@ -783,6 +783,16 @@ extends NodeEvaluator {
     }
 
     @Override
+    @Override
+    public PathType getPathType(net.minecraft.world.level.pathfinder.PathfindingContext context, int x, int y, int z) {
+        return this.getBlockPathType((BlockGetter)context.level(), x, y, z);
+    }
+
+    @Override
+    public PathType getPathType(net.minecraft.world.level.pathfinder.PathfindingContext context, int x, int y, int z) {
+        return this.getBlockPathType((BlockGetter)context.level(), x, y, z);
+    }
+
     public net.minecraft.world.level.pathfinder.PathType getPathTypeOfMob(net.minecraft.world.level.pathfinder.PathfindingContext ctx, int x, int y, int z, net.minecraft.world.entity.Mob mob) {
         return net.minecraft.world.level.pathfinder.PathType.OPEN;
     }

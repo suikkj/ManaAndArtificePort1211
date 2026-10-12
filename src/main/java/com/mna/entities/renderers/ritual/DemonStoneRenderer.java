@@ -53,7 +53,7 @@ extends EntityRenderer<DemonStone> {
             matrixStackIn.mulPose(Axis.YP.rotationDegrees(90.0f));
             this.modelStone.setupAnim(entityIn, partialTicks, 0.0f, -0.1f, 0.0f, 0.0f);
             VertexConsumer ivertexbuilder = bufferIn.getBuffer(this.modelStone.renderType(this.getTextureLocation(entityIn)));
-            this.modelStone.renderToBuffer(matrixStackIn, ivertexbuilder, packedLightIn, OverlayTexture.NO_OVERLAY, 1.0f, 1.0f, 1.0f, 1.0f);
+            this.modelStone.renderToBuffer(matrixStackIn, ivertexbuilder, packedLightIn, OverlayTexture.NO_OVERLAY, -1);
             matrixStackIn.popPose();
             angleDegrees += 360.0f / (float)numPillars;
         }

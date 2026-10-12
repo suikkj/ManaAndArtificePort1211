@@ -34,7 +34,6 @@ extends AbstractContainerScreen<ContainerSpectralCraftingTable> {
         this.widthTooNarrow = this.width < 379;
         this.recipeBookGui.init(this.width, this.height, this.minecraft, this.widthTooNarrow, (RecipeBookMenu)this.menu);
         this.leftPos = this.recipeBookGui.updateScreenPosition(this.width, this.imageWidth);
-        this.addWidget((GuiEventListener)this.recipeBookGui);
         this.setInitialFocus((GuiEventListener)this.recipeBookGui);
         this.addRenderableWidget(new MNAImageButton(this.leftPos + 5, this.height / 2 - 49, 20, 18, 0, 0, 19, RECIPE_BUTTON_TEXTURE, button -> {
             this.recipeBookGui.initVisuals();
@@ -64,7 +63,7 @@ extends AbstractContainerScreen<ContainerSpectralCraftingTable> {
     }
 
     protected void renderBg(GuiGraphics pGuiGraphics, float partialTicks, int x, int y) {
-        this.renderBackground(pGuiGraphics);
+        this.renderBackground(pGuiGraphics, 0, 0, 0.0f);
         RenderSystem.setShader(GameRenderer::getPositionTexShader);
         int i = this.leftPos;
         int j = (this.height - this.imageHeight) / 2;

@@ -68,7 +68,7 @@ extends AbstractContainerScreen<ContainerMagiciansWorkbench> {
     }
 
     protected void renderBg(GuiGraphics pGuiGraphics, float p_230450_2_, int p_230450_3_, int p_230450_4_) {
-        this.renderBackground(pGuiGraphics);
+        this.renderBackground(pGuiGraphics, 0, 0, 0.0f);
         int i = this.leftPos;
         int j = this.topPos;
         pGuiGraphics.blit(GuiTextures.WizardLab.MAGICIANS_WORKBENCH, i, j, 0, 0, this.imageWidth, this.imageHeight);

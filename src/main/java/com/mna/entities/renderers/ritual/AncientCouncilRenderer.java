@@ -62,7 +62,7 @@ extends EntityRenderer<AncientCouncil> {
             matrixStackIn.mulPose(Axis.YP.rotationDegrees(270.0f));
             this.modelWizard.setupAnim(entityIn, partialTicks, 0.0f, -0.1f, 0.0f, 0.0f);
             VertexConsumer ivertexbuilder = bufferIn.getBuffer(this.modelWizard.renderType(this.getTextureLocation(entityIn)));
-            this.modelWizard.renderToBuffer(matrixStackIn, ivertexbuilder, packedLightIn, OverlayTexture.NO_OVERLAY, 1.0f, 1.0f, 1.0f, 1.0f);
+            this.modelWizard.renderToBuffer(matrixStackIn, ivertexbuilder, packedLightIn, OverlayTexture.NO_OVERLAY, -1);
             matrixStackIn.popPose();
             if (entityIn.getRadiantPct() > 0.0f) {
                 matrixStackIn.pushPose();

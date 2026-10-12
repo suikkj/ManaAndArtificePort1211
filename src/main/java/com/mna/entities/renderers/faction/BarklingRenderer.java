@@ -26,7 +26,7 @@ extends MAGeckoFactionRenderer<Barkling> {
 
     public void scaleModelForRender(float widthScale, float heightScale, PoseStack poseStack, Barkling animatable, BakedGeoModel model, boolean isReRender, float partialTick, int packedLight, int packedOverlay) {
         poseStack.scale(0.7f, 0.7f, 0.7f);
-        super.scaleModelForRender(widthScale, heightScale, poseStack, (GeoAnimatable)animatable, model, isReRender, partialTick, packedLight, packedOverlay);
+        super.scaleModelForRender(widthScale, heightScale, poseStack, animatable, model, isReRender, partialTick, packedLight, packedOverlay);
     }
 }
 

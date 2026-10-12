@@ -69,7 +69,7 @@ extends EntityRenderer<BubbleBoat> {
         matrixStackIn.mulPose(Axis.YP.rotationDegrees(90.0f));
         this.modelBoat.setupAnim(entityIn, partialTicks, 0.0f, -0.1f, 0.0f, 0.0f);
         VertexConsumer ivertexbuilder = bufferIn.getBuffer(this.modelBoat.renderType(this.getTextureLocation(entityIn)));
-        this.modelBoat.renderToBuffer(matrixStackIn, ivertexbuilder, packedLightIn, OverlayTexture.NO_OVERLAY, 1.0f, 1.0f, 1.0f, 1.0f);
+        this.modelBoat.renderToBuffer(matrixStackIn, ivertexbuilder, packedLightIn, OverlayTexture.NO_OVERLAY, -1);
         matrixStackIn.popPose();
         super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
     }

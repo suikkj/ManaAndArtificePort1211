@@ -255,7 +255,7 @@ extends AbstractContainerScreen<ContainerCantrips> {
     }
 
     private void renderCantripTooltip(GuiGraphics pGuiGraphics, ICantrip cantrip, int mouseX, int mouseY) {
-        ArrayList<MutableComponent> ttLines = new ArrayList<MutableComponent>();
+        java.util.List<net.minecraft.network.chat.Component> ttLines = new java.util.ArrayList<net.minecraft.network.chat.Component>();
         ttLines.add(Component.translatable((String)("cantrip." + cantrip.getId().toString().replace(":", "."))).withStyle(ChatFormatting.LIGHT_PURPLE));
         ttLines.add(Component.translatable((String)"cantrip.mna.tier", (Object[])new Object[]{cantrip.getTier()}).withStyle(ChatFormatting.AQUA));
         ttLines.add(Component.translatable((String)("cantrip." + cantrip.getId().toString().replace(":", ".") + ".desc")).withStyle(ChatFormatting.ITALIC));

@@ -66,7 +66,7 @@ extends MAGeckoRenderer<T> {
             bone.setHidden(true);
             bone.setChildrenHidden(false);
         }
-        super.renderRecursively(stack, entity, bone, renderType, multiBufferSource, consumer, arg6, green, packedLightIn, packedOverlayIn, colour);
+        super.renderRecursively(stack, entity, bone, renderType, multiBufferSource, consumer, arg6, partialTicks, packedLightIn, packedOverlayIn, colour);
     }
 }
 

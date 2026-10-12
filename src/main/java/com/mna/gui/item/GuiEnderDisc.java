@@ -212,7 +212,7 @@ extends GuiJEIDisable<ContainerEnderDisc> {
 
         public EnderDiscDimensionButton(int xIn, int yIn, Button.OnPress onPressIn) {
             super(xIn, yIn, 12, 12, 0, 0, 0, GuiTextures.Items.ENDER_DISC, 256, 256, onPressIn, null);
-            this.v = 244;
+            // [PORT 1.21.1] v final no parente - atribuicao removida
         }
 
         public void renderWidget(GuiGraphics pGuiGraphics, int mouseX, int mouseY, float partialTicks) {

@@ -51,7 +51,7 @@ extends EntityRenderer<OrangeChickenProjectile> {
         float wingAngle = (float)(Math.sin((float)pEntity.tickCount + pPartialTicks) + 1.5707963705062866);
         this.model.setupAnim(pEntity, 0.5f, legAngle, wingAngle, 0.0f, 0.0f);
         VertexConsumer vertexconsumer = pBuffer.getBuffer(this.model.renderType(this.getTextureLocation(pEntity)));
-        this.model.renderToBuffer(pMatrixStack, vertexconsumer, pPackedLight, OverlayTexture.NO_OVERLAY, 0.9607f, 0.5412f, 0.2588f, 1.0f);
+        this.model.renderToBuffer(pMatrixStack, vertexconsumer, pPackedLight, OverlayTexture.NO_OVERLAY, -1);
         pMatrixStack.popPose();
     }
 }

@@ -133,7 +133,7 @@ extends MAGeckoRenderer<WanderingWizard> {
             WanderingWizardRenderer.addVertex(vertexBuilder, matrixstack$entry, packedLightIn, 1.0f, 1.0f, 1.0f, 0.0f, nrmH, nrmV, colors);
             WanderingWizardRenderer.addVertex(vertexBuilder, matrixstack$entry, packedLightIn, 0.0f, 1.0f, 0.0f, 0.0f, nrmH, nrmV, colors);
             matrixStackIn.popPose();
-            RenderSystem.setShaderTexture((int)0, (ResourceLocation)this.getTextureLocation((com.mna.entities.faction.WanderingWizard)entityIn));
+            RenderSystem.setShaderTexture((int)0, (ResourceLocation)this.getTextureLocation((com.mna.entities.utility.WanderingWizard)entityIn));
         }
         if (entityIn.tickCount >= 20) {
             super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);

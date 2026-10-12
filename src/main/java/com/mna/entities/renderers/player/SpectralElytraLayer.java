@@ -57,7 +57,7 @@ extends RenderLayer<T, M> {
             this.getParentModel().copyPropertiesTo(this.modelElytra);
             this.modelElytra.setupAnim(entitylivingbaseIn, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
             VertexConsumer ivertexbuilder = ItemRenderer.getFoilBuffer((MultiBufferSource)bufferIn, (RenderType)this.modelElytra.renderType(TEXTURE_ELYTRA), (boolean)false, (boolean)true);
-            this.modelElytra.renderToBuffer(matrixStackIn, ivertexbuilder, packedLightIn, OverlayTexture.NO_OVERLAY, 1.0f, 1.0f, 1.0f, 1.0f);
+            this.modelElytra.renderToBuffer(matrixStackIn, ivertexbuilder, packedLightIn, OverlayTexture.NO_OVERLAY, -1);
             matrixStackIn.popPose();
         }
     }

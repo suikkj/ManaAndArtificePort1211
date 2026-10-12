@@ -23,7 +23,7 @@ extends SlotItemHandler {
     }
 
     public boolean mayPlace(ItemStack stack) {
-        return CommonHooks.getBurnTime((ItemStack)stack, (RecipeType)RecipeType.SMELTING) > 0;
+        return ((ItemStack)stack).getBurnTime((RecipeType)RecipeType.SMELTING) > 0;
     }
 }
 

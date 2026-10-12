@@ -115,7 +115,8 @@ extends EntityRenderer<WitchhunterTrickshot> {
     }
 
     public void drawVertex(Matrix4f matrix, Matrix3f normals, VertexConsumer vertexBuilder, int offsetX, int offsetY, int offsetZ, float textureX, float textureY, int p_229039_9_, int p_229039_10_, int p_229039_11_, int packedLightIn) {
-        vertexBuilder.addVertex(matrix, (float)offsetX, (float)offsetY, (float)offsetZ).setColor(255, 255, 255, 255).setUv(textureX, textureY).setOverlay(OverlayTexture.NO_OVERLAY).setLight(packedLightIn).setNormal(normals, (float)p_229039_9_, (float)p_229039_11_, (float)p_229039_10_);
+        com.mojang.blaze3d.vertex.PoseStack.Pose __pose = new com.mojang.blaze3d.vertex.PoseStack.Pose(matrix, normals);
+        vertexBuilder.addVertex(__pose, (float)offsetX, (float)offsetY, (float)offsetZ).setColor(255, 255, 255, 255).setUv(textureX, textureY).setOverlay(OverlayTexture.NO_OVERLAY).setLight(packedLightIn).setNormal(__pose, (float)p_229039_9_, (float)p_229039_11_, (float)p_229039_10_);
     }
 }
 

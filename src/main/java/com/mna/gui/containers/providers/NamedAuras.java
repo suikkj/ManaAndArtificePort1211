@@ -18,8 +18,8 @@ public class NamedAuras
 implements MenuProvider {
     @Nullable
     public AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
-        java.util.Optional<ParticleAuraProvider> auraCap = MNACap.get(player, ParticleAuraProvider.AURA);
-        EmitterData _data = auraCap.isPresent() ? EmitterData.fromTag(((ParticleAura)auraCap.get()).save()) : new EmitterData();
+        java.util.Optional<ParticleAura> auraCap = MNACap.get(player, ParticleAuraProvider.AURA);
+        EmitterData _data = auraCap.isPresent() ? EmitterData.fromTag(auraCap.get().save()) : new EmitterData();
         return new ParticleEmissionContainer(i, inventory, _data, BlockPos.ZERO);
     }
 

@@ -98,14 +98,14 @@ public class ItemStackEntry {
     }
 
     public Tag serialize() {
-        return (Tag)((DataResult)NbtOps.INSTANCE.withEncoder(CODEC).apply(this)).getOrThrow(false, arg_0 -> ((Logger)ManaAndArtifice.LOGGER).error(arg_0));
+        return (Tag)((DataResult)NbtOps.INSTANCE.withEncoder(CODEC).apply(this)).getOrThrow();
     }
 
     public static ItemStackEntry deserialize(Tag tag) {
         if (tag == null) {
             return EMPTY;
         }
-        return (ItemStackEntry)CODEC.parse((DynamicOps)NbtOps.INSTANCE, tag).getOrThrow(false, arg_0 -> ((Logger)ManaAndArtifice.LOGGER).error(arg_0));
+        return (ItemStackEntry)CODEC.parse((DynamicOps)NbtOps.INSTANCE, tag).getOrThrow();
     }
 }
 

@@ -73,12 +73,12 @@ extends ConstructConditional<ConstructIsFluidInContainer> {
                 return true;
             }
         }
-        handler = (net.neoforged.neoforge.fluids.capability.IFluidHandlerItem)FluidUtil.getFluidHandler((Level)world, (BlockPos)this.pos.getPosition(), (Direction)this.pos.getDirection()).orElse(null);
-        if (handler == null) {
+        net.neoforged.neoforge.fluids.capability.IFluidHandler __tank = (net.neoforged.neoforge.fluids.capability.IFluidHandler)FluidUtil.getFluidHandler((Level)world, (BlockPos)this.pos.getPosition(), (Direction)this.pos.getDirection()).orElse(null);
+        if (__tank == null) {
             this.construct.getDiagnostics().pushTaskUpdate(this.getId(), this.guiIcon, IConstructDiagnostics.Status.FAILURE, Vec3.atCenterOf((Vec3i)this.pos.getPosition()));
             return false;
         }
-        IFluidHandler tank = (IFluidHandler)handler.get();
+        IFluidHandler tank = __tank;
         for (int i = 0; i < tank.getTanks(); ++i) {
             FluidStack contained = tank.getFluidInTank(i);
             int capacity = tank.getTankCapacity(i);

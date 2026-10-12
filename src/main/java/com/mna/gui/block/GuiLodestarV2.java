@@ -802,7 +802,7 @@ extends GuiJEIDisable<ContainerLodestar> {
         private int y1;
 
         public CommandScrollList(boolean low_tier) {
-            super(GuiLodestarV2.this.minecraft, 46, 135, GuiLodestarV2.this.topPos + 10, GuiLodestarV2.this.topPos + 153, 18);
+            super(GuiLodestarV2.this.minecraft, 46, 135, GuiLodestarV2.this.topPos + 10, GuiLodestarV2.this.topPos + 153);
             this._scrolling = false;
             this._filter = "";
             this.setRenderHeader(false, 24);

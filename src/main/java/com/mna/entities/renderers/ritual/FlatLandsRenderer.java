@@ -68,7 +68,7 @@ extends EntityRenderer<FlatLands> {
         float f6 = Mth.lerp((float)pPartialTick, (float)pEntity.pageTurningSpeed, (float)pEntity.nextPageTurningSpeed);
         this.modelBook.setupAnim(f, Mth.clamp((float)f4, (float)0.0f, (float)1.0f), Mth.clamp((float)f5, (float)0.0f, (float)1.0f), f6);
         VertexConsumer ivertexbuilder = pBuffer.getBuffer(RenderType.entitySolid((ResourceLocation)this.bookTexture));
-        this.modelBook.renderToBuffer(pPoseStack, ivertexbuilder, pPackedLight, OverlayTexture.NO_OVERLAY, 1.0f, 1.0f, 1.0f, 1.0f);
+        this.modelBook.renderToBuffer(pPoseStack, ivertexbuilder, pPackedLight, OverlayTexture.NO_OVERLAY, -1);
         pPoseStack.popPose();
     }
 }

@@ -923,7 +923,6 @@ extends GuiJEIDisable<ContainerGuideBook> {
         private final List<Component> textLines;
 
         public CategoryItemButton(EntryCategory category, int page, int count, int x, int y, GuidebookEntry entry, List<Component> text, Button.OnPress onPress) {
-            Objects.requireNonNull(((GuiGuideBook)GuiGuideBook.this).minecraft.font);
             super(x, y, 108, 9 * text.size() + 5, text.get(0), onPress, DEFAULT_NARRATION);
             this.page = page;
             this.category = category;

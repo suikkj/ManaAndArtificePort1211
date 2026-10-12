@@ -31,7 +31,7 @@ implements INoCreeperLingering, com.mna.api.effects.IMNAEffectHook {
             pLivingEntity.getPersistentData().putDouble("brambles_old_x", pos.x);
             pLivingEntity.getPersistentData().putDouble("brambles_old_y", pos.y);
             pLivingEntity.getPersistentData().putDouble("brambles_old_z", pos.z);
-            return;
+            return true;
 
         return true;
     }

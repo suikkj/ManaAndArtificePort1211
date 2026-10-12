@@ -111,9 +111,9 @@ extends ObjectSelectionList<SpellPartList.SpellPartEntry> {
             return false;
         }
         boolean valid = p.isCraftable(new SpellCraftingContext((Player)this.minecraft.player));
-        Optional<Recipe> pattern = this.minecraft.level.getRecipeManager().getRecipes().stream().filter(r -> r.id().equals(p.getRegistryName())).findFirst();
-        if (pattern.isPresent() && pattern.get() instanceof ItemAndPatternRecipe) {
-            valid &= ((ItemAndPatternRecipe)pattern.get()).getTier() <= this.tier;
+        Optional<net.minecraft.world.item.crafting.RecipeHolder<?>> pattern = this.minecraft.level.getRecipeManager().getRecipes().stream().filter(r -> r.id().equals(p.getRegistryName())).findFirst();
+        if (pattern.isPresent() && pattern.get().value() instanceof ItemAndPatternRecipe) {
+            valid &= ((ItemAndPatternRecipe)pattern.get().value()).getTier() <= this.tier;
         }
         return valid;
     }

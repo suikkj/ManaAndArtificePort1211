@@ -114,7 +114,7 @@ extends LargeContainer {
 
     @OnlyIn(value=Dist.CLIENT)
     public void setPatchActive(PractitionersPouchPatches patch) {
-        this.patchSlots.entrySet().forEach(e -> ((ArrayList)e.getValue()).forEach(v -> v.setActive(false)));
+        this.patchSlots.entrySet().forEach(e -> ((java.util.ArrayList<ExtendedItemStackFilterSlot>)e.getValue()).forEach(v -> v.setActive(false)));
         if (patch != null && this.patchSlots.containsKey(patch)) {
             this.patchSlots.get(patch).forEach(s -> s.setActive(true));
         }

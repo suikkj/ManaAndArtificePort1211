@@ -416,7 +416,7 @@ public class CommonEventHandler {
             java.lang.reflect.Field f = AreaEffectCloud.class.getDeclaredField("potionContents");
             f.setAccessible(true);
             net.minecraft.world.item.alchemy.PotionContents pc = (net.minecraft.world.item.alchemy.PotionContents)f.get(cloud);
-            return pc != null && pc.getAllEffects().stream().anyMatch(e -> ((net.minecraft.world.effect.MobEffectInstance)e).getEffect().value() instanceof INoCreeperLingering);
+            return pc != null && java.util.stream.StreamSupport.stream(pc.getAllEffects().spliterator(), false).anyMatch(e -> ((net.minecraft.world.effect.MobEffectInstance)e).getEffect().value() instanceof INoCreeperLingering);
         } catch (ReflectiveOperationException e) {
             return false;
         }
