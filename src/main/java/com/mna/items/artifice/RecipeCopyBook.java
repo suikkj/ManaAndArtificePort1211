@@ -41,6 +41,7 @@ import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 
 import net.neoforged.neoforge.items.IItemHandlerModifiable;
 import org.jetbrains.annotations.NotNull;
+import com.mna.api.tools.MNAItemData;
 
 public class RecipeCopyBook
 extends TieredItem

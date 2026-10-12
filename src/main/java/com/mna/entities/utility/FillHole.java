@@ -140,10 +140,10 @@ extends Entity {
 
     private boolean scanLayer(BlockPos center) {
         ArrayList<BlockPos> foundPositions = new ArrayList<BlockPos>();
-        BlockHitResult posZ = this.level().clip(new ClipContext(Vec3.atCenterOf((Vec3i)center), Vec3.atCenterOf((Vec3i)center.offset(0, 0, (int)this.radius)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, null));
-        BlockHitResult negZ = this.level().clip(new ClipContext(Vec3.atCenterOf((Vec3i)center), Vec3.atCenterOf((Vec3i)center.offset(0, 0, (int)(-this.radius))), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, null));
-        BlockHitResult posX = this.level().clip(new ClipContext(Vec3.atCenterOf((Vec3i)center), Vec3.atCenterOf((Vec3i)center.offset((int)this.radius, 0, 0)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, null));
-        BlockHitResult negX = this.level().clip(new ClipContext(Vec3.atCenterOf((Vec3i)center), Vec3.atCenterOf((Vec3i)center.offset((int)(-this.radius), 0, 0)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, null));
+        BlockHitResult posZ = this.level().clip(new ClipContext(Vec3.atCenterOf((Vec3i)center), Vec3.atCenterOf((Vec3i)center.offset(0, 0, (int)this.radius)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, (net.minecraft.world.entity.Entity)null));
+        BlockHitResult negZ = this.level().clip(new ClipContext(Vec3.atCenterOf((Vec3i)center), Vec3.atCenterOf((Vec3i)center.offset(0, 0, (int)(-this.radius))), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, (net.minecraft.world.entity.Entity)null));
+        BlockHitResult posX = this.level().clip(new ClipContext(Vec3.atCenterOf((Vec3i)center), Vec3.atCenterOf((Vec3i)center.offset((int)this.radius, 0, 0)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, (net.minecraft.world.entity.Entity)null));
+        BlockHitResult negX = this.level().clip(new ClipContext(Vec3.atCenterOf((Vec3i)center), Vec3.atCenterOf((Vec3i)center.offset((int)(-this.radius), 0, 0)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, (net.minecraft.world.entity.Entity)null));
         if (!(posZ.getType() != HitResult.Type.MISS && negZ.getType() != HitResult.Type.MISS || posX.getType() != HitResult.Type.MISS && negX.getType() != HitResult.Type.MISS)) {
             return false;
         }
@@ -158,8 +158,8 @@ extends Entity {
             BlockPos offsetPos = center.offset(zAxis ? 0 : i, 0, zAxis ? i : 0);
             BlockPos rayEndPos = offsetPos.offset((int)(zAxis ? this.radius : (byte)0), 0, (int)(zAxis ? (byte)0 : this.radius));
             BlockPos rayEndNeg = offsetPos.offset((int)(zAxis ? -this.radius : (byte)0), 0, zAxis ? 0 : (int)(-this.radius));
-            BlockHitResult posPass = this.level().clip(new ClipContext(Vec3.atCenterOf((Vec3i)offsetPos), Vec3.atCenterOf((Vec3i)rayEndPos), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, null));
-            BlockHitResult negPass = this.level().clip(new ClipContext(Vec3.atCenterOf((Vec3i)offsetPos), Vec3.atCenterOf((Vec3i)rayEndNeg), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, null));
+            BlockHitResult posPass = this.level().clip(new ClipContext(Vec3.atCenterOf((Vec3i)offsetPos), Vec3.atCenterOf((Vec3i)rayEndPos), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, (net.minecraft.world.entity.Entity)null));
+            BlockHitResult negPass = this.level().clip(new ClipContext(Vec3.atCenterOf((Vec3i)offsetPos), Vec3.atCenterOf((Vec3i)rayEndNeg), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, (net.minecraft.world.entity.Entity)null));
             if (posPass.getType() == HitResult.Type.MISS && negPass.getType() == HitResult.Type.MISS) continue;
             int posPassOffset = posPass.getType() == HitResult.Type.MISS ? 0 : (int)Math.sqrt(offsetPos.distSqr((Vec3i)posPass.getBlockPos()));
             int negPassOffset = negPass.getType() == HitResult.Type.MISS ? 0 : (int)(-Math.sqrt(offsetPos.distSqr((Vec3i)negPass.getBlockPos())));

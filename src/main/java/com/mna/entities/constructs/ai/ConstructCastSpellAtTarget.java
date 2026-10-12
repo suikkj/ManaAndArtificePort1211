@@ -83,7 +83,7 @@ extends ConstructAITask<ConstructCastSpellAtTarget> {
             } else if (this.activeTicks == 2) {
                 Vec3 constructEye = this.construct.asEntity().getEyePosition();
                 Vec3 target = Vec3.atCenterOf((Vec3i)this.blockPos);
-                ClipContext ctx = new ClipContext(constructEye, target, ClipContext.Block.VISUAL, ClipContext.Fluid.NONE, null);
+                ClipContext ctx = new ClipContext(constructEye, target, ClipContext.Block.VISUAL, ClipContext.Fluid.NONE, (net.minecraft.world.entity.Entity)null);
                 BlockHitResult hitResult = this.construct.asEntity().level().clip(ctx);
                 Direction face = Direction.UP;
                 if (hitResult.getType() != HitResult.Type.MISS) {
@@ -106,7 +106,7 @@ extends ConstructAITask<ConstructCastSpellAtTarget> {
             Vec3 constructEye = this.construct.asEntity().getEyePosition();
             Vec3 delta = constructEye.subtract(target).normalize();
             target = target.add(delta);
-            ClipContext ctx = new ClipContext(constructEye, target, ClipContext.Block.VISUAL, ClipContext.Fluid.NONE, null);
+            ClipContext ctx = new ClipContext(constructEye, target, ClipContext.Block.VISUAL, ClipContext.Fluid.NONE, (net.minecraft.world.entity.Entity)null);
             BlockHitResult hitResult = this.construct.asEntity().level().clip(ctx);
             if (hitResult.getType() != HitResult.Type.MISS) {
                 --this.closeEnoughDistance;

@@ -104,7 +104,7 @@ public class StructureUtils {
             return null;
         }
         Registry registry = world.registryAccess().registryOrThrow(Registries.STRUCTURE);
-        return registry.getKey(((Structure)structure.get()));
+        return registry.getKey(structure.value());
     }
 }
 

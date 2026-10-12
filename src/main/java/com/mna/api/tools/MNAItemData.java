@@ -75,11 +75,11 @@ public final class MNAItemData {
 
     /** [PORT 1.21.1] ContainerHelper.loadAllItems agora exige provider (ultimo arg). */
     public static void loadItems(CompoundTag tag, net.minecraft.core.NonNullList<ItemStack> list) {
-        net.minecraft.world.MNAItemData.loadItems(tag, list, provider());
+        net.minecraft.world.ContainerHelper.loadAllItems(tag, list, provider());
     }
 
     /** [PORT 1.21.1] ContainerHelper.saveAllItems agora exige provider (ultimo arg). */
     public static CompoundTag saveItems(CompoundTag tag, net.minecraft.core.NonNullList<ItemStack> list) {
-        return net.minecraft.world.MNAItemData.saveItems(tag, list, provider());
+        return net.minecraft.world.ContainerHelper.saveAllItems(tag, list, provider());
     }
 }

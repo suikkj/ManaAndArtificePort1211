@@ -64,6 +64,7 @@ import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.bus.api.Event;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import net.minecraft.core.registries.BuiltInRegistries;
+import com.mna.api.tools.MNAItemData;
 
 public class ManaweaveCacheTile
 extends RandomizableContainerBlockEntity

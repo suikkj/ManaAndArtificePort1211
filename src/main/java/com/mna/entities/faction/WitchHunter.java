@@ -361,7 +361,7 @@ AnimationController.CustomKeyframeHandler<WitchHunter> {
 
     public class TrickshotGoal
     extends Goal {
-        private MobEffect potionEffect;
+        private net.minecraft.core.Holder<MobEffect> potionEffect;
         private int potionDuration;
         private int potionMagnitude;
         private static final float shortDistance = 25.0f;
@@ -369,11 +369,11 @@ AnimationController.CustomKeyframeHandler<WitchHunter> {
         private boolean startedAction;
         private boolean closeRangeOnly = false;
 
-        public TrickshotGoal(MobEffect effect, int duration, int magnitude) {
+        public TrickshotGoal(net.minecraft.core.Holder<MobEffect> effect, int duration, int magnitude) {
             this(effect, duration, magnitude, false);
         }
 
-        public TrickshotGoal(MobEffect effect, int duration, int magnitude, boolean closeRangeOnly) {
+        public TrickshotGoal(net.minecraft.core.Holder<MobEffect> effect, int duration, int magnitude, boolean closeRangeOnly) {
             this.setFlags(EnumSet.of(Goal.Flag.JUMP, Goal.Flag.LOOK, Goal.Flag.MOVE));
             this.potionEffect = effect;
             this.potionDuration = duration;
@@ -388,11 +388,11 @@ AnimationController.CustomKeyframeHandler<WitchHunter> {
 
         public boolean canUse() {
             boolean baseCheck;
-            boolean bl = baseCheck = WitchHunter.this.trickshotCooldown <= 0 && WitchHunter.this.trickshotCooldowns.getOrDefault(BuiltInRegistries.MOB_EFFECT.getKey(this.potionEffect).toString(), 0) <= 0 && !WitchHunter.this.isTrickshotting && !WitchHunter.this.isRolling && WitchHunter.this.getTarget() != null && !WitchHunter.this.getTarget().hasEffect(this.potionEffect) && WitchHunter.this.getTarget().canBeAffected(new MobEffectInstance(this.potionEffect, this.potionDuration, this.potionMagnitude));
+            boolean bl = baseCheck = WitchHunter.this.trickshotCooldown <= 0 && WitchHunter.this.trickshotCooldowns.getOrDefault(BuiltInRegistries.MOB_EFFECT.getKey(this.potionEffect.value()).toString(), 0) <= 0 && !WitchHunter.this.isTrickshotting && !WitchHunter.this.isRolling && WitchHunter.this.getTarget() != null && !WitchHunter.this.getTarget().hasEffect(this.potionEffect) && WitchHunter.this.getTarget().canBeAffected(new MobEffectInstance(this.potionEffect, this.potionDuration, this.potionMagnitude));
             if (baseCheck && this.potionEffect == MobEffects.HARM && (MATools.isUndead(WitchHunter.this.getTarget()))) {
                 return false;
             }
-            if (baseCheck && (this.potionEffect == EffectInit.MANA_STUNT.get() || this.potionEffect == EffectInit.SILENCE.get()) && !(WitchHunter.this.getTarget() instanceof Player)) {
+            if (baseCheck && (this.potionEffect == EffectInit.MANA_STUNT || this.potionEffect == EffectInit.SILENCE) && !(WitchHunter.this.getTarget() instanceof Player)) {
                 return false;
             }
             if (this.closeRangeOnly) {
@@ -431,8 +431,8 @@ AnimationController.CustomKeyframeHandler<WitchHunter> {
             WitchHunter.this.isAttacking = true;
             WitchHunter.this.nextTrickshotDuration = this.potionDuration;
             WitchHunter.this.nextTrickshotMagnitude = this.potionMagnitude;
-            WitchHunter.this.nextTrickshotEffect = this.potionEffect;
-            String effectID = BuiltInRegistries.MOB_EFFECT.getKey(this.potionEffect).toString();
+            WitchHunter.this.nextTrickshotEffect = this.potionEffect.value();
+            String effectID = BuiltInRegistries.MOB_EFFECT.getKey(this.potionEffect.value()).toString();
             if (WitchHunter.this.isPotionSmashing) {
                 DelayedEventQueue.pushEvent(WitchHunter.this.level(), new TimedDelayedEvent<LivingEntity>(WitchHunter.INSTRUCTION_SMASH, 12, (LivingEntity)WitchHunter.this, WitchHunter.this::handleDelayCallback));
                 DelayedEventQueue.pushEvent(WitchHunter.this.level(), new TimedDelayedEvent<String>(WitchHunter.INSTRUCTION_POTION_COOLDOWN, 40, effectID, WitchHunter.this::handleDelayCallback));

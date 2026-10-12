@@ -87,7 +87,7 @@ extends AbstractGolem {
     }
 
     public static AttributeSupplier.Builder getGlobalAttributes() {
-        return Mob.createMobAttributes().add(Attributes.MAX_HEALTH, 6.0).add((Attribute)NeoForgeMod.SWIM_SPEED.get(), 2.0);
+        return Mob.createMobAttributes().add(Attributes.MAX_HEALTH, 6.0).add(NeoForgeMod.SWIM_SPEED, 2.0);
     }
 
     private void updateRotations() {

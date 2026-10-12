@@ -58,7 +58,7 @@ extends SpellEffect {
             context.getLevel().getEntities((Entity)null, new AABB(BlockPos.containing((Position)finalPos)).inflate((double)modificationData.getValue(Attribute.RANGE)), e -> {
                 SpellTarget predicateTarget = new SpellTarget((Entity)e);
                 if (this.targetClassPredicateMatches((Entity)e, (int)modificationData.getValue(Attribute.PRECISION), (int)modificationData.getValue(Attribute.MAGNITUDE), source, predicateTarget)) {
-                    ClipContext clipContext = new ClipContext(e.getEyePosition(), finalPos, ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, null);
+                    ClipContext clipContext = new ClipContext(e.getEyePosition(), finalPos, ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, (net.minecraft.world.entity.Entity)null);
                     return e.isAlive() && context.getLevel().clip(clipContext).getType() == HitResult.Type.MISS;
                 }
                 return false;

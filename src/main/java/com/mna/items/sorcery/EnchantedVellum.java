@@ -73,7 +73,7 @@ ICanContainSpell {
             tooltip.addAll(flavorText);
         }
         SpellRecipe recipe = SpellRecipe.fromNBT(this.getSpellCompound(stack, player));
-        recipe.addItemTooltip(stack, worldIn, tooltip, player);
+        recipe.addItemTooltip(stack, worldIn.level(), tooltip, player);
         IItemWithGui.super.appendHoverText(stack, worldIn, tooltip, flagIn);
     }
 

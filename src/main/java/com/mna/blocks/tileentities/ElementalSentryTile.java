@@ -234,7 +234,7 @@ IEldrinConsumerTile {
                 if (SummonUtils.isSummon((Entity)e) && (summoner = SummonUtils.getSummoner(e)) != null && this.ownerInfo.isFriendlyTo(summoner)) {
                     subPredicate = false;
                 }
-                return e.isAlive() && subPredicate && this.getLevel().clip(new ClipContext(myPos, theirpos, ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, null)).getType() == HitResult.Type.MISS;
+                return e.isAlive() && subPredicate && this.getLevel().clip(new ClipContext(myPos, theirpos, ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, (net.minecraft.world.entity.Entity)null)).getType() == HitResult.Type.MISS;
             });
             if (potentialTargets.size() > 0) {
                 potentialTargets.sort((o1, o2) -> {
@@ -327,7 +327,7 @@ IEldrinConsumerTile {
         if (this.target == null) {
             return;
         }
-        if (this.getLevel().clip(new ClipContext(Vec3.atCenterOf((Vec3i)this.getBlockPos()), this.target.getEyePosition(), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, null)).getType() != HitResult.Type.MISS) {
+        if (this.getLevel().clip(new ClipContext(Vec3.atCenterOf((Vec3i)this.getBlockPos()), this.target.getEyePosition(), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, (net.minecraft.world.entity.Entity)null)).getType() != HitResult.Type.MISS) {
             return;
         }
         if (this.shootCounter < this.getShootInterval()) {

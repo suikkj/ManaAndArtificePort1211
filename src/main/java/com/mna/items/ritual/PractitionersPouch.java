@@ -898,7 +898,7 @@ MNADyeableItem {
 
     @Override
     public void appendHoverText(ItemStack stack, net.minecraft.world.item.Item.TooltipContext worldIn, List<Component> tooltip, TooltipFlag flagIn) {
-        RitualRecipe ritual = PractitionersPouch.getRitual(worldIn, stack);
+        RitualRecipe ritual = PractitionersPouch.getRitual(worldIn.level(), stack);
         if (Screen.hasShiftDown()) {
             Object patchString = I18n.get((String)"item.mna.patch.prompt", (Object[])new Object[0]);
             PractitionersPouchPatches[] patches = this.getAppliedPatches(stack);

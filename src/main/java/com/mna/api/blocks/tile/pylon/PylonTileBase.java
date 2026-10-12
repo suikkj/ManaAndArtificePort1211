@@ -51,6 +51,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import com.mna.api.tools.MNACap;
+import com.mna.api.tools.MNAItemData;
 
 public abstract class PylonTileBase
 extends TileEntityWithInventory

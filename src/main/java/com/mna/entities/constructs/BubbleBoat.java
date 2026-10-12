@@ -103,7 +103,7 @@ extends Boat {
         if (type == NeoForgeMod.WATER_TYPE) {
             return true;
         }
-        if (type == NeoForgeMod.LAVA_TYPE.get()) {
+        if (type == NeoForgeMod.LAVA_TYPE.value()) {
             return this.isBrimstone();
         }
         return false;

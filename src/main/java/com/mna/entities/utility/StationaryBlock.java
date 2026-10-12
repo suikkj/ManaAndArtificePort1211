@@ -31,6 +31,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.material.Fluids;
+import com.mna.api.tools.MNAItemData;
 
 public class StationaryBlock
 extends FallingBlockEntity
@@ -45,7 +46,7 @@ extends FallingBlockEntity
         this.yo = y;
         this.zo = z;
         this.setStartPos(this.blockPosition());
-        this.blockState = fallingBlockState;
+        com.mna.api.tools.MNAFallingBlocks.setBlockState(this, fallingBlockState);
         this.setNoGravity(true);
         this.setDeltaMovement(0.0, 0.0, 0.0);
     }
@@ -55,10 +56,10 @@ extends FallingBlockEntity
     }
 
     public void tick() {
-        if (this.blockState.isAir()) {
+        if (this.getBlockState().isAir()) {
             this.remove(Entity.RemovalReason.DISCARDED);
         } else {
-            Block block = this.blockState.getBlock();
+            Block block = this.getBlockState().getBlock();
             if (this.time++ == 0) {
                 BlockPos blockpos = this.blockPosition();
                 if (this.level().getBlockState(blockpos).is(block)) {
@@ -82,17 +83,17 @@ extends FallingBlockEntity
         if (!blockstate.is(Blocks.MOVING_PISTON)) {
             this.remove(Entity.RemovalReason.DISCARDED);
             boolean flag2 = blockstate.canBeReplaced((BlockPlaceContext)new DirectionalPlaceContext(this.level(), myPosition, Direction.UP, ItemStack.EMPTY, Direction.UP));
-            boolean flag4 = this.blockState.canSurvive((LevelReader)this.level(), myPosition);
+            boolean flag4 = this.getBlockState().canSurvive((LevelReader)this.level(), myPosition);
             if (flag2 && flag4) {
-                if (this.blockState.hasProperty((Property)BlockStateProperties.WATERLOGGED) && this.level().getFluidState(myPosition).getType() == Fluids.WATER) {
-                    this.blockState = (BlockState)this.blockState.setValue((Property)BlockStateProperties.WATERLOGGED, (Comparable)Boolean.valueOf(true));
+                if (this.getBlockState().hasProperty((Property)BlockStateProperties.WATERLOGGED) && this.level().getFluidState(myPosition).getType() == Fluids.WATER) {
+                    com.mna.api.tools.MNAFallingBlocks.setBlockState(this, (BlockState)this.getBlockState().setValue((Property)BlockStateProperties.WATERLOGGED, (Comparable)Boolean.valueOf(true)));
                 }
-                if (this.level().setBlock(myPosition, this.blockState, 3)) {
+                if (this.level().setBlock(myPosition, this.getBlockState(), 3)) {
                     BlockEntity tileentity;
                     if (block instanceof FallingBlock) {
-                        ((FallingBlock)block).onLand(this.level(), myPosition, this.blockState, blockstate, (FallingBlockEntity)this);
+                        ((FallingBlock)block).onLand(this.level(), myPosition, this.getBlockState(), blockstate, (FallingBlockEntity)this);
                     }
-                    if (this.blockData != null && this.blockState.hasBlockEntity() && (tileentity = this.level().getBlockEntity(myPosition)) != null) {
+                    if (this.blockData != null && this.getBlockState().hasBlockEntity() && (tileentity = this.level().getBlockEntity(myPosition)) != null) {
                         CompoundTag compoundnbt = tileentity.saveWithFullMetadata(com.mna.api.tools.MNAItemData.provider());
                         for (String s : this.blockData.getAllKeys()) {
                             Tag inbt = this.blockData.get(s);
@@ -126,9 +127,9 @@ extends FallingBlockEntity
 
     public void readSpawnData(FriendlyByteBuf additionalData) {
         int stateId = additionalData.readInt();
-        this.blockState = Block.stateById((int)stateId);
-        if (this.blockState == null) {
-            this.blockState = Blocks.SAND.defaultBlockState();
+        this.getBlockState() = Block.stateById((int)stateId);
+        if (this.getBlockState() == null) {
+            this.getBlockState() = Blocks.SAND.defaultBlockState();
         }
     }
 }

@@ -186,7 +186,7 @@ public class MACapabilityForgeEventHandlers {
                         }
                         BlockPos attemptedLocUp = attemptedLocation.above();
                         if (!force && (event.getEntity().distanceToSqr(new Vec3((double)attemptedLocation.getX(), (double)attemptedLocation.getY(), (double)attemptedLocation.getZ())) < 25.0 || (MNACap.get((IWorldMagic)event.getEntity().level(), WorldMagicProvider.MAGIC).get()).isWithinWardingCandle(attemptedLocation)) || !event.getEntity().level().isEmptyBlock(attemptedLocation) || !event.getEntity().level().isEmptyBlock(attemptedLocUp) || event.getEntity().level().isEmptyBlock(attemptedLocation.below())) continue;
-                        ClipContext context = new ClipContext(event.getEntity().getEyePosition(0.0f), new Vec3((double)attemptedLocUp.getX() + 0.5, (double)attemptedLocUp.getY(), (double)attemptedLocUp.getZ() + 0.5), ClipContext.Block.COLLIDER, ClipContext.Fluid.SOURCE_ONLY, null);
+                        ClipContext context = new ClipContext(event.getEntity().getEyePosition(0.0f), new Vec3((double)attemptedLocUp.getX() + 0.5, (double)attemptedLocUp.getY(), (double)attemptedLocUp.getZ() + 0.5), ClipContext.Block.COLLIDER, ClipContext.Fluid.SOURCE_ONLY, (net.minecraft.world.entity.Entity)null);
                         BlockHitResult result = event.getEntity().level().clip(context);
                         if (result.getType() != HitResult.Type.MISS) continue;
                         BlockState spawnBlock = event.getEntity().level().getBlockState(attemptedLocation.below());

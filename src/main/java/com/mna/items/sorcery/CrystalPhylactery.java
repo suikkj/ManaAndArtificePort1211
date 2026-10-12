@@ -41,7 +41,7 @@ implements IPhylacteryItem {
     }
 
     public void appendHoverText(ItemStack stack, net.minecraft.world.item.Item.TooltipContext worldIn, List<Component> tooltip, TooltipFlag flagIn) {
-        IPhylacteryItem.super.appendTooltip(stack, worldIn, tooltip, flagIn);
+        IPhylacteryItem.super.appendTooltip(stack, worldIn.level(), tooltip, flagIn);
         super.appendHoverText(stack, worldIn, tooltip, flagIn);
     }
 

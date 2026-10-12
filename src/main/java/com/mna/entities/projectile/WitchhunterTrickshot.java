@@ -185,7 +185,7 @@ extends Entity {
     }
 
     protected void defineSynchedData(net.minecraft.network.syncher.SynchedEntityData.Builder builder) {
-        builder.define(EFFECT_ID, BuiltInRegistries.MOB_EFFECT.getKey(MobEffects.MOVEMENT_SLOWDOWN).toString());
+        builder.define(EFFECT_ID, BuiltInRegistries.MOB_EFFECT.getKey(MobEffects.MOVEMENT_SLOWDOWN.value()).toString());
         builder.define(LERPDATA, new CompoundTag());
         builder.define(SMASH, false);
     }

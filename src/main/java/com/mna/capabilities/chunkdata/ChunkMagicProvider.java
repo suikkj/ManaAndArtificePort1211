@@ -25,7 +25,7 @@ public class ChunkMagicProvider {
 
     public Tag serializeNBT() {
         CompoundTag nbt = new CompoundTag();
-        IChunkMagic resolved = (IChunkMagic)this.holder.get();
+        IChunkMagic resolved = this.holder;
         nbt.putFloat(KEY_RESIDUAL_MAGIC, resolved.getResidualMagic());
         ListTag positions = new ListTag();
         resolved.getKnownEldrinSuppliers().forEach(pos -> positions.add(LongTag.valueOf((long)pos)));
@@ -46,7 +46,7 @@ public class ChunkMagicProvider {
 
     public void deserializeNBT(Tag nbt) {
         if (nbt instanceof CompoundTag) {
-            IChunkMagic resolved = (IChunkMagic)this.holder.get();
+            IChunkMagic resolved = this.holder;
             CompoundTag cnbt = (CompoundTag)nbt;
             if (cnbt.contains(KEY_RESIDUAL_MAGIC)) {
                 resolved.setResidualMagic(((CompoundTag)nbt).getFloat(KEY_RESIDUAL_MAGIC));

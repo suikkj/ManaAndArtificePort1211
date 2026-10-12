@@ -291,7 +291,7 @@ extends BaseFactionMob<DemonImp> {
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(0, (Goal)new FloatGoal((Mob)this));
-        this.goalSelector.addGoal(2, (Goal)new FactionTierWrapperGoal(1, this, new LerpLeap<DemonImp>(this, 10, 3, t -> this.getTarget() != null && !this.isOnCooldown(1000) && this.distanceTo((Entity)this.getTarget()) > 8.0f && this.getSensing().hasLineOfSight((Entity)this.getTarget()) && this.level().clip(new ClipContext(this.getEyePosition(), this.getTarget().getEyePosition(), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, null)).getType() == HitResult.Type.MISS, e -> {
+        this.goalSelector.addGoal(2, (Goal)new FactionTierWrapperGoal(1, this, new LerpLeap<DemonImp>(this, 10, 3, t -> this.getTarget() != null && !this.isOnCooldown(1000) && this.distanceTo((Entity)this.getTarget()) > 8.0f && this.getSensing().hasLineOfSight((Entity)this.getTarget()) && this.level().clip(new ClipContext(this.getEyePosition(), this.getTarget().getEyePosition(), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, (net.minecraft.world.entity.Entity)null)).getType() == HitResult.Type.MISS, e -> {
             switch (e) {
                 case DAMAGE: {
                     this.setAction(Action.LEAP_LANDING);

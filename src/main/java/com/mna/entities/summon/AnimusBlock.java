@@ -518,7 +518,7 @@ PlayerRideableJumping {
                         this.jumpInFluid(fluidType);
                     }
                 } else {
-                    this.jumpInFluid((FluidType)NeoForgeMod.LAVA_TYPE.get());
+                    this.jumpInFluid(NeoForgeMod.LAVA_TYPE);
                 }
             } else {
                 this.jumpInFluid(NeoForgeMod.WATER_TYPE);

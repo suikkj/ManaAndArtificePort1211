@@ -27,7 +27,7 @@ extends TieredItem {
     }
 
     public void appendHoverText(ItemStack stack, net.minecraft.world.item.Item.TooltipContext worldIn, List<Component> tooltip, TooltipFlag flagIn) {
-        RunescribingRecipe recipe = this.getRecipe(stack, worldIn);
+        RunescribingRecipe recipe = this.getRecipe(stack, worldIn.level());
         if (recipe == null || recipe.getResultItem() == null || recipe.getResultItem().isEmpty()) {
             return;
         }

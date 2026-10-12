@@ -26,7 +26,7 @@ extends TieredItem {
     }
 
     public void appendHoverText(ItemStack stack, net.minecraft.world.item.Item.TooltipContext worldIn, List<Component> tooltip, TooltipFlag flagIn) {
-        ResourceLocation recipe = this.getRecipe(stack, worldIn);
+        ResourceLocation recipe = this.getRecipe(stack, worldIn.level());
         if (recipe == null) {
             return;
         }

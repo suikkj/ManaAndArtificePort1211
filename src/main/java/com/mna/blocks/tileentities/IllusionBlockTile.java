@@ -62,7 +62,7 @@ extends BlockEntity {
 
     private void resolveMimicBlock() {
         Direction dir = (Direction)this.getBlockState().getValue((Property)BlockStateProperties.FACING);
-        ClipContext rtc = new ClipContext(Vec3.atCenterOf((Vec3i)this.getBlockPos().offset(dir.getStepX(), dir.getStepY(), dir.getStepZ())), Vec3.atCenterOf((Vec3i)this.getBlockPos().offset(dir.getStepX() * 8, dir.getStepY() * 8, dir.getStepZ() * 8)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, null);
+        ClipContext rtc = new ClipContext(Vec3.atCenterOf((Vec3i)this.getBlockPos().offset(dir.getStepX(), dir.getStepY(), dir.getStepZ())), Vec3.atCenterOf((Vec3i)this.getBlockPos().offset(dir.getStepX() * 8, dir.getStepY() * 8, dir.getStepZ() * 8)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, (net.minecraft.world.entity.Entity)null);
         BlockHitResult brtr = this.getLevel().clip(rtc);
         if (brtr.getType() == HitResult.Type.MISS) {
             this.mimicPos = this.getBlockPos();

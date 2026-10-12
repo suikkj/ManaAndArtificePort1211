@@ -107,7 +107,7 @@ INoCreativeTab {
             return;
         }
         SpellRecipe recipe = this.getRecipe(stack);
-        recipe.addItemTooltip(stack, worldIn, tooltip, (Player)mc.player);
+        recipe.addItemTooltip(stack, worldIn.level(), tooltip, (Player)mc.player);
         super.appendHoverText(stack, worldIn, tooltip, flagIn);
     }
 

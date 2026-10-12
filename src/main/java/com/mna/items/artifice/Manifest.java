@@ -42,7 +42,7 @@ implements IItemWithGui<Manifest> {
     @Override
     public void appendHoverText(ItemStack stack, net.minecraft.world.item.Item.TooltipContext world, List<Component> tooltip, TooltipFlag flags) {
         IItemWithGui.super.appendHoverText(stack, world, tooltip, flags);
-        this.addContentsDescription(stack, world, tooltip);
+        this.addContentsDescription(stack, world.level(), tooltip);
     }
 
     public void addContentsDescription(ItemStack stack, Level world, List<Component> tooltip) {

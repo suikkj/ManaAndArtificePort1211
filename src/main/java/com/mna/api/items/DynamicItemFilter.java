@@ -20,6 +20,7 @@ import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.item.ItemStack;
+import com.mna.api.tools.MNAItemData;
 
 public class DynamicItemFilter {
     private NonNullList<ItemStack> _whiteList = NonNullList.create();

@@ -153,15 +153,15 @@ implements RangedAttackMob {
         if (entity == null) {
             return;
         }
-        MobEffect goalEffect = MobEffects.MOVEMENT_SLOWDOWN;
+        net.minecraft.core.Holder<MobEffect> goalEffect = MobEffects.MOVEMENT_SLOWDOWN;
         int duration = 60;
         boolean increaseMagnitude = true;
         if (this.tier >= 2 && entity.getEffect(com.mna.api.tools.MAEffects.holder(EffectInit.LIFE_TAP.get())) == null) {
-            goalEffect = (MobEffect)EffectInit.LIFE_TAP.get();
+            goalEffect = EffectInit.LIFE_TAP;
             duration = 200;
             increaseMagnitude = false;
         } else if (this.tier >= 3 && !entity.onGround()) {
-            goalEffect = (MobEffect)EffectInit.GRAVITY_WELL.get();
+            goalEffect = EffectInit.GRAVITY_WELL;
             duration = 100;
             increaseMagnitude = false;
         }

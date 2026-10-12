@@ -33,7 +33,7 @@ public class BiomeUtils {
             return null;
         }
         Registry registry = world.registryAccess().registryOrThrow(Registries.BIOME);
-        return registry.getKey(((Biome)biome.get()));
+        return registry.getKey(biome.value());
     }
 }
 

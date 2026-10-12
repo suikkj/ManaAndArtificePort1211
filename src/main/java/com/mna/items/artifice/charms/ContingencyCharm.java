@@ -124,7 +124,7 @@ implements ICanContainSpell {
         Player player = ManaAndArtifice.instance.proxy.getClientPlayer();
         if (player != null) {
             ISpellDefinition recipe = this.getSpell(pStack);
-            recipe.addItemTooltip(pStack, pLevel, pTooltipComponents, player);
+            recipe.addItemTooltip(pStack, pLevel.level(), pTooltipComponents, player);
         }
         pTooltipComponents.add((Component)Component.translatable((String)"item.mna.contingency_charm.charges_display", (Object[])new Object[]{this.getCharges(pStack), this.maxCharges}).withStyle(ChatFormatting.AQUA));
         if (this.breakOnZeroCharges) {

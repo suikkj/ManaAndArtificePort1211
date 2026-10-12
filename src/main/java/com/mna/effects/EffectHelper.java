@@ -30,18 +30,18 @@ public class EffectHelper {
     private static void removeDoubleTapEarlyEffects(LivingEntity living) {
         List toRemove = living.getActiveEffects().stream().filter(e -> {
             IDoubleTapEndEarly iee;
-            MobEffect patt1067$temp = e.getEffect();
-            return patt1067$temp instanceof IDoubleTapEndEarly && (iee = (IDoubleTapEndEarly)patt1067$temp).canEndEarly(living, (MobEffectInstance)e);
+            net.minecraft.core.Holder<MobEffect> patt1067$temp = e.getEffect();
+            return patt1067$temp.value() instanceof IDoubleTapEndEarly && (iee = (IDoubleTapEndEarly)patt1067$temp.value()).canEndEarly(living, (MobEffectInstance)e);
         }).collect(Collectors.toList());
         for (MobEffectInstance inst : toRemove) {
             if (inst == null) continue;
-            ((IDoubleTapEndEarly)inst.getEffect()).onRemoved(living, inst);
+            ((IDoubleTapEndEarly)inst.getEffect().value()).onRemoved(living, inst);
             if (living.level().isClientSide()) continue;
             try {
                 living.removeEffect(inst.getEffect());
             }
             catch (Exception e2) {
-                ManaAndArtifice.LOGGER.warn("Attempted to remove potion effect " + BuiltInRegistries.MOB_EFFECT.getKey(inst.getEffect()).toString() + " early, but it failed.  Recovering and moving on.  The error was: " + e2.getMessage());
+                ManaAndArtifice.LOGGER.warn("Attempted to remove potion effect " + BuiltInRegistries.MOB_EFFECT.getKey(inst.getEffect().value()).toString() + " early, but it failed.  Recovering and moving on.  The error was: " + e2.getMessage());
             }
         }
     }

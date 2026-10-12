@@ -74,7 +74,7 @@ implements IDamageComponent {
                     return false;
                 }
                 Vec3 entitySightPos = new Vec3(e.getX(), e.getEyeY(), e.getZ());
-                boolean visionCheck = context.getServerLevel().clip(new ClipContext(checkTargetPosition, entitySightPos, ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, null)).getType() == HitResult.Type.MISS;
+                boolean visionCheck = context.getServerLevel().clip(new ClipContext(checkTargetPosition, entitySightPos, ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, (net.minecraft.world.entity.Entity)null)).getType() == HitResult.Type.MISS;
                 return e.isAlive() && !context.hasEntityBeenAffected(this, (Entity)e) && visionCheck;
             });
             if (entities.size() == 0) break;

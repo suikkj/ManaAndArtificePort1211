@@ -93,7 +93,7 @@ extends PotionEffectComponent {
                     fbe.zo = pos.getZ();
                     fbe.setStartPos(pos);
                     fbe.setDeltaMovement(new Vec3(0.0, 0.25 + Math.random() * 0.75, 0.0));
-                    fbe.blockState = state;
+                    com.mna.api.tools.MNAFallingBlocks.setBlockState(fbe, state);
                     fbe.hasImpulse = true;
                     fbe.dropItem = false;
                     context.getServerLevel().addFreshEntity((Entity)fbe);

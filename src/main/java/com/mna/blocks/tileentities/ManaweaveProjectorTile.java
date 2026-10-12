@@ -40,6 +40,7 @@ import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import com.mna.api.tools.MNACap;
+import com.mna.api.tools.MNAItemData;
 
 public class ManaweaveProjectorTile
 extends BlockEntity {

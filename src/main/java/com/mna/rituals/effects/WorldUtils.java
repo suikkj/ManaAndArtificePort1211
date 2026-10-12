@@ -49,7 +49,7 @@ public class WorldUtils {
         if (biome == null) {
             return null;
         }
-        Pair result = world.findClosestBiome3d(b -> b.isBound() && ((Biome)b.get()).equals(biome), center, 6400, 8, 64);
+        Pair result = world.findClosestBiome3d(b -> b.isBound() && b.value().equals(biome), center, 6400, 8, 64);
         if (result == null) {
             return null;
         }

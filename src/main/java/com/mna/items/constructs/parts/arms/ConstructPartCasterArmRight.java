@@ -58,7 +58,7 @@ IItemWithGui<ConstructPartCasterArmRight> {
     @Override
     public void appendHoverText(ItemStack stack, net.minecraft.world.item.Item.TooltipContext world, List<Component> lines, TooltipFlag flags) {
         super.appendHoverText(stack, world, lines, flags);
-        ICanContainSpell.super.getSpell(stack).addItemTooltip(stack, world, lines, ManaAndArtifice.instance.proxy.getClientPlayer());
+        ICanContainSpell.super.getSpell(stack).addItemTooltip(stack, world.level(), lines, ManaAndArtifice.instance.proxy.getClientPlayer());
     }
 
     public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand hand) {

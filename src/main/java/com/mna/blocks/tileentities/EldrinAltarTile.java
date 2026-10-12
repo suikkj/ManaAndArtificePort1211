@@ -145,7 +145,7 @@ IEldrinConsumerTile {
     protected boolean losCheck(BlockPos pos) {
         Vec3 vector3d = Vec3.atCenterOf((Vec3i)this.getBlockPos().above());
         Vec3 vector3d1 = Vec3.atCenterOf((Vec3i)pos);
-        BlockHitResult result = this.getLevel().clip(new ClipContext(vector3d, vector3d1, ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, null));
+        BlockHitResult result = this.getLevel().clip(new ClipContext(vector3d, vector3d1, ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, (net.minecraft.world.entity.Entity)null));
         if (result.getType() == HitResult.Type.BLOCK) {
             return result.getBlockPos().equals(pos);
         }

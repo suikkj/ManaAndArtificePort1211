@@ -17,6 +17,7 @@ import net.minecraft.world.Container;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.item.ItemStack;
 import java.util.function.Supplier;
+import com.mna.api.tools.MNAItemData;
 
 public class PlayerMagicProvider {
     final String KEY_CASTING_RESOURCE_TYPE = "casting_resource_id";

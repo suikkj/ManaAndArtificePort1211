@@ -57,7 +57,7 @@ implements IForgeLivingEntity {
         if (self.isInLava() && ((DemonArmorItem)ItemInit.DEMON_ARMOR_CHEST.get()).isSetEquipped(self) && self instanceof Player) {
             ((Player)self).jumpFromGround();
         } else {
-            self.setDeltaMovement(self.getDeltaMovement().add(0.0, (double)0.04f * self.getAttributeValue((Attribute)NeoForgeMod.SWIM_SPEED.get()), 0.0));
+            self.setDeltaMovement(self.getDeltaMovement().add(0.0, (double)0.04f * self.getAttributeValue(NeoForgeMod.SWIM_SPEED), 0.0));
         }
     }
 }
