@@ -74,7 +74,7 @@ implements EntityBlock {
         if (provider == null || dataWriter == null) {
             return InteractionResult.SUCCESS;
         }
-        player.openMenu(provider, dataWriter);
+        player.openMenu(provider, (java.util.function.Consumer)dataWriter);
         return InteractionResult.SUCCESS;
     }
 
@@ -131,7 +131,7 @@ implements EntityBlock {
             if (be instanceof IEldrinCapacitorTile) {
                 IEldrinCapacitorTile capTile = (IEldrinCapacitorTile)be;
                 capTile.setPlacedBy(player);
-                pLevel.getChunkAt(pPos).getCapability(ManaAndArtificeMod.getChunkMagicCapability()).ifPresent(magic -> magic.pushKnownEldrinSupplier(pPos));
+                com.mna.api.tools.MNACap.get(pLevel.getChunkAt(pPos), com.mna.capabilities.CapabilitiesInit.CHUNK_MAGIC).ifPresent(magic -> magic.pushKnownEldrinSupplier(pPos));
             }
         }
     }

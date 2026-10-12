@@ -81,7 +81,7 @@ extends PylonTileBase {
 
     private void rechargeConstructs() {
         Vec3 myPos = Vec3.atCenterOf((Vec3i)this.getBlockPos());
-        this.forAllEntities(Construct.class, false, (T construct) -> {
+        this.forAllEntities(Construct.class, false, (Construct construct) -> {
             if (construct.getManaPct() == 1.0f || !construct.getConstructData().isCapabilityEnabled(ConstructCapability.STORE_MANA)) {
                 return;
             }
@@ -118,7 +118,7 @@ extends PylonTileBase {
     }
 
     private void chargeSigils() {
-        this.forAllEntities((EntityTypeTest)EntityInit.SPELL_RUNE.get(), false, (T e) -> {
+        this.forAllEntities(EntityInit.SPELL_RUNE.get(), false, (SpellRune e) -> {
             if (e.isPermanent()) {
                 e.addCharge();
             }

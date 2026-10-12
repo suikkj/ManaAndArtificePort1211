@@ -11,7 +11,8 @@ import net.minecraft.world.entity.player.Player;
 import net.neoforged.bus.api.Event;
 
 public class MagicXPGainedEvent
-extends Event {
+extends Event
+implements net.neoforged.bus.api.ICancellableEvent {
     private final Player player;
     private int amount;
 

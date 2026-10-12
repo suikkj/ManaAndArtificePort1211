@@ -187,7 +187,7 @@ public interface IFactionEnemy<T extends LivingEntity> {
         if (!ignoreConfig && !GeneralConfigValues.ChunkMagicRequiredForSpawns) {
             return true;
         }
-        return world.isAreaLoaded(pos, 1) && (chunkAccess = (net.minecraft.world.level.chunk.ChunkAccess)world.getChunk(pos)) instanceof LevelChunk && (chunkMagic = (IChunkMagic)(levelChunk = MNACap.get((LevelChunk)chunkAccess, ChunkMagicProvider.MAGIC)).orElse(null)) != null && chunkMagic.getResidualMagic() > 0.0f;
+        return world.isAreaLoaded(pos, 1) && (chunkAccess = (net.minecraft.world.level.chunk.ChunkAccess)world.getChunk(pos)) instanceof LevelChunk && (chunkMagic = (IChunkMagic)MNACap.get((LevelChunk)chunkAccess, ChunkMagicProvider.MAGIC).orElse(null)) != null && chunkMagic.getResidualMagic() > 0.0f;
     }
 }
 

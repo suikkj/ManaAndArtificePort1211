@@ -77,7 +77,7 @@ extends Model {
     }
 
     public void render(PoseStack p_102317_, VertexConsumer p_102318_, int p_102319_, int p_102320_, float p_102321_, float p_102322_, float p_102323_, float p_102324_) {
-        this.root.render(p_102317_, p_102318_, p_102319_, p_102320_, p_102321_, p_102322_, p_102323_, p_102324_);
+        this.root.render(p_102317_, p_102318_, p_102319_, p_102320_, -1);
     }
 
     public void setupAnim(float p_102293_, float p_102294_, float p_102295_, float p_102296_) {

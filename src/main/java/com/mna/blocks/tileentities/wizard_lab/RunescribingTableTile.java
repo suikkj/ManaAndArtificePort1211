@@ -141,10 +141,10 @@ Consumer<FriendlyByteBuf> {
     private void damageHammerAndChisel(RandomSource source) {
         ItemStack chiselStack = this.getItem(1);
         ItemStack hammerStack = this.getItem(0);
-        if (chiselStack.getItem() == ItemInit.RUNESMITH_CHISEL.get() && chiselStack.hurt(1, source, null)) {
+        if (chiselStack.getItem() == ItemInit.RUNESMITH_CHISEL.get() && com.mna.api.tools.MNAItemData.hurt(chiselStack, 1, source)) {
             this.setItem(1, ItemStack.EMPTY);
         }
-        if (hammerStack.getItem() == ItemInit.RUNESMITH_HAMMER.get() && hammerStack.hurt(1, source, null)) {
+        if (hammerStack.getItem() == ItemInit.RUNESMITH_HAMMER.get() && com.mna.api.tools.MNAItemData.hurt(hammerStack, 1, source)) {
             this.setItem(0, ItemStack.EMPTY);
         }
     }

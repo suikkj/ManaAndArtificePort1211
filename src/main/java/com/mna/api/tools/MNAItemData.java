@@ -99,4 +99,17 @@ public final class MNAItemData {
         stack.set(type, value);
         return stack;
     }
+
+    /** [PORT 1.21.1] ItemStack.hurt(int, RandomSource, Player) removido - helper com semantica de quebra. */
+    public static boolean hurt(ItemStack stack, int amount, net.minecraft.util.RandomSource random) {
+        if (!stack.isDamageableItem()) {
+            return false;
+        }
+        int newDamage = stack.getDamageValue() + amount;
+        if (newDamage >= stack.getMaxDamage()) {
+            return true;
+        }
+        stack.setDamageValue(newDamage);
+        return false;
+    }
 }

@@ -161,7 +161,7 @@ implements IEldrinConsumerTile {
         lapis.shrink(this.getLapisRequired(crafter));
         ItemStack ink = this.getItem(0);
         if (!this.getLevel().isClientSide()) {
-            ink.hurt(this.getInkRequired(), this.level.random, (ServerPlayer)crafter);
+            com.mna.api.tools.MNAItemData.hurt(ink, this.getInkRequired(), this.level.random);
             if (ink.getDamageValue() >= ink.getMaxDamage()) {
                 this.setItem(0, ItemStack.EMPTY);
             }
@@ -208,7 +208,7 @@ implements IEldrinConsumerTile {
         }
         output = ((ICanContainSpell)output.getItem()).setSpell(output, this.copyRecipe);
         ((ICanContainSpell)output.getItem()).setTranscribedSpell(output);
-        if (this.getItem(2).hasCustomHoverName()) {
+        if (this.getItem(2).has(DataComponents.CUSTOM_NAME)) {
             output.set(DataComponents.ITEM_NAME, this.getItem(2).getHoverName());
         }
         this.setItem(3, output);

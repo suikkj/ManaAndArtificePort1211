@@ -27,7 +27,7 @@ import net.minecraft.world.level.block.state.properties.Property;
 import software.bernie.geckolib.model.GeoModel;
 import software.bernie.geckolib.renderer.GeoBlockRenderer;
 
-public class SimpleGeoBlockRenderer<V extends BlockEntity>
+public class SimpleGeoBlockRenderer<V extends BlockEntity & software.bernie.geckolib.animatable.GeoAnimatable>
 extends GeoBlockRenderer<V> {
     public SimpleGeoBlockRenderer(BlockEntityRendererProvider.Context rendererProvider, GeoModel<V> model) {
         super(model);

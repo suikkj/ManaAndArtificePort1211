@@ -197,7 +197,7 @@ public class MACapabilityForgeEventHandlers {
         if (event.getLevel() instanceof Level) {
             MNACap.get((Level)event.getLevel(), WorldMagicProvider.MAGIC).ifPresent(w -> {
                 if (WardingCandleBlock.shouldEntityBeBlocked(event.getEntityType()) && w.isWithinWardingCandle(event.getPos())) {
-                    event.setResult(Result.DENY);
+                    event.setCanGrief(false);
                 }
             });
         }

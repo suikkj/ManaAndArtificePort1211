@@ -375,7 +375,7 @@ implements ILootrBridge {
 
     @Override
     public net.minecraft.resources.ResourceKey<net.minecraft.world.level.storage.loot.LootTable> getLootTable() {
-        return this.lootTableId;
+        return net.minecraft.resources.ResourceKey.create(net.minecraft.core.registries.Registries.LOOT_TABLE, this.lootTableId);
     }
 
     @Override

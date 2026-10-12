@@ -44,6 +44,7 @@
 package com.mna.blocks.ritual;
 
 import com.mna.api.blocks.WaterloggableBlock;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import com.mna.api.blocks.interfaces.IDontCreateBlockItem;
 import com.mna.api.blocks.interfaces.ITranslucentBlock;
 import com.mna.api.rituals.IRitualReagent;
@@ -151,7 +152,7 @@ EntityBlock {
         if (ItemFilterGroup.GROUND_RUNE_NON_PLACEABLE.anyMatchesFilter(activeStack)) {
             return InteractionResult.PASS;
         }
-        if (state.getValue(ACTIVATED) && (rituals = worldIn.getEntities((EntityTypeTest)EntityInit.RITUAL_ENTITY.get(), new AABB(pos).inflate(16.0), e -> true)).size() > 0 && rituals.stream().anyMatch(r -> r.getState() != Ritual.RitualState.GUIDING_REAGENT_PLACEMENT)) {
+        if (state.getValue(ACTIVATED) && (rituals = worldIn.getEntitiesOfClass(Ritual.class, new AABB(pos).inflate(16.0), e -> true)).size() > 0 && rituals.stream().anyMatch(r -> r.getState() != Ritual.RitualState.GUIDING_REAGENT_PLACEMENT)) {
             return InteractionResult.PASS;
         }
         if (worldIn.isClientSide) {
