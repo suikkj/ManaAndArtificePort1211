@@ -51,7 +51,7 @@ import net.neoforged.api.distmarker.OnlyIn;
 
 @OnlyIn(value=Dist.CLIENT)
 public class ReagentList
-extends ObjectSelectionList<ReagentListEntry> {
+extends ObjectSelectionList<ReagentList.ReagentListEntry> {
     private boolean _scrolling = false;
     private boolean fullTooltip = false;
     private int x0;
@@ -62,7 +62,7 @@ extends ObjectSelectionList<ReagentListEntry> {
     private final Consumer<Component> tooltipFunction;
 
     public ReagentList(int screenLeft, int screenTop, int x, int y, int width, int height, @Nullable Consumer<Component> tooltipFunction) {
-        super(Minecraft.getInstance(), width, height, screenTop + y, screenTop + y + height, 16);
+        super(Minecraft.getInstance(), width, height, screenTop + y, 16);
         this.setRenderHeader(false, 24);
         this.x0 = screenLeft + x;
         this.x1 = screenLeft + x + width;
@@ -116,11 +116,11 @@ extends ObjectSelectionList<ReagentListEntry> {
             segment.add(part);
             int segmentWidth = (segment.size() + 1) * 8 + 15;
             if (segmentWidth < this.width) continue;
-            this.addEntry((AbstractSelectionList.Entry)new ReagentListEntry(segment));
+            this.addEntry(new ReagentListEntry(segment));
             segment.clear();
         }
         if (segment.size() > 0) {
-            this.addEntry((AbstractSelectionList.Entry)new ReagentListEntry(segment));
+            this.addEntry(new ReagentListEntry(segment));
         }
     }
 
@@ -189,7 +189,7 @@ extends ObjectSelectionList<ReagentListEntry> {
     }
 
     public void setSelected(@Nullable ReagentListEntry selected) {
-        super.setSelected((AbstractSelectionList.Entry)selected);
+        super.setSelected(selected);
     }
 
     public boolean isScrolling() {

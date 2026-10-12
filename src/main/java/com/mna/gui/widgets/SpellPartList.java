@@ -41,7 +41,7 @@ import com.mna.api.tools.MNACap;
 
 @OnlyIn(value=Dist.CLIENT)
 public class SpellPartList
-extends ObjectSelectionList<SpellPartEntry> {
+extends ObjectSelectionList<SpellPartList.SpellPartEntry> {
     private boolean _scrolling = false;
     public boolean _active = true;
     private final int tier;
@@ -61,7 +61,7 @@ extends ObjectSelectionList<SpellPartEntry> {
     private int y1;
 
     public SpellPartList(boolean includeModifiers, boolean roteOnly, int screenLeft, int screenTop, int x, int y, int width, int height, Consumer<Shape> onShapeClicked, Consumer<SpellEffect> onComponentClicked, Consumer<Modifier> onModifierClicked, Consumer<Component> tooltip) {
-        super(Minecraft.getInstance(), width, height, screenTop + y, screenTop + y + height, 24);
+        super(Minecraft.getInstance(), width, height, screenTop + y, 24);
         this.setRenderHeader(false, 24);
         this.rote = (IPlayerRoteSpells)this.minecraft.player.getData(PlayerRoteSpellsProvider.ROTE.get());
         this.shapeClick = onShapeClicked;
@@ -133,11 +133,11 @@ extends ObjectSelectionList<SpellPartEntry> {
         for (ISpellComponent part : parts) {
             segment.add(part);
             if (segment.size() != itemsPerRow) continue;
-            this.addEntry((AbstractSelectionList.Entry)new SpellPartEntry(segment, clickHandler));
+            this.addEntry(new SpellPartEntry(segment, clickHandler));
             segment.clear();
         }
         if (segment.size() > 0) {
-            this.addEntry((AbstractSelectionList.Entry)new SpellPartEntry(segment, clickHandler));
+            this.addEntry(new SpellPartEntry(segment, clickHandler));
         }
     }
 
@@ -237,7 +237,7 @@ extends ObjectSelectionList<SpellPartEntry> {
     }
 
     public void setSelected(@Nullable SpellPartEntry selected) {
-        super.setSelected((AbstractSelectionList.Entry)selected);
+        super.setSelected(selected);
     }
 
     @OnlyIn(value=Dist.CLIENT)

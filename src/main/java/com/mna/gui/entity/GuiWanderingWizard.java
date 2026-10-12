@@ -139,7 +139,7 @@ extends SearchableGui<ContainerWanderingWizard> {
 
     @OnlyIn(value=Dist.CLIENT)
     class WanderingWizardOffersList
-    extends ObjectSelectionList<ItemStackEntry> {
+    extends ObjectSelectionList<WanderingWizardOffersList.ItemStackEntry> {
         private boolean _scrolling;
         public boolean _active;
         private final Collection<MerchantOffer> initialOffers;
@@ -149,7 +149,7 @@ extends SearchableGui<ContainerWanderingWizard> {
         private int y1;
 
         public WanderingWizardOffersList(MerchantOffers merchantOffers) {
-            super(GuiWanderingWizard.this.minecraft, 244, 141, GuiWanderingWizard.this.topPos + 26, GuiWanderingWizard.this.topPos + 167, 20);
+            super(GuiWanderingWizard.this.minecraft, 244, 141, GuiWanderingWizard.this.topPos + 26, 20);
             this._scrolling = false;
             this._active = true;
             this.setRenderHeader(false, 20);
@@ -167,12 +167,12 @@ extends SearchableGui<ContainerWanderingWizard> {
             for (MerchantOffer part : offers) {
                 segment.add(part);
                 if (segment.size() != 3) continue;
-                this.addEntry((AbstractSelectionList.Entry)new ItemStackEntry(segment, clickHandler, index));
+                this.addEntry(new ItemStackEntry(segment, clickHandler, index));
                 index += segment.size();
                 segment.clear();
             }
             if (segment.size() > 0) {
-                this.addEntry((AbstractSelectionList.Entry)new ItemStackEntry(segment, clickHandler, index));
+                this.addEntry(new ItemStackEntry(segment, clickHandler, index));
             }
         }
 
@@ -274,7 +274,7 @@ extends SearchableGui<ContainerWanderingWizard> {
         }
 
         public void setSelected(@Nullable ItemStackEntry selected) {
-            super.setSelected((AbstractSelectionList.Entry)selected);
+            super.setSelected(selected);
         }
 
         @OnlyIn(value=Dist.CLIENT)

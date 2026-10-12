@@ -113,19 +113,19 @@ extends GuiJEIDisable<ContainerOcculus> {
         this.getRecipes(recipeManager, IconTypes.SHAPE, (RecipeType)RecipeInit.SHAPE_TYPE.get(), spell_parts, null);
         this.getRecipes(recipeManager, IconTypes.COMPONENT, (RecipeType)RecipeInit.COMPONENT_TYPE.get(), spell_parts, null);
         this.getRecipes(recipeManager, IconTypes.MODIFIER, (RecipeType)RecipeInit.MODIFIER_TYPE.get(), spell_parts, null);
-        this.setupTierBadges(IconTypes.PROGRESSION, new ArrayList<ListEntry<AMRecipeBase>>(), new ItemStack((ItemLike)ItemInit.GUIDE_BOOK.get()).set(DataComponents.ITEM_NAME, (Component)Component.translatable((String)"mechanic.mna:progression")));
-        this.setupTierBadges(IconTypes.FACTION_AFFINITY, new ArrayList<ListEntry<AMRecipeBase>>(), new ItemStack((ItemLike)ItemInit.MOTE_ARCANE.get()).set(DataComponents.ITEM_NAME, (Component)Component.translatable((String)"mechanic.mna:faction_affinity")));
-        this.setupTierBadges(IconTypes.SHAPE, spell_parts, new ItemStack((ItemLike)ItemInit.VELLUM.get()).set(DataComponents.ITEM_NAME, (Component)Component.translatable((String)"mechanic.mna:sorcery")));
-        this.setupTierBadges(IconTypes.RITUAL, this.getRecipes(recipeManager, IconTypes.RITUAL, (RecipeType)RecipeInit.RITUAL_TYPE.get(), null), new ItemStack((ItemLike)ItemInit.WIZARD_CHALK.get()).set(DataComponents.ITEM_NAME, (Component)Component.translatable((String)"mechanic.mna:rituals")));
-        this.setupTierBadges(IconTypes.MANAWEAVE_PATTERN, this.getRecipes(recipeManager, IconTypes.MANAWEAVE_PATTERN, (RecipeType)RecipeInit.MANAWEAVING_PATTERN_TYPE.get(), null), new ItemStack((ItemLike)ItemInit.MANAWEAVER_WAND.get()).set(DataComponents.ITEM_NAME, (Component)Component.translatable((String)"mechanic.mna:manaweave_patterns")));
-        this.setupTierBadges(IconTypes.MANAWEAVE_ALTAR, this.getRecipes(recipeManager, IconTypes.MANAWEAVE_ALTAR, (RecipeType)RecipeInit.MANAWEAVING_RECIPE_TYPE.get(), r -> !r.isEnchantment() && !(r.getResultItem().getItem() instanceof ItemConstructPart)), new ItemStack((ItemLike)BlockInit.MANAWEAVING_ALTAR.get()).set(DataComponents.ITEM_NAME, (Component)Component.translatable((String)"mechanic.mna:manaweave_crafting")));
-        this.setupTierBadges(IconTypes.ELDRIN_ALTAR, this.getRecipes(recipeManager, IconTypes.ELDRIN_ALTAR, (RecipeType)RecipeInit.ELDRIN_ALTAR_TYPE.get(), r -> !(r.getResultItem().getItem() instanceof ItemConstructPart)), new ItemStack((ItemLike)BlockInit.ELDRIN_ALTAR.get()).set(DataComponents.ITEM_NAME, (Component)Component.translatable((String)"mechanic.mna:eldrin_altar")));
-        this.setupTierBadges(IconTypes.RUNESCRIBING, this.getRecipes(recipeManager, IconTypes.RUNESCRIBING, (RecipeType)RecipeInit.RUNESCRIBING_TYPE.get(), null), new ItemStack((ItemLike)BlockInit.RUNESCRIBING_TABLE.get()).set(DataComponents.ITEM_NAME, (Component)Component.translatable((String)"mechanic.mna:runescribing")));
-        this.setupTierBadges(IconTypes.RUNIC_ANVIL, this.getRecipes(recipeManager, IconTypes.RUNIC_ANVIL, (RecipeType)RecipeInit.RUNEFORGING_TYPE.get(), null), new ItemStack((ItemLike)BlockInit.RUNIC_ANVIL.get()).set(DataComponents.ITEM_NAME, (Component)Component.translatable((String)"mechanic.mna:runesmithing")));
+        this.setupTierBadges(IconTypes.PROGRESSION, new ArrayList<ListEntry<AMRecipeBase>>(), com.mna.api.tools.MNAItemData.setComponent(new ItemStack((ItemLike)ItemInit.GUIDE_BOOK.get()), DataComponents.ITEM_NAME, (Component)Component.translatable((String)"mechanic.mna:progression")));
+        this.setupTierBadges(IconTypes.FACTION_AFFINITY, new ArrayList<ListEntry<AMRecipeBase>>(), com.mna.api.tools.MNAItemData.setComponent(new ItemStack((ItemLike)ItemInit.MOTE_ARCANE.get()), DataComponents.ITEM_NAME, (Component)Component.translatable((String)"mechanic.mna:faction_affinity")));
+        this.setupTierBadges(IconTypes.SHAPE, spell_parts, com.mna.api.tools.MNAItemData.setComponent(new ItemStack((ItemLike)ItemInit.VELLUM.get()), DataComponents.ITEM_NAME, (Component)Component.translatable((String)"mechanic.mna:sorcery")));
+        this.setupTierBadges(IconTypes.RITUAL, this.getRecipes(recipeManager, IconTypes.RITUAL, (RecipeType)RecipeInit.RITUAL_TYPE.get(), null), com.mna.api.tools.MNAItemData.setComponent(new ItemStack((ItemLike)ItemInit.WIZARD_CHALK.get()), DataComponents.ITEM_NAME, (Component)Component.translatable((String)"mechanic.mna:rituals")));
+        this.setupTierBadges(IconTypes.MANAWEAVE_PATTERN, this.getRecipes(recipeManager, IconTypes.MANAWEAVE_PATTERN, (RecipeType)RecipeInit.MANAWEAVING_PATTERN_TYPE.get(), null), com.mna.api.tools.MNAItemData.setComponent(new ItemStack((ItemLike)ItemInit.MANAWEAVER_WAND.get()), DataComponents.ITEM_NAME, (Component)Component.translatable((String)"mechanic.mna:manaweave_patterns")));
+        this.setupTierBadges(IconTypes.MANAWEAVE_ALTAR, this.getRecipes(recipeManager, IconTypes.MANAWEAVE_ALTAR, (RecipeType)RecipeInit.MANAWEAVING_RECIPE_TYPE.get(), r -> !r.isEnchantment() && !(r.getResultItem().getItem() instanceof ItemConstructPart)), com.mna.api.tools.MNAItemData.setComponent(new ItemStack((ItemLike)BlockInit.MANAWEAVING_ALTAR.get()), DataComponents.ITEM_NAME, (Component)Component.translatable((String)"mechanic.mna:manaweave_crafting")));
+        this.setupTierBadges(IconTypes.ELDRIN_ALTAR, this.getRecipes(recipeManager, IconTypes.ELDRIN_ALTAR, (RecipeType)RecipeInit.ELDRIN_ALTAR_TYPE.get(), r -> !(r.getResultItem().getItem() instanceof ItemConstructPart)), com.mna.api.tools.MNAItemData.setComponent(new ItemStack((ItemLike)BlockInit.ELDRIN_ALTAR.get()), DataComponents.ITEM_NAME, (Component)Component.translatable((String)"mechanic.mna:eldrin_altar")));
+        this.setupTierBadges(IconTypes.RUNESCRIBING, this.getRecipes(recipeManager, IconTypes.RUNESCRIBING, (RecipeType)RecipeInit.RUNESCRIBING_TYPE.get(), null), com.mna.api.tools.MNAItemData.setComponent(new ItemStack((ItemLike)BlockInit.RUNESCRIBING_TABLE.get()), DataComponents.ITEM_NAME, (Component)Component.translatable((String)"mechanic.mna:runescribing")));
+        this.setupTierBadges(IconTypes.RUNIC_ANVIL, this.getRecipes(recipeManager, IconTypes.RUNIC_ANVIL, (RecipeType)RecipeInit.RUNEFORGING_TYPE.get(), null), com.mna.api.tools.MNAItemData.setComponent(new ItemStack((ItemLike)BlockInit.RUNIC_ANVIL.get()), DataComponents.ITEM_NAME, (Component)Component.translatable((String)"mechanic.mna:runesmithing")));
         List<ListEntry<AMRecipeBase>> construct_recipes = this.getRecipes(recipeManager, IconTypes.CONSTRUCTS, (RecipeType)RecipeInit.MANAWEAVING_RECIPE_TYPE.get(), r -> !r.isEnchantment() && r.getResultItem().getItem() instanceof ItemConstructPart);
         construct_recipes.addAll(this.getRecipes(recipeManager, IconTypes.CONSTRUCTS, (RecipeType)RecipeInit.ELDRIN_ALTAR_TYPE.get(), r -> r.getResultItem().getItem() instanceof ItemConstructPart));
-        this.setupTierBadges(IconTypes.CONSTRUCTS, construct_recipes, new ItemStack((ItemLike)ItemInit.CONSTRUCT_BASIC_HEAD_OBSIDIAN.get()).set(DataComponents.ITEM_NAME, (Component)Component.translatable((String)"mechanic.mna:constructs")));
-        this.setupTierBadges(IconTypes.ENCHANTMENT, this.getRecipes(recipeManager, IconTypes.ENCHANTMENT, (RecipeType)RecipeInit.MANAWEAVING_RECIPE_TYPE.get(), r -> r.isEnchantment()), new ItemStack((ItemLike)Items.ENCHANTED_BOOK).set(DataComponents.ITEM_NAME, (Component)Component.translatable((String)"mechanic.mna:enchantments")));
+        this.setupTierBadges(IconTypes.CONSTRUCTS, construct_recipes, com.mna.api.tools.MNAItemData.setComponent(new ItemStack((ItemLike)ItemInit.CONSTRUCT_BASIC_HEAD_OBSIDIAN.get()), DataComponents.ITEM_NAME, (Component)Component.translatable((String)"mechanic.mna:constructs")));
+        this.setupTierBadges(IconTypes.ENCHANTMENT, this.getRecipes(recipeManager, IconTypes.ENCHANTMENT, (RecipeType)RecipeInit.MANAWEAVING_RECIPE_TYPE.get(), r -> r.isEnchantment()), com.mna.api.tools.MNAItemData.setComponent(new ItemStack((ItemLike)Items.ENCHANTED_BOOK), DataComponents.ITEM_NAME, (Component)Component.translatable((String)"mechanic.mna:enchantments")));
         this.finalizeLists();
         this.setActiveList(IconTypes.PROGRESSION);
         this.setActiveButton((Button)this.children().stream().filter(e -> e instanceof ImageItemStackButton).map(e -> (ImageItemStackButton)(e)).findFirst().get());
@@ -566,7 +566,7 @@ extends GuiJEIDisable<ContainerOcculus> {
     }
 
     class OcculusEntryList
-    extends ObjectSelectionList<OcculusEntry> {
+    extends ObjectSelectionList<OcculusEntryList.OcculusEntry> {
         private int x;
         private int y0;
         private int y1;
@@ -583,7 +583,7 @@ extends GuiJEIDisable<ContainerOcculus> {
         public <T extends AMRecipeBase> void addIcon(T recipe, IconTypes type) {
             if (this.current == null || this.current.countIcons() == 4 || recipe.getTier() > this.current.getTier()) {
                 this.current = recipe instanceof ISpellComponentRecipe ? new OcculusSpellEntry(recipe.getTier()) : (recipe instanceof ManaweavingPattern ? new OcculusManaweaveEntry(recipe.getTier()) : new OcculusEntry(recipe.getTier()));
-                this.addEntry((AbstractSelectionList.Entry)this.current);
+                this.addEntry(this.current);
             }
             if (this.current.getTier() > recipe.getTier()) {
                 throw new InvalidParameterException("Cannot add a recipe for a lower tier.  Sort recipes ascending by tier for this to work.");

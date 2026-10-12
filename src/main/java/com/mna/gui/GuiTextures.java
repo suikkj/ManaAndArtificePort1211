@@ -30,17 +30,17 @@ public class GuiTextures {
     public static HashMap<Affinity, ItemStack> affinityIcons = new HashMap<Affinity, ItemStack>(){
         private static final long serialVersionUID = 1L;
         {
-            this.put(Affinity.ARCANE, new ItemStack((ItemLike)ItemInit.GREATER_MOTE_ARCANE.get()).set(DataComponents.ITEM_NAME, (Component)Component.translatable((String)"affinity.mna.arcane")));
-            this.put(Affinity.WIND, new ItemStack((ItemLike)ItemInit.GREATER_MOTE_AIR.get()).set(DataComponents.ITEM_NAME, (Component)Component.translatable((String)"affinity.mna.air")));
-            this.put(Affinity.EARTH, new ItemStack((ItemLike)ItemInit.GREATER_MOTE_EARTH.get()).set(DataComponents.ITEM_NAME, (Component)Component.translatable((String)"affinity.mna.earth")));
-            this.put(Affinity.WATER, new ItemStack((ItemLike)ItemInit.GREATER_MOTE_WATER.get()).set(DataComponents.ITEM_NAME, (Component)Component.translatable((String)"affinity.mna.water")));
-            this.put(Affinity.FIRE, new ItemStack((ItemLike)ItemInit.GREATER_MOTE_FIRE.get()).set(DataComponents.ITEM_NAME, (Component)Component.translatable((String)"affinity.mna.fire")));
-            this.put(Affinity.ENDER, new ItemStack((ItemLike)ItemInit.GREATER_MOTE_ENDER.get()).set(DataComponents.ITEM_NAME, (Component)Component.translatable((String)"affinity.mna.ender")));
+            this.put(Affinity.ARCANE, com.mna.api.tools.MNAItemData.setComponent(new ItemStack((ItemLike)ItemInit.GREATER_MOTE_ARCANE.get()), DataComponents.ITEM_NAME, (Component)Component.translatable((String)"affinity.mna.arcane")));
+            this.put(Affinity.WIND, com.mna.api.tools.MNAItemData.setComponent(new ItemStack((ItemLike)ItemInit.GREATER_MOTE_AIR.get()), DataComponents.ITEM_NAME, (Component)Component.translatable((String)"affinity.mna.air")));
+            this.put(Affinity.EARTH, com.mna.api.tools.MNAItemData.setComponent(new ItemStack((ItemLike)ItemInit.GREATER_MOTE_EARTH.get()), DataComponents.ITEM_NAME, (Component)Component.translatable((String)"affinity.mna.earth")));
+            this.put(Affinity.WATER, com.mna.api.tools.MNAItemData.setComponent(new ItemStack((ItemLike)ItemInit.GREATER_MOTE_WATER.get()), DataComponents.ITEM_NAME, (Component)Component.translatable((String)"affinity.mna.water")));
+            this.put(Affinity.FIRE, com.mna.api.tools.MNAItemData.setComponent(new ItemStack((ItemLike)ItemInit.GREATER_MOTE_FIRE.get()), DataComponents.ITEM_NAME, (Component)Component.translatable((String)"affinity.mna.fire")));
+            this.put(Affinity.ENDER, com.mna.api.tools.MNAItemData.setComponent(new ItemStack((ItemLike)ItemInit.GREATER_MOTE_ENDER.get()), DataComponents.ITEM_NAME, (Component)Component.translatable((String)"affinity.mna.ender")));
             this.put(Affinity.UNKNOWN, ItemStack.EMPTY);
             this.put(Affinity.HELLFIRE, ItemStack.EMPTY);
-            this.put(Affinity.ICE, new ItemStack((ItemLike)ItemInit.GREATER_MOTE_ICE.get()).set(DataComponents.ITEM_NAME, (Component)Component.translatable((String)"affinity.mna.ice")));
-            this.put(Affinity.LIGHTNING, new ItemStack((ItemLike)ItemInit.GREATER_MOTE_LIGHTNING.get()).set(DataComponents.ITEM_NAME, (Component)Component.translatable((String)"affinity.mna.lightning")));
-            this.put(Affinity.BLOOD, new ItemStack((ItemLike)ItemInit.GREATER_MOTE_BLOOD.get()).set(DataComponents.ITEM_NAME, (Component)Component.translatable((String)"affinity.mna.blood")));
+            this.put(Affinity.ICE, com.mna.api.tools.MNAItemData.setComponent(new ItemStack((ItemLike)ItemInit.GREATER_MOTE_ICE.get()), DataComponents.ITEM_NAME, (Component)Component.translatable((String)"affinity.mna.ice")));
+            this.put(Affinity.LIGHTNING, com.mna.api.tools.MNAItemData.setComponent(new ItemStack((ItemLike)ItemInit.GREATER_MOTE_LIGHTNING.get()), DataComponents.ITEM_NAME, (Component)Component.translatable((String)"affinity.mna.lightning")));
+            this.put(Affinity.BLOOD, com.mna.api.tools.MNAItemData.setComponent(new ItemStack((ItemLike)ItemInit.GREATER_MOTE_BLOOD.get()), DataComponents.ITEM_NAME, (Component)Component.translatable((String)"affinity.mna.blood")));
         }
     };
     public static HashMap<Affinity, ResourceLocation> affinityBadges = new HashMap<Affinity, ResourceLocation>(){

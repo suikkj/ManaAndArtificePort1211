@@ -295,28 +295,28 @@ implements IRadialInventorySelect {
         }
         int invIdx = 0;
         if (vals[0].tier <= tier) {
-            inv.setStackInSlot(invIdx++, new ItemStack((ItemLike)ItemInit.RITUAL_FOCUS_MINOR.get()).set(DataComponents.ITEM_NAME, (Component)Component.translatable((String)"item.mna.lodestar_copier.actions.copy")));
+            inv.setStackInSlot(invIdx++, com.mna.api.tools.MNAItemData.setComponent(new ItemStack((ItemLike)ItemInit.RITUAL_FOCUS_MINOR.get()), DataComponents.ITEM_NAME, (Component)Component.translatable((String)"item.mna.lodestar_copier.actions.copy")));
         }
         if (vals[1].tier <= tier) {
-            inv.setStackInSlot(invIdx++, new ItemStack((ItemLike)ItemInit.RITUAL_FOCUS_GREATER.get()).set(DataComponents.ITEM_NAME, (Component)Component.translatable((String)"item.mna.lodestar_copier.actions.paste")));
+            inv.setStackInSlot(invIdx++, com.mna.api.tools.MNAItemData.setComponent(new ItemStack((ItemLike)ItemInit.RITUAL_FOCUS_GREATER.get()), DataComponents.ITEM_NAME, (Component)Component.translatable((String)"item.mna.lodestar_copier.actions.paste")));
         }
         if (vals[2].tier <= tier) {
-            inv.setStackInSlot(invIdx++, new ItemStack((ItemLike)Items.OAK_SAPLING).set(DataComponents.ITEM_NAME, (Component)Component.translatable((String)"item.mna.lodestar_copier.actions.template_1")));
+            inv.setStackInSlot(invIdx++, com.mna.api.tools.MNAItemData.setComponent(new ItemStack((ItemLike)Items.OAK_SAPLING), DataComponents.ITEM_NAME, (Component)Component.translatable((String)"item.mna.lodestar_copier.actions.template_1")));
         }
         if (vals[3].tier <= tier) {
-            inv.setStackInSlot(invIdx++, new ItemStack((ItemLike)Items.WHEAT_SEEDS).set(DataComponents.ITEM_NAME, (Component)Component.translatable((String)"item.mna.lodestar_copier.actions.template_2")));
+            inv.setStackInSlot(invIdx++, com.mna.api.tools.MNAItemData.setComponent(new ItemStack((ItemLike)Items.WHEAT_SEEDS), DataComponents.ITEM_NAME, (Component)Component.translatable((String)"item.mna.lodestar_copier.actions.template_2")));
         }
         if (vals[4].tier <= tier) {
-            inv.setStackInSlot(invIdx++, new ItemStack((ItemLike)Items.FISHING_ROD).set(DataComponents.ITEM_NAME, (Component)Component.translatable((String)"item.mna.lodestar_copier.actions.template_3")));
+            inv.setStackInSlot(invIdx++, com.mna.api.tools.MNAItemData.setComponent(new ItemStack((ItemLike)Items.FISHING_ROD), DataComponents.ITEM_NAME, (Component)Component.translatable((String)"item.mna.lodestar_copier.actions.template_3")));
         }
         if (vals[5].tier <= tier) {
-            inv.setStackInSlot(invIdx++, new ItemStack((ItemLike)ItemInit.RUNESMITH_CHISEL.get()).set(DataComponents.ITEM_NAME, (Component)Component.translatable((String)"item.mna.lodestar_copier.actions.template_4")));
+            inv.setStackInSlot(invIdx++, com.mna.api.tools.MNAItemData.setComponent(new ItemStack((ItemLike)ItemInit.RUNESMITH_CHISEL.get()), DataComponents.ITEM_NAME, (Component)Component.translatable((String)"item.mna.lodestar_copier.actions.template_4")));
         }
         if (vals[6].tier <= tier) {
-            inv.setStackInSlot(invIdx++, new ItemStack((ItemLike)ItemInit.__DEBUG.get()).set(DataComponents.ITEM_NAME, (Component)Component.translatable((String)"item.mna.lodestar_copier.actions.copy_clipboard")));
+            inv.setStackInSlot(invIdx++, com.mna.api.tools.MNAItemData.setComponent(new ItemStack((ItemLike)ItemInit.__DEBUG.get()), DataComponents.ITEM_NAME, (Component)Component.translatable((String)"item.mna.lodestar_copier.actions.copy_clipboard")));
         }
         if (vals[7].tier <= tier) {
-            inv.setStackInSlot(invIdx++, new ItemStack((ItemLike)ItemInit.__DEBUG.get()).set(DataComponents.ITEM_NAME, (Component)Component.translatable((String)"item.mna.lodestar_copier.actions.paste_clipboard")));
+            inv.setStackInSlot(invIdx++, com.mna.api.tools.MNAItemData.setComponent(new ItemStack((ItemLike)ItemInit.__DEBUG.get()), DataComponents.ITEM_NAME, (Component)Component.translatable((String)"item.mna.lodestar_copier.actions.paste_clipboard")));
         }
         return inv;
     }

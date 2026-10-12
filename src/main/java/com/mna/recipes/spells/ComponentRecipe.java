@@ -57,7 +57,7 @@ implements ISpellComponentRecipe {
     public ItemStack getGuiRepresentationStack() {
         ISpellComponent me = this.getComponent();
         if (me != null) {
-            return new ItemStack((ItemLike)ItemInit.VELLUM.get()).set(DataComponents.ITEM_NAME, (Component)Component.translatable((String)me.getRegistryName().toString()));
+            return com.mna.api.tools.MNAItemData.setComponent(new ItemStack((ItemLike)ItemInit.VELLUM.get()), DataComponents.ITEM_NAME, (Component)Component.translatable((String)me.getRegistryName().toString()));
         }
         return ItemStack.EMPTY;
     }

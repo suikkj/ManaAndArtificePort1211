@@ -792,7 +792,7 @@ extends GuiJEIDisable<ContainerLodestar> {
 
     @OnlyIn(value=Dist.CLIENT)
     class CommandScrollList
-    extends ObjectSelectionList<Command> {
+    extends ObjectSelectionList<CommandScrollList.Command> {
         private boolean _scrolling;
         private String _filter;
         private boolean low_tier;
@@ -823,11 +823,11 @@ extends GuiJEIDisable<ContainerLodestar> {
             for (ConstructTask part : parts) {
                 segment.add(part);
                 if (segment.size() != 2) continue;
-                this.addEntry((AbstractSelectionList.Entry)new Command(segment, clickHandler, this.y0, this.y1));
+                this.addEntry(new Command(segment, clickHandler, this.y0, this.y1));
                 segment.clear();
             }
             if (segment.size() > 0) {
-                this.addEntry((AbstractSelectionList.Entry)new Command(segment, clickHandler, this.y0, this.y1));
+                this.addEntry(new Command(segment, clickHandler, this.y0, this.y1));
             }
         }
 

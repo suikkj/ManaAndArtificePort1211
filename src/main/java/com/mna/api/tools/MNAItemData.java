@@ -97,4 +97,10 @@ public final class MNAItemData {
         stack.set(DataComponents.POTION_CONTENTS, contents);
         return stack;
     }
+
+    /** [PORT 1.21.1] ItemStack.set(...) retorna o valor ANTERIOR; em expressoes, usar este helper. */
+    public static <T> ItemStack setComponent(ItemStack stack, net.minecraft.core.component.DataComponentType<T> type, T value) {
+        stack.set(type, value);
+        return stack;
+    }
 }
