@@ -1862,7 +1862,7 @@ IItemHandlerModifiable {
     }
 
     protected void dropAllDeathLoot(DamageSource damageSourceIn) {
-        super.dropAllDeathLoot(damageSourceIn);
+        super.dropAllDeathLoot((net.minecraft.server.level.ServerLevel)this.level(), damageSourceIn);
         if (this.level().getGameRules().getBoolean(GameRules.RULE_DOMOBLOOT)) {
             ArrayList drops = new ArrayList();
             for (ConstructSlot slot : ConstructSlot.values()) {

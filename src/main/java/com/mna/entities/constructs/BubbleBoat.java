@@ -56,7 +56,7 @@ extends Boat {
     }
 
     public BubbleBoat setBrimstone() {
-        this.entityData.set(UPGRADE, 1);
+        this.entityData.set(UPGRADE, (byte)1);
         return this;
     }
 

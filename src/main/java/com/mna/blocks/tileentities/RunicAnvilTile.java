@@ -272,9 +272,9 @@ GeoBlockEntity {
                     enchantments.put(e, i);
                 }
             });
-            it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap<net.minecraft.core.Holder<Enchantment>> enchMap = new it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap<net.minecraft.core.Holder<Enchantment>>();
-            enchantments.forEach((k, v) -> enchMap.put((net.minecraft.core.Holder<Enchantment>)k, (int)v));
-            EnchantmentHelper.setEnchantments((ItemStack)this.__cachedRecipeOutput, new net.minecraft.world.item.enchantment.ItemEnchantments(enchMap, true));
+            net.minecraft.world.item.enchantment.ItemEnchantments.Mutable enchMut = new net.minecraft.world.item.enchantment.ItemEnchantments.Mutable(net.minecraft.world.item.enchantment.ItemEnchantments.EMPTY);
+            enchantments.forEach((k, v) -> enchMut.set((net.minecraft.core.Holder<Enchantment>)k, (int)v));
+            EnchantmentHelper.setEnchantments((ItemStack)this.__cachedRecipeOutput, enchMut.toImmutable());
             return 0;
         }
         this.__cachedRecipeOutput = ItemStack.EMPTY;

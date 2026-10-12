@@ -50,7 +50,6 @@ import java.util.List;
 import java.util.Random;
 import java.util.Set;
 import java.util.function.Function;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.ai.village.poi.PoiType;
@@ -75,8 +74,8 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 
 @EventBusSubscriber(modid="mna", bus=EventBusSubscriber.Bus.MOD)
 public class VillagerRegistry {
-    public static DeferredRegister<PoiType> POI_TYPES = DeferredRegister.create(Registries.POINT_OF_INTEREST_TYPE, "mna");
-    public static DeferredRegister<VillagerProfession> PROFESSIONS = DeferredRegister.create(Registries.VILLAGER_PROFESSION, "mna");
+    public static DeferredRegister<PoiType> POI_TYPES = DeferredRegister.create(net.minecraft.core.registries.Registries.POINT_OF_INTEREST_TYPE, "mna");
+    public static DeferredRegister<VillagerProfession> PROFESSIONS = DeferredRegister.create(net.minecraft.core.registries.Registries.VILLAGER_PROFESSION, "mna");
     public static final DeferredHolder<PoiType, ? extends PoiType> SPELLMONGER_POI = POI_TYPES.register("spellmonger_poi", () -> new PoiType((Set)ImmutableSet.copyOf((Collection)((Block)BlockInit.RUNEFORGE.get()).getStateDefinition().getPossibleStates()), 1, 1));
     public static final DeferredHolder<PoiType, ? extends PoiType> RITUALIST_POI = POI_TYPES.register("ritualist_poi", () -> new PoiType((Set)ImmutableSet.copyOf((Collection)((Block)BlockInit.RUNESCRIBING_TABLE.get()).getStateDefinition().getPossibleStates()), 1, 1));
     public static final DeferredHolder<PoiType, ? extends PoiType> MANAWEAVER_POI = POI_TYPES.register("manaweaver_poi", () -> new PoiType((Set)ImmutableSet.copyOf((Collection)((Block)BlockInit.MANAWEAVING_ALTAR.get()).getStateDefinition().getPossibleStates()), 1, 1));
@@ -138,24 +137,24 @@ public class VillagerRegistry {
             VillagerTradesHandler.addRecipeTrades(event, 4, 1, r -> VillagerTradesHandler.pickRandom(r, (Item)ItemInit.CONSTRUCT_RUNE_TORSO.get(), (Item)ItemInit.CONSTRUCT_RUNE_HIPS.get(), (Item)ItemInit.CONSTRUCT_RUNE_HEAD.get()));
             ((List)event.getTrades().get(5)).add(new RandomTradeBuilder(1, 10, 0.05f).setPrice((Item)ItemInit.RUNESMITH_HAMMER.get(), 1, 1).setPrice2((Item)ItemInit.TRANSMUTED_SILVER.get(), 3, 8).setForSale(r -> {
                 ItemStack stack = new ItemStack((ItemLike)ItemInit.RUNESMITH_HAMMER.get());
-                it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap<net.minecraft.core.Holder<Enchantment>> enchants = new it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap<net.minecraft.core.Holder<Enchantment>>();
+                net.minecraft.world.item.enchantment.ItemEnchantments.Mutable enchants = new net.minecraft.world.item.enchantment.ItemEnchantments.Mutable(net.minecraft.world.item.enchantment.ItemEnchantments.EMPTY);
                 if (r.nextBoolean()) {
-                    enchants.put(EnchantmentInit.MANA_REPAIR, 1);
+                    enchants.set(EnchantmentInit.MANA_REPAIR, 1);
                 } else {
-                    enchants.put(Enchantments.UNBREAKING, 3 + r.nextInt(3));
+                    enchants.set(com.mna.api.enchantments.MNAEnchantmentRegistry.holder(Enchantments.UNBREAKING), 3 + r.nextInt(3));
                 }
-                EnchantmentHelper.setEnchantments((ItemStack)stack, new net.minecraft.world.item.enchantment.ItemEnchantments(enchants, true));
+                EnchantmentHelper.setEnchantments((ItemStack)stack, enchants.toImmutable());
                 return stack;
             }).build());
             ((List)event.getTrades().get(5)).add(new RandomTradeBuilder(1, 10, 0.05f).setPrice((Item)ItemInit.RUNESMITH_CHISEL.get(), 1, 1).setPrice2((Item)ItemInit.TRANSMUTED_SILVER.get(), 3, 8).setForSale(r -> {
                 ItemStack stack = new ItemStack((ItemLike)ItemInit.RUNESMITH_CHISEL.get());
-                it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap<net.minecraft.core.Holder<Enchantment>> enchants = new it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap<net.minecraft.core.Holder<Enchantment>>();
+                net.minecraft.world.item.enchantment.ItemEnchantments.Mutable enchants = new net.minecraft.world.item.enchantment.ItemEnchantments.Mutable(net.minecraft.world.item.enchantment.ItemEnchantments.EMPTY);
                 if (r.nextBoolean()) {
-                    enchants.put(EnchantmentInit.MANA_REPAIR, 1);
+                    enchants.set(EnchantmentInit.MANA_REPAIR, 1);
                 } else {
-                    enchants.put(Enchantments.UNBREAKING, 3 + r.nextInt(3));
+                    enchants.set(com.mna.api.enchantments.MNAEnchantmentRegistry.holder(Enchantments.UNBREAKING), 3 + r.nextInt(3));
                 }
-                EnchantmentHelper.setEnchantments((ItemStack)stack, new net.minecraft.world.item.enchantment.ItemEnchantments(enchants, true));
+                EnchantmentHelper.setEnchantments((ItemStack)stack, enchants.toImmutable());
                 return stack;
             }).build());
             System.out.println("Registered Runesmith Trades");

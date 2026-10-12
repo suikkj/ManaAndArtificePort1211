@@ -50,6 +50,9 @@ import com.mna.api.tools.MNACap;
 
 public class ThrownAllfatherAxe
 extends ThrownWeapon {
+    private double xPower;
+    private double yPower;
+    private double zPower;
     private static final EntityDataAccessor<Byte> IS_RETURNING = SynchedEntityData.defineId(ThrownAllfatherAxe.class, (EntityDataSerializer)EntityDataSerializers.BYTE);
     public static final ItemStack renderStack = new ItemStack((ItemLike)ItemInit.ALLFATHER_AXE.get());
     private CompoundTag itemData;

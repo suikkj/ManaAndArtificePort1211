@@ -330,7 +330,7 @@ extends GuiJEIDisable<ContainerGuideBook> {
                 if (e.getOutputStack().isEnchanted()) {
                     java.util.Map<net.minecraft.core.Holder<net.minecraft.world.item.enchantment.Enchantment>, Integer> enchs = EnchantmentUtils.enchantmentMap((ItemStack)e.getOutputStack());
                     for (Map.Entry enchantment : enchs.entrySet()) {
-                        ttc.append(((Enchantment)enchantment.getKey()).getFullname(((Integer)enchantment.getValue()).intValue()));
+                        ttc.append(Enchantment.getFullname((net.minecraft.core.Holder<Enchantment>)enchantment.getKey(), ((Integer)enchantment.getValue()).intValue()));
                     }
                     csr = new CodexSearchResult(this.leftPos + 35, yCoord.getValue(), ttc.getString(), button -> {
                         this.clearSearch(true);
@@ -634,7 +634,7 @@ extends GuiJEIDisable<ContainerGuideBook> {
                     return index1.compareTo(index2);
                 }
             });
-            for (GuidebookEntry e : entries) {
+            for (GuidebookEntry e : (java.util.List<GuidebookEntry>)entries) {
                 if (e.getTier() > this.progression.getTier()) continue;
                 Object disp = I18n.get((String)e.getFirstTitle(), (Object[])new Object[0]);
                 if (!e.isRead()) {
@@ -710,7 +710,7 @@ extends GuiJEIDisable<ContainerGuideBook> {
                     y = this.topPos + 10;
                     x = this.leftPos + (page % 2 == 0 ? 15 : 133);
                 }
-                ArrayList<AbstractWidget> curPageWidgets = this.pageWidgets.getOrDefault(section.getPage(), new ArrayList());
+                ArrayList<AbstractWidget> curPageWidgets = new ArrayList<AbstractWidget>(this.pageWidgets.getOrDefault(section.getPage(), new ArrayList<AbstractWidget>()));
                 curPageWidgets.addAll(section.getWidgets(this, x, y, 108, 168, this::setTooltip, this::lookupAndShowRecipe, this::setCurrentEntry));
                 this.pageWidgets.put(section.getPage(), curPageWidgets);
                 y += section.getHeight(168);
@@ -737,7 +737,7 @@ extends GuiJEIDisable<ContainerGuideBook> {
             ItemStack stack;
             boolean entryShown = false;
             List entries = GuideBookEntries.INSTANCE.getEntries(value).stream().collect(Collectors.toList());
-            for (GuidebookEntry e : entries) {
+            for (GuidebookEntry e : (java.util.List<GuidebookEntry>)entries) {
                 if (e.getTier() > this.progression.getTier()) continue;
                 entryShown = true;
                 break;
