@@ -33,4 +33,9 @@ public final class MNAGoalSelectorAccess {
             throw new RuntimeException(e);
         }
     }
+
+    /** [PORT 1.21.1] com.mna.tools.MNAGoalSelectorAccess.getRunningGoals(GoalSelector) removido. */
+    public static java.util.stream.Stream<WrappedGoal> getRunningGoals(GoalSelector selector) {
+        return availableGoals(selector).stream().filter(WrappedGoal::isRunning);
+    }
 }

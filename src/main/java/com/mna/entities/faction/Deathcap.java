@@ -358,7 +358,7 @@ implements AnimationController.CustomKeyframeHandler<Deathcap> {
                         for (int i = 0; i < 10; ++i) {
                             this.level().addParticle((ParticleOptions)new BlockParticleOption(ParticleTypes.BLOCK, state), this.getX() + Math.random(), this.getY() + 0.5, this.getZ() + Math.random(), 0.0, 0.05 * Math.random(), 0.0);
                         }
-                        SoundType soundType = this.getFeetBlockState().getSoundType();
+                        SoundType soundType = this.getBlockStateOn().getSoundType();
                         this.level().playSound(ManaAndArtifice.instance.proxy.getClientPlayer(), (double)pos.getX(), (double)pos.getY(), (double)pos.getZ(), soundType.getBreakSound(), SoundSource.HOSTILE, (soundType.getVolume() + 1.0f) / 2.0f, soundType.getPitch() * 0.8f);
                         break;
                     }

@@ -252,8 +252,15 @@ perderam o `getResult()/setResult()` herdado. Migrados para enum próprio
 | ✅ _fix28 (IShearable; RecipeHolder `.value()/.id()` nos 18 sites raw RecipeType; `AttributeModifier.id()`; `AdvancementHolder.id()`; RecipeUtil holder) | 1.560 | −38 |
 | ✅ _fix29 (_isSameItemSameComponents_; `BuiltInRegistries.get`; `MATools.canChangeDimensions`; `setupOverlayRenderState`→RenderSystem; EntityInit register sem cast raw) | 1.529 | −31 |
 | ✅ _fix30 (migração do sistema de receitas: 14 recipes `CraftingContainer`→`CraftingInput`, getRecipeFor com `asCraftInput`/`map(h->h.value())`, `AMRecipeBase.getResultItem(Provider)`, `SingleRecipeInput` p/ cooking) | 1.492 | −37 |
-| ✅ _fix31 (`ICancellableEvent` nos eventos MNA; `setResult`→`setCanceled`; `broadcastBreakEvent`→EquipmentSlot; `doEnchantDamageEffects` no-op; `MNAItemData.getOrCreateTagElement`; `MATools.getTierLevel`; brewing via `RegisterBrewingRecipesEvent`) | **1.456** | −36 |
-| **➜ ATUAL** | **1.456** | **−45.484 desde o início (46.940)** |
+| ✅ _fix31 (`ICancellableEvent` nos eventos MNA; `setResult`→`setCanceled`; `broadcastBreakEvent`→EquipmentSlot; `doEnchantDamageEffects` no-op; `MNAItemData.getOrCreateTagElement`; `MATools.getTierLevel`; brewing via `RegisterBrewingRecipesEvent`) | 1.456 | −36 |
+| ✅ _fix32 (`RenderGuiEvent.Pre`, `getWindow`→Minecraft, `dataSlots`→`MNAMenuAccess`, `readNbt`, `lookScale` decls, `ConstructRenderer.vertex`) | 1.402 | −54 |
+| ✅ _fix33 (placeLiquid removido ×7, `MNAEnchantmentHelper.getBlockEfficiency`, `reloadableRegistries`, `getTooltipLines` 3-arg, Fluid var) | 1.378 | −24 |
+| ✅ _fix34 (`MNAGoalSelectorAccess` availableGoals, DemonLord FQN CastSpellAtTargetGoal, `ConstructNodeEvaluator` mob.level(), provider) | 1.331 | −47 |
+| ✅ _fix35 (inner class raw outer fix, `stack.set` statement, `MNAItemData.setPotionContents`, `EVENT_BUS.post` cast, EffectDisjunction maps Holder) | 1.302 | −29 |
+| ✅ _fix36/_fix37 (`PoseStack.Pose` nos helpers addVertex — 15 renderers + WorldRenderUtils; transformPosition p/ helpers sem normal; OPTIONAL_STREAM_CODEC; wrapAsHolder; getDamageBonus no-op) | 1.284 | −18 |
+| ✅ _fix38 (`canPlaceLiquid` body, `MNAEnchantmentHelper.getKnockbackBonus`, toArray casts, BlockInit `.value()/.get()`, moodlets) | 1.244 | −40 |
+| ✅ _fix39 (`MNAGoalSelectorAccess.getRunningGoals`, `getFeetBlockState`→`getBlockStateOn`, dimensions→`getDimensions(getPose())`) | **1.238** | −6 |
+| **➜ ATUAL** | **1.238** | **−45.702 desde o início (46.940)** |
 
 ### 🔴 Bug de medição que quase passou (2026-10-11)
 Ao migrar `getEnchantmentLevel`, um `.replace()` removeu o `(` de abertura de
@@ -336,7 +343,7 @@ Verificação por `grep` no `_build_last.log` do build atual (1.881 erros):
 
 ---
 
-## 🔜 FILA ATUAL DE ERROS — checada no build 1.456 (2026-10-12, pós lotes _fix20–_fix31)
+## 🔜 FILA ATUAL DE ERROS — checada no build 1.238 (2026-10-12, pós lotes _fix20–_fix39)
 
 **Regra:** sempre que um lote for aplicado, re-verificar esta seção com
 `grep 'error:' _build_last.log` e ATUALIZAR as contagens — nada sai daqui sem

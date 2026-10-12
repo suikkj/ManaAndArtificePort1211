@@ -630,7 +630,7 @@ IItemHandlerModifiable {
         this.setDeltaMovement(this.handleOnClimbable(this.getDeltaMovement()));
         this.move(MoverType.SELF, this.getDeltaMovement());
         Vec3 vec3 = this.getDeltaMovement();
-        if ((this.horizontalCollision || this.jumping) && (this.onClimbable() || this.getFeetBlockState().is(Blocks.POWDER_SNOW) && PowderSnowBlock.canEntityWalkOnPowderSnow((Entity)this))) {
+        if ((this.horizontalCollision || this.jumping) && (this.onClimbable() || this.getBlockStateOn().is(Blocks.POWDER_SNOW) && PowderSnowBlock.canEntityWalkOnPowderSnow((Entity)this))) {
             vec3 = new Vec3(vec3.x, 0.2, vec3.z);
         }
         return vec3;
@@ -1260,7 +1260,7 @@ IItemHandlerModifiable {
 
     @Override
     public boolean isDueling() {
-        return this.goalSelector.getRunningGoals().anyMatch(g -> {
+        return com.mna.tools.MNAGoalSelectorAccess.getRunningGoals(this.goalSelector).anyMatch(g -> {
             Optional<ConstructAITask<?>> cur;
             return g.getGoal() instanceof ConstructCommandFollowLodestar && (cur = ((ConstructCommandFollowLodestar)g.getGoal()).currentCommand()).isPresent() && cur.get() instanceof ConstructDuel;
         });
@@ -1287,7 +1287,7 @@ IItemHandlerModifiable {
         if (this.noPhysics) {
             return false;
         }
-        float f = this.dimensions.width * 0.8f;
+        float f = this.getDimensions(this.getPose()).width() * 0.8f;
         AABB aabb = AABB.ofSize((Vec3)this.getEyePosition(), (double)f, (double)1.0E-6, (double)f);
         return BlockPos.betweenClosedStream((AABB)aabb).anyMatch(p_201942_ -> {
             BlockState blockstate = this.level().getBlockState(p_201942_);
@@ -1598,7 +1598,7 @@ IItemHandlerModifiable {
     @Override
     public void setDefeated(int duration) {
         this.defeatedHealCount = 0.0f;
-        this.goalSelector.getRunningGoals().forEach(g -> {
+        com.mna.tools.MNAGoalSelectorAccess.getRunningGoals(this.goalSelector).forEach(g -> {
             if (g.getGoal() instanceof ConstructDuel) {
                 ((ConstructDuel)g.getGoal()).forceFail();
             }
