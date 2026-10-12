@@ -38,7 +38,7 @@ implements ISpellBookInventory {
         for (int i = 0; i < this.getContainerSize(); ++i) {
             activeSpells.add(this.getItem(i));
         }
-        return activeSpells.toArray(new ItemStack[0]);
+        return (ItemStack[])((activeSpells).toArray(new ItemStack[0]));
     }
 }
 

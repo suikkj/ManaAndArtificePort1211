@@ -895,7 +895,7 @@ IItemHandlerModifiable {
                 emptyHands.add(InteractionHand.OFF_HAND);
             }
         });
-        return emptyHands.toArray(new InteractionHand[0]);
+        return (InteractionHand[])((emptyHands).toArray(new InteractionHand[0]));
     }
 
     @Override
@@ -918,7 +918,7 @@ IItemHandlerModifiable {
                 carryingHands.add(InteractionHand.OFF_HAND);
             }
         });
-        return carryingHands.toArray(new InteractionHand[0]);
+        return (InteractionHand[])((carryingHands).toArray(new InteractionHand[0]));
     }
 
     @Override

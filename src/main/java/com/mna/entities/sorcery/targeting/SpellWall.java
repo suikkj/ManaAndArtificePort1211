@@ -110,7 +110,7 @@ extends ChanneledSpellEntity {
                 ++i;
             }
         });
-        return allPoints.toArray(new BlockPos[0]);
+        return (BlockPos[])((allPoints).toArray(new BlockPos[0]));
     }
 
     protected List<Entity> targetEntities(float radius_h, float radius_v) {

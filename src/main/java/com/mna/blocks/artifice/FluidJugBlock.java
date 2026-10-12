@@ -110,7 +110,7 @@ SimpleWaterloggedBlock {
     }
 
     public boolean canPlaceLiquid(BlockGetter worldIn, BlockPos pos, BlockState state, Fluid fluidIn) {
-        return super.canPlaceLiquid(worldIn, pos, state, fluidIn);
+        return !(Boolean)state.getValue((Property)BlockStateProperties.WATERLOGGED);
     }
 
     public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor worldIn, BlockPos currentPos, BlockPos facingPos) {

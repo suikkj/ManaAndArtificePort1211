@@ -128,7 +128,7 @@ implements ISpellInteractibleEntity<ConstructAssemblyStand> {
                 materials.add(((ItemConstructPart)is.getItem()).getMaterial());
             }
         });
-        return materials.toArray(new ConstructMaterial[0]);
+        return (ConstructMaterial[])((materials).toArray(new ConstructMaterial[0]));
     }
 
     public ItemConstructPart[] getPartsForMaterial(ConstructMaterial matl) {
@@ -143,7 +143,7 @@ implements ISpellInteractibleEntity<ConstructAssemblyStand> {
                 parts.add((ItemConstructPart)is.getItem());
             }
         });
-        return parts.toArray(new ItemConstructPart[0]);
+        return (ItemConstructPart[])((parts).toArray(new ItemConstructPart[0]));
     }
 
     public void refreshDimensions() {

@@ -287,7 +287,7 @@ implements RangedAttackMob {
         float f1 = (float)this.getAttributeValue(Attributes.ATTACK_KNOCKBACK);
         if (entityIn instanceof LivingEntity) {
             f += com.mna.api.enchantments.MNAEnchantmentHelper.getDamageBonus((ItemStack)this.getMainHandItem(), (LivingEntity)entityIn);
-            f1 += (float)EnchantmentHelper.getKnockbackBonus((LivingEntity)this);
+            f1 += (float)com.mna.api.enchantments.MNAEnchantmentHelper.getKnockbackBonus((LivingEntity)this);
             if (this.isInvisible() || ((LivingEntity)entityIn).hasEffect(MobEffects.BLINDNESS)) {
                 if (!((LivingEntity)entityIn).hasEffect(com.mna.api.tools.MAEffects.holder(EffectInit.ELDRIN_SIGHT.get()))) {
                     f *= (float)(this.getTier() + 2);

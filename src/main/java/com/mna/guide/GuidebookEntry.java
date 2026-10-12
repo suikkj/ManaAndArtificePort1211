@@ -193,7 +193,7 @@ public class GuidebookEntry {
             if (!elem.isJsonPrimitive()) continue;
             rLocs.add(ResourceLocation.parse(elem.getAsString()));
         }
-        return rLocs.toArray(new ResourceLocation[0]);
+        return (ResourceLocation[])((rLocs).toArray(new ResourceLocation[0]));
     }
 
     public int getTier() {

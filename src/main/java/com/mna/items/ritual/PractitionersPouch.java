@@ -632,7 +632,7 @@ MNADyeableItem {
                 return null;
             }
         }).filter(p -> p != null).collect(Collectors.toList());
-        return patchList.toArray(new PractitionersPouchPatches[0]);
+        return (PractitionersPouchPatches[])((patchList).toArray(new PractitionersPouchPatches[0]));
     }
 
     public int countAppliedPatchesForLimit(ItemStack stack, ItemStack patchStack) {

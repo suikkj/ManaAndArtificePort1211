@@ -275,7 +275,7 @@ EntityBlock {
     @Override
     public boolean canPlaceLiquid(BlockGetter worldIn, BlockPos pos, BlockState state, Fluid fluidIn) {
         if (state.hasProperty((Property)METAL) && ((Boolean)state.getValue((Property)METAL)).booleanValue()) {
-            return super.canPlaceLiquid(worldIn, pos, state, fluidIn);
+            return !(Boolean)state.getValue((Property)BlockStateProperties.WATERLOGGED);
         }
         return true;
     }

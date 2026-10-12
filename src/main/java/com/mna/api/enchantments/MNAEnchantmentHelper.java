@@ -63,4 +63,9 @@ public final class MNAEnchantmentHelper {
     public static float getDamageBonus(net.minecraft.world.item.ItemStack stack, net.minecraft.world.entity.LivingEntity target) {
         return 0.0f;
     }
+
+    /** [PORT 1.21.1] com.mna.api.enchantments.MNAEnchantmentHelper.getKnockbackBonus(LivingEntity) removido; knockback agora via pipeline de ataque. */
+    public static int getKnockbackBonus(net.minecraft.world.entity.LivingEntity entity) {
+        return 0;
+    }
 }

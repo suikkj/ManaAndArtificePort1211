@@ -55,7 +55,7 @@ public class ConstructMoodlets {
     }
 
     public void writeToNBT(CompoundTag nbt) {
-        ArrayList data = new ArrayList();
+        ArrayList<Integer> data = new ArrayList<>();
         this.moodlets.forEach((k, v) -> {
             data.add(k);
             data.add(v);

@@ -24,7 +24,7 @@ implements ISpellBookInventory {
         for (int i = 0; i < 8; ++i) {
             activeSpells.add(this.getStackInSlot(i * 5));
         }
-        return activeSpells.toArray(new ItemStack[0]);
+        return (ItemStack[])((activeSpells).toArray(new ItemStack[0]));
     }
 }
 

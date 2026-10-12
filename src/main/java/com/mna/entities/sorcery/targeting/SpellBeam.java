@@ -249,7 +249,7 @@ extends ChanneledSpellEntity {
                 }
             }
         });
-        return vecList.toArray(new BlockPos[0]);
+        return (BlockPos[])((vecList).toArray(new BlockPos[0]));
     }
 
     private BlockPos[] getAllBlockLocationsHorizontal(BlockPos p1, BlockPos p2) {
@@ -259,7 +259,7 @@ extends ChanneledSpellEntity {
                 allPoints.add(pos);
             }
         });
-        return allPoints.toArray(new BlockPos[0]);
+        return (BlockPos[])((allPoints).toArray(new BlockPos[0]));
     }
 
     public int[] getBeamColor() {

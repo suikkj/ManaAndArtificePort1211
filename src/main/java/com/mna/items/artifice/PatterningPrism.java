@@ -170,7 +170,7 @@ implements IRadialInventorySelect {
             if (vals[i].tier > tier) continue;
             list.add(vals[i]);
         }
-        return list.toArray(new Modes[0]);
+        return (Modes[])((list).toArray(new Modes[0]));
     }
 
     @Override

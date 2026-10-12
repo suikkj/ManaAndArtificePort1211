@@ -197,7 +197,7 @@ extends BaseFactionMob<HulkingZombie> {
         float f1 = (float)this.getAttributeValue(Attributes.ATTACK_KNOCKBACK);
         if (entityIn instanceof LivingEntity) {
             f += com.mna.api.enchantments.MNAEnchantmentHelper.getDamageBonus((ItemStack)this.getMainHandItem(), (LivingEntity)entityIn);
-            f1 += (float)EnchantmentHelper.getKnockbackBonus((LivingEntity)this);
+            f1 += (float)com.mna.api.enchantments.MNAEnchantmentHelper.getKnockbackBonus((LivingEntity)this);
         }
         if ((i = EnchantmentHelper.getFireAspect((LivingEntity)this)) > 0 || this.isOnFire()) {
             entityIn.igniteForSeconds((float)(i * 4));

@@ -87,7 +87,7 @@ public class EntryCategory {
     }
 
     public static EntryCategory[] values() {
-        return all_categories.toArray(new EntryCategory[0]);
+        return (EntryCategory[])((all_categories).toArray(new EntryCategory[0]));
     }
 }
 
