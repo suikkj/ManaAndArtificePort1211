@@ -152,7 +152,6 @@ extends SearchableGui<ContainerWanderingWizard> {
             super(GuiWanderingWizard.this.minecraft, 244, 141, GuiWanderingWizard.this.topPos + 26, GuiWanderingWizard.this.topPos + 167, 20);
             this._scrolling = false;
             this._active = true;
-            this.setRenderSelection(false);
             this.setRenderHeader(false, 20);
             this.y0 = GuiWanderingWizard.this.topPos + 26;
             this.y1 = GuiWanderingWizard.this.topPos + 167;
@@ -198,7 +197,7 @@ extends SearchableGui<ContainerWanderingWizard> {
                 hov.isHovered = true;
             }
             this.getEntryAtPos(mouseX, mouseY);
-            this.renderList(pGuiGraphics, mouseX, mouseY, partialTicks);
+            this.renderWidget(pGuiGraphics, mouseX, mouseY, partialTicks);
             if (this.getMaxScroll() > 0) {
                 int scrollBarHeight = (int)((float)((this.y1 - this.y0) * (this.y1 - this.y0)) / (float)this.getMaxPosition());
                 scrollBarHeight = Mth.clamp((int)scrollBarHeight, (int)32, (int)(this.y1 - this.y0 - 8));

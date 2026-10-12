@@ -42,7 +42,7 @@ extends LivingEntityRenderer<EntityDecoy, PlayerModel<EntityDecoy>> {
         Player player;
         if (entity.getPlayer() != null && (player = entity.getPlayer()) instanceof AbstractClientPlayer) {
             AbstractClientPlayer player2 = (AbstractClientPlayer)player;
-            return player2.getSkinTextureLocation();
+            return player2.getSkin().texture();
         }
         return DEFAULT;
     }

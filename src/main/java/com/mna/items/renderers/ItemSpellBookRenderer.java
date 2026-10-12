@@ -73,7 +73,7 @@ extends ItemBookRenderer {
 
     private void renderArm(PoseStack matrixStackIn, MultiBufferSource bufferIn, int combinedLightIn, HumanoidArm side) {
         Minecraft mc = Minecraft.getInstance();
-        RenderSystem.setShaderTexture((int)0, (ResourceLocation)mc.player.getSkinTextureLocation());
+        RenderSystem.setShaderTexture((int)0, (ResourceLocation)mc.player.getSkin().texture());
         PlayerRenderer playerrenderer = (PlayerRenderer)mc.getEntityRenderDispatcher().getRenderer((Entity)mc.player);
         matrixStackIn.pushPose();
         if (side == HumanoidArm.RIGHT) {

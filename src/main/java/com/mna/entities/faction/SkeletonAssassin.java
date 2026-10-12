@@ -295,7 +295,7 @@ implements RangedAttackMob {
                 this.removeEffect(MobEffects.INVISIBILITY);
             }
         }
-        if ((i = EnchantmentHelper.getFireAspect((LivingEntity)this)) > 0 || this.isOnFire()) {
+        if ((i = com.mna.api.enchantments.MNAEnchantmentHelper.getFireAspect((LivingEntity)this)) > 0 || this.isOnFire()) {
             entityIn.igniteForSeconds((float)(i * 4));
         }
         if (flag = entityIn.hurt(this.damageSources().mobAttack((LivingEntity)this), f)) {

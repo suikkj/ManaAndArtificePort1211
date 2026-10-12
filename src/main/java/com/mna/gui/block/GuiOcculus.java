@@ -577,7 +577,6 @@ extends GuiJEIDisable<ContainerOcculus> {
             this.x = x;
             this.y0 = y;
             this.y1 = y + heightIn;
-            this.setRenderSelection(false);
             this.setRenderHeader(false, 50);
         }
 

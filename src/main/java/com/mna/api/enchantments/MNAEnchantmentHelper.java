@@ -68,4 +68,9 @@ public final class MNAEnchantmentHelper {
     public static int getKnockbackBonus(net.minecraft.world.entity.LivingEntity entity) {
         return 0;
     }
+
+    /** [PORT 1.21.1] com.mna.api.enchantments.MNAEnchantmentHelper.getFireAspect(LivingEntity) removido. */
+    public static int getFireAspect(net.minecraft.world.entity.LivingEntity entity) {
+        return 0;
+    }
 }

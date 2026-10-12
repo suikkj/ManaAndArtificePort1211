@@ -62,7 +62,6 @@ extends ObjectSelectionList<SpellPartEntry> {
 
     public SpellPartList(boolean includeModifiers, boolean roteOnly, int screenLeft, int screenTop, int x, int y, int width, int height, Consumer<Shape> onShapeClicked, Consumer<SpellEffect> onComponentClicked, Consumer<Modifier> onModifierClicked, Consumer<Component> tooltip) {
         super(Minecraft.getInstance(), width, height, screenTop + y, screenTop + y + height, 24);
-        this.setRenderSelection(false);
         this.setRenderHeader(false, 24);
         this.rote = (IPlayerRoteSpells)this.minecraft.player.getData(PlayerRoteSpellsProvider.ROTE.get());
         this.shapeClick = onShapeClicked;
@@ -149,7 +148,7 @@ extends ObjectSelectionList<SpellPartEntry> {
         int scrollBarStartX = this.getScrollbarPosition();
         double scale = this.minecraft.getWindow().getGuiScale();
         RenderSystem.enableScissor((int)((int)((double)this.x0 * scale)), (int)((int)((double)this.minecraft.getWindow().getHeight() - (double)this.y1 * scale)), (int)((int)((double)this.width * scale)), (int)((int)((double)this.height * scale)));
-        this.renderList(pGuiGraphics, mouseX, mouseY, partialTicks);
+        this.renderWidget(pGuiGraphics, mouseX, mouseY, partialTicks);
         if (this.getMaxScroll() > 0) {
             int scrollBarHeight = 20;
             int top = (int)this.getScrollAmount() * (this.y1 - this.y0 - scrollBarHeight) / this.getMaxScroll() + this.y0;

@@ -136,7 +136,7 @@ extends BlockEntityWithoutLevelRenderer {
         EntityRenderer entityRenderer = mc.getEntityRenderDispatcher().getRenderer((Entity)mc.player);
         if (entityRenderer instanceof PlayerRenderer) {
             PlayerRenderer playerRenderer = (PlayerRenderer)entityRenderer;
-            RenderSystem.setShaderTexture((int)0, (ResourceLocation)mc.player.getSkinTextureLocation());
+            RenderSystem.setShaderTexture((int)0, (ResourceLocation)mc.player.getSkin().texture());
             matrixStackIn.pushPose();
             if (side == HumanoidArm.RIGHT) {
                 matrixStackIn.translate(0.75, -0.25, 0.0);

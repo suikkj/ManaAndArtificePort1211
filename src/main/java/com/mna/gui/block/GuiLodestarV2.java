@@ -805,7 +805,6 @@ extends GuiJEIDisable<ContainerLodestar> {
             super(GuiLodestarV2.this.minecraft, 46, 135, GuiLodestarV2.this.topPos + 10, GuiLodestarV2.this.topPos + 153, 18);
             this._scrolling = false;
             this._filter = "";
-            this.setRenderSelection(false);
             this.setRenderHeader(false, 24);
             this.y0 = GuiLodestarV2.this.topPos + 10;
             this.y1 = GuiLodestarV2.this.topPos + 153;
@@ -835,7 +834,7 @@ extends GuiJEIDisable<ContainerLodestar> {
         public void renderWidget(GuiGraphics pGuiGraphics, int mouseX, int mouseY, float partialTicks) {
             int scrollBarStartX = this.getScrollbarPosition();
             pGuiGraphics.enableScissor(this.x0, this.y0, this.x1, this.y1);
-            this.renderList(pGuiGraphics, mouseX, mouseY, partialTicks);
+            this.renderWidget(pGuiGraphics, mouseX, mouseY, partialTicks);
             pGuiGraphics.disableScissor();
             if (this.getMaxScroll() > 0) {
                 int scrollBarTop = this.y0 + 2;

@@ -63,7 +63,6 @@ extends ObjectSelectionList<ReagentListEntry> {
 
     public ReagentList(int screenLeft, int screenTop, int x, int y, int width, int height, @Nullable Consumer<Component> tooltipFunction) {
         super(Minecraft.getInstance(), width, height, screenTop + y, screenTop + y + height, 16);
-        this.setRenderSelection(false);
         this.setRenderHeader(false, 24);
         this.x0 = screenLeft + x;
         this.x1 = screenLeft + x + width;
@@ -128,7 +127,7 @@ extends ObjectSelectionList<ReagentListEntry> {
     public void renderWidget(GuiGraphics pGuiGraphics, int mouseX, int mouseY, float partialTicks) {
         int scrollBarStartX = this.getScrollbarPosition();
         pGuiGraphics.enableScissor(this.x0, this.y0, this.x1, this.y1);
-        this.renderList(pGuiGraphics, mouseX, mouseY, partialTicks);
+        this.renderWidget(pGuiGraphics, mouseX, mouseY, partialTicks);
         if (this.getMaxScroll() > 0) {
             int scrollBarHeight = 20;
             int top = (int)this.getScrollAmount() * (this.y1 - this.y0 - scrollBarHeight) / this.getMaxScroll() + this.y0;

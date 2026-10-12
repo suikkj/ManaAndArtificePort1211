@@ -120,7 +120,7 @@ extends LivingEntityRenderer<Simulacrum, PlayerModel<Simulacrum>> {
             Player player;
             if (entity.getOwner() != null && (player = entity.getOwner()) instanceof AbstractClientPlayer) {
                 AbstractClientPlayer player2 = (AbstractClientPlayer)player;
-                return player2.getSkinTextureLocation();
+                return player2.getSkin().texture();
             }
             return DEFAULT;
         }

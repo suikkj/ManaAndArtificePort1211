@@ -247,7 +247,7 @@ implements AnimationController.CustomKeyframeHandler<Deathcap> {
             f += com.mna.api.enchantments.MNAEnchantmentHelper.getDamageBonus((ItemStack)this.getMainHandItem(), (LivingEntity)entityIn);
             f1 += (float)com.mna.api.enchantments.MNAEnchantmentHelper.getKnockbackBonus((LivingEntity)this);
         }
-        if ((i = EnchantmentHelper.getFireAspect((LivingEntity)this)) > 0) {
+        if ((i = com.mna.api.enchantments.MNAEnchantmentHelper.getFireAspect((LivingEntity)this)) > 0) {
             entityIn.igniteForSeconds((float)(i * 4));
         }
         if (flag = entityIn.hurt(this.damageSources().mobAttack((LivingEntity)this), f)) {
