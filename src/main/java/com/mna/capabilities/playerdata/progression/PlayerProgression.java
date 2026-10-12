@@ -91,15 +91,15 @@ implements IPlayerProgression {
             for (t = 1; t <= 5; ++t) {
                 index = t - 1;
                 modifierAmount = GeneralConfigValues.TierHealthBoosts.size() >= index ? GeneralConfigValues.TierHealthBoosts.get(index) : 0;
-                modifier = new AttributeModifier(UUID.fromString(Tier_Health_Boost_IDs[index]), "Tier Health Boost " + t, (double)modifierAmount, AttributeModifier.Operation.ADD_VALUE);
-                if (!inst.hasModifier(modifier)) continue;
+                modifier = new AttributeModifier(ResourceLocation.fromNamespaceAndPath("mna", "tier_health_boost_" + t), (double)modifierAmount, AttributeModifier.Operation.ADD_VALUE);
+                if (!inst.hasModifier(modifier.id())) continue;
                 inst.removeModifier(modifier.id());
             }
             for (t = 1; t <= 5; ++t) {
                 index = t - 1;
                 modifierAmount = GeneralConfigValues.TierHealthBoosts.size() >= index ? GeneralConfigValues.TierHealthBoosts.get(index) : 0;
-                modifier = new AttributeModifier(UUID.fromString(Tier_Health_Boost_IDs[index]), "Tier Health Boost " + t, (double)modifierAmount, AttributeModifier.Operation.ADD_VALUE);
-                if (modifierAmount <= 0 || tier < t || inst.hasModifier(modifier)) continue;
+                modifier = new AttributeModifier(ResourceLocation.fromNamespaceAndPath("mna", "tier_health_boost_" + t), (double)modifierAmount, AttributeModifier.Operation.ADD_VALUE);
+                if (modifierAmount <= 0 || tier < t || inst.hasModifier(modifier.id())) continue;
                 inst.addPermanentModifier(modifier);
             }
             if (player.getHealth() > player.getMaxHealth()) {

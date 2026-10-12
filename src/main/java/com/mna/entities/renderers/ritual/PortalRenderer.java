@@ -252,14 +252,14 @@ extends EntityRenderer<Portal> {
             Matrix4f renderMatrix = matrixstack$entry.pose();
             VertexConsumer vertexBuilder = bufferSource.getBuffer(RenderType.lightning());
             int hexagonAlpha = (int)((double)Math.min(200 + (int)(32.0 * Math.sin((double)((float)mc.level.getGameTime() + partialTick) * 0.05)), 230) * ((double)spawnPct - 0.9) * 10.0);
-            vertexBuilder.addVertex(pose, -0.5f, -1.0f, 0.0f).setColor(color[0], color[1], color[2], hexagonAlpha);
-            vertexBuilder.addVertex(pose, 0.5f, -1.0f, 0.0f).setColor(color[0], color[1], color[2], hexagonAlpha);
-            vertexBuilder.addVertex(pose, 1.0f, 0.0f, 0.0f).setColor(color[0], color[1], color[2], hexagonAlpha);
-            vertexBuilder.addVertex(pose, -1.0f, 0.0f, 0.0f).setColor(color[0], color[1], color[2], hexagonAlpha);
-            vertexBuilder.addVertex(pose, -1.0f, 0.0f, 0.0f).setColor(color[0], color[1], color[2], hexagonAlpha);
-            vertexBuilder.addVertex(pose, 1.0f, 0.0f, 0.0f).setColor(color[0], color[1], color[2], hexagonAlpha);
-            vertexBuilder.addVertex(pose, 0.5f, 1.0f, 0.0f).setColor(color[0], color[1], color[2], hexagonAlpha);
-            vertexBuilder.addVertex(pose, -0.5f, 1.0f, 0.0f).setColor(color[0], color[1], color[2], hexagonAlpha);
+            vertexBuilder.addVertex(matrixstack$entry, -0.5f, -1.0f, 0.0f).setColor(color[0], color[1], color[2], hexagonAlpha);
+            vertexBuilder.addVertex(matrixstack$entry, 0.5f, -1.0f, 0.0f).setColor(color[0], color[1], color[2], hexagonAlpha);
+            vertexBuilder.addVertex(matrixstack$entry, 1.0f, 0.0f, 0.0f).setColor(color[0], color[1], color[2], hexagonAlpha);
+            vertexBuilder.addVertex(matrixstack$entry, -1.0f, 0.0f, 0.0f).setColor(color[0], color[1], color[2], hexagonAlpha);
+            vertexBuilder.addVertex(matrixstack$entry, -1.0f, 0.0f, 0.0f).setColor(color[0], color[1], color[2], hexagonAlpha);
+            vertexBuilder.addVertex(matrixstack$entry, 1.0f, 0.0f, 0.0f).setColor(color[0], color[1], color[2], hexagonAlpha);
+            vertexBuilder.addVertex(matrixstack$entry, 0.5f, 1.0f, 0.0f).setColor(color[0], color[1], color[2], hexagonAlpha);
+            vertexBuilder.addVertex(matrixstack$entry, -0.5f, 1.0f, 0.0f).setColor(color[0], color[1], color[2], hexagonAlpha);
         }
         float jitterScale = 0.025f;
         float jitter = ((float)mc.level.getGameTime() + partialTick) * 0.01f;

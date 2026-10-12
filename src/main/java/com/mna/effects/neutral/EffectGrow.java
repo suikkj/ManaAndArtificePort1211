@@ -29,7 +29,7 @@ extends SimpleNeutralEffect implements com.mna.api.effects.IMNAEffectHook {
         this.addAttributeModifier(Attributes.ATTACK_KNOCKBACK, ResourceLocation.parse("189f5b92-0bdf-4b63-bc08-a50e85f24c57"), 0.111f, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
         this.addAttributeModifier(Attributes.BLOCK_INTERACTION_RANGE, ResourceLocation.parse("b37cdf69-27ea-488a-b012-ef21359fcc90"), 0.222f, AttributeModifier.Operation.ADD_VALUE);
         this.addAttributeModifier(Attributes.ENTITY_INTERACTION_RANGE, ResourceLocation.parse("29721638-2e59-479f-b9f6-d79665240142"), 0.222f, AttributeModifier.Operation.ADD_VALUE);
-        this.addAttributeModifier(NeoForgeMod.STEP_HEIGHT_ADDITION, ResourceLocation.parse("60288c04-9c19-4fd7-802f-b70cb55ed220"), 0.111f, AttributeModifier.Operation.ADD_VALUE);
+        this.addAttributeModifier(Attributes.STEP_HEIGHT, ResourceLocation.parse("60288c04-9c19-4fd7-802f-b70cb55ed220"), 0.111f, AttributeModifier.Operation.ADD_VALUE);
     }
 
     public void onEffectAdded(LivingEntity pLivingEntity, int pAmplifier) {

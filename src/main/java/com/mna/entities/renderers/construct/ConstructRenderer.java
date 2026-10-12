@@ -400,7 +400,7 @@ extends MAGeckoRenderer<Construct> {
             }
             stack.scale(0.7f, 0.7f, 0.7f);
             this.renderStack.offHandStack = new PoseStack();
-            this.renderStack.offHandStack.poseStack.add(stack.last());
+            com.mna.tools.MNAPoseStackAccess.add(this.renderStack.offHandStack, stack.last());
             this.renderStack.packedLight = packedLight;
             this.renderStack.packedOverlay = packedOverlay;
             stack.popPose();
@@ -415,7 +415,7 @@ extends MAGeckoRenderer<Construct> {
             }
             stack.scale(0.7f, 0.7f, 0.7f);
             this.renderStack.mainHandStack = new PoseStack();
-            this.renderStack.mainHandStack.poseStack.add(stack.last());
+            com.mna.tools.MNAPoseStackAccess.add(this.renderStack.mainHandStack, stack.last());
             this.renderStack.packedLight = packedLight;
             this.renderStack.packedOverlay = packedOverlay;
             stack.popPose();
@@ -442,7 +442,7 @@ extends MAGeckoRenderer<Construct> {
             if (animatable.handHasCapability(InteractionHand.MAIN_HAND, ConstructCapability.FISH)) {
                 stack.pushPose();
                 this.renderStack.mainHandStack = new PoseStack();
-                this.renderStack.mainHandStack.poseStack.add(stack.last());
+                com.mna.tools.MNAPoseStackAccess.add(this.renderStack.mainHandStack, stack.last());
                 this.renderStack.packedLight = packedLight;
                 this.renderStack.packedOverlay = packedOverlay;
                 stack.popPose();
@@ -450,7 +450,7 @@ extends MAGeckoRenderer<Construct> {
             if (animatable.handHasCapability(InteractionHand.OFF_HAND, ConstructCapability.FISH)) {
                 stack.pushPose();
                 this.renderStack.mainHandStack = new PoseStack();
-                this.renderStack.mainHandStack.poseStack.add(stack.last());
+                com.mna.tools.MNAPoseStackAccess.add(this.renderStack.mainHandStack, stack.last());
                 this.renderStack.packedLight = packedLight;
                 this.renderStack.packedOverlay = packedOverlay;
                 stack.popPose();
@@ -472,7 +472,7 @@ extends MAGeckoRenderer<Construct> {
                 stack.scale(0.5f, 0.5f, 0.5f);
             }
             this.renderStack.hatStack = new PoseStack();
-            this.renderStack.hatStack.poseStack.add(stack.last());
+            com.mna.tools.MNAPoseStackAccess.add(this.renderStack.hatStack, stack.last());
             this.renderStack.packedLight = packedLight;
             this.renderStack.packedOverlay = packedOverlay;
             stack.popPose();
@@ -483,7 +483,7 @@ extends MAGeckoRenderer<Construct> {
             stack.mulPose(Axis.YP.rotationDegrees(180.0f));
             stack.scale(1.5f, 1.5f, 1.5f);
             this.renderStack.bannerStack = new PoseStack();
-            this.renderStack.bannerStack.poseStack.add(stack.last());
+            com.mna.tools.MNAPoseStackAccess.add(this.renderStack.bannerStack, stack.last());
             this.renderStack.packedLight = packedLight;
             this.renderStack.packedOverlay = packedOverlay;
             stack.popPose();

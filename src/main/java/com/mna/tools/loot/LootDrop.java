@@ -256,8 +256,8 @@ implements Comparable<LootDrop> {
         buf.writeInt(this.minDrop);
         buf.writeInt(this.maxDrop);
         buf.writeInt(this.fortuneLevel);
-        buf.writeItem(this.item);
-        buf.writeItem(this.smeltedItem);
+        net.minecraft.world.item.ItemStack.OPTIONAL_STREAM_CODEC.encode(buf, this.item);
+        net.minecraft.world.item.ItemStack.OPTIONAL_STREAM_CODEC.encode(buf, this.smeltedItem);
         buf.writeFloat(this.chance);
         buf.writeFloat(this.sortIndex);
         buf.writeBoolean(this.enchanted);
