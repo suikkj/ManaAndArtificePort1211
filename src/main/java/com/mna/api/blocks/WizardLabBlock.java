@@ -114,7 +114,7 @@ IWizardLabConnect {
         if (dataWriter == null) {
             player.openMenu(provider, (BlockPos)pos);
         } else {
-            player.openMenu(provider, dataWriter);
+            player.openMenu(provider, (java.util.function.Consumer)dataWriter);
         }
         return InteractionResult.SUCCESS;
     }

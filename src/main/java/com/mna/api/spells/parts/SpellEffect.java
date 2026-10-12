@@ -241,7 +241,7 @@ ISpellComponent {
                 dirs.add(d);
             }
         }
-        for (Direction direction : (java.util.List<Direction>)dirs) {
+        for (Direction direction : (java.util.List<Direction>)(java.util.List)dirs) {
             BlockState placementState;
             BlockPlaceContext bpc;
             Direction operatingDirection;

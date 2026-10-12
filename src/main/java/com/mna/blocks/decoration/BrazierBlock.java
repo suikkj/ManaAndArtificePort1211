@@ -138,7 +138,7 @@ ISpellInteractibleBlock<BrazierBlock> {
             int color = -1;
             BlockEntity be = worldIn.getBlockEntity(pos);
             if (be != null && be instanceof BrazierTile) {
-                color = spell.getParticleColorOverride();
+                color = ((BrazierTile)be).getColor();
             }
             for (int i = 0; i < 20; ++i) {
                 MAParticleType pfx = new MAParticleType((ParticleType<MAParticleType>)((ParticleType)ParticleInit.FLAME.get())).setMaxAge((int)(20.0 + 20.0 * Math.random())).setScale(0.03f);

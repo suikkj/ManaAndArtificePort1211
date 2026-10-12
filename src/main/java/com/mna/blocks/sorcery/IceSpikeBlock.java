@@ -139,7 +139,7 @@ EntityBlock {
         BlockState blockstate = context.getLevel().getBlockState(context.getClickedPos().relative(context.getClickedFace().getOpposite()));
         if (context.getLevel() instanceof ServerLevel) {
             FakePlayer fp = FakePlayerFactory.getMinecraft((ServerLevel)((ServerLevel)context.getLevel()));
-            if (!Block.isFaceFull((VoxelShape)blockstate.getBlock().getCollisionShape(blockstate, (BlockGetter)context.getLevel(), context.getClickedPos(), CollisionContext.of((Entity)fp)), (Direction)context.getClickedFace())) {
+            if (!Block.isFaceFull((VoxelShape)blockstate.getCollisionShape((BlockGetter)context.getLevel(), context.getClickedPos(), CollisionContext.of((Entity)fp)), (Direction)context.getClickedFace())) {
                 return null;
             }
         }

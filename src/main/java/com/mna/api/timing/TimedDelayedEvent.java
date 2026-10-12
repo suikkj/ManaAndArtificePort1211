@@ -25,7 +25,7 @@ implements IDelayedEvent {
         --this.delay;
         if (this.delay == 0) {
             if (this.callback != null) {
-                this.callback.accept(this.identifier, (String)this.data);
+                this.callback.accept(this.identifier, this.data);
             }
             return true;
         }

@@ -67,7 +67,7 @@ implements IManaweavingRecipe {
 
     @Override
     public boolean matches(net.minecraft.world.item.crafting.CraftingInput inv, Level worldIn) {
-        if (!(inv instanceof ItemAndPatternCraftingInventory)) {
+        if (!((Object)inv instanceof ItemAndPatternCraftingInventory)) {
             return false;
         }
         ItemAndPatternCraftingInventory mwInv = (ItemAndPatternCraftingInventory)(Object)inv;

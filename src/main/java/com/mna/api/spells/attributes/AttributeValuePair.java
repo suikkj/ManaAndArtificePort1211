@@ -127,7 +127,7 @@ public final class AttributeValuePair {
         for (AttributeValuePair pair : source) {
             values[index++] = pair.deepCopy();
         }
-        return ImmutableList.copyOf((Object[])values);
+        return ImmutableList.copyOf(values);
     }
 }
 

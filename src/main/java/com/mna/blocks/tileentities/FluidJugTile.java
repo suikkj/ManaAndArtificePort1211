@@ -166,7 +166,7 @@ implements IFluidHandler {
 
     public CompoundTag getUpdateTag(net.minecraft.core.HolderLookup.Provider registries) {
         CompoundTag base = super.getUpdateTag(registries);
-        this.saveAdditional(base);
+        this.saveAdditional(base, registries);
         return base;
     }
 

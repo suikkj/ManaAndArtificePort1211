@@ -134,7 +134,7 @@ implements ILootrBridge {
             if (this.isBuff) {
                 MobEffect effect = (MobEffect)BuiltInRegistries.MOB_EFFECT.get(this.buff);
                 if (effect != null) {
-                    player.addEffect(new MobEffectInstance(effect, this.duration, this.amplifier, false, false, true));
+                    player.addEffect(new MobEffectInstance(net.minecraft.core.registries.BuiltInRegistries.MOB_EFFECT.wrapAsHolder(effect), this.duration, this.amplifier, false, false, true));
                 } else {
                     ManaAndArtifice.LOGGER.warn("Effect " + this.buff.toString() + " was not able to be resolved; skipping.");
                 }

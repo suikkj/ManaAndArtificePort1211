@@ -329,7 +329,7 @@ implements IPlayerProgression {
     }
 
     @Override
-    public void pushCodexBreadcrumb(CodexBreadcrumb.breadcrumbType type, String key, int page, String ... metadata) {
+    public void pushCodexBreadcrumb(CodexBreadcrumb.Type type, String key, int page, String ... metadata) {
         if (!this._breadcrumbs.stream().anyMatch(c -> c.breadcrumbType == type && c.Key == key && c.Page == page)) {
             this._breadcrumbs.add(new CodexBreadcrumb(type, key, page, metadata));
         }

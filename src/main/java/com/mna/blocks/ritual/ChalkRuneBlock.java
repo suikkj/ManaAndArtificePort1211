@@ -147,7 +147,7 @@ EntityBlock {
     }
 
     public InteractionResult use(BlockState state, Level worldIn, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult p_225533_6_) {
-        List rituals;
+        List<Ritual> rituals;
         ItemStack activeStack = player.getItemInHand(handIn);
         if (ItemFilterGroup.GROUND_RUNE_NON_PLACEABLE.anyMatchesFilter(activeStack)) {
             return InteractionResult.PASS;

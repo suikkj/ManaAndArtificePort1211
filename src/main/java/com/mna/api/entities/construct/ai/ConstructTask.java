@@ -75,7 +75,7 @@ public class ConstructTask {
 
     @Nullable
     public final ConstructAITask<?> instantiateTask(IConstruct<?> construct) {
-        Class<ConstructAITask<?>> aiClass = this.getAIClass();
+        Class<? extends ConstructAITask<?>> aiClass = this.getAIClass();
         ConstructAITask<?> inst = null;
         try {
             Constructor<ConstructAITask<?>> ctor = aiClass.getConstructor(IConstruct.class, ResourceLocation.class);

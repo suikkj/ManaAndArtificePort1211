@@ -330,7 +330,7 @@ IBlockExtension {
         fireblock.setFireInfo(Blocks.DARK_OAK_LEAVES, 30, 60);
         fireblock.setFireInfo(Blocks.BOOKSHELF, 30, 20);
         fireblock.setFireInfo(Blocks.TNT, 15, 100);
-        fireblock.setFireInfo(Blocks.GRASS, 60, 100);
+        fireblock.setFireInfo(Blocks.SHORT_GRASS, 60, 100);
         fireblock.setFireInfo(Blocks.FERN, 60, 100);
         fireblock.setFireInfo(Blocks.DEAD_BUSH, 60, 100);
         fireblock.setFireInfo(Blocks.SUNFLOWER, 60, 100);

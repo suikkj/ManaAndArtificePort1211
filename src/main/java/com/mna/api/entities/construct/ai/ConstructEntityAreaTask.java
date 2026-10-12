@@ -73,7 +73,7 @@ extends ConstructAITask<T> {
         if (entities.size() == 0) {
             return false;
         }
-        E selected = this.selectTarget(entities);
+        E selected = (E)this.selectTarget(entities);
         if (selected != null) {
             this.setSelectedTarget(selected);
             this.construct.getDiagnostics().pushTaskUpdate(this.getId(), this.guiIcon, IConstructDiagnostics.Status.RUNNING, selected.getId());

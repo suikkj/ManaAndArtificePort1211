@@ -56,7 +56,7 @@ public final class MNAEnchantmentHelper {
 
     /** [PORT 1.21.1] com.mna.api.enchantments.MNAEnchantmentHelper.getBlockEfficiency(LivingEntity) foi removido. */
     public static int getBlockEfficiency(net.minecraft.world.entity.LivingEntity entity) {
-        return (int)EnchantmentHelper.getEnchantmentLevel(net.minecraft.world.item.enchantment.Enchantments.EFFICIENCY, entity);
+        return (int)EnchantmentHelper.getEnchantmentLevel(entity.level().registryAccess().holderOrThrow(net.minecraft.world.item.enchantment.Enchantments.EFFICIENCY), entity);
     }
 
     /** [PORT 1.21.1] EnchantmentHelper.getDamageBonus removido; o bonus agora passa pelo pipeline modifyDamage. */

@@ -23,7 +23,7 @@ implements ISpellComponent {
     private Integer tier;
 
     public Modifier(ResourceLocation guiIcon, int xpToRote, Attribute ... modified_attributes) {
-        this.governed = ImmutableList.copyOf((Object[])modified_attributes);
+        this.governed = ImmutableList.copyOf(modified_attributes);
         this.guiIcon = guiIcon;
         this.xpToRote = xpToRote;
     }

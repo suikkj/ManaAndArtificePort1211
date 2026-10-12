@@ -42,7 +42,7 @@ ISpellComponent {
 
     public Shape(ResourceLocation guiIcon, AttributeValuePair ... attributeValuePairs) {
         this.guiIcon = guiIcon;
-        this.modifiableAttributes = ImmutableList.copyOf((Object[])attributeValuePairs);
+        this.modifiableAttributes = ImmutableList.copyOf(attributeValuePairs);
     }
 
     @Override

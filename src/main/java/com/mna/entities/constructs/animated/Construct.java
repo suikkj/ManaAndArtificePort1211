@@ -2612,7 +2612,7 @@ IItemHandlerModifiable {
     }
 
     public static AttributeSupplier.Builder getGlobalAttributes() {
-        return Mob.createMobAttributes().add(Attributes.MAX_HEALTH, 20.0).add(Attributes.MOVEMENT_SPEED, (double)0.35f).add(Attributes.FLYING_SPEED, (double)0.35f).add(Attributes.ATTACK_DAMAGE, 1.0).add(Attributes.ATTACK_SPEED, 20.0).add(Attributes.ATTACK_KNOCKBACK, 1.0).add(Attributes.KNOCKBACK_RESISTANCE, 0.0).add((net.minecraft.world.entity.ai.attributes.Attribute)AttributeInit.PERCEPTION_DISTANCE.get(), 8.0).add((net.minecraft.world.entity.ai.attributes.Attribute)AttributeInit.INTELLIGENCE.get(), 8.0).add((net.minecraft.world.entity.ai.attributes.Attribute)AttributeInit.RANGED_DAMAGE.get(), 0.0);
+        return Mob.createMobAttributes().add(net.minecraft.core.registries.BuiltInRegistries.ATTRIBUTE.wrapAsHolder(Attributes.MAX_HEALTH), 20.0).add(Attributes.MOVEMENT_SPEED, (double)0.35f).add(Attributes.FLYING_SPEED, (double)0.35f).add(Attributes.ATTACK_DAMAGE, 1.0).add(Attributes.ATTACK_SPEED, 20.0).add(Attributes.ATTACK_KNOCKBACK, 1.0).add(Attributes.KNOCKBACK_RESISTANCE, 0.0).add((net.minecraft.world.entity.ai.attributes.Attribute)AttributeInit.PERCEPTION_DISTANCE.get(), 8.0).add((net.minecraft.world.entity.ai.attributes.Attribute)AttributeInit.INTELLIGENCE.get(), 8.0).add((net.minecraft.world.entity.ai.attributes.Attribute)AttributeInit.RANGED_DAMAGE.get(), 0.0);
     }
 
     protected void defineSynchedData(net.minecraft.network.syncher.SynchedEntityData.Builder builder) {

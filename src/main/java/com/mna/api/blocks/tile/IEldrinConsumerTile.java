@@ -58,7 +58,7 @@ public interface IEldrinConsumerTile {
             }
         }
         boolean foundOneSupplier = false;
-        for (BlockPos pos : suppliers) {
+        for (BlockPos pos : (java.util.Set<BlockPos>)suppliers) {
             IEldrinCapacitorTile supplier;
             BlockEntity blockEntity = world.getBlockEntity(pos);
             if (blockEntity == null || !(blockEntity instanceof IEldrinCapacitorTile) || !(supplier = (IEldrinCapacitorTile)blockEntity).canSupply(type, owner) || !(pos.distSqr((Vec3i)blockPos) <= (double)(supplier.getDispersalRadius() * supplier.getDispersalRadius()))) continue;

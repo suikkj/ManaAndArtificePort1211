@@ -38,7 +38,7 @@ import net.minecraft.world.level.block.state.BlockState;
 public class PilgrimsPathStair
 extends StairBlock {
     public PilgrimsPathStair(Supplier<BlockState> state) {
-        super(state, BlockBehaviour.Properties.of().jumpFactor(2.0f).speedFactor(1.25f).friction(0.45f).explosionResistance(3.0f).destroyTime(2.0f).requiresCorrectToolForDrops().sound(SoundType.STONE));
+        super(state.get(), BlockBehaviour.Properties.of().jumpFactor(2.0f).speedFactor(1.25f).friction(0.45f).explosionResistance(3.0f).destroyTime(2.0f).requiresCorrectToolForDrops().sound(SoundType.STONE));
     }
 
     public boolean addLandingEffects(BlockState state1, ServerLevel level, BlockPos pos, BlockState state2, LivingEntity entity, int numberOfParticles) {

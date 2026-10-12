@@ -82,7 +82,7 @@ public class MATags {
             TagKey tagKey = TagKey.create((ResourceKey)registry.key(), (ResourceLocation)tagID);
             Optional tag = registry.getTag(tagKey);
             if (tag != null && tag.isPresent()) {
-                return ((HolderSet.Named)tag.get()).stream().collect(Collectors.toList());
+                return ((net.minecraft.core.HolderSet.Named<net.minecraft.world.level.levelgen.structure.Structure>)tag.get()).stream().collect(Collectors.toList());
             }
         }
         catch (Exception exception) {

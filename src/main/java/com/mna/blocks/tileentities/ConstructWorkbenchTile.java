@@ -310,7 +310,7 @@ implements GeoBlockEntity {
             for (Affinity aff : Affinity.values()) {
                 this.construct.setAffinityScore(aff, 0);
             }
-            for (Affinity aff : affinities.keySet()) {
+            for (Affinity aff : (java.util.Set<Affinity>)(java.util.Set)affinities.keySet()) {
                 this.construct.setAffinityScore(aff, (Integer)affinities.get(aff));
             }
             eac.setConstructParts(this.construct);

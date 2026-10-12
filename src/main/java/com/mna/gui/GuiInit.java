@@ -67,7 +67,7 @@ public class GuiInit {
         HUDOverlayRenderer.instance = new HUDOverlayRenderer();
         ManaAndArtifice.LOGGER.info("M&A -> Gui Screens Registered");
     }
-    @SubscribeEvent(dist = Dist.CLIENT)
+    @SubscribeEvent
     public static void onRegisterMenuScreens(RegisterMenuScreensEvent event) {
         event.register((MenuType)((MenuType)ContainerInit.RITUAL_KIT.get()), GuiPractitionersPouch::new);
         event.register((MenuType)((MenuType)ContainerInit.SPELL_BOOK.get()), GuiSpellBook::new);

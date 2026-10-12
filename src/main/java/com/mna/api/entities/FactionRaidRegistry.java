@@ -65,7 +65,7 @@ public class FactionRaidRegistry {
         if (list.size() == 0) {
             return null;
         }
-        List possibles = list.entrySet().stream().filter(e -> ((HashMap)e.getValue()).keySet().stream().anyMatch(i -> i <= raidStrength)).collect(Collectors.toList());
+        List possibles = list.entrySet().stream().filter(e -> ((HashMap)e.getValue()).keySet().stream().anyMatch(i -> (Integer)i <= raidStrength)).collect(Collectors.toList());
         if (possibles.size() == 0) {
             return null;
         }

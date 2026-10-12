@@ -41,7 +41,7 @@ extends ConstructAITaskParameter {
 
     private void createInclusiveAABB() {
         if (this.points != null && this.points.getFirst() != null && this.points.getSecond() != null) {
-            this.area = new AABB(((DirectionalPoint)this.points.getFirst()).getPosition(), ((DirectionalPoint)this.points.getSecond()).getPosition()).expandTowards(1.0, 1.0, 1.0);
+            this.area = new AABB(net.minecraft.world.phys.Vec3.atLowerCornerOf(((DirectionalPoint)this.points.getFirst()).getPosition()), net.minecraft.world.phys.Vec3.atLowerCornerOf(((DirectionalPoint)this.points.getSecond()).getPosition())).expandTowards(1.0, 1.0, 1.0);
         }
     }
 

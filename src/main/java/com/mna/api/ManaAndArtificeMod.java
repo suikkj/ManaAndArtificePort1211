@@ -192,7 +192,7 @@ public class ManaAndArtificeMod {
     }
 
     public static com.mna.MnaRegistry<IFaction> getFactionsRegistry() {
-        return com.mna.Registries.IFaction;
+        return com.mna.Registries.Factions;
     }
 
     public static final ICantripRegistry getCantripRegistry() {

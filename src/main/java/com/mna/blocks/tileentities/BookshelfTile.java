@@ -101,7 +101,6 @@ extends TileEntityWithInventory {
     }
 
     public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt) {
-        super.onDataPacket(net, pkt);
         CompoundTag compoundtag = pkt.getTag();
         if (compoundtag != null) {
             this.parseItemsList(compoundtag);
