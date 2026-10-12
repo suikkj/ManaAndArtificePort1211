@@ -28,9 +28,8 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 public class RandomSpellStaff
 extends LootItemConditionalFunction {
-    public static final com.mojang.serialization.MapCodec<RandomSpellStaff> CODEC = com.mojang.serialization.codecs.RecordCodecBuilder.mapCodec(inst -> inst.group(
-        LootItemConditionalFunction.commonFields(inst),
-        com.mojang.serialization.Codec.FLOAT.optionalFieldOf("chanceForForceSelf", 0.0f).forGetter(f -> f.chanceForForceSelf),
+    public static final com.mojang.serialization.MapCodec<RandomSpellStaff> CODEC = com.mojang.serialization.codecs.RecordCodecBuilder.mapCodec(inst -> LootItemConditionalFunction.commonFields(inst).and(
+            com.mojang.serialization.Codec.FLOAT.optionalFieldOf("chanceForForceSelf", 0.0f).forGetter(f -> f.chanceForForceSelf),
         com.mojang.serialization.Codec.FLOAT.optionalFieldOf("chanceForSkipTags", 0.0f).forGetter(f -> f.chanceForSkipTags),
         com.mojang.serialization.Codec.BOOL.optionalFieldOf("allowMessWithMori", false).forGetter(f -> f.allowMessWithMori)
     ).apply(inst, (conditions, a, b, c) -> new RandomSpellStaff(conditions, a, b, c)));

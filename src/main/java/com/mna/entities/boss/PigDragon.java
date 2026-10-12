@@ -213,7 +213,7 @@ extends BossMonster<PigDragon> {
     }
 
     private void hurtNearby(List<Entity> pEntities) {
-        for (Entity entity : pEntities) {
+        for (Entity entity : (java.util.List<Entity>)pEntities) {
             if (!(entity instanceof LivingEntity)) continue;
             entity.hurt(this.damageSources().mobAttack((LivingEntity)this), (float)this.getAttribute(Attributes.ATTACK_DAMAGE).getValue());
             com.mna.tools.MATools.doEnchantDamageEffects(this, entity);
@@ -223,7 +223,7 @@ extends BossMonster<PigDragon> {
     private void knockBack(List<Entity> pEntities) {
         double d0 = (this.getBoundingBox().minX + this.getBoundingBox().maxX) / 2.0;
         double d1 = (this.getBoundingBox().minZ + this.getBoundingBox().maxZ) / 2.0;
-        for (Entity entity : pEntities) {
+        for (Entity entity : (java.util.List<Entity>)pEntities) {
             if (!(entity instanceof LivingEntity)) continue;
             double d2 = entity.getX() - d0;
             double d3 = entity.getZ() - d1;

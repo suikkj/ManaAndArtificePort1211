@@ -743,7 +743,7 @@ implements IFactionEnemy<FaerieQueen> {
         private void summonCreeper(boolean illusion) {
             Vec3 pos = FaerieQueen.this.position();
             pos = pos.add(-5.0 + Math.random() * 10.0, 0.0, -5.0 + Math.random() * 10.0);
-            IllusionCreeper c = illusion ? new IllusionCreeper(FaerieQueen.this.level()) : new Creeper(EntityType.CREEPER, FaerieQueen.this.level());
+            Creeper c = illusion ? new IllusionCreeper(FaerieQueen.this.level()) : new Creeper(EntityType.CREEPER, FaerieQueen.this.level());
             c.setPos(pos);
             c.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 60));
             SummonUtils.setSummon((Mob)c, (LivingEntity)FaerieQueen.this, 400);

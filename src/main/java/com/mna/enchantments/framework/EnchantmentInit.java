@@ -48,31 +48,31 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public class EnchantmentInit {
     public static final DeferredRegister<Enchantment> ENCHANTMENTS = DeferredRegister.create(Registries.ENCHANTMENT, "mna");
 
-    private static MAEnchantmentBridge.EnchantmentDefinition auraDef(MAEnchantmentBridge.Rarity rarity, int maxLevel) {
+    private static Enchantment.EnchantmentDefinition auraDef(MAEnchantmentBridge.Rarity rarity, int maxLevel) {
         return MAEnchantmentBridge.definition(MAEnchantmentBridge.itemTag(net.minecraft.tags.ItemTags.CHEST_ARMOR_ENCHANTABLE), rarity, maxLevel, List.of(EquipmentSlotGroup.CHEST));
     }
 
-    private static MAEnchantmentBridge.EnchantmentDefinition staffDef(MAEnchantmentBridge.Rarity rarity, int maxLevel) {
+    private static Enchantment.EnchantmentDefinition staffDef(MAEnchantmentBridge.Rarity rarity, int maxLevel) {
         return MAEnchantmentBridge.definition(MAEnchantmentBridge.itemTag(MATags.Items.STAVES), rarity, maxLevel, List.of(EquipmentSlotGroup.MAINHAND, EquipmentSlotGroup.OFFHAND));
     }
 
-    private static MAEnchantmentBridge.EnchantmentDefinition weaponDef(MAEnchantmentBridge.Rarity rarity, int maxLevel) {
+    private static Enchantment.EnchantmentDefinition weaponDef(MAEnchantmentBridge.Rarity rarity, int maxLevel) {
         return MAEnchantmentBridge.definition(MAEnchantmentBridge.itemTag(net.minecraft.tags.ItemTags.WEAPON_ENCHANTABLE), rarity, maxLevel, List.of(EquipmentSlotGroup.MAINHAND, EquipmentSlotGroup.OFFHAND));
     }
 
-    private static MAEnchantmentBridge.EnchantmentDefinition bootsDef(MAEnchantmentBridge.Rarity rarity, int maxLevel) {
+    private static Enchantment.EnchantmentDefinition bootsDef(MAEnchantmentBridge.Rarity rarity, int maxLevel) {
         return MAEnchantmentBridge.definition(MAEnchantmentBridge.itemTag(net.minecraft.tags.ItemTags.FOOT_ARMOR_ENCHANTABLE), rarity, maxLevel, List.of(EquipmentSlotGroup.FEET));
     }
 
-    private static MAEnchantmentBridge.EnchantmentDefinition armorDef(MAEnchantmentBridge.Rarity rarity, int maxLevel) {
+    private static Enchantment.EnchantmentDefinition armorDef(MAEnchantmentBridge.Rarity rarity, int maxLevel) {
         return MAEnchantmentBridge.definition(MAEnchantmentBridge.itemTag(net.minecraft.tags.ItemTags.ARMOR_ENCHANTABLE), rarity, maxLevel, List.of(EquipmentSlotGroup.ARMOR));
     }
 
-    private static MAEnchantmentBridge.EnchantmentDefinition bowDef(MAEnchantmentBridge.Rarity rarity, int maxLevel) {
+    private static Enchantment.EnchantmentDefinition bowDef(MAEnchantmentBridge.Rarity rarity, int maxLevel) {
         return MAEnchantmentBridge.definition(MAEnchantmentBridge.itemTag(net.minecraft.tags.ItemTags.BOW_ENCHANTABLE), rarity, maxLevel, List.of(EquipmentSlotGroup.MAINHAND, EquipmentSlotGroup.OFFHAND));
     }
 
-    private static MAEnchantmentBridge.EnchantmentDefinition anyDef(MAEnchantmentBridge.Rarity rarity, int maxLevel) {
+    private static Enchantment.EnchantmentDefinition anyDef(MAEnchantmentBridge.Rarity rarity, int maxLevel) {
         return MAEnchantmentBridge.definition(MAEnchantmentBridge.itemTag(net.minecraft.tags.ItemTags.DURABILITY_ENCHANTABLE), rarity, maxLevel, List.of(EquipmentSlotGroup.ANY));
     }
 

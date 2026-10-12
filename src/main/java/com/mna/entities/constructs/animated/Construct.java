@@ -2421,7 +2421,7 @@ IItemHandlerModifiable {
             this.setHealth(1.0f);
             this.setDefeated(300);
             List entities = this.level().getEntities((Entity)this, this.getBoundingBox().inflate(64.0));
-            for (Entity entity : entities) {
+            for (Entity entity : (java.util.List<Entity>)entities) {
                 Mob mob;
                 if (!(entity instanceof Mob) || (mob = (Mob)entity).getTarget() != this) continue;
                 if (mob.getLastHurtByMob() == this) {

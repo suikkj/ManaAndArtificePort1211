@@ -597,9 +597,9 @@ implements IRequirePlayerReference<ManaweavingAltarTile> {
             }
             if (this._lastCraftRecipe == null && this.lastCraftRecipeID != null) {
                 this.level.getRecipeManager().byKey(this.lastCraftRecipeID).ifPresent(recipe -> {
-                    if (recipe instanceof ManaweavingRecipe) {
+                    if (recipe.value() instanceof ManaweavingRecipe) {
                         ManaweavingRecipe mwRecipe;
-                        this._lastCraftRecipe = mwRecipe = (ManaweavingRecipe)recipe;
+                        this._lastCraftRecipe = mwRecipe = (ManaweavingRecipe)recipe.value();
                     }
                 });
             }

@@ -72,7 +72,7 @@ extends TieredItem {
         List list = worldIn.getEntities((Entity)playerIn, playerIn.getBoundingBox().expandTowards(vec3d.scale(5.0)).inflate(1.0), ENTITY_PREDICATE);
         if (!list.isEmpty()) {
             Vec3 vec3d1 = playerIn.getEyePosition(1.0f);
-            for (Entity entity : list) {
+            for (Entity entity : (java.util.List<Entity>)list) {
                 AABB axisalignedbb = entity.getBoundingBox().inflate((double)entity.getPickRadius());
                 if (!axisalignedbb.contains(vec3d1)) continue;
                 return InteractionResultHolder.pass(itemstack);

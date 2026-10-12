@@ -78,7 +78,7 @@ extends ChanneledSpellEntity {
         if (recipe.getComponents().stream().anyMatch(c -> ((SpellEffect)c.getPart()).targetsEntities())) {
             AABB bb = new AABB(this.getX() - (double)radius_h, this.getY(), this.getZ() - (double)radius_h, this.getX() + (double)radius_h, this.getY() + (double)radius_v, this.getZ() + (double)radius_h);
             List entities = world.getEntities((Entity)caster, bb);
-            for (Entity e : entities) {
+            for (Entity e : (java.util.List<Entity>)entities) {
                 if (!this.losCheck(e)) continue;
                 SpellCaster.ApplyComponents(recipe, source, new SpellTarget(e), context);
             }

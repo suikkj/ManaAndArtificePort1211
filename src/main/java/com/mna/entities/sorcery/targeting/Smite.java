@@ -208,7 +208,7 @@ extends AbstractHurtingProjectile {
                 if (hitEntity != null && !targets.contains(hitEntity)) {
                     targets.add(hitEntity);
                 }
-                for (Entity target : targets) {
+                for (Entity target : (java.util.List<Entity>)targets) {
                     if (target == null || target == this.getShooterAsLiving()) continue;
                     SpellCaster.ApplyComponents(recipe, source, new SpellTarget(target).doNotOffsetFace(), context);
                 }

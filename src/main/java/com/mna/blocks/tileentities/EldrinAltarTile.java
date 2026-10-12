@@ -775,9 +775,9 @@ IEldrinConsumerTile {
             }
             if (this._lastCraftRecipe == null && this.lastCraftRecipeID != null) {
                 this.level.getRecipeManager().byKey(this.lastCraftRecipeID).ifPresent(recipe -> {
-                    if (recipe instanceof EldrinAltarRecipe) {
+                    if (recipe.value() instanceof EldrinAltarRecipe) {
                         EldrinAltarRecipe eaRecipe;
-                        this._lastCraftRecipe = eaRecipe = (EldrinAltarRecipe)recipe;
+                        this._lastCraftRecipe = eaRecipe = (EldrinAltarRecipe)recipe.value();
                     }
                 });
             }

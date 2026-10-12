@@ -753,8 +753,8 @@ MNADyeableItem {
         if (!world.isClientSide && context.getHand() == InteractionHand.MAIN_HAND && this.openGuiIfModifierPressed(context.getItemInHand(), context.getPlayer(), context.getLevel())) {
             return InteractionResult.SUCCESS;
         }
-        IPlayerMagic magic = MNACap.get((IPlayerMagic)context.getPlayer(), PlayerMagicProvider.MAGIC);
-        IPlayerProgression progression = MNACap.get((IPlayerProgression)context.getPlayer(), PlayerProgressionProvider.PROGRESSION);
+        IPlayerMagic magic = MNACap.get(context.getPlayer(), PlayerMagicProvider.MAGIC).orElse(null);
+        IPlayerProgression progression = MNACap.get(context.getPlayer(), PlayerProgressionProvider.PROGRESSION).orElse(null);
         if (!magic.isMagicUnlocked()) {
             return InteractionResult.FAIL;
         }

@@ -121,7 +121,7 @@ extends ChanneledSpellEntity {
         Vec3 a = new Vec3(this.getX() - dirX * (double)radius_h, this.getY(), this.getZ() - dirZ * (double)radius_h);
         Vec3 b = new Vec3(this.getX() - dirX * (double)(-radius_h), this.getY(), this.getZ() - dirZ * (double)(-radius_h));
         LineSegment wallLine = new LineSegment(a, b);
-        for (Entity e : possibleTargets) {
+        for (Entity e : (java.util.List<Entity>)possibleTargets) {
             if (e == this || e == this.getCaster() || !(e instanceof LivingEntity) || !e.isAlive()) continue;
             Vec3 target = e.position();
             Vec3 closest = wallLine.closestPointOnLine(target);

@@ -144,7 +144,7 @@ extends ChanneledSpellEntity {
         List<Entity> entities = this.targetEntities(this.lastTickTarget, radius_h * 2.0f, radius_v * 2.0f, radius_d);
         BlockPos[] blocks = this.targetBlocks(this.lastTickBlockPos, radius_h, radius_v, radius_d);
         SpellContext context = new SpellContext((Level)world, recipe, this);
-        for (Entity e : entities) {
+        for (Entity e : (java.util.List<Entity>)entities) {
             SpellCaster.ApplyComponents(recipe, source, new SpellTarget(e), context);
         }
         for (BlockPos b : blocks) {
@@ -289,7 +289,7 @@ extends ChanneledSpellEntity {
         Vec3 horizontal_b = center.add(forward.cross(UP).scale((double)(-r_width)));
         LineSegment line_horizontal = new LineSegment(horizontal_a, horizontal_b);
         LineSegment line_depth = new LineSegment(depth_a, depth_b);
-        for (Entity e : possibleTargets) {
+        for (Entity e : (java.util.List<Entity>)possibleTargets) {
             if (e == this || e == this.getCaster()) continue;
             Vec3 target = e.position();
             Vec3 closest_horizontal = line_horizontal.closestPointOnLine(target);

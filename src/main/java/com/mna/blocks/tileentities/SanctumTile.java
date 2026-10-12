@@ -63,8 +63,8 @@ extends MultiblockTile {
         }
         if (this._cachedMultiblockRecipe == null) {
             this.getLevel().getRecipeManager().byKey(recipeId).ifPresent(r -> {
-                if (r instanceof MultiblockDefinition) {
-                    this._cachedMultiblockRecipe = (MultiblockDefinition)r;
+                if (r.value() instanceof MultiblockDefinition) {
+                    this._cachedMultiblockRecipe = (MultiblockDefinition)r.value();
                 }
             });
         }

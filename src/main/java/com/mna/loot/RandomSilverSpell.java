@@ -21,9 +21,8 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 public class RandomSilverSpell
 extends LootItemConditionalFunction {
-    public static final com.mojang.serialization.MapCodec<RandomSilverSpell> CODEC = com.mojang.serialization.codecs.RecordCodecBuilder.mapCodec(inst -> inst.group(
-        LootItemConditionalFunction.commonFields(inst),
-        ResourceLocation.CODEC.optionalFieldOf("faction").forGetter(f -> java.util.Optional.ofNullable(f.factionID))
+    public static final com.mojang.serialization.MapCodec<RandomSilverSpell> CODEC = com.mojang.serialization.codecs.RecordCodecBuilder.mapCodec(inst -> LootItemConditionalFunction.commonFields(inst).and(
+            ResourceLocation.CODEC.optionalFieldOf("faction").forGetter(f -> java.util.Optional.ofNullable(f.factionID))
     ).apply(inst, (conditions, faction) -> new RandomSilverSpell(conditions, faction.orElse(null), true)));
     public static final LootItemFunctionType<RandomSilverSpell> TYPE = new LootItemFunctionType<RandomSilverSpell>(CODEC);
 

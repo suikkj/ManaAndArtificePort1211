@@ -244,7 +244,7 @@ extends Entity {
             return;
         }
         List mws = this.level().getEntities((Entity)this, this.getBoundingBox().inflate(2.0), e -> e instanceof Manaweave && ((Manaweave)(e)).getCaster() == this.getCaster());
-        for (Entity e2 : mws) {
+        for (Entity e2 : (java.util.List<Entity>)mws) {
             this.mergeWith((Manaweave)e2);
         }
         if (this.getPatterns().size() > 1) {

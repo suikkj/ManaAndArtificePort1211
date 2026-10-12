@@ -185,7 +185,7 @@ extends ChanneledSpellEntity {
         if (recipe.getComponents().stream().anyMatch(c -> ((SpellEffect)c.getPart()).targetsEntities())) {
             float radius = ((ModifiedSpellPart)recipe.getShape()).getValue(Attribute.RADIUS);
             List targets = this.level().getEntities((Entity)this, this.getBoundingBox().inflate((double)radius), e -> !e.isInvulnerable());
-            for (Entity target : targets) {
+            for (Entity target : (java.util.List<Entity>)targets) {
                 if (target == null || target == caster) continue;
                 HashMap<SpellEffect, ComponentApplicationResult> loopRes = SpellCaster.ApplyComponents(recipe, source, new SpellTarget(target), context);
                 SpellCaster.mergeComponentResults(results, loopRes);
