@@ -102,7 +102,7 @@ extends ItemConstructPart {
             }
             level.setBlock(blockpos, (BlockState)optional3.get(), 11);
             if (player != null) {
-                itemstack.hurtAndBreak(1, (net.minecraft.server.level.ServerLevel)player.level(), player, brokenItem -> player.onEquippedItemBroken(brokenItem, ctx.getHand()));
+                itemstack.hurtAndBreak(1, (net.minecraft.server.level.ServerLevel)player.level(), player, brokenItem -> player.onEquippedItemBroken(brokenItem, net.minecraft.world.entity.EquipmentSlot.MAINHAND));
             }
             return InteractionResult.sidedSuccess((boolean)level.isClientSide());
         }
@@ -136,7 +136,7 @@ extends ItemConstructPart {
     }
 
     public Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers(EquipmentSlot p_40990_) {
-        return p_40990_ == EquipmentSlot.MAINHAND ? this.defaultModifiers : super.getDefaultAttributeModifiers();
+        return p_40990_ == EquipmentSlot.MAINHAND ? this.defaultModifiers : (com.google.common.collect.Multimap)super.getDefaultAttributeModifiers();
     }
 
     @Deprecated

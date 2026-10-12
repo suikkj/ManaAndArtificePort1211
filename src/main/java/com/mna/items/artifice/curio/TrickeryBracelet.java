@@ -49,14 +49,14 @@ implements IPreEnchantedItem<TrickeryBracelet> {
 
     public static void ApplyMoveSpeed(Player player) {
         AttributeInstance attr = player.getAttribute(Attributes.MOVEMENT_SPEED);
-        if (!attr.hasModifier(TRICKERY_SPEED_BOOST)) {
+        if (!attr.hasModifier(TRICKERY_SPEED_BOOST.id())) {
             attr.addTransientModifier(TRICKERY_SPEED_BOOST);
         }
     }
 
     public static void RemoveMoveSpeed(Player player) {
         AttributeInstance attr = player.getAttribute(Attributes.MOVEMENT_SPEED);
-        if (attr.hasModifier(TRICKERY_SPEED_BOOST)) {
+        if (attr.hasModifier(TRICKERY_SPEED_BOOST.id())) {
             attr.removeModifier(TRICKERY_SPEED_BOOST);
         }
     }

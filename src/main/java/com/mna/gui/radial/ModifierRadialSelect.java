@@ -51,7 +51,7 @@ extends Screen {
         this.stackEquipped = this.getHandItem();
         if (this.stackEquipped.getItem() == ItemInit.MODIFIER_BOOK.get()) {
             int tier = ((IPlayerProgression)MNACap.get(this.mc.player, PlayerProgressionProvider.PROGRESSION).get()).getTier();
-            this.knownModifiers.addAll(this.mc.player.level().getRecipeManager().getAllRecipesFor(RecipeInit.MODIFIER_TYPE.get()).stream().filter(m -> m.value().getTier() <= tier).map(m -> m.value().getComponent()).collect(Collectors.toList()));
+            this.knownModifiers.addAll((java.util.List)this.mc.player.level().getRecipeManager().getAllRecipesFor(RecipeInit.MODIFIER_TYPE.get()).stream().filter(m -> m.value().getTier() <= tier).map(m -> m.value().getComponent()).collect(Collectors.toList()));
         } else {
             this.onClose();
         }

@@ -67,10 +67,10 @@ extends AbstractWidget {
 
     private void renderValues(GuiGraphics pGuiGraphics) {
         Minecraft mc = Minecraft.getInstance();
-        float scale = (Boolean)mc.options.forceUnicodeFont.get() != false ? 1.0f : 0.7f;
+        float scale = 1.0f;
         Font font = mc.font;
         float textX = ((float)this.getX() + 29.5f) / scale;
-        float textY = ((float)this.getY() + ((Boolean)mc.options.forceUnicodeFont.get() != false ? 6.0f : 7.5f)) / scale;
+        float textY = ((float)this.getY() + 6.0f) / scale;
         pGuiGraphics.pose().pushPose();
         pGuiGraphics.pose().scale(scale, scale, scale);
         for (int i = 0; i < 4; ++i) {

@@ -59,7 +59,9 @@ extends AbstractItemHandler {
 
     public void writeItemStack() {
         if (this.isEmpty()) {
-            this.stack.removeTagKey(TAG_ITEMS);
+            CompoundTag __t = this.stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
+            __t.remove(TAG_ITEMS);
+            this.stack.set(DataComponents.CUSTOM_DATA, CustomData.of(__t));
         } else {
             CompoundTag tag = this.stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
             tag.put(TAG_ITEMS, (Tag)this.serialize());

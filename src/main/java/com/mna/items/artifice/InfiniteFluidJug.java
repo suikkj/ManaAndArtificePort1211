@@ -51,10 +51,6 @@ implements IRelic {
     }
 
     @Override
-    public ICapabilityProvider initCapabilities(ItemStack stack, @javax.annotation.Nullable CompoundTag nbt) {
-        return new InfiniteFluidCapabilityHandler(this.contained, stack);
-    }
-
     @Override
     public FluidStack getFluidTagData(ItemStack stack) {
         return this.containedStack;

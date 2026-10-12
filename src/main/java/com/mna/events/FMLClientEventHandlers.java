@@ -27,8 +27,8 @@ public class FMLClientEventHandlers {
     @OnlyIn(value=Dist.CLIENT)
     @SubscribeEvent
     public static void onRegisterRenderers(EntityRenderersEvent.AddLayers event) {
-        LivingEntityRenderer playerRenderer = event.getSkin(net.minecraft.client.model.geom.ModelLayers.PLAYER);
-        LivingEntityRenderer slimRenderer = event.getSkin(net.minecraft.client.model.geom.ModelLayers.PLAYER_SLIM);
+        net.minecraft.client.renderer.entity.player.PlayerRenderer playerRenderer = event.getSkin(net.minecraft.client.resources.PlayerSkin.Model.WIDE);
+        net.minecraft.client.renderer.entity.player.PlayerRenderer slimRenderer = event.getSkin(net.minecraft.client.resources.PlayerSkin.Model.SLIM);
         if (playerRenderer != null) {
             playerRenderer.addLayer(new SpectralElytraLayer(playerRenderer, event.getEntityModels()));
             playerRenderer.addLayer(new HandParticleLayer(playerRenderer));

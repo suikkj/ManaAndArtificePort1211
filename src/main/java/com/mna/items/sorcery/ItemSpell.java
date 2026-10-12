@@ -85,7 +85,7 @@ implements IShowHud {
         if (result.getCode() == SpellCastingResultCode.CHANNEL) {
             player.startUsingItem(hand);
             if (consumeMana.apply(spellStack).booleanValue()) {
-                player.addEffect(new MobEffectInstance(com.mna.api.tools.MAEffects.holder(EffectInit.MANA_STUNT.get()), spellStack.getUseDuration(), 5));
+                player.addEffect(new MobEffectInstance(com.mna.api.tools.MAEffects.holder(EffectInit.MANA_STUNT.get()), spellStack.getUseDuration(player), 5));
             }
             return InteractionResultHolder.success(spellStack);
         }

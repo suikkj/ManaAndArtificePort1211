@@ -66,7 +66,7 @@ extends CompassItem {
 
     @Nullable
     public BlockPos getTrackedPosition(ItemStack stack, ResourceKey<Level> dimension) {
-        if (!ThaumaturgicCompass.isLodestoneCompass((ItemStack)stack)) {
+        if (!((ItemStack)stack).has(net.minecraft.core.component.DataComponents.LODESTONE_TRACKER)) {
             return null;
         }
         Optional<ResourceKey<Level>> world = ThaumaturgicCompass.getLodestoneDimension(stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag());
@@ -144,7 +144,7 @@ extends CompassItem {
         stackTag.putInt(trackingType, trackType.ordinal());
         stackTag.putString(trackingKey, trackedID.toString());
         stackTag.put("LodestonePos", (Tag)NbtUtils.writeBlockPos((BlockPos)position));
-        Level.RESOURCE_KEY_CODEC.encodeStart((DynamicOps)NbtOps.INSTANCE, dimension).resultOrPartial(arg_0 -> ((Logger)ManaAndArtifice.LOGGER).error(arg_0)).ifPresent(inbt -> stackTag.put("LodestoneDimension", inbt));
+        ((com.mojang.serialization.Codec)Level.RESOURCE_KEY_CODEC).encodeStart((DynamicOps)NbtOps.INSTANCE, dimension).resultOrPartial(arg_0 -> ((Logger)ManaAndArtifice.LOGGER).error(arg_0)).ifPresent(inbt -> stackTag.put("LodestoneDimension", inbt));
         stackTag.putBoolean("LodestoneTracked", true);
     }
 

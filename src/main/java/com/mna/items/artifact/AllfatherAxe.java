@@ -31,7 +31,7 @@ implements IShowHud {
     private static final float THROW_MANA_COST = 50.0f;
 
     public AllfatherAxe() {
-        super((Tier)Tiers.NETHERITE, 10.0f, 1.0f, new Item.Properties().rarity(Rarity.EPIC));
+        super((Tier)Tiers.NETHERITE, new Item.Properties().rarity(Rarity.EPIC));
     }
 
     public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand hand) {

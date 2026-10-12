@@ -76,7 +76,7 @@ extends ItemConstructPart {
     }
 
     public Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers(EquipmentSlot slot) {
-        return slot == EquipmentSlot.MAINHAND ? this.defaultModifiers : super.getDefaultAttributeModifiers();
+        return slot == EquipmentSlot.MAINHAND ? this.defaultModifiers : (com.google.common.collect.Multimap)super.getDefaultAttributeModifiers();
     }
 
     public boolean canPerformAction(ItemStack stack, ItemAbilities toolAction) {

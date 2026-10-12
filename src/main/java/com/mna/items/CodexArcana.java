@@ -60,7 +60,7 @@ extends TieredItem {
                 }
             } else {
                 MNACap.get(player, PlayerProgressionProvider.PROGRESSION).ifPresent(p -> {
-                    if (p.peekCodexBreadcrumb() != null && p.peekCodexBreadcrumb().Type == CodexBreadcrumb.Type.RECIPE) {
+                    if (p.peekCodexBreadcrumb() != null && p.peekCodexBreadcrumb().breadcrumbType == CodexBreadcrumb.Type.RECIPE) {
                         if (world.getGameTime() - this.lastActivateTime < 200L) {
                             ++this.guiOpenCount;
                             if (this.guiOpenCount >= 4) {
@@ -82,7 +82,7 @@ extends TieredItem {
         Level world = context.getLevel();
         BlockState blockstate = world.getBlockState(blockpos = context.getClickedPos());
         if (blockstate.is(Blocks.LECTERN)) {
-            return LecternBlock.tryPlaceBook((Entity)context.getPlayer(), (Level)world, (BlockPos)blockpos, (BlockState)blockstate, (ItemStack)context.getItemInHand()) ? InteractionResult.sidedSuccess((boolean)world.isClientSide) : InteractionResult.PASS;
+            return LecternBlock.tryPlaceBook((net.minecraft.world.entity.LivingEntity)context.getPlayer(), (Level)world, (BlockPos)blockpos, (BlockState)blockstate, (ItemStack)context.getItemInHand()) ? InteractionResult.sidedSuccess((boolean)world.isClientSide) : InteractionResult.PASS;
         }
         return InteractionResult.PASS;
     }

@@ -132,7 +132,6 @@ extends SearchableGuiJeiDisable<ContainerRoteBook> {
         this.playerProgression = (IPlayerProgression)this.minecraft.player.getData(PlayerProgressionProvider.PROGRESSION.get());
         this.nameAndIcon = (Button)this.addRenderableWidget(new MNAImageButton(this.leftPos + 228, this.topPos + 12, 16, 16, 228, 12, 0, GuiTextures.Items.BOOK_OF_ROTE, 256, 256, button -> this.toggleNaming()));
         this.list = new SpellPartList(false, true, this.leftPos, this.topPos, 66, 190, 117, 57, s -> this.OnShapeClicked((Shape)s), c -> this.OnComponentClicked((SpellEffect)c), m -> {}, tt -> this.currentTooltip.add((Component)tt));
-        this.addWidget((GuiEventListener)this.list);
         this.shapeAttributeButtons = new ArrayList();
         this.componentAttributeButtons = new HashMap();
         for (int i = 0; i < 5; ++i) {

@@ -783,7 +783,6 @@ extends NodeEvaluator {
     }
 
     @Override
-    @Override
     public PathType getPathType(net.minecraft.world.level.pathfinder.PathfindingContext context, int x, int y, int z) {
         return this.getBlockPathType((BlockGetter)context.level(), x, y, z);
     }

@@ -44,7 +44,7 @@ extends RecipeRendererBase {
         Quaternionf quaternionf = new Quaternionf().rotateZ((float)Math.PI).rotateY((float)Math.toRadians(135.0));
         pGuiGraphics.pose().pushPose();
         pGuiGraphics.pose().translate(0.0f, 0.0f, 100.0f);
-        InventoryScreen.renderEntityInInventory((GuiGraphics)pGuiGraphics, (int)((int)((float)this.getX() / this.scale + (float)(this.width / 2) - 25.0f)), (int)((int)((float)this.getY() / this.scale + (float)(this.height / 2) + (float)this.height * bbHeight / 4.0f)), (int)scale, (Quaternionf)quaternionf, null, (LivingEntity)this.dummyEntity);
+        InventoryScreen.renderEntityInInventory((GuiGraphics)pGuiGraphics, (float)((float)this.getX() / this.scale + (float)(this.width / 2) - 25.0f), (float)((float)this.getY() / this.scale + (float)(this.height / 2) + (float)this.height * bbHeight / 4.0f), (float)this.scale, new org.joml.Vector3f(0.0f, 0.0f, 0.0f), (Quaternionf)quaternionf, (Quaternionf)null, (LivingEntity)this.dummyEntity);
         pGuiGraphics.pose().popPose();
     }
 

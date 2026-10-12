@@ -541,7 +541,7 @@ public class HUDOverlayRenderer {
         int yStart = 32;
         int height = 24;
         int solidColor = FastColor.ARGB32.color((int)255, (int)42, (int)42, (int)42);
-        pGuiGraphics.fillGradient(xStart, yStart, xEnd, yStart + height, solidColor, FastColor.ARGB32.setColor((int)0, (int)42, (int)42, (int)42));
+        pGuiGraphics.fillGradient(xStart, yStart, xEnd, yStart + height, solidColor, FastColor.ARGB32.color((int)0, (int)42, (int)42, (int)42));
         int xCur = xStart;
         for (i = 0; i < 10; ++i) {
             pGuiGraphics.fill(xCur, yStart, xCur + 2, yStart + height, solidColor);

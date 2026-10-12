@@ -43,7 +43,7 @@ implements ICyclingRecipeRenderer<RecipeManaweaving> {
     public void init_cycling(ResourceLocation[] rLocs) {
         ArrayList<ManaweavingRecipe> patternList = new ArrayList<ManaweavingRecipe>();
         for (ResourceLocation rLoc : rLocs) {
-            Optional<Recipe<?>> pattern = this.resolveRecipe(rLoc);
+            Optional<? extends Recipe<?>> pattern = this.resolveRecipe(rLoc);
             if (!pattern.isPresent() || !(pattern.get() instanceof ManaweavingRecipe)) continue;
             patternList.add((ManaweavingRecipe)pattern.get());
         }
@@ -52,7 +52,7 @@ implements ICyclingRecipeRenderer<RecipeManaweaving> {
 
     @Override
     public void init_internal(ResourceLocation recipeLocation) {
-        Optional<Recipe<?>> pattern = this.resolveRecipe(recipeLocation);
+        Optional<? extends Recipe<?>> pattern = this.resolveRecipe(recipeLocation);
         this.patterns = pattern.isPresent() && pattern.get() instanceof ManaweavingRecipe ? new ManaweavingRecipe[]{(ManaweavingRecipe)pattern.get()} : null;
     }
 

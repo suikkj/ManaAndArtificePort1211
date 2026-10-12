@@ -70,10 +70,6 @@ extends TieredBlockItem {
         });
     }
 
-    public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt) {
-        return new FluidHandlerItemStack(SIMPLE_FLUID_COMPONENT, stack, 16000);
-    }
-
     public void appendHoverText(ItemStack stack, net.minecraft.world.item.Item.TooltipContext world, List<Component> tooltip, TooltipFlag flag) {
         super.appendHoverText(stack, world, tooltip, flag);
         FluidStack fluidStack = this.getFluidTagData(stack);

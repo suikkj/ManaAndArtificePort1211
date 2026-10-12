@@ -37,7 +37,7 @@ implements ICyclingRecipeRenderer<RecipeEldrinAltar> {
     public void init_cycling(ResourceLocation[] rLocs) {
         ArrayList<EldrinAltarRecipe> patternList = new ArrayList<EldrinAltarRecipe>();
         for (ResourceLocation rLoc : rLocs) {
-            Optional<Recipe<?>> pattern = this.resolveRecipe(rLoc);
+            Optional<? extends Recipe<?>> pattern = this.resolveRecipe(rLoc);
             if (!pattern.isPresent() || !(pattern.get() instanceof EldrinAltarRecipe)) continue;
             patternList.add((EldrinAltarRecipe)pattern.get());
         }
@@ -46,7 +46,7 @@ implements ICyclingRecipeRenderer<RecipeEldrinAltar> {
 
     @Override
     public void init_internal(ResourceLocation recipeLocation) {
-        Optional<Recipe<?>> pattern = this.resolveRecipe(recipeLocation);
+        Optional<? extends Recipe<?>> pattern = this.resolveRecipe(recipeLocation);
         this.patterns = pattern.isPresent() && pattern.get() instanceof EldrinAltarRecipe ? new EldrinAltarRecipe[]{(EldrinAltarRecipe)pattern.get()} : null;
     }
 

@@ -90,7 +90,7 @@ public class CuriosInterop {
 
     public static boolean IsItemInCurioSlot(Item item, LivingEntity entity, SlotTypePreset slot) {
         MutableBoolean exists = new MutableBoolean(false);
-        CuriosApi.getCuriosInventory((LivingEntity)entity).ifPresent(handler -> handler.findFirstCurio(item).ifPresent(slotResult -> exists.setValue(slotResult.slotContext().identifier().equalsIgnoreCase(slot.identifier()))));
+        CuriosApi.getCuriosInventory((LivingEntity)entity).ifPresent(handler -> handler.findFirstCurio(item).ifPresent(slotResult -> exists.setValue(true)));
         return exists.booleanValue();
     }
 

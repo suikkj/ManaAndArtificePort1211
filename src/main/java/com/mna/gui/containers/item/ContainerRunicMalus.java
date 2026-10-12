@@ -144,7 +144,7 @@ extends HeldContainerBase {
                 }
             });
             net.minecraft.world.item.enchantment.ItemEnchantments.Mutable chMut = new net.minecraft.world.item.enchantment.ItemEnchantments.Mutable(net.minecraft.world.item.enchantment.ItemEnchantments.EMPTY);
-            chants.forEach((k, v) -> chMut.set(k, v));
+            chants.forEach((k, v) -> chMut.set((net.minecraft.core.Holder<Enchantment>)k, (Integer)v));
             ((ItemStack)this.inventory.getStack()).set(DataComponents.ENCHANTMENTS, chMut.toImmutable());
         }
         super.removed(player);

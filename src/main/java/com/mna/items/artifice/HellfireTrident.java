@@ -119,12 +119,12 @@ implements IFactionSpecific {
                     float f4 = Mth.sqrt((float)(f1 * f1 + f2 * f2 + f3 * f3));
                     float f5 = 3.0f * ((1.0f + (float)j) / 4.0f);
                     player.push((double)(f1 *= f5 / f4), (double)(f2 *= f5 / f4), (double)(f3 *= f5 / f4));
-                    player.startAutoSpinAttack(20);
+                    player.startAutoSpinAttack(20, 0.0f, player.getMainHandItem());
                     if (player.onGround()) {
                         player.move(MoverType.SELF, new Vec3(0.0, 1.1999999284744263, 0.0));
                     }
                     pLevel.playSound((Player)null, (Entity)player, SFX.Spell.Impact.Single.FIRE, SoundSource.PLAYERS, 1.0f, 1.0f);
-                    pLevel.playSound((Player)null, (Entity)player, SoundEvents.TRIDENT_RIPTIDE_3, SoundSource.PLAYERS, 1.0f, 1.0f);
+                    pLevel.playSound((Player)null, (Entity)player, SoundEvents.TRIDENT_RIPTIDE_3.value(), SoundSource.PLAYERS, 1.0f, 1.0f);
                     player.getCooldowns().addCooldown((Item)this, 20);
                     player.getPersistentData().putBoolean("hellfiretrident", true);
                 }

@@ -137,10 +137,10 @@ extends GuiJEIDisable<ContainerEnderDisc> {
             }
             this.children().forEach(child -> {
                 if (child instanceof GlyphButton && child.isMouseOver(mouseX, mouseY) && ((GlyphButton)(child)).getStack().getItem() == this.dragStack.getItem()) {
-                    int index;
-                    for (index = 0; index < this.rune_indices.length && this.rune_indices[index] != 0; ++index) {
+                    int index2;
+                    for (index2 = 0; index2 < this.rune_indices.length && this.rune_indices[index2] != 0; ++index2) {
                     }
-                    ((ContainerEnderDisc)this.menu).setPattern(BuiltInRegistries.ITEM.getKey(this.dragStack.getItem()), index);
+                    ((ContainerEnderDisc)this.menu).setPattern(BuiltInRegistries.ITEM.getKey(this.dragStack.getItem()), index2);
                     this.setCurPattern(((ContainerEnderDisc)this.menu).getCurPatternIndex());
                 }
             });

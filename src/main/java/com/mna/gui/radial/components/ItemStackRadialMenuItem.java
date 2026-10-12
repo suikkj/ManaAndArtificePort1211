@@ -56,7 +56,7 @@ extends TextRadialMenuItem {
             Minecraft mc = Minecraft.getInstance();
             List<Component> tooltipLines = this.stack.getTooltipLines(net.minecraft.world.item.Item.TooltipContext.EMPTY, (Player)mc.player, (TooltipFlag)(mc.options.advancedItemTooltips ? TooltipFlag.Default.ADVANCED : TooltipFlag.Default.NORMAL));
             if (this.forceSimpleTooltip) {
-                tooltipLines = this.stack.hasCustomHoverName() ? Arrays.asList(this.stack.getHoverName()) : Arrays.asList(Component.translatable((String)this.stack.getDescriptionId()));
+                tooltipLines = this.stack.has(net.minecraft.core.component.DataComponents.CUSTOM_NAME) ? Arrays.asList(this.stack.getHoverName()) : Arrays.asList(Component.translatable((String)this.stack.getDescriptionId()));
             }
             context.guiGraphics.renderTooltip(mc.font, tooltipLines, this.stack.getTooltipImage(), (int)context.x, (int)context.y);
         } else {
