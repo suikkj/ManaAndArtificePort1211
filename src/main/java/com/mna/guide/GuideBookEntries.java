@@ -115,8 +115,9 @@ implements IGuideBookRegistry {
                 if (is.isEmpty()) continue;
                 if (is.isEnchanted()) {
                     Map map = EnchantmentUtils.enchantmentMap((ItemStack)is);
-                    for (Map.Entry ench : map.entrySet()) {
-                        if (!((Enchantment)ench.getKey()).getFullname(((Integer)ench.getValue()).intValue()).getString().toLowerCase().contains(lowerQuery)) continue;
+                    for (Object __e : map.entrySet()) {
+                    Map.Entry ench = (Map.Entry)__e;
+                        if (!Enchantment.getFullname((net.minecraft.core.Holder<Enchantment>)ench.getKey(), ((Integer)ench.getValue()).intValue()).getString().toLowerCase().contains(lowerQuery)) continue;
                         relatedRecipes.put(r, is);
                         continue block0;
                     }
@@ -127,7 +128,7 @@ implements IGuideBookRegistry {
                 break;
             }
         }));
-        List results = relatedRecipes.entrySet().stream().map(r -> new GuidebookSearchResult((RelatedRecipe)r.getKey(), (ItemStack)r.getValue())).collect(Collectors.toList());
+        List results = relatedRecipes.entrySet().stream().map((Map.Entry r) -> new GuidebookSearchResult((RelatedRecipe)r.getKey(), (ItemStack)r.getValue())).collect(Collectors.toList());
         results.addAll(matchingContents.stream().map(e -> new GuidebookSearchResult((GuidebookEntry)e)).collect(Collectors.toList()));
         return results.stream().filter(this.distinctByKey(GuidebookSearchResult::toString)).limit(limit).collect(Collectors.toList());
     }

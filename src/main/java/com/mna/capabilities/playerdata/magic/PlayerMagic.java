@@ -413,7 +413,8 @@ implements IPlayerMagic {
             return;
         }
         MagicXPGainedEvent evt = new MagicXPGainedEvent(player, amount);
-        if (NeoForge.EVENT_BUS.post(evt)) {
+        NeoForge.EVENT_BUS.post(evt);
+        if (evt.isCanceled()) {
             return;
         }
         amount = evt.getAmount();

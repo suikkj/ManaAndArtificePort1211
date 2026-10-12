@@ -142,7 +142,8 @@ EntityBlock {
                 return InteractionResult.FAIL;
             }
             RunicAnvilItemUsedEvent event = new RunicAnvilItemUsedEvent(te.getItem(0), te.getItem(1), activeStack, player);
-            if (NeoForge.EVENT_BUS.post(event)) {
+            NeoForge.EVENT_BUS.post(event);
+            if (event.isCanceled()) {
                 te.setItem(0, event.pattern.isEmpty() ? ItemStack.EMPTY : event.pattern.copy());
                 te.setItem(1, event.material.isEmpty() ? ItemStack.EMPTY : event.material.copy());
                 player.setItemInHand(hand, event.catalyst.isEmpty() ? ItemStack.EMPTY : event.catalyst.copy());

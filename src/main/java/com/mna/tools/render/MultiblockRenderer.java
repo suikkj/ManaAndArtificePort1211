@@ -44,15 +44,14 @@ import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.neoforged.api.distmarker.Dist;
-import net.neoforged.neoforge.client.event.CustomizeGuiOverlayEvent;
+import net.neoforged.neoforge.client.event.RenderGuiLayerEvent;
 import net.neoforged.neoforge.client.event.RenderLevelStageEvent;
 import net.neoforged.neoforge.client.model.data.ModelData;
-import net.minecraftforge.event.TickEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
-import net.minecraftforge.fml.util.ObfuscationReflectionHelper;
+import net.neoforged.fml.util.ObfuscationReflectionHelper;
 import org.apache.commons.lang3.mutable.MutableInt;
 import net.neoforged.neoforge.client.event.ClientTickEvent;
 
@@ -90,14 +89,14 @@ public class MultiblockRenderer {
     }
 
     @SubscribeEvent
-    public static void onRenderHUD(CustomizeGuiOverlayEvent.Post event) {
+    public static void onRenderHUD(RenderGuiLayerEvent.Post event) {
         if (hasMultiblock) {
             int fullAnimTime;
             GuiGraphics guiGraphics = event.getGuiGraphics();
             Minecraft mc = Minecraft.getInstance();
             int waitTime = 40;
             int fadeOutSpeed = 4;
-            float animTime = (float)timeComplete + (timeComplete == 0 ? 0.0f : event.getPartialTick());
+            float animTime = (float)timeComplete + (timeComplete == 0 ? 0.0f : event.getPartialTick().getGameTimeDeltaPartialTick(false));
             if (animTime > (float)(fullAnimTime = waitTime + 10)) {
                 hasMultiblock = false;
                 return;
@@ -124,7 +123,7 @@ public class MultiblockRenderer {
             int color = Mth.hsvToRgb((float)(pct / 3.0f), (float)1.0f, (float)1.0f) | 0xFF000000;
             int color2 = new Color(color).darker().getRGB();
             guiGraphics.fillGradient(left, top, left + progressWidth, top + height, color, color2);
-            if (((Boolean)mc.options.forceUnicodeFont.get()).booleanValue()) {
+            if (mc.options.forceUnicodeFont) {
                 guiGraphics.drawString(mc.font, name.getVisualOrderText(), x - mc.font.width((FormattedText)name) / 2, y + 10, 0xFFFFFF, true);
             } else {
                 guiGraphics.drawString(mc.font, name.getVisualOrderText(), x - mc.font.width((FormattedText)name) / 2, y + 11, 0xFFFFFF, true);
@@ -136,7 +135,7 @@ public class MultiblockRenderer {
                 if (lookingState != null) {
                     try {
                         Block block = lookingState.getBlock();
-                        ItemStack stack = block.getCloneItemStack(lookingState, mc.hitResult, (BlockGetter)mc.level, lookingPos, (Player)mc.player);
+                        ItemStack stack = block.getCloneItemStack((net.minecraft.world.level.LevelReader)mc.level, lookingPos, lookingState);
                         if (!stack.isEmpty()) {
                             guiGraphics.drawString(mc.font, stack.getHoverName().getVisualOrderText(), left + 20, top + height + 8, 0xFFFFFF, true);
                             guiGraphics.renderItem(stack, left, top + height + 2);

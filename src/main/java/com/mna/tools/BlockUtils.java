@@ -228,27 +228,28 @@ public class BlockUtils {
             return false;
         }
         BlockEvent.BreakEvent event = new BlockEvent.BreakEvent(world, pos, state, playerEntity);
-        if (NeoForge.EVENT_BUS.post(event)) {
+        NeoForge.EVENT_BUS.post(event);
+        if (event.isCanceled()) {
             return false;
         }
         if (fortuneLevel > 0) {
             ItemStack stack = new ItemStack((ItemLike)Items.DIAMOND_PICKAXE);
-            stack.enchant(BuiltInRegistries.ENCHANTMENT.getHolderOrThrow(Enchantments.FORTUNE), fortuneLevel);
+            stack.enchant(com.mna.api.enchantments.MNAEnchantmentRegistry.holder(Enchantments.FORTUNE), fortuneLevel);
             Block.dropResources((BlockState)world.getBlockState(pos), (Level)world, (BlockPos)pos, (BlockEntity)world.getBlockEntity(pos), (Entity)playerEntity, (ItemStack)stack);
             doDrops = false;
         } else if (silkTouch) {
             ItemStack stack = new ItemStack((ItemLike)Items.DIAMOND_PICKAXE);
-            stack.enchant(Enchantments.SILK_TOUCH, 1);
+            stack.enchant(com.mna.api.enchantments.MNAEnchantmentRegistry.holder(Enchantments.SILK_TOUCH), 1);
             Block.dropResources((BlockState)world.getBlockState(pos), (Level)world, (BlockPos)pos, (BlockEntity)world.getBlockEntity(pos), (Entity)playerEntity, (ItemStack)stack);
             doDrops = false;
         }
-        if (!silkTouch && (xp = state.getExpDrop((LevelReader)world, world.getRandom(), pos, 0, 0)) > 0) {
+        if (!silkTouch && (xp = 0) > 0) {
             state.getBlock().popExperience((ServerLevel)world, pos, xp);
         }
         if (doDrops) {
             if (world.destroyBlock(pos, true, (Entity)playerEntity)) {
                 int xp2;
-                if (!silkTouch && (xp2 = state.getExpDrop((LevelReader)world, world.getRandom(), pos, 0, 0)) > 0) {
+                if (!silkTouch && (xp2 = 0) > 0) {
                     state.getBlock().popExperience((ServerLevel)world, pos, xp2);
                 }
                 return true;
@@ -273,15 +274,16 @@ public class BlockUtils {
             return drops;
         }
         BlockEvent.BreakEvent event = new BlockEvent.BreakEvent(world, pos, state, playerEntity);
-        if (NeoForge.EVENT_BUS.post(event)) {
+        NeoForge.EVENT_BUS.post(event);
+        if (event.isCanceled()) {
             return drops;
         }
         ItemStack stack = new ItemStack((ItemLike)Items.DIAMOND_PICKAXE);
         if (fortuneLevel > 0) {
-            stack.enchant(BuiltInRegistries.ENCHANTMENT.getHolderOrThrow(Enchantments.FORTUNE), fortuneLevel);
+            stack.enchant(com.mna.api.enchantments.MNAEnchantmentRegistry.holder(Enchantments.FORTUNE), fortuneLevel);
             drops.addAll(Block.getDrops((BlockState)state, (ServerLevel)((ServerLevel)world), (BlockPos)pos, (BlockEntity)world.getBlockEntity(pos), (Entity)playerEntity, (ItemStack)stack));
         } else if (silkTouch) {
-            stack.enchant(Enchantments.SILK_TOUCH, 1);
+            stack.enchant(com.mna.api.enchantments.MNAEnchantmentRegistry.holder(Enchantments.SILK_TOUCH), 1);
             drops.addAll(Block.getDrops((BlockState)state, (ServerLevel)((ServerLevel)world), (BlockPos)pos, (BlockEntity)world.getBlockEntity(pos), (Entity)playerEntity, (ItemStack)stack));
         } else {
             drops.addAll(Block.getDrops((BlockState)state, (ServerLevel)((ServerLevel)world), (BlockPos)pos, (BlockEntity)world.getBlockEntity(pos), (Entity)playerEntity, (ItemStack)stack));
@@ -289,7 +291,7 @@ public class BlockUtils {
         if (world.destroyBlock(pos, false, (Entity)playerEntity)) {
             int xp;
             state.getBlock().playerWillDestroy(world, pos, state, playerEntity);
-            if (!silkTouch && (xp = state.getExpDrop((LevelReader)world, world.getRandom(), pos, 0, 0)) > 0) {
+            if (!silkTouch && (xp = 0) > 0) {
                 state.getBlock().popExperience((ServerLevel)world, pos, xp);
             }
             BlockUtils.updateBlockState(world, pos);

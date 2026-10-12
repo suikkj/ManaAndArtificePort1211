@@ -42,7 +42,6 @@ import net.minecraft.world.level.chunk.LevelChunk;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
-import net.neoforged.neoforge.capabilities.ICapabilityProvider;
 import net.neoforged.neoforge.event.AttachCapabilitiesEvent;
 import net.neoforged.neoforge.event.entity.EntityMobGriefingEvent;
 import net.neoforged.neoforge.event.entity.living.MobSpawnEvent;
@@ -70,33 +69,6 @@ public class MACapabilityForgeEventHandlers {
     public static final ResourceLocation PFX_CAP = RLoc.create("pfx_capability");
 
     @SubscribeEvent
-    public static void attachEntityCapability(AttachCapabilitiesEvent<Entity> event) {
-        if (event.getObject() instanceof LivingEntity) {
-            event.addCapability(PFX_CAP, (ICapabilityProvider)new MAPFXProvider());
-        }
-        if (!(event.getObject() instanceof Player)) {
-            return;
-        }
-        event.addCapability(PLAYERMAGIC_CAP, (ICapabilityProvider)new PlayerMagicProvider());
-        event.addCapability(PROGRESSION_CAP, (ICapabilityProvider)new PlayerProgressionProvider());
-        event.addCapability(ROTE_SPELLS_CAP, (ICapabilityProvider)new PlayerRoteSpellsProvider());
-        event.addCapability(AURAS_CAP, (ICapabilityProvider)new ParticleAuraProvider());
-    }
-
-    @SubscribeEvent
-    public static void attachWorldCapability(AttachCapabilitiesEvent<Level> event) {
-        event.addCapability(WORLDMAGIC_CAP, (ICapabilityProvider)new WorldMagicProvider(((Level)event.getObject()).dimension() == Level.OVERWORLD));
-    }
-
-    @SubscribeEvent
-    public static void attachChunkCapability(AttachCapabilitiesEvent<LevelChunk> event) {
-        if (!(event.getObject() instanceof LevelChunk)) {
-            return;
-        }
-        event.addCapability(CHUNKMAGIC_CAP, (ICapabilityProvider)new ChunkMagicProvider());
-    }
-
-    @SubscribeEvent
     public static void onPlayerClone(PlayerEvent.Clone event) {
         Player player = event.getEntity();
         Player original = event.getOriginal();
@@ -119,7 +91,7 @@ public class MACapabilityForgeEventHandlers {
     }
 
     @SubscribeEvent
-    public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
+    public static void onPlayerTick(net.neoforged.neoforge.event.tick.PlayerTickEvent.Post event) {
         if (event.phase == TickEvent.Phase.START) {
             return;
         }
@@ -132,23 +104,23 @@ public class MACapabilityForgeEventHandlers {
         MNACap.get((LivingEntity)event.getEntity(), MAPFXProvider.MAPFX).ifPresent(pfx -> pfx.sync((LivingEntity)event.getEntity()));
     }
 
-    private static void tickMagic(TickEvent.PlayerTickEvent event) {
+    private static void tickMagic(net.neoforged.neoforge.event.tick.PlayerTickEvent.Post event) {
         IPlayerMagic magic = (IPlayerMagic)event.getEntity().getData(PlayerMagicProvider.MAGIC.get());
         if (magic != null) {
             magic.tick(event.getEntity());
         }
-        if (event.side == LogicalSide.SERVER) {
+        if (!event.getEntity().level().isClientSide()) {
             if (magic != null && magic.needsSync()) {
                 ServerMessageDispatcher.sendMagicSyncMessage((ServerPlayer)event.getEntity());
                 magic.clearSyncFlags();
             }
-            MNACap.get(event.player, PlayerProgressionProvider.PROGRESSION).ifPresent(p -> {
+            MNACap.get(event.getEntity(), PlayerProgressionProvider.PROGRESSION).ifPresent(p -> {
                 if (p.needsSync()) {
                     ServerMessageDispatcher.sendProgressionSyncMessage((ServerPlayer)event.getEntity());
                     p.clearSyncFlag();
                 }
             });
-            MNACap.get(event.player, PlayerRoteSpellsProvider.ROTE).ifPresent(r -> {
+            MNACap.get(event.getEntity(), PlayerRoteSpellsProvider.ROTE).ifPresent(r -> {
                 if (r.isDirty()) {
                     ServerMessageDispatcher.sendRoteSyncMessage((ServerPlayer)event.getEntity());
                     r.clearDirty();
@@ -157,15 +129,15 @@ public class MACapabilityForgeEventHandlers {
         }
     }
 
-    private static void tickRaids(TickEvent.PlayerTickEvent event) {
-        if (event.side == LogicalSide.SERVER) {
+    private static void tickRaids(net.neoforged.neoforge.event.tick.PlayerTickEvent.Post event) {
+        if (!event.getEntity().level().isClientSide()) {
             if (event.getEntity().level().getServer().getWorldData().getDifficulty() == Difficulty.PEACEFUL) {
                 return;
             }
             if (event.getEntity().level().getGameTime() % 100L != 0L) {
                 return;
             }
-            MNACap.get(event.player, PlayerProgressionProvider.PROGRESSION).ifPresent(p -> {
+            MNACap.get(event.getEntity(), PlayerProgressionProvider.PROGRESSION).ifPresent(p -> {
                 p.tickClassicRaids(event.getEntity());
                 if (p.canBeRaided(event.getEntity())) {
                     int hRadius = 20;
