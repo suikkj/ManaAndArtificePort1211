@@ -114,7 +114,7 @@ public class EntityUtil {
             }
             return false;
         });
-        return entities.stream().map(e -> (LivingEntity)e).collect(Collectors.toList());
+        return (java.util.List<LivingEntity>)(java.util.List)entities.stream().map(e -> (LivingEntity)e).collect(Collectors.toList());
     }
 
     public static float getSoulsRestored(Player soulRecipient, Entity target) {

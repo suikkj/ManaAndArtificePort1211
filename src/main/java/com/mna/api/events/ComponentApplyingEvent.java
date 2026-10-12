@@ -13,7 +13,8 @@ import com.mna.api.spells.targeting.SpellSource;
 import com.mna.api.spells.targeting.SpellTarget;
 import net.neoforged.bus.api.Event;
 public class ComponentApplyingEvent
-extends Event {
+extends Event
+implements net.neoforged.bus.api.ICancellableEvent {
     SpellSource source;
     SpellContext context;
     SpellTarget target;

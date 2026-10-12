@@ -98,10 +98,10 @@ extends SpellEffect {
         if (overrideColor == -1) {
             ItemStack heldItem = player.getItemInHand(hand);
             if (heldItem.getItem() instanceof DyeItem) {
-                MNADyeableItem.setColor(world, pos, ((DyeItem)heldItem.getItem()).getDyeColor().getFireworkColor());
+                // [PORT 1.21.1] setColor(Level,BlockPos,int) nao existe na fachada; cor do tile nao aplicada
             }
         } else {
-            MNADyeableItem.setColor(world, pos, overrideColor);
+            // [PORT 1.21.1] setColor(Level,BlockPos,int) nao existe na fachada; cor do tile nao aplicada
         }
     }
 

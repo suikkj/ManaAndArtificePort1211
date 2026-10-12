@@ -46,7 +46,7 @@ extends SpellEffect {
 
     @Override
     public ComponentApplicationResult ApplyEffect(SpellSource source, SpellTarget target, IModifiedSpellPart<SpellEffect> modificationData, SpellContext context) {
-        if (target.isLivingEntity() && target.getLivingEntity().canDrownInFluidType(NeoForgeMod.WATER_TYPE) && !MobEffectUtil.hasWaterBreathing((LivingEntity)target.getLivingEntity())) {
+        if (target.isLivingEntity() && target.getLivingEntity().canDrownInFluidType(NeoForgeMod.WATER_TYPE.value()) && !MobEffectUtil.hasWaterBreathing((LivingEntity)target.getLivingEntity())) {
             int magnitude = (int)modificationData.getValue(Attribute.MAGNITUDE);
             int air_per_magnitude = (int)((float)target.getLivingEntity().getMaxAirSupply() * 0.2f);
             int air_removed = air_per_magnitude * magnitude;

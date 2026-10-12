@@ -67,19 +67,7 @@ extends SpellEffect {
     private final boolean greater;
 
     public ComponentAnimus(ResourceLocation guiIcon, boolean greater) {
-        AttributeValuePair[] attributeValuePairArray;
-        if (greater) {
-            AttributeValuePair[] attributeValuePairArray2 = new AttributeValuePair[2];
-            attributeValuePairArray2[0] = new AttributeValuePair(Attribute.DURATION, 10.0f, 5.0f, 60.0f, 5.0f, 2.0f);
-            attributeValuePairArray = attributeValuePairArray2;
-            attributeValuePairArray2[1] = new AttributeValuePair(Attribute.LESSER_MAGNITUDE, 0.0f, 0.0f, 500.0f, 50.0f, 0.0f);
-        } else {
-            AttributeValuePair[] attributeValuePairArray3 = new AttributeValuePair[1];
-            attributeValuePairArray = attributeValuePairArray3;
-            attributeValuePairArray3[0] = new AttributeValuePair(Attribute.DURATION, 10.0f, 5.0f, 60.0f, 5.0f, 2.0f);
-        }
-        super(guiIcon, attributeValuePairArray != null ? attributeValuePairArray : new AttributeValuePair[0]);
-        this.greater = greater;
+        super(guiIcon, new AttributeValuePair(Attribute.DURATION, 10.0f, 5.0f, 60.0f, 5.0f, 2.0f), new AttributeValuePair(Attribute.LESSER_MAGNITUDE, 0.0f, 0.0f, 500.0f, 50.0f, 0.0f), new AttributeValuePair(Attribute.DURATION, 10.0f, 5.0f, 60.0f, 5.0f, 2.0f));
     }
 
     @Override

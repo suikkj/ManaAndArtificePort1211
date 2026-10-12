@@ -71,7 +71,7 @@ extends Shape {
             Vec3 cross = forward.cross(new Vec3(0.0, 1.0, 0.0)).normalize().scale((double)offset);
             projectile.setPos(eyePos.add(cross));
         }
-        if ((stack = MNAEnchantmentHelper.getItemEnchantmentLevel(Enchantments.AQUA_AFFINITY, source.getCaster().getItemInHand(source.getHand()))) > 0) {
+        if (MNAEnchantmentHelper.getItemEnchantmentLevel(Enchantments.AQUA_AFFINITY, source.getCaster().getItemInHand(source.getHand())) > 0) {
             projectile.setNoWaterFizzle();
         }
         if (source.isPlayerCaster()) {

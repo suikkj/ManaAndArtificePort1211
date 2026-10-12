@@ -197,7 +197,7 @@ public class MathUtils {
     }
 
     public static AABB createInclusiveBB(BlockPos a, BlockPos b) {
-        AABB bb = new AABB(a, b).expandTowards(1.0, 1.0, 1.0);
+        AABB bb = new AABB(net.minecraft.world.phys.Vec3.atLowerCornerOf(a), net.minecraft.world.phys.Vec3.atLowerCornerOf(b)).expandTowards(1.0, 1.0, 1.0);
         return bb;
     }
 

@@ -38,6 +38,18 @@ implements RecipeSerializer<T> {
         return net.minecraft.network.codec.StreamCodec.of((buf, recipe) -> this.toNetwork(buf, recipe), buf -> this.fromNetwork(null, buf));
     }
 
+    @Override
+    public com.mojang.serialization.MapCodec<T> codec() {
+        // [PORT 1.21.1 - RUNTIME TODO] codec real de receita nao migrado.
+        return com.mojang.serialization.MapCodec.unit((T)null);
+    }
+
+    @Override
+    public com.mojang.serialization.MapCodec<T> codec() {
+        // [PORT 1.21.1 - RUNTIME TODO] codec real de receita nao migrado.
+        return com.mojang.serialization.MapCodec.unit((T)null);
+    }
+
     protected abstract T readExtra(ResourceLocation var1, JsonObject var2);
 
     protected abstract T readExtra(ResourceLocation var1, FriendlyByteBuf var2);

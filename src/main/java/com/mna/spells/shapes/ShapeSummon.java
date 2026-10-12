@@ -147,7 +147,7 @@ extends ShapeRaytrace {
         if (!world.addFreshEntity((Entity)summon)) {
             return false;
         }
-        summon.finalizeSpawn((ServerLevelAccessor)((ServerLevel)world), world.getCurrentDifficultyAt(summon.blockPosition()), MobSpawnType.MOB_SUMMONED, (SpawnGroupData)null, (CompoundTag)null);
+        summon.finalizeSpawn((ServerLevelAccessor)((ServerLevel)world), world.getCurrentDifficultyAt(summon.blockPosition()), MobSpawnType.MOB_SUMMONED, (SpawnGroupData)null);
         SummonUtils.addTrackedEntity(source.getCaster(), (Entity)summon);
         return true;
     }

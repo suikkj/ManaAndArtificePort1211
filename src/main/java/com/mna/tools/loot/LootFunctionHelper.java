@@ -100,7 +100,7 @@ public class LootFunctionHelper {
             return Mth.floor((float)((UniformGenerator)randomRange).max().getInt(randContext));
         }
         if (randomRange instanceof BinomialDistributionGenerator) {
-            return ((BinomialDistributionGenerator)randomRange).n.getInt(randContext);
+            return com.mna.tools.MNAReflection.binomialN((BinomialDistributionGenerator)randomRange);
         }
         return IntStream.iterate(0, i -> randomRange.getInt(randContext)).limit(100L).max().orElse(0);
     }
