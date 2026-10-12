@@ -42,7 +42,6 @@ import net.minecraft.world.level.chunk.LevelChunk;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
-import net.neoforged.neoforge.event.AttachCapabilitiesEvent;
 import net.neoforged.neoforge.event.entity.EntityMobGriefingEvent;
 import net.neoforged.neoforge.event.entity.living.MobSpawnEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
@@ -72,7 +71,6 @@ public class MACapabilityForgeEventHandlers {
     public static void onPlayerClone(PlayerEvent.Clone event) {
         Player player = event.getEntity();
         Player original = event.getOriginal();
-        original.reviveCaps();
         MNACap.get(player, PlayerMagicProvider.MAGIC).ifPresent(mana -> {
             MNACap.get(original, PlayerMagicProvider.MAGIC).ifPresent(oldMana -> mana.copyFrom((IPlayerMagic)oldMana));
             mana.getCastingResource().setAmount(mana.getCastingResource().getMaxAmount());
@@ -80,7 +78,6 @@ public class MACapabilityForgeEventHandlers {
         MNACap.get(player, PlayerProgressionProvider.PROGRESSION).ifPresent(progression -> MNACap.get(original, PlayerProgressionProvider.PROGRESSION).ifPresent(oldProgression -> progression.copyFrom((IPlayerProgression)oldProgression, player)));
         MNACap.get(player, PlayerRoteSpellsProvider.ROTE).ifPresent(rote -> MNACap.get(original, PlayerRoteSpellsProvider.ROTE).ifPresent(oldRote -> rote.copyFrom((IPlayerRoteSpells)oldRote)));
         MNACap.get(player, ParticleAuraProvider.AURA).ifPresent(aura -> MNACap.get(original, ParticleAuraProvider.AURA).ifPresent(oldAura -> aura.load(oldAura.save())));
-        event.getOriginal().invalidateCaps();
     }
 
     @SubscribeEvent
@@ -92,9 +89,6 @@ public class MACapabilityForgeEventHandlers {
 
     @SubscribeEvent
     public static void onPlayerTick(net.neoforged.neoforge.event.tick.PlayerTickEvent.Post event) {
-        if (event.phase == TickEvent.Phase.START) {
-            return;
-        }
         MACapabilityForgeEventHandlers.tickMagic(event);
         MACapabilityForgeEventHandlers.tickRaids(event);
     }
@@ -176,10 +170,10 @@ public class MACapabilityForgeEventHandlers {
                         if (!force && (light = event.getEntity().level().isThundering() ? event.getEntity().level().getMaxLocalRawBrightness(attemptedLocation, 10) : event.getEntity().level().getMaxLocalRawBrightness(attemptedLocation)) > 7 + (anger = (int)Math.floor(p.getRaidChance(raidingFaction)))) {
                             return;
                         }
-                        if (event.player instanceof ServerPlayer) {
-                            ContingencyCharm.CheckAndConsumeCharmCharge((ServerPlayer)event.player, ContingencyCharm.ContingencyEvent.FACTION_RAID);
+                        if (event.getEntity() instanceof ServerPlayer) {
+                            ContingencyCharm.CheckAndConsumeCharmCharge((ServerPlayer)event.getEntity(), ContingencyCharm.ContingencyEvent.FACTION_RAID);
                         }
-                        FactionRaid fre = new FactionRaid(event.getEntity().level(), event.player, p.getRelativeRaidStrength(raidingFaction, event.getEntity()));
+                        FactionRaid fre = new FactionRaid(event.getEntity().level(), event.getEntity(), p.getRelativeRaidStrength(raidingFaction, event.getEntity()));
                         fre.setFaction(raidingFaction);
                         fre.setPos((double)attemptedLocUp.getX() + 0.5, attemptedLocUp.getY(), (double)attemptedLocUp.getZ() + 0.5);
                         event.getEntity().level().addFreshEntity((Entity)fre);

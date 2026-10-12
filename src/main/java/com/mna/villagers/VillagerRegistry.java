@@ -121,7 +121,7 @@ public class VillagerRegistry {
                 ItemStack stack = new ItemStack((ItemLike)ItemInit.SPELL.get());
                 SpellRecipe recipe = new SpellRecipe();
                 recipe.setShape(Shapes.RUNE);
-                Registries.SpellEffect.getValues().stream().skip((long)((double)Registries.SpellEffect.getValues().size() * Math.random())).findFirst().ifPresent(c -> {
+                com.mna.Registries.SpellEffect.getValues().stream().skip((long)((double)com.mna.Registries.SpellEffect.getValues().size() * Math.random())).findFirst().ifPresent(c -> {
                     recipe.addComponent((SpellEffect)c);
                     recipe.writeToNBT(stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag());
                 });
@@ -138,24 +138,24 @@ public class VillagerRegistry {
             VillagerTradesHandler.addRecipeTrades(event, 4, 1, r -> VillagerTradesHandler.pickRandom(r, (Item)ItemInit.CONSTRUCT_RUNE_TORSO.get(), (Item)ItemInit.CONSTRUCT_RUNE_HIPS.get(), (Item)ItemInit.CONSTRUCT_RUNE_HEAD.get()));
             ((List)event.getTrades().get(5)).add(new RandomTradeBuilder(1, 10, 0.05f).setPrice((Item)ItemInit.RUNESMITH_HAMMER.get(), 1, 1).setPrice2((Item)ItemInit.TRANSMUTED_SILVER.get(), 3, 8).setForSale(r -> {
                 ItemStack stack = new ItemStack((ItemLike)ItemInit.RUNESMITH_HAMMER.get());
-                HashMap<Enchantment, Integer> enchants = new HashMap<Enchantment, Integer>();
+                it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap<net.minecraft.core.Holder<Enchantment>> enchants = new it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap<net.minecraft.core.Holder<Enchantment>>();
                 if (r.nextBoolean()) {
-                    enchants.put((Enchantment)EnchantmentInit.MANA_REPAIR.get(), 1);
+                    enchants.put(EnchantmentInit.MANA_REPAIR, 1);
                 } else {
                     enchants.put(Enchantments.UNBREAKING, 3 + r.nextInt(3));
                 }
-                EnchantmentHelper.setEnchantments(enchants, (ItemStack)stack);
+                EnchantmentHelper.setEnchantments((ItemStack)stack, new net.minecraft.world.item.enchantment.ItemEnchantments(enchants, true));
                 return stack;
             }).build());
             ((List)event.getTrades().get(5)).add(new RandomTradeBuilder(1, 10, 0.05f).setPrice((Item)ItemInit.RUNESMITH_CHISEL.get(), 1, 1).setPrice2((Item)ItemInit.TRANSMUTED_SILVER.get(), 3, 8).setForSale(r -> {
                 ItemStack stack = new ItemStack((ItemLike)ItemInit.RUNESMITH_CHISEL.get());
-                HashMap<Enchantment, Integer> enchants = new HashMap<Enchantment, Integer>();
+                it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap<net.minecraft.core.Holder<Enchantment>> enchants = new it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap<net.minecraft.core.Holder<Enchantment>>();
                 if (r.nextBoolean()) {
-                    enchants.put((Enchantment)EnchantmentInit.MANA_REPAIR.get(), 1);
+                    enchants.put(EnchantmentInit.MANA_REPAIR, 1);
                 } else {
                     enchants.put(Enchantments.UNBREAKING, 3 + r.nextInt(3));
                 }
-                EnchantmentHelper.setEnchantments(enchants, (ItemStack)stack);
+                EnchantmentHelper.setEnchantments((ItemStack)stack, new net.minecraft.world.item.enchantment.ItemEnchantments(enchants, true));
                 return stack;
             }).build());
             System.out.println("Registered Runesmith Trades");

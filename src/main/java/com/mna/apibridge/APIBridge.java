@@ -46,7 +46,7 @@ import net.neoforged.fml.loading.FMLEnvironment;
 
 @EventBusSubscriber(modid="mna", bus=EventBusSubscriber.Bus.MOD)
 public class APIBridge {
-    public static void earlyInit() {
+    public static void earlyInit(net.neoforged.fml.ModContainer container) {
         ManaAndArtificeMod.setAPIHelper(new ConfigHelper());
     }
 
@@ -78,7 +78,7 @@ public class APIBridge {
         Registries.Shape.forEach(s -> s.onRegistered());
         Registries.SpellEffect.forEach(s -> s.onRegistered());
         Registries.Modifier.forEach(s -> s.onRegistered());
-        SpellConfig.finalizeServerConfig();
+        SpellConfig.finalizeServerConfig(container);
         Registries.ConstructTasks.forEach(t -> t.instantiateTask(null));
         ManaAndArtifice.LOGGER.info("M&A API initialized, it is now useable");
     }

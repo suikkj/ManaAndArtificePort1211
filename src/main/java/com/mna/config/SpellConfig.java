@@ -44,9 +44,9 @@ public class SpellConfig {
     private static List<? extends String> GlobalSpellDimensionBlacklist;
     private static List<? extends String> GlobalSpellBiomeBlacklist;
 
-    public static void finalizeServerConfig() {
+    public static void finalizeServerConfig(net.neoforged.fml.ModContainer container) {
         SPELLS_CONFIG_SPEC = SPELLS_CONFIG_BUILDER.build();
-        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, (IConfigSpec)SPELLS_CONFIG_SPEC, "mna-spells.toml");
+        container.registerConfig(ModConfig.Type.SERVER, (IConfigSpec)SPELLS_CONFIG_SPEC, "mna-spells.toml");
         finalized = true;
     }
 

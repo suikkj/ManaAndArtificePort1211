@@ -75,7 +75,6 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.IConfigSpec;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
-import net.neoforged.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import software.bernie.geckolib.GeckoLib;
@@ -86,20 +85,21 @@ public class ManaAndArtifice {
     public static final Logger LOGGER = LogManager.getLogger();
     public static ManaAndArtifice instance;
     public static final ResourceLocation EMPTY;
-    public final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+    public final IEventBus modEventBus;
     public ISidedProxy proxy;
     public final boolean isDebug;
     public final ArrayList<UUID> enabled_auras = new ArrayList();
 
-    public ManaAndArtifice() {
+    public ManaAndArtifice(IEventBus modEventBus, net.neoforged.fml.ModContainer modContainer) {
+        this.modEventBus = modEventBus;
         boolean HIDE_CONSOLE_NOISE = this.isDebug = ManagementFactory.getRuntimeMXBean().getInputArguments().toString().indexOf("-agentlib:jdwp") > 0;
         if (HIDE_CONSOLE_NOISE) {
             ForgeLoggerTweaker.setMinimumLevel(org.apache.logging.log4j.Level.WARN);
             ForgeLoggerTweaker.applyLoggerFilter();
         }
-        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, (IConfigSpec)ClientConfig.CLIENT_SPEC);
-        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, (IConfigSpec)GeneralConfig.GENERAL_SPEC, "mna-general.toml");
-        APIBridge.earlyInit();
+        modContainer.registerConfig(ModConfig.Type.CLIENT, (IConfigSpec)ClientConfig.CLIENT_SPEC);
+        modContainer.registerConfig(ModConfig.Type.SERVER, (IConfigSpec)GeneralConfig.GENERAL_SPEC, "mna-general.toml");
+        APIBridge.earlyInit(modContainer);
         LOGGER.info("M&A -> Configs Registered");
         NeoForgeMod.enableMilkFluid();
         instance = this;
@@ -140,7 +140,6 @@ public class ManaAndArtifice {
         }
         NeoForge.EVENT_BUS.register(CommandInit.class);
         this.modEventBus.register(CommandSerializerInit.class);
-        GeckoLib.initialize();
         try {
             String inputLine;
             URL url = new URL("https://manaandartifice.com/auras_enabled.txt");
@@ -175,7 +174,7 @@ public class ManaAndArtifice {
 
             public float unclampedCall(ItemStack stack, @Nullable ClientLevel world, @Nullable LivingEntity living, int some_number) {
                 LivingEntity entity;
-                Object object = entity = living != null ? living : stack.getEntityRepresentation();
+                Object object = entity = living != null ? living : (LivingEntity)stack.getEntityRepresentation();
                 if (entity == null) {
                     return 0.0f;
                 }

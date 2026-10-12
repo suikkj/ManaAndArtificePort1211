@@ -543,9 +543,9 @@ public class ClientEventHandler {
         }
         if (range == 0) {
         }
-        if ((LivingEntity)event.getEntity().distanceToSqr((Entity)mc.player) > (double)range) {
+        if (((LivingEntity)event.getEntity()).distanceToSqr((Entity)mc.player) > (double)range) {
         }
-        MobEffectInstance existingEffect = (LivingEntity)event.getEntity().getEffect(MobEffects.GLOWING);
+        MobEffectInstance existingEffect = ((LivingEntity)event.getEntity()).getEffect(MobEffects.GLOWING);
         if (existingEffect == null || existingEffect.getDuration() < 5) {
             ((LivingEntity)event.getEntity()).addEffect(new MobEffectInstance(MobEffects.GLOWING, 20, 0, false, false));
         }
@@ -580,7 +580,7 @@ public class ClientEventHandler {
                 event.setCanceled(true);
                 float maximum = recipe.getShape().getValue(Attribute.RANGE);
                 MNACap.get(mc.player, PlayerMagicProvider.MAGIC).ifPresent(m -> {
-                    float delta = (float)event.getScrollDelta();
+                    float delta = (float)event.getScrollDeltaY();
                     m.offsetFocusDistance(delta, maximum);
                     ClientMessageDispatcher.sendPlayerFocusDistanceChange(delta, maximum);
                 });
@@ -614,9 +614,9 @@ public class ClientEventHandler {
                 }
             }
         }
-        if (!mc.player.onGround() && event.getInput().jumping && mc.player.noJumpDelay == 0) {
+        if (!mc.player.onGround() && event.getInput().jumping) {
             ItemStack boots = mc.player.getItemBySlot(EquipmentSlot.FEET);
-            int enchLevel = EnchantmentHelper.getEnchantmentLevel(EnchantmentInit.CLOUDSTEP, player);
+            int enchLevel = EnchantmentHelper.getEnchantmentLevel(EnchantmentInit.CLOUDSTEP, mc.player);
             if (!boots.isEmpty() && enchLevel > 0) {
                 mc.player.noJumpDelay = 10;
                 ClientMessageDispatcher.sendPlayerJump();
