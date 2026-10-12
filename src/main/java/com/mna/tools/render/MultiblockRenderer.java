@@ -123,7 +123,7 @@ public class MultiblockRenderer {
             int color = Mth.hsvToRgb((float)(pct / 3.0f), (float)1.0f, (float)1.0f) | 0xFF000000;
             int color2 = new Color(color).darker().getRGB();
             guiGraphics.fillGradient(left, top, left + progressWidth, top + height, color, color2);
-            if (mc.options.forceUnicodeFont) {
+            if (mc.options.forceUnicodeFont().get()) {
                 guiGraphics.drawString(mc.font, name.getVisualOrderText(), x - mc.font.width((FormattedText)name) / 2, y + 10, 0xFFFFFF, true);
             } else {
                 guiGraphics.drawString(mc.font, name.getVisualOrderText(), x - mc.font.width((FormattedText)name) / 2, y + 11, 0xFFFFFF, true);

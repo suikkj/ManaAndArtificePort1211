@@ -51,8 +51,8 @@ extends Monster
 implements IFactionEnemy<T>,
 GeoEntity,
 IAnimPacketSync<T> {
-    private static final UUID TierHealthID = UUID.fromString("76082490-0ded-11ee-be56-0242ac120002");
-    private static final UUID TierArmorID = UUID.fromString("79474e2e-0ded-11ee-be56-0242ac120002");
+    private static final net.minecraft.resources.ResourceLocation TierHealthID = net.minecraft.resources.ResourceLocation.fromNamespaceAndPath("mna", "tier_health_76082490");
+    private static final net.minecraft.resources.ResourceLocation TierArmorID = net.minecraft.resources.ResourceLocation.fromNamespaceAndPath("mna", "tier_armor_79474e2e");
     private static final EntityDataAccessor<Integer> DATA_STATE = SynchedEntityData.defineId(BaseFactionMob.class, (EntityDataSerializer)EntityDataSerializers.INT);
     protected Player raidTarget;
     protected int tier;
@@ -136,7 +136,7 @@ IAnimPacketSync<T> {
 
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor worldIn, DifficultyInstance difficultyIn, MobSpawnType reason, SpawnGroupData spawnDataIn, CompoundTag dataTag) {
         this.applyInitialSpawnTier((LevelAccessor)worldIn);
-        return super.finalizeSpawn(worldIn, difficultyIn, reason, spawnDataIn, dataTag);
+        return super.finalizeSpawn(worldIn, difficultyIn, reason, spawnDataIn);
     }
 
     public boolean canBeLeashed(Player player) {

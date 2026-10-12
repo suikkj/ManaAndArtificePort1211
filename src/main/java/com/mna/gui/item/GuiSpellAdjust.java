@@ -49,9 +49,9 @@ extends GuiJEIDisable<ContainerSpellAdjustments> {
     final float textScaleFactor;
     static final int textColor = FastColor.ARGB32.color((int)255, (int)49, (int)49, (int)49);
     static final int textColorLight = FastColor.ARGB32.color((int)255, (int)200, (int)200, (int)200);
-    final int colWidth = 38;
-    final int rowHeight = 13;
-    final int texSize = 32;
+    int colWidth = 38;
+    int rowHeight = 13;
+    int texSize = 32;
     int spellNameWidth;
     String spellName;
     final List<Component> currentTooltip;
@@ -61,7 +61,7 @@ extends GuiJEIDisable<ContainerSpellAdjustments> {
 
     public GuiSpellAdjust(ContainerSpellAdjustments screenContainer, Inventory inv, Component titleIn) {
         super(screenContainer, inv, titleIn);
-        this.textScaleFactor = (Boolean)Minecraft.getInstance().options.forceUnicodeFont.get() != false ? 1.0f : 0.7f;
+        this.textScaleFactor = Minecraft.getInstance().options.forceUnicodeFont().get() ? 1.0f : 0.7f;
         this.colWidth = 38;
         this.rowHeight = 13;
         this.texSize = 32;

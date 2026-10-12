@@ -77,11 +77,11 @@ implements IGuideBookRegistry {
         }
         try {
             ClientAdvancements clientAdvancements = player.connection.getAdvancements();
-            Advancement adv = clientAdvancements.getAdvancements().get(advancementID);
+            net.minecraft.advancements.AdvancementHolder adv = clientAdvancements.get(advancementID);
             if (adv == null) {
                 return false;
             }
-            AdvancementProgress advProgress = (AdvancementProgress)clientAdvancements.progress.get(adv);
+            AdvancementProgress advProgress = com.mna.tools.MNAAdvancementAccess.getProgress(clientAdvancements, adv);
             if (advProgress != null) {
                 return advProgress.isDone();
             }
@@ -128,8 +128,8 @@ implements IGuideBookRegistry {
                 break;
             }
         }));
-        List results = relatedRecipes.entrySet().stream().map((Map.Entry r) -> new GuidebookSearchResult((RelatedRecipe)r.getKey(), (ItemStack)r.getValue())).collect(Collectors.toList());
-        results.addAll(matchingContents.stream().map(e -> new GuidebookSearchResult((GuidebookEntry)e)).collect(Collectors.toList()));
+        List results = relatedRecipes.entrySet().stream().map(r -> new GuidebookSearchResult((RelatedRecipe)((Map.Entry)r).getKey(), (ItemStack)((Map.Entry)r).getValue())).collect(Collectors.toList());
+        results.addAll((java.util.Collection)matchingContents.stream().map(e -> new GuidebookSearchResult((GuidebookEntry)e)).collect(Collectors.toList()));
         return results.stream().filter(this.distinctByKey(GuidebookSearchResult::toString)).limit(limit).collect(Collectors.toList());
     }
 

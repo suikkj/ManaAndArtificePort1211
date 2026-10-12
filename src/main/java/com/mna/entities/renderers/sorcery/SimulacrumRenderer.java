@@ -70,7 +70,7 @@ extends LivingEntityRenderer<Simulacrum, PlayerModel<Simulacrum>> {
     private int pass = 0;
 
     public SimulacrumRenderer(EntityRendererProvider.Context context) {
-        super(context, (EntityModel)new PlayerModel(context.bakeLayer(ModelLayers.PLAYER), false), 0.5f);
+        super(context, new PlayerModel<Simulacrum>(context.bakeLayer(ModelLayers.PLAYER), false), 0.5f);
         this.normal = new PlayerModel(context.bakeLayer(ModelLayers.PLAYER), false);
         this.slim = new PlayerModel(context.bakeLayer(ModelLayers.PLAYER_SLIM), true);
     }
@@ -79,7 +79,7 @@ extends LivingEntityRenderer<Simulacrum, PlayerModel<Simulacrum>> {
         String s;
         Player owner = pEntity.getOwner();
         this.model = this.normal;
-        if (owner != null && (s = ((AbstractClientPlayer)owner).getModelName()) == "slim") {
+        if (owner != null && (s = ((AbstractClientPlayer)owner).getSkin().model()) == net.minecraft.client.resources.PlayerSkin.Model.SLIM) {
             this.model = this.slim;
         }
         if (owner instanceof AbstractClientPlayer) {
@@ -135,7 +135,7 @@ extends LivingEntityRenderer<Simulacrum, PlayerModel<Simulacrum>> {
     }
 
     public Vec3 getRenderOffset(Simulacrum pEntity, float pPartialTicks) {
-        return pEntity.isCrouching() ? new Vec3(0.0, -0.125, 0.0) : super.getRenderOffset((Entity)pEntity, pPartialTicks);
+        return pEntity.isCrouching() ? new Vec3(0.0, -0.125, 0.0) : super.getRenderOffset(pEntity, pPartialTicks);
     }
 
     protected void scale(AbstractClientPlayer pLivingEntity, PoseStack pPoseStack, float pPartialTickTime) {
@@ -148,7 +148,7 @@ extends LivingEntityRenderer<Simulacrum, PlayerModel<Simulacrum>> {
             AbstractClientPlayer acp = (AbstractClientPlayer)owner;
             float f = pEntityLiving.getSwimAmount(pPartialTicks);
             if (pEntityLiving.isFallFlying()) {
-                super.setupRotations((LivingEntity)pEntityLiving, pPoseStack, pAgeInTicks, pRotationYaw, pPartialTicks);
+                super.setupRotations(pEntityLiving, pPoseStack, pAgeInTicks, pRotationYaw, pPartialTicks);
                 float f1 = (float)pEntityLiving.getFallFlyingTicks() + pPartialTicks;
                 float f2 = Mth.clamp((float)(f1 * f1 / 100.0f), (float)0.0f, (float)1.0f);
                 if (!pEntityLiving.isAutoSpinAttack()) {
@@ -164,7 +164,7 @@ extends LivingEntityRenderer<Simulacrum, PlayerModel<Simulacrum>> {
                     pPoseStack.mulPose(Axis.YP.rotation((float)(Math.signum(d3) * Math.acos(d2))));
                 }
             } else if (f > 0.0f) {
-                super.setupRotations((LivingEntity)pEntityLiving, pPoseStack, pAgeInTicks, pRotationYaw, pPartialTicks);
+                super.setupRotations(pEntityLiving, pPoseStack, pAgeInTicks, pRotationYaw, pPartialTicks);
                 float f3 = pEntityLiving.isInWater() || pEntityLiving.isInFluidType((fluidType, height) -> pEntityLiving.canSwimInFluidType((FluidType)fluidType)) ? -90.0f - pEntityLiving.getXRot() : -90.0f;
                 float f4 = Mth.lerp((float)f, (float)0.0f, (float)f3);
                 pPoseStack.mulPose(Axis.XP.rotationDegrees(f4));
@@ -172,7 +172,7 @@ extends LivingEntityRenderer<Simulacrum, PlayerModel<Simulacrum>> {
                     pPoseStack.translate(0.0f, -1.0f, 0.3f);
                 }
             } else {
-                super.setupRotations((LivingEntity)pEntityLiving, pPoseStack, pAgeInTicks, pRotationYaw, pPartialTicks);
+                super.setupRotations(pEntityLiving, pPoseStack, pAgeInTicks, pRotationYaw, pPartialTicks);
             }
         }
     }

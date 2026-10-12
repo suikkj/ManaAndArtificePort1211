@@ -80,7 +80,7 @@ implements ICyclingRecipeRenderer<Recipe3x3> {
     }
 
     private void renderShapedRecipe(GuiGraphics pGuiGraphics, int x, int y, ShapedRecipe recipe, RegistryAccess access) {
-        if (recipe.getRecipeWidth() > 3 || recipe.getRecipeHeight() > 3) {
+        if (recipe.getWidth() > 3 || recipe.getHeight() > 3) {
             return;
         }
         int startX = (int)((float)this.getX() / this.scale + 35.0f);
@@ -88,11 +88,11 @@ implements ICyclingRecipeRenderer<Recipe3x3> {
         int pointSizeX = 54;
         int pointSizeY = 50;
         int padding = 6;
-        for (int j = 0; j < recipe.getRecipeHeight(); ++j) {
-            for (int i = 0; i < recipe.getRecipeWidth(); ++i) {
+        for (int j = 0; j < recipe.getHeight(); ++j) {
+            for (int i = 0; i < recipe.getWidth(); ++i) {
                 Ingredient ingredient;
                 List<ItemStack> stacks;
-                int ingredientIndex = j * recipe.getRecipeWidth() + i;
+                int ingredientIndex = j * recipe.getWidth() + i;
                 if (ingredientIndex >= recipe.getIngredients().size() || (stacks = Arrays.asList((ingredient = (Ingredient)recipe.getIngredients().get(ingredientIndex)).getItems())).size() <= 0) continue;
                 this.renderItemStack(pGuiGraphics, stacks, startX + (pointSizeX + padding) * i, startY + (pointSizeY + padding) * j, 2.0f);
             }
