@@ -31,7 +31,6 @@ import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.DispenserBlock;
 import net.neoforged.neoforge.common.util.Lazy;
-import net.neoforged.neoforge.common.util.NonNullSupplier;
 import net.neoforged.fml.util.ObfuscationReflectionHelper;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
@@ -40,13 +39,13 @@ extends SpawnEggItem {
     protected static final List<ModSpawnEggItem> UNADDED_EGGS = new ArrayList<ModSpawnEggItem>();
     private final Lazy<? extends EntityType<?>> entityTypeSupplier;
 
-    public ModSpawnEggItem(NonNullSupplier<? extends EntityType<?>> entityTypeSupplier, int color_a, int color_b, Item.Properties properties) {
+    public ModSpawnEggItem(java.util.function.Supplier<? extends EntityType<?>> entityTypeSupplier, int color_a, int color_b, Item.Properties properties) {
         super(null, color_a, color_b, properties);
         this.entityTypeSupplier = Lazy.of(() -> entityTypeSupplier.get());
         UNADDED_EGGS.add(this);
     }
 
-    public ModSpawnEggItem(RegistryObject<? extends EntityType<?>> entityTypeSupplier, int color_a, int color_b, Item.Properties properties) {
+    public ModSpawnEggItem(java.util.function.Supplier<? extends EntityType<?>> entityTypeSupplier, int color_a, int color_b, Item.Properties properties) {
         super(null, color_a, color_b, properties);
         this.entityTypeSupplier = Lazy.of(entityTypeSupplier);
         UNADDED_EGGS.add(this);

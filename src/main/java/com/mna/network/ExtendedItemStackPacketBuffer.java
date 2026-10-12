@@ -52,8 +52,8 @@ extends FriendlyByteBuf {
             this.writeInt(Item.getId((Item)stack.getItem()));
             this.writeInt(stack.getCount());
             CompoundTag nbttagcompound = null;
-            if (stack.getItem().getShareTag(stack) != null) {
-                nbttagcompound = stack.getItem().getShareTag(stack);
+            if (com.mna.api.tools.MNAItemData.tag(stack) != null) {
+                nbttagcompound = com.mna.api.tools.MNAItemData.tag(stack);
             }
             this.writeNbt(nbttagcompound);
         }

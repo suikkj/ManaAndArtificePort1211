@@ -126,11 +126,11 @@ IRadialInventorySelect {
             return false;
         }
         CompoundTag outputTag = new CompoundTag();
-        output.save(outputTag);
+        com.mna.api.tools.MNAItemData.save(output, outputTag);
         ListTag inputsTag = new ListTag();
         inputs.forEach(is -> {
             CompoundTag item = new CompoundTag();
-            is.save(item);
+            com.mna.api.tools.MNAItemData.save(is, item);
             inputsTag.add(item);
         });
         CompoundTag data = new CompoundTag();
@@ -156,11 +156,11 @@ IRadialInventorySelect {
             return false;
         }
         CompoundTag outputTag = new CompoundTag();
-        output.save(outputTag);
+        com.mna.api.tools.MNAItemData.save(output, outputTag);
         ListTag inputsTag = new ListTag();
         inputs.forEach(is -> {
             CompoundTag item = new CompoundTag();
-            is.save(item);
+            com.mna.api.tools.MNAItemData.save(is, item);
             inputsTag.add(item);
         });
         CompoundTag affTag = new CompoundTag();

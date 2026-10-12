@@ -126,12 +126,12 @@ implements IManaweavePattern {
         }
         while (points.length < 100) {
             int next;
-            newPoints = new ArrayList();
+            java.util.List<Vector3f> newPointsList = new java.util.ArrayList<Vector3f>();
             for (i = 0; i < points.length && (next = i + 1) != points.length; ++i) {
-                ((ArrayList)newPoints).add(points[i]);
-                ((ArrayList)newPoints).add(new Vector3f((points[i].x() + points[next].x()) / 2.0f, (points[i].y() + points[next].y()) / 2.0f, (points[i].z() + points[next].z()) / 2.0f));
+                newPointsList.add(points[i]);
+                newPointsList.add(new Vector3f((points[i].x() + points[next].x()) / 2.0f, (points[i].y() + points[next].y()) / 2.0f, (points[i].z() + points[next].z()) / 2.0f));
             }
-            points = (org.joml.Vector3f[])((ArrayList)newPoints).toArray(new org.joml.Vector3f[0]);
+            points = newPointsList.toArray(new Vector3f[0]);
         }
         byte[][] transformedPattern = ManaweavingPattern.normalizePoints(world, points, directions);
         if (ManaAndArtifice.instance.isDebug) {

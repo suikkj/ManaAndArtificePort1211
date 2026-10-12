@@ -30,14 +30,14 @@ public abstract class EntityMixin {
     public void mna$canEnterPose(Pose pose, CallbackInfoReturnable<Boolean> cir) {
         LivingEntity livingEntity;
         MobEffectInstance shrinkEffect;
-        Entity entity = (Entity)this;
+        Entity entity = (Entity)(Object)this;
         if (entity instanceof Player && (shrinkEffect = (livingEntity = (LivingEntity)entity).getEffect(com.mna.api.tools.MAEffects.holder(EffectInit.REDUCE.get()))) != null) {
             float scale = 1.0f - 0.1f * (float)(shrinkEffect.getAmplifier() + 1);
             EntityDimensions entitysize = this.getDimensions(pose);
             entitysize = entitysize.scale(scale);
-            float f = entitysize.width / 2.0f;
+            float f = entitysize.width() / 2.0f;
             Vec3 vector3d = new Vec3(this.getX() - (double)f, this.getY(), this.getZ() - (double)f);
-            Vec3 vector3d1 = new Vec3(this.getX() + (double)f, this.getY() + (double)entitysize.height, this.getZ() + (double)f);
+            Vec3 vector3d1 = new Vec3(this.getX() + (double)f, this.getY() + (double)entitysize.height(), this.getZ() + (double)f);
             AABB box = new AABB(vector3d, vector3d1);
             cir.setReturnValue(this.level.noCollision((Entity)livingEntity, box.deflate(1.0E-7)));
         }
@@ -45,7 +45,7 @@ public abstract class EntityMixin {
 
     @Inject(at={@At(value="HEAD")}, method={"playSound"}, cancellable=true)
     public void mna$playSound(SoundEvent pSound, float pVolume, float pPitch, CallbackInfo cbi) {
-        Entity entity = (Entity)this;
+        Entity entity = (Entity)(Object)this;
         if (entity instanceof LivingEntity) {
             float pitchChange;
             MobEffectInstance efct = ((LivingEntity)entity).getEffect(com.mna.api.tools.MAEffects.holder(EffectInit.REDUCE.get()));

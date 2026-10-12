@@ -80,11 +80,11 @@ public class PossessionHelper {
         d0 = ent.getAttribute(Attributes.GRAVITY).getValue();
         boolean flag = ent.getDeltaMovement().y <= 0.0;
         FluidState fluidstate = ent.level().getFluidState(ent.blockPosition());
-        if (ent.isInWater() && ent.isAffectedByFluids() && !ent.canStandOnFluid(fluidstate)) {
+        if (ent.isInWater() && !ent.canStandOnFluid(fluidstate)) {
             double d8 = ent.getY();
             float f5 = ent.isSprinting() ? 0.9f : 0.8f;
             float f6 = 0.02f;
-            float f7 = EnchantmentHelper.getDepthStrider((LivingEntity)ent);
+            float f7 = 0;
             if (f7 > 3.0f) {
                 f7 = 3.0f;
             }
@@ -110,7 +110,7 @@ public class PossessionHelper {
             if (ent.horizontalCollision && ent.isFree(vector3d2.x, vector3d2.y + (double)0.6f - ent.getY() + d8, vector3d2.z)) {
                 ent.setDeltaMovement(vector3d2.x, (double)0.3f, vector3d2.z);
             }
-        } else if (ent.isInLava() && ent.isAffectedByFluids() && !ent.canStandOnFluid(fluidstate)) {
+        } else if (ent.isInLava() && !ent.canStandOnFluid(fluidstate)) {
             double d7 = ent.getY();
             ent.moveRelative(0.02f, travelVector);
             ent.move(MoverType.SELF, ent.getDeltaMovement());

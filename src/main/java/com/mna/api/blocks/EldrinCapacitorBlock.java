@@ -47,7 +47,7 @@ implements EntityBlock {
         if (provider == null || dataWriter == null) {
             return InteractionResult.SUCCESS;
         }
-        player.openMenu(provider, dataWriter);
+        player.openMenu(provider);
         return InteractionResult.SUCCESS;
     }
 

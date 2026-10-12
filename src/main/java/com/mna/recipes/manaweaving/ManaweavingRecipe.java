@@ -3,6 +3,7 @@ package com.mna.recipes.manaweaving;
 import net.minecraft.world.item.crafting.CraftingInput;
 
 import net.minecraft.world.item.component.CustomData;
+import net.minecraft.core.Registry;
 import net.minecraft.core.component.DataComponents;
 import com.google.common.collect.Maps;
 import com.google.gson.JsonObject;
@@ -69,7 +70,7 @@ implements IManaweavingRecipe {
         if (!(inv instanceof ItemAndPatternCraftingInventory)) {
             return false;
         }
-        ItemAndPatternCraftingInventory mwInv = (ItemAndPatternCraftingInventory)inv;
+        ItemAndPatternCraftingInventory mwInv = (ItemAndPatternCraftingInventory)(Object)inv;
         ArrayList<ItemStack> items = new ArrayList<ItemStack>();
         ArrayList<String> patterns = new ArrayList<String>((Collection<String>)mwInv.getPatterns());
         for (int i = 0; i < 9; ++i) {
