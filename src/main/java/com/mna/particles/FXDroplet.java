@@ -46,13 +46,10 @@ public class FXDroplet
 extends MAParticleBase {
     private static final ParticleRenderType NORMAL_RENDER = new ParticleRenderType(){
 
-        public void begin(BufferBuilder bufferBuilder, TextureManager textureManager) {
+        public BufferBuilder begin(Tesselator tesselator, TextureManager textureManager) {
+            BufferBuilder bufferBuilder = tesselator.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.PARTICLE);
             FXDroplet.beginRenderCommon(bufferBuilder, textureManager);
-        }
-
-        public void end(Tesselator tessellator) {
-            tessellator.end();
-            FXDroplet.endRenderCommon();
+            return bufferBuilder;
         }
 
         public String toString() {
@@ -95,7 +92,6 @@ extends MAParticleBase {
         RenderSystem.setShaderTexture((int)0, (ResourceLocation)TextureAtlas.LOCATION_PARTICLES);
         AbstractTexture tex = textureManager.getTexture(TextureAtlas.LOCATION_PARTICLES);
         tex.setBlurMipmap(false, false);
-        buffer.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.PARTICLE);
     }
 
     protected static void endRenderCommon() {

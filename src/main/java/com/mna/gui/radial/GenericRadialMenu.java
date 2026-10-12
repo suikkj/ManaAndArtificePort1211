@@ -246,13 +246,12 @@ public class GenericRadialMenu {
         RenderSystem.setShaderColor((float)1.0f, (float)1.0f, (float)1.0f, (float)1.0f);
         RenderSystem.enableBlend();
         Tesselator tessellator = Tesselator.getInstance();
-        BufferBuilder buffer = tessellator.getBuilder();
-        buffer.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
+        BufferBuilder buffer = tessellator.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
         this.iterateVisible((TriConsumer<RadialMenuItem, Float, Float>)((TriConsumer)(item, s, e) -> {
             int color = item.isHovered() ? this.backgroundColorHover : this.backgroundColor;
             this.drawPieArc(buffer, x, y, z, radiusIn, radiusOut, s.floatValue(), e.floatValue(), color);
         }));
-        tessellator.end();
+        com.mojang.blaze3d.vertex.BufferUploader.drawWithShader(buffer.buildOrThrow());
         RenderSystem.disableBlend();
     }
 

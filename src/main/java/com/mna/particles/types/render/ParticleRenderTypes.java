@@ -40,7 +40,7 @@ import net.neoforged.api.distmarker.OnlyIn;
 public class ParticleRenderTypes {
     public static final ParticleRenderType ADDITIVE = new ParticleRenderType(){
 
-        public void begin(BufferBuilder bufferBuilder, TextureManager textureManager) {
+        public BufferBuilder begin(Tesselator tesselator, TextureManager textureManager) {
             Minecraft mc = Minecraft.getInstance();
             RenderSystem.depthMask((boolean)false);
             mc.gameRenderer.lightTexture().turnOnLightLayer();
@@ -51,15 +51,7 @@ public class ParticleRenderTypes {
             RenderSystem.setShaderTexture((int)0, (ResourceLocation)TextureAtlas.LOCATION_PARTICLES);
             AbstractTexture tex = textureManager.getTexture(TextureAtlas.LOCATION_PARTICLES);
             tex.setBlurMipmap(ClientConfigValues.ParticleBlur, false);
-            bufferBuilder.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.PARTICLE);
-        }
-
-        public void end(Tesselator tessellator) {
-            tessellator.end();
-            Minecraft mc = Minecraft.getInstance();
-            mc.textureManager.getTexture(TextureAtlas.LOCATION_PARTICLES).restoreLastBlurMipmap();
-            RenderSystem.disableBlend();
-            RenderSystem.depthMask((boolean)true);
+            return tesselator.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.PARTICLE);
         }
 
         public String toString() {
@@ -68,22 +60,14 @@ public class ParticleRenderTypes {
     };
     public static final ParticleRenderType INVERTED = new ParticleRenderType(){
 
-        public void begin(BufferBuilder bufferBuilder, TextureManager textureManager) {
+        public BufferBuilder begin(Tesselator tesselator, TextureManager textureManager) {
             RenderSystem.depthMask((boolean)false);
             RenderSystem.enableBlend();
             RenderSystem.blendFuncSeparate((int)GlStateManager.SourceFactor.SRC_ALPHA.value, (int)GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA.value, (int)1, (int)0);
             RenderSystem.setShaderTexture((int)0, (ResourceLocation)TextureAtlas.LOCATION_PARTICLES);
             AbstractTexture tex = textureManager.getTexture(TextureAtlas.LOCATION_PARTICLES);
             tex.setBlurMipmap(ClientConfigValues.ParticleBlur, false);
-            bufferBuilder.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.PARTICLE);
-        }
-
-        public void end(Tesselator tessellator) {
-            tessellator.end();
-            Minecraft mc = Minecraft.getInstance();
-            mc.textureManager.getTexture(TextureAtlas.LOCATION_PARTICLES).restoreLastBlurMipmap();
-            RenderSystem.disableBlend();
-            RenderSystem.depthMask((boolean)true);
+            return tesselator.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.PARTICLE);
         }
 
         public String toString() {

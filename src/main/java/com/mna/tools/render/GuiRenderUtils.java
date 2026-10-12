@@ -154,7 +154,7 @@ public class GuiRenderUtils {
             buffer.addVertex(pGuiGraphics.pose().last().pose(), src.x, src.y, zLevel).setColor(color1).setNormal(nrm.x(), nrm.y(), nrm.z());
             buffer.addVertex(pGuiGraphics.pose().last().pose(), dst.x, dst.y, zLevel).setColor(color2).setNormal(nrm.x(), nrm.y(), nrm.z());
         }
-        tesselator.end();
+        com.mojang.blaze3d.vertex.BufferUploader.drawWithShader(buffer.buildOrThrow());
         RenderSystem.lineWidth((float)1.0f);
         GlStateManager._enableCull();
         GlStateManager._depthMask((boolean)true);
