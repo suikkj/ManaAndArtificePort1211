@@ -1,0 +1,416 @@
+{
+	"type": "mna:multiblock",
+	"structure": "mna:multiblock/wellspring_capture",
+	"replacements": [
+		{
+			"data": [
+				{
+					"offset": {
+						"X": 4,
+						"Y": 0,
+						"Z": 5
+					},
+					"state": {
+						"Properties": {
+							"surface": "3",
+							"facing": "south"
+						},
+						"Name": "mna:decoration/chimerite_arcane_sandstone_straight"
+					}
+				},
+				{
+					"offset": {
+						"X": 4,
+						"Y": 0,
+						"Z": 3
+					},
+					"state": {
+						"Properties": {
+							"half": "bottom",
+							"waterlogged": "false",
+							"shape": "straight",
+							"facing": "south"
+						},
+						"Name": "mna:decoration/arcane_sandstone_stairs"
+					}
+				},
+				{
+					"offset": {
+						"X": 5,
+						"Y": 0,
+						"Z": 3
+					},
+					"state": {
+						"Properties": {
+							"waterlogged": "false",
+							"type": "bottom"
+						},
+						"Name": "mna:decoration/arcane_sandstone_slab"
+					}
+				},
+				{
+					"offset": {
+						"X": 3,
+						"Y": 0,
+						"Z": 3
+					},
+					"state": {
+						"Name": "mna:decoration/chimerite_arcane_sandstone_pillar"
+					}
+				},
+				{
+					"offset": {
+						"X": 6,
+						"Y": 0,
+						"Z": 3
+					},
+					"state": {
+						"Properties": {
+							"half": "bottom",
+							"waterlogged": "false",
+							"shape": "straight",
+							"facing": "south"
+						},
+						"Name": "mna:decoration/arcane_sandstone_stairs"
+					}
+				},
+				{
+					"offset": {
+						"X": 6,
+						"Y": 0,
+						"Z": 7
+					},
+					"state": {
+						"Properties": {
+							"half": "bottom",
+							"waterlogged": "false",
+							"shape": "straight",
+							"facing": "north"
+						},
+						"Name": "mna:decoration/arcane_sandstone_stairs"
+					}
+				},
+				{
+					"offset": {
+						"X": 5,
+						"Y": 0,
+						"Z": 7
+					},
+					"state": {
+						"Properties": {
+							"waterlogged": "false",
+							"type": "bottom"
+						},
+						"Name": "mna:decoration/arcane_sandstone_slab"
+					}
+				},
+				{
+					"offset": {
+						"X": 7,
+						"Y": 0,
+						"Z": 7
+					},
+					"state": {
+						"Name": "mna:decoration/chimerite_arcane_sandstone_pillar"
+					}
+				},
+				{
+					"offset": {
+						"X": 4,
+						"Y": 0,
+						"Z": 7
+					},
+					"state": {
+						"Properties": {
+							"half": "bottom",
+							"waterlogged": "false",
+							"shape": "straight",
+							"facing": "north"
+						},
+						"Name": "mna:decoration/arcane_sandstone_stairs"
+					}
+				},
+				{
+					"offset": {
+						"X": 4,
+						"Y": 0,
+						"Z": 4
+					},
+					"state": {
+						"Properties": {
+							"surface": "1",
+							"facing": "west"
+						},
+						"Name": "mna:decoration/chimerite_arcane_sandstone_corner"
+					}
+				},
+				{
+					"offset": {
+						"X": 4,
+						"Y": 0,
+						"Z": 6
+					},
+					"state": {
+						"Properties": {
+							"surface": "1",
+							"facing": "south"
+						},
+						"Name": "mna:decoration/chimerite_arcane_sandstone_corner"
+					}
+				},
+				{
+					"offset": {
+						"X": 6,
+						"Y": 0,
+						"Z": 4
+					},
+					"state": {
+						"Properties": {
+							"surface": "1",
+							"facing": "north"
+						},
+						"Name": "mna:decoration/chimerite_arcane_sandstone_corner"
+					}
+				},
+				{
+					"offset": {
+						"X": 3,
+						"Y": 0,
+						"Z": 5
+					},
+					"state": {
+						"Properties": {
+							"waterlogged": "false",
+							"type": "bottom"
+						},
+						"Name": "mna:decoration/arcane_sandstone_slab"
+					}
+				},
+				{
+					"offset": {
+						"X": 7,
+						"Y": 0,
+						"Z": 4
+					},
+					"state": {
+						"Properties": {
+							"half": "bottom",
+							"waterlogged": "false",
+							"shape": "straight",
+							"facing": "west"
+						},
+						"Name": "mna:decoration/arcane_sandstone_stairs"
+					}
+				},
+				{
+					"offset": {
+						"X": 5,
+						"Y": 0,
+						"Z": 4
+					},
+					"state": {
+						"Properties": {
+							"surface": "3",
+							"facing": "west"
+						},
+						"Name": "mna:decoration/chimerite_arcane_sandstone_straight"
+					}
+				},
+				{
+					"offset": {
+						"X": 6,
+						"Y": 0,
+						"Z": 5
+					},
+					"state": {
+						"Properties": {
+							"surface": "3",
+							"facing": "north"
+						},
+						"Name": "mna:decoration/chimerite_arcane_sandstone_straight"
+					}
+				},
+				{
+					"offset": {
+						"X": 3,
+						"Y": 0,
+						"Z": 6
+					},
+					"state": {
+						"Properties": {
+							"half": "bottom",
+							"waterlogged": "false",
+							"shape": "straight",
+							"facing": "east"
+						},
+						"Name": "mna:decoration/arcane_sandstone_stairs"
+					}
+				},
+				{
+					"offset": {
+						"X": 7,
+						"Y": 0,
+						"Z": 5
+					},
+					"state": {
+						"Properties": {
+							"waterlogged": "false",
+							"type": "bottom"
+						},
+						"Name": "mna:decoration/arcane_sandstone_slab"
+					}
+				},
+				{
+					"offset": {
+						"X": 5,
+						"Y": 0,
+						"Z": 5
+					},
+					"state": {
+						"Name": "mna:decoration/chimerite_arcane_sandstone_chiseled"
+					}
+				},
+				{
+					"offset": {
+						"X": 6,
+						"Y": 0,
+						"Z": 6
+					},
+					"state": {
+						"Properties": {
+							"surface": "1",
+							"facing": "east"
+						},
+						"Name": "mna:decoration/chimerite_arcane_sandstone_corner"
+					}
+				},
+				{
+					"offset": {
+						"X": 5,
+						"Y": 0,
+						"Z": 6
+					},
+					"state": {
+						"Properties": {
+							"surface": "3",
+							"facing": "west"
+						},
+						"Name": "mna:decoration/chimerite_arcane_sandstone_straight"
+					}
+				},
+				{
+					"offset": {
+						"X": 3,
+						"Y": 0,
+						"Z": 7
+					},
+					"state": {
+						"Name": "mna:decoration/chimerite_arcane_sandstone_pillar"
+					}
+				},
+				{
+					"offset": {
+						"X": 7,
+						"Y": 0,
+						"Z": 6
+					},
+					"state": {
+						"Properties": {
+							"half": "bottom",
+							"waterlogged": "false",
+							"shape": "straight",
+							"facing": "west"
+						},
+						"Name": "mna:decoration/arcane_sandstone_stairs"
+					}
+				},
+				{
+					"offset": {
+						"X": 7,
+						"Y": 0,
+						"Z": 3
+					},
+					"state": {
+						"Name": "mna:decoration/chimerite_arcane_sandstone_pillar"
+					}
+				},
+				{
+					"offset": {
+						"X": 3,
+						"Y": 0,
+						"Z": 4
+					},
+					"state": {
+						"Properties": {
+							"half": "bottom",
+							"waterlogged": "false",
+							"shape": "straight",
+							"facing": "east"
+						},
+						"Name": "mna:decoration/arcane_sandstone_stairs"
+					}
+				}
+			],
+			"id": "sandstone"
+		}
+	],
+	"symmetrical": true,
+	"matchers": [
+		{
+			"block": "mna:refraction_lens_arcane",
+			"matcher": "mna:refraction_lenses"
+		},
+		{
+			"block": "mna:refraction_lens_earth",
+			"matcher": "mna:refraction_lenses"
+		},
+		{
+			"block": "mna:refraction_lens_fire",
+			"matcher": "mna:refraction_lenses"
+		},
+		{
+			"block": "mna:refraction_lens_wind",
+			"matcher": "mna:refraction_lenses"
+		},
+		{
+			"block": "mna:refraction_lens_water",
+			"matcher": "mna:refraction_lenses"
+		},
+		{
+			"block": "mna:refraction_lens_ender",
+			"matcher": "mna:refraction_lenses"
+		},
+		{
+			"block": "mna:decoration/chimerite_arcane_stone_straight",
+			"matcher": "mna:stateless"
+		},
+		{
+			"block": "mna:decoration/chimerite_arcane_stone_corner",
+			"matcher": "mna:stateless"
+		},
+		{
+			"block": "mna:decoration/arcane_stone_stairs",
+			"matcher": "mna:stairs"
+		},
+		{
+			"block": "mna:decoration/chimerite_arcane_sandstone_straight",
+			"matcher": "mna:stateless"
+		},
+		{
+			"block": "mna:decoration/chimerite_arcane_sandstone_corner",
+			"matcher": "mna:stateless"
+		},
+		{
+			"block": "mna:decoration/arcane_sandstone_stairs",
+			"matcher": "mna:stairs"
+		},
+		{
+			"block": "mna:wellspring_pillar",
+			"matcher": "mna:stateless"
+		},
+		{
+			"block": "mna:filler_block",
+			"matcher": "mna:stateless"
+		}
+	]
+}

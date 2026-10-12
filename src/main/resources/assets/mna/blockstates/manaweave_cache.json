@@ -1,0 +1,5 @@
+{
+  "variants": {    
+    "": { "model": "mna:block/special/manaweave_cache_inner" }
+  }
+}

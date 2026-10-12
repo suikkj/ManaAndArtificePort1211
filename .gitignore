@@ -1,0 +1,25 @@
+# === Artefatos de build / gradle ===
+build/
+.gradle/
+run/
+out/
+.idea/
+*.iml
+.vscode/
+
+# === Logs e dumps de compilacao ===
+_build_last.log
+_errs.txt
+*.log
+
+# === Snapshots locais (copias completas de src/ usadas como ponto de retorno;
+#     o historico versionado do git cumpre esse papel no remoto) ===
+_snapshots/
+
+# === Mappings / portdata (grandes, regeneraveis via gradle; ver PORT_STATUS.md) ===
+portdata/
+
+# === SO ===
+Thumbs.db
+Desktop.ini
+.DS_Store

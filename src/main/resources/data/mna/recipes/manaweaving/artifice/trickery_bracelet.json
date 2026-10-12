@@ -1,0 +1,20 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:trickery_bracelet",
+	"requiredFaction": "mna:fey",
+	"tier": 3,
+	"items": [
+		"minecraft:spider_eye",
+		"minecraft:ender_eye",
+		"minecraft:oxeye_daisy",
+		"mna:mote_air",
+		"mna:mundane_bracelet"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:split_triangle",
+		"mna:square",
+		"mna:diamond",
+		"mna:circle"
+	]
+}

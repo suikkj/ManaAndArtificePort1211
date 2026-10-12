@@ -1,0 +1,27 @@
+﻿{
+	"type": "mna:eldrin-altar",
+	"output": "mna:mote_water",
+	"tier": 4,
+	"items": [
+		"c:sand",
+		"c:sand",
+		"c:sand",
+		"seagrass",
+		"seagrass",
+		"seagrass",
+		"minecraft:fishes",
+		"minecraft:fishes",
+		"minecraft:fishes"
+	],
+	"power_requirements": [
+		{
+			"affinity": "WATER",
+			"amount": 720
+		}
+	],
+	"colors": [
+		1449416,
+		1627054
+	]
+}
+

@@ -1,0 +1,14 @@
+{
+	"replace": false,
+	"values": [
+		"minecraft:stick",
+		"minecraft:torch",
+		"minecraft:redstone_torch",
+		"minecraft:soul_torch",
+		"minecraft:blaze_rod",
+		"minecraft:bone",
+		"minecraft:arrow",
+		"minecraft:end_rod",
+		"mna:constructs/rune_rod"
+	]
+}

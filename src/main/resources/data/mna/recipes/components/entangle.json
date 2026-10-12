@@ -1,0 +1,23 @@
+{
+	"type": "mna:component",
+	"tier": 4,
+	"output": "mna:entangle",
+	"items":
+	[
+		"minecraft:fermented_spider_eye",
+		"minecraft:fermented_spider_eye",
+		"mna:vinteum_dust",
+		"mna:vinteum_dust",
+		"minecraft:lead",
+		"minecraft:lead",
+		"mna:tarma_root",
+		"mna:tarma_root"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/knot",
+		"mna:manaweave_patterns/knot2",
+		"mna:manaweave_patterns/knot3",
+		"mna:manaweave_patterns/knot4"
+	]
+}

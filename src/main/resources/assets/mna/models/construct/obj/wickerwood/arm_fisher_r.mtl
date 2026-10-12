@@ -1,0 +1,8 @@
+# Blender MTL File: 'constructs.blend'
+# Material Count: 2
+
+newmtl CONSTRUCT_ROUGH
+map_Kd mna:entity/animated_construct/wheatwood
+
+newmtl MAIN
+map_Kd mna:entity/animated_construct/wood

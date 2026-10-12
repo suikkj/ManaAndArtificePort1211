@@ -1,0 +1,5 @@
+# Blender MTL File: 'spellbook.blend'
+# Material Count: 1
+
+newmtl FACTION_U
+map_Kd mna:item/sorcery/spellbook_u

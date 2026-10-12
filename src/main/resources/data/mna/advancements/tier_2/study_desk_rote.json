@@ -1,0 +1,25 @@
+{
+	"parent": "mna:tier_1/advance_tier_2",
+	"display": {
+		"icon": {
+			"item": "mna:study_desk"
+		},
+		"title": {
+			"translate": "mna:tier_2/study_desk_rote.title"
+		},
+		"description": {
+			"translate": "mna:tier_2/study_desk_rote.description"
+		},
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": false,
+		"hidden": false
+	},
+	"criteria": {
+		"magic_level_up": {
+			"trigger": "mna:study_desk_rote",
+			"conditions": {	}
+		}
+	},
+	"requirements": []
+}

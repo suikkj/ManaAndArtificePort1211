@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "mna:decoration/diamond_arcane_stone"
+  },
+  "result": "mna:decoration/diamond_arcane_stone_chiseled",
+  "count": 1
+}

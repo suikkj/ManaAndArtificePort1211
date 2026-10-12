@@ -1,0 +1,21 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 3,
+	"output": "mna:pylon/swift_swim",	
+	"items": [
+		"mna:rune_aura",
+		"mna:rune_water",
+		"mna:rune_water",
+		"mna:rune_ritual_metal",
+		"mna:rune_ritual_metal",
+		"mna:rune_ritual_metal",
+		"mna:pylon/inert",
+		"mna:wakebloom",
+		"minecraft:fishes"
+	],
+	"patterns": [
+		"mna:triangle",
+		"mna:circle",
+		"mna:bolt"
+	]
+}

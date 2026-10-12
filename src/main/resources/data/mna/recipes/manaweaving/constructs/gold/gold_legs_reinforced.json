@@ -1,0 +1,21 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:constructs/construct_reinforced_legs_gold",
+	"tier": 3,
+	"items": [
+		"mna:constructs/rune_hips",
+		"mna:constructs/rune_rod",
+		"mna:constructs/rune_rod",
+		"minecraft:gold_ingot",
+		"minecraft:gold_ingot",
+		"minecraft:gold_ingot",
+		"mna:purified_vinteum_ingot",
+		"mna:purified_vinteum_ingot",
+		"minecraft:saddle"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:square",
+		"mna:diamond"
+	]
+}

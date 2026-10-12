@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "mna:decoration/vinteum_arcane_stone"
+  },
+  "result": "mna:decoration/vinteum_arcane_stone_quad",
+  "count": 1
+}

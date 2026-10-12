@@ -1,0 +1,26 @@
+/*
+ * Decompiled with CFR 0.152.
+ * 
+ * Could not load the following classes:
+ *  net.minecraft.world.level.block.GlassBlock
+ *  net.minecraft.world.level.block.SoundType
+ *  net.minecraft.world.level.block.state.BlockBehaviour$Properties
+ *  net.minecraft.world.level.block.state.properties.NoteBlockInstrument
+ */
+package com.mna.blocks.decoration;
+
+import com.mna.api.blocks.interfaces.ITranslucentBlock;
+import com.mna.blocks.BlockInit;
+import net.minecraft.world.level.block.TransparentBlock;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+
+public class RunicGlassBlock
+extends TransparentBlock
+implements ITranslucentBlock {
+    public RunicGlassBlock() {
+        super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.HAT).strength(0.3f).sound(SoundType.GLASS).noOcclusion().isValidSpawn((state, lel, pos, type) -> false).isRedstoneConductor(BlockInit.NEVER).isSuffocating(BlockInit.NEVER).isViewBlocking(BlockInit.NEVER).lightLevel(s -> 15));
+    }
+}
+

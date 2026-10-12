@@ -1,0 +1,6 @@
+{
+	"type": "mna:runeforging",
+	"tier": 2,
+	"pattern": "mna:mundane_amulet_pattern",
+	"output": "mna:mundane_amulet"
+}

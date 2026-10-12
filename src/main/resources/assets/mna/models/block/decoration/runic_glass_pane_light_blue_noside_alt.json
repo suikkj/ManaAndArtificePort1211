@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_glass_pane_noside_alt",
+    "render_type": "translucent",
+  "textures": {
+    "pane": "mna:block/artifice/decoration/runic_glass_light_blue"
+  }
+}

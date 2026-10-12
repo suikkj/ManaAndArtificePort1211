@@ -1,0 +1,52 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.model.ambient": {
+			"loop": true,
+			"animation_length": 4.12,
+			"bones": {
+				"runes": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"4.12": {
+							"vector": [0, 180, 0]
+						}
+					}
+				},
+				"right_arm_rune": {
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"2.08": {
+							"vector": [0, 1, 0],
+							"easing": "easeInOutSine"
+						},
+						"4.12": {
+							"vector": [0, 0, 0],
+							"easing": "easeInSine"
+						}
+					}
+				},
+				"left_arm_rune": {
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"2.08": {
+							"vector": [0, 1, 0],
+							"easing": "easeInOutSine"
+						},
+						"4.12": {
+							"vector": [0, 0, 0],
+							"easing": "easeInSine"
+						}
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

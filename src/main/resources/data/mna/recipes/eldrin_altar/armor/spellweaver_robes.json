@@ -1,0 +1,27 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:council_armor_chest",
+	"tier": 5,
+	"requiredFaction": "mna:council",
+	"items": [
+		"mna:mage_robes",
+		"minecraft:chainmail_chestplate",
+		"minecraft:nether_star",
+		"minecraft:nether_star",
+		"mna:greater_mote_arcane",
+		"mna:greater_mote_arcane",
+		"mna:rune_arcane",
+		"mna:runic_silk",
+		"mna:infused_thread"
+	],
+	"power_requirements": [
+		{
+			"affinity": "ARCANE",
+			"amount": 2750
+		}
+	],
+	"colors": [
+		6232189,
+		5080527
+	]
+}

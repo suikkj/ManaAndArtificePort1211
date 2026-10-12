@@ -1,0 +1,15 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 1,
+	"output": "mna:dowsing_rod",
+	"items": [
+		"mna:thaumaturgic_link",
+		"minecraft:stick",
+		"minecraft:compass",
+		"mna:vinteum_dust"
+	],
+	"patterns": [
+		"mna:circle",
+		"mna:backslash"
+	]
+}

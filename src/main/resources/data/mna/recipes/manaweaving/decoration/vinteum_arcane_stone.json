@@ -1,0 +1,20 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:decoration/vinteum_arcane_stone",
+	"tier": 1,
+	"quantity": 8,		
+	"items": [
+		"mna:vinteum_dust",
+		"mna:decoration/arcane_stone",
+		"mna:decoration/arcane_stone",
+		"mna:decoration/arcane_stone",
+		"mna:decoration/arcane_stone",
+		"mna:decoration/arcane_stone",
+		"mna:decoration/arcane_stone",
+		"mna:decoration/arcane_stone",
+		"mna:decoration/arcane_stone"
+	],
+	"patterns": [
+		"mna:slash"
+	]
+}

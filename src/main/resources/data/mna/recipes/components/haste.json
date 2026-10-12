@@ -1,0 +1,18 @@
+{
+	"type": "mna:component",
+	"output": "mna:haste",
+	"tier": 2,
+	"items":
+	[
+		"minecraft:sugar",
+		"minecraft:sugar",
+		"mna:vinteum_dust",
+		"minecraft:redstone",
+		"minecraft:redstone"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/knot2",
+		"mna:manaweave_patterns/knot"
+	]
+}

@@ -1,0 +1,8 @@
+{
+	"type": "mna:manaweave-cache-effect",
+	"tier": 2,
+	"effect": "mna:repair",
+	"duration_min": 30,
+	"duration_max": 60,
+	"magnitude": 0
+}

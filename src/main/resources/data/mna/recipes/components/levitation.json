@@ -1,0 +1,16 @@
+{
+	"type": "mna:component",	
+	"output": "mna:levitation",
+	"tier": 3,
+	"items":
+	[
+		"mna:stone_rune_white",
+		"mna:tarma_root"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/triangle",
+		"mna:manaweave_patterns/knot",
+		"mna:manaweave_patterns/knot3"
+	]
+}

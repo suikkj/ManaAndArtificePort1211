@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "mna:block/artifice/pilgrims_path",
+    "top": "mna:block/artifice/pilgrims_path",
+    "side": "mna:block/artifice/pilgrims_path"
+  }
+}

@@ -1,0 +1,21 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:refraction_lens_earth",
+	"tier": 4,
+	"items": [
+		"mna:purified_vinteum_ingot",
+		"minecraft:brown_stained_glass",
+		"mna:purified_vinteum_ingot",
+		"minecraft:brown_stained_glass",		
+		"mna:mote_earth",
+		"mna:purified_vinteum_ingot",
+		"minecraft:brown_stained_glass",
+		"mna:purified_vinteum_ingot",
+		"minecraft:brown_stained_glass"
+	],
+	"patterns": [
+		"mna:square",
+		"mna:diamond",
+		"mna:square"
+	]
+}

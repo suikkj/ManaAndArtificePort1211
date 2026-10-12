@@ -1,0 +1,22 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:greater_mote_arcane",
+	"tier": 4,
+	"items": [
+		"mna:mote_arcane",
+		"minecraft:book",
+		"minecraft:book",
+		"mna:eldrin/greater_arcane_mote_thesis",
+		"mna:crystal_of_memories"
+	],
+	"power_requirements": [
+		{
+			"affinity": "ARCANE",
+			"amount": 1440
+		}
+	],
+	"colors": [
+		6232189,
+		5080527
+	]
+}

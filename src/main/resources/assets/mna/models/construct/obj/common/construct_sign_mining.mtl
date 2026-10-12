@@ -1,0 +1,8 @@
+# Blender MTL File: 'construct_brb_signs.blend'
+# Material Count: 2
+
+newmtl SIGNPOST
+map_Kd mna:block/artifice/wizard_lab/bookshelf
+
+newmtl SIGN_CONTENT
+map_Kd mna:entity/animated_construct/construct_brb_signs

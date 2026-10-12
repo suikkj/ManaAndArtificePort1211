@@ -1,0 +1,18 @@
+{
+	"type": "mna:shape",
+	"output": "mna:rune",
+	"tier": 3,
+	"items":
+	[
+		"mna:stone_runes",
+		"mna:stone_runes",
+		"mna:stone_runes",
+		"mna:stone_runes",
+		"mna:stone_runes",
+		"mna:vinteum_dust"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/circle"
+	]
+}

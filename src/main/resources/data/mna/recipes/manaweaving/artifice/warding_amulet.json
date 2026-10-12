@@ -1,0 +1,15 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:warding_amulet",
+	"tier": 2,
+	"items": [
+		"mna:mundane_amulet",
+		"minecraft:shield",
+		"mna:mote_arcane",
+		"mna:rune_defense"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:triangle"
+	]
+}

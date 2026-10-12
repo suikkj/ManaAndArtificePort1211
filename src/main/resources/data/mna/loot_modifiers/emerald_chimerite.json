@@ -1,0 +1,14 @@
+{
+  "type":"mna:drops_chimerite",
+  "conditions": [
+    {
+      "condition": "block_state_property",
+      "block": "minecraft:emerald_ore"
+    }
+  ],  
+  "numChimerite": 10,
+  "magicLevel": 5,
+  "chance": 0.9,
+  "fortuneBonusChance": 0.05,
+  "dropsWith": "minecraft:emerald"
+}

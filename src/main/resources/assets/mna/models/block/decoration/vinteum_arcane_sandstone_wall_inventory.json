@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "mna:block/artifice/decoration/vinteum_arcane_sandstone"
+  }
+}

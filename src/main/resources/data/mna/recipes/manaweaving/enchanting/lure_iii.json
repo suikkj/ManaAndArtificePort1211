@@ -1,0 +1,24 @@
+﻿{
+	"type": "mna:manaweaving-recipe",
+	"tier": 5,
+	"output": "mna:rune_water",
+	"enchant": "minecraft:lure",
+	"magnitude": 3,
+	"items": [
+		"mna:rune_water",
+		"minecraft:clock",
+		"minecraft:golden_carrot",
+		"minecraft:tripwire_hook",
+		"minecraft:lead",
+		"c:slimeballs",
+		"minecraft:dried_kelp",
+		"minecraft:barrel",
+		"mna:mote_water"
+	],
+	"patterns": [
+		"mna:manaweave_patterns/hourglass",
+		"mna:manaweave_patterns/inverted_triangle",
+		"mna:manaweave_patterns/triangle"
+	]
+}
+

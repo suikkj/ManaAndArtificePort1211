@@ -1,0 +1,7 @@
+{
+	"type": "mna:crushing",
+	"tier": 2,
+	"input": "minecraft:gold_ores",
+	"output": "minecraft:raw_gold",
+	"output_quantity": 2
+}

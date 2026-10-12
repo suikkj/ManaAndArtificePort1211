@@ -1,0 +1,22 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:mote_ender",
+	"tier": 4,
+	"items": [
+		"mna:ritual/ender_mote_pumpkins",
+		"black_stained_glass",
+		"black_stained_glass",
+		"glow_lichen",
+		"glow_lichen"
+	],
+	"power_requirements": [
+		{
+			"affinity": "ENDER",
+			"amount": 720
+		}
+	],
+	"colors": [
+		3409493,
+		1706278
+	]
+}

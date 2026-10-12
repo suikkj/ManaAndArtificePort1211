@@ -1,0 +1,78 @@
+{
+  "variants": {    
+    "shape=standalone,facing=north": { "model": "mna:block/basic_table" },
+    "shape=standalone,facing=south": { "model": "mna:block/basic_table" },
+    "shape=standalone,facing=east": { "model": "mna:block/basic_table" },
+    "shape=standalone,facing=west": { "model": "mna:block/basic_table" },
+    
+    "shape=end,facing=north": { "model": "mna:block/basic_table_end", "y": 90  },
+    "shape=end,facing=south": { "model": "mna:block/basic_table_end", "y": 270  },
+    "shape=end,facing=east": { "model": "mna:block/basic_table_end", "y": 180  },
+    "shape=end,facing=west": { "model": "mna:block/basic_table_end"  },
+    
+    "shape=straight,facing=north": { "model": "mna:block/basic_table_straight", "y": 90  },
+    "shape=straight,facing=south": { "model": "mna:block/basic_table_straight", "y": 90  },
+    "shape=straight,facing=east": { "model": "mna:block/basic_table_straight"  },
+    "shape=straight,facing=west": { "model": "mna:block/basic_table_straight"  },
+    
+    "shape=corner,facing=north": { "model": "mna:block/basic_table_corner"  },
+    "shape=corner,facing=south": { "model": "mna:block/basic_table_corner", "y": 180  },
+    "shape=corner,facing=east": { "model": "mna:block/basic_table_corner", "y": 90  },
+    "shape=corner,facing=west": { "model": "mna:block/basic_table_corner", "y": 270  },
+    
+    "shape=corner_intersection,facing=north": { "model": "mna:block/basic_table_corner_intersection"  },
+    "shape=corner_intersection,facing=south": { "model": "mna:block/basic_table_corner_intersection", "y": 180  },
+    "shape=corner_intersection,facing=east": { "model": "mna:block/basic_table_corner_intersection", "y": 90  },
+    "shape=corner_intersection,facing=west": { "model": "mna:block/basic_table_corner_intersection", "y": 270  },
+    
+    "shape=corner_interior,facing=north": { "model": "mna:block/basic_table_corner_interior"  },
+    "shape=corner_interior,facing=south": { "model": "mna:block/basic_table_corner_interior", "y": 180  },
+    "shape=corner_interior,facing=east": { "model": "mna:block/basic_table_corner_interior", "y": 90  },
+    "shape=corner_interior,facing=west": { "model": "mna:block/basic_table_corner_interior", "y": 270  },
+    
+    "shape=t,facing=north": { "model": "mna:block/basic_table_t"  },
+    "shape=t,facing=south": { "model": "mna:block/basic_table_t", "y": 180 },
+    "shape=t,facing=east": { "model": "mna:block/basic_table_t", "y": 90 },
+    "shape=t,facing=west": { "model": "mna:block/basic_table_t", "y": 270 },
+    
+    "shape=t_intersection,facing=north": { "model": "mna:block/basic_table_t_intersection", "y": 270  },
+    "shape=t_intersection,facing=south": { "model": "mna:block/basic_table_t_intersection", "y": 90},
+    "shape=t_intersection,facing=east": { "model": "mna:block/basic_table_t_intersection" },
+    "shape=t_intersection,facing=west": { "model": "mna:block/basic_table_t_intersection", "y": 180 },
+    
+    "shape=edge,facing=north": { "model": "mna:block/basic_table_edge", "y": 90  },
+    "shape=edge,facing=south": { "model": "mna:block/basic_table_edge", "y": 270 },
+    "shape=edge,facing=east": { "model": "mna:block/basic_table_edge", "y": 180 },
+    "shape=edge,facing=west": { "model": "mna:block/basic_table_edge" },
+    
+    "shape=edge_interior_right,facing=north": { "model": "mna:block/basic_table_edge_interior_right", "y": 90  },
+    "shape=edge_interior_right,facing=south": { "model": "mna:block/basic_table_edge_interior_right", "y": 270 },
+    "shape=edge_interior_right,facing=east": { "model": "mna:block/basic_table_edge_interior_right", "y": 180 },
+    "shape=edge_interior_right,facing=west": { "model": "mna:block/basic_table_edge_interior_right" },
+    
+    "shape=edge_interior_left,facing=north": { "model": "mna:block/basic_table_edge_interior_left", "y": 90  },
+    "shape=edge_interior_left,facing=south": { "model": "mna:block/basic_table_edge_interior_left", "y": 270 },
+    "shape=edge_interior_left,facing=east": { "model": "mna:block/basic_table_edge_interior_left", "y": 180 },
+    "shape=edge_interior_left,facing=west": { "model": "mna:block/basic_table_edge_interior_left" },
+    
+    "shape=center,facing=north": { "model": "mna:block/basic_table_center" },
+    "shape=center,facing=south": { "model": "mna:block/basic_table_center" },
+    "shape=center,facing=east": { "model": "mna:block/basic_table_center" },
+    "shape=center,facing=west": { "model": "mna:block/basic_table_center" },
+    
+    "shape=cross,facing=north": { "model": "mna:block/basic_table_cross" },
+    "shape=cross,facing=south": { "model": "mna:block/basic_table_cross" },
+    "shape=cross,facing=east": { "model": "mna:block/basic_table_cross" },
+    "shape=cross,facing=west": { "model": "mna:block/basic_table_cross" },
+    
+    "shape=cross_single_intercardinal,facing=north": { "model": "mna:block/basic_table_cross_single_intercardinal", "y": 180 },
+    "shape=cross_single_intercardinal,facing=south": { "model": "mna:block/basic_table_cross_single_intercardinal" },
+    "shape=cross_single_intercardinal,facing=east": { "model": "mna:block/basic_table_cross_single_intercardinal", "y": 270 },
+    "shape=cross_single_intercardinal,facing=west": { "model": "mna:block/basic_table_cross_single_intercardinal", "y": 90 },
+    
+    "shape=cross_diagonal_intercardinal,facing=north": { "model": "mna:block/basic_table_cross_diagonal_intercardinal" },
+    "shape=cross_diagonal_intercardinal,facing=south": { "model": "mna:block/basic_table_cross_diagonal_intercardinal" },
+    "shape=cross_diagonal_intercardinal,facing=east": { "model": "mna:block/basic_table_cross_diagonal_intercardinal", "y": 90 },
+    "shape=cross_diagonal_intercardinal,facing=west": { "model": "mna:block/basic_table_cross_diagonal_intercardinal", "y": 90 }
+  }
+}

@@ -1,0 +1,15 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:eldrin_matrix_wind",
+	"tier": 2,
+	"items": [
+		"mna:mana_crystal_fragment",
+		"mna:mote_air",
+		"mna:ritual_focus_lesser"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:diamond",
+		"mna:diamond"
+	]
+}

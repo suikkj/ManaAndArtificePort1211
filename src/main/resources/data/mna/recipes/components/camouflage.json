@@ -1,0 +1,16 @@
+{
+	"type": "mna:component",
+	"tier": 2,
+	"output": "mna:camouflage",
+	"items":
+	[
+		"mna:stone_rune_blue",
+		"minecraft:black_stained_glass",
+		"minecraft:fermented_spider_eye"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/square",
+		"mna:manaweave_patterns/backslash"
+	]
+}

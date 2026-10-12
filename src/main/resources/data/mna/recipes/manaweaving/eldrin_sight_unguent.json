@@ -1,0 +1,16 @@
+﻿{
+	"type": "mna:manaweaving-recipe",
+	"tier": 3,
+	"output": "mna:eldrin_sight_unguent",		
+	"requiredFaction": "mna:council",
+	"items": [
+		"minecraft:honey_bottle",
+		"c:slimeballs",
+		"mna:purified_vinteum_dust"
+	],
+	"patterns": [
+		"mna:circle",
+		"mna:triangle"
+	]
+}
+

@@ -1,0 +1,18 @@
+﻿{
+	"type": "mna:component",
+	"output": "mna:slow",
+	"tier": 1,
+	"items":
+	[
+		"c:slimeballs",
+		"c:slimeballs",
+		"mna:vinteum_dust",
+		"minecraft:cobweb",
+		"minecraft:cobweb"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/circle",
+		"mna:manaweave_patterns/square"
+	]
+}

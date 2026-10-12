@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mna:animated_quill"
+    },
+    {
+      "item": "mna:vellum"
+    }
+  ],
+  "result": {
+    "item": "mna:filter_item"
+  }
+}

@@ -1,0 +1,16 @@
+﻿{
+	"type": "mna:component",
+	"output": "mna:collapse",
+	"tier": 1,
+	"items":
+	[
+		"mna:stone_rune_gray",
+		"c:sand",
+		"minecraft:gravel",
+		"mna:vinteum_dust"		
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/square"
+	]
+}

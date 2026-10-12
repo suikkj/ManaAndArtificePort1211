@@ -1,0 +1,8 @@
+{
+	"type": "mna:arcane-furnace",
+	"tier": 1,
+	"input": "mna:arcane_compound",
+	"output": "mna:arcane_ash",
+	"outputQuantity": 4,
+	"burnTime": 200	
+}

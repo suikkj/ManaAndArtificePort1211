@@ -1,0 +1,5 @@
+# Blender MTL File: 'runesmithing_tools.blend'
+# Material Count: 1
+
+newmtl MAIN
+map_Kd mna:item/runesmithing/runesmith_tools

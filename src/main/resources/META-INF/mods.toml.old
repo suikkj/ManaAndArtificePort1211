@@ -1,0 +1,46 @@
+modLoader="javafml"
+loaderVersion="[43,)"
+license="All rights reserved"
+issueTrackerURL="https://github.com/Mithion/Mana-And-Artifice/issues"
+
+[[mods]]
+ 
+modId="mna"
+version="3.1.11"
+displayName="Mana and Artifice"
+updateJSONURL="https://manaandartifice.com/update.json"
+displayURL="https://manaandartifice.com/"
+logoFile="mna.png"
+credits="Thanks to DragonSmith, SunnyVisions, and Jobobminer for the structure builds!  Thanks to GrimTheWanderer, Aranai, and Dani Boye for the texture/model help!  Thanks to everyone else who helped to moderate the discord channel, suggest ideas, collaborate, test, and provide feedback.  There are far too many to list here, but I am so grateful to you all.  Additional credits are contained within Attributions.txt inside this jar file."
+authors="Mithion" #optional
+description='''
+A splash of magic returns to Minecraft.
+'''
+
+[[dependencies.mna]]
+    modId="forge"
+    mandatory=true
+    versionRange="[47.1.64,)"
+    ordering="NONE"
+    side="BOTH"
+    
+[[dependencies.mna]]
+    modId="curios"
+    mandatory=true
+    versionRange="[5.4.5,)"
+    ordering="NONE"
+    side="BOTH"
+    
+[[dependencies.mna]]
+    modId="geckolib"
+    mandatory=true
+    versionRange="[4.2.2,)"
+    ordering="NONE"
+    side="BOTH"
+	
+[[dependencies.mna]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.20.1]"
+    ordering="NONE"
+    side="BOTH"

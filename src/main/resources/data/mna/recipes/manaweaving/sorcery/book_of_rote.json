@@ -1,0 +1,24 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:book_of_rote",
+	"tier": 2,
+	"items": [
+		"mna:vellum",
+		"mna:vellum",			
+		"mna:arcanist_ink",
+		"mna:vellum",				
+		"mna:mundane_ring",
+		"mna:mundane_ring",
+		"mna:mundane_ring",
+		"minecraft:string",
+		"minecraft:string"
+	],
+	"patterns": [
+		"mna:knot2",
+		"mna:triangle",
+		"mna:knot3",
+		"mna:diamond",
+		"mna:knot4",
+		"mna:inverted_triangle"
+	]
+}

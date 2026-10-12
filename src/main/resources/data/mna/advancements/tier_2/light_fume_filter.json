@@ -1,0 +1,25 @@
+{
+	"parent": "mna:tier_1/advance_tier_2",
+	"display": {
+		"icon": {
+			"item": "mna:eldrin_fume"
+		},
+		"title": {
+			"translate": "mna:tier_2/light_fume_filter.title"
+		},
+		"description": {
+			"translate": "mna:tier_2/light_fume_filter.description"
+		},
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": false,
+		"hidden": false
+	},
+	"criteria": {
+		"magic_level_up": {
+			"trigger": "mna:light_fume",
+			"conditions": {	}
+		}
+	},
+	"requirements": []
+}

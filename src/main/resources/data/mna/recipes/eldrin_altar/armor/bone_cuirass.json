@@ -1,0 +1,28 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:bone_armor_chest",
+	"tier": 5,
+	"requiredFaction": "mna:undead",
+	"items": [
+		"minecraft:netherite_chestplate",
+		"mna:witherbone",
+		"mna:witherbone",
+		"minecraft:nether_star",
+		"minecraft:nether_star",
+		"minecraft:phantom_membrane",
+		"minecraft:phantom_membrane",
+		"mna:greater_mote_water",
+		"mna:greater_mote_water"		
+	],
+	"power_requirements": [
+		{
+			"affinity": "WATER",
+			"amount": 2750
+		}
+		
+	],
+	"colors": [
+		8092539,
+		2565927
+	]
+}

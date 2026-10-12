@@ -1,0 +1,19 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 4,
+	"output": "mna:rune_air",
+	"enchant": "minecraft:swift_sneak",
+	"magnitude": 3,
+	"items": [
+		"minecraft:leather_boots",
+		"minecraft:feather",
+		"mna:rune_air",
+		"mna:cerublossom",
+		"mna:runic_silk",
+		"minecraft:phantom_membrane"
+	],
+	"patterns": [
+		"mna:star",
+		"mna:slash"
+	]
+}

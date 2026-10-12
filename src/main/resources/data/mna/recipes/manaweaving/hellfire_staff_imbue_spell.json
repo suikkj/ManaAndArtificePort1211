@@ -1,0 +1,16 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:hellfire_staff",
+	"tier": 5,
+	"copy_nbt": true,
+	"items":
+	[
+		"mna:hellfire_staff",
+		"mna:spell"
+	],
+	"patterns":
+	[
+		"mna:knot",
+		"mna:infinity"		
+	]
+}

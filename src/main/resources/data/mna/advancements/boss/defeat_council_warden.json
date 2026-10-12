@@ -1,0 +1,27 @@
+{
+	"parent": "mna:root",
+	"display": {
+		"icon": {
+			"item": "mna:arcane_crown"
+		},
+		"title": {
+			"translate": "mna:boss/defeat_council_warden.title"
+		},
+		"description": {
+			"translate": "mna:boss/defeat_council_warden.description"
+		},
+		"frame": "challenge",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": true
+	},
+	"criteria": {
+		"boss": {
+			"trigger": "mna:defeat_boss",
+			"conditions": {
+				"entityType": "mna:council_warden"
+			}
+		}
+	},
+	"requirements": []
+}

@@ -1,0 +1,34 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:pylon/pilgrim",
+	"tier": 4,
+	"items": [
+		"mna:rune_aura",
+		"mna:rune_air",
+		"mna:rune_fire",
+		"mna:rune_ritual_metal",
+		"mna:rune_ritual_metal",
+		"mna:rune_ritual_metal",
+		"mna:pylon/inert",
+		"mna:pilgrim_staff",
+		"minecraft:leather_boots"
+	],
+	"power_requirements": [
+		{
+			"affinity": "WIND",
+			"amount": 1750
+		},
+		{
+			"affinity": "FIRE",
+			"amount": 1750
+		},
+		{
+			"affinity": "ARCANE",
+			"amount": 1750
+		}
+	],
+	"colors": [		
+		12779366,
+		3691533
+	]
+}

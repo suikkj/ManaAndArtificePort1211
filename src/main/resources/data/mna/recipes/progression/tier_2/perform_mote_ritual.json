@@ -1,0 +1,5 @@
+{
+  "type": "mna:progression-condition",
+  "advancement": "mna:tier_2/perform_mote_ritual",
+  "tier": 2
+}

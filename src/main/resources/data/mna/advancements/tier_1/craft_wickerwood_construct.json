@@ -1,0 +1,32 @@
+{
+	"parent": "mna:tier_0/codex_trade",
+	"display": {
+		"icon": {
+			"item": "mna:constructs/construct_basic_head_wickerwood"
+		},
+		"title": {
+			"translate": "mna:tier_1/craft_wickerwood_construct.title"
+		},
+		"description": {
+			"translate": "mna:tier_1/craft_wickerwood_construct.description"
+		},
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": false,
+		"hidden": false
+	},
+	"criteria": {
+		"requirement": {
+			"trigger": "mna:summon_construct",
+			"conditions": {
+				"construction": {
+					"materials": {
+						"mna:wickerwood": 3
+					}
+				}
+			}
+		}
+	},
+	"requirements": [
+	]
+}

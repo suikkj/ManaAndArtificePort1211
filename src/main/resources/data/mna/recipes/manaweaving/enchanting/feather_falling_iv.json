@@ -1,0 +1,23 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 5,
+	"output": "mna:rune_air",
+	"enchant": "minecraft:feather_falling",
+	"magnitude": 4,
+	"items": [
+		"mna:rune_air",
+		"minecraft:feather",		
+		"minecraft:feather",
+		"minecraft:feather",
+		"minecraft:feather",
+		"minecraft:hay_block",
+		"minecraft:hay_block",
+		"minecraft:lapis_block",
+		"mna:mote_air"
+	],
+	"patterns": [
+		"mna:inverted_triangle",
+		"mna:triangle",
+		"mna:circle"
+	]
+}

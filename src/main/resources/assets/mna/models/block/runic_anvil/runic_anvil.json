@@ -1,0 +1,24 @@
+{
+  "parent": "forge:item/default",
+  "loader": "forge:composite",
+  "textures": {
+  	"particle": "minecraft:block/anvil"
+  },
+  "children": {
+    "anvil": {
+      "loader": "forge:obj",
+      "automatic_culling": true,
+	  "shade_quads": true,
+	  "flip_v": true,
+	  "emissive_ambient": false,
+      "model": "mna:models/block/obj/runic_anvil/runic_anvil.obj"
+    }
+  },
+  "display": {
+  	"gui": {
+		"rotation": [29, 45, 0],
+		"scale": [0.6, 0.6, 0.6],
+		"translation": [0, -1.5, 0]
+	}
+  }
+}

@@ -1,0 +1,14 @@
+# Blender MTL File: 'wizard_lab_blocks.blend'
+# Material Count: 4
+
+newmtl CHIMERITE
+map_Kd mna:block/oreblockchimerite
+
+newmtl COAL
+map_Kd mna:block/artifice/brazier
+
+newmtl FUMEFILTER
+map_Kd mna:block/artifice/wizard_lab/laboratory_fumefilter
+
+newmtl MAIN
+map_Kd mna:block/artifice/wizard_lab/inscription_table

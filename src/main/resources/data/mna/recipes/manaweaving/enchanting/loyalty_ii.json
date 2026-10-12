@@ -1,0 +1,21 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 4,
+	"output": "mna:rune_ender",
+	"enchant": "minecraft:loyalty",
+	"magnitude": 2,
+	"items": [
+		"mna:rune_ender",
+		"minecraft:ender_pearl",
+		"minecraft:lead",
+		"minecraft:ender_pearl",
+		"minecraft:ender_pearl",
+		"mna:vinteum_dust",
+		"mna:stone_rune_purple"	
+	],
+	"patterns": [
+		"mna:manaweave_patterns/circle",
+		"mna:manaweave_patterns/hourglass",
+		"mna:manaweave_patterns/triangle"
+	]
+}

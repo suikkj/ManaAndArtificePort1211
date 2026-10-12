@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "mna:decoration/amethyst_arcane_stone"
+  },
+  "result": "mna:decoration/amethyst_arcane_stone_straight",
+  "count": 1
+}

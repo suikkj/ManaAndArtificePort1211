@@ -1,0 +1,18 @@
+{
+	"type": "mna:component",
+	"tier": 3,
+	"output": "mna:wind_shear",
+	"items":
+	[
+		"mna:stone_rune_white",
+		"minecraft:feather",
+		"minecraft:flint",
+		"minecraft:iron_sword"	
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/triangle",
+		"mna:manaweave_patterns/slash",
+		"mna:manaweave_patterns/backslash"
+	]
+}

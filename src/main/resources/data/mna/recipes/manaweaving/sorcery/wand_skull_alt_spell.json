@@ -1,0 +1,15 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 1,
+	"output": "mna:wand_skull_alt",
+	"copy_nbt": true,
+	"items":
+	[
+		"mna:wand_skull_alt",
+		"mna:spell"
+	],
+	"patterns":
+	[
+		"mna:circle"		
+	]
+}

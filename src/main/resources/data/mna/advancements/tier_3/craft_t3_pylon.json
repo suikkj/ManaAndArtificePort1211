@@ -1,0 +1,33 @@
+{
+	"parent": "mna:tier_2/advance_tier_3",
+	"display": {
+		"icon": {
+			"item": "mna:pylon/inert"
+		},
+		"title": {
+			"translate": "mna:tier_3/craft_t3_pylon.title"
+		},
+		"description": {
+			"translate": "mna:tier_3/craft_t3_pylon.description"
+		},
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": false,
+		"hidden": false
+	},
+	"criteria": {
+		"manaweave_altar_craft": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [{
+				"items": [
+            			"mna:pylon/slowfall",
+            			"mna:pylon/swift_swim",
+            			"mna:pylon/water_walking"
+          			]
+				}]
+			}
+		}
+	},
+	"requirements": []
+}

@@ -1,0 +1,28 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:constructs/construct_hammer_arm_left_obsidian",
+	"tier": 4,
+	"items": [
+		"mna:constructs/rune_rod",
+		"mna:constructs/rune_hammer",
+		"minecraft:obsidian",
+		"minecraft:obsidian",
+		"minecraft:obsidian",
+		"mna:vinteum_dust",
+		"mna:vinteum_dust"
+	],
+	"power_requirements": [
+		{
+			"affinity": "WATER",
+			"amount": 300
+		},
+		{
+			"affinity": "FIRE",
+			"amount": 300
+		},
+		{
+			"affinity": "EARTH",
+			"amount": 300
+		}
+	]
+}

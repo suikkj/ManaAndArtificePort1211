@@ -1,0 +1,21 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 5,
+	"output": "mna:rune_arcane",
+	"enchant": "minecraft:efficiency",
+	"magnitude": 5,
+	"items": [
+		"mna:rune_arcane",
+		"mna:purified_vinteum_dust",
+		"mna:vinteum_block",
+		"minecraft:lapis_block",		
+		"minecraft:diamond_block",
+		"minecraft:quartz_block",
+		"minecraft:redstone_block",
+		"mna:mote_arcane"
+	],
+	"patterns": [
+		"mna:square",
+		"mna:square"
+	]
+}

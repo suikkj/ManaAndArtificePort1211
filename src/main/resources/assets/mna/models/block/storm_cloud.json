@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "down": "mna:block/stormcloud_bottom",
+        "up": "mna:block/stormcloud_top",
+        "north": "mna:block/stormcloud_side",
+        "east": "mna:block/stormcloud_side",
+        "south": "mna:block/stormcloud_side",
+        "west": "mna:block/stormcloud_side",
+        "particle": "mna:block/stormcloud_side"
+    }
+}

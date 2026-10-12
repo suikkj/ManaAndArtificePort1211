@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "mna:block/spectral_ladder",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "mna:block/spectral_ladder"
+    },
+    "facing=south": {
+      "model": "mna:block/spectral_ladder",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "mna:block/spectral_ladder",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+	"replace": false,
+	"values": [
+		"creeper_head",
+		"skeleton_skull",
+		"wither_skeleton_skull",
+		"zombie_head"
+	]
+}

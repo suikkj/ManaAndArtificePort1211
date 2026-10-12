@@ -1,0 +1,5 @@
+{
+  "type": "mna:progression-condition",
+  "advancement": "mna:tier_2/cast_t2_cantrip",
+  "tier": 2
+}

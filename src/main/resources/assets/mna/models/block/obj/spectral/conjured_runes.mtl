@@ -1,0 +1,5 @@
+# Blender MTL File: 'conjured_workbench.blend'
+# Material Count: 1
+
+newmtl GLYPHS
+map_Kd mna:block/runescribing_table/runes

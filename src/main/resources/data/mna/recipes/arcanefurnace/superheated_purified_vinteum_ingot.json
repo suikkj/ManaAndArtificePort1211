@@ -1,0 +1,7 @@
+{
+	"type": "mna:arcane-furnace",
+	"tier": 2,
+	"input": "mna:purified_vinteum_ingot",
+	"output": "mna:superheated_purified_vinteum_ingot",
+	"burnTime": 400
+}

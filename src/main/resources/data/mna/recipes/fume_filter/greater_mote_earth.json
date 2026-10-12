@@ -1,0 +1,9 @@
+{
+	"type": "mna:eldrin-fume",
+	"item": "mna:greater_mote_earth",
+	"power_provided": 
+	{
+		"affinity": "EARTH",
+		"amount": 5760
+	}
+}

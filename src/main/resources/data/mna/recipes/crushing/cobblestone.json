@@ -1,0 +1,7 @@
+{
+	"type": "mna:crushing",
+	"tier": 2,
+	"input": "minecraft:stone",
+	"output": "minecraft:cobblestone",
+	"output_quantity": 1
+}

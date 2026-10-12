@@ -1,0 +1,14 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 2,
+	"output": "mna:patch_speed",		
+	"items": [
+		"mna:infused_silk",
+		"minecraft:sugar"
+	],
+	"patterns": [
+		"mna:triangle",		
+		"mna:slash",
+		"mna:backslash"
+	]
+}

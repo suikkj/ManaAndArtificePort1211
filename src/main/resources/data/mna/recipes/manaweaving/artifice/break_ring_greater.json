@@ -1,0 +1,18 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:break_ring_greater",
+	"tier": 2,
+	"items": [
+		"minecraft:diamond",
+		"minecraft:diamond",
+		"minecraft:diamond",
+		"mna:mote_earth",
+		"mna:vinteum_dust",	
+		"mna:break_ring_lesser"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:square",
+		"mna:diamond"
+	]
+}

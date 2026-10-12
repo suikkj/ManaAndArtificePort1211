@@ -1,0 +1,14 @@
+{
+	"type": "mna:component",
+	"tier": 1,
+	"output": "mna:shear",
+	"items":
+	[
+		"shears",
+		"mna:vinteum_dust"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/slash"
+	]
+}

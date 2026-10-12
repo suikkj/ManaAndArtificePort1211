@@ -1,0 +1,22 @@
+﻿{
+	"type": "mna:manaweaving-recipe",
+	"tier": 3,
+	"output": "mna:rune_defense",
+	"enchant": "mna:gilded",
+	"magnitude": 1,
+	"items": [
+		"mna:rune_defense",
+		"mna:sorcerous_sewing_set",		
+		"c:ingots/gold",
+		"c:ingots/gold",
+		"c:ingots/gold",
+		"c:ingots/gold",
+		"minecraft:lapis_lazuli",
+		"minecraft:lapis_lazuli"
+	],
+	"patterns": [
+		"mna:slash",
+		"mna:diamond"
+	]
+}
+

@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "mna:block/eldrin/wellspring_pillar" },
+    "facing=east": { "model": "mna:block/eldrin/wellspring_pillar", "y": 90 },
+    "facing=south": { "model": "mna:block/eldrin/wellspring_pillar", "y": 180 },
+    "facing=west": { "model": "mna:block/eldrin/wellspring_pillar", "y": 270 }   
+  }
+}

@@ -1,0 +1,19 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:constructs/construct_ender_legs_gold",
+	"tier": 3,
+	"items": [
+		"mna:constructs/rune_hips",
+		"mna:constructs/rune_rod",
+		"mna:constructs/rune_rod",
+		"minecraft:gold_ingot",
+		"minecraft:gold_ingot",
+		"minecraft:gold_ingot",
+		"mna:mote_ender"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:square",
+		"mna:diamond"
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 2,
+	"output": "mna:pylon/spider_climb",	
+	"items": [
+		"mna:rune_aura",
+		"mna:rune_marking",
+		"mna:rune_marking",
+		"mna:rune_ritual_metal",
+		"mna:rune_ritual_metal",
+		"mna:rune_ritual_metal",
+		"mna:pylon/inert",
+		"minecraft:cobweb",
+		"minecraft:spider_eye"
+	],
+	"patterns": [
+		"mna:knot",
+		"mna:square",
+		"mna:knot3",
+		"mna:knot2",
+		"mna:square",
+		"mna:knot4"
+	]
+}

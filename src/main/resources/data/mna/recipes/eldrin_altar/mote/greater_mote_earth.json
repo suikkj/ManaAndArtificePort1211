@@ -1,0 +1,22 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:greater_mote_earth",
+	"tier": 4,
+	"items": [
+		"mna:mote_earth",
+		"minecraft:obsidian",
+		"minecraft:obsidian",
+		"minecraft:diamond",
+		"minecraft:diamond"
+	],
+	"power_requirements": [
+		{
+			"affinity": "EARTH",
+			"amount": 1440
+		}
+	],
+	"colors": [
+		7095059,
+		11902595
+	]
+}

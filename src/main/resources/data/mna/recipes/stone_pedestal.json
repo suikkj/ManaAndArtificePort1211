@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+  	" P ",
+  	"WSW",
+  	"SSS"
+  ],
+  "key": {
+  	"P": {
+  		"item": "mna:chimerite_gem"
+  	},
+  	"W": {
+  		"item": "mna:decoration/chimerite_arcane_stone"
+  	},
+  	"S": {
+  		"item": "mna:decoration/arcane_stone"
+  	}
+  },
+  "result": {
+    "item": "mna:pedestal"    
+  }
+}

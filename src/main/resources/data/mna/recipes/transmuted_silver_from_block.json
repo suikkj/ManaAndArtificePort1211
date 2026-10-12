@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mna:decoration/transmuted_silver_block"
+    }
+  ],
+  "result": {
+    "item": "mna:transmuted_silver",
+    "count": 9
+  }
+}

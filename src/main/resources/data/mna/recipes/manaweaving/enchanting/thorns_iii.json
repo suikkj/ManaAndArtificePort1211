@@ -1,0 +1,23 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 5,
+	"output": "mna:rune_earth",
+	"enchant": "minecraft:thorns",
+	"magnitude": 3,
+	"items": [
+		"mna:rune_earth",
+		"minecraft:wither_rose",
+		"mna:tarma_root",
+		"mna:tarma_root",
+		"mna:stone_rune_brown",
+		"mna:stone_rune_brown",
+		"minecraft:rose_bush",
+		"minecraft:rose_bush",
+		"mna:mote_earth"
+	],
+	"patterns": [
+		"mna:manaweave_patterns/triangle",
+		"mna:manaweave_patterns/inverted_triangle",
+		"mna:manaweave_patterns/diamond"
+	]
+}

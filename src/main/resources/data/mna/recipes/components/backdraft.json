@@ -1,0 +1,17 @@
+{
+	"type": "mna:component",
+	"tier": 3,
+	"output": "mna:backdraft",
+	"items":
+	[
+		"mna:stone_rune_orange",
+		"minecraft:fire_charge",
+		"minecraft:stick",
+		"minecraft:stick",
+		"minecraft:flint_and_steel"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/inverted_triangle"
+	]
+}

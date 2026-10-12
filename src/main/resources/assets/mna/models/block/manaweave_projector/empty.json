@@ -1,0 +1,32 @@
+{
+  "parent": "forge:item/default",
+  "loader": "forge:composite",
+  "textures": {
+  	"particle": "minecraft:block/stone"
+  },
+  "children": {
+    "base": {
+      "loader": "forge:obj",
+      "automatic_culling": false,
+	  "shade_quads": true,
+	  "flip_v": true,
+	  "emissive_ambient": true,
+      "model": "mna:models/block/obj/manaweave_projector/manaweaving_projector.obj"
+    },
+    "pedestal": {
+      "loader": "forge:obj",
+      "automatic_culling": false,
+	  "shade_quads": true,
+	  "flip_v": true,
+	  "emissive_ambient": true,
+      "model": "mna:models/block/obj/manaweave_projector/manaweaving_projector_pedestal.obj"
+    }
+  },
+  "display": {
+  	"gui": {
+		"rotation": [29, 45, 0],
+		"scale": [0.6, 0.6, 0.6],
+		"translation": [0, -1.5, 0]
+	}
+  }
+}

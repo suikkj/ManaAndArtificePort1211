@@ -1,0 +1,25 @@
+{
+    "replace": false,
+    "values": [
+        "mna:wand_amethyst",
+        "mna:wand_aum",
+        "mna:wand_blueice",
+        "mna:wand_cerublossom",
+        "mna:wand_chimerite",
+        "mna:wand_desertnova",
+        "mna:wand_emerald",
+        "mna:wand_glass",
+        "mna:wand_gold",
+        "mna:wand_ice",
+        "mna:wand_iron",
+        "mna:wand_lapis",
+        "mna:wand_netherquartz",
+        "mna:wand_prismarinecrystal",
+        "mna:wand_prismarineshard",
+        "mna:wand_redstone",
+        "mna:wand_skull",
+        "mna:wand_tarma",
+        "mna:wand_vinteum",
+        "mna:wand_wakebloom"
+    ]
+}

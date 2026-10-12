@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+  	"T  ",
+  	" S ",
+  	"  S"
+  ],
+  "key": {
+  	"S": {
+  		"item": "minecraft:stick"
+  	},
+  	"T": {
+  		"item": "mna:chimerite_gem"
+  	}
+  },
+  "result": {
+    "item": "mna:staff_chimerite"    
+  }
+}

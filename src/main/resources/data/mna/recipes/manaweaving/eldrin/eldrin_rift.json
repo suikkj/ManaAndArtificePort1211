@@ -1,0 +1,19 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:eldrin_rift",
+	"tier": 4,
+	"items": [
+		"mna:decoration/chimerite_arcane_sandstone",
+		"mna:stone_rune_purple",
+		"mna:stone_rune_purple",
+		"mna:stone_rune_purple",
+		"mna:stone_rune_purple",
+		"minecraft:ender_pearl"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:slash",
+		"mna:backslash",
+		"mna:hourglass"
+	]
+}

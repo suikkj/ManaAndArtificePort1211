@@ -1,0 +1,8 @@
+{
+	"type": "mna:manaweave-cache-effect",
+	"tier": 2,
+	"effect": "mna:soar",
+	"duration_min": 600,
+	"duration_max": 2400,
+	"magnitude": 0
+}

@@ -1,0 +1,22 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:greater_mote_fire",
+	"tier": 4,
+	"items": [
+		"mna:mote_fire",
+		"minecraft:blaze_powder",
+		"minecraft:blaze_powder",
+		"mna:living_flame",
+		"mna:living_flame"
+	],
+	"power_requirements": [
+		{
+			"affinity": "FIRE",
+			"amount": 1440
+		}
+	],
+	"colors": [
+		14226452,
+		3671092
+	]
+}

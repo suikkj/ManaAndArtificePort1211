@@ -1,0 +1,8 @@
+# Blender MTL File: 'conjured_workbench.blend'
+# Material Count: 2
+
+newmtl ILLUSION
+map_Kd mna:block/illusion_block
+
+newmtl MAIN
+map_Kd mna:block/material/spectral/conjures

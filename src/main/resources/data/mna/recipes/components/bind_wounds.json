@@ -1,0 +1,17 @@
+{
+	"type": "mna:component",
+	"tier": 2,
+	"output": "mna:bind_wounds",
+	"items":
+	[
+		"mna:stone_rune_light_blue",
+		"mna:infused_silk",
+		"mna:healing_poultice"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/slash",
+		"mna:manaweave_patterns/knot2",
+		"mna:manaweave_patterns/knot"
+	]
+}

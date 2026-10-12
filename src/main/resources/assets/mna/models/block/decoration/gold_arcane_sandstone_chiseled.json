@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "down": "mna:block/artifice/decoration/gold_arcane_sandstone_chiseled",
+        "up": "mna:block/artifice/decoration/gold_arcane_sandstone_chiseled",
+        "north": "mna:block/artifice/decoration/gold_arcane_sandstone_chiseled",
+        "east": "mna:block/artifice/decoration/gold_arcane_sandstone_chiseled",
+        "south": "mna:block/artifice/decoration/gold_arcane_sandstone_chiseled",
+        "west": "mna:block/artifice/decoration/gold_arcane_sandstone_chiseled",
+        "particle": "mna:block/artifice/decoration/gold_arcane_sandstone_chiseled"
+    }
+}

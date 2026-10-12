@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+  	" C ",
+  	"QBV",
+  	" T "
+  ],
+  "key": {
+  	"B": {
+  		"item": "minecraft:book"
+  	},
+  	"C": {
+  		"tag": "minecraft:wool_carpets"
+  	},
+  	"T": {
+  		"item": "mna:basic_table"
+  	},
+  	"Q": {
+  		"item": "mna:animated_quill"
+  	},
+  	"V": {
+  		"item": "mna:vellum"
+  	}
+  },
+  "result": {
+    "item": "mna:inscription_table"    
+  }
+}

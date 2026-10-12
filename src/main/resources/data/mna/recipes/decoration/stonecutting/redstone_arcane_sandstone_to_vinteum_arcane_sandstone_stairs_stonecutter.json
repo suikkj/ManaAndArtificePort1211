@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "mna:decoration/redstone_arcane_sandstone"
+  },
+  "result": "mna:decoration/redstone_arcane_sandstone_stairs",
+  "count": 1
+}

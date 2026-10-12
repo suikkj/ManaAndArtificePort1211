@@ -1,0 +1,6 @@
+{
+	"type": "mna:runeforging",
+	"tier": 2,
+	"pattern": "mna:rune_pattern_defense",
+	"output": "mna:rune_defense"
+}

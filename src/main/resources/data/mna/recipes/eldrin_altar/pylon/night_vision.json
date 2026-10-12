@@ -1,0 +1,26 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:pylon/night_vision",
+	"tier": 4,
+	"items": [
+		"mna:rune_aura",
+		"mna:rune_ender",
+		"mna:rune_ender",
+		"mna:rune_ritual_metal",
+		"mna:rune_ritual_metal",
+		"mna:rune_ritual_metal",
+		"mna:pylon/inert",
+		"minecraft:spider_eye",
+		"minecraft:spider_eye"
+	],
+	"power_requirements": [
+		{
+			"affinity": "ENDER",
+			"amount": 1750
+		}
+	],
+	"colors": [		
+		12779366,
+		3691533
+	]
+}

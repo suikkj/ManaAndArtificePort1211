@@ -1,0 +1,19 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:eldrin_fume",
+	"tier": 2,
+	"items": [
+		"mna:basic_table",
+		"minecraft:iron_bars",
+		"minecraft:furnace",
+		"mna:decoration/arcane_sandstone",
+		"mna:decoration/arcane_sandstone",
+		"mna:decoration/arcane_sandstone",
+		"mna:decoration/arcane_sandstone"
+	],
+	"patterns": [		
+		"mna:triangle",
+		"mna:triangle",
+		"mna:knot2"
+	]
+}

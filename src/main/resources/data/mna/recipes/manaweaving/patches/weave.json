@@ -1,0 +1,21 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 3,
+	"output": "mna:patch_weave",		
+	"items": [
+		"mna:runic_silk",		
+		"mna:manaweave_bottle",
+		"mna:manaweave_bottle",
+		"mna:manaweave_bottle",
+		"mna:manaweave_bottle",
+		"minecraft:chest"
+	],
+	"patterns": [
+		"mna:slash",
+		"mna:inverted_triangle",				
+		"mna:circle",
+		"mna:diamond",
+		"mna:split_triangle",
+		"mna:backslash"
+	]
+}

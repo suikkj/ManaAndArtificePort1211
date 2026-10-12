@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mna:crystal_phylactery"
+    }
+  ],
+  "result": {
+    "item": "mna:crystal_phylactery"
+  }
+}

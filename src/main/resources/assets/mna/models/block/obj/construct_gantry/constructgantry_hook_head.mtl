@@ -1,0 +1,5 @@
+# Blender MTL File: 'construct_arch.blend'
+# Material Count: 1
+
+newmtl MAIN
+map_Kd mna:block/artifice/construct_arch

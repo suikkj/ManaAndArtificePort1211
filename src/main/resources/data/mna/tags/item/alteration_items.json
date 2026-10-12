@@ -1,0 +1,9 @@
+{
+    "replace": false,
+    "values": [
+        "#mna:staves",
+        "#mna:wands",
+        "mna:spell",
+        "mna:bangle"
+    ]
+}

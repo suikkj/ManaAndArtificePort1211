@@ -1,0 +1,17 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:altar_of_arcana",
+	"tier": 2,
+	"items": [
+		"mna:basic_table",
+		"mna:spell_book",
+		"mna:wizard_chalk",
+		"mna:animus_dust",
+		"mna:rune_marking",
+		"mna:purified_vinteum_dust"
+	],
+	"patterns": [		
+		"mna:knot",
+		"mna:knot2"
+	]
+}

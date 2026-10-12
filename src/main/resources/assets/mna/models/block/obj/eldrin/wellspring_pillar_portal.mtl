@@ -1,0 +1,14 @@
+# Blender MTL File: 'wellspring_pillar.blend'
+# Material Count: 4
+
+newmtl CHIMERITE
+map_Kd mna:block/oreblockchimerite
+
+newmtl END_PORTAL
+map_Kd mna:block/material/eldrin/pylon_faces
+
+newmtl GLYPH_FACE
+map_Kd mna:block/material/eldrin/pylon_faces
+
+newmtl MAIN
+map_Kd mna:block/material/eldrin/pylon

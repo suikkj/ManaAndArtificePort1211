@@ -1,0 +1,7 @@
+{
+	"type": "mna:crushing",
+	"tier": 2,
+	"input": "minecraft:basalt",
+	"output": "minecraft:blackstone",
+	"output_quantity": 1
+}

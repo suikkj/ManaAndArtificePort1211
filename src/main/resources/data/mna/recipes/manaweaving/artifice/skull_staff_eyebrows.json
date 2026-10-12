@@ -1,0 +1,12 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:staff_skull_alt",
+	"copy_nbt": true,
+	"items": [
+		"mna:staff_skull",
+		"minecraft:dried_kelp"
+	],
+	"patterns": [
+		"mna:circle"
+	]
+}

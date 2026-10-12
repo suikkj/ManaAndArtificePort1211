@@ -1,0 +1,16 @@
+{
+	"type": "mna:shape",
+	"output": "mna:embers",
+	"tier": 4,
+	"items":
+	[
+		"mna:animus_dust",
+		"mna:mote_arcane",
+		"mna:living_flame"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/star",
+		"mna:manaweave_patterns/hourglass"
+	]
+}

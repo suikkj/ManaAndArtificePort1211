@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "mna:decoration/gold_arcane_sandstone"
+    }
+  },
+  "result": {
+    "item": "mna:decoration/gold_arcane_sandstone_wall",
+    "count": 6
+  }
+}

@@ -1,0 +1,13 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:low_health_charm_minor",
+	"tier": 2,
+	"items": [
+		"mna:charm_pattern",
+		"minecraft:apple"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:circle"
+	]
+}

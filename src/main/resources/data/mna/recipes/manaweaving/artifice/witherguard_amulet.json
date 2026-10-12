@@ -1,0 +1,21 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:witherguard_amulet",
+	"tier": 3,
+	"items": [
+		"mna:mundane_amulet",
+		"minecraft:bone",
+		"minecraft:bone",
+		"mna:bone_ash",
+		"mna:bone_ash",
+		"minecraft:milk_bucket",
+		"mna:rune_defense",
+		"mna:rune_ender"
+	],
+	"patterns": [
+		"mna:split_triangle",
+		"mna:square",
+		"mna:knot",
+		"mna:knot3"
+	]
+}

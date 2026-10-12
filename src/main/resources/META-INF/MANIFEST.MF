@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Specification-Title: Mana and Artifice
+Specification-Vendor: Mithion, Xyphius, Aranai
+Specification-Version: 1
+Implementation-Title: mna-1.20
+Implementation-Version: 3.1.11
+Implementation-Vendor: Mithion, Xyphius, Aranai
+Implementation-Timestamp: 2025-08-04T14:06:32-0400
+MixinConfigs: mna.mixins.json
+

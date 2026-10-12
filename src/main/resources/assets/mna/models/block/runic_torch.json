@@ -1,0 +1,29 @@
+{
+  "parent": "forge:item/default",
+  "loader": "forge:composite",
+  "textures": {
+  	"runic": "mna:block/artifice/decoration/runic_lights_orange",
+  	"particle": "#runic"
+  },
+  "children": {
+    "base": {
+      "loader": "forge:obj",
+      "automatic_culling": false,
+	  "shade_quads": true,
+	  "flip_v": true,
+	  "emissive_ambient": false,
+      "model": "mna:models/block/obj/runic_lights/runic_stand.obj",
+      "textures": {
+	  	"runic": "mna:block/artifice/decoration/runic_lights_orange"
+	  }
+    },
+    "deco": {
+      "loader": "forge:obj",
+      "automatic_culling": false,
+	  "shade_quads": true,
+	  "flip_v": true,
+	  "emissive_ambient": false,
+      "model": "mna:models/block/obj/runic_lights/runic_torch_coals.obj"
+    }
+  }
+}

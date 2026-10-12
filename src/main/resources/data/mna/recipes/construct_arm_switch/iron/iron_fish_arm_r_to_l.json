@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mna:constructs/construct_fishing_rod_right_iron"    
+    }
+  ],
+  "result": {
+    "item": "mna:constructs/construct_fishing_rod_left_iron"    
+  }
+}

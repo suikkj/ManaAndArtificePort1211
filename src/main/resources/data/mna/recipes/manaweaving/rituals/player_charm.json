@@ -1,0 +1,17 @@
+﻿{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:player_charm",
+	"tier": 3,
+	"items": [
+		 "mna:vinteum_dust",
+		 "mna:vinteum_dust",
+		 "mna:rune_marking",
+		 "c:ingots/gold",
+		 "c:glass_panes"
+	],
+	"patterns": [
+		"mna:circle",
+		"mna:split_triangle"
+	]
+}
+

@@ -1,0 +1,22 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:refraction_lens_ender",
+	"tier": 4,
+	"items": [
+		"mna:purified_vinteum_ingot",
+		"minecraft:purple_stained_glass",
+		"mna:purified_vinteum_ingot",
+		"minecraft:purple_stained_glass",		
+		"mna:mote_ender",
+		"mna:purified_vinteum_ingot",
+		"minecraft:purple_stained_glass",
+		"mna:purified_vinteum_ingot",
+		"minecraft:purple_stained_glass"
+	],
+	"patterns": [
+		"mna:slash",
+		"mna:split_triangle",
+		"mna:inverted_triangle",
+		"mna:backslash"
+	]
+}

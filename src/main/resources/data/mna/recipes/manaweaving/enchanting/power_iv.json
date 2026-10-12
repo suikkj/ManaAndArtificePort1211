@@ -1,0 +1,22 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 4,
+	"output": "mna:rune_air",
+	"enchant": "minecraft:power",
+	"magnitude": 4,
+	"items": [
+		"mna:rune_air",
+		"minecraft:bow",
+		"minecraft:spectral_arrow",
+		"minecraft:fire_charge",
+		"minecraft:crossbow",
+		"minecraft:fire_charge",
+		"minecraft:redstone_torch",
+		"mna:mote_fire"
+	],
+	"patterns": [
+		"mna:manaweave_patterns/split_triangle",
+		"mna:manaweave_patterns/triangle",
+		"mna:manaweave_patterns/split_triangle"		
+	]
+}

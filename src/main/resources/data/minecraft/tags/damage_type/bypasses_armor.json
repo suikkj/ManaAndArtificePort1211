@@ -1,0 +1,11 @@
+{
+	"replace": false,
+	"values": [
+		"mna:spell_briars",
+		"mna:spell_conflagrate",
+		"mna:spell_disperse",
+		"mna:spell_frost",
+		"mna:spell_lightning",
+		"mna:wtf_boom"
+	]
+}

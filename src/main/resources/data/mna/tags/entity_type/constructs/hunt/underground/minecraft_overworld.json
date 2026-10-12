@@ -1,0 +1,24 @@
+{
+  "replace": false,
+  "values": [
+  	"minecraft:cave_spider",
+  	"minecraft:creeper",
+  	"minecraft:glow_squid",
+  	"minecraft:husk",
+  	"minecraft:silverfish",
+  	"minecraft:skeleton",
+  	"minecraft:slime",
+  	"minecraft:spider",
+  	"minecraft:stray",
+  	"minecraft:witch",
+  	"minecraft:zombie",
+  	"mna:chatterer",
+  	"mna:living_ward",
+  	"mna:barkling",
+  	"mna:pixie",
+  	"mna:spell_breaker",
+  	"mna:skeleton_assassin",
+  	"mna:mushroom_soldier",
+  	"mna:hulking_zombie"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "invalid=false": { "model": "mna:block/eldrin/refraction_lens_water" },
+    "invalid=true": { "model": "mna:block/eldrin/refraction_lens_invalid" }
+  }
+}

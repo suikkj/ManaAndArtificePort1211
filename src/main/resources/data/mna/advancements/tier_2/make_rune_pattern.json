@@ -1,0 +1,31 @@
+{
+	"parent": "mna:tier_1/advance_tier_2",
+	"display": {
+		"icon": {
+			"item": "mna:runescribing_recipe_paper"
+		},
+		"title": {
+			"translate": "mna:tier_2/make_rune_pattern.title"
+		},
+		"description": {
+			"translate": "mna:tier_2/make_rune_pattern.description"
+		},
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": false,
+		"hidden": false
+	},
+	"criteria": {
+		"manaweave_altar_craft": {
+			"trigger": "mna:runeforge",
+			"conditions": {
+				"item": {
+					"items": [
+						"mna:runescribing_recipe_paper"
+					]
+				}	
+			}
+		}
+	},
+	"requirements": []
+}

@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [  	    
+    "mna:decoration/redstone_arcane_stone_chiseled",
+    "mna:decoration/redstone_arcane_stone_corner",
+    "mna:decoration/redstone_arcane_stone_pillar",
+    "mna:decoration/redstone_arcane_stone_quad",
+    "mna:decoration/redstone_arcane_stone_straight",
+    "mna:decoration/redstone_arcane_stone_t"
+  ]
+}

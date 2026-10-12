@@ -1,0 +1,22 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:patch_conveyance",
+	"tier": 5,
+	"items": [
+		"mna:runic_silk",
+		"mna:greater_mote_air",
+		"minecraft:chest",
+		"mna:rune_marking",
+		"minecraft:map"
+	],
+	"power_requirements": [
+		{
+			"affinity": "WIND",
+			"amount": 1000
+		}
+	],
+	"colors": [
+		13816530,
+		9211020
+	]
+}

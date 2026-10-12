@@ -1,0 +1,5 @@
+# Blender MTL File: 'runic_anvil.blend'
+# Material Count: 1
+
+newmtl MAIN
+map_Kd mna:block/material/runic_anvil

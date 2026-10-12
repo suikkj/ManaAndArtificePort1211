@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+  	"#minecraft:crops",
+  	"minecraft:brown_mushroom",
+  	"minecraft:red_mushroom",
+  	"minecraft:sweet_berry_bush",
+  	"minecraft:nether_wart",
+  	{
+  		"id": "#mysticalagriculture:crops",
+  		"required": false
+  	}
+  ]
+}

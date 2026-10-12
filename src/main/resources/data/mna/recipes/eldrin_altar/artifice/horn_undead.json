@@ -1,0 +1,26 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:faction_horn_undead",
+	"tier": 5,
+	"requiredFaction": "mna:undead",
+	"items": [
+		"minecraft:bone_block",
+		"minecraft:netherite_ingot",
+		"minecraft:netherite_ingot",		
+		"minecraft:nether_star",
+		"minecraft:chain",
+		"minecraft:chain",
+		"mna:greater_mote_ender",
+		"mna:greater_mote_air"
+	],
+	"power_requirements": [
+		{
+			"affinity": "ENDER",
+			"amount": 2500
+		},
+		{
+			"affinity": "WATER",
+			"amount": 1250
+		}
+	]
+}

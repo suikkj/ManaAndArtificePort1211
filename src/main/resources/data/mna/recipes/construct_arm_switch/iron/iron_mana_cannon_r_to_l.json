@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mna:constructs/construct_mana_cannon_right_iron"
+    }
+  ],
+  "result": {
+    "item": "mna:constructs/construct_mana_cannon_left_iron"    
+  }
+}

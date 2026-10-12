@@ -1,0 +1,21 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 2,
+	"output": "mna:pylon/insight",	
+	"items": [
+		"mna:rune_aura",
+		"mna:rune_marking",
+		"mna:rune_marking",
+		"mna:rune_ritual_metal",
+		"mna:rune_ritual_metal",
+		"mna:rune_ritual_metal",
+		"mna:pylon/inert",
+		"minecraft:target",
+		"minecraft:writable_book"
+	],
+	"patterns": [
+		"mna:circle",
+		"mna:diamond",
+		"mna:circle"	
+	]
+}

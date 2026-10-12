@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "mna:decoration/amethyst_arcane_sandstone"
+    }
+  },
+  "result": {
+    "item": "mna:decoration/amethyst_arcane_sandstone_t",
+    "count": 4
+  }
+}

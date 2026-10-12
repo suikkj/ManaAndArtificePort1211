@@ -1,0 +1,25 @@
+{
+  "parent": "forge:item/default",
+  "loader": "forge:composite",
+  "textures": {
+  	"particle": "minecraft:block/glass"
+  },
+  "children": {
+  "gem": {
+      "loader": "forge:obj",
+      "automatic_culling": false,
+	  "shade_quads": false,
+	  "flip_v": true,
+	  "emissive_ambient": true,
+      "model": "mna:models/block/obj/eldrin/collector_wind.obj"
+    },
+    "err": {
+      "loader": "forge:obj",
+      "automatic_culling": false,
+	  "shade_quads": false,
+	  "flip_v": true,
+	  "emissive_ambient": true,
+      "model": "mna:models/block/obj/eldrin/collector_error.obj"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+	"type": "mna:component",
+	"tier": 5,
+	"output": "mna:mind_control",
+	"items":
+	[
+		"mna:vinteum_dust",
+		"mna:vinteum_dust",
+		"minecraft:soul_lantern",		
+		"mna:mote_ender"
+	],
+	"patterns":
+	[		
+		"mna:manaweave_patterns/circle",
+		"mna:manaweave_patterns/infinity",
+		"mna:manaweave_patterns/circle"
+	]
+}

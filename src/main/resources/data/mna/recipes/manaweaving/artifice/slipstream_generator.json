@@ -1,0 +1,15 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:slipstream_generator",
+	"tier": 2,
+	"items": [		
+		"mna:mote_air",
+		"minecraft:phantom_membrane",
+		"minecraft:feather"
+	],
+	"patterns": [
+		"mna:triangle",
+		"mna:square",
+		"mna:inverted_triangle"	
+	]
+}

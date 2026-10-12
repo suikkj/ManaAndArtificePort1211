@@ -1,0 +1,59 @@
+{
+	"type": "mna:ritual",
+	"tier": 2,
+	"pattern":
+	[
+		[ 0, 0, 7, 6, 0, 0, 0 ],
+		[ 0, 0, 8, 0, 5, 0, 0 ],
+		[ 1, 2, 3, 4, 0, 0,22 ],
+		[ 0, 0, 9,18,19,20,21 ],
+		[ 0,10,11,12,13, 0, 0 ],
+		[ 0, 0, 0,17, 0,14, 0 ],
+		[ 0, 0, 0,16,15, 0, 0 ]
+	],
+	"reagents":
+	[
+		"  C    ",
+		"    S  ",
+		"       ",
+		"  E E  ",
+		"       ",
+		"     S ",
+		"   C   "
+	],
+	"keys":
+	{
+		"C": 
+		{ 
+			"item": "mna:cerublossom",
+			"optional": false,
+			"consume": true
+		},
+		"S": 
+		{ 
+			"item": "mna:cloud_in_a_bottle",
+			"optional": false,
+			"consume": true
+		},
+		"E": 
+		{ 
+			"item": "feather",
+			"optional": false,
+			"consume": true
+		}
+	},
+	"manaweave":
+	[
+		"mna:manaweave_patterns/knot",
+		"mna:manaweave_patterns/knot3",
+		"mna:manaweave_patterns/triangle"
+	],
+	"parameters":
+	{
+		"innerColor": "0x555555",
+		"outerColor": "0xFFFFFF",
+		"displayIndexes": false,
+		"connectBeam": false
+	},
+	"createsItem":	"mna:mote_air"
+}

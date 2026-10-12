@@ -1,0 +1,18 @@
+{
+	"type": "mna:component",
+	"tier": 4,
+	"output": "mna:hemmorhage",
+	"items":
+	[
+		"mna:rune_projection",
+		"minecraft:iron_axe",
+		"minecraft:fire_charge",
+		"minecraft:echo_shard"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/slash",
+		"mna:manaweave_patterns/hourglass",
+		"mna:manaweave_patterns/diamond"
+	]
+}

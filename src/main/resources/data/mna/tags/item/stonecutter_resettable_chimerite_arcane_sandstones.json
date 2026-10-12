@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [  	    
+    "mna:decoration/chimerite_arcane_sandstone_chiseled",
+    "mna:decoration/chimerite_arcane_sandstone_corner",
+    "mna:decoration/chimerite_arcane_sandstone_pillar",
+    "mna:decoration/chimerite_arcane_sandstone_quad",
+    "mna:decoration/chimerite_arcane_sandstone_straight",
+    "mna:decoration/chimerite_arcane_sandstone_t"
+  ]
+}

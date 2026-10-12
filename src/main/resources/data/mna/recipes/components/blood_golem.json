@@ -1,0 +1,22 @@
+{
+	"type": "mna:component",
+	"tier": 4,
+	"output": "mna:blood_golem",
+	"items":
+	[
+		"mna:stone_rune_red",
+		"minecraft:totem_of_undying",
+		"minecraft:rotten_flesh",
+		"minecraft:porkchop",
+		"minecraft:beef",
+		"minecraft:chicken",
+		"minecraft:rabbit",
+		"mna:animus_dust",
+		"mna:healing_poultice"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/bolt",
+		"mna:manaweave_patterns/knot3"
+	]
+}

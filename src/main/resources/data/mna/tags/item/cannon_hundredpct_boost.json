@@ -1,0 +1,23 @@
+{
+	"replace": false,
+	"values": [
+		"arrow",
+		"iron_block",
+		"bricks",
+		"anvil",
+		"trident",
+		"diamond_block",
+		"gold_block",
+		"amethyst_block",
+		"netherite_block",
+		"golden_sword",
+		"iron_sword",
+		"diamond_sword",
+		"netherite_sword",
+		"netherite_axe",
+		"netherite_pickaxe",
+		"netherite_shovel",
+		"netherite_hoe",
+		"mna:runesmith_hammer"
+	]
+}

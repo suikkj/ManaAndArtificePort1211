@@ -1,0 +1,17 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": {
+		"item": "mna:major_mana_gem"
+	},
+	"tier": 5,
+	"items": [		
+		"mna:purified_vinteum_dust",
+		"mna:minor_mana_gem",
+		"minecraft:nether_star"
+	],
+	"patterns": [
+		"mna:infinity",
+		"mna:hourglass",
+		"mna:infinity"
+	]
+}

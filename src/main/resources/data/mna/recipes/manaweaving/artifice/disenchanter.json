@@ -1,0 +1,23 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:disenchanter",
+	"tier": 3,
+	"items": [
+		"mna:basic_table",
+		"mna:chimerite_gem",
+		"minecraft:glass_pane",
+		"minecraft:fences",
+		"minecraft:fences",
+		"minecraft:fences",
+		"minecraft:fences",
+		"mna:transmuted_silver",
+		"mna:transmuted_silver"		
+	],
+	"patterns": [
+		"mna:backslash",
+		"mna:slash",		
+		"mna:split_triangle",
+		"mna:backslash",
+		"mna:slash"
+	]
+}

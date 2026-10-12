@@ -1,0 +1,31 @@
+{
+	"parent": "mna:tier_2/advance_tier_3",
+	"display": {
+		"icon": {
+			"item": "mna:eldritch_orb"
+		},
+		"title": {
+			"translate": "mna:tier_3/craft_eldritch_orb.title"
+		},
+		"description": {
+			"translate": "mna:tier_3/craft_eldritch_orb.description"
+		},
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": false,
+		"hidden": false
+	},
+	"criteria": {
+		"manaweave_altar_craft": {
+			"trigger": "mna:manaweave_altar_craft",
+			"conditions": {
+				"item": {
+				"items": [
+            			"mna:eldritch_orb"
+          			]
+				}
+			}
+		}
+	},
+	"requirements": []
+}

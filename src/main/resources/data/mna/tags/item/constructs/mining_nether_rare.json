@@ -1,0 +1,13 @@
+﻿{
+  "replace": false,
+  "values": [
+  	"#mna:constructs/mining_nether_common",
+  	
+  	"mna:chimerite_gem",
+  	
+    "#c:obsidian",
+    "minecraft:nether_bricks",
+    "minecraft:crying_obsidian",
+    "minecraft:nether_wart_block"
+  ]
+}

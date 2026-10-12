@@ -1,0 +1,25 @@
+{
+	"parent": "mna:tier_1/advance_tier_2",
+	"display": {
+		"icon": {
+			"item": "mna:mage_robes"
+		},
+		"title": {
+			"translate": "mna:tier_2/have_set_bonus.title"
+		},
+		"description": {
+			"translate": "mna:tier_2/have_set_bonus.description"
+		},
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": false,
+		"hidden": false
+	},
+	"criteria": {
+		"set_bonus": {
+			"trigger": "mna:set_bonus",
+			"conditions": {	}
+		}
+	},
+	"requirements": []
+}

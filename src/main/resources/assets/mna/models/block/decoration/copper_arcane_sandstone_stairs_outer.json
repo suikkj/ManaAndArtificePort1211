@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "mna:block/artifice/decoration/copper_arcane_sandstone",
+    "top": "mna:block/artifice/decoration/copper_arcane_sandstone",
+    "side": "mna:block/artifice/decoration/copper_arcane_sandstone"
+  }
+}

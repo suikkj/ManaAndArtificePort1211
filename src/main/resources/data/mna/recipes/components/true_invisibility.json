@@ -1,0 +1,21 @@
+﻿{
+	"type": "mna:component",
+	"output": "mna:true_invisibility",
+	"tier": 5,
+	"items":
+	[
+		"mna:mote_arcane",
+		"minecraft:golden_carrot",
+		"minecraft:fermented_spider_eye",
+		"c:glass",
+		"c:glass",
+		"mna:cerublossom",
+		"mna:vinteum_dust"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/hourglass",
+		"mna:manaweave_patterns/knot3",
+		"mna:manaweave_patterns/infinity"			
+	]
+}

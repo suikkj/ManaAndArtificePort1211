@@ -1,0 +1,18 @@
+﻿{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:constructs/construct_basic_torso_stone",
+	"tier": 2,
+	"items": [
+		"mna:constructs/rune_torso",
+		"c:stone",
+		"c:stone",
+		"c:stone",
+		"mna:vinteum_dust",
+		"mna:vinteum_dust"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:square"
+	]
+}
+

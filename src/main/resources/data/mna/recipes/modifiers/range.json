@@ -1,0 +1,18 @@
+{
+	"type": "mna:modifier",
+	"output": "mna:range",
+	"tier": 2,
+	"items":
+	[
+		"bow",
+		"crossbow",
+		"arrow",
+		"spectral_arrow",
+		"lead",
+		"string",
+		"tripwire_hook"
+	],
+	"patterns":
+	[	
+	]
+}

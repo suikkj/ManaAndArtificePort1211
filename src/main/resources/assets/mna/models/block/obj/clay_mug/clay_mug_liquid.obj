@@ -1,0 +1,16 @@
+# Blender v2.80 (sub 75) OBJ File: 'clay_mug.blend'
+# www.blender.org
+mtllib clay_mug_liquid.mtl
+o LIQUID_Plane
+v 0.343750 0.281250 0.656250
+v 0.656250 0.281250 0.656250
+v 0.343750 0.281250 0.343750
+v 0.656250 0.281250 0.343750
+vt 0.375000 0.437500
+vt 0.687500 0.437500
+vt 0.687500 0.750000
+vt 0.375000 0.750000
+vn 0.0000 1.0000 0.0000
+usemtl CHORFF
+s off
+f 1/1/1 2/2/1 4/3/1 3/4/1

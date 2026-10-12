@@ -1,0 +1,26 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:patch_depth_2",
+	"tier": 4,
+	"items": [
+		"mna:runic_silk",
+		"mna:greater_mote_ender",
+		"minecraft:chest",
+		"minecraft:chest",
+		"minecraft:chest",
+		"minecraft:chest",
+		"minecraft:chest",
+		"minecraft:chest",
+		"minecraft:chest"
+	],
+	"power_requirements": [
+		{
+			"affinity": "ENDER",
+			"amount": 750
+		}
+	],
+	"colors": [
+		3409493,
+		1706278
+	]
+}

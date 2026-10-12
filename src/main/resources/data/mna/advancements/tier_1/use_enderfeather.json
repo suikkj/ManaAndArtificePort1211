@@ -1,0 +1,31 @@
+{
+	"parent": "mna:tier_0/codex_trade",
+	"display": {
+		"icon": {
+			"item": "mna:bed_charm"
+		},
+		"title": {
+			"translate": "mna:tier_1/use_enderfeather.title"
+		},
+		"description": {
+			"translate": "mna:tier_1/use_enderfeather.description"
+		},
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": false,
+		"hidden": false
+	},
+	"criteria": {
+		"use_enderfeather": {
+			"trigger": "mna:use_charm",
+			"conditions": {
+			"item": {
+		          "items": [
+		            "mna:bed_charm"
+		          ]
+		       }	
+			}
+		}
+	},
+	"requirements": []
+}

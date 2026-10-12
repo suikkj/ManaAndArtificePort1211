@@ -1,0 +1,36 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:raid_charm_major",
+	"tier": 4,
+	"items": [
+		"mna:raid_charm_minor",
+		"minecraft:netherite_ingot",
+		"minecraft:netherite_ingot"
+	],
+	"power_requirements": [
+		{
+			"affinity": "ARCANE",
+			"amount": 1000
+		},
+		{
+			"affinity": "AIR",
+			"amount": 1000
+		},
+		{
+			"affinity": "FIRE",
+			"amount": 1000
+		},
+		{
+			"affinity": "WATER",
+			"amount": 1000
+		},
+		{
+			"affinity": "EARTH",
+			"amount": 1000
+		},
+		{
+			"affinity": "ENDER",
+			"amount": 1000
+		}
+	]
+}

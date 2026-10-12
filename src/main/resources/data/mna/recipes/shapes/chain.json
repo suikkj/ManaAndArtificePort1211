@@ -1,0 +1,17 @@
+{
+	"type": "mna:shape",
+	"output": "mna:chain",
+	"tier": 3,
+	"items":
+	[
+		"chain",
+		"chain",
+		"mna:vinteum_dust",
+		"slime_ball"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/circle",
+		"mna:manaweave_patterns/circle"		
+	]
+}

@@ -1,0 +1,17 @@
+# Blender MTL File: 'wizard_lab_blocks.blend'
+# Material Count: 5
+
+newmtl CHIMERITE
+map_Kd mna:block/oreblockchimerite
+
+newmtl DECO
+map_Kd mna:block/artifice/wizard_lab/inscription_table_deco
+
+newmtl MAIN
+map_Kd mna:block/artifice/wizard_lab/inscription_table
+
+newmtl MASTERY
+map_Kd mna:block/artifice/wizard_lab/laboratory_mastery
+
+newmtl THESIS_DESK
+map_Kd mna:block/artifice/wizard_lab/laboratory_thesisdesk

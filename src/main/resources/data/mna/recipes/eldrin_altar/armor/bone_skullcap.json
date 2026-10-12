@@ -1,0 +1,31 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:bone_armor_head",
+	"tier": 5,
+	"requiredFaction": "mna:undead",
+	"items": [
+		"minecraft:netherite_helmet",		
+		"mna:witherbone",
+		"mna:witherbone",
+		"minecraft:wither_skeleton_skull",
+		"mna:ritual_focus_greater",
+		"mna:ritual_focus_greater",
+		"mna:greater_mote_ender",
+		"mna:greater_mote_water",
+		"mna:rune_water"
+	],
+	"power_requirements": [
+		{
+			"affinity": "WATER",
+			"amount": 2750
+		},
+		{
+			"affinity": "ENDER",
+			"amount": 1500
+		}
+	],
+	"colors": [
+		8092539,
+		2565927
+	]
+}

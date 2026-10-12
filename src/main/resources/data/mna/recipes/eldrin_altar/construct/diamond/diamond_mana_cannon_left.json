@@ -1,0 +1,42 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:constructs/construct_mana_cannon_left_diamond",
+	"tier": 5,
+	"items": [
+		"mna:constructs/rune_rod",
+		"mna:constructs/rune_rod",
+		"mna:constructs/rune_claw",
+		"minecraft:diamond",
+		"minecraft:diamond",
+		"minecraft:diamond",
+		"mna:vinteum_dust",
+		"mna:vinteum_dust",
+		"mna:ritual_focus_greater"
+	],
+	"power_requirements": [
+		{
+			"affinity": "WATER",
+			"amount": 2500
+		},
+		{
+			"affinity": "FIRE",
+			"amount": 2500
+		},
+		{
+			"affinity": "EARTH",
+			"amount": 2500
+		},
+		{
+			"affinity": "WIND",
+			"amount": 2500
+		},
+		{
+			"affinity": "ENDER",
+			"amount": 2500
+		},
+		{
+			"affinity": "ARCANE",
+			"amount": 2500
+		}
+	]
+}

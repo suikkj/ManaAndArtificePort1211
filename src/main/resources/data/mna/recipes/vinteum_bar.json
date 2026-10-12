@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "mna:vinteum_coated_iron"
+  },
+  "result": "mna:vinteum_ingot",
+  "experience": 0.7,
+  "cookingtime": 400
+}

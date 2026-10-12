@@ -1,0 +1,34 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:pylon/repair",
+	"tier": 4,
+	"items": [
+		"mna:rune_aura",
+		"mna:rune_fire",
+		"mna:rune_earth",
+		"mna:rune_ritual_metal",
+		"mna:rune_ritual_metal",
+		"mna:rune_ritual_metal",
+		"mna:pylon/inert",
+		"minecraft:nether_star",
+		"mna:runesmith_hammer"
+	],
+	"power_requirements": [
+		{
+			"affinity": "EARTH",
+			"amount": 2500
+		},
+		{
+			"affinity": "FIRE",
+			"amount": 2500
+		},
+		{
+			"affinity": "ARCANE",
+			"amount": 2500
+		}
+	],
+	"colors": [		
+		15436816,
+		15452688
+	]
+}

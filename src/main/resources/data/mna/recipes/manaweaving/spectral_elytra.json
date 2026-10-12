@@ -1,0 +1,23 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:spectral_elytra",
+	"tier": 4,
+	"requiredFaction": "mna:fey",
+	"items": [
+		"mna:greater_mote_air",
+		"mna:greater_mote_air",
+		"mna:rune_air",
+		"mna:rune_air",
+		"minecraft:nether_star",
+		"minecraft:feather",
+		"minecraft:phantom_membrane",
+		"minecraft:phantom_membrane"		
+	],
+	"patterns": [
+		"mna:split_triangle",
+		"mna:triangle",
+		"mna:hourglass",
+		"mna:triangle",
+		"mna:diamond"
+	]
+}

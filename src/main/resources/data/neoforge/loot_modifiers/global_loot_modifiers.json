@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "entries": [
+    "mna:coal_chimerite",
+    "mna:diamond_chimerite",
+    "mna:emerald_chimerite",
+    "mna:deepslate_coal_chimerite",
+    "mna:deepslate_diamond_chimerite",
+    "mna:deepslate_emerald_chimerite",
+    "mna:skeleton_head",
+    "mna:zombie_head",
+    "mna:creeper_head",
+    "mna:wither_skeleton_head"
+  ]
+}

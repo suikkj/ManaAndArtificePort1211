@@ -1,0 +1,5 @@
+# Blender MTL File: 'wizard_lab_blocks.blend'
+# Material Count: 1
+
+newmtl DECO
+map_Kd mna:block/artifice/wizard_lab/inscription_table_deco

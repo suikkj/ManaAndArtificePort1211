@@ -1,0 +1,16 @@
+{
+	"type": "mna:modifier",
+	"output": "mna:duration",
+	"tier": 3,
+	"items":
+	[
+		"magma_cream",
+		"magma_cream",
+		"blaze_powder",
+		"blaze_powder",
+		"mna:rune_arcane"
+	],
+	"patterns":
+	[
+	]
+}

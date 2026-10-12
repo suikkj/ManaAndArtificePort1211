@@ -1,0 +1,21 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 2,
+	"output": "mna:pylon/leap",	
+	"items": [
+		"mna:rune_aura",
+		"mna:rune_marking",
+		"mna:rune_marking",
+		"mna:rune_ritual_metal",
+		"mna:rune_ritual_metal",
+		"mna:rune_ritual_metal",
+		"mna:pylon/inert",
+		"minecraft:lily_pad",
+		"minecraft:beds"
+	],
+	"patterns": [
+		"mna:slash",
+		"mna:backslash",
+		"mna:triangle"	
+	]
+}

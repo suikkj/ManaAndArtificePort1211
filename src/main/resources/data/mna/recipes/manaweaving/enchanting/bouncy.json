@@ -1,0 +1,21 @@
+﻿{
+	"type": "mna:manaweaving-recipe",
+	"tier": 4,
+	"output": "mna:rune_earth",
+	"enchant": "mna:bouncing",
+	"magnitude": 1,
+	"items": [		
+		"mna:rune_earth",
+		"c:slimeballs",
+		"c:slimeballs",
+		"c:slimeballs",
+		"c:slimeballs",
+		"mna:mote_air"
+	],
+	"patterns": [		
+		"mna:inverted_triangle",
+		"mna:square",
+		"mna:triangle"
+	]
+}
+

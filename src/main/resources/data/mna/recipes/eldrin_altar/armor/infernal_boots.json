@@ -1,0 +1,28 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:demon_armor_boots",
+	"tier": 5,
+	"requiredFaction": "mna:demons",
+	"items": [
+		"minecraft:diamond_boots",
+		"mna:greater_mote_fire",
+		"mna:rune_fire",
+		"mna:brimstone_charm",
+		"mna:living_flame",
+		"mna:living_flame"
+	],
+	"power_requirements": [
+		{
+			"affinity": "FIRE",
+			"amount": 2750
+		},
+		{
+			"affinity": "WIND",
+			"amount": 1500
+		}
+	],
+	"colors": [
+		14226452,
+		3671092
+	]
+}

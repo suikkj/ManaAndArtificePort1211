@@ -1,0 +1,744 @@
+{
+	"impact_arcane_aoe": {
+		"category": "player",
+		"sounds": [ "mna:impacts/arcane_impact_aoe" ]
+	},
+	"impact_arcane": {
+		"category": "player",
+		"sounds": [ "mna:impacts/arcane_impact" ]
+	},
+	"impact_earth_aoe": {
+		"category": "player",
+		"sounds": [ "mna:impacts/earth_impact_aoe" ]
+	},
+	"impact_earth": {
+		"category": "player",
+		"sounds": [ "mna:impacts/earth_impact" ]
+	},
+	"impact_ender": {
+		"category": "player",
+		"sounds": [ "mna:impacts/ender_impact" ]
+	},
+	"impact_fire_aoe": {
+		"category": "player",
+		"sounds": [ "mna:impacts/fire_impact_aoe" ]
+	},
+	"impact_fire": {
+		"category": "player",
+		"sounds": [ "mna:impacts/fire_impact" ]
+	},	
+	"impact_ice": {
+		"category": "player",
+		"sounds": [ "mna:impacts/ice_impact" ]
+	},
+	"impact_water": {
+		"category": "player",
+		"sounds": [ "mna:impacts/water_impact" ]
+	},
+	"impact_wind_aoe": {
+		"category": "player",
+		"sounds": [ "mna:impacts/wind_impact_aoe" ]
+	},
+	"impact_wind": {
+		"category": "player",
+		"sounds": [ "mna:impacts/wind_impact" ]
+	},
+	"impact_blood_aoe": {
+		"category": "player",
+		"sounds": [ "mna:impacts/blood_impact_aoe" ]
+	},
+	"impact_blood": {
+		"category": "player",
+		"sounds": [ "mna:impacts/blood_impact" ]
+	},
+	"impact_lightning_aoe": {
+		"category": "player",
+		"sounds": [ "mna:impacts/lightning_impact_aoe" ]
+	},
+	"impact_lightning": {
+		"category": "player",
+		"sounds": [ "mna:impacts/lightning_impact" ]
+	},
+	"impact_curse_of_agony": {
+		"category": "player",
+		"sounds": [ "mna:impacts/curse_of_agony" ]
+	},
+	"impact_soul_trap": {
+		"category": "player",
+		"sounds": [ "mna:impacts/soul_trap" ]
+	},
+	
+	"buff_arcane": {
+		"category": "player",
+		"sounds": [ "mna:buffs/buff_arcane" ]
+	},
+	"buff_earth": {
+		"category": "player",
+		"sounds": [ "mna:buffs/buff_earth" ]
+	},
+	"buff_ender": {
+		"category": "player",
+		"sounds": [ "mna:buffs/buff_ender" ]
+	},
+	"buff_fire": {
+		"category": "player",
+		"sounds": [ "mna:buffs/buff_fire" ]
+	},
+	"buff_ice": {
+		"category": "player",
+		"sounds": [ "mna:buffs/buff_ice" ]
+	},
+	"buff_water": {
+		"category": "player",
+		"sounds": [ "mna:buffs/buff_water" ]
+	},
+	"buff_wind": {
+		"category": "player",
+		"sounds": [ "mna:buffs/buff_wind" ]
+	},
+	"buff_blood": {
+		"category": "player",
+		"sounds": [ "mna:buffs/buff_blood" ]
+	},
+	
+	"cast_wind": {
+		"category": "player",
+		"sounds": ["mna:casts/wind_cast"]
+	},
+	"cast_water": {
+		"category": "player",
+		"sounds": ["mna:casts/water_cast"]
+	},
+	"cast_lightning": {
+		"category": "player",
+		"sounds": ["mna:casts/lightning_cast"]
+	},
+	"cast_ice": {
+		"category": "player",
+		"sounds": ["mna:casts/ice_cast"]
+	},
+	"cast_fire": {
+		"category": "player",
+		"sounds": ["mna:casts/fire_cast"]
+	},
+	"cast_ender": {
+		"category": "player",
+		"sounds": ["mna:casts/ender_cast"]
+	},
+	"cast_earth": {
+		"category": "player",
+		"sounds": ["mna:casts/earth_cast"]
+	},
+	"cast_arcane": {
+		"category": "player",
+		"sounds": ["mna:casts/arcane_cast"]
+	},
+	"cast_blood": {
+		"category": "player",
+		"volume": 0.25,
+		"sounds": ["mna:casts/blood_cast"]
+	},
+	"cast_brian": {
+		"category": "player",
+		"sounds": ["mna:casts/cast_brian"]
+	},
+	"cast_brian_2": {
+		"category": "player",
+		"sounds": ["mna:casts/cast_brian_2", "mna:casts/cast_brian_3", "mna:casts/cast_brian_4"]
+	},
+	"cast_kablam": {
+		"category": "player",
+		"volume": 0.75,
+		"sounds": ["mna:casts/impulse_gunpowder"]
+	},
+	
+	"loop_air": {
+		"category": "player",
+		"sounds": ["mna:loops/air"],
+		"stream": true,
+		"volume": 0.65
+	},
+	"loop_ice": {
+		"category": "player",
+		"sounds": ["mna:loops/ice"],
+		"stream": true,
+		"volume": 0.85
+	},
+	"loop_lightning": {
+		"category": "player",
+		"sounds": ["mna:loops/lightning"],
+		"stream": true,
+		"volume": 0.85
+	},
+	"loop_arcane": {
+		"category": "player",
+		"sounds": ["mna:loops/arcane"],
+		"stream": true,
+		"volume": 0.85
+	},
+	"loop_earth": {
+		"category": "player",
+		"sounds": ["mna:loops/earth"],
+		"stream": true,
+		"volume": 0.85
+	},
+	"loop_earth_rumble": {
+		"category": "player",
+		"sounds": ["mna:loops/earth_rumble"],
+		"stream": true,
+		"volume": 0.85
+	},
+	"loop_ender": {
+		"category": "player",
+		"sounds": ["mna:loops/ender"],
+		"stream": true,
+		"volume": 0.85
+	},
+	"loop_fire": {
+		"category": "player",
+		"sounds": ["mna:loops/fire"],
+		"stream": true,
+		"volume": 0.65
+	},
+	"loop_water": {
+		"category": "player",
+		"sounds": ["mna:loops/water"],
+		"stream": true,
+		"volume": 0.65
+	},
+	"loop_manaweaving": {
+		"category": "player",
+		"sounds": ["mna:loops/manaweaving"],
+		"stream": true,
+		"volume": 0.65
+	},
+	"loop_demon_summon": {
+		"category": "player",
+		"sounds": ["mna:loops/demon_summon"],
+		"stream": true,
+		"volume": 0.65
+	},
+	"loop_eldrin_altar": {
+		"category": "blocks",
+		"sounds": ["mna:loops/eldrin_altar"],
+		"stream": true,
+		"volume": 0.35
+	},
+	"loop_shadow_copy": {
+		"category": "player",
+		"sounds": ["mna:loops/shadow_copy"],
+		"stream": true,
+		"volume": 1
+	},	
+	"loop_altar_of_arcana": {
+		"category": "player",
+		"sounds": ["mna:loops/altar_of_arcana"],
+		"stream": true,
+		"volume": 1
+	},
+	"loop_blood": {
+		"category": "player",
+		"sounds": ["mna:loops/blood"],
+		"stream": true,
+		"volume": 1
+	},
+	
+	"event_ritual_started":{
+		"category": "player",
+		"sounds": ["mna:events/ritual_started"]		
+	},
+	"event_ritual_point_appear":{
+		"category": "player",
+		"sounds": ["mna:events/ritual_point_appear"]		
+	},
+	"event_eldrin_altar_complete":{
+		"category": "blocks",
+		"sounds": ["mna:events/eldrin_altar_complete"]		
+	},
+	"event_eldrin_altar_item_inhale":{
+		"category": "blocks",
+		"sounds": ["mna:events/eldrin_altar_item_inhale"]		
+	},
+	"event_magic_unlocked":{
+		"category": "player",
+		"sounds": ["mna:events/magic_unlocked"]		
+	},
+	"event_magic_level_up":{
+		"category": "player",
+		"sounds": ["mna:events/magic_level_up"]		
+	},
+	"event_spell_created":{
+		"category": "player",
+		"sounds": ["mna:events/spell_created"]		
+	},
+	"event_demon_summon_end":{
+		"category": "player",
+		"sounds": ["mna:events/demon_summon_end"]		
+	},
+	"event_demon_summon_channel":{
+		"category": "player",
+		"sounds": ["mna:events/demon_summon_channel"]		
+	},
+	"event_faerie_summon":{
+		"category": "player",
+		"sounds": ["mna:events/faerie_spawn"]		
+	},
+	"event_faerie_blow_kiss":{
+		"category": "player",
+		"sounds": ["mna:events/faerie_blow_kiss"]		
+	},	
+	"event_faerie_giggle":{
+		"category": "player",
+		"sounds": ["mna:events/faerie_giggle"]		
+	},
+	"event_faerie_leave":{
+		"category": "player",
+		"sounds": ["mna:events/faerie_leave"]		
+	},
+	"event_faerie_imbue":{
+		"category": "player",
+		"sounds": ["mna:events/faerie_imbue"]		
+	},
+	"event_ancient_summon":{
+		"category": "player",
+		"sounds": ["mna:events/ancient_summon"]		
+	},
+	"event_ancient_imbue":{
+		"category": "player",
+		"sounds": ["mna:events/ancient_imbue"]		
+	},
+	"event_ancient_imbue_1":{
+		"category": "player",
+		"sounds": ["mna:events/ancient_imbue_1"]		
+	},
+	"event_ancient_imbue_2":{
+		"category": "player",
+		"sounds": ["mna:events/ancient_imbue_2"]		
+	},
+	"event_ancient_imbue_3":{
+		"category": "player",
+		"sounds": ["mna:events/ancient_imbue_3"]		
+	},
+	"event_cold_dark":{
+		"category": "player",
+		"sounds": ["mna:events/cold_dark"]		
+	},
+	"event_faction_raid_demons":{
+		"category": "player",
+		"sounds": ["mna:events/faction_raid_demons"]		
+	},
+	"event_faction_raid_fey":{
+		"category": "player",
+		"sounds": ["mna:events/faction_raid_fey"]		
+	},
+	"event_faction_raid_council":{
+		"category": "player",
+		"sounds": ["mna:events/faction_raid_council"]		
+	},
+	"event_summon_ally_demons":{
+		"category": "player",
+		"sounds": ["mna:events/horn_of_the_demons"]		
+	},
+	"event_summon_ally_fey":{
+		"category": "player",
+		"sounds": ["mna:events/horn_of_the_fey"]		
+	},
+	"event_summon_ally_council":{
+		"category": "player",
+		"sounds": ["mna:events/horn_of_the_council"]		
+	},
+	"event_summon_ally_undead":{
+		"category": "player",
+		"sounds": ["mna:events/horn_of_the_undead"]		
+	},
+	"event_arcane_sentry_charge":{
+		"category": "blocks",
+		"sounds": ["mna:events/arcane_sentry_charge"]		
+	},
+	"event_manaweave_pattern_match":{
+		"category": "blocks",
+		"sounds": ["mna:events/manaweave_pattern_match"]		
+	},	
+	"event_manaweave_craft":{
+		"category": "blocks",
+		"sounds": ["mna:events/manaweave_craft"]		
+	},	
+	"event_iron_bell":{
+		"category": "blocks",
+		"sounds": ["mna:events/iron_bell"]		
+	},
+	"event_meteor_jump":{
+		"category": "players",
+		"sounds": ["mna:events/meteor_jump"]		
+	},
+	"event_demon_armor_sprint_start":{
+		"category": "players",
+		"sounds": ["mna:events/demon_armor_sprint_start"]		
+	},	
+	"event_manaweave_cache_open":{
+		"category": "players",
+		"sounds": ["mna:events/cache_open"]		
+	},	
+	"event_wtfboom":{
+		"category": "players",
+		"sounds": ["mna:events/lmnop"]		
+	},
+	"event_gantry_summon":{
+		"category": "players",
+		"sounds": ["mna:events/construct_gantry_summon"]		
+	},	
+	"event_altar_of_arcana_start":{
+		"category": "players",
+		"sounds": ["mna:events/altar_of_arcana_start"]		
+	},	
+	"event_altar_of_arcana_complete":{
+		"category": "players",
+		"sounds": ["mna:events/altar_of_arcana_complete"]		
+	},
+	"event_saw_cut":{
+		"category": "blocks",
+		"sounds": ["mna:events/saw_cut"]		
+	},	
+	"event_flap":{
+		"category": "players",
+		"sounds": ["mna:events/flap"]		
+	},	
+	
+	
+	"entity_generic_woosh":{
+		"category": "hostile",
+		"sounds": ["mna:entity/generic/woosh"]	
+	},
+	"entity_construct_horn":{
+		"category": "hostile",
+		"sounds": ["mna:entity/construct/horn"]	
+	},
+	"entity_construct_taunt":{
+		"category": "hostile",
+		"sounds": ["mna:entity/construct/taunt_1", "mna:entity/construct/taunt_2", "mna:entity/construct/taunt_3"]	
+	},
+	"entity_construct_spray_generic":{
+		"category": "hostile",
+		"sounds": ["mna:entity/construct/spray_generic"]	
+	},
+	"entity_construct_spray_fire":{
+		"category": "hostile",
+		"sounds": ["mna:entity/construct/spray_fire"]	
+	},
+	"entity_imp_attack":{
+		"category": "hostile",
+		"sounds": ["mna:entity/imp/attack_1"]	
+	},
+	"entity_imp_death":{
+		"category": "hostile",
+		"sounds": ["mna:entity/imp/death"]	
+	},
+	"entity_imp_idle":{
+		"category": "hostile",
+		"sounds": ["mna:entity/imp/idle"]	
+	},
+	"entity_imp_leap":{
+		"category": "hostile",
+		"sounds": ["mna:entity/imp/leap"]	
+	},
+	"entity_hulking_zombie_attack":{
+		"category": "hostile",
+		"sounds": ["mna:entity/hulking_zombie/attack_1", "mna:entity/hulking_zombie/attack_2"]	
+	},
+	"entity_hulking_zombie_death":{
+		"category": "hostile",
+		"sounds": ["mna:entity/hulking_zombie/death"]	
+	},
+	"entity_hulking_zombie_idle":{
+		"category": "hostile",
+		"sounds": ["mna:entity/hulking_zombie/idle_1", "mna:entity/hulking_zombie/idle_2"]	
+	},
+	"entity_hulking_zombie_leap":{
+		"category": "hostile",
+		"sounds": ["mna:entity/hulking_zombie/leap"]	
+	},
+	"entity_hulking_zombie_hurt":{
+		"category": "hostile",
+		"sounds": ["mna:entity/hulking_zombie/hurt_1", "mna:entity/hulking_zombie/hurt_2", "mna:entity/hulking_zombie/hurt_3"]	
+	},
+	"entity_hulking_zombie_roar":{
+		"category": "hostile",
+		"sounds": ["mna:entity/hulking_zombie/roar"]	
+	},
+	"entity_lantern_wraith_death":{
+		"category": "hostile",
+		"sounds": ["mna:entity/lantern_wraith/death"]	
+	},
+	"entity_lantern_wraith_hurt":{
+		"category": "hostile",
+		"sounds": ["mna:entity/lantern_wraith/hit"]	
+	},
+	"entity_lantern_wraith_idle":{
+		"category": "hostile",
+		"sounds": ["mna:entity/lantern_wraith/idle1", "mna:entity/lantern_wraith/idle2", "mna:entity/lantern_wraith/idle3"]	
+	},
+	"entity_pixie_death":{
+		"category": "hostile",
+		"sounds": ["mna:entity/pixie/death"]	
+	},
+	"entity_pixie_hurt":{
+		"category": "hostile",
+		"sounds": ["mna:entity/pixie/hit"]	
+	},
+	"entity_pixie_attack":{
+		"category": "hostile",
+		"sounds": ["mna:entity/pixie/attack"]	
+	},
+	"entity_spellbreaker_rally":{
+		"category": "hostile",
+		"sounds": ["mna:entity/spellbreaker/rally"]	
+	},
+	"entity_spellbreaker_shield_bash":{
+		"category": "hostile",
+		"sounds": ["mna:entity/spellbreaker/shield_bash"]	
+	},
+	"entity_broker_deal":{
+		"category": "hostile",
+		"sounds": ["mna:entity/broker/deal"]	
+	},
+	"entity_spectral_horse_summon":{
+		"category": "hostile",
+		"sounds": ["mna:entity/spectral_horse/summon"]	
+	},
+	"entity_skeleton_assassin_bolo_impact":{
+		"category": "hostile",
+		"sounds": ["mna:entity/skeleton_assassin/bolo_tangle"]	
+	},
+	"entity_skeleton_assassin_bolo_throw":{
+		"category": "hostile",
+		"sounds": ["mna:entity/skeleton_assassin/bolo_throw"]	
+	},
+	"entity_skeleton_assassin_shuriken_impact":{
+		"category": "hostile",
+		"sounds": ["mna:entity/skeleton_assassin/shuriken_impact"]	
+	},
+	"entity_skeleton_assassin_shuriken_throw":{
+		"category": "hostile",
+		"sounds": ["mna:entity/skeleton_assassin/shuriken_throw"]	
+	},
+	"entity_skeleton_assassin_smoke_bomb":{
+		"category": "hostile",
+		"sounds": ["mna:entity/skeleton_assassin/smoke_bomb"]	
+	},
+	"entity_pumpkin_king_attack":{
+		"category": "hostile",
+		"sounds": ["mna:entity/pumpkin_king/attack"]	
+	},
+	"entity_pumpkin_king_death":{
+		"category": "hostile",
+		"sounds": ["mna:entity/pumpkin_king/death"]	
+	},
+	"entity_pumpkin_king_entangle":{
+		"category": "hostile",
+		"sounds": ["mna:entity/pumpkin_king/entangle"]	
+	},
+	"entity_pumpkin_king_hit":{
+		"category": "hostile",
+		"sounds": ["mna:entity/pumpkin_king/hit"]	
+	},
+	"entity_pumpkin_king_idle":{
+		"category": "hostile",
+		"sounds": ["mna:entity/pumpkin_king/idle"]	
+	},
+	"entity_pumpkin_king_incinerate":{
+		"category": "hostile",
+		"sounds": ["mna:entity/pumpkin_king/incinerate"]	
+	},
+	"entity_pumpkin_king_spawn":{
+		"category": "hostile",
+		"sounds": ["mna:entity/pumpkin_king/spawn"]	
+	},
+	"entity_odin_bifrost":{
+		"category": "hostile",
+		"sounds": ["mna:entity/odin/bifrost"]	
+	},
+	"entity_odin_attack":{
+		"category": "hostile",
+		"sounds": ["mna:entity/odin/swing_axe"]	
+	},
+	"entity_odin_draw":{
+		"category": "hostile",
+		"sounds": ["mna:entity/odin/draw_axe"]	
+	},
+	"entity_odin_enrage":{
+		"category": "hostile",
+		"sounds": ["mna:entity/odin/enrage"]	
+	},
+	"entity_odin_hurt":{
+		"category": "hostile",
+		"sounds": ["mna:entity/odin/hit1", "mna:entity/odin/hit2", "mna:entity/odin/hit3"]	
+	},
+	"entity_oink":{
+		"category": "hostile",
+		"sounds": ["mna:entity/oink/oink"]	
+	},
+	"entity_aranai":{
+		"category": "player",
+		"sounds": ["mna:entity/aranai/aranai"]	
+	},
+	"entity_demonlord_attack":{
+		"category": "hostile",
+		"sounds": ["mna:entity/demonlord/attack1", "mna:entity/demonlord/attack2", "mna:entity/demonlord/attack3", "mna:entity/demonlord/attack4"]	
+	},
+	"entity_demonlord_hit":{
+		"category": "hostile",
+		"sounds": ["mna:entity/demonlord/gethit1", "mna:entity/demonlord/gethit2", "mna:entity/demonlord/gethit3", "mna:entity/demonlord/gethit4"]	
+	},
+	"entity_demonlord_idle":{
+		"category": "hostile",
+		"sounds": ["mna:entity/demonlord/idle1", "mna:entity/demonlord/idle2"]	
+	},
+	"entity_demonlord_drawswords":{
+		"category": "hostile",
+		"sounds": ["mna:entity/demonlord/draw_swords"]	
+	},
+	"entity_demonlord_summonstaff":{
+		"category": "hostile",
+		"sounds": ["mna:entity/demonlord/summon_staff"]	
+	},
+	"entity_demonlord_scream":{
+		"category": "hostile",
+		"sounds": ["mna:entity/demonlord/scream"]	
+	},
+	"entity_demonlord_leap":{
+		"category": "hostile",
+		"sounds": ["mna:entity/demonlord/leap"]	
+	},
+	"entity_demonlord_death":{
+		"category": "hostile",
+		"sounds": ["mna:entity/demonlord/death_scream"]	
+	},
+	"entity_lich_attack":{
+		"category": "hostile",
+		"sounds": ["mna:entity/lich/attack1", "mna:entity/lich/attack2", "mna:entity/lich/attack3", "mna:entity/lich/attack4"]	
+	},
+	"entity_lich_hit":{
+		"category": "hostile",
+		"sounds": ["mna:entity/lich/gethit1", "mna:entity/lich/gethit2", "mna:entity/lich/gethit3", "mna:entity/lich/gethit4"]	
+	},
+	"entity_lich_idle":{
+		"category": "hostile",
+		"sounds": ["mna:entity/lich/idle1", "mna:entity/lich/idle2", "mna:entity/lich/idle3", "mna:entity/lich/idle4", "mna:entity/lich/idle5", "mna:entity/lich/idle6"]	
+	},
+	"entity_lich_breathattack":{
+		"category": "hostile",
+		"sounds": ["mna:entity/lich/breath1", "mna:entity/lich/breath2", "mna:entity/lich/breath3", "mna:entity/lich/breath4"]	
+	},
+	"entity_lich_cast":{
+		"category": "hostile",
+		"sounds": ["mna:entity/lich/spell1", "mna:entity/lich/spell2", "mna:entity/lich/spell3", "mna:entity/lich/spell4", "mna:entity/lich/spell5"]	
+	},
+	"entity_lich_death":{
+		"category": "hostile",
+		"sounds": ["mna:entity/lich/death"]	
+	},
+	"entity_lich_summon":{
+		"category": "hostile",
+		"sounds": ["mna:entity/lich/summon"]	
+	},
+	"entity_lich_pwdeath":{
+		"category": "hostile",
+		"sounds": ["mna:entity/lich/pw_death"]	
+	},
+	"entity_wandering_wizard_death":{
+		"category": "neutral",
+		"sounds": ["mna:entity/wandering_wizard/death_1", "mna:entity/wandering_wizard/death_2"]
+	},
+	"entity_wandering_wizard_hit":{
+		"category": "neutral",
+		"sounds": ["mna:entity/wandering_wizard/hit_1", "mna:entity/wandering_wizard/hit_2", "mna:entity/wandering_wizard/hit_3", "mna:entity/wandering_wizard/hit_4"]
+	},
+	"entity_wandering_wizard_idle":{
+		"category": "neutral",
+		"sounds": ["mna:entity/wandering_wizard/idle_1", "mna:entity/wandering_wizard/idle_2", "mna:entity/wandering_wizard/idle_3"]
+	},
+	"entity_wandering_wizard_no":{
+		"category": "neutral",
+		"sounds": ["mna:entity/wandering_wizard/no_1", "mna:entity/wandering_wizard/no_2"]
+	},
+	"entity_wandering_wizard_yes":{
+		"category": "neutral",
+		"sounds": ["mna:entity/wandering_wizard/yes_1", "mna:entity/wandering_wizard/yes_2"]
+	},
+	"entity_chatterer_clack": {
+		"category": "hostile",
+		"sounds": ["mna:entity/chatterer/clack"]	
+	},
+	"entity_bloodgolem_idle": {
+		"category": "hostile",
+		"sounds": ["mna:entity/blood_golem/idle"]	
+	},
+	"entity_bloodgolem_hit": {
+		"category": "hostile",
+		"sounds": ["mna:entity/blood_golem/hit"]	
+	},
+	"entity_bloodgolem_death": {
+		"category": "hostile",
+		"sounds": ["mna:entity/blood_golem/death"]	
+	},
+	"entity_bloodgolem_summon": {
+		"category": "hostile",
+		"sounds": ["mna:entity/blood_golem/summon"]	
+	},
+	"entity_bloodtendril_idle": {
+		"category": "hostile",
+		"sounds": ["mna:entity/blood_tendril/idle"]	
+	},
+	"entity_bloodtendril_death": {
+		"category": "hostile",
+		"sounds": ["mna:entity/blood_tendril/death"]	
+	},
+	"entity_warden_escape": {
+		"category": "hostile",
+		"sounds": ["mna:entity/warden/escape"]	
+	},
+	
+	
+	"gui_page_flip":{
+		"category": "player",
+		"sounds": ["mna:gui/page_flip"]		
+	},
+	"gui_chisel":{
+		"category": "player",
+		"sounds": ["mna:gui/chisel"]		
+	},
+	"gui_pencil_write":{
+		"category": "blocks",
+		"sounds": ["mna:gui/pencil_write"]		
+	},
+	"gui_charcoal_scribble":{
+		"category": "blocks",
+		"sounds": ["mna:gui/charcoal_scribble"]		
+	},
+	"gui_book_open":{
+		"category": "blocks",
+		"sounds": ["mna:gui/book_open"]		
+	},
+	"gui_book_close":{
+		"category": "blocks",
+		"sounds": ["mna:gui/book_close"]		
+	},
+	"gui_pack_open":{
+		"category": "blocks",
+		"sounds": ["mna:gui/pack_open"]		
+	},
+	"gui_pack_close":{
+		"category": "blocks",
+		"sounds": ["mna:gui/pack_close"]		
+	},
+	
+	"music_big_car_theft":{
+		"category": "blocks",
+		"sounds": ["mna:music/bigcartheft_audionautix"]		
+	},
+	
+	"block_fume_bellows":{
+		"category": "blocks",
+		"sounds": ["mna:block/fume_bellows"]
+	}
+}

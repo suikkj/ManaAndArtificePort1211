@@ -1,0 +1,16 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:blink_precision_ring",
+	"tier": 3,
+	"items": [
+		"minecraft:ender_eye",
+		"minecraft:ender_eye",
+		"mna:mote_ender",	
+		"mna:mundane_ring"
+	],
+	"patterns": [
+		"mna:square",
+		"mna:diamond",
+		"mna:inverted_triangle"
+	]
+}

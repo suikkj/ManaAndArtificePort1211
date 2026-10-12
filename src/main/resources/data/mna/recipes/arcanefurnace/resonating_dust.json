@@ -1,0 +1,8 @@
+{
+	"type": "mna:arcane-furnace",
+	"tier": 1,
+	"input": "mna:resonating_lump",
+	"output": "mna:resonating_dust",
+	"outputQuantity": 1,
+	"burnTime": 200
+}

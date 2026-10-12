@@ -1,0 +1,29 @@
+# Blender MTL File: 'collector.blend'
+# Material Count: 3
+
+newmtl CHIMERITE
+map_Kd mna:block/oreblockchimerite
+
+newmtl GLASS_WIND
+map_Kd mna:block/material/eldrin/collector_glass_wind
+
+newmtl GLASS_EARTH
+map_Kd mna:block/material/eldrin/collector_glass_earth
+
+newmtl GLASS_ARCANE
+map_Kd mna:block/material/eldrin/collector_glass_arcane
+
+newmtl GLASS_ENDER
+map_Kd mna:block/material/eldrin/collector_glass_ender
+
+newmtl GLASS_WATER
+map_Kd mna:block/material/eldrin/collector_glass_water
+
+newmtl GLASS_FIRE
+map_Kd mna:block/material/eldrin/collector_glass_fire
+
+newmtl GLASS_INVALID
+map_Kd mna:block/material/eldrin/collector_glass_invalid
+
+newmtl MAIN
+map_Kd mna:block/material/eldrin/collector

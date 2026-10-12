@@ -1,0 +1,20 @@
+{
+	"type": "mna:component",
+	"output": "mna:fortification",
+	"tier": 4,
+	"items":
+	[
+		"diamond",
+		"netherite_ingot",
+		"mna:rune_defense",
+		"damaged_anvil",
+		"mna:greater_mote_earth"		
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/diamond",
+		"mna:manaweave_patterns/slash",
+		"mna:manaweave_patterns/diamond",
+		"mna:manaweave_patterns/backslash"
+	]
+}

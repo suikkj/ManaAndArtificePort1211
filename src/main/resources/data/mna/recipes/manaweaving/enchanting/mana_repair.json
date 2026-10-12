@@ -1,0 +1,17 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 4,
+	"output": "mna:rune_arcane",
+	"enchant": "mna:mana-repair",
+	"magnitude": 1,
+	"items": [		
+		"mna:rune_arcane",
+		"mna:mote_arcane",
+		"mna:healing_poultice"
+	],
+	"patterns": [		
+		"mna:split_triangle",
+		"mna:slash",
+		"mna:triangle"
+	]
+}

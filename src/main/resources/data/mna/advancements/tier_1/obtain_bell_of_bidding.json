@@ -1,0 +1,34 @@
+{
+	"parent": "mna:tier_0/codex_trade",
+	"display": {
+		"icon": {
+			"item": "mna:bell_of_bidding"
+		},
+		"title": {
+			"translate": "mna:tier_1/obtain_bell_of_bidding.title"
+		},
+		"description": {
+			"translate": "mna:tier_1/obtain_bell_of_bidding.description"
+		},
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": false,
+		"hidden": false
+	},
+	"criteria": {
+		"requirement": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": [
+							"mna:bell_of_bidding"
+						]
+					}
+				]
+			}
+		}
+	},
+	"requirements": [
+	]
+}

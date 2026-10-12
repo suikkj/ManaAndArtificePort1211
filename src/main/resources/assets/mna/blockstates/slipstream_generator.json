@@ -1,0 +1,10 @@
+{
+  "variants": {    
+    "facing=east": { "model": "mna:block/slipstream_generator", "x": 90, "y": 90 },
+    "facing=west": { "model": "mna:block/slipstream_generator", "x": 90, "y": 270 },
+    "facing=north": { "model": "mna:block/slipstream_generator", "x": 90 },
+    "facing=south": { "model": "mna:block/slipstream_generator", "x": 90, "y": 180 },
+    "facing=up": { "model": "mna:block/slipstream_generator" },
+    "facing=down": { "model": "mna:block/slipstream_generator", "x": 180 }
+  }
+}

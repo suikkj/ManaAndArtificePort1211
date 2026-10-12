@@ -1,0 +1,23 @@
+{
+	"type": "mna:component",
+	"tier": 4,
+	"output": "mna:cauterize",
+	"items":
+	[
+		"mna:stone_rune_orange",
+		"mna:mote_fire",
+		"mna:superheated_purified_vinteum_ingot",
+		"minecraft:oxeye_daisy",
+		"minecraft:diamond_block",
+		"mna:superheated_purified_vinteum_ingot",
+		"mna:runic_silk",
+		"mna:runic_silk"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/triangle",
+		"mna:manaweave_patterns/hourglass",
+		"mna:manaweave_patterns/diamond",
+		"mna:manaweave_patterns/inverted_triangle"
+	]
+}

@@ -1,0 +1,5 @@
+# Blender MTL File: 'runeforge.blend'
+# Material Count: 1
+
+newmtl RUNEFORGE_PEDESTAL
+map_Kd mna:block/material/pedestal/pedestal_square

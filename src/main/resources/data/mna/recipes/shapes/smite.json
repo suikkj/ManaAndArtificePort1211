@@ -1,0 +1,21 @@
+﻿{
+	"type": "mna:shape",
+	"output": "mna:smite",
+	"tier": 3,
+	"items":
+	[
+		"gravel",
+		"c:sand",
+		"mna:stone_rune_purple",
+		"mna:superheated_purified_vinteum_ingot",
+		"anvil",
+		"mna:all_concrete",
+		"dropper"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/inverted_triangle",
+		"mna:manaweave_patterns/circle",
+		"mna:manaweave_patterns/square"
+	]
+}

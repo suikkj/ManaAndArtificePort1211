@@ -1,0 +1,22 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 4,
+	"output": "mna:rune_water",
+	"enchant": "minecraft:impaling",
+	"magnitude": 3,
+	"items": [
+		"mna:rune_water",
+		"minecraft:arrow",
+		"minecraft:heavy_weighted_pressure_plate",
+		"minecraft:spectral_arrow",	
+		"mna:stone_rune_cyan",
+		"mna:stone_rune_blue",
+		"mna:wakebloom",
+		"mna:wakebloom"
+	],
+	"patterns": [
+		"mna:triangle",
+		"mna:triangle",
+		"mna:triangle"
+	]
+}

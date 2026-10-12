@@ -1,0 +1,19 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:crystal_phylactery",
+	"tier": 3,
+	"items": [
+		"minecraft:egg",
+		"minecraft:lead",		
+		"minecraft:diamond",
+		"mna:mote_ender",
+		"mna:chimerite_gem",
+		"mna:chimerite_gem",
+		"mna:chimerite_gem",
+		"mna:chimerite_gem"		
+	],
+	"patterns": [
+		"mna:circle",		
+		"mna:square"
+	]
+}

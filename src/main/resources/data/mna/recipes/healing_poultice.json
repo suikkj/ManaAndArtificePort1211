@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "mna:ma_flowers"
+    },
+    {
+      "item": "mna:vinteum_dust"
+    },
+    {
+      "tag": "mna:healing_poultice_bases"
+    }
+  ],
+  "result": {
+    "item": "mna:healing_poultice",
+    "count":3
+  }
+}

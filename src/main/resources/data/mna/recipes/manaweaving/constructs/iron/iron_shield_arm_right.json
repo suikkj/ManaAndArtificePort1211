@@ -1,0 +1,19 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:constructs/construct_shield_arm_right_iron",
+	"tier": 3,
+	"items": [
+		"mna:constructs/rune_rod",
+		"mna:rune_defense",
+		"minecraft:iron_ingot",
+		"minecraft:iron_ingot",
+		"minecraft:iron_ingot",
+		"minecraft:shield",
+		"mna:vinteum_dust",
+		"mna:vinteum_dust"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:triangle"
+	]
+}

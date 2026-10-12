@@ -1,0 +1,30 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:constructs/construct_mana_torso_obsidian",
+	"tier": 4,
+	"items": [
+		"mna:constructs/rune_torso",
+		"minecraft:obsidian",
+		"minecraft:obsidian",
+		"minecraft:obsidian",
+		"mna:vinteum_dust",
+		"mna:vinteum_dust",
+		"mna:mote_arcane",
+		"mna:rune_arcane",
+		"mna:mana_resevoir"
+	],
+	"power_requirements": [
+		{
+			"affinity": "WATER",
+			"amount": 1000
+		},
+		{
+			"affinity": "FIRE",
+			"amount": 1000
+		},
+		{
+			"affinity": "ARCANE",
+			"amount": 1000
+		}
+	]
+}

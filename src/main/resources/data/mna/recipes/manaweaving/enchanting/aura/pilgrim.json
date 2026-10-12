@@ -1,0 +1,24 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 3,
+	"output": "mna:rune_aura",
+	"enchant": "mna:aura-pilgrim",
+	"magnitude": 1,
+	"items":
+	[
+		"mna:rune_aura",
+		"mna:mote_air",
+		"mna:mote_earth",
+		"mna:pilgrim_staff",
+		"mna:tarma_root",
+		"mna:cerublossom",
+		"mna:wakebloom",
+		"mna:desert_nova",
+		"mna:aum"		
+	],
+	"patterns":
+	[
+		"mna:diamond",
+		"mna:circle"
+	]
+}

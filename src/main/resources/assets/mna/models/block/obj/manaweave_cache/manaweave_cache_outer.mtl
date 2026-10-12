@@ -1,0 +1,11 @@
+# Blender MTL File: 'manaweave_cache.blend'
+# Material Count: 3
+
+newmtl ARCANE_BI
+map_Kd mna:block/artifice/decoration/chimerite_arcane_stone_straight
+
+newmtl ARCANE_TRI
+map_Kd mna:block/artifice/decoration/chimerite_arcane_stone_t
+
+newmtl CHIMERITE
+map_Kd mna:block/oreblockchimerite

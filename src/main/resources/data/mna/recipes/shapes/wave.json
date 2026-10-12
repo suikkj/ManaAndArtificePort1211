@@ -1,0 +1,22 @@
+{
+	"type": "mna:shape",
+	"tier": 4,
+	"output": "mna:wave",
+	"items":
+	[
+		"mna:vinteum_dust",
+		"mna:rune_marking",
+		"tnt_minecart",
+		"mna:any_coral",
+		"tnt_minecart",
+		"mna:any_coral",
+		"mna:rune_marking",
+		"mna:vinteum_dust"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/triangle",
+		"mna:manaweave_patterns/square",
+		"mna:manaweave_patterns/triangle"
+	]
+}

@@ -1,0 +1,16 @@
+{
+	"type": "mna:component",
+	"tier": 3,
+	"output": "mna:mind_vision",
+	"items":
+	[
+		"mna:vinteum_dust",
+		"mna:vinteum_dust",		
+		"minecraft:ender_eye"
+	],
+	"patterns":
+	[		
+		"mna:manaweave_patterns/circle",
+		"mna:manaweave_patterns/circle"
+	]
+}

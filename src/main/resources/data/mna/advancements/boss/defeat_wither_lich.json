@@ -1,0 +1,27 @@
+{
+	"parent": "mna:root",
+	"display": {
+		"icon": {
+			"item": "mna:arcane_crown"
+		},
+		"title": {
+			"translate": "mna:boss/defeat_wither_lich.title"
+		},
+		"description": {
+			"translate": "mna:boss/defeat_wither_lich.description"
+		},
+		"frame": "challenge",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": true
+	},
+	"criteria": {
+		"boss": {
+			"trigger": "mna:defeat_boss",
+			"conditions": {
+				"entityType": "mna:wither_lich"
+			}
+		}
+	},
+	"requirements": []
+}

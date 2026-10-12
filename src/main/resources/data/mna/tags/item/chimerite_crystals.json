@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [  	    
+    "mna:chimerite_crystal_black",
+    "mna:chimerite_crystal_blue",
+    "mna:chimerite_crystal_brown",
+    "mna:chimerite_crystal_cyan",
+    "mna:chimerite_crystal_gray",
+    "mna:chimerite_crystal_green",
+    "mna:chimerite_crystal_light_blue",
+    "mna:chimerite_crystal_light_gray",
+    "mna:chimerite_crystal_lime",
+    "mna:chimerite_crystal_magenta",
+    "mna:chimerite_crystal_orange",
+    "mna:chimerite_crystal_pink",
+    "mna:chimerite_crystal_purple",
+    "mna:chimerite_crystal_red",
+    "mna:chimerite_crystal_white",
+    "mna:chimerite_crystal_yellow"
+  ]
+}

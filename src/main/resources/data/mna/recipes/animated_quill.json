@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "feather"
+    },
+    {
+      "item": "mna:transmuted_silver"
+    },
+    {
+      "item": "mna:animus_dust"
+    }
+  ],
+  "result": {
+    "item": "mna:animated_quill"
+  }
+}

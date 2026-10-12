@@ -1,0 +1,17 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:eldrin_conduit_arcane",
+	"tier": 4,
+	"items": [
+		"mna:mote_ender",
+		"mna:lesser_eldrin_conduit_arcane",
+		"mna:chimerite_gem",
+		"mna:decoration/chimerite_arcane_stone"
+	],
+	"patterns": [
+		"mna:knot",
+		"mna:knot2",
+		"mna:knot3",
+		"mna:knot4"
+	]
+}

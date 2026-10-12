@@ -1,0 +1,18 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:constructs/construct_caster_arm_right_wood",
+	"tier": 2,
+	"items": [
+		"mna:constructs/rune_rod",
+		"mna:staves",
+		"minecraft:logs",
+		"minecraft:logs",
+		"minecraft:logs",
+		"mna:vinteum_dust",
+		"mna:vinteum_dust"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:triangle"
+	]
+}

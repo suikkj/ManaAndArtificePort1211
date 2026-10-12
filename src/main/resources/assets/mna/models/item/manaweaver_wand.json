@@ -1,0 +1,27 @@
+{
+  	"parent": "forge:item/default",
+  	"loader": "forge:composite",
+  	"children": {
+    	"crystal": {
+      		"loader": "forge:obj",
+      		"automatic_culling": true,
+	  		"shade_quads": true,
+	  		"flip_v": true,
+	  		"emissive_ambient": false,
+      		"model": "mna:models/item/obj/manaweaving/manaweaving_basic.obj"
+    	}
+  	},
+	"overrides": [
+        {
+            "predicate": {
+                "custom_model_data": 1
+            },
+            "model": "mna:item/manaweaver_wand_linked"
+        }
+    ],
+  	"display": {
+		"gui": {
+			"rotation": [0, 0, -45]
+		}
+	}
+}

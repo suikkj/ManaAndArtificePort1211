@@ -1,0 +1,17 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 2,
+	"output": "mna:rune_ender",
+	"enchant": "mna:beheading",
+	"magnitude": 1,
+	"items": [
+		"mna:rune_marking",
+		"minecraft:grindstone",
+		"mna:stone_rune_red",
+		"minecraft:stone_sword"
+	],
+	"patterns": [
+		"mna:square",
+		"mna:triangle"
+	]
+}

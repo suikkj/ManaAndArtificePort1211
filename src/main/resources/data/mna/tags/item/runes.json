@@ -1,0 +1,16 @@
+{
+	"replace": false,
+	"values": [
+		"mna:rune_ritual_metal",
+		"mna:rune_defense",
+		"mna:rune_aura",
+		"mna:rune_projection",
+		"mna:rune_marking",
+		"mna:rune_air",
+		"mna:rune_earth",
+		"mna:rune_water",
+		"mna:rune_fire",
+		"mna:rune_ender",
+		"mna:rune_arcane"
+	]
+}

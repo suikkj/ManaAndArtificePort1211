@@ -1,0 +1,22 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:greater_mote_water",
+	"tier": 4,
+	"items": [
+		"mna:mote_water",
+		"minecraft:prismarine_shard",
+		"minecraft:prismarine_crystals",
+		"minecraft:sea_pickle",
+		"minecraft:sea_pickle"
+	],
+	"power_requirements": [
+		{
+			"affinity": "WATER",
+			"amount": 1440
+		}
+	],
+	"colors": [
+		1449416,
+		1627054
+	]
+}

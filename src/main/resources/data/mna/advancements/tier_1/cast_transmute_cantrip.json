@@ -1,0 +1,27 @@
+{
+	"parent": "mna:tier_0/codex_trade",
+	"display": {
+		"icon": {
+			"item": "mna:ritual_focus_minor"
+		},
+		"title": {
+			"translate": "mna:tier_1/cast_transmute_cantrip.title"
+		},
+		"description": {
+			"translate": "mna:tier_1/cast_transmute_cantrip.description"
+		},
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": false,
+		"hidden": false
+	},
+	"criteria": {
+		"cast_cantrip": {
+			"trigger": "mna:cast_cantrip",
+			"conditions": {
+				"cantripID": "mna:transmute"	
+			}
+		}
+	},
+	"requirements": []
+}

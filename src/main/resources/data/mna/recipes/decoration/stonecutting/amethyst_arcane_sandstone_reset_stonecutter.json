@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "tag": "mna:stonecutter_resettable_amethyst_arcane_sandstones"
+  },
+  "result": "mna:decoration/amethyst_arcane_sandstone",
+  "count": 1
+}

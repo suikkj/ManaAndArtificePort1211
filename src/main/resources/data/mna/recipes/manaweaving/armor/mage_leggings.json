@@ -1,0 +1,16 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:mage_leggings",
+	"tier": 2,
+	"items": [
+		"mna:rune_defense",
+		"mna:infused_thread",
+		"mna:infused_silk",
+		"mna:infused_silk",
+		"mna:infused_silk"
+	],
+	"patterns": [
+		"mna:inverted_triangle",
+		"mna:diamond"
+	]
+}

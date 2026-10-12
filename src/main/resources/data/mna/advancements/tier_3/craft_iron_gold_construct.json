@@ -1,0 +1,30 @@
+{
+	"parent": "mna:tier_2/advance_tier_3",
+	"display": {
+		"icon": {
+			"item": "mna:constructs/construct_basic_head_gold"
+		},
+		"title": {
+			"translate": "mna:tier_3/craft_iron_gold_construct.title"
+		},
+		"description": {
+			"translate": "mna:tier_3/craft_iron_gold_construct.description"
+		},
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": false,
+		"hidden": false
+	},
+	"criteria": {
+		"wood_or_stone": {
+			"trigger": "mna:summon_construct",
+			"conditions": {
+				"construction": {
+					"numMaterialsForTier": {
+						"tier_3": 3
+					}
+				}
+			}
+		}
+	}
+}

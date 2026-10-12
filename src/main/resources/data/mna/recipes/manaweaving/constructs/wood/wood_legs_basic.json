@@ -1,0 +1,17 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:constructs/construct_basic_legs_wood",
+	"tier": 2,
+	"items": [		
+		"minecraft:logs",
+		"minecraft:stick",
+		"minecraft:stick",
+		"mna:vinteum_dust",
+		"mna:vinteum_dust"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:square",
+		"mna:diamond"
+	]
+}

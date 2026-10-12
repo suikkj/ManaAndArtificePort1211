@@ -1,0 +1,27 @@
+{
+	"parent": "mna:tier_1/advance_tier_2",
+	"display": {
+		"icon": {
+			"item": "mna:spell"
+		},
+		"title": {
+			"translate": "mna:tier_2/advance_tier_3.title"
+		},
+		"description": {
+			"translate": "mna:tier_2/advance_tier_3.description"
+		},
+		"frame": "challenge",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": false
+	},
+	"criteria": {
+		"tier": {
+			"trigger": "mna:tier",
+			"conditions": {
+				"tier": 3	
+			}
+		}
+	},
+	"requirements": []
+}

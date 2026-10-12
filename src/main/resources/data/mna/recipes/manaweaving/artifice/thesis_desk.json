@@ -1,0 +1,20 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:thesis_desk",
+	"tier": 4,
+	"items": [
+		"mna:basic_table",
+		"mna:animated_quill",
+		"minecraft:lectern",
+		"mna:vellum",
+		"mna:transmuted_silver",
+		"mna:transmuted_silver",
+		"mna:transmuted_silver"
+	],
+	"patterns": [
+		"mna:slash",
+		"mna:knot",
+		"mna:backslash",
+		"mna:star"
+	]
+}

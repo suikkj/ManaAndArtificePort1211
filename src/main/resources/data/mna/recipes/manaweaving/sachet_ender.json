@@ -1,0 +1,16 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 2,
+	"output": "mna:sachet_ender",
+	"quantity": 2,
+	"items": [
+		"minecraft:pumpkin_seeds",
+		"minecraft:soul_sand",
+		"minecraft:soul_torch",
+		"minecraft:glistering_melon_slice",
+		"mna:vinteum_dust"
+	],
+	"patterns": [
+		"mna:circle"	
+	]
+}

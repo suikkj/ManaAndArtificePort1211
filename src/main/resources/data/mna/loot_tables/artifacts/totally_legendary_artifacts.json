@@ -1,0 +1,19 @@
+{
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "mna:spell",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "mna:random_joke_spell"
+						}
+					]
+				}
+			]
+		}
+	]
+}

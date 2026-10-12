@@ -1,0 +1,15 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 1,
+	"output": "mna:bangle",
+	"copy_nbt": true,
+	"items":
+	[
+		"mna:bangle",
+		"mna:spell"
+	],
+	"patterns":
+	[
+		"mna:circle"		
+	]
+}

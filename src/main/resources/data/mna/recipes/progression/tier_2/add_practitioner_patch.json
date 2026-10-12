@@ -1,0 +1,5 @@
+{
+  "type": "mna:progression-condition",
+  "advancement": "mna:tier_2/add_practitioner_patch",
+  "tier": 2
+}

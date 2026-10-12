@@ -1,0 +1,15 @@
+{
+	"type": "mna:component",
+	"tier": 1,
+	"output": "mna:splash",
+	"items":
+	[
+		"mna:stone_rune_light_blue",
+		"minecraft:water_bucket",
+		"minecraft:potion"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/circle"
+	]
+}

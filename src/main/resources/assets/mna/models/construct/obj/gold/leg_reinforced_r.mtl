@@ -1,0 +1,8 @@
+# Blender MTL File: 'constructs.blend'
+# Material Count: 2
+
+newmtl CIRCUITRY
+map_Kd mna:entity/animated_construct/circuitry
+
+newmtl MAIN
+map_Kd mna:entity/animated_construct/gold

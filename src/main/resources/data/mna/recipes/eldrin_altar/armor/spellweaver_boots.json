@@ -1,0 +1,28 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:council_armor_boots",
+	"tier": 5,
+	"requiredFaction": "mna:council",
+	"items": [
+		"mna:mage_boots",
+		"minecraft:chainmail_boots",
+		"mna:greater_mote_arcane",
+		"mna:rune_arcane",
+		"mna:runic_silk",
+		"mna:infused_thread"
+	],
+	"power_requirements": [
+		{
+			"affinity": "ARCANE",
+			"amount": 2750
+		},
+		{
+			"affinity": "WIND",
+			"amount": 1500
+		}
+	],
+	"colors": [
+		6232189,
+		5080527
+	]
+}

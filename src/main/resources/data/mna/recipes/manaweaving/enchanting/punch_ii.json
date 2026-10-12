@@ -1,0 +1,22 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 4,
+	"output": "mna:rune_air",
+	"enchant": "minecraft:punch",
+	"magnitude": 2,
+	"items": [
+		"mna:rune_air",
+		"minecraft:tnt",
+		"minecraft:redstone_torch",
+		"minecraft:tnt",
+		"minecraft:tnt",
+		"minecraft:arrow",
+		"minecraft:bow",
+		"mna:arcane_ash",
+		"mna:arcane_ash"	
+	],
+	"patterns": [
+		"mna:manaweave_patterns/triangle",
+    	"mna:manaweave_patterns/split_triangle"
+	]
+}

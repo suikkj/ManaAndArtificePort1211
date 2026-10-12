@@ -1,0 +1,18 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 5,
+	"output": "mna:rune_arcane",
+	"enchant": "mna:duration_modifier",
+	"magnitude": 4,
+	"items": [
+		"mna:rune_arcane",
+		"minecraft:redstone",		
+		"mna:redstone_trigger",
+		"mna:mote_arcane",
+		"minecraft:dragon_breath"
+	],
+	"patterns": [
+		"mna:triangle",
+		"mna:knot3"
+	]
+}

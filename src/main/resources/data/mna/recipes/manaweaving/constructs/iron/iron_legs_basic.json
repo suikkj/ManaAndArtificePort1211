@@ -1,0 +1,20 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:constructs/construct_basic_legs_iron",
+	"tier": 3,
+	"items": [
+		"mna:constructs/rune_hips",
+		"mna:constructs/rune_rod",
+		"mna:constructs/rune_rod",
+		"minecraft:iron_ingot",
+		"minecraft:iron_ingot",
+		"minecraft:iron_ingot",
+		"mna:vinteum_dust",
+		"mna:vinteum_dust"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:square",
+		"mna:diamond"
+	]
+}

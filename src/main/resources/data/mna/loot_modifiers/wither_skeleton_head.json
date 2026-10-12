@@ -1,0 +1,7 @@
+{
+  "type":"mna:beheading",
+  "conditions": [],
+  "chancePerLevel": 0.05,
+  "mobType": "minecraft:wither_skeleton",
+  "head": "minecraft:wither_skeleton_skull"
+}

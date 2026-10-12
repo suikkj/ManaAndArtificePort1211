@@ -1,0 +1,18 @@
+{
+	"pools": [
+		{
+			"rolls": {
+				"min": 4,
+				"max": 8
+			},
+			"entries": [
+				{
+					"type": "minecraft:tag",
+					"weight": 10,
+					"name": "mna:constructs/adventure_end_common",
+					"expand": true
+				}
+			]
+		}
+	]
+}

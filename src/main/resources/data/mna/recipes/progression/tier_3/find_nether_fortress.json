@@ -1,0 +1,6 @@
+{
+  "type": "mna:progression-condition",
+  "advancement": "minecraft:nether/find_fortress",
+  "description": "advancements.nether.find_fortress.description",
+  "tier": 3
+}

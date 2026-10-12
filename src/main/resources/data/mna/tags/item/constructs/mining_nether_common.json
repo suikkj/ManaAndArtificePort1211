@@ -1,0 +1,9 @@
+﻿{
+  "replace": false,
+  "values": [
+  	"#c:netherrack",
+    "#c:nuggets/gold",
+    "#c:gems/quartz",
+    "minecraft:glowstone_dust"
+  ]
+}

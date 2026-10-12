@@ -1,0 +1,18 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 3,
+	"output": "mna:rune_earth",
+	"enchant": "minecraft:blast_protection",
+	"magnitude": 1,
+	"items": [
+		"minecraft:gunpowder",
+		"mna:rune_earth",
+		"mna:vinteum_dust",
+		"mna:desert_nova",
+		"minecraft:lapis_lazuli"
+	],
+	"patterns": [
+		"mna:knot3",
+		"mna:square"
+	]
+}

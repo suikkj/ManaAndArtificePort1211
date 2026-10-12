@@ -1,0 +1,21 @@
+﻿{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:modifier_book",
+	"tier": 2,
+	"items": [
+		"mna:vellum",
+		"mna:vellum",				
+		"minecraft:leather",
+		"minecraft:leather",
+		"mna:infused_thread",
+		"c:dyes/red",
+		"mna:vinteum_dust"
+	],
+	"patterns": [
+		"mna:square",
+		"mna:knot2",
+		"mna:circle",
+		"mna:knot4"		
+	]
+}
+

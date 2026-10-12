@@ -1,0 +1,19 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:spell_infusion",
+	"tier": 3,
+	"items": [
+		"mna:basic_table",
+		"mna:wizard_chalk",
+		"minecraft:bowl",
+		"minecraft:bowl",
+		"mna:animus_dust",
+		"minecraft:armor_stand"		
+	],
+	"patterns": [		
+		"mna:slash",
+		"mna:knot3",
+		"mna:slash",
+		"mna:split_triangle"
+	]
+}

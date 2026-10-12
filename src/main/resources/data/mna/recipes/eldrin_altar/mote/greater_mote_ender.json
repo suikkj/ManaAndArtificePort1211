@@ -1,0 +1,22 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:greater_mote_ender",
+	"tier": 4,
+	"items": [
+		"mna:mote_ender",
+		"minecraft:ender_pearl",
+		"minecraft:ender_pearl",
+		"mna:resonating_dust",
+		"mna:resonating_dust"
+	],
+	"power_requirements": [
+		{
+			"affinity": "ENDER",
+			"amount": 1440
+		}
+	],
+	"colors": [
+		3409493,
+		1706278
+	]
+}

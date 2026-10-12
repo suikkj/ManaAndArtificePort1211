@@ -1,0 +1,27 @@
+{
+	"parent": "mna:tier_1/advance_tier_2",
+	"display": {
+		"icon": {
+			"item": "mna:improvised_manaweaver_wand"
+		},
+		"title": {
+			"translate": "mna:tier_2/cast_t2_cantrip.title"
+		},
+		"description": {
+			"translate": "mna:tier_2/cast_t2_cantrip.description"
+		},
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": false,
+		"hidden": false
+	},
+	"criteria": {
+		"cast_cantrip": {
+			"trigger": "mna:cast_cantrip",
+			"conditions": {
+				"tier": 2	
+			}
+		}
+	},
+	"requirements": []
+}

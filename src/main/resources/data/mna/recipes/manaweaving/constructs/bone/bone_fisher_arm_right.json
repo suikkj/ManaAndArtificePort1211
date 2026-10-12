@@ -1,0 +1,19 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:constructs/construct_fishing_rod_right_bone",
+	"tier": 3,
+	"requiredFaction": "mna:undead",
+	"items": [
+		"mna:constructs/rune_rod",
+		"minecraft:fishing_rod",
+		"minecraft:bone",
+		"minecraft:bone",
+		"minecraft:bone",
+		"mna:vinteum_dust",
+		"mna:vinteum_dust"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:triangle"
+	]
+}

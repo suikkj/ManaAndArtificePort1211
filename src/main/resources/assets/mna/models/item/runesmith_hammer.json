@@ -1,0 +1,42 @@
+{
+	"parent": "forge:item/default",
+  	"loader": "forge:composite",
+  	"children": {
+    	"crystal": {
+      		"loader": "forge:obj",
+      		"automatic_culling": true,
+	  		"shade_quads": true,
+	  		"flip_v": true,
+	  		"emissive_ambient": false,
+      		"model": "mna:models/item/obj/runesmith_tools/runesmithing_hammer.obj"
+    	}
+  	},
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, 0.1, 0],
+			"rotation": [0,-90,0]
+		},
+		"thirdperson_lefthand": {
+			"translation": [0, 0.1, 0],
+			"rotation": [0,90,0]
+		},		
+		"firstperson_righthand": {			
+			"rotation": [-25, -90, 0]
+		},
+		"firstperson_lefthand": {
+			"rotation": [-25, 90, 0]
+		},
+		"ground": {
+			"scale": [0.6, 0.6, 0.6],
+			"translation": [0, 2, 0]
+		},
+		"gui": {
+			"rotation": [0, 0, 41],
+			"translation": [-1, 1, 0]
+		},
+		"fixed": {
+			"rotation": [0, 0, 41],
+			"translation": [-1, 1, 0]
+		}
+	}
+}

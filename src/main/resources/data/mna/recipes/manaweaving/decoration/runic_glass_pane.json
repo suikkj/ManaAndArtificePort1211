@@ -1,0 +1,17 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:decoration/runic_glass_pane",
+	"quantity": 8,
+	"tier": 1,
+	"items": [
+		"mna:stone_rune_blank",
+		"mna:decoration/arcane_stone",
+		"minecraft:glass",
+		"minecraft:glass",
+		"minecraft:glass"
+	],
+	"patterns": [
+		"mna:circle",
+		"mna:square"
+	]
+}

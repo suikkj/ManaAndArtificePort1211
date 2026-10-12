@@ -1,0 +1,18 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 1,
+	"output": "minecraft:leather",
+	"quantity": 3,		
+	"items": [
+		"minecraft:rotten_flesh",
+		"minecraft:rotten_flesh",
+		"minecraft:rotten_flesh",
+		"minecraft:rotten_flesh",
+		"minecraft:rotten_flesh",
+		"minecraft:rotten_flesh",
+		"mna:bone_ash"
+	],
+	"patterns": [
+		"mna:circle"
+	]
+}

@@ -1,0 +1,48 @@
+{
+	"pools": [
+		{
+			"rolls": {
+				"min": 1,
+				"max": 5
+			},
+			"entries": [
+				{
+					"type": "minecraft:tag",
+					"weight": 10,
+					"name": "mna:constructs/mining_overworld_common",
+					"expand": true,
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": {
+								"min": 1,
+								"max": 5
+							}
+						}
+					]
+				},
+				{
+					"type": "minecraft:tag",
+					"weight": 4,
+					"name": "mna:constructs/mining_overworld_rare",
+					"expand": true,
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": {
+								"min": 1,
+								"max": 2
+							}
+						}
+					],
+					"conditions": [
+						{
+							"condition": "minecraft:random_chance",
+							"chance": 0.2
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+  	"mna:mark_of_the_nether",
+   	"mna:mark_of_the_undead",
+  
+    "minecraft:gold_nugget",
+    "minecraft:blaze_powder",
+    "minecraft:blaze_rod",
+    "minecraft:crossbow",
+    "minecraft:porkchop",
+    "minecraft:rotten_flesh",
+    "minecraft:book",
+    "minecraft:crimson_fungus",
+    "minecraft:warped_fungus",
+    "minecraft:crimson_roots",
+    "minecraft:warped_roots",
+    "minecraft:nether_sprouts",
+    "minecraft:weeping_vines",
+    "minecraft:twisting_vines"  
+  ]
+}

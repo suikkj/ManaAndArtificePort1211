@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "mna:decoration/chimerite_arcane_stone"
+  },
+  "result": "mna:decoration/chimerite_arcane_stone_t",
+  "count": 1
+}

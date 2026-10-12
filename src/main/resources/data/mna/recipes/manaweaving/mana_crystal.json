@@ -1,0 +1,26 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": {
+		"item": "mna:mana_crystal"
+	},
+	"tier": 2,
+	"items": [		
+		"mna:mote_arcane",
+		"mna:mana_crystal_fragment",
+		"mna:mana_crystal_fragment",
+		"mna:mana_crystal_fragment",
+		"mna:mana_crystal_fragment",
+		"mna:mana_crystal_fragment",
+		"mna:mana_crystal_fragment",
+		"mna:mana_crystal_fragment",
+		"mna:mana_crystal_fragment"		
+	],
+	"patterns": [
+		"mna:circle",
+		"mna:diamond",
+		"mna:square",
+		"mna:diamond",
+		"mna:circle",
+		"mna:square"
+	]
+}

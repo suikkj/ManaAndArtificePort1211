@@ -1,0 +1,16 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 2,
+	"output": "mna:rune_arcane",
+	"enchant": "mna:duration_modifier",
+	"magnitude": 1,
+	"items": [
+		"mna:rune_aura",
+		"minecraft:redstone",		
+		"mna:redstone_trigger"
+	],
+	"patterns": [
+		"mna:triangle",
+		"mna:knot3"
+	]
+}

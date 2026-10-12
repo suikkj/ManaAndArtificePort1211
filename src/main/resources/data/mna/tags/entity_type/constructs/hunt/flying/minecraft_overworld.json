@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+  	"minecraft:allay",
+  	"minecraft:bat",
+  	"minecraft:bee",
+  	"minecraft:parrot",
+  	"minecraft:phantom",
+  	"mna:chatterer",
+  	"mna:living_ward",
+  	"mna:pixie"
+  ]
+}

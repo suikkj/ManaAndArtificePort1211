@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#R#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "mna:decoration/runic_glass"
+    },
+    "R": {
+      "item": "mna:stone_rune_magenta"
+    }
+  },
+  "result": {
+    "item": "mna:decoration/runic_glass_magenta",
+    "count": 8
+  }
+}

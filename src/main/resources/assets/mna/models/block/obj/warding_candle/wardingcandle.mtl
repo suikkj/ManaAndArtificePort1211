@@ -1,0 +1,5 @@
+# Blender MTL File: 'wardingcandle.blend'
+# Material Count: 1
+
+newmtl MAIN
+map_Kd mna:block/artifice/warding_candle

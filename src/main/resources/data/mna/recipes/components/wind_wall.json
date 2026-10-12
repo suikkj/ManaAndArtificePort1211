@@ -1,0 +1,20 @@
+{
+	"type": "mna:component",
+	"tier": 4,
+	"output": "mna:wind_wall",
+	"items":
+	[
+		"mna:decoration/chimerite_arcane_sandstone_wall",
+		"mna:decoration/chimerite_arcane_stone_wall",
+		"mna:decoration/vinteum_arcane_sandstone_wall",
+		"mna:decoration/vinteum_arcane_stone_wall",
+		"mna:decoration/arcane_stone_wall",
+		"mna:decoration/arcane_sandstone_wall",
+		"mna:greater_mote_air"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/inverted_triangle",
+		"mna:manaweave_patterns/hourglass"
+	]
+}

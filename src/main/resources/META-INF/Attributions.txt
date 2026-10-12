@@ -1,0 +1,17 @@
+The following textures used the copper ingot texture created by Daniel Amberson for the Create project as a pixel layout guide:
+ • Vinteum Ingot
+ • Purified Vinteum Ingot
+ • Superheated Vinteum Ingot
+ • Superheated Purified Vinteum Ingot
+ 
+ The following models were inspired by the amazing work done by Rafinha_sw:
+ • Chimerite Crystals
+ 
+ The following music is courtesy of Audionautix, licensed under CC-BY:
+ Big Car Theft (https://www.youtube.com/watch?v=FdeuheTAbhs) aka Construct Dance Mix
+ 
+ The following sound is courtesy of BusError, licensed under Attribution 4.0
+ Shadow Copy (https://freesound.org/people/BusError/sounds/501259/)
+ 
+ Warden Escape sounds courtesy of Arcana23, licensed under Attribution NonCommercial 4.0
+ knicholascarlson.com

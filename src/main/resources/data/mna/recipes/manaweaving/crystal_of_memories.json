@@ -1,0 +1,15 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:crystal_of_memories",
+	"tier": 2,
+	"items": [		
+		"mna:vinteum_dust",
+		"minecraft:emerald",
+		"mna:chimerite_gem"		
+	],
+	"patterns": [
+		"mna:diamond",		
+		"mna:knot",
+		"mna:knot3"
+	]
+}

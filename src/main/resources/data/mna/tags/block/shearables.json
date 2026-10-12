@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+  	"minecraft:pumpkin",
+  	"minecraft:beehive",
+  	"minecraft:bee_nest",
+  	"minecraft:vine",
+  	"minecraft:weeping_vines",
+  	"minecraft:twisting_vines",
+  	"minecraft:glow_lichen"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+	"replace": false,
+	"values": [
+		"mna:warding_amulet",
+		"mna:battlemage_amulet",
+		"mna:enderguard_amulet",
+		"mna:witherguard_amulet",
+		"mna:projectile_amulet",
+		"mna:crit_immune",
+		"mna:bound_charm"
+	]
+}

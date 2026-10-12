@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "mna:block/artifice/decoration/redstone_arcane_sandstone",
+    "top": "mna:block/artifice/decoration/redstone_arcane_sandstone",
+    "side": "mna:block/artifice/decoration/redstone_arcane_sandstone"
+  }
+}

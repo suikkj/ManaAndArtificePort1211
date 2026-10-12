@@ -1,0 +1,19 @@
+{
+	"type": "mna:component",
+	"tier": 5,
+	"output": "mna:absorption",
+	"items":
+	[
+		"mna:stone_rune_brown",
+		"minecraft:soul_lantern",
+		"minecraft:totem_of_undying",
+		"mna:mote_earth",
+		"mna:aum"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/circle",
+		"mna:manaweave_patterns/infinity",
+		"mna:manaweave_patterns/square"		
+	]
+}

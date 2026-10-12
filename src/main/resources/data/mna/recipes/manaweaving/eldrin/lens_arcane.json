@@ -1,0 +1,22 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:refraction_lens_arcane",
+	"tier": 4,
+	"items": [
+		"mna:purified_vinteum_ingot",
+		"minecraft:magenta_stained_glass",
+		"mna:purified_vinteum_ingot",
+		"minecraft:magenta_stained_glass",		
+		"mna:mote_arcane",
+		"mna:purified_vinteum_ingot",
+		"minecraft:magenta_stained_glass",
+		"mna:purified_vinteum_ingot",
+		"minecraft:magenta_stained_glass"
+	],
+	"patterns": [
+		"mna:knot",
+		"mna:knot2",
+		"mna:knot3",
+		"mna:knot4"
+	]
+}

@@ -1,0 +1,26 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:pylon/levitate",
+	"tier": 4,
+	"items": [
+		"mna:rune_aura",
+		"mna:rune_air",
+		"mna:rune_air",
+		"mna:rune_ritual_metal",
+		"mna:rune_ritual_metal",
+		"mna:rune_ritual_metal",
+		"mna:pylon/inert",
+		"mna:tarma_root",
+		"mna:cloud_in_a_bottle"
+	],
+	"power_requirements": [
+		{
+			"affinity": "WIND",
+			"amount": 1750
+		}
+	],
+	"colors": [		
+		10564021,
+		16238591
+	]
+}

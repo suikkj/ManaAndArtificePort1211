@@ -1,0 +1,26 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:projectile_amulet",
+	"tier": 4,
+	"items": [
+		"mna:mundane_amulet",
+		"mna:chimerite_gem",
+		"mna:chimerite_gem",		
+		"minecraft:amethyst_shard",
+		"minecraft:amethyst_shard",
+		"mna:mote_air",
+		"mna:mote_earth",
+		"mna:mote_water",
+		"mna:mote_fire"
+	],
+	"power_requirements": [
+		{
+			"affinity": "ENDER",
+			"amount": 1250
+		},
+		{
+			"affinity": "ARCANE",
+			"amount": 1250
+		}
+	]
+}

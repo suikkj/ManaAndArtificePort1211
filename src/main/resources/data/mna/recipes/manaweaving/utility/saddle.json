@@ -1,0 +1,17 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 3,
+	"output": "minecraft:saddle",
+	"quantity": 1,		
+	"items": [
+		"minecraft:leather",
+		"minecraft:leather",
+		"minecraft:leather",
+		"minecraft:string",
+		"mna:belt_buckle",
+		"mna:belt_buckle"
+	],
+	"patterns": [
+		"mna:triangle"
+	]
+}

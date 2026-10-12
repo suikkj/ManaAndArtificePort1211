@@ -1,0 +1,5 @@
+{
+  "type": "mna:progression-condition",
+  "advancement": "mna:tier_1/assign_delegation_station",
+  "tier": 1
+}

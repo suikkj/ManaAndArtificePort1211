@@ -1,0 +1,31 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:pylon/levitate_2",
+	"tier": 5,
+	"items": [
+		"mna:rune_aura",
+		"mna:rune_air",
+		"mna:rune_earth",
+		"mna:rune_ritual_metal",
+		"mna:rune_ritual_metal",
+		"mna:rune_ritual_metal",
+		"mna:pylon/inert",
+		"minecraft:dragon_breath",
+		"mna:constructs/construct_rocket_legs_diamond"
+	],
+	"power_requirements": [
+		{
+			"affinity": "WIND",
+			"amount": 10000
+		},
+		{
+			"affinity": "EARTH",
+			"amount": 10000
+		}
+		
+	],
+	"colors": [		
+		10564021,
+		16238591
+	]
+}

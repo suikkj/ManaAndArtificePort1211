@@ -1,0 +1,27 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:hellfire_staff",
+	"tier": 5,
+	"requiredFaction": "mna:demons",
+	"items": [
+		"mna:staves",
+		"mna:greater_mote_fire",
+		"mna:greater_mote_fire",
+		"mna:rune_fire",
+		"mna:rune_fire",
+		"minecraft:nether_star",
+		"minecraft:dragon_breath",
+		"minecraft:soul_lantern",
+		"minecraft:soul_lantern"
+	],
+	"power_requirements": [
+		{
+			"affinity": "FIRE",
+			"amount": 3000
+		},
+		{
+			"affinity": "ENDER",
+			"amount": 2000
+		}
+	]
+}

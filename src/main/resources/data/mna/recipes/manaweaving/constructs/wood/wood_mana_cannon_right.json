@@ -1,0 +1,20 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:constructs/construct_mana_cannon_right_wood",
+	"tier": 2,
+	"items": [
+		"mna:constructs/rune_rod",
+		"mna:constructs/rune_rod",
+		"mna:constructs/rune_claw",
+		"minecraft:logs",
+		"minecraft:logs",
+		"minecraft:logs",
+		"mna:vinteum_dust",
+		"mna:vinteum_dust",
+		"mna:ritual_focus_minor"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:triangle"
+	]
+}

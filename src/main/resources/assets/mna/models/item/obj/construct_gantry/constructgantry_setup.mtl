@@ -1,0 +1,14 @@
+# Blender MTL File: 'construct_arch.blend'
+# Material Count: 4
+
+newmtl CHIMERITE
+map_Kd mna:block/oreblockchimerite
+
+newmtl CIRCUITRY
+map_Kd mna:entity/animated_construct/circuitry
+
+newmtl CONSTRUCT
+map_Kd mna:entity/animated_construct/diamond
+
+newmtl MAIN
+map_Kd mna:block/artifice/construct_arch

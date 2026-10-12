@@ -1,0 +1,21 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 3,
+	"output": "mna:rune_water",
+	"enchant": "minecraft:channeling",
+	"magnitude": 1,
+	"items": [
+		"mna:rune_water",
+		"minecraft:iron_bars",		
+		"minecraft:prismarine_crystals",
+		"mna:chimerite_gem",
+		"mna:chimerite_gem",
+		"mna:tarma_root",
+		"mna:mote_water",
+		"minecraft:lapis_lazuli"
+	],
+	"patterns": [
+		"mna:split_triangle",
+		"mna:diamond"
+	]
+}

@@ -1,0 +1,8 @@
+# Blender MTL File: 'constructs.blend'
+# Material Count: 2
+
+newmtl CHIMERITE
+map_Kd mna:block/oreblockchimerite
+
+newmtl MAIN
+map_Kd mna:entity/animated_construct/stone

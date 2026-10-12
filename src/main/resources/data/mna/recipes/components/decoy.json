@@ -1,0 +1,21 @@
+{
+	"type": "mna:component",
+	"tier": 3,
+	"output": "mna:decoy",
+	"items":
+	[
+		"minecraft:hay_block",
+		"minecraft:stick",
+		"minecraft:stick",
+		"minecraft:stick",
+		"mna:mote_air",
+		"mna:mote_earth",
+		"mna:infused_silk"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/diamond",
+		"mna:manaweave_patterns/knot2",
+		"mna:manaweave_patterns/inverted_triangle"		
+	]
+}

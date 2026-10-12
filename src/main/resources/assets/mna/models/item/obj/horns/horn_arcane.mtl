@@ -1,0 +1,5 @@
+# Blender MTL File: 'horn.blend'
+# Material Count: 2
+
+newmtl MAIN
+map_Kd mna:item/artifice/horn_arcane

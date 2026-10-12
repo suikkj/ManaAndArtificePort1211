@@ -1,0 +1,8 @@
+# Blender MTL File: 'pedestal.blend'
+# Material Count: 2
+
+newmtl CHIMERITE
+map_Kd mna:block/oreblockchimerite
+
+newmtl MANAWEAVING
+map_Kd mna:block/manaweaving_altar

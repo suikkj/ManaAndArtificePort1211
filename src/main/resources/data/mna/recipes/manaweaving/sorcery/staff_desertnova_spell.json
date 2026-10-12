@@ -1,0 +1,15 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 1,
+	"output": "mna:staff_desertnova",
+	"copy_nbt": true,
+	"items":
+	[
+		"mna:staff_desertnova",
+		"mna:spell"
+	],
+	"patterns":
+	[
+		"mna:circle"		
+	]
+}

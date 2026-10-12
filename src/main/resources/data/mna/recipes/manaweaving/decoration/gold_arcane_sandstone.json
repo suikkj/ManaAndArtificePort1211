@@ -1,0 +1,20 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:decoration/gold_arcane_sandstone",
+	"tier": 1,
+	"quantity": 8,		
+	"items": [
+		"minecraft:gold_ingot",
+		"mna:decoration/arcane_sandstone",
+		"mna:decoration/arcane_sandstone",
+		"mna:decoration/arcane_sandstone",
+		"mna:decoration/arcane_sandstone",
+		"mna:decoration/arcane_sandstone",
+		"mna:decoration/arcane_sandstone",
+		"mna:decoration/arcane_sandstone",
+		"mna:decoration/arcane_sandstone"
+	],
+	"patterns": [
+		"mna:slash"
+	]
+}

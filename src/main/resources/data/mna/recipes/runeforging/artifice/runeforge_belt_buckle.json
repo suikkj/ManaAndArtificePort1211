@@ -1,0 +1,6 @@
+{
+	"type": "mna:runeforging",
+	"tier": 2,
+	"pattern": "mna:pattern_belt_buckle",
+	"output": "mna:belt_buckle"
+}

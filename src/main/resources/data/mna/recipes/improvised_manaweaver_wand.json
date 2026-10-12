@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+  	"C",
+  	"S"
+  ],
+  "key": {
+  	"S": {
+  		"tag": "mna:improvised_manaweave_wand_shafts"
+  	}, 
+  	"C": {
+  		"tag": "mna:improvised_manaweave_wand_caps"
+  	}
+  },
+  "result": {
+    "item": "mna:improvised_manaweaver_wand"    
+  }
+}

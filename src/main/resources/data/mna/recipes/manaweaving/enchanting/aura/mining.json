@@ -1,0 +1,22 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 2,
+	"output": "mna:rune_aura",
+	"enchant": "mna:aura-mining",
+	"magnitude": 1,
+	"items":
+	[
+		"mna:rune_aura",
+		"minecraft:iron_pickaxe",		
+		"minecraft:iron_shovel",
+		"mna:infused_silk",
+		"mna:mote_earth"
+	],
+	"patterns":
+	[
+		"mna:square",
+		"mna:triangle",
+		"mna:inverted_triangle",
+		"mna:square"		
+	]
+}

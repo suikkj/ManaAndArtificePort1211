@@ -1,0 +1,20 @@
+{
+  "replace": false,
+  "values": [  	
+  	"minecraft:bee",
+  	"minecraft:dolphin",
+  	"minecraft:endermite",
+  	"minecraft:fox",
+  	"minecraft:goat",
+  	"minecraft:husk",
+  	"minecraft:llama",
+  	"minecraft:pufferfish",
+  	"minecraft:silverfish",
+  	"minecraft:skeleton",  	
+  	"minecraft:spider",
+  	"minecraft:zombie",
+  	"mna:barkling",
+  	"mna:living_ward",
+  	"mna:chatterer"	
+  ]
+}

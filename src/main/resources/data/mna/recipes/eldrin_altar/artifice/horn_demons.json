@@ -1,0 +1,25 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:faction_horn_demons",
+	"tier": 5,
+	"requiredFaction": "mna:demons",
+	"items": [
+		"minecraft:nether_brick",
+		"minecraft:nether_brick",
+		"minecraft:netherite_ingot",
+		"minecraft:netherite_ingot",
+		"minecraft:dragon_breath",
+		"mna:greater_mote_fire",
+		"mna:greater_mote_air"
+	],
+	"power_requirements": [
+		{
+			"affinity": "FIRE",
+			"amount": 2500
+		},
+		{
+			"affinity": "ENDER",
+			"amount": 1250
+		}
+	]
+}

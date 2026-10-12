@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mna:constructs/construct_blade_arm_right_gold"
+    }
+  ],
+  "result": {
+    "item": "mna:constructs/construct_blade_arm_left_gold"    
+  }
+}

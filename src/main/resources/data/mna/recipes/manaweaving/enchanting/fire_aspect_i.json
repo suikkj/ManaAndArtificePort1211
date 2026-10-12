@@ -1,0 +1,17 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 4,
+	"output": "mna:rune_fire",
+	"enchant": "minecraft:fire_aspect",
+	"magnitude": 1,
+	"items": [
+		"mna:rune_fire",
+		"minecraft:flint_and_steel",
+		"mna:stone_rune_yellow",
+		"minecraft:lava_bucket"
+	],
+	"patterns": [
+		"mna:split_triangle",
+		"mna:diamond"
+	]
+}

@@ -1,0 +1,21 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:constructs/construct_mana_torso_bone",
+	"tier": 3,
+	"requiredFaction": "mna:undead",
+	"items": [
+		"mna:constructs/rune_torso",
+		"minecraft:bone",
+		"minecraft:bone",
+		"minecraft:bone",
+		"mna:vinteum_dust",
+		"mna:vinteum_dust",
+		"mna:mote_arcane",
+		"mna:mana_resevoir"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:square",
+		"mna:diamond"
+	]
+}

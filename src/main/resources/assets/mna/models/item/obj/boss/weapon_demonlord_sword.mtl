@@ -1,0 +1,5 @@
+# Blender MTL File: 'weapon_demonlord_axe.blend'
+# Material Count: 1
+
+newmtl BLADE
+map_Kd mna:item/boss/weapon_demonlord_sword

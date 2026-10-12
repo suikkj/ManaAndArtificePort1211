@@ -1,0 +1,7 @@
+{
+	"type": "mna:crushing",
+	"tier": 2,
+	"input": "minecraft:wool_carpets",
+	"output": "minecraft:string",
+	"output_quantity": 2
+}

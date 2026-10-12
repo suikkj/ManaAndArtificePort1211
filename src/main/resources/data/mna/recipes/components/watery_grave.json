@@ -1,0 +1,18 @@
+{
+	"type": "mna:component",
+	"tier": 4,
+	"output": "mna:watery_grave",
+	"items":
+	[
+		"mna:all_concrete",
+		"mna:all_concrete",
+		"mna:vinteum_dust",
+		"minecraft:iron_boots",
+		"minecraft:lead"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/inverted_triangle",
+		"mna:manaweave_patterns/circle"
+	]
+}

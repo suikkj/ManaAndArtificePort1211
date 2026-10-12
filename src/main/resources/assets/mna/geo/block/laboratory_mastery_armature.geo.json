@@ -1,0 +1,43 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.laboratory_transcription_armature",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 1,
+				"visible_bounds_height": 1,
+				"visible_bounds_offset": [0, 0, 0]
+			},
+			"bones": [
+				{
+					"name": "STATICS",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "BASE_TABLE",
+					"parent": "STATICS",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "TABLETOP_ITEMS",
+					"parent": "STATICS",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "CRYSTAL_FRONTRIGHT",
+					"pivot": [6, 20.5, -6]
+				},
+				{
+					"name": "CRYSTAL_FRONTLEFT",
+					"pivot": [-6, 20.5, -6]
+				},
+				{
+					"name": "CRYSTAL_REAR",
+					"pivot": [0, 23, 6]
+				}
+			]
+		}
+	]
+}

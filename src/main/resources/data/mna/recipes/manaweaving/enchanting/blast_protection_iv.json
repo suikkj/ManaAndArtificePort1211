@@ -1,0 +1,21 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 5,
+	"output": "mna:rune_earth",
+	"enchant": "minecraft:blast_protection",
+	"magnitude": 4,
+	"items": [
+		"minecraft:creeper_head",
+		"mna:rune_earth",		
+		"minecraft:ghast_tear",
+		"mna:vinteum_dust",
+		"mna:desert_nova",
+		"mna:mote_earth",
+		"mna:infused_silk",
+		"minecraft:lapis_lazuli"
+	],
+	"patterns": [
+		"mna:infinity",
+		"mna:square"
+	]
+}

@@ -1,0 +1,21 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 2,
+	"output": "mna:pylon/freeze",	
+	"items": [
+		"mna:rune_aura",
+		"mna:rune_marking",
+		"mna:rune_marking",
+		"mna:rune_ritual_metal",
+		"mna:rune_ritual_metal",
+		"mna:rune_ritual_metal",
+		"mna:pylon/inert",
+		"minecraft:dead_bush",
+		"minecraft:potion"
+	],
+	"patterns": [
+		"mna:slash",
+		"mna:backslash",
+		"mna:triangle"	
+	]
+}

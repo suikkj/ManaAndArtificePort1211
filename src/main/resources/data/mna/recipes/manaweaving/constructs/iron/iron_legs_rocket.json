@@ -1,0 +1,19 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:constructs/construct_rocket_legs_iron",
+	"tier": 3,
+	"items": [
+		"mna:constructs/rune_hips",
+		"mna:constructs/rune_rod",
+		"mna:constructs/rune_rod",
+		"minecraft:iron_ingot",
+		"minecraft:iron_ingot",
+		"minecraft:iron_ingot",
+		"mna:mote_fire"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:triangle",
+		"mna:diamond"
+	]
+}

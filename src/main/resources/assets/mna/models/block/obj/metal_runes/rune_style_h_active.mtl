@@ -1,0 +1,5 @@
+# Blender MTL File: 'ground_runes.blend'
+# Material Count: 1
+
+newmtl GROUND_RUNE.001
+map_Kd mna:block/rituals/ground_runes_anim

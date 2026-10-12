@@ -1,0 +1,8 @@
+# Blender MTL File: 'None'
+# Material Count: 2
+
+newmtl MAIN
+map_Kd mna:block/pylon
+
+newmtl CHIMERITE
+map_Kd mna:block/oreblockchimerite

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+  	"III",
+  	" S ",
+  	" S "
+  ],
+  "key": {
+  	"I": {
+  		"item": "mna:vinteum_ingot"
+  	},
+  	"S": {
+  		"item": "stick"
+  	}
+  },
+  "result": {
+    "item": "mna:runesmith_hammer"    
+  }
+}

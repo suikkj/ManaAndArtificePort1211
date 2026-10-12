@@ -1,0 +1,15 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 1,
+	"output": "mna:staff_netherquartz",
+	"copy_nbt": true,
+	"items":
+	[
+		"mna:staff_netherquartz",
+		"mna:spell"
+	],
+	"patterns":
+	[
+		"mna:circle"		
+	]
+}

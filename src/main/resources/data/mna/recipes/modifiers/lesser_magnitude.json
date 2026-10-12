@@ -1,0 +1,16 @@
+{
+	"type": "mna:modifier",
+	"output": "mna:lesser_magnitude",
+	"tier": 3,
+	"items":
+	[
+		"brewing_stand",
+		"mna:chimerite_gem",
+		"diamond",
+		"mna:tarma_root",
+		"mna:rune_earth"
+	],
+	"patterns":
+	[			
+	]
+}

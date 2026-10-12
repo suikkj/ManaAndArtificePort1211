@@ -1,0 +1,21 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 5,
+	"output": "mna:rune_fire",
+	"enchant": "minecraft:bane_of_arthropods",
+	"magnitude": 4,
+	"items": [
+		"minecraft:spider_eye",
+		"minecraft:fire_charge",
+		"mna:rune_fire",
+		"minecraft:honey_bottle",
+		"minecraft:fermented_spider_eye",
+		"mna:vinteum_dust",
+		"minecraft:lapis_block",
+		"mna:mote_fire"
+	],
+	"patterns": [
+		"mna:triangle",
+		"mna:knot3"
+	]
+}

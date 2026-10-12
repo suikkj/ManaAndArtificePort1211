@@ -1,0 +1,21 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:patch_rift",
+	"tier": 4,
+	"items": [
+		"mna:runic_silk",
+		"mna:greater_mote_arcane",
+		"minecraft:ender_eye",
+		"minecraft:ender_eye"
+	],
+	"power_requirements": [
+		{
+			"affinity": "ARCANE",
+			"amount": 750
+		}
+	],
+	"colors": [
+		6232189,
+		5080527
+	]
+}

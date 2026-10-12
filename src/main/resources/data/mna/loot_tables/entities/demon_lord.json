@@ -1,0 +1,53 @@
+{
+	"type": "entity",
+	"pools": [
+		{
+			"rolls": 1,
+			"bonus_rolls": 0,
+			"entries": [
+				{
+					"type": "item",
+					"weight": 1,
+					"name": "mna:mark_of_the_nether",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+				                "type": "minecraft:uniform",
+				                "min": 64,
+				                "max": 128
+			              	}
+						}
+					]
+				}
+			],
+			"conditions": [
+				{
+					"condition": "minecraft:killed_by_player"
+				}
+			]
+		},
+		{
+			"rolls": 1,
+			"bonus_rolls": 0,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"weight": 1,
+					"name": "mna:spell_part_thesis"
+				}
+			],
+			"functions": [
+				{
+					"function": "mna:random_silver_spell",
+					"faction": "mna:demons"
+				}
+			],
+			"conditions": [
+				{
+					"condition": "minecraft:killed_by_player"
+				}
+			]
+		}
+	]
+}

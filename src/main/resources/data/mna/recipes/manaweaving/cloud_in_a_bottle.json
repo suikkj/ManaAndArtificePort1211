@@ -1,0 +1,19 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 1,
+	"output": "mna:cloud_in_a_bottle",	
+	"quantity": 4,	
+	"items": [
+		"minecraft:campfire",
+		"mna:vinteum_dust",
+		"mna:wakebloom",
+		"minecraft:potion",
+		"minecraft:potion",
+		"minecraft:potion",
+		"minecraft:potion"
+	],
+	"patterns": [
+		"mna:circle",
+		"mna:square"	
+	]
+}

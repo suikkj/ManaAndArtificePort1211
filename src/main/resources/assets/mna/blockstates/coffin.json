@@ -1,0 +1,15 @@
+{
+  "variants": {
+  	"part=head,facing=north": { "model": "mna:block/coffin" },
+  	"part=foot,facing=north": { "model": "mna:block/coffin_inverted", "y":180 },
+  	
+  	"part=head,facing=east": { "model": "mna:block/coffin", "y":90 },
+  	"part=foot,facing=east": { "model": "mna:block/coffin_inverted", "y":270 },
+  	
+  	"part=head,facing=west": { "model": "mna:block/coffin", "y":270 },
+  	"part=foot,facing=west": { "model": "mna:block/coffin_inverted", "y":90 },
+  	
+  	"part=head,facing=south": { "model": "mna:block/coffin", "y":180 },
+  	"part=foot,facing=south": { "model": "mna:block/coffin_inverted" }
+  }
+}

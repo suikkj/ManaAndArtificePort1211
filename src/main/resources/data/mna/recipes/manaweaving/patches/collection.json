@@ -1,0 +1,13 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 2,
+	"output": "mna:patch_collection",		
+	"items": [
+		"mna:infused_silk",
+		"minecraft:hopper",
+		"mna:mote_earth"
+	],
+	"patterns": [
+		"mna:square"	
+	]
+}

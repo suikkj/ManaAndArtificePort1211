@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "down": "mna:block/vinteum_dust_block",
+        "up": "mna:block/vinteum_dust_block",
+        "north": "mna:block/vinteum_dust_block",
+        "east": "mna:block/vinteum_dust_block",
+        "south": "mna:block/vinteum_dust_block",
+        "west": "mna:block/vinteum_dust_block",
+        "particle": "mna:block/vinteum_dust_block"
+    }
+}

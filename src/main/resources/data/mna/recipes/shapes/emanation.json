@@ -1,0 +1,20 @@
+{
+	"type": "mna:shape",
+	"tier": 3,
+	"output": "mna:emanation",
+	"items":
+	[
+		"mna:vinteum_dust",
+		"mna:vinteum_dust",
+		"mna:vinteum_dust",
+		"mna:bone_ash",
+		"mna:bone_ash",
+		"mna:bone_ash",
+		"tnt",
+		"pufferfish"
+	],
+	"patterns":
+	[		
+		"mna:manaweave_patterns/circle"
+	]
+}

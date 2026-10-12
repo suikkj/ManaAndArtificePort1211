@@ -1,0 +1,25 @@
+{
+	"replace": false,
+	"values": [
+		"mna:bed_charm",
+		"mna:fall_charm",
+		"mna:drown_charm",
+		"mna:burn_charm",
+		"mna:damage_charm_minor",
+		"mna:death_charm_minor",
+		"mna:raid_charm_minor",
+		"mna:pre_fall_charm_minor",
+		"mna:low_cr_charm_minor",
+		"mna:low_health_charm_minor",
+		"mna:suffocation_charm_minor",
+		"mna:damage_charm_major",
+		"mna:death_charm_major",
+		"mna:raid_charm_major",
+		"mna:pre_fall_charm_major",
+		"mna:low_cr_charm_major",
+		"mna:low_health_charm_major",
+		"mna:suffocation_charm_major",
+		"mna:crystallized_wind",
+		"mna:bound_charm"
+	]
+}

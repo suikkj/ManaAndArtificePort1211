@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mna:constructs/construct_grabber_arm_right_iron"
+    }
+  ],
+  "result": {
+    "item": "mna:constructs/construct_grabber_arm_left_iron"    
+  }
+}

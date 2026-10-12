@@ -1,0 +1,8 @@
+{
+	"type": "mna:manaweave-cache-effect",
+	"tier": 3,
+	"effect": "mna:briarthorn_barrier",
+	"duration_min": 300,
+	"duration_max": 1200,
+	"magnitude": 2
+}

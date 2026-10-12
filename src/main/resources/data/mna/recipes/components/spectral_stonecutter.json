@@ -1,0 +1,16 @@
+{
+	"type": "mna:component",
+	"output": "mna:spectral_stonecutter",
+	"tier": 1,
+	"items":
+	[
+		"minecraft:stonecutter",
+		"mna:vinteum_dust",
+		"mna:vinteum_dust",
+		"minecraft:phantom_membrane"		
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/square"
+	]
+}

@@ -1,0 +1,5 @@
+# Blender MTL File: 'spellbook.blend'
+# Material Count: 1
+
+newmtl MANDALA_SQUARE
+map_Kd mna:effect/mandala_square

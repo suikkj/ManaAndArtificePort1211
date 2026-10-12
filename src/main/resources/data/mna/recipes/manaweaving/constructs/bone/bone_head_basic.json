@@ -1,0 +1,18 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:constructs/construct_basic_head_bone",
+	"tier": 3,
+	"requiredFaction": "mna:undead",
+	"items": [
+		"mna:constructs/rune_head",
+		"minecraft:bone",
+		"minecraft:bone",
+		"minecraft:bone",
+		"mna:vinteum_dust",
+		"mna:vinteum_dust"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:circle"
+	]
+}

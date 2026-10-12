@@ -1,0 +1,16 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:eldrin_matrix_ender",
+	"tier": 2,
+	"items": [
+		"mna:mana_crystal_fragment",
+		"mna:mote_ender",
+		"mna:ritual_focus_lesser"
+	],
+	"patterns": [
+		"mna:slash",
+		"mna:slash",
+		"mna:backslash",
+		"mna:backslash"
+	]
+}

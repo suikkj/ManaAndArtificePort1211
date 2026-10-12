@@ -1,0 +1,20 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:decoration/copper_arcane_stone",
+	"tier": 1,
+	"quantity": 8,		
+	"items": [
+		"minecraft:copper_ingot",
+		"mna:decoration/arcane_stone",
+		"mna:decoration/arcane_stone",
+		"mna:decoration/arcane_stone",
+		"mna:decoration/arcane_stone",
+		"mna:decoration/arcane_stone",
+		"mna:decoration/arcane_stone",
+		"mna:decoration/arcane_stone",
+		"mna:decoration/arcane_stone"
+	],
+	"patterns": [
+		"mna:slash"
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:patch_speed_3",
+	"tier": 5,
+	"items": [
+		"mna:runic_silk",
+		"mna:greater_mote_arcane",
+		"mna:greater_mote_air"		
+	],
+	"power_requirements": [
+		{
+			"affinity": "ARCANE",
+			"amount": 1000
+		},
+		{
+			"affinity": "WIND",
+			"amount": 1000
+		}
+	],
+	"colors": [
+		6232189,
+		9211020
+	]
+}

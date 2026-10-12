@@ -1,0 +1,24 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:mote_arcane",
+	"tier": 4,
+	"items": [
+		"mna:vellum",
+		"ink_sac",
+		"ink_sac",
+		"feather",
+		"feather",
+		"book",
+		"book"
+	],
+	"power_requirements": [
+		{
+			"affinity": "ARCANE",
+			"amount": 720
+		}
+	],
+	"colors": [
+		6232189,
+		5080527
+	]
+}

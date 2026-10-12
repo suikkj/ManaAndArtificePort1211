@@ -1,0 +1,10 @@
+﻿{
+	"type": "c:add_spawns",
+	"biomes": "#mna:mob_spawns_overworld",
+	"spawners": {
+		"type": "mna:witch_hunter",
+		"weight": 50,
+		"minCount": 2,
+		"maxCount": 4
+	}
+}

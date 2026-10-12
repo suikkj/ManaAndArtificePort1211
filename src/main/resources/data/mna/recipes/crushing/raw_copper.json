@@ -1,0 +1,7 @@
+{
+	"type": "mna:crushing",
+	"tier": 2,
+	"input": "minecraft:copper_ores",
+	"output": "minecraft:raw_copper",
+	"output_quantity": 7
+}

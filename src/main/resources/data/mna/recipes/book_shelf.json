@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+  	"WSW",
+  	"TST",
+  	"WSW"
+  ],
+  "key": {
+  	"W": {
+  		"tag": "minecraft:planks"
+  	},
+  	"S": {
+  		"tag": "minecraft:wooden_slabs"
+  	},
+  	"T": {
+  		"item": "mna:transmuted_silver"
+  	}
+  },
+  "result": {
+    "item": "mna:book_shelf"    
+  }
+}

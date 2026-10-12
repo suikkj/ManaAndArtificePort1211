@@ -1,0 +1,26 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:pylon/water_breathing",
+	"tier": 4,
+	"items": [
+		"mna:rune_aura",
+		"mna:rune_water",
+		"mna:rune_water",
+		"mna:rune_ritual_metal",
+		"mna:rune_ritual_metal",
+		"mna:rune_ritual_metal",
+		"mna:pylon/inert",
+		"mna:bubble_boat",
+		"minecraft:pufferfish"
+	],
+	"power_requirements": [
+		{
+			"affinity": "WATER",
+			"amount": 1750
+		}
+	],
+	"colors": [		
+		8954814,
+		338511
+	]
+}

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+  	" IV",
+  	" SI",
+  	"S  "
+  ],
+  "key": {
+  	"S": {
+  		"item": "minecraft:stick"
+  	},
+  	"I": {
+  		"item": "mna:vinteum_ingot"
+  	},
+  	"V": {
+  		"item": "mna:vinteum_dust"
+  	}
+  },
+  "result": {
+    "item": "mna:manaweaver_wand"    
+  }
+}

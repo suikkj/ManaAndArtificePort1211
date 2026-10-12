@@ -1,0 +1,20 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 2,
+	"output": "mna:pylon/mana",	
+	"items": [
+		"mna:pylon/inert",
+		"mna:rune_aura",
+		"mna:mana_resevoir",
+		"mna:mote_arcane",
+		"mna:mana_crystal_fragment",
+		"mna:mana_crystal_fragment",
+		"mna:mana_crystal_fragment",
+		"mna:mana_crystal_fragment"	
+	],
+	"patterns": [
+		"mna:triangle",
+		"mna:circle",
+		"mna:triangle"
+	]
+}

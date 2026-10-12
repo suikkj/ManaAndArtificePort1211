@@ -1,0 +1,16 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 2,
+	"output": "mna:sachet_arcane",
+	"quantity": 2,
+	"items": [
+		"mna:cerublossom",
+		"mna:decoration/arcane_stone",
+		"minecraft:book",
+		"minecraft:glowstone_dust",		
+		"mna:vinteum_dust"
+	],
+	"patterns": [
+		"mna:circle"	
+	]
+}

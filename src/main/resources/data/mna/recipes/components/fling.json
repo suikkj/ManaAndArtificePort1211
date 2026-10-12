@@ -1,0 +1,16 @@
+{
+	"type": "mna:component",
+	"tier": 1,
+	"output": "mna:fling",
+	"items":
+	[
+		"mna:stone_rune_white",
+		"minecraft:raw_copper",
+		"minecraft:raw_copper"	
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/slash",
+		"mna:manaweave_patterns/backslash"
+	]
+}

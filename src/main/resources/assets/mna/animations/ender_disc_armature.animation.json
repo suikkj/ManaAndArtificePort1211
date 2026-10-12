@@ -1,0 +1,43 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.ender_disc_armature.idle": {
+			"loop": true,
+			"animation_length": 18,
+			"bones": {
+				"ROOT": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"18.0": {
+							"vector": [0, 360, 0]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"4.5": {
+							"vector": [0, -1, 0],
+							"easing": "easeInOutSine"
+						},
+						"9.0": {
+							"vector": [0, 0, 0],
+							"easing": "easeInOutSine"
+						},
+						"13.5": {
+							"vector": [0, -1, 0],
+							"easing": "easeInOutSine"
+						},
+						"18.0": {
+							"vector": [0, 0, 0],
+							"easing": "easeInOutSine"
+						}
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

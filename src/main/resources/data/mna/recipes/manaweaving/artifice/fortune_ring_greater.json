@@ -1,0 +1,21 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:fortune_ring_greater",
+	"tier": 4,
+	"items": [
+		"minecraft:diamond",
+		"minecraft:diamond",
+		"minecraft:emerald",
+		"minecraft:quartz",	
+		"mna:greater_mote_earth",	
+		"mna:fortune_ring"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:diamond",
+		"mna:diamond",
+		"mna:diamond",
+		"mna:diamond",
+		"mna:diamond"	
+	]
+}

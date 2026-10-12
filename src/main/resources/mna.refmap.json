@@ -1,0 +1,114 @@
+{
+  "mappings": {
+    "com/mna/mixins/EntityMixin": {
+      "playSound": "Lnet/minecraft/world/entity/Entity;m_5496_(Lnet/minecraft/sounds/SoundEvent;FF)V",
+      "canEnterPose": "Lnet/minecraft/world/entity/Entity;m_20175_(Lnet/minecraft/world/entity/Pose;)Z"
+    },
+    "com/mna/mixins/LivingEntityElytra": {
+      "updateFallFlying": "Lnet/minecraft/world/entity/LivingEntity;m_21323_()V"
+    },
+    "com/mna/mixins/LivingEntityFireWalkerMixin": {
+      "isAffectedByFluids": "Lnet/minecraft/world/entity/LivingEntity;m_6129_()Z",
+      "jumpInLiquid": "Lnet/minecraft/world/entity/LivingEntity;m_203347_(Lnet/minecraft/tags/TagKey;)V",
+      "canStandOnFluid": "Lnet/minecraft/world/entity/LivingEntity;m_203441_(Lnet/minecraft/world/level/material/FluidState;)Z"
+    },
+    "com/mna/mixins/PowderSnowBlockMixin": {
+      "canEntityWalkOnPowderSnow": "Lnet/minecraft/world/level/block/PowderSnowBlock;m_154255_(Lnet/minecraft/world/entity/Entity;)Z"
+    },
+    "com/mna/mixins/PiglinGoldMixin": {
+      "isWearingGold": "Lnet/minecraft/world/entity/monster/piglin/PiglinAi;m_34808_(Lnet/minecraft/world/entity/LivingEntity;)Z"
+    },
+    "com/mna/mixins/ClientPacketListenerMixin": {
+      "handleRemoveMobEffect": "Lnet/minecraft/client/multiplayer/ClientPacketListener;m_6476_(Lnet/minecraft/network/protocol/game/ClientboundRemoveMobEffectPacket;)V",
+      "handleUpdateMobEffect": "Lnet/minecraft/client/multiplayer/ClientPacketListener;m_7915_(Lnet/minecraft/network/protocol/game/ClientboundUpdateMobEffectPacket;)V"
+    },
+    "com/mna/mixins/ArmorStandMixin": {
+      "interactAt(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/InteractionResult;": "Lnet/minecraft/world/entity/decoration/ArmorStand;m_7111_(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/InteractionResult;"
+    },
+    "com/mna/mixins/CreeperIgniteMixin": {
+      "DATA_SWELL_DIR": "f_32268_:Lnet/minecraft/network/syncher/EntityDataAccessor;",
+      "ignite": "Lnet/minecraft/world/entity/monster/Creeper;m_32312_()V",
+      "setSwellDir(I)V": "Lnet/minecraft/world/entity/monster/Creeper;m_32283_(I)V",
+      "DATA_IS_IGNITED": "f_32275_:Lnet/minecraft/network/syncher/EntityDataAccessor;",
+      "tick": "Lnet/minecraft/world/entity/monster/Creeper;m_8119_()V"
+    },
+    "com/mna/mixins/InventorySoulboundDrop": {
+      "dropAll": "Lnet/minecraft/world/entity/player/Inventory;m_36071_()V"
+    },
+    "com/mna/mixins/LivingEntityOnClimbableMixin": {
+      "onClimbable": "Lnet/minecraft/world/entity/LivingEntity;m_6147_()Z"
+    },
+    "com/mna/mixins/LocalPlayerElytra": {
+      "aiStep": "Lnet/minecraft/client/player/LocalPlayer;m_8107_()V"
+    },
+    "com/mna/mixins/FireproofMixin": {
+      "fireImmune": "Lnet/minecraft/world/entity/item/ItemEntity;m_5825_()Z"
+    },
+    "com/mna/mixins/WebBlockMixin": {
+      "entityInside": "Lnet/minecraft/world/level/block/WebBlock;m_7892_(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/Entity;)V"
+    },
+    "com/mna/mixins/PlayerElytra": {
+      "tryToStartFallFlying": "Lnet/minecraft/world/entity/player/Player;m_36319_()Z"
+    },
+    "com/mna/mixins/PlayerConflagrateNoHurtArmor": {
+      "hurtArmor": "Lnet/minecraft/world/entity/player/Player;m_6472_(Lnet/minecraft/world/damagesource/DamageSource;F)V"
+    }
+  },
+  "data": {
+    "searge": {
+      "com/mna/mixins/EntityMixin": {
+        "playSound": "Lnet/minecraft/world/entity/Entity;m_5496_(Lnet/minecraft/sounds/SoundEvent;FF)V",
+        "canEnterPose": "Lnet/minecraft/world/entity/Entity;m_20175_(Lnet/minecraft/world/entity/Pose;)Z"
+      },
+      "com/mna/mixins/LivingEntityElytra": {
+        "updateFallFlying": "Lnet/minecraft/world/entity/LivingEntity;m_21323_()V"
+      },
+      "com/mna/mixins/LivingEntityFireWalkerMixin": {
+        "isAffectedByFluids": "Lnet/minecraft/world/entity/LivingEntity;m_6129_()Z",
+        "jumpInLiquid": "Lnet/minecraft/world/entity/LivingEntity;m_203347_(Lnet/minecraft/tags/TagKey;)V",
+        "canStandOnFluid": "Lnet/minecraft/world/entity/LivingEntity;m_203441_(Lnet/minecraft/world/level/material/FluidState;)Z"
+      },
+      "com/mna/mixins/PowderSnowBlockMixin": {
+        "canEntityWalkOnPowderSnow": "Lnet/minecraft/world/level/block/PowderSnowBlock;m_154255_(Lnet/minecraft/world/entity/Entity;)Z"
+      },
+      "com/mna/mixins/PiglinGoldMixin": {
+        "isWearingGold": "Lnet/minecraft/world/entity/monster/piglin/PiglinAi;m_34808_(Lnet/minecraft/world/entity/LivingEntity;)Z"
+      },
+      "com/mna/mixins/ClientPacketListenerMixin": {
+        "handleRemoveMobEffect": "Lnet/minecraft/client/multiplayer/ClientPacketListener;m_6476_(Lnet/minecraft/network/protocol/game/ClientboundRemoveMobEffectPacket;)V",
+        "handleUpdateMobEffect": "Lnet/minecraft/client/multiplayer/ClientPacketListener;m_7915_(Lnet/minecraft/network/protocol/game/ClientboundUpdateMobEffectPacket;)V"
+      },
+      "com/mna/mixins/ArmorStandMixin": {
+        "interactAt(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/InteractionResult;": "Lnet/minecraft/world/entity/decoration/ArmorStand;m_7111_(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/InteractionResult;"
+      },
+      "com/mna/mixins/CreeperIgniteMixin": {
+        "DATA_SWELL_DIR": "f_32268_:Lnet/minecraft/network/syncher/EntityDataAccessor;",
+        "ignite": "Lnet/minecraft/world/entity/monster/Creeper;m_32312_()V",
+        "setSwellDir(I)V": "Lnet/minecraft/world/entity/monster/Creeper;m_32283_(I)V",
+        "DATA_IS_IGNITED": "f_32275_:Lnet/minecraft/network/syncher/EntityDataAccessor;",
+        "tick": "Lnet/minecraft/world/entity/monster/Creeper;m_8119_()V"
+      },
+      "com/mna/mixins/InventorySoulboundDrop": {
+        "dropAll": "Lnet/minecraft/world/entity/player/Inventory;m_36071_()V"
+      },
+      "com/mna/mixins/LivingEntityOnClimbableMixin": {
+        "onClimbable": "Lnet/minecraft/world/entity/LivingEntity;m_6147_()Z"
+      },
+      "com/mna/mixins/LocalPlayerElytra": {
+        "aiStep": "Lnet/minecraft/client/player/LocalPlayer;m_8107_()V"
+      },
+      "com/mna/mixins/FireproofMixin": {
+        "fireImmune": "Lnet/minecraft/world/entity/item/ItemEntity;m_5825_()Z"
+      },
+      "com/mna/mixins/WebBlockMixin": {
+        "entityInside": "Lnet/minecraft/world/level/block/WebBlock;m_7892_(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/Entity;)V"
+      },
+      "com/mna/mixins/PlayerElytra": {
+        "tryToStartFallFlying": "Lnet/minecraft/world/entity/player/Player;m_36319_()Z"
+      },
+      "com/mna/mixins/PlayerConflagrateNoHurtArmor": {
+        "hurtArmor": "Lnet/minecraft/world/entity/player/Player;m_6472_(Lnet/minecraft/world/damagesource/DamageSource;F)V"
+      }
+    }
+  }
+}

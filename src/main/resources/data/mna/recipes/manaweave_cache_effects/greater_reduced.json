@@ -1,0 +1,8 @@
+{
+	"type": "mna:manaweave-cache-effect",
+	"tier": 3,
+	"effect": "mna:reduced",
+	"duration_min": 2400,
+	"duration_max": 3600,
+	"magnitude": 9
+}

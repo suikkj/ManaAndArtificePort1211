@@ -1,0 +1,17 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 5,
+	"output": "mna:ender_disc",		
+	"items": [
+		"minecraft:ender_eye",
+		"mna:greater_mote_ender",
+		"mna:rune_ender"
+	],
+	"patterns": [
+		"mna:square",
+		"mna:circle",
+		"mna:square",
+		"mna:split_triangle",
+		"mna:infinity"		
+	]
+}

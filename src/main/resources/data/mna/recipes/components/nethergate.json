@@ -1,0 +1,18 @@
+{
+	"type": "mna:component",
+	"output": "mna:nethergate",
+	"tier": 4,
+	"items":
+	[
+		"minecraft:lodestone",
+		"minecraft:ender_eye",
+		"minecraft:netherrack",
+		"minecraft:netherrack"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/hourglass",
+		"mna:manaweave_patterns/circle",
+		"mna:manaweave_patterns/circle"	
+	]
+}

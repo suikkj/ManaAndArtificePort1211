@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+  	"STS",
+  	"TLT",
+  	"ASA"
+  ],
+  "key": {
+  	"T": {
+  		"item": "mna:decoration/arcane_sandstone"
+  	},
+  	"A": {
+  		"item": "mna:decoration/arcane_stone"
+  	},
+  	"S": {
+  		"item": "mna:transmuted_silver"
+  	},
+  	"L": {
+  		"item": "lead"
+  	}
+  },
+  "result": {
+    "item": "mna:construct_workbench"    
+  }
+}

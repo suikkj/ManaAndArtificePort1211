@@ -1,0 +1,10 @@
+﻿{
+	"type": "c:add_spawns",
+	"biomes": "#mna:mob_spawns_overworld",
+	"spawners": {
+		"type": "mna:living_ward",
+		"weight": 50,
+		"minCount": 1,
+		"maxCount": 2
+	}
+}

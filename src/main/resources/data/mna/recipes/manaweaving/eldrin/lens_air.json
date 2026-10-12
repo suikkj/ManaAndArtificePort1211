@@ -1,0 +1,21 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:refraction_lens_wind",
+	"tier": 4,
+	"items": [
+		"mna:purified_vinteum_ingot",
+		"minecraft:white_stained_glass",
+		"mna:purified_vinteum_ingot",
+		"minecraft:white_stained_glass",		
+		"mna:mote_air",
+		"mna:purified_vinteum_ingot",
+		"minecraft:white_stained_glass",
+		"mna:purified_vinteum_ingot",
+		"minecraft:white_stained_glass"
+	],
+	"patterns": [
+		"mna:triangle",
+		"mna:split_triangle",
+		"mna:triangle"
+	]
+}

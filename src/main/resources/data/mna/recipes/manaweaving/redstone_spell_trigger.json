@@ -1,0 +1,16 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:redstone_trigger",
+	"tier": 1,
+	"items": [		
+		"minecraft:target",
+		"minecraft:stone",
+		"minecraft:stone",
+		"minecraft:stone",
+		"mna:chimerite_gem",
+		"mna:chimerite_gem"		
+	],
+	"patterns": [		
+		"mna:square"
+	]
+}

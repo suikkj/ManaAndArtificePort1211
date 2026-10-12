@@ -1,0 +1,17 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 3,
+	"output": "mna:rune_ender",
+	"enchant": "mna:xp_to_souls",
+	"magnitude": 1,
+	"requiredFaction": "mna:undead",
+	"items": [		
+		"mna:rune_ender",
+		"mna:mote_ender",
+		"mna:mote_fire",
+		"minecraft:soul_lantern"		
+	],
+	"patterns": [		
+		"mna:bolt"		
+	]
+}

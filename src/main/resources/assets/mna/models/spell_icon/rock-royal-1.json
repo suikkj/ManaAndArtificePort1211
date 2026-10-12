@@ -1,0 +1,7 @@
+{
+	"parent": "item/generated",
+	"textures": {
+		"layer0": "mna:item/sorcery/icons/rock-royal-1",
+		"layer1": "mna:item/sorcery/spell_frame"
+	}
+}

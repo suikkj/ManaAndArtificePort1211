@@ -1,0 +1,21 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 2,
+	"output": "mna:pylon/haste",	
+	"items": [
+		"mna:rune_aura",
+		"mna:rune_marking",
+		"mna:rune_marking",
+		"mna:rune_ritual_metal",
+		"mna:rune_ritual_metal",
+		"mna:rune_ritual_metal",
+		"mna:pylon/inert",
+		"minecraft:redstone",
+		"minecraft:sugar"
+	],
+	"patterns": [
+		"mna:slash",
+		"mna:backslash",
+		"mna:triangle"	
+	]
+}

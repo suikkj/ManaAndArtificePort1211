@@ -1,0 +1,24 @@
+{
+  "replace": false,
+  "values": [  	    
+    "#minecraft:leaves",
+    "#minecraft:flowers",
+    "#minecraft:tall_flowers",
+    "#minecraft:small_flowers",
+    "#minecraft:saplings",
+    "#minecraft:sword_efficient",
+    "#minecraft:snow",
+    "minecraft:bamboo",
+    "minecraft:sugar_cane",
+    "minecraft:suspicious_sand",
+    "minecraft:suspicious_gravel",
+    "minecraft:crimson_roots",
+    "minecraft:warped_roots",
+    "minecraft:nether_sprouts",
+    "minecraft:weeping_vines",
+    "minecraft:twisting_vines",
+    "minecraft:vine",
+    "minecraft:cobweb",
+    "minecraft:nether_wart"
+  ]
+}

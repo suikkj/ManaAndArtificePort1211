@@ -1,0 +1,5 @@
+# Blender MTL File: 'wands.blend'
+# Material Count: 1
+
+newmtl WAND
+map_Kd mna:item/manaweaving/manaweavingwand_linked

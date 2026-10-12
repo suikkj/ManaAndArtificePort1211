@@ -1,0 +1,18 @@
+{
+	"type": "mna:modifier",
+	"output": "mna:damage",
+	"tier": 2,
+	"items":
+	[
+		"wooden_sword",
+		"stone_sword",
+		"iron_sword",
+		"golden_sword",
+		"mna:stone_rune_red",
+		"mna:stone_rune_red",
+		"diamond_sword"
+	],
+	"patterns":
+	[
+	]
+}

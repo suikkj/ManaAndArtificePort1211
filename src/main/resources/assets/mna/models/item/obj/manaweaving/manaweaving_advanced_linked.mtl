@@ -1,0 +1,8 @@
+# Blender MTL File: 'wands.blend'
+# Material Count: 2
+
+newmtl CHIMERITE
+map_Kd mna:item/manaweaving/whiteout
+
+newmtl WAND
+map_Kd mna:item/manaweaving/manaweavingwand

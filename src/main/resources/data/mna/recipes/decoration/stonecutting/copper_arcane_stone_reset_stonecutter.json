@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "tag": "mna:stonecutter_resettable_copper_arcane_stones"
+  },
+  "result": "mna:decoration/copper_arcane_stone",
+  "count": 1
+}

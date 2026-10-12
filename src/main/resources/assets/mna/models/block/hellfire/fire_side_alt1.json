@@ -1,0 +1,7 @@
+{
+    "parent": "mna:block/hellfire/fire_side_alt",
+    "textures": {
+        "particle": "mna:block/hellfire/fire_1",
+        "fire": "mna:block/hellfire/fire_1"
+    }
+}

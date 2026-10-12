@@ -1,0 +1,20 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:brimstone_charm",
+	"tier": 4,
+	"items": [
+		"minecraft:magma_block",
+		"minecraft:gold_ingot",
+		"minecraft:gold_ingot",
+		"minecraft:gold_ingot",
+		"minecraft:blackstone",
+		"minecraft:blackstone",		
+		"mna:greater_mote_fire"
+	],
+	"patterns": [
+		"mna:circle",
+		"mna:triangle",
+		"mna:circle",
+		"mna:triangle"
+	]
+}

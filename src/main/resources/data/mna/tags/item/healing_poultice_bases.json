@@ -1,0 +1,9 @@
+{
+	"replace": false,
+	"values": [
+		"minecraft:kelp",
+		"minecraft:lily_pad",
+		"minecraft:vine",
+		"minecraft:twisting_vines"
+	]
+}

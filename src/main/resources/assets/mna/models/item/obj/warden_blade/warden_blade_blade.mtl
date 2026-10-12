@@ -1,0 +1,5 @@
+# Blender MTL File: 'warden_blade.blend'
+# Material Count: 1
+
+newmtl BLADE
+map_Kd mna:item/artifice/warden_blade_2

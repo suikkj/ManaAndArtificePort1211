@@ -1,0 +1,8 @@
+# Blender MTL File: 'supplier_crystal.blend'
+# Material Count: 2
+
+newmtl CHIMERITE
+map_Kd #crystalcolor
+
+newmtl STICK
+map_Kd mna:entity/animated_construct/wheatwood

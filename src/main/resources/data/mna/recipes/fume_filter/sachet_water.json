@@ -1,0 +1,9 @@
+{
+	"type": "mna:eldrin-fume",
+	"item": "mna:sachet_water",
+	"power_provided": 
+	{
+		"affinity": "WATER",
+		"amount": 240
+	}
+}

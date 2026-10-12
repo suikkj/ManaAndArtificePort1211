@@ -1,0 +1,5 @@
+# Blender MTL File: 'sexyspells_water_projectile.blend'
+# Material Count: 1
+
+newmtl SEXYSPELLS_MAT1
+map_Kd mna:entity/fx/projectile/spell_projectile_ice_layer1

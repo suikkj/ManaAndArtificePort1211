@@ -1,0 +1,41 @@
+{
+	"parent": "forge:item/default",
+	  "loader": "forge:composite",
+	  "children": {
+	    "crystal": {
+	      "loader": "forge:obj",
+	      "automatic_culling": true,
+		  "shade_quads": true,
+		  "flip_v": true,
+		  "emissive_ambient": false,
+	      "model": "mna:models/item/obj/staves/pilgrims_staff.obj"
+	    }
+	  },
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, -18.75, 0]
+		},
+		"thirdperson_lefthand": {
+			"translation": [0, -18.75, 0]
+		},
+		"firstperson_righthand": {
+			"translation": [0, -18.75, 0]
+		},
+		"firstperson_lefthand": {
+			"translation": [0, -18.75, 0]
+		},
+		"ground": {
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"gui": {
+			"rotation": [-16.25, 0, -37.25],
+			"translation": [-1.75, -2.5, 0],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"fixed": {
+			"rotation": [0, 0, 41.75],
+			"translation": [1.75, -2, -0.75],
+			"scale": [0.5, 0.5, 0.5]
+		}
+	}
+}

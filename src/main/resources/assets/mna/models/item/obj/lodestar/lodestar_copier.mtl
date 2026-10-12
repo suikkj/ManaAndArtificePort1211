@@ -1,0 +1,8 @@
+# Blender MTL File: 'lodestar_copier.blend'
+# Material Count: 2
+
+newmtl MAIN
+map_Kd mna:block/material/crystal/chimerite_crystal_cyan
+
+newmtl RING
+map_Kd mna:block/artifice/wizard_lab/inscription_table

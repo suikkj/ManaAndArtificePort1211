@@ -1,0 +1,19 @@
+{
+	"type": "mna:shape",
+	"tier": 2,
+	"output": "mna:bound_axe",
+	"items":
+	[
+		"mna:vinteum_dust",
+		"minecraft:diamond",
+		"minecraft:diamond",
+		"minecraft:diamond",
+		"minecraft:stick",
+		"minecraft:smithing_table"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/diamond",
+		"mna:manaweave_patterns/square"
+	]
+}

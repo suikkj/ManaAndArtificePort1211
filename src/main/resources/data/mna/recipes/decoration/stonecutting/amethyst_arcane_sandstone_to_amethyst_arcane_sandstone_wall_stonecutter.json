@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "mna:decoration/amethyst_arcane_sandstone"
+  },
+  "result": "mna:decoration/amethyst_arcane_sandstone_wall",
+  "count": 1
+}

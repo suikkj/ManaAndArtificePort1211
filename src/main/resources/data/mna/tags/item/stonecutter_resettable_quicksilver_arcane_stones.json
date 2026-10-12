@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [  	    
+    "mna:decoration/quicksilver_arcane_stone_chiseled",
+    "mna:decoration/quicksilver_arcane_stone_corner",
+    "mna:decoration/quicksilver_arcane_stone_pillar",
+    "mna:decoration/quicksilver_arcane_stone_quad",
+    "mna:decoration/quicksilver_arcane_stone_straight",
+    "mna:decoration/quicksilver_arcane_stone_t"
+  ]
+}

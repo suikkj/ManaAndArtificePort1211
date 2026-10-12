@@ -1,0 +1,26 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:pylon/shrink",
+	"tier": 4,
+	"items": [
+		"mna:rune_aura",
+		"mna:rune_ender",
+		"mna:rune_ender",
+		"mna:rune_ritual_metal",
+		"mna:rune_ritual_metal",
+		"mna:rune_ritual_metal",
+		"mna:pylon/inert",
+		"minecraft:tropical_fish",
+		"minecraft:amethyst_shard"
+	],
+	"power_requirements": [
+		{
+			"affinity": "ENDER",
+			"amount": 1750
+		}
+	],
+	"colors": [		
+		4199772,
+		11015600
+	]
+}

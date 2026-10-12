@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mna:tarma_root"
+    }
+  ],
+  "result": {
+    "item": "minecraft:brown_dye",
+    "count": 2    
+  }
+}

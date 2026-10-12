@@ -1,0 +1,7 @@
+{
+	"type": "mna:crushing",
+	"tier": 2,
+	"input": "minecraft:zombie_head",
+	"output": "minecraft:rotten_flesh",
+	"output_quantity": 4
+}

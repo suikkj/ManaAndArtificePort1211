@@ -1,0 +1,21 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 5,
+	"output": "mna:rune_water",
+	"enchant": "minecraft:riptide",
+	"magnitude": 3,
+	"items": [
+		"mna:rune_water",
+		"minecraft:lead",		
+		"minecraft:ender_eye",
+		"minecraft:lead",		
+		"mna:stone_rune_light_blue",
+		"mna:mote_water",
+		"mna:wakebloom",
+		"mna:wakebloom"
+	],
+	"patterns": [
+		"mna:manaweave_patterns/knot4",
+		"mna:manaweave_patterns/inverted_triangle"
+	]
+}

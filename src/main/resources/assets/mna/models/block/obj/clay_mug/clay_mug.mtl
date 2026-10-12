@@ -1,0 +1,5 @@
+# Blender MTL File: 'clay_mug.blend'
+# Material Count: 1
+
+newmtl MAIN
+map_Kd mna:block/clay_mug

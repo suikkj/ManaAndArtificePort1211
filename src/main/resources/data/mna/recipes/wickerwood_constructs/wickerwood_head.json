@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:flint"
+    },
+    {
+		"tag": "minecraft:logs"    
+    }
+  ],
+  "result": {
+    "item": "mna:constructs/construct_basic_head_wickerwood"
+  }
+}

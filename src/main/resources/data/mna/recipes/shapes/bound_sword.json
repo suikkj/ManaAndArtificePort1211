@@ -1,0 +1,19 @@
+{
+	"type": "mna:shape",
+	"tier": 2,
+	"output": "mna:bound_sword",
+	"items":
+	[
+		"mna:vinteum_dust",
+		"minecraft:diamond",
+		"minecraft:diamond",
+		"minecraft:leather",
+		"minecraft:stick",
+		"minecraft:grindstone"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/diamond",
+		"mna:manaweave_patterns/square"
+	]
+}

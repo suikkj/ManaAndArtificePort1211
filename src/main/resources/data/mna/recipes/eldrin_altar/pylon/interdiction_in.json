@@ -1,0 +1,26 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:pylon/interdiction_in",
+	"tier": 5,
+	"items": [
+		"mna:rune_aura",
+		"mna:rune_ender",
+		"mna:rune_ender",
+		"mna:rune_ritual_metal",
+		"mna:rune_ritual_metal",
+		"mna:rune_ritual_metal",
+		"mna:pylon/inert",
+		"mna:warding_candle",
+		"mna:seer_stone"
+	],
+	"power_requirements": [
+		{
+			"affinity": "ENDER",
+			"amount": 2500
+		}
+	],
+	"colors": [
+		3671644,	
+		1379356
+	]
+}

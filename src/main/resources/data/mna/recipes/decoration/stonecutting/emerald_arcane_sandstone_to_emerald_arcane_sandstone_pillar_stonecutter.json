@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "mna:decoration/emerald_arcane_sandstone"
+  },
+  "result": "mna:decoration/emerald_arcane_sandstone_pillar",
+  "count": 1
+}

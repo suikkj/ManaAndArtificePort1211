@@ -1,0 +1,8 @@
+{
+	"type": "mna:manaweave-cache-effect",
+	"tier": 4,
+	"effect": "mna:eldrin_sight",
+	"duration_min": 300,
+	"duration_max": 600,
+	"magnitude": 0
+}

@@ -1,0 +1,17 @@
+{
+  "parent": "forge:item/default",
+  "loader": "forge:composite",
+  "textures": {
+  	"particle": "mna:block/material/eldrin/pylon"
+  },
+  "children": {
+    "gem": {
+      "loader": "forge:obj",
+      "automatic_culling": false,
+	  "shade_quads": false,
+	  "flip_v": true,
+	  "emissive_ambient": true,
+      "model": "mna:models/block/obj/eldrin/wellspring_pillar_portal.obj"
+    }
+  }
+}

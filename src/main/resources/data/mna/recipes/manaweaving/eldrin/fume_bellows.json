@@ -1,0 +1,19 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:fume_bellows",
+	"tier": 3,
+	"items": [		
+		"minecraft:planks",
+		"minecraft:leather",
+		"minecraft:planks",
+		"mna:transmuted_silver",
+		"mna:slipstream_generator",
+		"mna:animus_dust",
+		"mna:rune_air",		
+		"minecraft:leather",
+		"mna:rune_air"
+	],
+	"patterns": [
+		"mna:bolt"
+	]
+}

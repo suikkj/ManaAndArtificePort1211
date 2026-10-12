@@ -1,0 +1,17 @@
+{
+	"type": "mna:component",
+	"output": "mna:water_walking",
+	"tier": 2,
+	"items":
+	[
+		"minecraft:leather_boots",
+		"mna:vinteum_dust",
+		"mna:vinteum_dust",
+		"minecraft:moss_carpet",
+		"minecraft:lily_pad"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/triangle"
+	]
+}

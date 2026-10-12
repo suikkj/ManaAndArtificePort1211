@@ -1,0 +1,23 @@
+﻿{
+	"type": "mna:manaweaving-recipe",
+	"tier": 4,
+	"output": "mna:rune_ender",
+	"enchant": "minecraft:vanishing_curse",
+	"magnitude": 1,
+	"items": [
+		"mna:rune_ender",
+		"mna:purified_vinteum_dust",
+		"minecraft:ender_eye",
+		"mna:mote_ender",
+		"mna:chimerite_gem",
+		"mna:chimerite_gem",
+		"c:glass_panes",
+		"c:glass_panes",
+		"minecraft:fire_charge"
+	],
+	"patterns": [
+		"mna:hourglass",
+		"mna:inverted_triangle"
+	]
+}
+

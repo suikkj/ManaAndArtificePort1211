@@ -1,0 +1,25 @@
+{
+	"parent": "mna:root",
+	"display": {
+		"icon": {
+			"item": "mna:enchanted_vellum"
+		},
+		"title": {
+			"translate": "mna:misc/not_that_easy.title"
+		},
+		"description": {
+			"translate": "mna:misc/not_that_easy.description"
+		},
+		"frame": "challenge",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": true
+	},
+	"criteria": {
+		"not_so_easy": {
+			"trigger": "mna:not_so_easy",
+			"conditions": {	}
+		}
+	},
+	"requirements": []
+}

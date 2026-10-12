@@ -1,0 +1,9 @@
+{
+	"type": "mna:eldrin-fume",
+	"item": "mna:greater_mote_air",
+	"power_provided": 
+	{
+		"affinity": "WIND",
+		"amount": 5760
+	}
+}

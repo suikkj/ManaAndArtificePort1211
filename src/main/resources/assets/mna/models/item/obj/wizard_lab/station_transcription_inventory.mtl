@@ -1,0 +1,11 @@
+# Blender MTL File: 'wizard_lab_blocks.blend'
+# Material Count: 4
+
+newmtl DECO
+map_Kd mna:block/artifice/wizard_lab/inscription_table_deco
+
+newmtl DISENCHANTER
+map_Kd mna:block/artifice/wizard_lab/laboratory_disenchanter
+
+newmtl MAIN
+map_Kd mna:block/artifice/wizard_lab/inscription_table

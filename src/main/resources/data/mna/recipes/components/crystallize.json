@@ -1,0 +1,15 @@
+{
+	"type": "mna:component",
+	"output": "mna:crystallize",
+	"tier": 1,
+	"items":
+	[
+		"mna:stone_rune_purple",
+		"minecraft:lead",
+		"mna:vinteum_dust"		
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/circle"
+	]
+}

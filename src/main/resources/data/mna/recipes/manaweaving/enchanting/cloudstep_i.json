@@ -1,0 +1,17 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 3,
+	"output": "mna:rune_air",
+	"enchant": "mna:cloudstep",
+	"magnitude": 1,
+	"items": [		
+		"mna:rune_air",
+		"minecraft:rabbit_foot",
+		"minecraft:feather",
+		"mna:mote_air"
+	],
+	"patterns": [
+		"mna:circle",	
+		"mna:triangle"
+	]
+}

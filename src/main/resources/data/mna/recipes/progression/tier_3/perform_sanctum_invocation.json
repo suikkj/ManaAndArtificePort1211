@@ -1,0 +1,5 @@
+{
+  "type": "mna:progression-condition",
+  "advancement": "mna:tier_3/perform_sanctum_invocation",
+  "tier": 3
+}

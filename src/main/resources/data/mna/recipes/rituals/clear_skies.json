@@ -1,0 +1,49 @@
+{
+	"type": "mna:ritual",
+	"tier": 4,
+	"pattern":
+	[
+		[ 0, 0, 0, 0, 0 ],
+		[ 0,-1,-1,-1, 0 ],
+		[-1,-1, 1,-1,-1 ],
+		[ 0,-1,-1,-1, 0 ],
+		[ 0, 0, 0, 0, 0 ]		
+	],
+	"displayPattern":
+	[
+		[ 0, 0, 0, 0, 0 ],
+		[ 0, 2, 7, 4, 0 ],
+		[ 1,-1,-1,-1, 5 ],
+		[ 0, 8, 3, 6, 0 ],
+		[ 0, 0, 0, 0, 0 ]		
+	],
+	"reagents":
+	[
+		"     ",
+		"     ",
+		"  F  ",
+		"     ",
+		"     "
+	],
+	"keys":
+	{
+		"F": 
+		{ 
+			"item": "mna:mote_air",
+			"optional": false,
+			"consume": false
+		}
+	},
+	"manaweave":
+	[
+		"mna:manaweave_patterns/circle",
+		"mna:manaweave_patterns/hourglass"
+	],
+	"parameters":
+	{
+		"innerColor": "0xffffff",
+		"outerColor": "0x2fb4e0",
+		"displayIndexes": false,
+		"connectBeam": true
+	}
+}

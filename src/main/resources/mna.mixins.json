@@ -1,0 +1,28 @@
+﻿{
+    "required":  true,
+    "package":  "com.mna.mixins",
+    "compatibilityLevel":  "JAVA_21",
+    "refmap":  "mna.refmap.json",
+    "plugin":  "com.mna.mixins.MixinPlugin",
+    "mixins":  [
+                   "PiglinGoldMixin",
+                   "FireproofMixin",
+                   "ArmorStandMixin",
+                   "LivingEntityFireWalkerMixin",
+                   "LivingEntityOnClimbableMixin",
+                   "LocalPlayerElytra",
+                   "PlayerElytra",
+                   "LivingEntityElytra",
+                   "InventorySoulboundDrop",
+                   "EntityMixin",
+                   "ClientPacketListenerMixin",
+                   "WebBlockMixin",
+                   "CreeperIgniteMixin",
+                   "PlayerConflagrateNoHurtArmor",
+                   "PowderSnowBlockMixin"
+               ],
+    "injectors":  {
+                      "defaultRequire":  1
+                  },
+    "minVersion":  "0.8"
+}

@@ -1,0 +1,20 @@
+{
+	"type": "mna:component",
+	"output": "mna:silence",
+	"tier": 5,
+	"items":
+	[
+		"minecraft:wool",
+		"minecraft:wool",
+		"mna:aum",
+		"mna:aum",
+		"mna:arcane_ash",
+		"mna:arcane_ash"		
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/infinity",
+		"mna:manaweave_patterns/split_triangle",
+		"mna:manaweave_patterns/diamond"
+	]
+}

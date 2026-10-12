@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mna:constructs/construct_caster_arm_left_bone"
+    }
+  ],
+  "result": {
+    "item": "mna:constructs/construct_caster_arm_right_bone"    
+  }
+}

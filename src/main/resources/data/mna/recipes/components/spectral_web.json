@@ -1,0 +1,17 @@
+{
+	"type": "mna:component",
+	"output": "mna:spectral_web",
+	"tier": 1,
+	"items":
+	[
+		"minecraft:cobweb",
+		"mna:vinteum_dust",
+		"mna:vinteum_dust",
+		"minecraft:phantom_membrane"		
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/backslash",
+		"mna:manaweave_patterns/slash"
+	]
+}

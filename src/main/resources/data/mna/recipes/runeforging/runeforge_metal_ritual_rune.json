@@ -1,0 +1,7 @@
+{
+	"type": "mna:runeforging",
+	"tier": 2,
+	"pattern": "mna:rune_pattern_ritual_metal",
+	"output": "mna:rune_ritual_metal",
+	"output_quantity": 4
+}

@@ -1,0 +1,19 @@
+{
+	"type": "mna:component",
+	"tier": 5,
+	"output": "mna:fire_shield",
+	"items":
+	[
+		"minecraft:shield",
+		"mna:mote_fire",
+		"mna:superheated_vinteum_ingot",
+		"mna:desert_nova",
+		"mna:rune_defense"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/infinity",
+		"mna:manaweave_patterns/triangle",
+		"mna:manaweave_patterns/inverted_split_triangle"		
+	]
+}

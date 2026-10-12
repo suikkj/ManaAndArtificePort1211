@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "down": "mna:block/artifice/decoration/vinteum_ingot_block",
+        "up": "mna:block/artifice/decoration/vinteum_ingot_block",
+        "north": "mna:block/artifice/decoration/vinteum_ingot_block",
+        "east": "mna:block/artifice/decoration/vinteum_ingot_block",
+        "south": "mna:block/artifice/decoration/vinteum_ingot_block",
+        "west": "mna:block/artifice/decoration/vinteum_ingot_block",
+        "particle": "mna:block/artifice/decoration/vinteum_ingot_block"
+    }
+}

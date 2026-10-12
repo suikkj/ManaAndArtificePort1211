@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+  	" L ",
+  	" S ",
+  	" WT"
+  ],
+  "key": {
+ 	"W": {
+  		"item": "minecraft:wheat"
+  	},
+  	"S": {
+  		"item": "minecraft:stick"
+  	},
+  	"L": {
+  		"tag": "minecraft:logs"
+  	},
+  	"T": {
+  		"item": "minecraft:wooden_axe"
+  	}
+  },
+  "result": {
+    "item": "mna:constructs/construct_axe_arm_right_wickerwood"    
+  }
+}

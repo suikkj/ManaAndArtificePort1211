@@ -1,0 +1,6 @@
+{
+  "type": "mna:transmutation",
+  "targetBlock": "minecraft:gravel",
+  "lootTable": "mna:transmutation/flint" ,
+  "representationItem": "minecraft:flint"
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mna:constructs/construct_shield_arm_left_stone"
+    }
+  ],
+  "result": {
+    "item": "mna:constructs/construct_shield_arm_right_stone"    
+  }
+}

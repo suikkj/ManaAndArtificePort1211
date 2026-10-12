@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+  	"VVV",
+  	"CAC",
+  	"SLS"
+  ],
+  "key": {
+  	"A": {
+  		"item": "minecraft:anvil"
+  	},
+  	"C": {
+  		"item": "mna:chimerite_gem"
+  	},
+  	"L": {
+  		"tag": "minecraft:logs"
+  	},
+  	"V": {
+  		"item": "mna:vinteum_dust"
+  	},
+  	"S": {
+  		"item": "mna:transmuted_silver"
+  	}
+  },
+  "result": {
+    "item": "mna:runic_anvil"    
+  }
+}

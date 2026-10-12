@@ -1,0 +1,6 @@
+{
+	"type": "mna:runeforging",
+	"tier": 2,
+	"pattern": "mna:rune_pattern_aura",
+	"output": "mna:rune_aura"
+}

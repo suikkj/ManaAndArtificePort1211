@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+  	"SHS",
+  	" H ",
+  	" S "
+  ],
+  "key": {
+ 	"H": {
+  		"item": "minecraft:hay_block"
+  	},
+  	"S": {
+  		"item": "minecraft:stick"
+  	}
+  },
+  "result": {
+    "item": "mna:constructs/construct_basic_torso_wickerwood"    
+  }
+}

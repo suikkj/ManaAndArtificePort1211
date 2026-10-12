@@ -1,0 +1,16 @@
+﻿{
+	"type": "mna:component",
+	"tier": 1,
+	"output": "mna:fill_hole",
+	"items":
+	[
+		"mna:stone_rune_brown",
+		"mna:vinteum_dust",
+		"c:chests",
+		"mna:stone_rune_gray"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/square"	
+	]
+}

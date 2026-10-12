@@ -1,0 +1,22 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 4,
+	"output": "mna:rune_ender",
+	"enchant": "minecraft:looting",
+	"magnitude": 2,
+	"items": [
+		"mna:rune_ender",
+		"minecraft:ender_eye",
+		"minecraft:phantom_membrane",
+		"mna:stone_rune_purple",
+		"mna:stone_rune_purple",
+		"minecraft:end_crystal",
+		"minecraft:end_crystal"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:knot2",
+		"mna:knot",
+		"mna:diamond"
+	]
+}

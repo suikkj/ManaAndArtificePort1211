@@ -1,0 +1,17 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:fluid_jug_infinite_water",
+	"tier": 2,
+	"items": [
+		"mna:mote_water",
+		"mna:fluid_jug"
+	],
+	"patterns": [
+		"mna:inverted_triangle",
+		"mna:circle",
+		"mna:knot4",
+		"mna:knot",
+		"mna:circle",
+		"mna:inverted_triangle"
+	]
+}

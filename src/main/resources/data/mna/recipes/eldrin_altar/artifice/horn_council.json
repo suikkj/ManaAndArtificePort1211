@@ -1,0 +1,27 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:faction_horn_council",
+	"tier": 5,
+	"requiredFaction": "mna:council",
+	"items": [
+		"minecraft:logs",
+		"mna:vinteum_ingot",
+		"mna:vinteum_ingot",
+		"mna:chimerite_gem",
+		"mna:chimerite_gem",
+		"minecraft:nether_star",
+		"minecraft:end_rod",
+		"mna:greater_mote_arcane",
+		"mna:greater_mote_air"
+	],
+	"power_requirements": [
+		{
+			"affinity": "ARCANE",
+			"amount": 2500
+		},
+		{
+			"affinity": "EARTH",
+			"amount": 1250
+		}
+	]
+}

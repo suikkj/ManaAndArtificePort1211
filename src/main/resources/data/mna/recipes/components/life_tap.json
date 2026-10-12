@@ -1,0 +1,16 @@
+{
+	"type": "mna:component",
+	"tier": 5,
+	"output": "mna:life_tap",
+	"items":
+	[
+		"minecraft:golden_apple",
+		"mna:mote_ender",
+		"mna:aum"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/knot",
+		"mna:manaweave_patterns/infinity"		
+	]
+}

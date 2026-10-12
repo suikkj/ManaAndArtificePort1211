@@ -1,0 +1,17 @@
+﻿{
+	"type": "mna:component",
+	"output": "mna:exchange",
+	"tier": 1,
+	"items":
+	[
+		"c:stone",
+		"c:sand",
+		"iron_block",
+		"light_weighted_pressure_plate",
+		"mna:vinteum_dust"		
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/circle"
+	]
+}

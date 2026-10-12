@@ -1,0 +1,17 @@
+{
+  "parent": "forge:item/default",
+  "loader": "forge:composite",
+  "textures": {
+  	"particle": "mna:block/material/spectral/conjures"
+  },
+  "children": {
+    "ash": {
+      "loader": "forge:obj",
+      "automatic_culling": false,
+	  "shade_quads": false,
+	  "flip_v": true,
+	  "emissive_ambient": true,
+      "model": "mna:models/block/obj/spectral/conjured_runes.obj"
+    }
+  }
+}

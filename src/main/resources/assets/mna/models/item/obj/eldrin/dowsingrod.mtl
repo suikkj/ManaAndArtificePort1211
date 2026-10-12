@@ -1,0 +1,8 @@
+# Blender MTL File: 'None'
+# Material Count: 2
+
+newmtl MAIN
+map_Kd mna:item/artifice/wands
+
+newmtl WAND
+map_Kd mna:item/manaweaving/manaweavingwand

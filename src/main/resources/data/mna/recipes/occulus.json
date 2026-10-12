@@ -1,0 +1,21 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+  	"VGV",
+  	" T "
+  ],
+  "key": {
+  	"G": {
+  		"tag": "c:glass"
+  	},
+	"V": {
+		"item": "mna:vinteum_dust"
+	},
+  	"T": {
+  		"item": "mna:ornate_table"
+  	}
+  },
+  "result": {
+    "item": "mna:occulus"
+  }
+}

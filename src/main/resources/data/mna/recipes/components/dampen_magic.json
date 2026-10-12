@@ -1,0 +1,17 @@
+{
+	"type": "mna:component",
+	"tier": 4,
+	"output": "mna:dampen_magic",
+	"items":
+	[
+		"mna:stone_rune_purple",
+		"mna:greater_mote_ender",
+		"mna:ritual_focus_greater"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/hourglass",
+		"mna:manaweave_patterns/diamond",
+		"mna:manaweave_patterns/bolt"
+	]
+}

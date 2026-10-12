@@ -1,0 +1,14 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "minecraft:poisonous_potato",
+	"quantity": 1,
+	"tier": 2,
+	"items": [
+		"minecraft:potato",
+		"minecraft:lily_of_the_valley",
+		"minecraft:spider_eye"
+	],
+	"patterns": [
+		"mna:knot4"		
+	]
+}

@@ -1,0 +1,22 @@
+{
+	"type": "mna:shape",
+	"tier": 5,
+	"output": "mna:beam",
+	"items":
+	[
+		"mna:vinteum_dust",
+		"mna:rune_defense",
+		"prismarine_shard",
+		"prismarine_shard",
+		"prismarine_crystals",
+		"prismarine_crystals",
+		"end_crystal"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/circle",
+		"mna:manaweave_patterns/infinity",
+		"mna:manaweave_patterns/inverted_triangle",
+		"mna:manaweave_patterns/circle"		
+	]
+}

@@ -1,0 +1,18 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 4,
+	"output": "mna:rune_arcane",
+	"enchant": "minecraft:fortune",
+	"magnitude": 2,
+	"items": [
+		"mna:rune_arcane",
+		"mna:mote_arcane",
+		"minecraft:diamond_block",
+		"minecraft:emerald_block"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:knot2",
+		"mna:diamond"
+	]
+}

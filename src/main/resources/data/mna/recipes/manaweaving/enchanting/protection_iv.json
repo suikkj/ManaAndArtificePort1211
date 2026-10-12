@@ -1,0 +1,24 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 5,
+	"output": "mna:rune_earth",
+	"enchant": "minecraft:protection",
+	"magnitude": 4,
+	"items": [
+		"mna:rune_earth",
+		"mna:rune_defense",
+		"minecraft:shield",
+		"minecraft:diamond",
+		"minecraft:diamond",
+		"minecraft:diamond",
+		"minecraft:diamond",
+		"minecraft:diamond",
+		"mna:mote_earth"
+	],
+	"patterns": [
+		"mna:manaweave_patterns/diamond",
+		"mna:manaweave_patterns/square",
+		"mna:manaweave_patterns/circle",
+		"mna:manaweave_patterns/diamond"
+	]
+}

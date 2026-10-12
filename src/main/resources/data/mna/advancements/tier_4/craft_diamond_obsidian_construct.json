@@ -1,0 +1,30 @@
+{
+	"parent": "mna:tier_3/advance_tier_4",
+	"display": {
+		"icon": {
+			"item": "mna:constructs/construct_basic_head_obsidian"
+		},
+		"title": {
+			"translate": "mna:tier_4/craft_diamond_obsidian_construct.title"
+		},
+		"description": {
+			"translate": "mna:tier_4/craft_diamond_obsidian_construct.description"
+		},
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": false,
+		"hidden": false
+	},
+	"criteria": {
+		"wood_or_stone": {
+			"trigger": "mna:summon_construct",
+			"conditions": {
+				"construction": {
+					"numMaterialsForTier": {
+						"tier_4": 3
+					}
+				}
+			}
+		}
+	}
+}

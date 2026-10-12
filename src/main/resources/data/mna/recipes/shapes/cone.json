@@ -1,0 +1,16 @@
+{
+	"type": "mna:shape",
+	"tier": 3,
+	"output": "mna:cone",
+	"items":
+	[
+		"mna:vinteum_dust",
+		"hopper",
+		"pufferfish"
+	],
+	"patterns":
+	[		
+		"mna:manaweave_patterns/bolt",
+		"mna:manaweave_patterns/circle"
+	]
+}

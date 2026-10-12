@@ -1,0 +1,11 @@
+{
+	"values": [
+		"minecraft:cramming",
+		"#minecraft:is_drowning",
+		"minecraft:dry_out",
+		"#minecraft:is_fall",
+		"minecraft:starve",
+		"minecraft:in_wall",
+		"minecraft:fly_into_wall"
+	]
+}

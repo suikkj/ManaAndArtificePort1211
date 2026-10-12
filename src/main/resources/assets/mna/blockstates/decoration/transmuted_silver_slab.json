@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "mna:block/decoration/transmuted_silver_slab"
+    },
+    "type=double": {
+      "model": "mna:block/decoration/transmuted_silver_block"
+    },
+    "type=top": {
+      "model": "mna:block/decoration/transmuted_silver_slab_top"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "down": "mna:block/artifice/decoration/diamond_arcane_stone_quad",
+        "up": "mna:block/artifice/decoration/diamond_arcane_stone_quad",
+        "north": "mna:block/artifice/decoration/diamond_arcane_stone_quad",
+        "east": "mna:block/artifice/decoration/diamond_arcane_stone_quad",
+        "south": "mna:block/artifice/decoration/diamond_arcane_stone_quad",
+        "west": "mna:block/artifice/decoration/diamond_arcane_stone_quad",
+        "particle": "mna:block/artifice/decoration/diamond_arcane_stone_quad"
+    }
+}

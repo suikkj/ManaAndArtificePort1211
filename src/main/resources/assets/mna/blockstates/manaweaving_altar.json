@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "mna:block/manaweaving_altar" },
+    "facing=south": { "model": "mna:block/manaweaving_altar", "y": 180 },
+    "facing=east": { "model": "mna:block/manaweaving_altar", "y": 90  },
+    "facing=west": { "model": "mna:block/manaweaving_altar", "y": 270 }
+  }
+}

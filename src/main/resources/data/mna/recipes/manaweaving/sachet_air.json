@@ -1,0 +1,16 @@
+﻿{
+	"type": "mna:manaweaving-recipe",
+	"tier": 2,
+	"output": "mna:sachet_air",
+	"quantity": 2,
+	"items": [
+		"mna:tarma_root",
+		"c:feathers",
+		"minecraft:phantom_membrane",
+		"mna:vinteum_dust"
+	],
+	"patterns": [
+		"mna:circle"	
+	]
+}
+

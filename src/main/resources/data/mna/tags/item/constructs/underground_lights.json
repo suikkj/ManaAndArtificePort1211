@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:torch",
+    "minecraft:glowstone",
+    "minecraft:shroomlight"
+  ]
+}

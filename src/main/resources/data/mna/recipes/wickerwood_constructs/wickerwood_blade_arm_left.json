@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+  	" L ",
+  	" S ",
+  	"TW "
+  ],
+  "key": {
+ 	"W": {
+  		"item": "minecraft:wheat"
+  	},
+  	"S": {
+  		"item": "minecraft:stick"
+  	},
+  	"L": {
+  		"tag": "minecraft:logs"
+  	},
+  	"T": {
+  		"item": "minecraft:wooden_sword"
+  	}
+  },
+  "result": {
+    "item": "mna:constructs/construct_blade_arm_left_wickerwood"    
+  }
+}

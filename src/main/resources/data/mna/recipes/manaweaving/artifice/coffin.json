@@ -1,0 +1,18 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:coffin",
+	"requiredFaction": "mna:undead",
+	"tier": 3,
+	"items": [
+		"minecraft:cobblestone",
+		"minecraft:cobblestone",
+		"minecraft:cobblestone",
+		"minecraft:cobblestone",		
+		"minecraft:obsidian",	
+		"minecraft:obsidian",
+		"mna:purified_vinteum_dust"
+	],
+	"patterns": [
+		"mna:circle"
+	]
+}

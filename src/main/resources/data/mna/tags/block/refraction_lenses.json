@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [  	    
+    "mna:refraction_lens_arcane",
+    "mna:refraction_lens_ender",
+    "mna:refraction_lens_water",
+    "mna:refraction_lens_fire",
+    "mna:refraction_lens_wind",
+    "mna:refraction_lens_earth"
+  ]
+}

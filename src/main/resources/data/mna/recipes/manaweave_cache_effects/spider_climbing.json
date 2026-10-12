@@ -1,0 +1,8 @@
+{
+	"type": "mna:manaweave-cache-effect",
+	"tier": 1,
+	"effect": "mna:spider_climbing",
+	"duration_min": 600,
+	"duration_max": 2400,
+	"magnitude": 0
+}

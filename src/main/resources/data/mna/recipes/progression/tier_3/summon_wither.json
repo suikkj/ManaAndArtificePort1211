@@ -1,0 +1,6 @@
+{
+  "type": "mna:progression-condition",
+  "advancement": "minecraft:nether/summon_wither",
+  "description": "advancements.nether.summon_wither.description",
+  "tier": 3
+}

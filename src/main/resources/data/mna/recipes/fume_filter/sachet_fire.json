@@ -1,0 +1,9 @@
+{
+	"type": "mna:eldrin-fume",
+	"item": "mna:sachet_fire",
+	"power_provided": 
+	{
+		"affinity": "FIRE",
+		"amount": 240
+	}
+}

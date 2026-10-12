@@ -1,0 +1,5 @@
+# Blender MTL File: 'pedestal.blend'
+# Material Count: 1
+
+newmtl MAIN_SIGN
+map_Kd mna:block/material/pedestal/pedestal_sign

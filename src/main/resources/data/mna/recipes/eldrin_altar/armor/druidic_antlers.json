@@ -1,0 +1,30 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:fey_armor_head",
+	"tier": 5,
+	"requiredFaction": "mna:fey",
+	"items": [
+		"minecraft:iron_helmet",
+		"mna:ritual_focus_greater",
+		"mna:ritual_focus_greater",
+		"mna:greater_mote_air",
+		"mna:rune_defense",
+		"mna:rune_defense",
+		"mna:ironbark",	
+		"mna:ironbark"
+	],
+	"power_requirements": [
+		{
+			"affinity": "WIND",
+			"amount": 2750
+		},
+		{
+			"affinity": "ENDER",
+			"amount": 1500
+		}
+	],
+	"colors": [
+		39168,
+		13555406
+	]
+}

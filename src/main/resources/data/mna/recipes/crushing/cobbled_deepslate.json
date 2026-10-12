@@ -1,0 +1,7 @@
+{
+	"type": "mna:crushing",
+	"tier": 2,
+	"input": "minecraft:deepslate",
+	"output": "minecraft:cobbled_deepslate",
+	"output_quantity": 1
+}

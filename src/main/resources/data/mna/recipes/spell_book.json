@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+  	"SLL",
+  	"SPP",
+  	"SLL"
+  ],
+  "key": {
+  	"S": {
+  		"item": "minecraft:string"
+  	},
+  	"P": {
+  		"item": "minecraft:paper"
+  	},
+  	"L": {
+  		"item": "minecraft:leather"
+  	}
+  },
+  "result": {
+    "item": "mna:spell_book"
+  }
+}

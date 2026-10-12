@@ -1,0 +1,35 @@
+{
+	"parent": "mna:tier_0/codex_trade",
+	"display": {
+		"icon": {
+			"item": "mna:delegation_station"
+		},
+		"title": {
+			"translate": "mna:tier_1/obtain_delegation_station.title"
+		},
+		"description": {
+			"translate": "mna:tier_1/obtain_delegation_station.description"
+		},
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": false,
+		"hidden": false
+	},
+	"criteria": {
+		"requirement": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": [
+							"mna:delegation_station",
+							"mna:lodestar"
+						]
+					}
+				]
+			}
+		}
+	},
+	"requirements": [
+	]
+}

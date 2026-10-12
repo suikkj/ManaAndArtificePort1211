@@ -1,0 +1,6 @@
+{
+  "type": "mna:progression-condition",
+  "advancement": "minecraft:story/enter_the_end",
+  "description": "advancements.story.enter_the_end.description",
+  "tier": 4
+}

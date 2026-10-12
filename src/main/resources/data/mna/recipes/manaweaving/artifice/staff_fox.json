@@ -1,0 +1,18 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:staff_fox",
+	"tier": 3,
+	"requiredFaction": "mna:fey",
+	"items": [
+		"minecraft:logs",
+		"minecraft:flint",
+		"minecraft:stone",
+		"minecraft:leather",
+		"minecraft:string"
+	],
+	"patterns": [
+		"mna:slash",
+		"mna:split_triangle",
+		"mna:backslash"
+	]
+}

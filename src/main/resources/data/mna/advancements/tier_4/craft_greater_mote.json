@@ -1,0 +1,37 @@
+{
+	"parent": "mna:tier_3/advance_tier_4",
+	"display": {
+		"icon": {
+			"item": "mna:greater_mote_arcane"
+		},
+		"title": {
+			"translate": "mna:tier_4/craft_greater_mote.title"
+		},
+		"description": {
+			"translate": "mna:tier_4/craft_greater_mote.description"
+		},
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": false,
+		"hidden": false
+	},
+	"criteria": {
+		"requirement": {
+			"trigger": "mna:eldrin_altar_craft",
+			"conditions": {
+				"item": {
+					"items": [
+						"mna:greater_mote_arcane",
+						"mna:greater_mote_fire",
+						"mna:greater_mote_water",
+						"mna:greater_mote_ender",
+						"mna:greater_mote_air",
+						"mna:greater_mote_earth"
+					]
+				}
+			}
+		}
+	},
+	"requirements": [
+	]
+}

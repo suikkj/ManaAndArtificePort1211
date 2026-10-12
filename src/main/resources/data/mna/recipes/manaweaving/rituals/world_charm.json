@@ -1,0 +1,17 @@
+﻿{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:world_charm",
+	"tier": 3,
+	"items": [
+		 "minecraft:redstone",
+		 "minecraft:redstone",		 
+		 "mna:rune_marking",
+		 "c:ingots/gold",
+		 "c:glass_panes"
+	],
+	"patterns": [
+		"mna:square",
+		"mna:inverted_triangle"
+	]
+}
+

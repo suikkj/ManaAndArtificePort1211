@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [  	
+  	"MSM",
+  	" T "
+  ],
+  "key": {
+  	"M": {
+  		"tag": "mna:lesser_motes"
+  	},
+  	"S": {
+  		"item": "mna:transmuted_silver"
+  	},
+  	"T": {
+  		"item": "mna:basic_table"
+  	}
+  },
+  "result": {
+    "item": "mna:affinity_tinker"    
+  }
+}

@@ -1,0 +1,20 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 4,
+	"output": "mna:rune_fire",
+	"enchant": "minecraft:flame",
+	"magnitude": 1,
+	"items": [
+		"mna:rune_fire",
+		"mna:arcane_ash",
+		"minecraft:blaze_rod",
+		"mna:mote_fire",
+		"minecraft:arrow",
+		"minecraft:flint"
+	],
+	"patterns": [
+		"mna:triangle",
+		"mna:knot2",
+		"mna:split_triangle"
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"type": "mna:component",
+	"tier": 5,
+	"output": "mna:wither",
+	"items":
+	[
+		"minecraft:wither_rose",
+		"mna:vinteum_dust",
+		"minecraft:soul_sand",
+		"minecraft:soul_sand"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/inverted_triangle",
+		"mna:manaweave_patterns/hourglass"
+	]
+}

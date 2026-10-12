@@ -1,0 +1,5 @@
+{
+  "variants": {    
+    "": { "model": "mna:block/wizard_lab/fume_prism_standalone" }
+  }
+}

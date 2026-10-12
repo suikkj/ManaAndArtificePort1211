@@ -1,0 +1,16 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:break_ring_lesser",
+	"tier": 2,
+	"items": [
+		"minecraft:iron_ingot",
+		"minecraft:iron_ingot",
+		"minecraft:iron_ingot",		
+		"mna:mundane_ring",
+		"mna:vinteum_dust"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:diamond"	
+	]
+}

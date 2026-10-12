@@ -1,0 +1,7 @@
+{
+	"type": "mna:crushing",
+	"tier": 2,
+	"input": "minecraft:skeleton_skull",
+	"output": "minecraft:bone",
+	"output_quantity": 4
+}

@@ -1,0 +1,14 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "minecraft:gilded_blackstone",
+	"quantity": 2,
+	"tier": 3,
+	"items": [
+		"minecraft:gold_ingot",
+		"minecraft:blackstone",
+		"minecraft:blackstone"
+	],
+	"patterns": [
+		"mna:square"		
+	]
+}

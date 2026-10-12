@@ -1,0 +1,15 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:eldrin_matrix_earth",
+	"tier": 2,
+	"items": [
+		"mna:mana_crystal_fragment",
+		"mna:mote_earth",
+		"mna:ritual_focus_lesser"
+	],
+	"patterns": [
+		"mna:square",
+		"mna:diamond",
+		"mna:square"
+	]
+}

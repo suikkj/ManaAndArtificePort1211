@@ -1,0 +1,22 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 4,
+	"output": "mna:rune_water",
+	"enchant": "minecraft:respiration",
+	"magnitude": 2,
+	"items": [
+		"mna:rune_water",
+		"minecraft:leather_helmet",
+		"minecraft:clock",
+		"mna:stone_rune_white",
+		"mna:stone_rune_light_blue",
+		"mna:stone_rune_white",
+		"mna:stone_rune_light_blue",
+		"mna:vinteum_dust",
+		"mna:vinteum_dust"
+	],
+	"patterns": [
+		"mna:manaweave_patterns/circle",
+		"mna:manaweave_patterns/circle"
+	]
+}

@@ -1,0 +1,66 @@
+{
+	"pools": [
+		{
+			"rolls": {
+				"min": 4,
+				"max": 8
+			},
+			"entries": [
+				{
+					"type": "minecraft:tag",
+					"weight": 10,
+					"name": "mna:constructs/adventure_nether_common",
+					"expand": true
+				}
+			]
+		},
+		{
+			"rolls": {
+				"min": 0,
+				"max": 1
+			},
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"weight": 1,
+					"name": "mna:torn_journal_page"
+				}
+			],
+			"functions": [
+				{
+					"function": "mna:random_journal_page"
+				}
+			],
+			"conditions": [
+				{
+					"condition": "minecraft:random_chance",
+					"chance": 0.01
+				}
+			]
+		},
+		{
+			"rolls": {
+				"min": 0,
+				"max": 1
+			},
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "mna:staff_aum",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "mna:random_spell_staff"
+						}
+					],
+					"conditions": [
+						{
+							"condition": "minecraft:random_chance",
+							"chance": 0.05
+						}
+					]
+				}
+			]
+		}
+	]
+}

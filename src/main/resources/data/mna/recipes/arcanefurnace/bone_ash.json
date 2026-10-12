@@ -1,0 +1,8 @@
+{
+	"type": "mna:arcane-furnace",
+	"tier": 1,
+	"input": "minecraft:bone",
+	"output": "mna:bone_ash",
+	"outputQuantity": 4,
+	"burnTime": 200
+}

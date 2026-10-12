@@ -1,0 +1,21 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:illusion_block",
+	"tier": 2,
+	"quantity": 8,
+	"items": [
+		"mna:stone_rune_purple",
+		"mna:stone_rune_magenta",
+		"mna:stone_rune_cyan",
+		"mna:stone_rune_light_blue",
+		"minecraft:glass",
+		"mna:chimerite_gem",
+		"mna:vinteum_dust",
+		"mna:vinteum_dust"
+	],
+	"patterns": [
+		"mna:square",
+		"mna:knot3",		
+		"mna:square"		
+	]
+}

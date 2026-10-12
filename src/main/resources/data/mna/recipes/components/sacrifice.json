@@ -1,0 +1,16 @@
+{
+	"type": "mna:component",
+	"tier": 4,
+	"output": "mna:sacrifice",
+	"items":
+	[
+		"mna:stone_rune_light_purple",
+		"minecraft:skeleton_skull",
+		"minecraft:heart_of_the_sea",
+		"mna:witherbone"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/star"
+	]
+}

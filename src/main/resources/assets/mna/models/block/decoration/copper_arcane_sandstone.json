@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "down": "mna:block/artifice/decoration/copper_arcane_sandstone",
+        "up": "mna:block/artifice/decoration/copper_arcane_sandstone",
+        "north": "mna:block/artifice/decoration/copper_arcane_sandstone",
+        "east": "mna:block/artifice/decoration/copper_arcane_sandstone",
+        "south": "mna:block/artifice/decoration/copper_arcane_sandstone",
+        "west": "mna:block/artifice/decoration/copper_arcane_sandstone",
+        "particle": "mna:block/artifice/decoration/copper_arcane_sandstone"
+    }
+}

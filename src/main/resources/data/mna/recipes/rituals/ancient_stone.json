@@ -1,0 +1,72 @@
+﻿{
+	"type": "mna:ritual",
+	"tier": 2,
+	"pattern":
+	[
+		[ 0, 1, 0, 0, 0,16, 0 ],
+		[ 0, 2, 0, 0, 0,15, 0 ],
+		[ 0, 0, 3, 0,14, 0, 0 ],
+		[ 0, 0, 0, 4, 0, 0, 0 ],
+		[ 0, 0,13, 0, 5, 0, 0 ],
+		[ 0,12, 0, 0, 0, 6, 0 ],
+		[ 0,11,10, 9, 8, 7, 0 ]
+	],
+	"reagents":
+	[
+		" G   G ",
+		" D   D ",
+		"  S S  ",
+		"   O   ",
+		"  S S  ",
+		" D   D ",
+		" GAOAG "
+	],
+	"keys":
+	{
+		"O": 
+		{ 
+			"item": "c:sand",
+			"optional": false,
+			"consume": true
+		},
+		"S": 
+		{ 
+			"item": "stone",
+			"optional": false,
+			"consume": true
+		},
+		"D": 
+		{ 
+			"item": "diorite",
+			"optional": false,
+			"consume": true
+		},
+		"G": 
+		{ 
+			"item": "granite",
+			"optional": false,
+			"consume": true
+		},
+		"A": 
+		{ 
+			"item": "andesite",
+			"optional": false,
+			"consume": true
+		}
+	},
+	"manaweave":
+	[
+		"mna:manaweave_patterns/square",
+		"mna:manaweave_patterns/diamond",
+		"mna:manaweave_patterns/square"
+	],
+	"parameters":
+	{
+		"innerColor": "0x644828",
+		"outerColor": "0x444444",
+		"displayIndexes": false,
+		"connectBeam": false,
+		"beamColor": "0x47260a"
+	},
+	"createsItem":	"mna:mote_earth"
+}

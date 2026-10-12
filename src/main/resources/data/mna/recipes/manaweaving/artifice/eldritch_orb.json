@@ -1,0 +1,16 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:eldritch_orb",
+	"tier": 3,
+	"items": [
+		"mna:mana_crystal_fragment",
+		"minecraft:end_crystal",
+		"mna:rune_arcane",
+		"mna:rune_defense"
+	],
+	"patterns": [
+		"mna:triangle",
+		"mna:circle",
+		"mna:inverted_triangle"
+	]
+}

@@ -1,0 +1,19 @@
+{
+	"type": "mna:component",
+	"tier": 2,
+	"output": "mna:frost_damage",
+	"items":
+	[
+		"mna:stone_rune_cyan",
+		"mna:stone_rune_light_blue",
+		"mna:stone_rune_white",
+		"mna:stone_rune_blue",
+		"snowball",
+		"snowball"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/inverted_triangle",
+		"mna:manaweave_patterns/circle"
+	]
+}

@@ -1,0 +1,25 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+  	" SC",
+  	"STS",
+  	"SNS"
+  ],
+  "key": {
+  	"S": {
+  		"item": "mna:transmuted_silver"
+  	},
+  	"C": {
+  		"tag": "minecraft:wool_carpets"
+  	},
+  	"T": {
+  		"item": "string"
+  	},
+  	"N": {
+  		"tag": "c:nuggets/iron"
+  	}
+  },
+  "result": {
+    "item": "mna:bell_of_bidding"    
+  }
+}

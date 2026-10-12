@@ -1,0 +1,14 @@
+{
+	"type": "mna:component",
+	"tier": 1,
+	"output": "mna:place_block",
+	"items":
+	[
+		"dropper",
+		"mna:stone_rune_gray"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/square"	
+	]
+}

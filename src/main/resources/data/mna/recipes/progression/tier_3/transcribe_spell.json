@@ -1,0 +1,5 @@
+{
+  "type": "mna:progression-condition",
+  "advancement": "mna:tier_3/transcribe_spell",
+  "tier": 3
+}

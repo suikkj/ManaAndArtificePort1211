@@ -1,0 +1,25 @@
+{
+	"parent": "mna:root",
+	"display": {
+		"icon": {
+			"item": "mna:bed_charm"
+		},
+		"title": {
+			"translate": "mna:misc/use_all_charms.title"
+		},
+		"description": {
+			"translate": "mna:misc/use_all_charms.description"
+		},
+		"frame": "challenge",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": true
+	},
+	"criteria": {
+		"use_all_charms": {
+			"trigger": "mna:shaman",
+			"conditions": {	}
+		}
+	},
+	"requirements": []
+}

@@ -1,0 +1,247 @@
+{
+	"multipart": [
+		{
+			"when": {
+				"facing": "east"
+			},
+			"apply": {
+				"model": "mna:block/pedestal_sign",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"facing": "west"
+			},
+			"apply": {
+				"model": "mna:block/pedestal_sign",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"facing": "north"
+			},
+			"apply": {
+				"model": "mna:block/pedestal_sign"
+			}
+		},
+		{
+			"when": {
+				"facing": "south"
+			},
+			"apply": {
+				"model": "mna:block/pedestal_sign",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"facing": "east",
+				"connected": "false",
+				"brimstone": "false"
+			},
+			"apply": {
+				"model": "mna:block/pedestal",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"facing": "west",
+				"connected": "false",
+				"brimstone": "false"
+			},
+			"apply": {
+				"model": "mna:block/pedestal",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"facing": "north",
+				"connected": "false",
+				"brimstone": "false"
+			},
+			"apply": {
+				"model": "mna:block/pedestal"
+			}
+		},
+		{
+			"when": {
+				"facing": "south",
+				"connected": "false",
+				"brimstone": "false"
+			},
+			"apply": {
+				"model": "mna:block/pedestal",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"facing": "east",
+				"connected": "true",
+				"brimstone": "false"
+			},
+			"apply": {
+				"model": "mna:block/pedestal_square",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"facing": "west",
+				"connected": "true",
+				"brimstone": "false"
+			},
+			"apply": {
+				"model": "mna:block/pedestal_square",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"facing": "north",
+				"connected": "true",
+				"brimstone": "false"
+			},
+			"apply": {
+				"model": "mna:block/pedestal_square"
+			}
+		},
+		{
+			"when": {
+				"facing": "south",
+				"connected": "true",
+				"brimstone": "false"
+			},
+			"apply": {
+				"model": "mna:block/pedestal_square",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"north": "true",
+				"brimstone": "false"
+			},
+			"apply": {
+				"model": "mna:block/pedestal_connection",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"east": "true",
+				"brimstone": "false"
+			},
+			"apply": {
+				"model": "mna:block/pedestal_connection"
+			}
+		},
+		{
+			"when": {
+				"south": "true",
+				"brimstone": "false"
+			},
+			"apply": {
+				"model": "mna:block/pedestal_connection",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"west": "true",
+				"brimstone": "false"
+			},
+			"apply": {
+				"model": "mna:block/pedestal_connection",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"facing": "east",
+				"connected": "true",
+				"brimstone": "true"
+			},
+			"apply": {
+				"model": "mna:block/pedestal_square_gold",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"facing": "west",
+				"connected": "true",
+				"brimstone": "true"
+			},
+			"apply": {
+				"model": "mna:block/pedestal_square_gold",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"facing": "north",
+				"connected": "true",
+				"brimstone": "true"
+			},
+			"apply": {
+				"model": "mna:block/pedestal_square_gold"
+			}
+		},
+		{
+			"when": {
+				"facing": "south",
+				"connected": "true",
+				"brimstone": "true"
+			},
+			"apply": {
+				"model": "mna:block/pedestal_square_gold",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"north": "true",
+				"brimstone": "true"
+			},
+			"apply": {
+				"model": "mna:block/pedestal_connection_gold",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"east": "true",
+				"brimstone": "true"
+			},
+			"apply": {
+				"model": "mna:block/pedestal_connection_gold"
+			}
+		},
+		{
+			"when": {
+				"south": "true",
+				"brimstone": "true"
+			},
+			"apply": {
+				"model": "mna:block/pedestal_connection_gold",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"west": "true",
+				"brimstone": "true"
+			},
+			"apply": {
+				"model": "mna:block/pedestal_connection_gold",
+				"y": 180
+			}
+		}
+	]
+}
+}

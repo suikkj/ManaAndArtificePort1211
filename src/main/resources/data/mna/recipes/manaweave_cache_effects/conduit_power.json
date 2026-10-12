@@ -1,0 +1,8 @@
+{
+	"type": "mna:manaweave-cache-effect",
+	"tier": 4,
+	"effect": "minecraft:conduit_power",
+	"duration_min": 600,
+	"duration_max": 1200,
+	"magnitude": 0
+}

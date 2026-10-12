@@ -1,0 +1,20 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "minecraft:prismarine_shard",
+	"quantity": 8,
+	"tier": 3,
+	"items": [
+		"minecraft:kelp",
+		"minecraft:kelp",
+		"minecraft:kelp",
+		"minecraft:kelp",
+		"minecraft:quartz",
+		"minecraft:quartz",
+		"minecraft:quartz",
+		"minecraft:quartz",
+		"minecraft:flint"
+	],
+	"patterns": [
+		"mna:triangle"		
+	]
+}

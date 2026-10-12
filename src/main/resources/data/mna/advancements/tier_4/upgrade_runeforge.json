@@ -1,0 +1,50 @@
+{
+	"parent": "mna:tier_3/advance_tier_4",
+	"display": {
+		"icon": {
+			"item": "mna:runeforge"
+		},
+		"title": {
+			"translate": "mna:tier_4/upgrade_runeforge.title"
+		},
+		"description": {
+			"translate": "mna:tier_4/upgrade_runeforge.description"
+		},
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": false,
+		"hidden": false
+	},
+	"criteria": {
+		"requirement": {
+			"trigger": "minecraft:item_used_on_block",
+			"conditions": {
+				"location": [
+					{
+						"condition": "minecraft:match_tool",
+						"predicate": {
+							"items": [
+								"mna:brimstone_charm"
+							]
+						}
+					},
+					{
+						"condition": "minecraft:location_check",
+						"predicate": {
+							"block": {
+								"blocks": [
+									"mna:runeforge"
+								],
+								"state": {
+									"material": 0
+								}
+							}
+						}
+					}
+				]
+			}
+		}
+	},
+	"requirements": [
+	]
+}

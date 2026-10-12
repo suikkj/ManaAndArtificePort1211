@@ -1,0 +1,8 @@
+{
+	"replace": false,
+	"values": [
+		"mna:player_charm",
+		"mna:rune_marking",
+		"mna:book_marks"
+	]
+}

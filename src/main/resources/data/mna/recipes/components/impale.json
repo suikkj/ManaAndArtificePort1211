@@ -1,0 +1,15 @@
+{
+	"type": "mna:component",
+	"tier": 1,
+	"output": "mna:impale",
+	"items":
+	[
+		"mna:stone_rune_white",
+		"minecraft:pointed_dripstone"	
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/triangle",
+		"mna:manaweave_patterns/slash"
+	]
+}

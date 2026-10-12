@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "down": "mna:block/artifice/decoration/copper_arcane_stone_chiseled",
+        "up": "mna:block/artifice/decoration/copper_arcane_stone_chiseled",
+        "north": "mna:block/artifice/decoration/copper_arcane_stone_chiseled",
+        "east": "mna:block/artifice/decoration/copper_arcane_stone_chiseled",
+        "south": "mna:block/artifice/decoration/copper_arcane_stone_chiseled",
+        "west": "mna:block/artifice/decoration/copper_arcane_stone_chiseled",
+        "particle": "mna:block/artifice/decoration/copper_arcane_stone_chiseled"
+    }
+}

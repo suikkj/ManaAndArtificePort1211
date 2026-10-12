@@ -1,0 +1,14 @@
+{
+  "parent": "forge:item/default",
+  "loader": "forge:composite",
+  "children": {
+    "crystal": {
+      "loader": "forge:obj",
+      "automatic_culling": false,
+	  "shade_quads": true,
+	  "flip_v": true,
+	  "emissive_ambient": false,
+      "model": "mna:models/construct/obj/bone/leg_basic_l.obj"
+    }
+  }
+}

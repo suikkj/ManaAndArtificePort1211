@@ -1,0 +1,5 @@
+# Blender MTL File: 'collector.blend'
+# Material Count: 1
+
+newmtl ERROR
+map_Kd mna:block/error

@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+  	" AS",
+  	"LPB",
+  	" TS"
+  ],
+  "key": {
+  	"A": {
+  		"item": "minecraft:armor_stand"
+  	},
+  	"S": {
+  		"item": "mna:transmuted_silver"
+  	},
+  	"L": {
+  		"item": "minecraft:smooth_stone_slab"
+  	},
+  	"P": {
+  		"item": "mna:rune_pattern"
+  	},
+  	"B": {
+  		"item": "minecraft:bowl"
+  	},
+  	"T": {
+  		"item": "mna:basic_table"
+  	}
+  	
+  },
+  "result": {
+    "item": "mna:runescribing_table"    
+  }
+}

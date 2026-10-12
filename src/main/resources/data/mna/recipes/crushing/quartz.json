@@ -1,0 +1,7 @@
+{
+	"type": "mna:crushing",
+	"tier": 2,
+	"input": "minecraft:nether_quartz_ore",
+	"output": "minecraft:quartz",
+	"output_quantity": 2
+}

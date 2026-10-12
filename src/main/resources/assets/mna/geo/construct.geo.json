@@ -1,0 +1,186 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.construct_armature",
+				"texture_width": 32,
+				"texture_height": 32,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "ROOT",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "TORSO",
+					"parent": "ROOT",
+					"pivot": [0, 12, 0]
+				},
+				{
+					"name": "NECK",
+					"parent": "TORSO",
+					"pivot": [0, 21, 0]
+				},
+				{
+					"name": "HEAD",
+					"parent": "NECK",
+					"pivot": [0, 23, 0]
+				},
+				{
+					"name": "HAT",
+					"parent": "HEAD",
+					"pivot": [0, 26, 0]
+				},
+				{
+					"name": "SHOULDER_R",
+					"parent": "TORSO",
+					"pivot": [-6, 18.5, 0]
+				},
+				{
+					"name": "rightarm",
+					"parent": "SHOULDER_R",
+					"pivot": [-8.5, 10, 0]
+				},
+				{
+					"name": "RIGHT_GRAB_POINT",
+					"parent": "SHOULDER_R",
+					"pivot": [-8.5, 4.5, 0]
+				},
+				{
+					"name": "RIGHT_GRAB_POINT_WICKERWOOD",
+					"parent": "SHOULDER_R",
+					"pivot": [-6, 4.5, 0]
+				},
+				{
+					"name": "right_nozzle_tip",
+					"parent": "SHOULDER_R",
+					"pivot": [-8.5, 5.5, 0]
+				},
+				{
+					"name": "SHOULDER_L",
+					"parent": "TORSO",
+					"pivot": [6, 18.5, 0]
+				},
+				{
+					"name": "leftarm",
+					"parent": "SHOULDER_L",
+					"pivot": [8.5, 10, 0]
+				},
+				{
+					"name": "LEFT_GRAB_POINT",
+					"parent": "SHOULDER_L",
+					"pivot": [8.5, 4.5, 0]
+				},
+				{
+					"name": "LEFT_GRAB_POINT_WICKERWOOD",
+					"parent": "SHOULDER_L",
+					"pivot": [6, 4.5, 0]
+				},
+				{
+					"name": "left_nozzle_tip",
+					"parent": "SHOULDER_L",
+					"pivot": [8.5, 5.5, 0]
+				},
+				{
+					"name": "TANK_TORSO_FLUID_POS",
+					"parent": "TORSO",
+					"pivot": [0, 14, 6.5]
+				},
+				{
+					"name": "MANA_TORSO_GAUGE_POS",
+					"parent": "TORSO",
+					"pivot": [0, 16, 5.5]
+				},
+				{
+					"name": "BANNER",
+					"parent": "TORSO",
+					"pivot": [0, 16, 5.5]
+				},
+				{
+					"name": "PELVIS",
+					"parent": "ROOT",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "NORMAL",
+					"parent": "PELVIS",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "LEG_L",
+					"parent": "NORMAL",
+					"pivot": [2, 11.5, 0]
+				},
+				{
+					"name": "leftleg",
+					"parent": "LEG_L",
+					"pivot": [3.5, 0, 0]
+				},
+				{
+					"name": "LEG_R",
+					"parent": "NORMAL",
+					"pivot": [-2, 11.5, 0]
+				},
+				{
+					"name": "rightleg",
+					"parent": "LEG_R",
+					"pivot": [-3.5, 0, 0]
+				},
+				{
+					"name": "ENDER",
+					"parent": "PELVIS",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "enderpelvis",
+					"parent": "ENDER",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "ELEG_FL",
+					"parent": "ENDER",
+					"pivot": [3, 11, -2]
+				},
+				{
+					"name": "fleleg",
+					"parent": "ELEG_FL",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "ELEG_FR",
+					"parent": "ENDER",
+					"pivot": [-3, 11, -2]
+				},
+				{
+					"name": "freleg",
+					"parent": "ELEG_FR",
+					"pivot": [-9, 0, 0]
+				},
+				{
+					"name": "ELEG_BL",
+					"parent": "ENDER",
+					"pivot": [3, 11, 2]
+				},
+				{
+					"name": "bleleg",
+					"parent": "ELEG_BL",
+					"pivot": [0, 0, 4]
+				},
+				{
+					"name": "ELEG_BR",
+					"parent": "ENDER",
+					"pivot": [-3, 11, 2]
+				},
+				{
+					"name": "breleg",
+					"parent": "ELEG_BR",
+					"pivot": [-9, 0, 4]
+				}
+			]
+		}
+	]
+}

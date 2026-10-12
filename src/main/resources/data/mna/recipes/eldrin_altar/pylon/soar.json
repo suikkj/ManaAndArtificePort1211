@@ -1,0 +1,26 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:pylon/elytra_flight",
+	"tier": 5,
+	"items": [
+		"mna:rune_aura",
+		"mna:rune_air",
+		"mna:rune_air",
+		"mna:rune_ritual_metal",
+		"mna:rune_ritual_metal",
+		"mna:rune_ritual_metal",
+		"mna:pylon/inert",
+		"minecraft:elytra",
+		"minecraft:phantom_membrane"
+	],
+	"power_requirements": [
+		{
+			"affinity": "WIND",
+			"amount": 5000
+		}
+	],
+	"colors": [
+		13298155,	
+		1825251
+	]
+}

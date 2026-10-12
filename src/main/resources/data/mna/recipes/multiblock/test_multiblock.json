@@ -1,0 +1,49 @@
+{
+	"type": "mna:multiblock",
+	"structure": "mna:multiblock/fountain_test",
+	"replacements": [
+		{
+			"data": [
+				{
+					"offset": {
+						"X": 2,
+						"Y": 2,
+						"Z": 2
+					},
+					"state": {
+						"name": "minecraft:gold_block"
+					}
+				}
+			],
+			"id": "gold_block"
+		},
+		{
+			"data": [
+				{
+					"offset": {
+						"X": 2,
+						"Y": 2,
+						"Z": 2
+					},
+					"state": {
+						"name": "minecraft:diamond_block"
+					}
+				}
+			],
+			"id": "diamond_block"
+		}
+	],
+	"symmetrical": true,
+	"rawBlockChecks": [
+	],
+	"tags": [
+		{
+			"block": "minecraft:oak_log",
+			"tag": "minecraft:logs"
+		},
+		{
+			"block": "minecraft:oak_leaves",
+			"tag": "minecraft:leaves"
+		}
+	]
+}

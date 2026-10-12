@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [  	    
+    "mna:spectral_crafting_table",
+    "mna:spectral_anvil",
+    "mna:spectral_stonecutter",
+    "mna:spectral_ladder",
+    "mna:spectral_web",
+    "mna:spectral_fence"
+  ]
+}

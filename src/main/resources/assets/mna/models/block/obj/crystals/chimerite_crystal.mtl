@@ -1,0 +1,8 @@
+# Blender MTL File: 'chimerite.blend'
+# Material Count: 1
+
+newmtl MAIN
+map_Kd #crystalcolor
+
+newmtl BASE
+map_Kd mna:block/artifice/decoration/arcane_stone

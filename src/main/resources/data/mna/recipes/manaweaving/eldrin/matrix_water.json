@@ -1,0 +1,15 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:eldrin_matrix_water",
+	"tier": 2,
+	"items": [
+		"mna:mana_crystal_fragment",
+		"mna:mote_water",
+		"mna:ritual_focus_lesser"
+	],
+	"patterns": [
+		"mna:circle",
+		"mna:circle",
+		"mna:circle"
+	]
+}

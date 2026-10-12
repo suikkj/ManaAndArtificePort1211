@@ -1,0 +1,13 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:death_charm_minor",
+	"tier": 2,
+	"items": [
+		"mna:charm_pattern",
+		"minecraft:skeleton_skull"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:circle"
+	]
+}

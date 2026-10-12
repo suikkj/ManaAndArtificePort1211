@@ -1,0 +1,16 @@
+{
+	"type": "mna:component",
+	"tier": 2,
+	"output": "mna:gravity_well",
+	"items":
+	[
+		"mna:vinteum_dust",
+		"mna:vinteum_dust",
+		"mna:mote_arcane"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/inverted_triangle",
+		"mna:manaweave_patterns/knot3"
+	]
+}

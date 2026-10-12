@@ -1,0 +1,21 @@
+{
+	"type": "mna:component",
+	"tier": 4,
+	"output": "mna:explosion",
+	"items":
+	[
+		"minecraft:gunpowder",
+		"minecraft:tnt",
+		"minecraft:lever",
+		"minecraft:redstone",
+		"minecraft:redstone",
+		"mna:mote_fire",
+		"mna:desert_nova"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/circle",
+		"mna:manaweave_patterns/diamond",
+		"mna:manaweave_patterns/square"		
+	]
+}

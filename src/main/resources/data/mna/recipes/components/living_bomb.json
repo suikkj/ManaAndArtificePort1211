@@ -1,0 +1,18 @@
+{
+	"type": "mna:component",
+	"tier": 5,
+	"output": "mna:living_bomb",
+	"items":
+	[
+		"minecraft:tnt",
+		"minecraft:creeper_head",
+		"mna:vinteum_dust",
+		"minecraft:flint_and_steel",
+		"minecraft:soul_torch",
+		"minecraft:clock"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/hourglass"
+	]
+}

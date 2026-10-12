@@ -1,0 +1,16 @@
+{
+	"type": "mna:component",
+	"tier": 2,
+	"output": "mna:activate",
+	"items":
+	[
+		"mna:stone_rune_magenta",
+		"minecraft:stick",
+		"minecraft:buttons",
+		"minecraft:lever"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/inverted_triangle"		
+	]
+}

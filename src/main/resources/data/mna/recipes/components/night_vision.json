@@ -1,0 +1,17 @@
+{
+	"type": "mna:component",
+	"output": "mna:night_vision",
+	"tier": 3,
+	"items":
+	[
+		"minecraft:spider_eye",
+		"minecraft:spider_eye",		
+		"mna:vinteum_dust",
+		"mna:aum"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/circle",
+		"mna:manaweave_patterns/circle"
+	]
+}

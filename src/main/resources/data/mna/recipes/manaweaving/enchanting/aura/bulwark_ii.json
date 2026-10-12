@@ -1,0 +1,22 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 3,
+	"output": "mna:rune_aura",
+	"enchant": "mna:aura-bulwark",
+	"magnitude": 2,
+	"items":
+	[
+		"mna:rune_aura",
+		"minecraft:shield",
+		"mna:aum",
+		"minecraft:chainmail_helmet",
+		"minecraft:chainmail_chestplate",
+		"minecraft:chainmail_leggings",
+		"minecraft:chainmail_boots"
+	],
+	"patterns":
+	[
+		"mna:circle",
+		"mna:bolt"
+	]
+}

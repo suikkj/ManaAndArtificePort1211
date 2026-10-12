@@ -1,0 +1,18 @@
+{
+	"type": "mna:component",
+	"output": "mna:leap",
+	"tier": 2,
+	"items":
+	[
+		"mna:stone_rune_white",
+		"mna:vinteum_dust",
+		"mna:cerublossom",
+		"minecraft:beds",
+		"minecraft:lily_pad"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/square",
+		"mna:manaweave_patterns/triangle"
+	]
+}

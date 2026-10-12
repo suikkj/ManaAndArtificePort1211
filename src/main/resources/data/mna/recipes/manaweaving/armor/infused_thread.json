@@ -1,0 +1,12 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:infused_thread",
+	"tier": 2,
+	"items": [
+		"mna:infused_silk",
+		"mna:vinteum_dust"
+	],
+	"patterns": [
+		"mna:knot4"		
+	]
+}

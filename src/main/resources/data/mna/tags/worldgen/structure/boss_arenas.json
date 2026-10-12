@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "mna:faction/boss/cathedral",
+    "mna:faction/boss/council_island",
+    "mna:faction/boss/demon_arena",
+    "mna:faction/boss/fey_tree"
+  ]
+}

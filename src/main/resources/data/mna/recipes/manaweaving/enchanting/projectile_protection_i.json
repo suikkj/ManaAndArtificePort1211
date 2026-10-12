@@ -1,0 +1,16 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 3,
+	"output": "mna:rune_earth",
+	"enchant": "minecraft:projectile_protection",
+	"magnitude": 1,
+	"items": [
+		"mna:rune_earth",
+		"minecraft:arrow",
+		"minecraft:shield"
+	],
+	"patterns": [
+		"mna:manaweave_patterns/square",
+		"mna:manaweave_patterns/diamond"
+	]
+}

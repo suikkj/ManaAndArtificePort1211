@@ -1,0 +1,7 @@
+{
+	"type": "mna:crushing",
+	"tier": 2,
+	"input": "minecraft:nether_wart_block",
+	"output": "minecraft:nether_wart",
+	"output_quantity": 1
+}

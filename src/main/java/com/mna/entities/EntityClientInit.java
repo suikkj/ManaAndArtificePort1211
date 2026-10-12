@@ -1,0 +1,215 @@
+ 
+package com.mna.entities;
+
+import com.mna.ManaAndArtifice;
+import com.mna.entities.EntityInit;
+import com.mna.entities.renderers.DisplayDamageRenderer;
+import com.mna.entities.renderers.ManaweaveRenderer;
+import com.mna.entities.renderers.RisingBlockRenderer;
+import com.mna.entities.renderers.SentryProjectorRenderer;
+import com.mna.entities.renderers.TransitoryBlockRenderer;
+import com.mna.entities.renderers.boss.BifrostRenderer;
+import com.mna.entities.renderers.boss.CouncilWardenRenderer;
+import com.mna.entities.renderers.boss.DemonLordRenderer;
+import com.mna.entities.renderers.boss.FaerieQueenRenderer;
+import com.mna.entities.renderers.boss.OdinRenderer;
+import com.mna.entities.renderers.boss.PigDragonRenderer;
+import com.mna.entities.renderers.boss.PumpkinKingRenderer;
+import com.mna.entities.renderers.boss.attacks.OrangeChickenRenderer;
+import com.mna.entities.renderers.boss.attacks.PumpkinKingEntangleRenderer;
+import com.mna.entities.renderers.boss.attacks.PumpkinKingIncinerateRenderer;
+import com.mna.entities.renderers.boss.effects.DemonReturnPortalRenderer;
+import com.mna.entities.renderers.construct.ConstructAssemblyStandRenderer;
+import com.mna.entities.renderers.construct.ConstructRenderer;
+import com.mna.entities.renderers.faction.BarklingRenderer;
+import com.mna.entities.renderers.faction.BrokerRenderer;
+import com.mna.entities.renderers.faction.ChattererRenderer;
+import com.mna.entities.renderers.faction.DeathcapRenderer;
+import com.mna.entities.renderers.faction.DemonImpRenderer;
+import com.mna.entities.renderers.faction.FactionRaidRenderer;
+import com.mna.entities.renderers.faction.FactionWarRenderer;
+import com.mna.entities.renderers.faction.HulkingZombieRenderer;
+import com.mna.entities.renderers.faction.LanternWraithRenderer;
+import com.mna.entities.renderers.faction.LichRenderer;
+import com.mna.entities.renderers.faction.LivingWardRenderer;
+import com.mna.entities.renderers.faction.PixieRenderer;
+import com.mna.entities.renderers.faction.SkeletonAssassinRenderer;
+import com.mna.entities.renderers.faction.SpellbreakerRenderer;
+import com.mna.entities.renderers.faction.WitchHunterRenderer;
+import com.mna.entities.renderers.faction.attacks.SkeletonAssassinBoloRenderer;
+import com.mna.entities.renderers.faction.attacks.SkeletonAssassinShurikenRenderer;
+import com.mna.entities.renderers.faction.attacks.WitchhunterArrowRenderer;
+import com.mna.entities.renderers.faction.attacks.WitchhunterTrickshotRenderer;
+import com.mna.entities.renderers.item.BubbleBoatRenderer;
+import com.mna.entities.renderers.item.MagicBroomRenderer;
+import com.mna.entities.renderers.item.PresentItemRenderer;
+import com.mna.entities.renderers.item.ThrownWeaponRenderer;
+import com.mna.entities.renderers.item.WandCloneRenderer;
+import com.mna.entities.renderers.living.MagmooRenderer;
+import com.mna.entities.renderers.living.WanderingWizardRenderer;
+import com.mna.entities.renderers.ritual.AncientCouncilRenderer;
+import com.mna.entities.renderers.ritual.DemonStoneRenderer;
+import com.mna.entities.renderers.ritual.DisplayReagentsRenderer;
+import com.mna.entities.renderers.ritual.FeyLightRenderer;
+import com.mna.entities.renderers.ritual.FlatLandsProjectileRenderer;
+import com.mna.entities.renderers.ritual.FlatLandsRenderer;
+import com.mna.entities.renderers.ritual.PortalRenderer;
+import com.mna.entities.renderers.ritual.RitualRenderer;
+import com.mna.entities.renderers.ritual.TimeChangeBallRenderer;
+import com.mna.entities.renderers.sorcery.AffinityIconRenderer;
+import com.mna.entities.renderers.sorcery.AnimusBlockRenderer;
+import com.mna.entities.renderers.sorcery.BasicChanneledSpellRenderer;
+import com.mna.entities.renderers.sorcery.BloodGolemRenderer;
+import com.mna.entities.renderers.sorcery.BloodTendrilRenderer;
+import com.mna.entities.renderers.sorcery.BoundBowProjectileRenderer;
+import com.mna.entities.renderers.sorcery.DecoyRenderer;
+import com.mna.entities.renderers.sorcery.EldrinFlightRenderer;
+import com.mna.entities.renderers.sorcery.EntitySpellEmberRenderer;
+import com.mna.entities.renderers.sorcery.FillHoleRenderer;
+import com.mna.entities.renderers.sorcery.GreaterAnimusRenderer;
+import com.mna.entities.renderers.sorcery.InsectSwarmRenderer;
+import com.mna.entities.renderers.sorcery.RiftRenderer;
+import com.mna.entities.renderers.sorcery.SimulacrumRenderer;
+import com.mna.entities.renderers.sorcery.SmiteProjectileRenderer;
+import com.mna.entities.renderers.sorcery.SpectralHorseRenderer;
+import com.mna.entities.renderers.sorcery.SpellBeamRenderer;
+import com.mna.entities.renderers.sorcery.SpellFXRenderer;
+import com.mna.entities.renderers.sorcery.SpellProjectileRenderer;
+import com.mna.entities.renderers.sorcery.SpellRuneRenderer;
+import net.minecraft.client.renderer.entity.CreeperRenderer;
+import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.EntityType;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
+import net.neoforged.neoforge.client.event.ModelEvent;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraft.client.resources.model.ModelResourceLocation;
+
+public class EntityClientInit {
+    @SubscribeEvent
+    @OnlyIn(value=Dist.CLIENT)
+    public static void registerEntityRenderingHandlers(FMLClientSetupEvent event) {
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.DAMAGE_NUMBERS.get()), context -> new DisplayDamageRenderer(context));
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.REAGENT_ENTITY.get()), DisplayReagentsRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.AFFINITY_ICON.get()), AffinityIconRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.SENTRY_PROJECTILE.get()), SentryProjectorRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.ORANGE_CHICKEN.get()), OrangeChickenRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.THROWN_WEAPON.get()), ThrownWeaponRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.ALLFATHER_AXE.get()), ThrownWeaponRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.BUBBLE_BOAT.get()), BubbleBoatRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.PRESENTATION_ENTITY.get()), PresentItemRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.WAND_CLONE.get()), WandCloneRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.MANAWEAVE_BOTTLE_THROWN.get()), context -> new ThrownItemRenderer(context, 1.0f, true));
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.THROWN_RUNESCRIBE_PATTERN.get()), context -> new ThrownItemRenderer(context, 1.0f, false));
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.WANDERING_WIZARD.get()), WanderingWizardRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.BROKER.get()), BrokerRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.SPECTRAL_HORSE.get()), SpectralHorseRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.MAGMOO.get()), MagmooRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.MANAWEAVE_ENTITY.get()), ManaweaveRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.RITUAL_ENTITY.get()), RitualRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.FILL_HOLE.get()), FillHoleRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.PORTAL_ENTITY.get()), PortalRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.STARBALL_ENTITY.get()), TimeChangeBallRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.FLAT_LANDS.get()), FlatLandsRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.FLAT_LANDS_PROJECTILE.get()), FlatLandsProjectileRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.ANIMATED_CONSTRUCT.get()), ConstructRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.MAGIC_BROOM.get()), MagicBroomRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.CONSTRUCT_ASSEMBLY_STAND.get()), ConstructAssemblyStandRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.GREATER_ANIMUS.get()), GreaterAnimusRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.INSECT_SWARM.get()), InsectSwarmRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.IMPULSE_PROJECTILE.get()), context -> new ThrownItemRenderer(context, 1.0f, false));
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.BOUND_BOW_PROJECTILE.get()), BoundBowProjectileRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.ELDRIN_FLIGHT.get()), EldrinFlightRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.DECOY_ENTITY.get()), context -> new DecoyRenderer(context));
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.SIMULACRUM.get()), context -> new SimulacrumRenderer(context));
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.ANIMUS_BLOCK.get()), AnimusBlockRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.SPELL_WALL.get()), BasicChanneledSpellRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.SPELL_WAVE.get()), BasicChanneledSpellRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.SPELL_FISSURE.get()), BasicChanneledSpellRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.SPELL_FOCUS.get()), BasicChanneledSpellRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.SPELL_EMBER.get()), EntitySpellEmberRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.SPELL_EMANATION.get()), BasicChanneledSpellRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.SPELL_CONE.get()), BasicChanneledSpellRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.SPELL_WRATH.get()), BasicChanneledSpellRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.SPELL_BEAM.get()), SpellBeamRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.SPELL_PROJECTILE.get()), SpellProjectileRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.SMITE_PROJECTILE.get()), SmiteProjectileRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.SPELL_FX.get()), SpellFXRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.SPELL_RUNE.get()), SpellRuneRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.RISING_BLOCK_ENTITY.get()), context -> new RisingBlockRenderer(context));
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.STATIONARY_BLOCK_ENTITY.get()), context -> new TransitoryBlockRenderer(context));
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.RIFT.get()), RiftRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.ILLUSION_CREEPER.get()), CreeperRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.BLOOD_GOLEM.get()), context -> new BloodGolemRenderer(context));
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.BLOOD_TENDRIL.get()), context -> new BloodTendrilRenderer(context));
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.FACTION_RAID_ENTITY.get()), FactionRaidRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.MUSHROOM_SOLDIER.get()), context -> new DeathcapRenderer(context));
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.PIXIE.get()), context -> new PixieRenderer(context));
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.BARKLING.get()), context -> new BarklingRenderer(context));
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.DEMON_IMP.get()), context -> new DemonImpRenderer(context));
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.LANTERN_WRAITH.get()), context -> new LanternWraithRenderer(context));
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.HULKING_ZOMBIE.get()), context -> new HulkingZombieRenderer(context));
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.SKELETON_ASSASSIN.get()), context -> new SkeletonAssassinRenderer(context));
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.SKELETON_ASSASSIN_BOLO.get()), context -> new SkeletonAssassinBoloRenderer(context));
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.SKELETON_ASSASSIN_SHURIKEN.get()), SkeletonAssassinShurikenRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.CHATTERER.get()), context -> new ChattererRenderer(context));
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.LIVING_WARD.get()), context -> new LivingWardRenderer(context));
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.SPELLBREAKER.get()), context -> new SpellbreakerRenderer(context));
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.WITCH_HUNTER.get()), context -> new WitchHunterRenderer(context));
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.WITCH_HUNTER_TRICKSHOT.get()), WitchhunterTrickshotRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.WITCH_HUNTER_ARROW.get()), WitchhunterArrowRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.ANCIENT_COUNCIL.get()), AncientCouncilRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.FACTION_WAR.get()), FactionWarRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.PUMPKIN_KING.get()), context -> new PumpkinKingRenderer(context));
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.PUMPKIN_KING_INCINERATE.get()), context -> new PumpkinKingIncinerateRenderer(context));
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.PUMPKIN_KING_ENTANGLE.get()), context -> new PumpkinKingEntangleRenderer(context));
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.ODIN.get()), context -> new OdinRenderer(context));
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.BIFROST.get()), BifrostRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.COUNCIL_WARDEN.get()), CouncilWardenRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.DEMON_STONE.get()), DemonStoneRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.DEMON_LORD.get()), DemonLordRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.DEMON_RETURN_PORTAL.get()), DemonReturnPortalRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.LICH.get()), context -> new LichRenderer(context));
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.FEY_LIGHT.get()), FeyLightRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.FAERIE_QUEEN.get()), FaerieQueenRenderer::new);
+        EntityRenderers.register((EntityType)((EntityType)EntityInit.PIG_DRAGON.get()), context -> new PigDragonRenderer(context));
+        ManaAndArtifice.LOGGER.info("M&A -> Entity Renderers Registered");
+    }
+
+    @SubscribeEvent
+    @OnlyIn(value=Dist.CLIENT)
+    public static void onRegisterSpecialModels(ModelEvent.RegisterAdditional event) {
+        event.register(ModelResourceLocation.standalone(ConstructRenderer.model_brb_mining));
+        event.register(ModelResourceLocation.standalone(ConstructRenderer.model_brb_adventuring));
+        event.register(ModelResourceLocation.standalone(ConstructRenderer.model_brb_hunting));
+        event.register(ModelResourceLocation.standalone(SpellProjectileRenderer.model_water));
+        event.register(ModelResourceLocation.standalone(SpellProjectileRenderer.model_water2));
+        event.register(ModelResourceLocation.standalone(SpellProjectileRenderer.model_ice));
+        event.register(ModelResourceLocation.standalone(SpellProjectileRenderer.model_ice2));
+        event.register(ModelResourceLocation.standalone(SpellProjectileRenderer.model_earth));
+        event.register(ModelResourceLocation.standalone(SpellProjectileRenderer.model_earth2));
+        event.register(ModelResourceLocation.standalone(SpellProjectileRenderer.model_wind));
+        event.register(ModelResourceLocation.standalone(SpellProjectileRenderer.model_wind2));
+        event.register(ModelResourceLocation.standalone(SpellProjectileRenderer.model_ender));
+        event.register(ModelResourceLocation.standalone(SpellProjectileRenderer.model_ender2));
+        event.register(ModelResourceLocation.standalone(PortalRenderer.model_mushroom));
+        event.register(ModelResourceLocation.standalone(PortalRenderer.model_pink_flower));
+        event.register(ModelResourceLocation.standalone(PortalRenderer.model_yellow_flower));
+        event.register(ModelResourceLocation.standalone(PortalRenderer.model_purple_flower));
+        event.register(ModelResourceLocation.standalone(PortalRenderer.model_council_wedge));
+        event.register(ModelResourceLocation.standalone(PortalRenderer.model_undead_fissure));
+        event.register(ModelResourceLocation.standalone(PortalRenderer.model_demon_portal));
+        event.register(ModelResourceLocation.standalone(PortalRenderer.model_demon_portal_ring));
+        for (ResourceLocation rLoc : PortalRenderer.model_demon_portal_runes) {
+            event.register(rLoc);
+        }
+        for (ResourceLocation rLoc : PortalRenderer.model_demon_portal_stones) {
+            event.register(rLoc);
+        }
+    }
+}
+
+

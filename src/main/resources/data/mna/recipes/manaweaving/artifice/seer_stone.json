@@ -1,0 +1,18 @@
+﻿{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:seer_stone",
+	"tier": 2,
+	"items": [
+		"mna:chimerite_gem",
+		"c:dyes/blue",
+		"mna:decoration/arcane_stone",
+		"mna:transmuted_silver",
+		"mna:transmuted_silver"		
+	],
+	"patterns": [
+		"mna:circle",
+		"mna:diamond",
+		"mna:slash"
+	]
+}
+

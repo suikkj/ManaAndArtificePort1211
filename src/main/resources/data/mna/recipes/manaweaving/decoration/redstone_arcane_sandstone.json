@@ -1,0 +1,20 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:decoration/redstone_arcane_sandstone",
+	"tier": 1,
+	"quantity": 8,		
+	"items": [
+		"minecraft:redstone",
+		"mna:decoration/arcane_sandstone",
+		"mna:decoration/arcane_sandstone",
+		"mna:decoration/arcane_sandstone",
+		"mna:decoration/arcane_sandstone",
+		"mna:decoration/arcane_sandstone",
+		"mna:decoration/arcane_sandstone",
+		"mna:decoration/arcane_sandstone",
+		"mna:decoration/arcane_sandstone"
+	],
+	"patterns": [
+		"mna:slash"
+	]
+}

@@ -1,0 +1,57 @@
+{
+	"type": "mna:ritual",
+	"tier": 4,
+	"pattern":
+	[
+		[ 1, 2, 3, 4, 5 ],
+		[ 0,-1, 0,-1, 0 ],
+		[-1, 0, 6, 0,-1 ],
+		[ 0,-1, 0,-1, 0 ],
+		[-1, 0,-1, 0,-1 ]		
+	],
+	"displayPattern":
+	[
+		[ 1, 2, 3, 4, 5 ],
+		[ 0,-1, 0,-1, 0 ],
+		[-1, 0,-1, 0,-1 ],
+		[ 0,-1, 0,-1, 0 ],
+		[-1, 0,-1, 0,-1 ]		
+	],
+	"reagents":
+	[
+		"WWWWW",
+		"     ",
+		"  F  ",
+		"     ",
+		"     "
+	],
+	"keys":
+	{
+		"F": 
+		{ 
+			"item": "mna:mote_water",
+			"optional": false,
+			"consume": false
+		},
+		"W":
+		{
+			"item": "minecraft:gray_wool",
+			"optional": true,
+			"consume": false
+		}
+	},
+	"manaweave":
+	[
+		"mna:manaweave_patterns/inverted_triangle",
+		"mna:manaweave_patterns/hourglass",
+		"mna:manaweave_patterns/inverted_triangle"
+	],
+	"parameters":
+	{
+		"innerColor": "0xffffff",
+		"outerColor": "0x2fb4e0",
+		"displayIndexes": false,
+		"connectBeam": true,
+		"beamColor": "0x0e389c"
+	}
+}

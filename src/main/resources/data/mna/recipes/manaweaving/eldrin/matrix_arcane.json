@@ -1,0 +1,16 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:eldrin_matrix_arcane",
+	"tier": 2,
+	"items": [
+		"mna:mana_crystal_fragment",
+		"mna:mote_arcane",
+		"mna:ritual_focus_lesser"
+	],
+	"patterns": [
+		"mna:knot",
+		"mna:knot2",
+		"mna:knot3",
+		"mna:knot4"
+	]
+}

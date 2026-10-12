@@ -1,0 +1,19 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:constructs/construct_fluid_nozzle_right_wood",
+	"tier": 2,
+	"items": [
+		"mna:constructs/rune_rod",
+		"minecraft:piston",
+		"minecraft:bucket",
+		"minecraft:logs",
+		"minecraft:logs",
+		"minecraft:logs",
+		"mna:vinteum_dust",
+		"mna:vinteum_dust"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:triangle"
+	]
+}

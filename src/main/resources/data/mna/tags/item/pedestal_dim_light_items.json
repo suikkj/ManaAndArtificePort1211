@@ -1,0 +1,18 @@
+{
+	"replace": false,
+	"values": [
+		"mna:living_flame",
+		"mna:mote_air",
+		"mna:mote_earth",
+		"mna:mote_water",
+		"mna:mote_fire",
+		"mna:mote_ender",
+		"mna:mote_arcane",
+		"minecraft:glowstone_dust",
+		"minecraft:soul_lantern",
+		"minecraft:redstone_torch",
+		"minecraft:soul_torch",
+		"minecraft:jack_o_lantern",
+		"minecraft:soul_campfire"
+	]
+}

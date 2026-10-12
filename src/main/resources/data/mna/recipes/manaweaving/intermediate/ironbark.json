@@ -1,0 +1,15 @@
+﻿{
+	"type": "mna:manaweaving-recipe",
+	"tier": 4,
+	"output": "mna:ironbark",
+	"items":
+	[
+		"mna:vinteum_dust",
+		"minecraft:logs",
+		"c:ingots/iron"
+	],
+	"patterns":
+	[
+		"mna:knot"
+	]
+}

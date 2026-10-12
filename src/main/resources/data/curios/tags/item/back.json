@@ -1,0 +1,11 @@
+{
+	"replace": false,
+	"values": [
+		"mna:fluid_jug",
+		"mna:fluid_jug_infinite_water",
+		"mna:fluid_jug_infinite_lava",
+		"mna:crystal_phylactery",
+		"mna:staff_phylactery",
+		"#mna:staves"
+	]
+}

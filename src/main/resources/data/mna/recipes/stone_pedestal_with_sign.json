@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mna:pedestal"      
+    },
+    {
+    	"tag": "minecraft:signs"
+    }
+  ],
+  "result": {
+    "item": "mna:pedestal_with_sign"
+  }
+}

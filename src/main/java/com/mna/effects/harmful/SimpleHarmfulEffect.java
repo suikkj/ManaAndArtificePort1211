@@ -1,0 +1,23 @@
+/*
+ * Decompiled with CFR 0.152.
+ * 
+ * Could not load the following classes:
+ *  net.minecraft.world.effect.MobEffect
+ *  net.minecraft.world.effect.MobEffectCategory
+ */
+package com.mna.effects.harmful;
+
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectCategory;
+
+public class SimpleHarmfulEffect
+extends MobEffect {
+    public SimpleHarmfulEffect() {
+        this(0);
+    }
+
+    public SimpleHarmfulEffect(int color) {
+        super(MobEffectCategory.HARMFUL, color);
+    }
+}
+

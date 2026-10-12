@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mna:chimerite_block"
+    }
+  ],
+  "result": {
+    "item": "mna:chimerite_gem",
+    "count": 9
+  }
+}

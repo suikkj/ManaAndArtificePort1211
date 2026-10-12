@@ -1,0 +1,6 @@
+﻿{
+	"type": "c:add_features",
+	"biomes": "#mna:spawns_cerublossom",
+	"features": "mna:cerublossom",
+	"step": "vegetal_decoration"
+}

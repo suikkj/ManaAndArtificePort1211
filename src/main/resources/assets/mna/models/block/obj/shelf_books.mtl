@@ -1,0 +1,8 @@
+# Blender MTL File: 'wizard_lab_storage.blend'
+# Material Count: 2
+
+newmtl EXT
+map_Kd mna:block/artifice/wizard_lab/bookshelf_extension
+
+newmtl MAIN
+map_Kd mna:block/artifice/wizard_lab/bookshelf

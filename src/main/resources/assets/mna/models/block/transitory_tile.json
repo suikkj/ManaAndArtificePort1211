@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "down": "mna:block/artifice/transitory_tunnel",
+        "up": "mna:block/artifice/transitory_tunnel",
+        "north": "mna:block/artifice/transitory_tunnel",
+        "east": "mna:block/artifice/transitory_tunnel",
+        "south": "mna:block/artifice/transitory_tunnel",
+        "west": "mna:block/artifice/transitory_tunnel",
+        "particle": "mna:block/artifice/transitory_tunnel"
+    }
+}

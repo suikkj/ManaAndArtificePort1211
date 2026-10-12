@@ -1,0 +1,17 @@
+{
+	"type": "mna:component",
+	"tier": 4,
+	"output": "mna:soul_trap",
+	"items":
+	[
+		"mna:stone_rune_purple",
+		"minecraft:soul_lantern",
+		"minecraft:trapped_chest"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/star",
+		"mna:manaweave_patterns/inverted_triangle",
+		"mna:manaweave_patterns/circle"		
+	]
+}

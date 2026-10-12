@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "mna:block/artifice/decoration/gold_arcane_stone",
+    "top": "mna:block/artifice/decoration/gold_arcane_stone",
+    "side": "mna:block/artifice/decoration/gold_arcane_stone"
+  }
+}

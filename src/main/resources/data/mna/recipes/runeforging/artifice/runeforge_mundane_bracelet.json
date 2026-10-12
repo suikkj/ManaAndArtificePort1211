@@ -1,0 +1,6 @@
+{
+	"type": "mna:runeforging",
+	"tier": 3,
+	"pattern": "mna:mundane_bracelet_pattern",
+	"output": "mna:mundane_bracelet"
+}

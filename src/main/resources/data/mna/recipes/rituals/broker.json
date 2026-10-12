@@ -1,0 +1,87 @@
+{
+	"type": "mna:ritual",
+	"tier": 3,
+	"pattern":
+	[
+		[ 0, 0, 0, 1, 0, 0, 0 ],
+		[-1,-1,-1,-1,-1,-1,-1 ],
+		[ 0,-1, 1,-1, 1,-1, 0 ],
+		[-1, 1, 0,-1, 0, 1,-1 ],
+		[ 0, 1, 0, 1, 0, 1, 0 ],
+		[ 0,-1,-1,-1,-1,-1, 0 ],
+		[ 0,-1, 0, 0, 0,-1, 0 ]
+	],
+	"displayPattern":
+	[
+		[ 0, 0, 0,28, 0, 0, 0 ],
+		[33,13,14,10,19,18,34 ],
+		[ 0,16,15, 6,20,21, 0 ],
+		[32, 9, 0, 2, 0,11,35 ],
+		[ 0, 5, 0,31, 0, 7, 0 ],
+		[ 0, 1,23,24,25, 3, 0 ],
+		[ 0,27, 0, 0, 0,29, 0 ]
+	],
+	"reagents":
+	[
+		"   A   ",
+		"       ",
+		"  F N  ",
+		" C   E ",
+		"   W   ",
+		"       ",
+		"       "
+	],
+	"keys":
+	{
+		"F": 
+		{ 
+			"item": "mna:mote_fire",
+			"optional": false,
+			"consume": true
+		},
+		"W": 
+		{ 
+			"item": "mna:mote_water",
+			"optional": false,
+			"consume": true
+		},
+		"A": 
+		{ 
+			"item": "mna:mote_air",
+			"optional": false,
+			"consume": true
+		},
+		"E": 
+		{ 
+			"item": "mna:mote_earth",
+			"optional": false,
+			"consume": true
+		},
+		"C": 
+		{ 
+			"item": "mna:mote_arcane",
+			"optional": false,
+			"consume": true
+		},
+		"N": 
+		{ 
+			"item": "mna:mote_ender",
+			"optional": false,
+			"consume": true
+		}
+	},
+	"manaweave":
+	[
+		"mna:manaweave_patterns/triangle",
+		"mna:manaweave_patterns/knot",
+		"mna:manaweave_patterns/knot2",
+		"mna:manaweave_patterns/knot3",
+		"mna:manaweave_patterns/knot4",
+		"mna:manaweave_patterns/inverted_triangle"
+	],
+	"parameters":
+	{
+		"beamColor": "0x43085e",
+		"connectBeam": true
+	}
+}

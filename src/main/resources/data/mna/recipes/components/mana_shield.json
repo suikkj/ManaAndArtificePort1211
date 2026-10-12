@@ -1,0 +1,19 @@
+{
+	"type": "mna:component",
+	"tier": 5,
+	"output": "mna:mana_shield",
+	"items":
+	[
+		"minecraft:shield",
+		"mna:mote_arcane",
+		"mna:cerublossom",
+		"mna:eldritch_orb",
+		"mna:rune_defense"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/infinity",
+		"mna:manaweave_patterns/diamond",
+		"mna:manaweave_patterns/inverted_split_triangle"		
+	]
+}

@@ -1,0 +1,8 @@
+# Blender MTL File: 'wizard_lab_blocks.blend'
+# Material Count: 2
+
+newmtl CHIMERITE
+map_Kd mna:block/oreblockchimerite
+
+newmtl FUMEFILTER
+map_Kd mna:block/artifice/wizard_lab/laboratory_fumefilter

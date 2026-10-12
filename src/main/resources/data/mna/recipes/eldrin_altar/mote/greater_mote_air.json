@@ -1,0 +1,22 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:greater_mote_air",
+	"tier": 4,
+	"items": [
+		"mna:mote_air",
+		"minecraft:phantom_membrane",
+		"minecraft:phantom_membrane",
+		"mna:runic_silk",
+		"mna:runic_silk"
+	],
+	"power_requirements": [
+		{
+			"affinity": "WIND",
+			"amount": 1440
+		}
+	],
+	"colors": [
+		13816530,
+		9211020
+	]
+}

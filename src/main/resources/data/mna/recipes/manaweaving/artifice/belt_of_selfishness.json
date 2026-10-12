@@ -1,0 +1,14 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:selfish_belt",
+	"tier": 2,
+	"items": [
+		"mna:belt_buckle",
+		"minecraft:leather",
+		"mna:rune_aura",
+		"minecraft:trapped_chest"
+	],
+	"patterns": [
+		"mna:circle"
+	]
+}

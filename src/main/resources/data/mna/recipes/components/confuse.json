@@ -1,0 +1,18 @@
+{
+	"type": "mna:component",
+	"tier": 3,
+	"output": "mna:confuse",
+	"items":
+	[
+		"mna:stone_rune_purple",
+		"mna:vinteum_dust",
+		"mna:vinteum_dust",
+		"mna:mote_ender"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/knot2",
+		"mna:manaweave_patterns/knot",
+		"mna:manaweave_patterns/knot3"
+	]
+}

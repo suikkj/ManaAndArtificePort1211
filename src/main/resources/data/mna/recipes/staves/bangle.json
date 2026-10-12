@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+  	"CS ",
+  	"S S",
+  	" S "
+  ],
+  "key": {
+  	"S": {
+  		"item": "mna:transmuted_silver"
+  	},
+  	"C": {
+  		"item": "mna:chimerite_gem"
+  	}
+  },
+  "result": {
+    "item": "mna:bangle"    
+  }
+}

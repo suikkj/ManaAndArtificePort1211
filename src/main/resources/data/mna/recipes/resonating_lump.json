@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+  	"LAL",
+  	"GBG",
+  	"LAL"
+  ],
+  "key": {
+  	"L": {
+  		"item": "minecraft:glow_lichen"
+  	},
+  	"A": {
+  		"item": "minecraft:amethyst_shard"
+  	},
+  	"G": {
+  		"item": "minecraft:glow_ink_sac"
+  	},
+  	"B": {
+  		"item": "minecraft:glow_berries"
+  	}
+  },
+  "result": {
+    "item": "mna:resonating_lump"    
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+  	"minecraft:cave_spider",
+  	"minecraft:creeper",
+  	"minecraft:drowned",  	
+  	"minecraft:panda",
+  	"minecraft:phantom",  	
+  	"minecraft:stray",
+  	"minecraft:wolf",  
+  	"minecraft:zombified_piglin",
+  	"mna:witch_hunter",
+  	"mna:demon_imp",
+  	"mna:pixie",
+  	"mna:lantern_wraith"
+  ]
+}

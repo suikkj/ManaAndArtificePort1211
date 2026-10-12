@@ -1,0 +1,16 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 3,
+	"output": "mna:ritual_focus_greater",		
+	"items": [		
+		"mna:ritual_focus_lesser",
+		"minecraft:diamond",
+		"mna:purified_vinteum_dust"
+	],
+	"patterns": [
+		"mna:knot",
+		"mna:knot2",
+		"mna:split_triangle",
+		"mna:inverted_triangle"
+	]
+}

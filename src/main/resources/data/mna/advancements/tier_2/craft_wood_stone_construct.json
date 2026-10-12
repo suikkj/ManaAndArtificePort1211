@@ -1,0 +1,30 @@
+{
+	"parent": "mna:tier_1/advance_tier_2",
+	"display": {
+		"icon": {
+			"item": "mna:constructs/construct_basic_head_wood"
+		},
+		"title": {
+			"translate": "mna:tier_2/craft_wood_stone_construct.title"
+		},
+		"description": {
+			"translate": "mna:tier_2/craft_wood_stone_construct.description"
+		},
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": false,
+		"hidden": false
+	},
+	"criteria": {
+		"wood_or_stone": {
+			"trigger": "mna:summon_construct",
+			"conditions": {
+				"construction": {
+					"numMaterialsForTier": {
+						"tier_2": 3
+					}
+				}
+			}
+		}
+	}
+}

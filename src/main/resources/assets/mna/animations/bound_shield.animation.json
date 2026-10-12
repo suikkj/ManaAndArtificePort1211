@@ -1,0 +1,124 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.bound_shield.idle": {
+			"loop": true,
+			"animation_length": 5,
+			"bones": {
+				"bone_glyph": {
+					"rotation": {
+						"0.0": {
+							"vector": [-15, 0, 0]
+						},
+						"2.5": {
+							"vector": [-17.5, 0, 0],
+							"easing": "easeInOutSine"
+						},
+						"5.0": {
+							"vector": [-15, 0, 0],
+							"easing": "easeInOutSine"
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"2.5": {
+							"vector": [0, 0.25, 0],
+							"easing": "easeInOutSine"
+						},
+						"5.0": {
+							"vector": [0, 0, 0],
+							"easing": "easeInOutSine"
+						}
+					}
+				},
+				"bone_bolster_right": {
+					"rotation": {
+						"0.0": {
+							"vector": [-7.5, -30, 7.5]
+						},
+						"2.5": {
+							"vector": [-7.5, -30, 10],
+							"easing": "easeInOutSine"
+						},
+						"5.0": {
+							"vector": [-7.5, -30, 7.5],
+							"easing": "easeInOutSine"
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [4, -0.5, 1]
+						},
+						"2.5": {
+							"vector": [4.25, -0.625, 1],
+							"easing": "easeInOutSine"
+						},
+						"5.0": {
+							"vector": [4, -0.5, 1],
+							"easing": "easeInOutSine"
+						}
+					}
+				},
+				"bone_bolster_left": {
+					"rotation": {
+						"0.0": {
+							"vector": [-7.5, 30, -7.5]
+						},
+						"2.5": {
+							"vector": [-7.5, 30, -10],
+							"easing": "easeInOutSine"
+						},
+						"5.0": {
+							"vector": [-7.5, 30, -7.5],
+							"easing": "easeInOutSine"
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [-4, -0.5, 1]
+						},
+						"2.5": {
+							"vector": [-4.25, -0.625, 1],
+							"easing": "easeInOutSine"
+						},
+						"5.0": {
+							"vector": [-4, -0.5, 1],
+							"easing": "easeInOutSine"
+						}
+					}
+				},
+				"bone_bolster_bottom": {
+					"rotation": {
+						"0.0": {
+							"vector": [15, 0, 0]
+						},
+						"2.5": {
+							"vector": [17.5, 0, 0],
+							"easing": "easeInOutSine"
+						},
+						"5.0": {
+							"vector": [15, 0, 0],
+							"easing": "easeInOutSine"
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, -4, 0.5]
+						},
+						"2.5": {
+							"vector": [0, -4.25, 0.5],
+							"easing": "easeInOutSine"
+						},
+						"5.0": {
+							"vector": [0, -4, 0.5],
+							"easing": "easeInOutSine"
+						}
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

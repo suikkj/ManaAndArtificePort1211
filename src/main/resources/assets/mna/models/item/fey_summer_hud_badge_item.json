@@ -1,0 +1,7 @@
+{
+
+  "parent": "item/generated",
+    "textures": {
+        "layer0": "mna:item/fey_summer_hud_badge"
+    }
+}

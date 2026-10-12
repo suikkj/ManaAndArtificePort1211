@@ -1,0 +1,19 @@
+{
+	"type": "mna:component",
+	"tier": 5,
+	"output": "mna:curse_of_agony",
+	"items":
+	[
+		"mna:stone_rune_purple",
+		"minecraft:dragon_breath",
+		"minecraft:dragon_breath",
+		"mna:living_flame",
+		"mna:brimstone_charm",
+		"minecraft:wither_rose",
+		"minecraft:wither_rose"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/infinity"
+	]
+}

@@ -1,0 +1,19 @@
+{
+	"type": "mna:shape",
+	"tier": 2,
+	"output": "mna:wall",
+	"items":
+	[
+		"mna:vinteum_dust",
+		"mna:rune_defense",
+		"mna:decoration/arcane_stone_wall",
+		"clay",
+		"mna:decoration/arcane_stone_wall"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/triangle",
+		"mna:manaweave_patterns/square",
+		"mna:manaweave_patterns/triangle"
+	]
+}

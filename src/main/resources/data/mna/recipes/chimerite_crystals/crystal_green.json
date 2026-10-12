@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+  	"CCC",
+  	"CDC",
+  	"CCC"
+  ],
+  "key": {
+  	"C": {
+  		"item": "mna:chimerite_gem"
+  	},
+  	"D": {
+  		"item": "minecraft:green_dye"
+  	}
+  },
+  "result": {
+    "item": "mna:chimerite_crystal_green"    
+  }
+}

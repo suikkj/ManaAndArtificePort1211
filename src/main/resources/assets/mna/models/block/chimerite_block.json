@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "down": "mna:block/oreblockchimerite",
+        "up": "mna:block/oreblockchimerite",
+        "north": "mna:block/oreblockchimerite",
+        "east": "mna:block/oreblockchimerite",
+        "south": "mna:block/oreblockchimerite",
+        "west": "mna:block/oreblockchimerite",
+        "particle": "mna:block/oreblockchimerite"
+    }
+}

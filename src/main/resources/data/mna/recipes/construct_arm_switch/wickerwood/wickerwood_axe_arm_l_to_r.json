@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mna:constructs/construct_axe_arm_left_wickerwood"
+    }
+  ],
+  "result": {
+    "item": "mna:constructs/construct_axe_arm_right_wickerwood"    
+  }
+}

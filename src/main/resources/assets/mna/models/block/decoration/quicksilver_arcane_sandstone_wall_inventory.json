@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "mna:block/artifice/decoration/quicksilver_arcane_sandstone"
+  }
+}

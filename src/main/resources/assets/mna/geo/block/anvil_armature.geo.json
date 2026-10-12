@@ -1,0 +1,33 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.anvil_armature",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 1,
+				"visible_bounds_height": 1,
+				"visible_bounds_offset": [0, 0, 0]
+			},
+			"bones": [
+				{
+					"name": "STATICS",
+					"pivot": [0, 14, 4]
+				},
+				{
+					"name": "CIRCLE_BASE",
+					"pivot": [0, 2, 0]
+				},
+				{
+					"name": "CIRCLE_FRONT",
+					"pivot": [0, 14, 4.5]
+				},
+				{
+					"name": "CIRCLE_REAR",
+					"pivot": [0, 14, -4.5]
+				}
+			]
+		}
+	]
+}

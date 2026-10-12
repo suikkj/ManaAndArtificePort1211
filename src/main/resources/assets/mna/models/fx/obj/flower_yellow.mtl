@@ -1,0 +1,5 @@
+# Blender MTL File: 'flower.blend'
+# Material Count: 1
+
+newmtl Material.001
+map_Kd mna:entity/fx/flower_yellow

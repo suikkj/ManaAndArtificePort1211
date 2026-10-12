@@ -1,0 +1,13 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:damage_charm_minor",
+	"tier": 2,
+	"items": [
+		"mna:charm_pattern",
+		"minecraft:golden_sword"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:circle"
+	]
+}

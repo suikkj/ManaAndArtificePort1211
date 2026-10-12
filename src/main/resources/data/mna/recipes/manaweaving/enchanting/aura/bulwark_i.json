@@ -1,0 +1,18 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 2,
+	"output": "mna:rune_aura",
+	"enchant": "mna:aura-bulwark",
+	"magnitude": 1,
+	"items":
+	[
+		"mna:rune_aura",
+		"minecraft:shield",
+		"mna:aum"
+	],
+	"patterns":
+	[		
+		"mna:circle",
+		"mna:diamond"
+	]
+}

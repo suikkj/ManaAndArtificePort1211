@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+  	"W",
+  	"R"
+  ],
+  "key": {
+  	"R": {
+  		"item": "mna:mana_resevoir"
+  	},
+  	"W": {
+  		"item": "mna:manaweaver_wand"
+  	}
+  },
+  "result": {
+    "item": "mna:manaweave_projector"    
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "mna:block/artifice/decoration/emerald_arcane_stone",
+    "top": "mna:block/artifice/decoration/emerald_arcane_stone",
+    "side": "mna:block/artifice/decoration/emerald_arcane_stone"
+  }
+}

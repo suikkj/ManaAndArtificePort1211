@@ -1,0 +1,20 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 4,
+	"output": "mna:rune_earth",
+	"enchant": "minecraft:blast_protection",
+	"magnitude": 3,
+	"items": [
+		"minecraft:tnt",
+		"mna:rune_earth",
+		"mna:all_concrete",		
+		"mna:vinteum_dust",
+		"mna:desert_nova",
+		"mna:infused_silk",
+		"minecraft:lapis_lazuli"
+	],
+	"patterns": [
+		"mna:hourglass",
+		"mna:square"
+	]
+}

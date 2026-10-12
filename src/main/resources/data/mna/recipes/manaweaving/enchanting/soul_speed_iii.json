@@ -1,0 +1,24 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 5,
+	"output": "mna:rune_ender",
+	"enchant": "minecraft:soul_speed",
+	"magnitude": 3,
+	"items": [
+		"mna:rune_ender",		
+		"mna:mote_ender",
+		"minecraft:soul_sand",
+		"minecraft:sugar",
+		"minecraft:gold_nugget",
+		"minecraft:porkchop",
+		"minecraft:soul_soil",
+		"minecraft:soul_lantern",
+		"mna:stone_rune_brown"
+	],
+	"patterns": [
+		"mna:square",
+		"mna:split_triangle",
+		"mna:square",
+		"mna:triangle"
+	]
+}

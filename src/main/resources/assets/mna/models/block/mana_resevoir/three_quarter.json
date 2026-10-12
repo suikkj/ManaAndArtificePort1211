@@ -1,0 +1,25 @@
+{
+  "parent": "forge:item/default",
+  "loader": "forge:composite",
+  "textures": {
+  	"particle": "minecraft:block/stone"
+  },
+  "children": {
+    "frame": {
+      "loader": "forge:obj",
+      "automatic_culling": false,
+	  "shade_quads": true,
+	  "flip_v": true,
+	  "emissive_ambient": true,
+      "model": "mna:models/block/obj/mana_resevoir/reservoir.obj"
+    },
+    "fluid":{
+    	"loader": "forge:obj",
+      	"automatic_culling": false,
+	  	"shade_quads": true,
+	  	"flip_v": true,
+	  	"emissive_ambient": true,
+      	"model": "mna:models/block/obj/mana_resevoir/reservoir_fluid3of4.obj"
+    }
+  }
+}

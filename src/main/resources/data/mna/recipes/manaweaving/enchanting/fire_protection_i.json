@@ -1,0 +1,20 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 3,
+	"output": "mna:rune_earth",
+	"enchant": "minecraft:fire_protection",
+	"magnitude": 1,
+	"items": [
+		"mna:rune_earth",
+		"minecraft:flint_and_steel",
+		"minecraft:lava_bucket",
+		"minecraft:flint_and_steel",
+		"minecraft:firework_rocket",
+		"minecraft:firework_rocket",
+		"mna:desert_nova"
+	],
+	"patterns": [		
+		"mna:square",
+		"mna:split_triangle"
+	]
+}

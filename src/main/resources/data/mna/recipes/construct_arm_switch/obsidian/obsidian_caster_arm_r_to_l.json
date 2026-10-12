@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mna:constructs/construct_caster_arm_right_obsidian"
+    }
+  ],
+  "result": {
+    "item": "mna:constructs/construct_caster_arm_left_obsidian"    
+  }
+}

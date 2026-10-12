@@ -1,0 +1,22 @@
+{
+	"type": "mna:component",
+	"tier": 5,
+	"output": "mna:simulacrum",
+	"items":
+	[
+		"mna:animus_dust",
+		"minecraft:totem_of_undying",
+		"minecraft:nether_star",
+		"mna:faction_horn_fey",		
+		"mna:ironbark",
+		"mna:greater_mote_ender",
+		"minecraft:soul_lantern"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/star",
+		"mna:manaweave_patterns/split_triangle",
+		"mna:manaweave_patterns/infinity",
+		"mna:manaweave_patterns/inverted_split_triangle"
+	]
+}

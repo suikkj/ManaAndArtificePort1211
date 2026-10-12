@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "down": "mna:block/material/spectral/conjures",
+        "up": "mna:block/material/spectral/conjures",
+        "north": "mna:block/material/spectral/conjures",
+        "east": "mna:block/material/spectral/conjures",
+        "south": "mna:block/material/spectral/conjures",
+        "west": "mna:block/material/spectral/conjures",
+        "particle": "mna:block/material/spectral/conjures"
+    }
+}

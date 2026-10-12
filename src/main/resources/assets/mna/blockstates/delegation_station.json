@@ -1,0 +1,18 @@
+{
+  "variants": {    
+    "surface=1,facing=east": { "model": "mna:block/delegation_station", "y": 90 },
+    "surface=1,facing=west": { "model": "mna:block/delegation_station", "y": 270 },
+    "surface=1,facing=north": { "model": "mna:block/delegation_station" },
+    "surface=1,facing=south": { "model": "mna:block/delegation_station", "y": 180 },
+    
+    "surface=2,facing=east": { "model": "mna:block/delegation_station", "y": 180 },
+    "surface=2,facing=west": { "model": "mna:block/delegation_station" },
+    "surface=2,facing=north": { "model": "mna:block/delegation_station", "y": 90 },
+    "surface=2,facing=south": { "model": "mna:block/delegation_station",  "y": 270 },
+    
+    "surface=3,facing=east": { "model": "mna:block/delegation_station", "y": 90  },
+    "surface=3,facing=west": { "model": "mna:block/delegation_station", "y": 270 },
+    "surface=3,facing=north": { "model": "mna:block/delegation_station"},
+    "surface=3,facing=south": { "model": "mna:block/delegation_station", "y": 180 }
+  }
+}

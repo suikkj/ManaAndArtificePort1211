@@ -1,0 +1,19 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 3,
+	"output": "mna:pylon/water_walking",	
+	"items": [
+		"mna:rune_aura",
+		"mna:rune_water",
+		"mna:rune_water",
+		"mna:rune_ritual_metal",
+		"mna:rune_ritual_metal",
+		"mna:rune_ritual_metal",
+		"mna:pylon/inert",
+		"minecraft:moss_carpet",
+		"minecraft:lily_pad"
+	],
+	"patterns": [
+		"mna:square"
+	]
+}

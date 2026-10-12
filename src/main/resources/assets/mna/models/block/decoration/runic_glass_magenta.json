@@ -1,0 +1,13 @@
+{
+    "parent": "block/cube",
+    "render_type": "translucent",
+    "textures": {
+        "down": "mna:block/artifice/decoration/runic_glass_magenta",
+        "up": "mna:block/artifice/decoration/runic_glass_magenta",
+        "north": "mna:block/artifice/decoration/runic_glass_magenta",
+        "east": "mna:block/artifice/decoration/runic_glass_magenta",
+        "south": "mna:block/artifice/decoration/runic_glass_magenta",
+        "west": "mna:block/artifice/decoration/runic_glass_magenta",
+        "particle": "mna:block/artifice/decoration/runic_glass_magenta"
+    }
+}

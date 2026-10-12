@@ -1,0 +1,20 @@
+﻿{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:decoration/arcane_sandstone",
+	"tier": 1,
+	"quantity": 8,		
+	"items": [
+		"c:sandstone",
+		"c:sandstone",
+		"c:sandstone",
+		"c:sandstone",
+		"c:sandstone",
+		"c:sandstone",
+		"c:sandstone",
+		"c:sandstone"
+	],
+	"patterns": [
+		"mna:circle"
+	]
+}
+

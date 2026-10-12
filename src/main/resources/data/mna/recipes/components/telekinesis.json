@@ -1,0 +1,17 @@
+{
+	"type": "mna:component",
+	"tier": 3,
+	"output": "mna:telekinesis",
+	"items":
+	[
+		"mna:stone_rune_purple",
+		"minecraft:iron_ingot",
+		"minecraft:copper_ingot",
+		"mna:mote_fire",
+		"minecraft:lightning_rod"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/bolt"
+	]
+}

@@ -1,0 +1,30 @@
+﻿{
+  "values": [
+    "#minecraft:is_ocean", 
+    "#minecraft:is_river",
+    "#minecraft:is_badlands",
+    "#minecraft:is_beach",
+    "#minecraft:is_deep_ocean",
+    "#minecraft:is_forest",
+    "#minecraft:is_hill",
+    "#minecraft:is_jungle",
+    "#minecraft:is_mountain",
+    "#minecraft:is_savanna",
+    "#minecraft:is_taiga",
+    "#c:is_wasteland",
+    "#c:is_underground",
+    "#c:is_swamp",
+    "#c:is_spooky",
+    "#c:is_snowy",
+    "#c:is_slope",
+    "#c:is_sandy",
+    "#c:is_plateau",
+    "#c:is_plains",
+    "#c:is_peak",
+    "#c:is_mountain",
+    "#c:is_lush",
+    "#c:is_desert",
+    "#c:is_coniferous",
+    "#c:is_cave"
+  ]
+}

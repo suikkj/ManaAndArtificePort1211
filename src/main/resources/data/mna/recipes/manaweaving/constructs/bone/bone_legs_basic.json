@@ -1,0 +1,21 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:constructs/construct_basic_legs_bone",
+	"tier": 3,
+	"requiredFaction": "mna:undead",
+	"items": [
+		"mna:constructs/rune_hips",
+		"mna:constructs/rune_rod",
+		"mna:constructs/rune_rod",
+		"minecraft:bone",
+		"minecraft:bone",
+		"minecraft:bone",
+		"mna:vinteum_dust",
+		"mna:vinteum_dust"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:square",
+		"mna:diamond"
+	]
+}

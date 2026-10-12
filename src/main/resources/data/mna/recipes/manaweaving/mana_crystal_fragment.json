@@ -1,0 +1,24 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": {
+		"item": "mna:mana_crystal_fragment"
+	},
+	"tier": 2,
+	"items": [		
+		"mna:purified_vinteum_dust",
+		"mna:chimerite_gem",
+		"mna:chimerite_gem",
+		"mna:chimerite_gem",
+		"mna:chimerite_gem",
+		"mna:chimerite_gem",
+		"mna:chimerite_gem",
+		"mna:chimerite_gem",
+		"mna:chimerite_gem"		
+	],
+	"patterns": [
+		"mna:circle",
+		"mna:diamond",
+		"mna:square",
+		"mna:diamond"
+	]
+}

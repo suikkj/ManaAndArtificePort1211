@@ -1,0 +1,21 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:constructs/construct_mana_torso_iron",
+	"tier": 3,
+	"items": [
+		"mna:constructs/rune_torso",
+		"minecraft:iron_ingot",
+		"minecraft:iron_ingot",
+		"minecraft:iron_ingot",
+		"mna:vinteum_dust",
+		"mna:vinteum_dust",
+		"mna:mote_arcane",
+		"mna:rune_arcane",
+		"mna:mana_resevoir"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:square",
+		"mna:diamond"
+	]
+}

@@ -1,0 +1,19 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:constructs/construct_rocket_legs_wood",
+	"tier": 2,
+	"items": [
+		"mna:constructs/rune_hips",
+		"mna:constructs/rune_rod",
+		"mna:constructs/rune_rod",
+		"minecraft:logs",
+		"minecraft:logs",
+		"minecraft:logs",
+		"mna:mote_fire"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:triangle",
+		"mna:diamond"
+	]
+}

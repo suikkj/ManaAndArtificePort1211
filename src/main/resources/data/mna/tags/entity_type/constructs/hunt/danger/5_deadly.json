@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+  	"minecraft:piglin_brute",
+  	"minecraft:ravager",
+  	"minecraft:witch",
+  	"minecraft:zoglin",
+  	"mna:mushroom_soldier",
+  	"mna:hulking_zombie"
+  ]
+}

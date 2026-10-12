@@ -1,0 +1,36 @@
+{
+  "parent": "forge:item/default",
+  "loader": "forge:composite",
+  "textures": {
+  	"particle": "mna:block/inscription_table"
+  },
+  "children": {
+    "main": {
+      "loader": "forge:obj",
+      "automatic_culling": false,
+	  "shade_quads": false,
+	  "flip_v": true,
+	  "emissive_ambient": true,
+      "model": "mna:models/item/obj/wizard_lab/fume_prism_inventory.obj"
+    }
+  },
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, 0, -3]
+		},
+		"thirdperson_lefthand": {
+			"translation": [0, 0, -3]
+		},
+		"ground": {
+			"scale": [0.75, 0.75, 0.75]
+		},
+		"gui": {
+			"rotation": [15, 30, 0],
+			"scale": [1.25, 1.25, 1.25],
+			"translation": [0, 2, 0]
+		},
+		"fixed": {
+			
+		}
+	}
+}

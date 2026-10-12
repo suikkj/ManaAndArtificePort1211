@@ -1,0 +1,22 @@
+{
+	"type": "mna:component",
+	"output": "mna:lightning_damage",
+	"tier": 3,
+	"items":
+	[
+		"mna:stone_rune_yellow",
+		"mna:stone_rune_white",
+		"mna:stone_rune_blue",
+		"redstone",
+		"glowstone",
+		"mna:vinteum_dust",
+		"iron_bars",
+		"iron_bars"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/inverted_triangle",
+		"mna:manaweave_patterns/knot2",
+		"mna:manaweave_patterns/split_triangle"
+	]
+}

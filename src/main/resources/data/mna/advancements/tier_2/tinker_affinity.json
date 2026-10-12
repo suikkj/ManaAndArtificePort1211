@@ -1,0 +1,25 @@
+{
+	"parent": "mna:tier_1/advance_tier_2",
+	"display": {
+		"icon": {
+			"item": "mna:affinity_tinker"
+		},
+		"title": {
+			"translate": "mna:tier_2/tinker_affinity.title"
+		},
+		"description": {
+			"translate": "mna:tier_2/tinker_affinity.description"
+		},
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": false,
+		"hidden": false
+	},
+	"criteria": {
+		"magic_level_up": {
+			"trigger": "mna:affinity_tinker",
+			"conditions": {	}
+		}
+	},
+	"requirements": []
+}

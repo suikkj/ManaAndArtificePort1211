@@ -1,0 +1,40 @@
+{
+	"parent": "mna:tier_3/advance_tier_4",
+	"display": {
+		"icon": {
+			"item": "mna:pylon/inert"
+		},
+		"title": {
+			"translate": "mna:tier_4/craft_t4_pylon.title"
+		},
+		"description": {
+			"translate": "mna:tier_4/craft_t4_pylon.description"
+		},
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": false,
+		"hidden": false
+	},
+	"criteria": {
+		"manaweave_altar_craft": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [{
+				"items": [
+            			"mna:pylon/bind_wounds",
+            			"mna:pylon/camouflage",
+            			"mna:pylon/recharge",
+            			"mna:pylon/grow",
+            			"mna:pylon/levitate",
+            			"mna:pylon/night_vision",
+            			"mna:pylon/pilgrim",
+            			"mna:pylon/shrink",
+            			"mna:pylon/water_breathing",
+            			"mna:pylon/repair"
+          			]
+				}]
+			}
+		}
+	},
+	"requirements": []
+}

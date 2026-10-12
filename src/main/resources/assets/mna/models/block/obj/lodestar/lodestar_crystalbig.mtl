@@ -1,0 +1,5 @@
+# Blender MTL File: 'lodestar.blend'
+# Material Count: 1
+
+newmtl DYED_CHIMERITE
+map_Kd mna:block/material/crystal/chimerite_crystal_cyan

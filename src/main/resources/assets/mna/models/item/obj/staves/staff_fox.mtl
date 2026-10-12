@@ -1,0 +1,5 @@
+# Blender MTL File: 'staves.blend'
+# Material Count: 1
+
+newmtl FOX
+map_Kd mna:item/artifice/fox_staff

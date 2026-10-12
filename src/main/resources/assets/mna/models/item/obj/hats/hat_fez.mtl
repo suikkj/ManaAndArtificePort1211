@@ -1,0 +1,5 @@
+# Blender MTL File: 'constructs.blend'
+# Material Count: 1
+
+newmtl HAT_TYPE_1
+map_Kd mna:item/hats/construct_hats_1

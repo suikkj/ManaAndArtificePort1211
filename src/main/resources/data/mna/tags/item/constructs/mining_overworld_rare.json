@@ -1,0 +1,15 @@
+﻿{
+  "replace": false,
+  "values": [
+    "#mna:constructs/mining_overworld_common",
+    
+    "mna:chimerite_gem",
+    
+    "minecraft:raw_gold",
+    "#c:gems/amethyst",
+    "#c:gems/diamond",
+    "#c:gems/emerald",
+    "#c:gems/lapis",
+    "#c:gems/prismarine"    
+  ]
+}

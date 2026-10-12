@@ -1,0 +1,19 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:bone_scythe",
+	"tier": 3,
+	"requiredFaction": "mna:undead",
+	"items": [
+		"minecraft:bone",
+		"minecraft:bone",
+		"minecraft:flint",
+		"minecraft:iron_ingot",
+		"minecraft:iron_ingot",
+		"mna:transmuted_silver",
+		"mna:transmuted_silver",
+		"minecraft:string"
+	],
+	"patterns": [
+		"mna:bolt"
+	]
+}

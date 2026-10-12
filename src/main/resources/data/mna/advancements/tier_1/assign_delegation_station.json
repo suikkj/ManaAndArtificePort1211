@@ -1,0 +1,46 @@
+{
+	"display": {
+		"icon": {
+			"item": "mna:bell_of_bidding"
+		},
+		"title": {
+			"translate": "mna:tier_1/assign_delegation_station.title"
+		},
+		"description": {
+			"translate": "mna:tier_1/assign_delegation_station.description"
+		},
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": false,
+		"hidden": false
+	},
+	"parent": "mna:tier_0/codex_trade",
+	"criteria": {
+		"requirement": {
+			"trigger": "minecraft:item_used_on_block",
+			"conditions": {
+				"location": [
+					{
+						"condition": "minecraft:match_tool",
+						"predicate": {
+							"items": [
+								"mna:bell_of_bidding"
+							]
+						}
+					},
+					{
+						"condition": "minecraft:location_check",
+						"predicate": {
+							"block": {
+								"blocks": [
+									"mna:delegation_station",
+									"mna:lodestar"
+								]
+							}
+						}
+					}
+				]
+			}
+		}
+	}
+}

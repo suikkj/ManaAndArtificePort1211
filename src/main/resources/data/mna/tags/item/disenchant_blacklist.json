@@ -1,0 +1,10 @@
+{
+	"replace": false,
+	"values": [
+		"mna:runic_malus",
+		"mna:bound_sword",
+		"mna:bound_axe",
+		"mna:bound_bow",
+		"mna:bound_shield"
+	]
+}

@@ -1,0 +1,11 @@
+{
+	"replace": false,
+	"values": [
+		"mna:mote_air",
+		"mna:mote_earth",
+		"mna:mote_fire",
+		"mna:mote_water",
+		"mna:mote_arcane",
+		"mna:mote_ender"
+	]
+}

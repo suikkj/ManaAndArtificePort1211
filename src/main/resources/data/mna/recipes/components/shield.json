@@ -1,0 +1,21 @@
+{
+	"type": "mna:component",
+	"output": "mna:shield",
+	"tier": 3,
+	"items":
+	[
+		"mna:stone_rune_cyan",
+		"shield",
+		"mna:stone_rune_blue",
+		"mna:vinteum_dust",
+		"diamond_chestplate",
+		"observer",
+		"mna:rune_defense"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/knot2",
+		"mna:manaweave_patterns/diamond",
+		"mna:manaweave_patterns/knot4"
+	]
+}

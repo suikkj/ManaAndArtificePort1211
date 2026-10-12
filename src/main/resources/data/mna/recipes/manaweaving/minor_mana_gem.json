@@ -1,0 +1,20 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": {
+		"item": "mna:minor_mana_gem"
+	},
+	"tier": 3,
+	"items": [		
+		"mna:purified_vinteum_dust",
+		"mna:mana_crystal_fragment",
+		"minecraft:diamond",
+		"minecraft:diamond",
+		"minecraft:emerald",
+		"minecraft:emerald"		
+	],
+	"patterns": [
+		"mna:split_triangle",
+		"mna:inverted_triangle",
+		"mna:split_triangle"
+	]
+}

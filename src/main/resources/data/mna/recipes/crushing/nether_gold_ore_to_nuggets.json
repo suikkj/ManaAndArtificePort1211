@@ -1,0 +1,7 @@
+{
+	"type": "mna:crushing",
+	"tier": 2,
+	"input": "minecraft:nether_gold_ore",
+	"output": "minecraft:gold_nugget",
+	"output_quantity": 9
+}

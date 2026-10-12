@@ -1,0 +1,24 @@
+{
+	"type": "mna:component",
+	"output": "mna:heal",
+	"tier": 5,
+	"items":
+	[
+		"diamond_block",
+		"mna:stone_rune_green",
+		"mna:stone_rune_lime",
+		"mna:cerublossom",
+		"mna:vinteum_dust",
+		"mna:vinteum_dust",		
+		"emerald_block",
+		"redstone_block"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/knot",
+		"mna:manaweave_patterns/knot2",
+		"mna:manaweave_patterns/knot3",
+		"mna:manaweave_patterns/knot4",
+		"mna:manaweave_patterns/infinity"
+	]
+}

@@ -1,0 +1,6 @@
+{
+  "type": "mna:progression-condition",
+  "advancement": "minecraft:end/kill_dragon",
+  "description": "mna:tier_4/kill_ender_dragon.description",
+  "tier": 4
+}

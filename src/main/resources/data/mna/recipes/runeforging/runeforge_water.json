@@ -1,0 +1,6 @@
+{
+	"type": "mna:runeforging",
+	"tier": 3,
+	"pattern": "mna:rune_pattern_water",
+	"output": "mna:rune_water"
+}

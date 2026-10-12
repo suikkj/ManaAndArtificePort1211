@@ -1,0 +1,20 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:constructs/construct_armor_torso_gold",
+	"tier": 3,
+	"items": [
+		"mna:constructs/rune_torso",
+		"minecraft:gold_ingot",
+		"minecraft:gold_ingot",
+		"minecraft:gold_ingot",
+		"mna:vinteum_dust",
+		"mna:vinteum_dust",
+		"mna:mote_earth",
+		"mna:rune_defense"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:square",
+		"mna:diamond"
+	]
+}

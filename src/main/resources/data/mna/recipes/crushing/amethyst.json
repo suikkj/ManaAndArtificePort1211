@@ -1,0 +1,7 @@
+{
+	"type": "mna:crushing",
+	"tier": 2,
+	"input": "minecraft:amethyst_block",
+	"output": "minecraft:amethyst_shard",
+	"output_quantity": 1
+}

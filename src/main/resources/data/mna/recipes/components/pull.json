@@ -1,0 +1,15 @@
+{
+	"type": "mna:component",
+	"output": "mna:pull",
+	"tier": 1,
+	"items":
+	[
+		"mna:stone_rune_white",
+		"minecraft:string",
+		"minecraft:string"		
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/circle"
+	]
+}

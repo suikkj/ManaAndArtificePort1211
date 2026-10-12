@@ -1,0 +1,18 @@
+﻿{
+	"type": "mna:manaweaving-recipe",
+	"tier": 2,
+	"output": "mna:rune_aura",
+	"enchant": "mna:aura-jumping",
+	"magnitude": 1,
+	"items": [
+		"mna:rune_aura",
+		"c:slimeballs",
+		"minecraft:sugar",
+		"mna:tarma_root"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:knot"
+	]
+}
+

@@ -1,0 +1,24 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:spell_specialization",
+	"tier": 5,
+	"items": [
+		"mna:basic_table",
+		"mna:transmuted_silver",
+		"mna:transmuted_silver",
+		"mna:crystal_of_memories",
+		"mna:crystal_of_memories",
+		"mna:minor_mana_gem",		
+		"mna:transmuted_silver"
+	],
+	"power_requirements": [
+		{
+			"affinity": "ARCANE",
+			"amount": 1500
+		}
+	],
+	"colors": [
+		6232189,
+		9211020
+	]
+}

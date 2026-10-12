@@ -1,0 +1,20 @@
+{
+  "parent": "forge:item/default",
+  "loader": "forge:composite",
+  "textures": {
+  	"particle": "minecraft:block/oak_log"
+  },
+  "children": {
+    "lower": {
+      "loader": "forge:obj",
+      "automatic_culling": false,
+	  "shade_quads": false,
+	  "flip_v": true,
+	  "emissive_ambient": true,
+      "model": "mna:models/block/obj/supplier/leypylon_basic.obj",
+      "textures": {
+        "crystalcolor": "mna:block/artifice/decoration/arcane_stone"
+      }
+    }
+  }
+}

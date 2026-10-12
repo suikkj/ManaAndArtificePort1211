@@ -1,0 +1,11 @@
+# Blender MTL File: 'constructs.blend'
+# Material Count: 2
+
+newmtl CIRCUITRY
+map_Kd minecraft:block/lava_flow
+
+newmtl MAIN
+map_Kd mna:entity/animated_construct/obsidian
+
+newmtl CHIMERITE
+map_Kd mna:block/oreblockchimerite

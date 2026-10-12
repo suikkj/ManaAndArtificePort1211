@@ -1,0 +1,5 @@
+{
+  "type": "mna:progression-condition",
+  "advancement": "mna:tier_1/obtain_inscription_table",
+  "tier": 1
+}

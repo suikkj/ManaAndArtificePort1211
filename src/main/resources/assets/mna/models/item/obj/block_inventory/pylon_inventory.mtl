@@ -1,0 +1,5 @@
+# Blender MTL File: 'pylon.blend'
+# Material Count: 2
+
+newmtl MAIN
+map_Kd mna:block/pylon

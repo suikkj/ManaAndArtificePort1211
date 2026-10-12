@@ -1,0 +1,18 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:pilgrim_staff",
+	"tier": 1,
+	"items": [
+		"mna:staves",
+		"mna:wizard_chalk",
+		"mna:vinteum_dust",
+		"minecraft:sugar",
+		"minecraft:dried_kelp",
+		"minecraft:leather_boots"
+	],
+	"patterns": [
+		"mna:triangle",
+		"mna:triangle",
+		"mna:triangle"
+	]
+}

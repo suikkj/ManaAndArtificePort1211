@@ -1,0 +1,8 @@
+# Blender MTL File: 'pumpkin_staff.blend'
+# Material Count: 2
+
+newmtl MAIN
+map_Kd mna:item/material/pumpkinstaff
+
+newmtl VINES
+map_Kd mna:item/material/pumpkinstaff_vines

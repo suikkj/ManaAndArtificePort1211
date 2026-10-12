@@ -1,0 +1,27 @@
+{
+	"parent": "mna:tier_2/advance_tier_3",
+	"display": {
+		"icon": {
+			"item": "mna:trickery_bracelet"
+		},
+		"title": {
+			"translate": "mna:tier_3/craft_faction_item.title"
+		},
+		"description": {
+			"translate": "mna:tier_3/craft_faction_item.description"
+		},
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": false,
+		"hidden": false
+	},
+	"criteria": {
+		"manaweave_altar_craft": {
+			"trigger": "mna:manaweave_altar_craft",
+			"conditions": {
+				"mustMatchFaction": true
+			}
+		}
+	},
+	"requirements": []
+}

@@ -1,0 +1,31 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:bone_armor_boots",
+	"tier": 5,
+	"requiredFaction": "mna:undead",
+	"items": [
+		"minecraft:netherite_boots",
+		"mna:witherbone",
+		"mna:witherbone",
+		"mna:greater_mote_earth",
+		"mna:greater_mote_water",
+		"mna:rune_earth",
+		"mna:rune_water",
+		"minecraft:phantom_membrane",
+		"minecraft:phantom_membrane"
+	],
+	"power_requirements": [
+		{
+			"affinity": "WATER",
+			"amount": 2750
+		},
+		{
+			"affinity": "EARTH",
+			"amount": 1500
+		}
+	],
+	"colors": [
+		8092539,
+		2565927
+	]
+}

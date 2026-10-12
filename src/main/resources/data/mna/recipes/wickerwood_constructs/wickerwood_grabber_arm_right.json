@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+  	" L ",
+  	" SS",
+  	" WS"
+  ],
+  "key": {
+ 	"W": {
+  		"item": "minecraft:wheat"
+  	},
+  	"S": {
+  		"item": "minecraft:stick"
+  	},
+  	"L": {
+  		"tag": "minecraft:logs"
+  	}
+  },
+  "result": {
+    "item": "mna:constructs/construct_grabber_arm_right_wickerwood"    
+  }
+}

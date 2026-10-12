@@ -1,0 +1,5 @@
+{
+  "type": "mna:progression-condition",
+  "advancement": "mna:tier_3/disenchant_item",
+  "tier": 3
+}

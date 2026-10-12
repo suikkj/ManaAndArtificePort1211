@@ -1,0 +1,14 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "minecraft:name_tag",
+	"quantity": 1,
+	"tier": 2,
+	"items": [
+		"minecraft:iron_nugget",
+		"minecraft:paper",
+		"minecraft:string"
+	],
+	"patterns": [
+		"mna:knot3"		
+	]
+}

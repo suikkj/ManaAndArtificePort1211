@@ -1,0 +1,5 @@
+# Blender MTL File: 'staffofnames.blend'
+# Material Count: 1
+
+newmtl SOULFIRE
+map_Kd minecraft:block/soul_fire_0

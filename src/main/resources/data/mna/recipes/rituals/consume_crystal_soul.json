@@ -1,0 +1,42 @@
+{
+	"type": "mna:ritual",
+	"tier": 3,
+	"pattern":
+	[
+		[ 0, 0, 1, 0, 0 ],
+		[ 0, 0, 0, 2, 0 ],
+		[ 7, 6, 5, 4, 3 ],
+		[ 0, 8, 0, 0, 0 ],
+		[ 0, 0, 9, 0, 0 ]
+	],
+	"reagents":
+	[
+		"  T  ",
+		"     ",
+		"  C  ",
+		"     ",
+		"  T  "
+	],
+	"keys":
+	{
+		"C": 
+		{ 
+			"item": "mna:entrapment_crystal",
+			"optional": false,
+			"consume": true
+		},
+		"T": 
+		{ 
+			"item": "minecraft:soul_torch",
+			"optional": false,
+			"consume": true
+		}
+	},
+	"parameters":
+	{
+		"innerColor": "0x5406a1",
+		"outerColor": "0x2e0d4f",
+		"beamColor": "0x2e0d4f",
+		"connectBeam": false
+	}
+}

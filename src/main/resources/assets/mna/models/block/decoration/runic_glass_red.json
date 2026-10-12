@@ -1,0 +1,13 @@
+{
+    "parent": "block/cube",
+    "render_type": "translucent",
+    "textures": {
+        "down": "mna:block/artifice/decoration/runic_glass_red",
+        "up": "mna:block/artifice/decoration/runic_glass_red",
+        "north": "mna:block/artifice/decoration/runic_glass_red",
+        "east": "mna:block/artifice/decoration/runic_glass_red",
+        "south": "mna:block/artifice/decoration/runic_glass_red",
+        "west": "mna:block/artifice/decoration/runic_glass_red",
+        "particle": "mna:block/artifice/decoration/runic_glass_red"
+    }
+}

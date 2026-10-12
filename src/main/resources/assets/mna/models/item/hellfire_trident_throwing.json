@@ -1,0 +1,46 @@
+{
+	"parent": "forge:item/default",
+  	"loader": "forge:composite",
+  	"children": {
+    	"crystal": {
+      		"loader": "forge:obj",
+      		"automatic_culling": true,
+	  		"shade_quads": true,
+	  		"flip_v": true,
+	  		"emissive_ambient": false,
+      		"model": "mna:models/item/obj/hellfire_trident/hellfire_trident.obj"
+    	}
+  	},
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [ 0, 0, 180 ],
+			"translation": [0, 0, 0]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [ 0, 0, 180 ],
+			"translation": [0, -6, 0]
+		},		
+		"firstperson_righthand": {
+			"translation": [6, -6, 0],
+			"rotation": [-25, 0, 0]
+		},
+		"firstperson_lefthand": {
+			"translation": [6, -6, 0],
+			"rotation": [-25, 0, 0]
+		},
+		"ground": {
+			"scale": [0.6, 0.6, 0.6],
+			"translation": [0, 6, 0]
+		},
+		"gui": {
+			"rotation": [90, -45, 90],
+			"scale": [0.45, 0.45, 0.45],
+			"translation": [2, -2, 0]
+		},
+		"fixed": {
+			"rotation": [0, 0, 45],
+			"scale": [0.45, 0.45, 0.45],
+			"translation": [2, -2, 0]
+		}
+	}
+}

@@ -1,0 +1,15 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:battlemage_amulet",
+	"tier": 2,
+	"items": [
+		"mna:mundane_amulet",
+		"minecraft:diamond_sword",
+		"mna:mote_arcane",
+		"mna:mana_crystal_fragment"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:triangle"
+	]
+}

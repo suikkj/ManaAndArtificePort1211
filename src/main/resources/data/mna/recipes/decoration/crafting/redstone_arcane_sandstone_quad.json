@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "###",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "mna:decoration/redstone_arcane_sandstone"
+    }
+  },
+  "result": {
+    "item": "mna:decoration/redstone_arcane_sandstone_quad",
+    "count": 5
+  }
+}

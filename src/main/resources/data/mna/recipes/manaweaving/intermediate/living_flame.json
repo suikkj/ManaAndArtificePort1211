@@ -1,0 +1,16 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 4,
+	"output": "mna:living_flame",
+	"items":
+	[
+		"mna:vinteum_dust",
+		"minecraft:magma_cream",		
+		"minecraft:blaze_powder",
+		"minecraft:glass_bottle"
+	],
+	"patterns":
+	[
+		"mna:triangle"
+	]
+}

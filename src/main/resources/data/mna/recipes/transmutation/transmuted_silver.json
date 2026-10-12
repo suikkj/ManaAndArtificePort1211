@@ -1,0 +1,6 @@
+{
+  "type": "mna:transmutation",
+  "targetBlock": "minecraft:copper_block",
+  "lootTable": "mna:transmutation/transmuted_silver",
+  "representationItem": "mna:transmuted_silver"
+}

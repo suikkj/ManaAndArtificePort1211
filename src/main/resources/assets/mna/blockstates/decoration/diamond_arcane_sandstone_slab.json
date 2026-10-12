@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "mna:block/decoration/diamond_arcane_sandstone_slab"
+    },
+    "type=double": {
+      "model": "mna:block/decoration/diamond_arcane_sandstone"
+    },
+    "type=top": {
+      "model": "mna:block/decoration/diamond_arcane_sandstone_slab_top"
+    }
+  }
+}

@@ -1,0 +1,172 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.anvil_armature.idle": {
+			"loop": true,
+			"animation_length": 8,
+			"bones": {
+				"CIRCLE_BASE": {
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"4.0": {
+							"vector": [0, 0.5, 0],
+							"easing": "easeInOutSine"
+						},
+						"8.0": {
+							"vector": [0, 0, 0],
+							"easing": "easeInOutSine"
+						}
+					}
+				},
+				"CIRCLE_FRONT": {
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"2.0": {
+							"vector": [0, 0, 0.25],
+							"easing": "easeInOutSine"
+						},
+						"4.0": {
+							"vector": [0, 0, 0],
+							"easing": "easeInOutSine"
+						},
+						"6.0": {
+							"vector": [0, 0, 0.25],
+							"easing": "easeInOutSine"
+						},
+						"8.0": {
+							"vector": [0, 0, 0],
+							"easing": "easeInOutSine"
+						}
+					}
+				},
+				"CIRCLE_REAR": {
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"2.0": {
+							"vector": [0, 0, -0.25],
+							"easing": "easeInOutSine"
+						},
+						"4.0": {
+							"vector": [0, 0, 0],
+							"easing": "easeInOutSine"
+						},
+						"6.0": {
+							"vector": [0, 0, -0.25],
+							"easing": "easeInOutSine"
+						},
+						"8.0": {
+							"vector": [0, 0, 0],
+							"easing": "easeInOutSine"
+						}
+					}
+				}
+			}
+		},
+		"animation.anvil_armature.in": {
+			"animation_length": 0.5,
+			"bones": {
+				"CIRCLE_BASE": {
+					"scale": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.5": {
+							"vector": [1, 1, 1],
+							"easing": "easeInSine"
+						}
+					}
+				},
+				"CIRCLE_FRONT": {
+					"scale": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.5": {
+							"vector": [1, 1, 1],
+							"easing": "easeInSine"
+						}
+					}
+				},
+				"CIRCLE_REAR": {
+					"scale": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.5": {
+							"vector": [1, 1, 1],
+							"easing": "easeInSine"
+						}
+					}
+				}
+			}
+		},
+		"animation.anvil_armature.out": {
+			"animation_length": 0.5,
+			"bones": {
+				"CIRCLE_BASE": {
+					"scale": {
+						"0.0": {
+							"vector": [1, 1, 1]
+						},
+						"0.5": {
+							"vector": [0, 0, 0],
+							"easing": "easeInSine"
+						}
+					}
+				},
+				"CIRCLE_FRONT": {
+					"scale": {
+						"0.0": {
+							"vector": [1, 1, 1]
+						},
+						"0.5": {
+							"vector": [0, 0, 0],
+							"easing": "easeInSine"
+						}
+					}
+				},
+				"CIRCLE_REAR": {
+					"scale": {
+						"0.0": {
+							"vector": [1, 1, 1]
+						},
+						"0.5": {
+							"vector": [0, 0, 0],
+							"easing": "easeInSine"
+						}
+					}
+				}
+			}
+		},
+		"animation.anvil_armature.hidden": {
+			"animation_length": 1,
+			"bones": {
+				"CIRCLE_BASE": {
+					"scale": {
+						"vector": [0, 0, 0],
+						"easing": "easeInSine"
+					}
+				},
+				"CIRCLE_FRONT": {
+					"scale": {
+						"vector": [0, 0, 0],
+						"easing": "easeInSine"
+					}
+				},
+				"CIRCLE_REAR": {
+					"scale": {
+						"vector": [0, 0, 0],
+						"easing": "easeInSine"
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

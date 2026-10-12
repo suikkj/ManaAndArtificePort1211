@@ -1,0 +1,17 @@
+﻿{
+	"type": "mna:manaweaving-recipe",
+	"tier": 2,
+	"output": "mna:sachet_earth",
+	"quantity": 2,
+	"items": [
+		"mna:aum",
+		"c:stone",
+		"c:mushrooms",
+		"minecraft:glow_lichen",
+		"mna:vinteum_dust"
+	],
+	"patterns": [
+		"mna:circle"	
+	]
+}
+

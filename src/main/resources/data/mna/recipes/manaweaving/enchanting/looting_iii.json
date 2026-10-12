@@ -1,0 +1,23 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 5,
+	"output": "mna:rune_ender",
+	"enchant": "minecraft:looting",
+	"magnitude": 3,
+	"items": [
+		"mna:rune_ender",		
+		"minecraft:ender_eye",
+		"minecraft:phantom_membrane",
+		"mna:mote_ender",
+		"minecraft:end_crystal",
+		"minecraft:end_crystal",
+		"minecraft:nether_star",
+		"minecraft:golden_apple"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:knot2",
+		"mna:knot",
+		"mna:infinity"
+	]
+}

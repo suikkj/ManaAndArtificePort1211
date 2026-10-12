@@ -1,0 +1,23 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 4,
+	"output": "mna:rune_air",
+	"enchant": "minecraft:piercing",
+	"magnitude": 3,
+	"items": [
+		"mna:rune_air",
+		"minecraft:bow",
+		"minecraft:firework_rocket",
+		"minecraft:arrow",
+		"minecraft:tripwire_hook",
+		"minecraft:tripwire_hook",
+		"minecraft:string",
+		"minecraft:string",
+		"mna:mote_air"
+	],
+	"patterns": [
+		"mna:manaweave_patterns/triangle",
+		"mna:manaweave_patterns/triangle",
+		"mna:manaweave_patterns/triangle"
+	]
+}

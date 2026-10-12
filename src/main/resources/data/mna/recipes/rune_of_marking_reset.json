@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mna:rune_marking"
+    }
+  ],
+  "result": {
+    "item": "mna:rune_marking"
+  }
+}

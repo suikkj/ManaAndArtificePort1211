@@ -1,0 +1,13 @@
+﻿{
+	"type": "mna:manaweaving-recipe",
+	"tier": 2,
+	"output": "mna:transmuted_silver",
+	"items":
+	[
+		"c:ingots/copper"		
+	],
+	"patterns":
+	[
+		"mna:square"
+	]
+}

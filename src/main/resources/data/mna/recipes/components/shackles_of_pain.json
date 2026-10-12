@@ -1,0 +1,21 @@
+{
+	"type": "mna:component",
+	"tier": 4,
+	"output": "mna:shackles_of_pain",
+	"items":
+	[
+		"mna:stone_rune_green",
+		"minecraft:chain",
+		"minecraft:chain",
+		"minecraft:sweet_berries",
+		"minecraft:ghast_tear",
+		"minecraft:phantom_membrane"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/knot",
+		"mna:manaweave_patterns/knot2",
+		"mna:manaweave_patterns/knot3",
+		"mna:manaweave_patterns/knot4"
+	]
+}

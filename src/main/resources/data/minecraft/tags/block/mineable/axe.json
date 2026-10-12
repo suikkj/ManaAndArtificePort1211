@@ -1,0 +1,7 @@
+{
+	"replace": false,
+  	"values": [
+  		"mna:book_shelf",
+  		"mna:scroll_shelf"
+  	]
+}

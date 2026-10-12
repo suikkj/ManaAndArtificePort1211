@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+  	"V",
+  	"T"
+  ],
+  "key": {
+  	"T": {
+  		"item": "mna:basic_table"
+  	},
+  	"V": {
+  		"item": "mna:vellum"
+  	}
+  },
+  "result": {
+    "item": "mna:delegation_station"    
+  }
+}

@@ -1,0 +1,16 @@
+﻿{
+	"type": "mna:manaweaving-recipe",
+	"tier": 4,
+	"output": "mna:witherbone",
+	"items":
+	[
+		"mna:vinteum_dust",
+		"mna:bone_ash",
+		"c:bones",
+		"minecraft:phantom_membrane"
+	],
+	"patterns":
+	[
+		"mna:inverted_triangle"
+	]
+}

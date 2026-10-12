@@ -1,0 +1,16 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:constructs/construct_grabber_arm_left_wood",
+	"tier": 2,
+	"items": [
+		"minecraft:logs",
+		"minecraft:logs",
+		"minecraft:logs",
+		"mna:vinteum_dust",
+		"mna:vinteum_dust"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:inverted_triangle"
+	]
+}

@@ -1,0 +1,18 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:constructs/construct_horn_head_wood",
+	"tier": 2,
+	"items": [
+		"mna:constructs/rune_head",
+		"minecraft:logs",
+		"minecraft:logs",
+		"minecraft:logs",
+		"mna:vinteum_dust",
+		"mna:vinteum_dust",
+		"minecraft:note_block"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:circle"
+	]
+}

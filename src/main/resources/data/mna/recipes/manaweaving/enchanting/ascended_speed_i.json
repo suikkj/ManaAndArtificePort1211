@@ -1,0 +1,14 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 2,
+	"output": "mna:rune_fire",
+	"enchant": "mna:speed_modifier",
+	"magnitude": 1,
+	"items": [		
+		"mna:rune_aura",
+		"minecraft:sugar"
+	],
+	"patterns": [
+		"mna:triangle"
+	]
+}

@@ -1,0 +1,16 @@
+{
+	"type": "mna:shape",
+	"output": "mna:focus",
+	"tier": 3,
+	"items":
+	[
+		"mna:ritual_focus_minor",
+		"mna:ritual_focus_lesser",
+		"mna:ritual_focus_greater"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/bolt",
+		"mna:manaweave_patterns/split_triangle"
+	]
+}

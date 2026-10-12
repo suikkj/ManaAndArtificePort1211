@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_wall_side_tall",
+  "textures": {
+    "wall": "mna:block/artifice/decoration/emerald_arcane_sandstone"
+  }
+}

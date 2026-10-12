@@ -1,0 +1,16 @@
+{
+	"type": "mna:shape",
+	"output": "mna:fissure",
+	"tier": 2,
+	"items":
+	[
+		"mna:flat_lands_book",
+		"mna:mote_earth",
+		"minecraft:tnt"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/diamond",
+		"mna:manaweave_patterns/inverted_triangle"
+	]
+}

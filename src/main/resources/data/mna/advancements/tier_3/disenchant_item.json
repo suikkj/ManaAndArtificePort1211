@@ -1,0 +1,25 @@
+{
+	"parent": "mna:tier_2/advance_tier_3",
+	"display": {
+		"icon": {
+			"item": "mna:disenchanter"
+		},
+		"title": {
+			"translate": "mna:tier_3/disenchant_item.title"
+		},
+		"description": {
+			"translate": "mna:tier_3/disenchant_item.description"
+		},
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": false,
+		"hidden": false
+	},
+	"criteria": {
+		"manaweave_altar_craft": {
+			"trigger": "mna:disenchant",
+			"conditions": {	}
+		}
+	},
+	"requirements": []
+}

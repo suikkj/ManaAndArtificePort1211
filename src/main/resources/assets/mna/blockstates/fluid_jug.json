@@ -1,0 +1,8 @@
+{
+  "variants": {    
+    "facing=east": { "model": "mna:block/fluid_jug", "y": 270 },
+    "facing=west": { "model": "mna:block/fluid_jug", "y": 90 },
+    "facing=north": { "model": "mna:block/fluid_jug","y": 180 },
+    "facing=south": { "model": "mna:block/fluid_jug"}
+  }
+}

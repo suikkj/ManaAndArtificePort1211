@@ -1,0 +1,20 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:decoration/gold_arcane_stone",
+	"tier": 1,
+	"quantity": 8,		
+	"items": [
+		"minecraft:gold_ingot",
+		"mna:decoration/arcane_stone",
+		"mna:decoration/arcane_stone",
+		"mna:decoration/arcane_stone",
+		"mna:decoration/arcane_stone",
+		"mna:decoration/arcane_stone",
+		"mna:decoration/arcane_stone",
+		"mna:decoration/arcane_stone",
+		"mna:decoration/arcane_stone"
+	],
+	"patterns": [
+		"mna:slash"
+	]
+}

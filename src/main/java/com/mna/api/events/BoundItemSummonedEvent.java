@@ -1,0 +1,26 @@
+/*
+ * Decompiled with CFR 0.152.
+ * 
+ * Could not load the following classes:
+ *  net.minecraft.world.item.ItemStack
+ *  net.neoforged.bus.api.Event
+ */
+package com.mna.api.events;
+
+import net.minecraft.world.item.ItemStack;
+import net.neoforged.bus.api.Event;
+
+public class BoundItemSummonedEvent
+extends Event {
+    private ItemStack stack;
+
+    public BoundItemSummonedEvent(ItemStack boundStack) {
+        this.stack = boundStack;
+    }
+
+    public ItemStack getBoundItemStack() {
+        return this.stack;
+    }
+}
+
+

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:crafting_table"      
+    },
+    {
+      "item": "mna:transmuted_silver"
+    },
+    {
+      "item": "mna:transmuted_silver"
+    },
+    {
+      "item": "mna:basic_table"
+    }
+  ],
+  "result": {
+    "item": "mna:magicians_workbench"
+  }
+}

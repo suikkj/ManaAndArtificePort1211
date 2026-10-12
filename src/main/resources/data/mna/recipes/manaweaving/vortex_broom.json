@@ -1,0 +1,13 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 3,
+	"output": "mna:vortex_broom",		
+	"items": [
+		"mna:magic_broom",
+		"mna:mote_air"
+	],
+	"patterns": [
+		"mna:circle",
+		"mna:inverted_triangle"
+	]
+}

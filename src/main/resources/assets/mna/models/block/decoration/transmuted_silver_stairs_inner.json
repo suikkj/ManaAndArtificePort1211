@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "mna:block/artifice/decoration/transmuted_silver_block",
+    "top": "mna:block/artifice/decoration/transmuted_silver_block",
+    "side": "mna:block/artifice/decoration/transmuted_silver_block_side"
+  }
+}

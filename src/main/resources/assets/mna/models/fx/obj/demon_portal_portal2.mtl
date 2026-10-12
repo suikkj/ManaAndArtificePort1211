@@ -1,0 +1,5 @@
+# Blender MTL File: 'demon_portal.blend'
+# Material Count: 1
+
+newmtl Portal_2
+map_Kd mna:entity/fx/demon_portal_ring

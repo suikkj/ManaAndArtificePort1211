@@ -1,0 +1,15 @@
+{
+	"values": [
+		"minecraft:generic",
+		"minecraft:stalagmite",
+		"minecraft:mob_attack",
+		"minecraft:falling_block",
+		"minecraft:falling_anvil",
+		"minecraft:falling_stalactite",
+		"minecraft:player_attack",
+		"minecraft:arrow",
+		"minecraft:trident",
+		"minecraft:mob_projectile",
+		"minecraft:thrown"
+	]
+}

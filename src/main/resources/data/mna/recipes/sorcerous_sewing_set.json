@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mna:vinteum_needle"      
+    },
+    {
+      "item": "mna:infused_thread"      
+    }
+  ],
+  "result": {
+    "item": "mna:sorcerous_sewing_set" 
+  }
+}

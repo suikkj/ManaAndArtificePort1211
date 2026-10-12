@@ -1,0 +1,20 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:constructs/construct_shield_arm_right_bone",
+	"tier": 3,
+	"requiredFaction": "mna:undead",
+	"items": [
+		"mna:constructs/rune_rod",
+		"mna:rune_defense",
+		"minecraft:bone",
+		"minecraft:bone",
+		"minecraft:bone",
+		"minecraft:shield",
+		"mna:vinteum_dust",
+		"mna:vinteum_dust"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:triangle"
+	]
+}

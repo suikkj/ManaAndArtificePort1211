@@ -1,0 +1,20 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 4,
+	"output": "mna:rune_fire",
+	"enchant": "minecraft:sharpness",
+	"magnitude": 4,
+	"items": [
+		"mna:rune_fire",
+		"minecraft:flint_and_steel",
+		"minecraft:diamond",
+		"mna:stone_rune_black",
+		"mna:stone_rune_white",
+		"mna:stone_rune_light_blue",
+		"minecraft:magma_cream"
+	],
+	"patterns": [
+		"mna:manaweave_patterns/diamond",
+		"mna:manaweave_patterns/diamond"
+	]
+}

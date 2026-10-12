@@ -1,0 +1,27 @@
+{
+	"parent": "mna:tier_0/codex_trade",
+	"display": {
+		"icon": {
+			"item": "mna:debug_wand"
+		},
+		"title": {
+			"translate": "mna:tier_1/magic_level_15.title"
+		},
+		"description": {
+			"translate": "mna:tier_1/magic_level_15.description"
+		},
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": false,
+		"hidden": false
+	},
+	"criteria": {
+		"magic_level_up": {
+			"trigger": "mna:magic_level",
+			"conditions": {
+				"minLevel": 15
+			}
+		}
+	},
+	"requirements": []
+}

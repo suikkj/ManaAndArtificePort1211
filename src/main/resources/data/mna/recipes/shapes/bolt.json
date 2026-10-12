@@ -1,0 +1,20 @@
+{
+	"type": "mna:shape",
+	"output": "mna:bolt",
+	"tier": 4,
+	"items":
+	[
+		"mna:chimerite_gem",
+		"mna:arcane_ash",
+		"spectral_arrow",
+		"mna:cerublossom",
+		"crossbow",
+		"mna:arcane_ash",
+		"spectral_arrow"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/split_triangle",
+		"mna:manaweave_patterns/knot"
+	]
+}

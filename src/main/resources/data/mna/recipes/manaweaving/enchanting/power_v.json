@@ -1,0 +1,25 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 5,
+	"output": "mna:rune_air",
+	"enchant": "minecraft:power",
+	"magnitude": 5,
+	"items": [
+		"mna:rune_air",
+		"minecraft:bow",
+		"minecraft:trident",
+		"minecraft:fire_charge",
+		"minecraft:bow",
+		"minecraft:redstone_torch",
+		"mna:mote_fire",
+		"minecraft:blaze_rod",
+		"minecraft:blaze_rod"
+	],
+	"patterns": [
+		"mna:manaweave_patterns/split_triangle",
+		"mna:manaweave_patterns/split_triangle",
+		"mna:manaweave_patterns/infinity",
+		"mna:manaweave_patterns/circle",
+		"mna:manaweave_patterns/infinity"
+	]
+}

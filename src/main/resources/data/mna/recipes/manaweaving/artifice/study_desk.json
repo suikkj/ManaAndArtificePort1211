@@ -1,0 +1,20 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:study_desk",
+	"tier": 2,
+	"items": [
+		"mna:basic_table",
+		"minecraft:book",
+		"minecraft:book",
+		"mna:animated_quill",
+		"mna:vellum",
+		"mna:vellum",
+		"mna:vellum",
+		"mna:spell_book",
+		"minecraft:candles"
+	],
+	"patterns": [		
+		"mna:knot",
+		"mna:knot2"
+	]
+}

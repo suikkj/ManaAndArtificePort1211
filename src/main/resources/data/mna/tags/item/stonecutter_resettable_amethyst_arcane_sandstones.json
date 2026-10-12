@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [  	    
+    "mna:decoration/amethyst_arcane_sandstone_chiseled",
+    "mna:decoration/amethyst_arcane_sandstone_corner",
+    "mna:decoration/amethyst_arcane_sandstone_pillar",
+    "mna:decoration/amethyst_arcane_sandstone_quad",
+    "mna:decoration/amethyst_arcane_sandstone_straight",
+    "mna:decoration/amethyst_arcane_sandstone_t"
+  ]
+}

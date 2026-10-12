@@ -1,0 +1,19 @@
+﻿{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:air_cast_ring",
+	"tier": 3,
+	"items": [
+		"minecraft:feather",
+		"minecraft:feather",
+		"c:slimeballs",
+		"minecraft:fire_charge",		
+		"mna:mote_air",	
+		"mna:mundane_ring"
+	],
+	"patterns": [
+		"mna:triangle",
+		"mna:split_triangle",
+		"mna:triangle"
+	]
+}
+

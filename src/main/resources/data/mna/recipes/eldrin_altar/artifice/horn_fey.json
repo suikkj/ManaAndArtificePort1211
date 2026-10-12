@@ -1,0 +1,26 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:faction_horn_fey",
+	"tier": 5,	
+	"requiredFaction": "mna:fey",
+	"items": [
+		"minecraft:heart_of_the_sea",		
+		"mna:purified_vinteum_ingot",
+		"mna:purified_vinteum_ingot",		
+		"minecraft:logs",
+		"mna:aum",
+		"mna:cerublossom",		
+		"mna:greater_mote_water",
+		"mna:greater_mote_air"
+	],
+	"power_requirements": [
+		{
+			"affinity": "EARTH",
+			"amount": 2500
+		},
+		{
+			"affinity": "WIND",
+			"amount": 1250
+		}
+	]
+}

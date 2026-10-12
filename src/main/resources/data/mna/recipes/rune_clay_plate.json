@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+  	" C ",
+  	"CWC",
+  	" C "
+  ],
+  "key": {
+  	"C": {
+  		"item": "minecraft:clay_ball"
+  	},
+  	"W": {
+  		"tag": "mna:stone_runes"
+  	}
+  },
+  "result": {
+    "item": "mna:rune_clay_plate"
+  }
+}

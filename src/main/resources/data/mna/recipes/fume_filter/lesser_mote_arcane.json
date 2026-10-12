@@ -1,0 +1,9 @@
+{
+	"type": "mna:eldrin-fume",
+	"item": "mna:mote_arcane",
+	"power_provided": 
+	{
+		"affinity": "ARCANE",
+		"amount": 720
+	}
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "mna:block/artifice/decoration/redstone_arcane_stone"
+  }
+}

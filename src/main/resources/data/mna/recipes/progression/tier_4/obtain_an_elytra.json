@@ -1,0 +1,6 @@
+{
+  "type": "mna:progression-condition",
+  "advancement": "minecraft:end/elytra",
+  "description": "advancements.end.elytra.description",
+  "tier": 4
+}

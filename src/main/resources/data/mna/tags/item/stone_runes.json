@@ -1,0 +1,21 @@
+{
+	"replace": false,
+	"values": [
+		"mna:stone_rune_black",
+		"mna:stone_rune_blue",
+		"mna:stone_rune_brown",
+		"mna:stone_rune_cyan",
+		"mna:stone_rune_gray",
+		"mna:stone_rune_green",
+		"mna:stone_rune_light_blue",
+		"mna:stone_rune_light_gray",
+		"mna:stone_rune_lime",
+		"mna:stone_rune_magenta",
+		"mna:stone_rune_orange",
+		"mna:stone_rune_pink",
+		"mna:stone_rune_purple",
+		"mna:stone_rune_red",
+		"mna:stone_rune_white",
+		"mna:stone_rune_yellow"
+	]
+}

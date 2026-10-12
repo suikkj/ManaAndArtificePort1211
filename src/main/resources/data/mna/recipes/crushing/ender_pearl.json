@@ -1,0 +1,7 @@
+{
+	"type": "mna:crushing",
+	"tier": 2,
+	"input": "mna:resonating_dust",
+	"output": "minecraft:ender_pearl",
+	"output_quantity": 1
+}

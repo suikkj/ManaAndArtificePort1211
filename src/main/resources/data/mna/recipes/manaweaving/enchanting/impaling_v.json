@@ -1,0 +1,25 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 5,
+	"output": "mna:rune_water",
+	"enchant": "minecraft:impaling",
+	"magnitude": 5,
+	"items": [
+		"mna:rune_water",
+		"minecraft:ghast_tear",
+		"minecraft:heavy_weighted_pressure_plate",
+		"minecraft:horn_coral",
+		"mna:wakebloom",
+		"mna:wakebloom",
+		"minecraft:prismarine_shard",
+		"minecraft:prismarine_shard",
+		"mna:mote_water"
+	],
+	"patterns": [
+		"mna:triangle",
+		"mna:triangle",
+		"mna:triangle",
+		"mna:triangle",
+		"mna:triangle"
+	]
+}

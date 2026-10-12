@@ -1,0 +1,120 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.laboratory_transcription_armature.active": {
+			"loop": true,
+			"animation_length": 10,
+			"bones": {
+				"MANDALA_ROOT": {
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"5.0": {
+							"vector": [0, 1, 0],
+							"easing": "easeInOutSine"
+						},
+						"10.0": {
+							"vector": [0, 0, 0],
+							"easing": "easeInOutSine"
+						}
+					}
+				},
+				"CIRCLE_1": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"10.0": {
+							"vector": [0, -180, 0]
+						}
+					}
+				},
+				"CIRCLE_2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"10.0": {
+							"vector": [0, 180, 0]
+						}
+					}
+				},
+				"CIRCLE_3": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"10.0": {
+							"vector": [0, -180, 0]
+						}
+					}
+				},
+				"CIRCLE_4": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"10.0": {
+							"vector": [0, 180, 0]
+						}
+					}
+				},
+				"CIRCLE_5": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"10.0": {
+							"vector": [0, -180, 0]
+						}
+					}
+				},
+				"CIRCLE_6": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"10.0": {
+							"vector": [0, 180, 0]
+						}
+					}
+				},
+				"CIRCLE_7": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"10.0": {
+							"vector": [0, -180, 0]
+						}
+					}
+				},
+				"CIRCLE_8": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"10.0": {
+							"vector": [0, 180, 0]
+						}
+					}
+				},
+				"MANDALA_CORE": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"10.0": {
+							"vector": [0, 180, 0]
+						}
+					}
+				}
+			}
+		},
+		"animation.laboratory_transcription_armature.idle": {
+			"animation_length": 1.20833
+		}
+	},
+	"geckolib_format_version": 2
+}

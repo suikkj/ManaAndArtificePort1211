@@ -1,0 +1,21 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:refraction_lens_water",
+	"tier": 4,
+	"items": [
+		"mna:purified_vinteum_ingot",
+		"minecraft:blue_stained_glass",
+		"mna:purified_vinteum_ingot",
+		"minecraft:blue_stained_glass",		
+		"mna:mote_water",
+		"mna:purified_vinteum_ingot",
+		"minecraft:blue_stained_glass",
+		"mna:purified_vinteum_ingot",
+		"minecraft:blue_stained_glass"
+	],
+	"patterns": [
+		"mna:circle",
+		"mna:hourglass",
+		"mna:circle"
+	]
+}

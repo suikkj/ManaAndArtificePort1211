@@ -1,0 +1,27 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:demon_armor_chest",
+	"tier": 5,
+	"requiredFaction": "mna:demons",
+	"items": [
+		"minecraft:diamond_chestplate",
+		"minecraft:nether_star",
+		"minecraft:nether_star",
+		"mna:greater_mote_fire",
+		"mna:greater_mote_fire",
+		"mna:rune_fire",
+		"mna:rune_fire",
+		"mna:living_flame",
+		"mna:living_flame"
+	],
+	"power_requirements": [
+		{
+			"affinity": "FIRE",
+			"amount": 2750
+		}
+	],
+	"colors": [
+		14226452,
+		3671092
+	]
+}

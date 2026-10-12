@@ -1,0 +1,24 @@
+﻿{
+	"type": "mna:manaweaving-recipe",
+	"tier": 5,
+	"output": "mna:rune_air",
+	"enchant": "minecraft:infinity",
+	"magnitude": 1,
+	"items": [
+		"mna:rune_air",
+		"minecraft:spectral_arrow",
+		"c:chests/wooden",
+		"minecraft:spectral_arrow",
+		"minecraft:spectral_arrow",		
+		"minecraft:bow",
+		"minecraft:crossbow",
+		"mna:mote_air"	
+	],
+	"patterns": [
+		"mna:infinity",
+		"mna:triangle",
+		"mna:knot2",
+		"mna:knot4"
+	]
+}
+

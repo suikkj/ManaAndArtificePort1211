@@ -1,0 +1,9 @@
+{
+  	"parent": "item/generated",
+    "textures": {
+        "layer0": "mna:item/rituals/thaumaturgic_focus_structure"
+    },
+    "overrides": [
+        { "predicate": { "biome": 1 }, "model": "mna:item/thaumaturgic_link_biome" }
+    ]
+}

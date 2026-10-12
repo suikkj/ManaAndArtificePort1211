@@ -1,0 +1,19 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:eldrin_bracelet",
+	"requiredFaction": "mna:council",
+	"tier": 3,
+	"items": [
+		"mna:mana_crystal_fragment",
+		"mna:mote_arcane",
+		"mna:mundane_bracelet"
+	],
+	"patterns": [
+		"mna:triangle",
+		"mna:circle",
+		"mna:split_triangle",
+		"mna:triangle",
+		"mna:inverted_triangle",
+		"mna:diamond"
+	]
+}

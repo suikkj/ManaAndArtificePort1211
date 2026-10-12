@@ -1,0 +1,26 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:pylon/camouflage",
+	"tier": 4,
+	"items": [
+		"mna:rune_aura",
+		"mna:rune_water",
+		"mna:rune_water",
+		"mna:rune_ritual_metal",
+		"mna:rune_ritual_metal",
+		"mna:rune_ritual_metal",
+		"mna:pylon/inert",
+		"minecraft:fermented_spider_eye",
+		"minecraft:black_stained_glass"
+	],
+	"power_requirements": [
+		{
+			"affinity": "WATER",
+			"amount": 1750
+		}
+	],
+	"colors": [
+		2642283,
+		170746
+	]
+}

@@ -1,0 +1,16 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 2,
+	"output": "mna:rune_earth",
+	"enchant": "mna:bludgeoning",
+	"magnitude": 1,
+	"items": [
+		"mna:rune_earth",
+		"minecraft:logs",
+		"mna:mote_earth"
+	],
+	"patterns": [
+		"mna:manaweave_patterns/diamond",
+		"mna:manaweave_patterns/diamond"
+	]
+}

@@ -1,0 +1,5 @@
+# Blender MTL File: 'hammah.blend'
+# Material Count: 1
+
+newmtl MAIN
+map_Kd mna:item/artifice/runic_malus

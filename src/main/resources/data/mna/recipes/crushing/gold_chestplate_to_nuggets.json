@@ -1,0 +1,7 @@
+{
+	"type": "mna:crushing",
+	"tier": 2,
+	"input": "minecraft:golden_chestplate",
+	"output": "minecraft:gold_nugget",
+	"output_quantity": 8
+}

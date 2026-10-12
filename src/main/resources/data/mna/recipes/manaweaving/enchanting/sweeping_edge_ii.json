@@ -1,0 +1,22 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 4,
+	"output": "mna:rune_fire",
+	"enchant": "minecraft:sweeping",
+	"magnitude": 2,
+	"items": [
+		"mna:rune_fire",
+		"minecraft:gunpowder",
+		"minecraft:golden_sword",
+		"mna:stone_rune_white",
+		"mna:stone_rune_light_gray",
+		"mna:stone_rune_gray",
+		"minecraft:bamboo",
+		"minecraft:smooth_quartz",
+		"minecraft:smooth_quartz"
+	],
+	"patterns": [
+		"mna:manaweave_patterns/split_triangle",
+		"mna:manaweave_patterns/circle"
+	]
+}

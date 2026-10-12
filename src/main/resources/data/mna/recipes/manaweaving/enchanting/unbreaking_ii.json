@@ -1,0 +1,22 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 4,
+	"output": "mna:rune_earth",
+	"enchant": "minecraft:unbreaking",
+	"magnitude": 2,
+	"items": [
+		"mna:rune_earth",
+		"minecraft:anvil",
+		"minecraft:smithing_table",
+		"minecraft:anvil",
+		"mna:stone_rune_gray",
+		"mna:stone_rune_light_gray",
+		"minecraft:diamond",
+		"minecraft:diamond",
+		"minecraft:blaze_powder"
+	],
+	"patterns": [
+		"mna:manaweave_patterns/diamond",
+		"mna:manaweave_patterns/hourglass"
+	]
+}

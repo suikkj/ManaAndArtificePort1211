@@ -1,0 +1,16 @@
+﻿{
+	"type": "mna:component",
+	"tier": 3,
+	"output": "mna:summon_skeletal_horse",
+	"items":
+	[
+		"mna:vinteum_dust",
+		"minecraft:saddle",
+		"c:bones",
+		"c:bones"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/split_triangle"
+	]
+}

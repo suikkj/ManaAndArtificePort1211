@@ -1,0 +1,14 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 1,
+	"output": "mna:animus_dust",	
+	"quantity": 4,	
+	"items": [
+		"minecraft:egg",
+		"mna:vinteum_dust",
+		"mna:wakebloom"
+	],
+	"patterns": [
+		"mna:circle"	
+	]
+}

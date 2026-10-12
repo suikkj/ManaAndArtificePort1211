@@ -1,0 +1,7 @@
+{
+	"type": "mna:crushing",
+	"tier": 2,
+	"input": "minecraft:chainmail_boots",
+	"output": "minecraft:iron_nugget",
+	"output_quantity": 2
+}

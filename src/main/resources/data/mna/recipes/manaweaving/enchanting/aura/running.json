@@ -1,0 +1,20 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 2,
+	"output": "mna:rune_aura",
+	"enchant": "mna:aura-running",
+	"magnitude": 1,
+	"items":
+	[
+		"mna:rune_aura",
+		"minecraft:carrot_on_a_stick",
+		"minecraft:golden_carrot",
+		"mna:cerublossom",
+		"mna:cerublossom"
+	],
+	"patterns":
+	[
+		"mna:diamond",
+		"mna:circle"
+	]
+}

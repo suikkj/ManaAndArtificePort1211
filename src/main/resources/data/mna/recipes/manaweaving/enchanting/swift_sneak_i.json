@@ -1,0 +1,17 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 2,
+	"output": "mna:rune_air",
+	"enchant": "minecraft:swift_sneak",
+	"magnitude": 1,
+	"items": [
+		"minecraft:wool",
+		"minecraft:feather",
+		"mna:rune_air",
+		"mna:cerublossom"
+	],
+	"patterns": [
+		"mna:inverted_triangle",
+		"mna:slash"
+	]
+}

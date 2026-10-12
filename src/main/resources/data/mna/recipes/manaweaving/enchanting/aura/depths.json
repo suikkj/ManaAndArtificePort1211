@@ -1,0 +1,23 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 2,
+	"output": "mna:rune_aura",
+	"enchant": "mna:aura-depths",
+	"magnitude": 1,
+	"items":
+	[
+		"mna:rune_aura",
+		"minecraft:nautilus_shell",
+		"mna:mote_water",		
+		"minecraft:pufferfish",
+		"minecraft:pufferfish",
+		"mna:wakebloom",
+		"mna:wakebloom"
+	],
+	"patterns":
+	[
+		"mna:circle",
+		"mna:circle",
+		"mna:circle"
+	]
+}

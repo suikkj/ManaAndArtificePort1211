@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+  	" C ",
+  	"SGS",
+  	" C "
+  ],
+  "key": {
+  	"G": {
+  		"item": "mna:stone_rune_cyan"
+  	},
+  	"C": {
+  		"item": "mna:chimerite_gem"
+  	},
+  	"S": {
+  		"item": "mna:transmuted_silver"
+  	}
+  },
+  "result": {
+    "item": "mna:lodestar_copier"    
+  }
+}

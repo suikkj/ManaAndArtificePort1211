@@ -1,0 +1,18 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:bone_ring",
+	"requiredFaction": "mna:undead",
+	"tier": 4,
+	"items": [
+		"minecraft:bone",
+		"minecraft:bone",
+		"minecraft:soul_lantern",
+		"mna:bone_ash",
+		"mna:bone_ash",		
+		"mna:mote_ender",	
+		"mna:mundane_ring"
+	],
+	"patterns": [
+		"mna:hourglass"
+	]
+}

@@ -1,0 +1,13 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:pre_fall_charm_minor",
+	"tier": 2,
+	"items": [
+		"mna:charm_pattern",
+		"minecraft:feather"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:circle"
+	]
+}

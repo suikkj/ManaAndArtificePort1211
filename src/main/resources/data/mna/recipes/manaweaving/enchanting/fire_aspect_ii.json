@@ -1,0 +1,21 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 5,
+	"output": "mna:rune_fire",
+	"enchant": "minecraft:fire_aspect",
+	"magnitude": 2,
+	"items": [
+		"mna:rune_fire",
+		"minecraft:blaze_powder",
+		"mna:stone_rune_orange",
+		"minecraft:blaze_powder",
+		"minecraft:magma_cream",
+		"minecraft:magma_cream",
+		"mna:mote_fire"
+	],
+	"patterns": [
+		"mna:split_triangle",
+		"mna:diamond",
+		"mna:hourglass"
+	]
+}

@@ -1,0 +1,36 @@
+{
+	"parent": "mna:tier_1/advance_tier_2",
+	"display": {
+		"icon": {
+			"item": "mna:pylon/inert"
+		},
+		"title": {
+			"translate": "mna:tier_2/craft_t2_pylon.title"
+		},
+		"description": {
+			"translate": "mna:tier_2/craft_t2_pylon.description"
+		},
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": false,
+		"hidden": false
+	},
+	"criteria": {
+		"manaweave_altar_craft": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [{
+				"items": [
+            			"mna:pylon/haste",
+            			"mna:pylon/insight",
+            			"mna:pylon/leap",
+            			"mna:pylon/spider_climb",
+            			"mna:pylon/light",
+            			"mna:pylon/freeze"
+          			]
+				}]
+			}
+		}
+	},
+	"requirements": []
+}

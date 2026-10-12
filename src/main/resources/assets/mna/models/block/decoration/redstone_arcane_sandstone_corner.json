@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "down": "mna:block/artifice/decoration/redstone_arcane_sandstone_corner",
+        "up": "mna:block/artifice/decoration/redstone_arcane_sandstone_corner",
+        "north": "mna:block/artifice/decoration/redstone_arcane_sandstone_corner",
+        "east": "mna:block/artifice/decoration/redstone_arcane_sandstone_corner",
+        "south": "mna:block/artifice/decoration/redstone_arcane_sandstone_corner",
+        "west": "mna:block/artifice/decoration/redstone_arcane_sandstone_corner",
+        "particle": "mna:block/artifice/decoration/redstone_arcane_sandstone_corner"
+    }
+}

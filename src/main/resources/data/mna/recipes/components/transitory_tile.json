@@ -1,0 +1,20 @@
+{
+	"type": "mna:component",
+	"output": "mna:transitory_tile",
+	"tier": 2,
+	"items":
+	[
+		"mna:stone_rune_magenta",
+		"mna:stone_rune_purple",
+		"mna:stone_rune_blue",
+		"dirt",
+		"mna:vinteum_dust",
+		"mna:vinteum_dust",
+		"mna:vinteum_dust",
+		"mna:vinteum_dust"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/square"
+	]
+}

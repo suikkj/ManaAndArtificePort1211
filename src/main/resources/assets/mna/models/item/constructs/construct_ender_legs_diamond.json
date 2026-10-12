@@ -1,0 +1,72 @@
+{
+  "parent": "forge:item/default",
+  "loader": "forge:composite",
+  "children": {
+    "left_front_leg": {
+      "loader": "forge:obj",
+      "automatic_culling": false,
+	  "shade_quads": true,
+	  "flip_v": true,
+	  "emissive_ambient": false,
+      "model": "mna:models/construct/obj/diamond/leg_ender_front_l.obj"
+    },
+    "right_front_leg": {
+      "loader": "forge:obj",
+      "automatic_culling": false,
+	  "shade_quads": true,
+	  "flip_v": true,
+	  "emissive_ambient": false,
+      "model": "mna:models/construct/obj/diamond/leg_ender_front_r.obj"
+    },
+    "left_back_leg": {
+      "loader": "forge:obj",
+      "automatic_culling": false,
+	  "shade_quads": true,
+	  "flip_v": true,
+	  "emissive_ambient": false,
+      "model": "mna:models/construct/obj/diamond/leg_ender_back_l.obj"
+    },
+    "right_back_leg": {
+      "loader": "forge:obj",
+      "automatic_culling": false,
+	  "shade_quads": true,
+	  "flip_v": true,
+	  "emissive_ambient": false,
+      "model": "mna:models/construct/obj/diamond/leg_ender_back_r.obj"
+    },
+    "pelvis": {
+      "loader": "forge:obj",
+      "automatic_culling": false,
+	  "shade_quads": true,
+	  "flip_v": true,
+	  "emissive_ambient": false,
+      "model": "mna:models/construct/obj/diamond/pelvis_ender.obj"
+    }
+  },
+  	"display": {
+		"gui": {
+			"translation": [-3, -1, 0],
+			"rotation": [-15, 150, 0]
+		},
+		"thirdperson_righthand": {
+			"translation": [8, -10, -4],
+			"rotation": [90,0,0]
+		},
+		"thirdperson_lefthand": {
+			"translation": [-8, -10, -4],
+			"rotation": [90,0,0]
+		},
+		"firstperson_righthand": {
+			"translation": [12, -10, -4]
+		},
+		"firstperson_lefthand": {
+			"translation": [-4, -10, -4]
+		},
+		"ground": {
+			"translation": [8, 4, 8]			
+		},
+		"fixed": {
+			"translation": [8, 2, 8]
+		}
+	}
+}

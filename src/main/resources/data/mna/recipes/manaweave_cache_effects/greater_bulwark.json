@@ -1,0 +1,8 @@
+{
+	"type": "mna:manaweave-cache-effect",
+	"tier": 3,
+	"effect": "mna:bulwark",
+	"duration_min": 600,
+	"duration_max": 1200,
+	"magnitude": 3
+}

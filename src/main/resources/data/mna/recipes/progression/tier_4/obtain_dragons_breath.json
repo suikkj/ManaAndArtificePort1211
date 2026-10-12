@@ -1,0 +1,6 @@
+{
+  "type": "mna:progression-condition",
+  "advancement": "minecraft:end/dragon_breath",
+  "description": "advancements.end.dragon_breath.description",
+  "tier": 4
+}

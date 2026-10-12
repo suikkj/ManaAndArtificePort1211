@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "tag": "mna:stonecutter_resettable_chimerite_arcane_sandstones"
+  },
+  "result": "mna:decoration/chimerite_arcane_sandstone",
+  "count": 1
+}

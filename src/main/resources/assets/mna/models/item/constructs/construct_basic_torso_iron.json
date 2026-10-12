@@ -1,0 +1,32 @@
+{
+
+  "parent": "mna:construct/iron/torso_basic",
+  	"display": {
+		"gui": {
+			"translation": [-3, -11, 0],
+			"rotation": [-15, 150, 0]
+		},
+		"thirdperson_righthand": {
+			"translation": [8, -10, -12],
+			"rotation": [90,0,0]
+		},
+		"thirdperson_lefthand": {
+			"translation": [-8, -10, -12],
+			"rotation": [90,0,0]
+		},
+		"firstperson_righthand": {
+			"translation": [8, -10, -12],
+			"rotation": [90,0,0]	
+		},
+		"firstperson_lefthand": {
+			"translation": [-8, -10, -12],
+			"rotation": [90,0,0]	
+		},
+		"ground": {
+			"translation": [8, -6, 8]			
+		},
+		"fixed": {
+			"translation": [8, -8, 8]
+		}
+	}
+}

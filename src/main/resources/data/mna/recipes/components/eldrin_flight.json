@@ -1,0 +1,20 @@
+﻿{
+	"type": "mna:component",
+	"tier": 4,
+	"output": "mna:eldrin_flight",
+	"items":
+	[
+		"mna:vinteum_dust",
+		"mna:vinteum_dust",
+		"minecraft:compass",
+		"minecraft:map",
+		"c:string",
+		"mna:mote_arcane"	
+		
+	],
+	"patterns":
+	[		
+		"mna:manaweave_patterns/inverted_triangle",
+		"mna:manaweave_patterns/star"
+	]
+}

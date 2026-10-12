@@ -1,0 +1,25 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 5,
+	"output": "mna:rune_aura",
+	"enchant": "mna:aura-repair",
+	"magnitude": 1,
+	"items":
+	[
+		"mna:rune_aura",
+		"mna:purified_vinteum_dust",
+		"minecraft:anvil",
+		"mna:runesmith_hammer",
+		"minecraft:dragon_breath",
+		"mna:mote_fire"
+	],
+	"patterns":
+	[
+		"mna:hourglass",
+		"mna:infinity",
+		"mna:circle",
+		"mna:square",
+		"mna:hourglass",
+		"mna:diamond"
+	]
+}

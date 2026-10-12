@@ -1,0 +1,13 @@
+{
+  "variants": {    
+    "facing=east,has_liquid=false": { "model": "mna:block/clay_mug_empty", "y": 270 },
+    "facing=west,has_liquid=false": { "model": "mna:block/clay_mug_empty", "y": 90 },
+    "facing=north,has_liquid=false": { "model": "mna:block/clay_mug_empty","y": 180 },
+    "facing=south,has_liquid=false": { "model": "mna:block/clay_mug_empty"},
+    
+    "facing=east,has_liquid=true": { "model": "mna:block/clay_mug_full", "y": 270 },
+    "facing=west,has_liquid=true": { "model": "mna:block/clay_mug_full", "y": 90 },
+    "facing=north,has_liquid=true": { "model": "mna:block/clay_mug_full","y": 180 },
+    "facing=south,has_liquid=true": { "model": "mna:block/clay_mug_full"}
+  }
+}

@@ -1,0 +1,17 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 5,
+	"output": "mna:rune_fire",
+	"enchant": "mna:speed_modifier",
+	"magnitude": 4,
+	"items": [		
+		"mna:rune_fire",
+		"minecraft:sugar",			
+		"minecraft:gold_ingot",
+		"minecraft:blaze_powder",
+		"minecraft:rabbit_foot"
+	],
+	"patterns": [
+		"mna:bolt"
+	]
+}

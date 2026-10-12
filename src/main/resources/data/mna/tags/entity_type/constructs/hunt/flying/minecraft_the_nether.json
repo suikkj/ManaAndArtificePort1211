@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+  	"minecraft:phantom",
+  	"minecraft:blaze",
+  	"minecraft:ghast",
+  	"mna:lantern_wraith",
+  	"mna:chatterer"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:pylon/bind_wounds",
+	"tier": 4,
+	"items": [
+		"mna:rune_aura",
+		"mna:rune_earth",
+		"mna:rune_water",
+		"mna:rune_ritual_metal",
+		"mna:rune_ritual_metal",
+		"mna:rune_ritual_metal",
+		"mna:pylon/inert",
+		"mna:healing_poultice",
+		"mna:infused_silk"
+	],
+	"power_requirements": [
+		{
+			"affinity": "EARTH",
+			"amount": 1750
+		},
+		{
+			"affinity": "WATER",
+			"amount": 1750
+		}
+	],
+	"colors": [
+		12648396,
+		1649436
+	]
+}

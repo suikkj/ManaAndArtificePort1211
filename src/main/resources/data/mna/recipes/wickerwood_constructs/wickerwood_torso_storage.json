@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mna:constructs/construct_basic_torso_wickerwood"
+    },
+    {
+		"item": "minecraft:chest"    
+    }
+  ],
+  "result": {
+    "item": "mna:constructs/construct_storage_torso_wickerwood"
+  }
+}

@@ -1,0 +1,5 @@
+# Blender MTL File: 'fissure_shift.blend'
+# Material Count: 1
+
+newmtl Fissure
+map_Kd minecraft:block/deepslate

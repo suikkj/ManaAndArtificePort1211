@@ -1,0 +1,18 @@
+{
+	"type": "mna:component",
+	"tier": 5,
+	"output": "mna:posession",
+	"items":
+	[
+		"mna:vinteum_dust",
+		"minecraft:soul_lantern",
+		"minecraft:end_rod",
+		"mna:mote_ender",
+		"minecraft:wither_rose"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/infinity",
+		"mna:manaweave_patterns/circle"
+	]
+}

@@ -1,0 +1,19 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:affinity_lock_belt",
+	"tier": 2,
+	"items": [
+		"mna:belt_buckle",
+		"minecraft:leather",
+		"mna:chimerite_gem",
+		"mna:chimerite_gem",
+		"mna:chimerite_gem",
+		"mna:chimerite_gem",
+		"mna:chimerite_gem",
+		"mna:chimerite_gem"
+	],
+	"patterns": [
+		"mna:triangle",
+		"mna:circle"
+	]
+}

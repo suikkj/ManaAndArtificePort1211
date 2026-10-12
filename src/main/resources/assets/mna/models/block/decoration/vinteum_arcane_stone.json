@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "down": "mna:block/artifice/decoration/vinteum_arcane_stone",
+        "up": "mna:block/artifice/decoration/vinteum_arcane_stone",
+        "north": "mna:block/artifice/decoration/vinteum_arcane_stone",
+        "east": "mna:block/artifice/decoration/vinteum_arcane_stone",
+        "south": "mna:block/artifice/decoration/vinteum_arcane_stone",
+        "west": "mna:block/artifice/decoration/vinteum_arcane_stone",
+        "particle": "mna:block/artifice/decoration/vinteum_arcane_stone"
+    }
+}

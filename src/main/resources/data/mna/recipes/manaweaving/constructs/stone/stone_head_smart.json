@@ -1,0 +1,19 @@
+﻿{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:constructs/construct_smart_head_stone",
+	"tier": 2,
+	"items": [
+		"mna:constructs/rune_head",
+		"c:stone",
+		"c:stone",
+		"c:stone",
+		"mna:vinteum_dust",
+		"mna:vinteum_dust",
+		"mna:mote_arcane"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:circle"
+	]
+}
+

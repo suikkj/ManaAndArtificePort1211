@@ -1,0 +1,20 @@
+{
+  "replace": false,
+  "values": [
+  	"minecraft:creeper",
+  	"minecraft:hoglin",
+  	"minecraft:husk",
+  	"minecraft:piglin",
+  	"minecraft:piglin_brute",
+  	"minecraft:skeleton",
+  	"minecraft:wither_skeleton",
+  	"minecraft:zoglin",
+  	"minecraft:zombie",
+  	"minecraft:zombified_piglin",
+  	"mna:demon_imp",
+  	"mna:lantern_wraith",
+  	"mna:hulking_zombie",
+  	"mna:chatterer",
+  	"mna:skeleton_assassin"
+  ]
+}

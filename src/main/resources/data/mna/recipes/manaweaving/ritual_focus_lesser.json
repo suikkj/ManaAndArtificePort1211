@@ -1,0 +1,18 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 2,
+	"output": "mna:ritual_focus_lesser",		
+	"items": [		
+		"mna:ritual_focus_minor",
+		"minecraft:redstone",
+		"minecraft:gold_nugget",
+		"minecraft:gold_nugget",
+		"minecraft:gold_nugget",
+		"minecraft:gold_nugget",
+		"mna:vinteum_dust"
+	],
+	"patterns": [
+		"mna:triangle",
+		"mna:knot3"
+	]
+}

@@ -1,0 +1,5 @@
+{
+  "type": "mna:progression-condition",
+  "advancement": "mna:tier_1/cast_flare_cantrip",
+  "tier": 1
+}

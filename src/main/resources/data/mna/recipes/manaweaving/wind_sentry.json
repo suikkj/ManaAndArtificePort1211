@@ -1,0 +1,17 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:wind_sentry",
+	"tier": 3,
+	"items": [
+		"mna:rune_defense",
+		"mna:animus_dust",
+		"mna:wizard_chalk",
+		"mna:spell_book",
+		"mna:rune_air"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:slash",
+		"mna:backslash"
+	]
+}

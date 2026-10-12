@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [  	    
+    "mna:decoration/diamond_arcane_stone_chiseled",
+    "mna:decoration/diamond_arcane_stone_corner",
+    "mna:decoration/diamond_arcane_stone_pillar",
+    "mna:decoration/diamond_arcane_stone_quad",
+    "mna:decoration/diamond_arcane_stone_straight",
+    "mna:decoration/diamond_arcane_stone_t"
+  ]
+}

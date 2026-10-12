@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+  	"minecraft:grass",
+  	"minecraft:tall_grass",
+  	"minecraft:seagrass",
+  	"minecraft:weeping_vines",
+  	"minecraft:twisting_vines",
+  	"minecraft:vine",
+  	"minecraft:crimson_roots",
+  	"minecraft:warped_roots",
+  	"minecraft:hanging_roots",
+  	"minecraft:nether_sprouts"
+  ]
+}

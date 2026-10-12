@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+  	"T T",
+  	"RSR",
+  	"ASA"
+  ],
+  "key": {
+  	"S": {
+  		"item": "mna:decoration/arcane_sandstone"
+  	},
+  	"A": {
+  		"item": "mna:decoration/arcane_stone"
+  	},
+  	"T": {
+  		"item": "mna:transmuted_silver"
+  	},
+  	"R": {
+  		"tag": "mna:stone_runes"
+  	}
+  },
+  "result": {
+    "item": "mna:runeforge"    
+  }
+}

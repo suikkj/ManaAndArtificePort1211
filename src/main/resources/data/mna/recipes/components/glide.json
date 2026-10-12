@@ -1,0 +1,17 @@
+{
+	"type": "mna:component",
+	"output": "mna:glide",
+	"tier": 5,
+	"items":
+	[
+		"minecraft:phantom_membrane",
+		"minecraft:nether_star",
+		"minecraft:feather",
+		"mna:greater_mote_air",
+		"mna:rune_air"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/star"
+	]
+}

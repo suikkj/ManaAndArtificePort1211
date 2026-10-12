@@ -1,0 +1,90 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.construct_arch",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 1,
+				"visible_bounds_height": 1,
+				"visible_bounds_offset": [0, 0, 0]
+			},
+			"bones": [
+				{
+					"name": "STATICS",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "ARCH",
+					"parent": "STATICS",
+					"pivot": [-7.5, 40.5, 0]
+				},
+				{
+					"name": "HOOKS",
+					"parent": "STATICS",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "HOOK_HEAD",
+					"parent": "HOOKS",
+					"pivot": [0, 40, 0]
+				},
+				{
+					"name": "HOOK_TORSO",
+					"parent": "HOOKS",
+					"pivot": [0, 40, 0]
+				},
+				{
+					"name": "HOOK_LEGS_RIGHT",
+					"parent": "HOOKS",
+					"pivot": [-6, 40, 0]
+				},
+				{
+					"name": "HOOK_LEGS_LEFT",
+					"parent": "HOOKS",
+					"pivot": [6, 40, 0]
+				},
+				{
+					"name": "HOOK_ARMS_RIGHT",
+					"parent": "HOOKS",
+					"pivot": [-10, 39, 0]
+				},
+				{
+					"name": "HOOK_ARMS_LEFT",
+					"parent": "HOOKS",
+					"pivot": [10, 39, 0]
+				},
+				{
+					"name": "CONSTRUCT_PARTS",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "HEAD",
+					"parent": "CONSTRUCT_PARTS",
+					"pivot": [0, 21, 0]
+				},
+				{
+					"name": "TORSO",
+					"parent": "CONSTRUCT_PARTS",
+					"pivot": [0, 12, 0]
+				},
+				{
+					"name": "ARM_R",
+					"parent": "CONSTRUCT_PARTS",
+					"pivot": [-6, 18.5, 0]
+				},
+				{
+					"name": "ARM_L",
+					"parent": "CONSTRUCT_PARTS",
+					"pivot": [6, 18.5, 0]
+				},
+				{
+					"name": "LEGS",
+					"parent": "CONSTRUCT_PARTS",
+					"pivot": [0, 11.5, 0]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,8 @@
+{
+	"type": "mna:manaweave-cache-effect",
+	"tier": 1,
+	"effect": "minecraft:water_breathing",
+	"duration_min": 600,
+	"duration_max": 1200,
+	"magnitude": 0
+}

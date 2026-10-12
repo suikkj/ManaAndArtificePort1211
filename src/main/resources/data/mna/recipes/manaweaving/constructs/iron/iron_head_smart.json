@@ -1,0 +1,18 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:constructs/construct_smart_head_iron",
+	"tier": 3,
+	"items": [
+		"mna:constructs/rune_head",
+		"minecraft:iron_ingot",
+		"minecraft:iron_ingot",
+		"minecraft:iron_ingot",
+		"mna:vinteum_dust",
+		"mna:vinteum_dust",
+		"mna:mote_arcane"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:circle"
+	]
+}

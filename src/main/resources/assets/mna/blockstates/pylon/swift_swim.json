@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=east": { "model": "mna:block/eldrin/pylon_base", "y": 180 },
+    "facing=west": { "model": "mna:block/eldrin/pylon_base" },
+    "facing=north": { "model": "mna:block/eldrin/pylon_base", "y": 90 },
+    "facing=south": { "model": "mna:block/eldrin/pylon_base", "y": 270 }
+  }
+}

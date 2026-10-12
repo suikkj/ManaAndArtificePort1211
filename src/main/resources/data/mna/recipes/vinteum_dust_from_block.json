@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mna:vinteum_dust_block"
+    }
+  ],
+  "result": {
+    "item": "mna:vinteum_dust",
+    "count": 9
+  }
+}

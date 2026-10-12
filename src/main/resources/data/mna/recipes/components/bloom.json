@@ -1,0 +1,15 @@
+{
+	"type": "mna:component",
+	"tier": 3,
+	"output": "mna:bloom",
+	"items":
+	[		
+		"mna:mote_earth",
+		"mna:mote_water",
+		"minecraft:bone_meal"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/split_triangle"		
+	]
+}

@@ -1,0 +1,16 @@
+{
+	"type": "mna:multiblock",
+	"structure": "mna:multiblock/eldrin_altar",
+	"replacements": [],
+	"symmetrical": true,
+	"matchers": [
+		{
+			"block": "mna:pedestal",
+			"matcher": "mna:pedestals"
+		},
+		{
+			"block": "mna:eldrin_altar",
+			"matcher": "mna:stateless"
+		}
+	]
+}

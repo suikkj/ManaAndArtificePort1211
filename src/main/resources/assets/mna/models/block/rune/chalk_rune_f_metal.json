@@ -1,0 +1,17 @@
+{
+  "parent": "forge:item/default",
+  "loader": "forge:composite",
+  "textures": {
+  	"particle": "mna:block/artifice/decoration/vinteum_ingot_block"
+  },
+  "children": {
+    "part1": {
+      "loader": "forge:obj",
+      "automatic_culling": true,
+	  "shade_quads": true,
+	  "flip_v": true,
+	  "emissive_ambient": false,
+      "model": "mna:models/block/obj/metal_runes/rune_style_f.obj"
+    }
+  }
+}

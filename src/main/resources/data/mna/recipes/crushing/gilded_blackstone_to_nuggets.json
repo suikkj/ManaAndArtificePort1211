@@ -1,0 +1,7 @@
+{
+	"type": "mna:crushing",
+	"tier": 2,
+	"input": "minecraft:gilded_blackstone",
+	"output": "minecraft:gold_nugget",
+	"output_quantity": 3
+}

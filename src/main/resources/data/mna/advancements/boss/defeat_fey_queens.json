@@ -1,0 +1,28 @@
+{
+	"parent": "mna:root",
+	"display": {
+		"icon": {
+			"item": "mna:staff_tarma"
+		},
+		"title": {
+			"translate": "mna:boss/defeat_fey_queens.title"
+		},
+		"description": {
+			"translate": "mna:boss/defeat_fey_queens.description"
+		},
+		"frame": "challenge",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": true
+	},
+	"criteria": {
+		"boss": {
+			"trigger": "mna:defeat_boss",
+			"conditions": {
+				"entityType": "mna:faerie_queen",
+				"count": 2
+			}
+		}
+	},
+	"requirements": []
+}

@@ -1,0 +1,14 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:collector_ring_lesser",
+	"tier": 2,
+	"items": [	
+		"mna:mundane_ring",
+		"mna:vinteum_dust",
+		"minecraft:ender_pearl"
+	],
+	"patterns": [
+		"mna:square",
+		"mna:circle"	
+	]
+}

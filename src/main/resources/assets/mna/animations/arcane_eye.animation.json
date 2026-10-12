@@ -1,0 +1,122 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.arcane_eye.idle": {
+			"loop": true,
+			"animation_length": 4.16,
+			"bones": {
+				"top_spinner": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"4.16": {
+							"vector": [0, 360, 0]
+						}
+					}
+				},
+				"upper_mid_spinner": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"4.16": {
+							"vector": [0, -360, 0]
+						}
+					}
+				},
+				"lower_mid_spinner": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"4.16": {
+							"vector": [0, 360, 0]
+						}
+					}
+				},
+				"lower_spinner": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"4.16": {
+							"vector": [0, -360, 0]
+						}
+					}
+				},
+				"top_spinner_outer": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"4.16": {
+							"vector": [0, 720, 0]
+						}
+					}
+				},
+				"upper": {
+					"position": {
+						"0.0": {
+							"vector": [0, -0.25, 0]
+						},
+						"2.08": {
+							"vector": [0, 0, 0],
+							"easing": "easeInSine"
+						},
+						"4.16": {
+							"vector": [0, -0.25, 0],
+							"easing": "easeInSine"
+						}
+					}
+				},
+				"mid": {
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"2.08": {
+							"vector": [0, -0.25, 0],
+							"easing": "easeInSine"
+						},
+						"4.16": {
+							"vector": [0, 0, 0],
+							"easing": "easeInSine"
+						}
+					}
+				},
+				"lower": {
+					"position": {
+						"0.0": {
+							"vector": [0, -0.25, 0]
+						},
+						"2.08": {
+							"vector": [0, 0, 0],
+							"easing": "easeInSine"
+						},
+						"4.16": {
+							"vector": [0, -0.25, 0],
+							"easing": "easeInSine"
+						}
+					}
+				},
+				"root": {
+					"position": {
+						"0.0": {
+							"vector": [0, 1, 0]
+						},
+						"2.08": {
+							"vector": [0, 0, 0],
+							"easing": "easeInSine"
+						},
+						"4.16": {
+							"vector": [0, 1, 0],
+							"easing": "easeInSine"
+						}
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

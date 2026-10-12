@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+  	"SLS"
+  ],
+  "key": {
+  	"L": {
+  		"item": "minecraft:lectern"
+  	},
+  	"S": {
+  		"item": "mna:transmuted_silver"
+  	}
+  },
+  "result": {
+    "item": "mna:book_stand"    
+  }
+}

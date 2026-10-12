@@ -1,0 +1,65 @@
+{
+	"type": "mna:ritual",
+	"tier": 2,
+	"pattern":
+	[
+		[ 0, 1, 0, 2, 0 ],
+		[ 8, 0, 9, 0, 3 ],
+		[ 0, 0,-1, 0, 0 ],
+		[ 7, 0,10, 0, 4 ],
+		[ 0, 6, 0, 5, 0 ]
+	],
+	"displayPattern":
+	[
+		[ 0, 2, 0, 3, 0 ],
+		[ 1, 0,11, 0, 4 ],
+		[ 0, 0,-1, 0, 0 ],
+		[ 9, 0,12, 0, 6 ],
+		[ 0, 8, 0, 7, 0 ]
+	],
+	"reagents":
+	[
+		" D D ",
+		"D S D",
+		"     ",
+		"D I D",
+		" D D "
+	],
+	"keys":
+	{
+		"D": 
+		{ 
+			"item": "mna:dynamic-modifier-1",
+			"optional": true,
+			"consume": true,
+			"is_dynamic": true
+		},
+		"S":
+		{
+			"item": "mna:alteration_items",
+			"optional": false,
+			"consume": true			
+		},
+		"I":
+		{
+			"item": "mna:modifier_book",
+			"optional": false,
+			"consume": false,
+			"dynamic_source": true
+		}
+	},
+	"manaweave":
+	[
+		"mna:manaweave_patterns/knot3",
+		"mna:manaweave_patterns/circle",
+		"mna:manaweave_patterns/knot1"
+	],
+	"parameters":
+	{
+		"innerColor": "0x00FFCC",
+		"outerColor": "0x00FF8A",
+		"displayIndexes": false,
+		"kittable": false,
+		"beamColor": "0x16ba99"
+	}
+}

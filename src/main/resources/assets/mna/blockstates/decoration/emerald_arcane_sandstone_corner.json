@@ -1,0 +1,18 @@
+{
+  "variants": {    
+    "surface=1,facing=east": { "model": "mna:block/decoration/emerald_arcane_sandstone_corner", "y": 90 },
+    "surface=1,facing=west": { "model": "mna:block/decoration/emerald_arcane_sandstone_corner", "y": 270 },
+    "surface=1,facing=north": { "model": "mna:block/decoration/emerald_arcane_sandstone_corner" },
+    "surface=1,facing=south": { "model": "mna:block/decoration/emerald_arcane_sandstone_corner", "y": 180 },
+    
+    "surface=2,facing=east": { "model": "mna:block/decoration/emerald_arcane_sandstone_corner", "x": 180, "y": 180 },
+    "surface=2,facing=west": { "model": "mna:block/decoration/emerald_arcane_sandstone_corner", "x": 180 },
+    "surface=2,facing=north": { "model": "mna:block/decoration/emerald_arcane_sandstone_corner", "x": 180, "y": 90 },
+    "surface=2,facing=south": { "model": "mna:block/decoration/emerald_arcane_sandstone_corner", "x": 180, "y": 270 },
+    
+    "surface=3,facing=east": { "model": "mna:block/decoration/emerald_arcane_sandstone_corner", "x": 90, "y": 90  },
+    "surface=3,facing=west": { "model": "mna:block/decoration/emerald_arcane_sandstone_corner", "x": 90, "y": 270 },
+    "surface=3,facing=north": { "model": "mna:block/decoration/emerald_arcane_sandstone_corner", "x": 90 },
+    "surface=3,facing=south": { "model": "mna:block/decoration/emerald_arcane_sandstone_corner", "x": 90, "y": 180 }
+  }
+}

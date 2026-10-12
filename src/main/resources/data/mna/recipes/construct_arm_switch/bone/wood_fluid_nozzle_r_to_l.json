@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mna:constructs/construct_fluid_nozzle_right_wood"
+    }
+  ],
+  "result": {
+    "item": "mna:constructs/construct_fluid_nozzle_left_wood"    
+  }
+}

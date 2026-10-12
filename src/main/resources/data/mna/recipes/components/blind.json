@@ -1,0 +1,21 @@
+{
+	"type": "mna:component",
+	"tier": 3,
+	"output": "mna:blind",
+	"items":
+	[
+		"mna:stone_rune_purple",
+		"minecraft:fermented_spider_eye",
+		"minecraft:fermented_spider_eye",
+		"mna:vinteum_dust",
+		"mna:runesmith_chisel",
+		"mna:tarma_root",
+		"mna:tarma_root"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/circle",
+		"mna:manaweave_patterns/split_triangle",
+		"mna:manaweave_patterns/circle"
+	]
+}

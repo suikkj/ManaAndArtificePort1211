@@ -1,0 +1,7 @@
+{
+    "parent": "block/carpet",
+    "textures": {
+        "particle": "block/white_wool",
+        "wool": "mna:block/rituals/chalk_rune_i_active"
+    }
+}

@@ -1,0 +1,23 @@
+﻿{
+	"type": "mna:manaweaving-recipe",
+	"tier": 5,
+	"output": "mna:rune_ender",
+	"enchant": "minecraft:binding_curse",
+	"magnitude": 1,
+	"items": [
+		"mna:rune_ender",
+		"mna:runic_silk",
+		"minecraft:ender_eye",		
+		"c:slimeballs",
+		"minecraft:lead",
+		"minecraft:sticky_piston",			
+		"minecraft:fermented_spider_eye",
+		"minecraft:fermented_spider_eye",
+		"mna:mote_ender"
+	],
+	"patterns": [
+		"mna:infinity",
+		"mna:inverted_triangle"
+	]
+}
+

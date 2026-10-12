@@ -1,0 +1,18 @@
+{
+	"type": "mna:modifier",
+	"output": "mna:radius",
+	"tier": 3,
+	"items":
+	[
+		"daylight_detector",
+		"mna:chimerite_gem",
+		"mna:chimerite_gem",
+		"mna:chimerite_gem",
+		"pufferfish",
+		"mna:rune_water",
+		"mna:desert_nova"
+	],
+	"patterns":
+	[
+	]
+}

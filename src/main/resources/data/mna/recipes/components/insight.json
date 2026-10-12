@@ -1,0 +1,15 @@
+{
+	"type": "mna:component",
+	"tier": 1,
+	"output": "mna:insight",
+	"items":
+	[
+		"mna:stone_rune_magenta",
+		"minecraft:target",
+		"minecraft:writable_book"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/circle"
+	]
+}

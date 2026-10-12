@@ -1,0 +1,8 @@
+# Blender MTL File: 'pedestal.blend'
+# Material Count: 2
+
+newmtl CHIMERITE
+map_Kd mna:block/oreblockchimerite
+
+newmtl MAIN
+map_Kd mna:block/material/pedestal/pedestal_main

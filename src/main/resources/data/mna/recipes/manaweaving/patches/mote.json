@@ -1,0 +1,13 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 2,
+	"output": "mna:patch_mote",		
+	"items": [
+		"mna:infused_silk",
+		"minecraft:chest",
+		"mna:mana_resevoir"
+	],
+	"patterns": [
+		"mna:square"	
+	]
+}

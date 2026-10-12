@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+  	{
+  		"id": "occultism:possessed_skeleton",
+  		"required": false
+  	}, 
+  	{
+  		"id": "occultism:possessed_ghast",
+  		"required": false
+  	}, 
+  	{
+  		"id": "occultism:possessed_enderman",
+  		"required": false
+  	}, 
+  	{
+  		"id": "occultism:possessed_endermite",
+  		"required": false
+  	},  
+  	"minecraft:frog"
+  ]
+}

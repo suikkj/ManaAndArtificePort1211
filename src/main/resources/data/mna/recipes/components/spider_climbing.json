@@ -1,0 +1,15 @@
+{
+	"type": "mna:component",
+	"output": "mna:spider_climbing",
+	"tier": 2,
+	"items":
+	[
+		"minecraft:leather_boots",
+		"minecraft:cobweb",
+		"minecraft:spider_eye"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/triangle"
+	]
+}

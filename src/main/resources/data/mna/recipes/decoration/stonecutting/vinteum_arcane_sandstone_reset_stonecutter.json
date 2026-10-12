@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "tag": "mna:stonecutter_resettable_vinteum_arcane_sandstones"
+  },
+  "result": "mna:decoration/vinteum_arcane_sandstone",
+  "count": 1
+}

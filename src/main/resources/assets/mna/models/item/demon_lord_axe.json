@@ -1,0 +1,46 @@
+{
+	"parent": "forge:item/default",
+  	"loader": "forge:composite",
+  	"children": {
+    	"crystal": {
+      		"loader": "forge:obj",
+      		"automatic_culling": true,
+	  		"shade_quads": true,
+	  		"flip_v": true,
+	  		"emissive_ambient": false,
+      		"model": "mna:models/item/obj/boss/weapon_demonlord_axe.obj"
+    	}
+  	},
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [0, -90, 0],
+			"scale": [1, 1, 1]			
+		},
+		"thirdperson_lefthand": {
+			"rotation": [0, 90, 0],
+			"scale": [1, 1, 1]	
+		},		
+		"firstperson_righthand": {
+			"translation": [4, -10, 0],
+			"rotation": [0, -90, 0]
+		},
+		"firstperson_lefthand": {
+			"translation": [0, -10, 0],
+			"rotation": [0, 90, 0]
+		},
+		"ground": {
+			"scale": [0.5, 0.5, 0.5],
+			"translation": [0, 6, 0]
+		},
+		"gui": {
+			"rotation": [0, 0, 45],
+			"scale": [0.7, 0.7, 0.7],
+			"translation": [4, -4, 0]
+		},
+		"fixed": {
+			"rotation": [0, 0, 45],
+			"scale": [0.7, 0.7, 0.7],
+			"translation": [4, -4, 0]
+		}
+	}
+}

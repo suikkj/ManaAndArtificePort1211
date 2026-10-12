@@ -1,0 +1,38 @@
+{
+	"parent": "mna:tier_2/advance_tier_3",
+	"display": {
+		"icon": {
+			"item": "mna:manaweaver_wand"
+		},
+		"title": {
+			"translate": "mna:tier_3/perform_sanctum_invocation.title"
+		},
+		"description": {
+			"translate": "mna:tier_3/perform_sanctum_invocation.description"
+		},
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": false,
+		"hidden": false
+	},
+	"criteria": {
+		"perform_invocation": {
+			"trigger": "mna:perform_ritual",
+			"conditions": {
+				"ritualID": "mna:rituals/circle_of_power"
+			}
+		},
+		"complete_structure":{
+			"trigger": "mna:multiblock_complete",
+			"conditions": {
+				"multiblockIDs": [
+					"mna:multiblock/council_circle",
+					"mna:multiblock/demon_circle",
+					"mna:multiblock/fey_circle",
+					"mna:multiblock/undead_circle"
+				]
+			}
+		}
+	},
+	"requirements": []
+}

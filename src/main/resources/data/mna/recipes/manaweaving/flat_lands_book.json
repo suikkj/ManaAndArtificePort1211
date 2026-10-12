@@ -1,0 +1,19 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 1,
+	"output": "mna:flat_lands_book",		
+	"items": [
+		"minecraft:book",
+		"minecraft:stone_pickaxe",
+		"minecraft:stone_pickaxe",
+		"minecraft:stone_shovel",
+		"minecraft:stone_shovel",
+		"minecraft:stone_axe",
+		"minecraft:stone_axe"
+	],
+	"patterns": [
+		"mna:square",
+		"mna:triangle",		
+		"mna:square"
+	]
+}

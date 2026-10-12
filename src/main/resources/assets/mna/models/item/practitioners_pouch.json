@@ -1,0 +1,8 @@
+{
+
+  "parent": "item/generated",
+    "textures": {
+    	"layer0": "mna:item/practitioners_pouch_ribbon",
+        "layer1": "mna:item/practitioners_pouch" 
+    }
+}

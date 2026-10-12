@@ -1,0 +1,21 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 4,
+	"output": "mna:rune_water",
+	"enchant": "minecraft:depth_strider",
+	"magnitude": 2,
+	"items": [
+		"mna:rune_water",
+		"minecraft:dried_kelp_block",
+		"minecraft:lapis_lazuli",
+		"mna:vinteum_dust",
+		"minecraft:bucket",
+		"mna:mote_water"
+	],
+	"patterns": [
+		"mna:knot",
+		"mna:knot2",
+		"mna:knot3",
+		"mna:knot4"
+	]
+}

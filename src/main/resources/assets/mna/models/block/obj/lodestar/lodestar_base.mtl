@@ -1,0 +1,8 @@
+# Blender MTL File: 'lodestar.blend'
+# Material Count: 1
+
+newmtl MAIN
+map_Kd mna:block/material/lodestar
+
+newmtl CHIMERITE
+map_Kd mna:block/oreblockchimerite

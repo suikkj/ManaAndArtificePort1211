@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "#mna:dusts/vinteum",
+    "#mna:dusts/purified_vinteum",
+    "#mna:dusts/arcane_ash",
+    "#mna:dusts/bone_ash",
+    "#mna:dusts/arcane_compound"
+  ]
+}

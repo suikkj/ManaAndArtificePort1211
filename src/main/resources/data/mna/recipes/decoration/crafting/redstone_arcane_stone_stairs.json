@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "mna:decoration/redstone_arcane_stone"
+    }
+  },
+  "result": {
+    "item": "mna:decoration/redstone_arcane_stone_stairs",
+    "count": 4
+  }
+}

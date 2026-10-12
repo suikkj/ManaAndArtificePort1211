@@ -1,0 +1,18 @@
+{
+	"type": "mna:component",
+	"output": "mna:swift_swim",
+	"tier": 3,
+	"items":
+	[
+		"minecraft:fishes",
+		"minecraft:fishes",
+		"mna:vinteum_dust",
+		"mna:wakebloom",
+		"mna:wakebloom"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/diamond",
+		"mna:manaweave_patterns/triangle"
+	]
+}

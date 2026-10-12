@@ -1,0 +1,14 @@
+﻿{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:dyes/red"
+    },
+    {
+      "item": "mna:stone_rune_blank"
+    }
+  ],
+  "result": {
+    "item": "mna:stone_rune_red"
+  }
+}

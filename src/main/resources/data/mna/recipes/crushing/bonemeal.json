@@ -1,0 +1,7 @@
+{
+	"type": "mna:crushing",
+	"tier": 2,
+	"input": "minecraft:bone",
+	"output": "minecraft:bone_meal",
+	"output_quantity": 4
+}

@@ -1,0 +1,18 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:fall_charm",
+	"tier": 1,
+	"items": [
+		"minecraft:bone",
+		"minecraft:feather",
+		"minecraft:feather",
+		"minecraft:string",
+		"minecraft:black_dye",		
+		"mna:vinteum_dust"
+	],
+	"patterns": [
+		"mna:triangle",
+		"mna:circle",
+		"mna:triangle"
+	]
+}

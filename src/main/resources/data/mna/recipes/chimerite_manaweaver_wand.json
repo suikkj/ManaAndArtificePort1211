@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+  	" IV",
+  	" SI",
+  	"S  "
+  ],
+  "key": {
+  	"S": {
+  		"item": "minecraft:stick"
+  	},
+  	"I": {
+  		"item": "mna:chimerite_gem"
+  	},
+  	"V": {
+  		"item": "mna:purified_vinteum_dust"
+  	}
+  },
+  "result": {
+    "item": "mna:manaweaver_wand_advanced"    
+  }
+}

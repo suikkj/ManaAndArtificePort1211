@@ -1,0 +1,5 @@
+# Blender MTL File: 'book_weaving.blend'
+# Material Count: 1
+
+newmtl MAIN
+map_Kd mna:item/manaweaving/book_weaving

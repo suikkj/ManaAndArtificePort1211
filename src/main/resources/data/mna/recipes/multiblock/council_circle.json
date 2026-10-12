@@ -1,0 +1,22 @@
+{
+	"type": "mna:multiblock",
+	"structure": "mna:multiblock/council_circle_of_power",
+	"replacements": [],
+	"symmetrical": true,
+    "tier": 3,
+	"matchers": [
+		{
+			"block": "mna:brazier",
+			"matcher": "mna:stateless"
+		},
+		{
+			"block": "mna:chalk_rune",
+			"matcher": "mna:wizard_chalk"
+		},
+		{
+			"block": "minecraft:fire",
+			"matcher": "mna:stateless"
+		}
+	],
+	"tags": []
+}

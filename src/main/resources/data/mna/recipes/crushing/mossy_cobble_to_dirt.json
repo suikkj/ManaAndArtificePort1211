@@ -1,0 +1,7 @@
+{
+	"type": "mna:crushing",
+	"tier": 2,
+	"input": "minecraft:mossy_cobblestone",
+	"output": "minecraft:dirt",
+	"output_quantity": 1
+}

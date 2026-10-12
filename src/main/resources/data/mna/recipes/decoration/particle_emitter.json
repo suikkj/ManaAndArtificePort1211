@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+  	"C",
+  	"S"
+  ],
+  "key": {
+  	"S": {
+  		"item": "mna:decoration/arcane_stone"
+  	},
+  	"C": {
+  		"item": "mna:chimerite_gem"
+  	}
+  },
+  "result": {
+    "item": "mna:particle_emitter"    
+  }
+}

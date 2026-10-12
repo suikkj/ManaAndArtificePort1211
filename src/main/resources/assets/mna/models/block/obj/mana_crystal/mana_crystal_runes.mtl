@@ -1,0 +1,5 @@
+# Blender MTL File: 'untitled.blend'
+# Material Count: 1
+
+newmtl Crystal
+map_Kd mna:block/material/mana_crystal/mana_crystal_new

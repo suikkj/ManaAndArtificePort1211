@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+  	"minecraft:ender_pearl",
+  	"minecraft:chorus_fruit",
+  	"minecraft:end_rod",
+  	"minecraft:item_frame"
+  ]
+}

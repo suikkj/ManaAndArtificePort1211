@@ -1,0 +1,20 @@
+{
+  "parent": "forge:item/default",
+  "loader": "forge:composite",
+  "textures": {
+  	"particle": "minecraft:block/blackstone"
+  },
+  "children": {
+    "part1": {
+      "loader": "forge:obj",
+      "automatic_culling": false,
+	  "shade_quads": true,
+	  "flip_v": true,
+	  "emissive_ambient": false,
+      "model": "mna:models/block/obj/runeforge/runeforge.obj",
+      "textures": {
+        "forgetex": "mna:block/runeforge/runeforge_brimstone_off"
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "type": "mna:progression-condition",
+  "advancement": "mna:tier_1/obtain_manaweaving_altar",
+  "tier": 1
+}

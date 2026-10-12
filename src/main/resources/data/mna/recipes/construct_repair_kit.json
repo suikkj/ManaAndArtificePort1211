@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+  	"ISI",
+  	"HPR",
+  	"III"
+  ],
+  "key": {
+  	"S": {
+  		"item": "mna:transmuted_silver"
+  	},
+  	"I": {
+  		"item": "minecraft:iron_ingot"
+  	},
+  	"H": {
+  		"item": "mna:runesmith_hammer"
+  	},
+  	"P": {
+  		"item": "mna:healing_poultice"
+  	},
+  	"R": {
+  		"item": "mna:rune_defense"
+  	}
+  },
+  "result": {
+    "item": "mna:construct_repair_kit"    
+  }
+}

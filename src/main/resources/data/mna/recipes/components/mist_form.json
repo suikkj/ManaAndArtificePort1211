@@ -1,0 +1,19 @@
+{
+	"type": "mna:component",
+	"tier": 4,
+	"output": "mna:mist_form",
+	"items":
+	[
+		"mna:vinteum_dust",
+		"mna:vinteum_dust",		
+		"minecraft:blaze_powder",
+		"minecraft:water_bucket",
+		"minecraft:ghast_tear"
+		
+	],
+	"patterns":
+	[		
+		"mna:manaweave_patterns/hourglass",
+		"mna:manaweave_patterns/square"
+	]
+}

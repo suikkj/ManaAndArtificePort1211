@@ -1,0 +1,7 @@
+{
+	"type": "mna:crushing",
+	"tier": 2,
+	"input": "minecraft:andesite",
+	"output": "minecraft:gravel",
+	"output_quantity": 1
+}

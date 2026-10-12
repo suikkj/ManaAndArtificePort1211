@@ -1,0 +1,19 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:fume_prism",
+	"tier": 3,
+	"items": [		
+		"mna:chimerite_gem",
+		"mna:decoration/arcane_sandstone",
+		"mna:chimerite_gem",
+		"mna:transmuted_silver",
+		"mna:mana_crystal_fragment",
+		"mna:transmuted_silver",
+		"mna:decoration/arcane_sandstone",
+		"mna:transmuted_silver",
+		"mna:decoration/arcane_sandstone"
+	],
+	"patterns": [
+		"mna:bolt"
+	]
+}

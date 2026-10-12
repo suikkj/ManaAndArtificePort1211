@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+  	"M",
+  	"C",
+  	"S"
+  ],
+  "key": {
+  	"M": {
+  		"item": "mna:mote_fire"
+  	},
+  	"C": {
+  		"item": "mna:chimerite_gem"
+  	},
+  	"S": {
+  		"item": "stick"
+  	}
+  },
+  "result": {
+    "item": "mna:lesser_eldrin_conduit_fire"    
+  }
+}

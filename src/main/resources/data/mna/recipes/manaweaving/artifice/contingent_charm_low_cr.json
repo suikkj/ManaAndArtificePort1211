@@ -1,0 +1,13 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:low_cr_charm_minor",
+	"tier": 2,
+	"items": [
+		"mna:charm_pattern",
+		"mna:chimerite_gem"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:circle"
+	]
+}

@@ -1,0 +1,7 @@
+{
+    "parent": "mna:block/hellfire/fire_up",
+    "textures": {
+        "particle": "mna:block/hellfire/fire_0",
+        "fire": "mna:block/hellfire/fire_0"
+    }
+}

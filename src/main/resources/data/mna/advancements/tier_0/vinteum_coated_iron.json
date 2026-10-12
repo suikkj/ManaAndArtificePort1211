@@ -1,0 +1,37 @@
+{
+	"parent": "mna:tier_0/smelt_vinteum",
+	"display": {
+		"icon": {
+			"item": "mna:vinteum_coated_iron"
+		},
+		"title": {
+			"translate": "mna:tier_0/combine_vinteum.title"
+		},
+		"description": {
+			"translate": "mna:tier_0/combine_vinteum.description"
+		},
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": true
+	},
+	"criteria": {
+		"has_stone": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": [
+							"mna:vinteum_coated_iron"
+						]
+					}
+				]
+			}
+		}
+	},
+	"requirements": [
+		[
+			"has_stone"
+		]
+	]
+}

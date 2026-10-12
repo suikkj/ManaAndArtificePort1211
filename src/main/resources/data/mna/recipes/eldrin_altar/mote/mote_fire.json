@@ -1,0 +1,26 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:mote_fire",
+	"tier": 4,
+	"items": [
+		"glowstone_dust",
+		"glowstone_dust",
+		"glowstone_dust",
+		"blaze_powder",
+		"blaze_powder",
+		"blaze_powder",
+		"netherrack",
+		"netherrack",
+		"netherrack"
+	],
+	"power_requirements": [
+		{
+			"affinity": "FIRE",
+			"amount": 720
+		}
+	],
+	"colors": [
+		14226452,
+		3671092
+	]
+}

@@ -1,0 +1,5 @@
+# Blender MTL File: 'ender_disc.blend'
+# Material Count: 1
+
+newmtl MAIN
+map_Kd mna:item/artifice/ender_disc

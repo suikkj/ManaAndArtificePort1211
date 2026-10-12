@@ -1,0 +1,9 @@
+{
+	"type": "mna:eldrin-fume",
+	"item": "mna:greater_mote_water",
+	"power_provided": 
+	{
+		"affinity": "WATER",
+		"amount": 5760
+	}
+}

@@ -1,0 +1,18 @@
+{
+  "replace": false,
+  "values": [
+  	"minecraft:blaze",
+  	"minecraft:enderman",
+  	"minecraft:ghast",
+  	"minecraft:hoglin",
+  	"minecraft:magma_cube",
+  	"minecraft:piglin",
+  	"minecraft:pillager",
+  	"minecraft:polar_bear",  
+  	"minecraft:slime",
+  	"minecraft:vindicator",
+  	"minecraft:wither_skeleton",
+  	"mna:spell_breaker",
+  	"mna:skeleton_assassin"
+  ]
+}

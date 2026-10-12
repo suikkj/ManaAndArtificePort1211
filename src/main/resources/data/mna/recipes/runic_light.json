@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+  	"S",
+  	"W",
+  	"W"
+  ],
+  "key": {
+  	"S": {
+  		"item": "minecraft:sea_lantern"
+  	},
+  	"W": {
+  		"tag": "minecraft:logs"
+  	}
+  },
+  "result": {
+    "item": "mna:runic_light"    
+  }
+}

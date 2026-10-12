@@ -1,0 +1,15 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 4,
+	"output": "mna:transitory_tunnel",		
+	"items": [
+		"minecraft:clock",
+		"mna:mote_ender",
+		"mna:rune_ender"
+	],
+	"patterns": [
+		"mna:triangle",
+		"mna:circle",
+		"mna:inverted_triangle"
+	]
+}

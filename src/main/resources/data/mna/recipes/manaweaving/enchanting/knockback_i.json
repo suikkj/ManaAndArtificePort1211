@@ -1,0 +1,19 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 3,
+	"output": "mna:rune_air",
+	"enchant": "minecraft:knockback",
+	"magnitude": 1,
+	"items": [
+		"mna:rune_air",
+		"minecraft:gunpowder",
+		"minecraft:gunpowder",
+		"minecraft:gunpowder",
+		"mna:runesmith_hammer"		
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:circle",
+		"mna:square"
+	]
+}

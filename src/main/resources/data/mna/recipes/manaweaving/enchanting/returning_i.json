@@ -1,0 +1,15 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 2,
+	"output": "mna:rune_ender",
+	"enchant": "mna:returning",
+	"magnitude": 1,
+	"items": [
+		"mna:rune_aura",
+		"mna:mote_ender",
+		"minecraft:string"
+	],
+	"patterns": [
+		"mna:manaweave_patterns/circle"
+	]
+}

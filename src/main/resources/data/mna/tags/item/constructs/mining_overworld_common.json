@@ -1,0 +1,18 @@
+{
+  "replace": false,
+  "values": [
+  	"mna:vinteum_dust",
+  
+    "minecraft:raw_iron",
+    "minecraft:raw_copper",
+    "minecraft:coal",    
+    "minecraft:stone",
+    "minecraft:andesite",
+    "minecraft:diorite",
+    "minecraft:granite",
+    "minecraft:deepslate",
+    "minecraft:gravel",
+    "minecraft:sand",
+    "minecraft:flint" 
+  ]
+}

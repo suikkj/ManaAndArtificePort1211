@@ -1,0 +1,6 @@
+{
+	"type": "mna:runeforging",
+	"tier": 2,
+	"pattern": "mna:charm_pattern_base",
+	"output": "mna:charm_pattern"
+}

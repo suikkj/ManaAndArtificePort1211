@@ -1,0 +1,23 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:mote_air",
+	"tier": 4,
+	"items": [
+		"mna:cerublossom",
+		"mna:cerublossom",
+		"mna:cloud_in_a_bottle",
+		"mna:cloud_in_a_bottle",
+		"feather",
+		"feather"
+	],
+	"power_requirements": [
+		{
+			"affinity": "WIND",
+			"amount": 720
+		}
+	],
+	"colors": [
+		13816530,
+		9211020
+	]
+}

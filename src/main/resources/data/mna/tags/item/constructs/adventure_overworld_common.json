@@ -1,0 +1,47 @@
+﻿{
+  "replace": false,
+  "values": [
+  	"mna:wakebloom",
+  	"mna:tarma_root",
+  	"mna:aum",
+  	"mna:desert_nova",
+  	"mna:cerublossom",
+  	"mna:rune_clay_plate",
+   	"mna:rune_pattern",
+   	
+   	"mna:mark_of_the_fey",
+   	"mna:mark_of_the_council",
+   	
+   	"minecraft:bone",
+   	"minecraft:gunpowder",
+   	"minecraft:rotten_flesh",
+   	"minecraft:spider_eye",
+   	"minecraft:string",
+   	"minecraft:ink_sac",
+   	"minecraft:glow_ink_sac",
+   	"minecraft:feather",
+   	"minecraft:rabbit_foot",
+   	"minecraft:rabbit_hide",
+   	"minecraft:leather",
+   	
+   	"minecraft:glow_lichen",
+  	"minecraft:glow_berries",   	
+   	"minecraft:cobweb",   
+   	"minecraft:honey_bottle", 
+   	"minecraft:honeycomb",   	
+   	"minecraft:book",   	
+   	"minecraft:sugar_cane",
+   	"minecraft:cactus",
+   	"minecraft:bamboo",
+   	"minecraft:wheat_seeds",
+   	"minecraft:beetroot_seeds",
+   	"minecraft:pumpkin_seeds",
+   	"minecraft:melon_seeds",
+   	"minecraft:carrot",
+   	
+   	"#c:mushrooms",   	
+   	
+   	"minecraft:clay",
+   	"minecraft:kelp"
+  ]
+}

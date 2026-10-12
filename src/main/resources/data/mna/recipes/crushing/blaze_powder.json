@@ -1,0 +1,7 @@
+{
+	"type": "mna:crushing",
+	"tier": 2,
+	"input": "minecraft:blaze_rod",
+	"output": "minecraft:blaze_powder",
+	"output_quantity": 4
+}

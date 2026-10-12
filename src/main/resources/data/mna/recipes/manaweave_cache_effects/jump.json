@@ -1,0 +1,8 @@
+{
+	"type": "mna:manaweave-cache-effect",
+	"tier": 1,
+	"effect": "minecraft:jump_boost",
+	"duration_min": 300,
+	"duration_max": 1200,
+	"magnitude": 9
+}

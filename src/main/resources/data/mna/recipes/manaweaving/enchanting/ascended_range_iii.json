@@ -1,0 +1,17 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 4,
+	"output": "mna:rune_air",
+	"enchant": "mna:range_modifier",
+	"magnitude": 3,
+	"items": [
+		"mna:rune_air",
+		"minecraft:bow",		
+		"minecraft:crossbow",
+		"minecraft:firework_rocket"
+	],
+	"patterns": [
+		"mna:triangle",
+		"mna:knot3"
+	]
+}

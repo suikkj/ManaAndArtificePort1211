@@ -1,0 +1,27 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:fey_armor_chest",
+	"tier": 5,
+	"requiredFaction": "mna:fey",
+	"items": [
+		"minecraft:iron_chestplate",
+		"minecraft:nether_star",
+		"minecraft:nether_star",				
+		"mna:greater_mote_air",
+		"mna:greater_mote_air",
+		"mna:rune_air",
+		"mna:rune_air",
+		"mna:ironbark",
+		"mna:ironbark"
+	],
+	"power_requirements": [
+		{
+			"affinity": "WIND",
+			"amount": 2750
+		}
+	],
+	"colors": [
+		39168,
+		13555406
+	]
+}

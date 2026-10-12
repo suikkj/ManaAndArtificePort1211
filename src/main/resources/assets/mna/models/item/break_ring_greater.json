@@ -1,0 +1,48 @@
+{
+	"parent": "forge:item/default",
+  	"loader": "forge:composite",
+  	"children": {
+    	"main": {
+      		"loader": "forge:obj",
+      		"automatic_culling": true,
+	  		"shade_quads": true,
+	  		"flip_v": true,
+	  		"emissive_ambient": false,
+      		"model": "mna:models/item/obj/curios/ring_break_diamond.obj"
+    	}
+  	},
+	"display": {
+		"thirdperson_righthand": {
+			"scale": [ 1, 1, 1],
+			"translation": [0, 8, -0.5]
+		},
+		"thirdperson_lefthand": {
+			"scale": [ 1, 1, 1],
+			"translation": [0, 8, -0.5]
+		},		
+		"firstperson_righthand": {
+			"scale": [0.75, 0.75, 0.75],
+			"rotation": [-15, 0, 0],
+			"translation": [0, 8, 0]
+		},
+		"firstperson_lefthand": {
+			"scale": [0.75, 0.75, 0.75],
+			"rotation": [-15, 0, 0],
+			"translation": [0, 8, 0]
+		},
+		"ground": {
+			"scale": [0.6, 0.6, 0.6],
+			"translation": [0, 3, 0]
+		},
+		"gui": {
+			"scale": [2.5, 2.5, 2.5],
+			"translation": [-4.5, 15, 0],
+			"rotation": [30, 30, 15]
+		},
+		"fixed": {
+			"scale": [2, 2, 2],
+			"translation": [0, 14, 0],
+			"rotation": [0, 0, 0]
+		}
+	}
+}

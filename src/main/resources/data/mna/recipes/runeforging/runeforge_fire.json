@@ -1,0 +1,6 @@
+{
+	"type": "mna:runeforging",
+	"tier": 3,
+	"pattern": "mna:rune_pattern_fire",
+	"output": "mna:rune_fire"
+}

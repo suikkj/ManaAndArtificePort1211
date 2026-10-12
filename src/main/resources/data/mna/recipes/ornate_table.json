@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [  
+    "CCC",	
+  	"GWG",
+  	"W W"
+  ],
+  "key": {
+  	"W": {
+  		"tag": "minecraft:planks"
+  	},
+  	"G": {
+  		"item": "mna:transmuted_silver"
+  	},
+  	"C": {
+  		"tag": "minecraft:wool_carpets"
+  	}
+  },
+  "result": {
+    "item": "mna:ornate_table"    
+  }
+}

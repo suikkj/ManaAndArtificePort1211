@@ -1,0 +1,16 @@
+# Blender v2.80 (sub 75) OBJ File: 'wizard_lab_blocks.blend'
+# www.blender.org
+mtllib station_runescribing_water.mtl
+o RUNESCRIBING_WATER_Cube.013
+v 0.125000 1.046875 0.687500
+v 0.312500 1.046875 0.687500
+v 0.125000 1.046875 0.500000
+v 0.312500 1.046875 0.500000
+vt 0.250000 0.312500
+vt 0.625000 0.312500
+vt 0.625000 0.687500
+vt 0.250000 0.687500
+vn 0.0000 1.0000 0.0000
+usemtl WATER
+s off
+f 1/1/1 2/2/1 4/3/1 3/4/1

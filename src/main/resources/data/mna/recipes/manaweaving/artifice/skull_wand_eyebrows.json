@@ -1,0 +1,12 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:wand_skull_alt",
+	"copy_nbt": true,
+	"items": [
+		"mna:wand_skull",
+		"minecraft:kelp"
+	],
+	"patterns": [
+		"mna:circle"
+	]
+}

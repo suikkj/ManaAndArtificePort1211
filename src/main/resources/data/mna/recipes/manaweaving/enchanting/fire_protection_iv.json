@@ -1,0 +1,22 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 5,
+	"output": "mna:rune_earth",
+	"enchant": "minecraft:fire_protection",
+	"magnitude": 4,
+	"items": [
+		"mna:rune_earth",
+		"minecraft:blaze_rod",
+		"minecraft:lava_bucket",
+		"minecraft:fire_charge",
+		"minecraft:blaze_powder",
+		"minecraft:magma_cream",
+		"mna:mote_fire",
+		"mna:desert_nova"
+	],
+	"patterns": [
+		"mna:infinity",
+		"mna:square",
+		"mna:split_triangle"
+	]
+}

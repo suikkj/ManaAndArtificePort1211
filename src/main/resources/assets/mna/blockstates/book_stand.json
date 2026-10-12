@@ -1,0 +1,43 @@
+{
+  "variants": {    
+    "facing=east,left=false,right=false,has_book=false": { "model": "mna:block/wizard_lab/book_stand_standalone", "y": 90 },    
+    "facing=east,left=true,right=false,has_book=false": { "model": "mna:block/wizard_lab/book_stand_connect_left", "y": 90 },
+    "facing=east,left=true,right=true,has_book=false": { "model": "mna:block/wizard_lab/book_stand_center", "y": 90 },
+    "facing=east,left=false,right=true,has_book=false": { "model": "mna:block/wizard_lab/book_stand_connect_right", "y": 90 },
+    
+    "facing=west,left=false,right=false,has_book=false": { "model": "mna:block/wizard_lab/book_stand_standalone", "y": 270 },    
+    "facing=west,left=true,right=false,has_book=false": { "model": "mna:block/wizard_lab/book_stand_connect_left", "y": 270 },
+    "facing=west,left=true,right=true,has_book=false": { "model": "mna:block/wizard_lab/book_stand_center", "y": 270 },
+    "facing=west,left=false,right=true,has_book=false": { "model": "mna:block/wizard_lab/book_stand_connect_right", "y": 270 },
+    
+    "facing=north,left=false,right=false,has_book=false": { "model": "mna:block/wizard_lab/book_stand_standalone" },    
+    "facing=north,left=true,right=false,has_book=false": { "model": "mna:block/wizard_lab/book_stand_connect_left" },
+    "facing=north,left=true,right=true,has_book=false": { "model": "mna:block/wizard_lab/book_stand_center" },
+    "facing=north,left=false,right=true,has_book=false": { "model": "mna:block/wizard_lab/book_stand_connect_right" },
+    
+    "facing=south,left=false,right=false,has_book=false": { "model": "mna:block/wizard_lab/book_stand_standalone", "y": 180 },    
+    "facing=south,left=true,right=false,has_book=false": { "model": "mna:block/wizard_lab/book_stand_connect_left", "y": 180 },
+    "facing=south,left=true,right=true,has_book=false": { "model": "mna:block/wizard_lab/book_stand_center", "y": 180 },
+    "facing=south,left=false,right=true,has_book=false": { "model": "mna:block/wizard_lab/book_stand_connect_right", "y": 180 },
+    
+    "facing=east,left=false,right=false,has_book=true": { "model": "mna:block/wizard_lab/book_stand_with_book_standalone", "y": 90 },    
+    "facing=east,left=true,right=false,has_book=true": { "model": "mna:block/wizard_lab/book_stand_with_book_connect_left", "y": 90 },
+    "facing=east,left=true,right=true,has_book=true": { "model": "mna:block/wizard_lab/book_stand_with_book_center", "y": 90 },
+    "facing=east,left=false,right=true,has_book=true": { "model": "mna:block/wizard_lab/book_stand_with_book_connect_right", "y": 90 },
+    
+    "facing=west,left=false,right=false,has_book=true": { "model": "mna:block/wizard_lab/book_stand_with_book_standalone", "y": 270 },    
+    "facing=west,left=true,right=false,has_book=true": { "model": "mna:block/wizard_lab/book_stand_with_book_connect_left", "y": 270 },
+    "facing=west,left=true,right=true,has_book=true": { "model": "mna:block/wizard_lab/book_stand_with_book_center", "y": 270 },
+    "facing=west,left=false,right=true,has_book=true": { "model": "mna:block/wizard_lab/book_stand_with_book_connect_right", "y": 270 },
+    
+    "facing=north,left=false,right=false,has_book=true": { "model": "mna:block/wizard_lab/book_stand_with_book_standalone" },    
+    "facing=north,left=true,right=false,has_book=true": { "model": "mna:block/wizard_lab/book_stand_with_book_connect_left" },
+    "facing=north,left=true,right=true,has_book=true": { "model": "mna:block/wizard_lab/book_stand_with_book_center" },
+    "facing=north,left=false,right=true,has_book=true": { "model": "mna:block/wizard_lab/book_stand_with_book_connect_right" },
+    
+    "facing=south,left=false,right=false,has_book=true": { "model": "mna:block/wizard_lab/book_stand_with_book_standalone", "y": 180 },    
+    "facing=south,left=true,right=false,has_book=true": { "model": "mna:block/wizard_lab/book_stand_with_book_connect_left", "y": 180 },
+    "facing=south,left=true,right=true,has_book=true": { "model": "mna:block/wizard_lab/book_stand_with_book_center", "y": 180 },
+    "facing=south,left=false,right=true,has_book=true": { "model": "mna:block/wizard_lab/book_stand_with_book_connect_right", "y": 180 }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "type": "mna:progression-condition",
+  "advancement": "mna:tier_2/have_set_bonus",
+  "tier": 2
+}

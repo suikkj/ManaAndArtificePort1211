@@ -1,0 +1,19 @@
+{
+	"type": "mna:component",
+	"output": "mna:strength",	
+	"tier": 4,
+	"items":
+	[
+		"minecraft:mushroom_stew",
+		"minecraft:rabbit_stew",
+		"mna:vinteum_dust",
+		"minecraft:beetroot_soup",
+		"minecraft:blaze_powder"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/triangle",
+		"mna:manaweave_patterns/diamond",
+		"mna:manaweave_patterns/triangle"				
+	]
+}

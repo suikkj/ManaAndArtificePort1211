@@ -1,0 +1,17 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:crit_immune",
+	"tier": 3,
+	"items": [
+		"mna:mundane_amulet",
+		"minecraft:diamond",		
+		"mna:rune_defense",
+		"minecraft:amethyst_shard",
+		"minecraft:amethyst_shard",
+		"minecraft:amethyst_shard"	
+	],
+	"patterns": [
+		"mna:bolt",
+		"mna:split_triangle"
+	]
+}

@@ -1,0 +1,8 @@
+{
+	"type": "mna:manaweave-cache-effect",
+	"tier": 1,
+	"effect": "mna:mana_regen",
+	"duration_min": 300,
+	"duration_max": 600,
+	"magnitude": 0
+}

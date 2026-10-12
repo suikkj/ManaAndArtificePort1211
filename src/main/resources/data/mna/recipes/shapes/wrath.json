@@ -1,0 +1,17 @@
+{
+	"type": "mna:shape",
+	"output": "mna:wrath",
+	"tier": 5,
+	"items":
+	[
+		"nether_star",
+		"mna:mote_ender",
+		"mna:mote_arcane"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/infinity",
+		"mna:manaweave_patterns/diamond",
+		"mna:manaweave_patterns/hourglass"		
+	]
+}

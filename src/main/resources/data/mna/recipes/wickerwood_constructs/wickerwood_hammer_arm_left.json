@@ -1,0 +1,25 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+  	" L ",
+  	" S ",
+  	"TW "
+  ],
+  "key": {
+ 	"W": {
+  		"item": "minecraft:wheat"
+  	},
+  	"S": {
+  		"item": "minecraft:stick"
+  	},
+  	"L": {
+  		"tag": "minecraft:logs"
+  	},
+  	"T": {
+  		"tag": "c:stone"
+  	}
+  },
+  "result": {
+    "item": "mna:constructs/construct_hammer_arm_left_wickerwood"    
+  }
+}

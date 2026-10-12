@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "mna:block/pilgrims_path_slab"
+    },
+    "type=double": {
+      "model": "mna:block/pilgrims_path"
+    },
+    "type=top": {
+      "model": "mna:block/pilgrims_path_slab_top"
+    }
+  }
+}

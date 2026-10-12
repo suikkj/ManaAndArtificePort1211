@@ -1,0 +1,15 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:warding_candle",
+	"tier": 2,
+	"items": [
+		"minecraft:honeycomb",
+		"minecraft:honeycomb",
+		"minecraft:string",
+		"minecraft:wooden_slabs",		
+		"mna:ritual_focus_lesser"
+	],
+	"patterns": [
+		"mna:circle"
+	]
+}

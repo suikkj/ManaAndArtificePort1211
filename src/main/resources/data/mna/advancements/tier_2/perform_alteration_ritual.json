@@ -1,0 +1,27 @@
+{
+	"parent": "mna:tier_1/advance_tier_2",
+	"display": {
+		"icon": {
+			"item": "mna:modifier_book"
+		},
+		"title": {
+			"translate": "mna:tier_2/perform_alteration_ritual.title"
+		},
+		"description": {
+			"translate": "mna:tier_2/perform_alteration_ritual.description"
+		},
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": false,
+		"hidden": false
+	},
+	"criteria": {
+		"perform_alteration": {
+			"trigger": "mna:perform_ritual",
+			"conditions": {
+				"ritualID": "mna:rituals/alteration"
+			}
+		}
+	},
+	"requirements": []
+}

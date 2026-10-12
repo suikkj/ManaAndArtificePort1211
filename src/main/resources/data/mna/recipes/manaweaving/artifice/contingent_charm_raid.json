@@ -1,0 +1,13 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:raid_charm_minor",
+	"tier": 2,
+	"items": [
+		"mna:charm_pattern",
+		"mna:faction_marks"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:circle"
+	]
+}

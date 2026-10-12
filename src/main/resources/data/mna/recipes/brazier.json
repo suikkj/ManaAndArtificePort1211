@@ -1,0 +1,22 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+  	" V ",
+  	"QCQ",
+  	"Q Q"
+  ],
+  "key": {
+  	"V": {
+  		"item": "mna:vinteum_dust"
+  	},
+  	"C": {
+  		"item": "minecraft:coal"
+  	},
+  	"Q": {
+  		"tag": "c:gems/quartz"
+  	}
+  },
+  "result": {
+    "item": "mna:brazier"    
+  }
+}

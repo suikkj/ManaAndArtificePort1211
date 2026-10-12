@@ -1,0 +1,21 @@
+{
+	"replace": false,
+	"values": [
+		"cauldron",
+		"iron_ingot",
+		"brick",
+		"chipped_anvil",
+		"damaged_anvil",
+		"diamond",
+		"gold_ingot",
+		"amethyst_shard",
+		"quartz",
+		"glass",
+		"netherite_ingot",
+		"iron_horse_armor",
+		"blaze_rod",
+		"wooden_sword",
+		"stone_sword",
+		"netherite_scrap"	
+	]
+}

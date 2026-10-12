@@ -1,0 +1,14 @@
+{
+	"type": "mna:component",
+	"tier": 1,
+	"output": "mna:fire_damage",
+	"items":
+	[
+		"mna:stone_rune_orange",
+		"minecraft:flint_and_steel"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/triangle"
+	]
+}

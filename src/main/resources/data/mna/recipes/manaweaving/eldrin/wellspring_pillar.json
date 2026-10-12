@@ -1,0 +1,22 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:wellspring_pillar",
+	"tier": 4,
+	"items": [
+		"mna:decoration/arcane_sandstone",
+		"mna:rune_ritual_metal",
+		"mna:rune_ritual_metal",
+		"mna:rune_ritual_metal",
+		"mna:rune_ritual_metal",
+		"mna:decoration/arcane_sandstone_wall",
+		"mna:decoration/arcane_sandstone_wall",
+		"minecraft:hopper",
+		"mna:eldrin_rift"
+	],
+	"patterns": [
+		"mna:slash",
+		"mna:split_triangle",
+		"mna:inverted_triangle",
+		"mna:backslash"
+	]
+}

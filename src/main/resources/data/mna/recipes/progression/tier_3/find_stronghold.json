@@ -1,0 +1,6 @@
+{
+  "type": "mna:progression-condition",
+  "advancement": "minecraft:story/follow_ender_eye",
+  "description": "advancements.story.follow_ender_eye.description",
+  "tier": 3
+}

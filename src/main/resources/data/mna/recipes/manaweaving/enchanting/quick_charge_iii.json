@@ -1,0 +1,21 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 5,
+	"output": "mna:rune_air",
+	"enchant": "minecraft:quick_charge",
+	"magnitude": 3,
+	"items": [
+		"mna:rune_air",
+		"minecraft:clock",
+		"minecraft:crossbow",
+		"mna:vinteum_dust",
+		"mna:vinteum_dust",
+		"mna:mote_air"
+	],
+	"patterns": [
+		"mna:manaweave_patterns/inverted_triangle",
+		"mna:manaweave_patterns/inverted_triangle",
+		"mna:manaweave_patterns/inverted_triangle",
+		"mna:manaweave_patterns/hourglass"
+	]
+}

@@ -1,0 +1,21 @@
+﻿{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:constructs/construct_mana_cannon_left_stone",
+	"tier": 2,
+	"items": [
+		"mna:constructs/rune_rod",
+		"mna:constructs/rune_rod",
+		"mna:constructs/rune_claw",
+		"c:stone",
+		"c:stone",
+		"c:stone",
+		"mna:vinteum_dust",
+		"mna:vinteum_dust",
+		"mna:ritual_focus_minor"
+	],
+	"patterns": [
+		"mna:diamond",
+		"mna:inverted_triangle"
+	]
+}
+

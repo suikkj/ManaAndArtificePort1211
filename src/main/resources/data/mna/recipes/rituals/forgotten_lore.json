@@ -1,0 +1,74 @@
+{
+	"type": "mna:ritual",
+	"tier": 2,
+	"pattern":
+	[
+		[ 0, 1, 1, 0, 1, 1, 0 ],
+		[ 1, 1, 0, 1, 0, 1, 1 ],
+		[ 1, 0, 1, 0, 1, 0, 1 ],
+		[ 0, 1, 0, 1, 0, 1, 0 ],
+		[ 1, 0, 1, 0, 1, 0, 1 ],
+		[ 1, 1, 0, 1, 0, 1, 1 ],
+		[ 0, 1, 1, 0, 1, 1, 0 ]
+	],
+	"displayPattern":
+	[
+		[ 0, 2, 3, 0, 4, 5, 0 ],
+		[20, 1, 0,22, 0, 6, 7 ],
+		[19, 0,29, 0,23, 0, 8 ],
+		[ 0,28, 0,-1, 0,24, 0 ],
+		[18, 0,27, 0,25, 0, 9 ],
+		[17,16, 0,26, 0,11,10 ],
+		[ 0,15,14, 0,13,12, 0 ]
+	],
+	"reagents":
+	[
+		"  S B  ",
+		"   Q   ",
+		"       ",
+		"   V   ",
+		"       ",
+		"   Q   ",
+		"  B S  "
+	],
+	"keys":
+	{
+		"V": 
+		{ 
+			"item": "mna:vellum",
+			"optional": false,
+			"consume": true
+		},
+		"Q": 
+		{ 
+			"item": "ink_sac",
+			"optional": false,
+			"consume": true
+		},
+		"S": 
+		{ 
+			"item": "feather",
+			"optional": false,
+			"consume": true
+		},
+		"B": 
+		{ 
+			"item": "book",
+			"optional": false,
+			"consume": true
+		}
+	},
+	"manaweave":
+	[
+		"mna:manaweave_patterns/square",
+		"mna:manaweave_patterns/circle",
+		"mna:manaweave_patterns/inverted_triangle"
+	],
+	"parameters":
+	{
+		"innerColor": "0xFFCC00",
+		"outerColor": "0xFF8A00",
+		"displayIndexes": false
+	},
+	"createsItem":	"mna:mote_arcane"
+}

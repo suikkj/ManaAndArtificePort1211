@@ -1,0 +1,21 @@
+{
+	"type": "mna:component",
+	"tier": 3,
+	"output": "mna:blood_tendrils",
+	"items":
+	[
+		"mna:stone_rune_red",
+		"minecraft:rotten_flesh",
+		"minecraft:porkchop",
+		"minecraft:beef",
+		"minecraft:chicken",
+		"minecraft:rabbit",
+		"mna:animus_dust"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/slash",
+		"mna:manaweave_patterns/bolt",
+		"mna:manaweave_patterns/backslash"
+	]
+}

@@ -1,0 +1,16 @@
+﻿{
+	"type": "mna:manaweaving-recipe",
+	"tier": 4,
+	"output": "mna:wellspring_sight_unguent",
+	"items": [
+		"mna:arcanist_ink",
+		"c:slimeballs",
+		"mna:vinteum_dust"
+	],
+	"patterns": [
+		"mna:circle",
+		"mna:slash",
+		"mna:backslash"
+	]
+}
+

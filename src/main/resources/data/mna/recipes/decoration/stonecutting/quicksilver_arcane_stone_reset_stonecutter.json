@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "tag": "mna:stonecutter_resettable_quicksilver_arcane_stones"
+  },
+  "result": "mna:decoration/quicksilver_arcane_stone",
+  "count": 1
+}

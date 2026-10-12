@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+  	"SP ",
+  	"SCS",
+  	"AAA"
+  ],
+  "key": {
+  	"A": {
+  		"item": "mna:decoration/arcane_stone"
+  	},
+  	"C": {
+  		"item": "mna:chimerite_gem"
+  	},
+  	"P": {
+  		"item": "mna:lodestar_copier"
+  	},
+  	"S": {
+  		"item": "mna:transmuted_silver"
+  	}
+  },
+  "result": {
+    "item": "mna:lodestar"    
+  }
+}

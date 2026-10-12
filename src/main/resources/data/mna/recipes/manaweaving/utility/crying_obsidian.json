@@ -1,0 +1,20 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "minecraft:crying_obsidian",
+	"quantity": 8,
+	"tier": 2,
+	"items": [
+		"minecraft:obsidian",
+		"minecraft:obsidian",
+		"minecraft:obsidian",
+		"minecraft:obsidian",
+		"minecraft:obsidian",
+		"minecraft:obsidian",
+		"minecraft:obsidian",
+		"minecraft:obsidian",
+		"minecraft:ghast_tear"
+	],
+	"patterns": [
+		"mna:diamond"		
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"replace": false,
+	"values": [
+		"mna:mundane_ring",
+		"mna:fortune_ring_minor",
+		"mna:fortune_ring",
+		"mna:fortune_ring_greater",
+		"mna:silk_touch_ring",
+		"mna:blink_precision_ring",
+		"mna:air_cast_ring",
+		"mna:break_ring_lesser",
+		"mna:break_ring_greater",
+		"mna:collector_ring_lesser",
+		"mna:collector_ring_greater",
+		"mna:bone_ring"
+	]
+}

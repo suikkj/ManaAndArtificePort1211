@@ -1,0 +1,32 @@
+{
+	"type": "minecraft:jigsaw",
+	"step": "surface_structures",
+	"biomes": "#minecraft:is_nether",
+	"start_pool": "mna:demon_fortress/start_pool",
+	"size": 1,	
+	"terrain_adaptation": "beard_thin",
+	"start_height": {
+    	"absolute": 33
+  	},
+  	"max_distance_from_center": 80,
+	"use_expansion_hack": false,
+	"spawn_overrides": {
+		"monster": {
+			"bounding_box": "full",
+			"spawns": [
+				{
+					"type": "mna:lantern_wraith",
+					"weight": 1,
+					"minCount": 1,
+					"maxCount": 3
+				},
+				{
+					"type": "mna:demon_imp",
+					"weight": 1,
+					"minCount": 1,
+					"maxCount": 3
+				}
+			]
+		}
+	}
+}

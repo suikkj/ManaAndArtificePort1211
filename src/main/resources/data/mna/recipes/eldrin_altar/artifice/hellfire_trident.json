@@ -1,0 +1,27 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:hellfire_trident",
+	"tier": 4,
+	"requiredFaction": "mna:demons",
+	"items": [
+		"minecraft:trident",
+		"mna:greater_mote_fire",
+		"mna:mote_air",
+		"mna:mote_air",
+		"minecraft:blackstone",
+		"minecraft:blackstone",
+		"minecraft:blackstone",
+		"mna:living_flame",
+		"mna:living_flame"
+	],
+	"power_requirements": [
+		{
+			"affinity": "FIRE",
+			"amount": 2000
+		},
+		{
+			"affinity": "WIND",
+			"amount": 2000
+		}
+	]
+}

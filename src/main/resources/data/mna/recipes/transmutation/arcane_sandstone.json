@@ -1,0 +1,5 @@
+{
+  "type": "mna:transmutation",
+  "targetBlock": "minecraft:sandstone",
+  "replaceBlock": "mna:decoration/arcane_sandstone"  
+}

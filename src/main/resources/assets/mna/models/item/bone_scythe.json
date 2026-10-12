@@ -1,0 +1,43 @@
+{
+	"parent": "forge:item/default",
+  	"loader": "forge:composite",
+  	"children": {
+    	"crystal": {
+      		"loader": "forge:obj",
+      		"automatic_culling": true,
+	  		"shade_quads": true,
+	  		"flip_v": true,
+	  		"emissive_ambient": false,
+      		"model": "mna:models/item/obj/bone_scythe/scythe.obj"
+    	}
+  	},
+	"display": {
+		"thirdperson_righthand": {
+			"scale": [ 1, 1, 1],
+			"translation": [-1, -10, 0]
+		},
+		"thirdperson_lefthand": {
+			"scale": [ 1, 1, 1],
+			"translation": [1, -10, 0]
+		},		
+		"firstperson_righthand": {
+			"translation": [2, -8, 0]
+		},
+		"firstperson_lefthand": {
+			"translation": [2, -8, 0]
+		},
+		"ground": {
+			"scale": [0.6, 0.6, 0.6],
+			"translation": [0, 2, 0]
+		},
+		"gui": {
+			"rotation": [45, 90, 0],
+			"scale": [0.6, 0.6, 0.6],
+			"translation": [3, -4, 0]
+		},
+		"fixed": {
+			"rotation": [0, 0, 41],
+			"scale": [0.6, 0.6, 0.6]
+		}
+	}
+}

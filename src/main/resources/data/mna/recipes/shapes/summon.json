@@ -1,0 +1,19 @@
+{
+	"type": "mna:shape",
+	"tier": 3,
+	"output": "mna:summon",
+	"items":
+	[
+		"minecraft:wither_skeleton_skull",
+		"mna:arcanist_ink",
+		"minecraft:lily_of_the_valley",
+		"minecraft:name_tag",
+		"minecraft:lead",
+		"minecraft:phantom_membrane"
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/split_triangle",
+		"mna:manaweave_patterns/square"
+	]
+}

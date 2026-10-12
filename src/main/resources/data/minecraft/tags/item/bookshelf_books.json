@@ -1,0 +1,17 @@
+{
+	"replace": false,
+	"values": [
+		"mna:guide_book",
+		"mna:grimoire",
+		"mna:grimoire_council",
+		"mna:grimoire_fey",
+		"mna:grimoire_undead",
+		"mna:grimoire_demon",
+		"mna:book_marks",
+		"mna:spell_book",
+		"mna:recipe_copy_book",
+		"mna:flat_lands_book",
+		"mna:modifier_book",					
+		"mna:book_of_rote"		
+	]
+}

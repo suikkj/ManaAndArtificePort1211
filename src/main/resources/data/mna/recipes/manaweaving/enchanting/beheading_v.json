@@ -1,0 +1,21 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 5,
+	"output": "mna:rune_ender",
+	"enchant": "mna:beheading",
+	"magnitude": 5,
+	"items": [
+		"mna:rune_ender",
+		"minecraft:grindstone",
+		"mna:stone_rune_red",
+		"minecraft:netherite_sword",
+		"mna:mote_ender",
+		"minecraft:nether_star",
+		"minecraft:end_rod",
+		"minecraft:chorus_flower"
+	],
+	"patterns": [
+		"mna:square",
+		"mna:triangle"
+	]
+}

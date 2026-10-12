@@ -1,0 +1,31 @@
+{
+	"parent": "mna:tier_0/codex_trade",
+	"display": {
+		"icon": {
+			"item": "mna:fall_charm"
+		},
+		"title": {
+			"translate": "mna:tier_1/use_bonefeather.title"
+		},
+		"description": {
+			"translate": "mna:tier_1/use_bonefeather.description"
+		},
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": false,
+		"hidden": false
+	},
+	"criteria": {
+		"use_reedfeather": {
+			"trigger": "mna:use_charm",
+			"conditions": {
+			"item": {
+		          "items": [
+		            "mna:fall_charm"
+		          ]
+		       }	
+			}
+		}
+	},
+	"requirements": []
+}

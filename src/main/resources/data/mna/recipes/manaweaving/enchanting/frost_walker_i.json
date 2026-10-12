@@ -1,0 +1,17 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 3,
+	"output": "mna:rune_water",
+	"enchant": "minecraft:frost_walker",
+	"magnitude": 1,
+	"items": [
+		"mna:rune_water",
+		"minecraft:snow_block",		
+		"minecraft:leather_boots"
+	],
+	"patterns": [
+		"mna:square",
+		"mna:circle",
+		"mna:square"
+	]
+}

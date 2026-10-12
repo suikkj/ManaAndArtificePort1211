@@ -1,0 +1,24 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 5,
+	"output": "mna:rune_fire",
+	"enchant": "minecraft:smite",
+	"magnitude": 5,
+	"items": [
+		"mna:rune_fire",
+		"minecraft:wither_skeleton_skull",
+		"minecraft:soul_sand",
+		"mna:stone_rune_light_blue",
+		"mna:stone_rune_white",
+		"mna:superheated_vinteum_ingot",
+		"minecraft:blaze_powder",
+		"minecraft:blaze_powder",
+		"mna:mote_fire"
+	],
+	"patterns": [
+		"mna:manaweave_patterns/circle",
+		"mna:manaweave_patterns/diamond",
+		"mna:manaweave_patterns/triangle",
+		"mna:manaweave_patterns/square"
+	]
+}

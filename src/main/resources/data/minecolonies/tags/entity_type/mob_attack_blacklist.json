@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "mna:witch_hunter",
+    "mna:spell_breaker",
+    "mna:living_ward",
+    
+    "mna:mushroom_soldier",
+    "mna:barkling",
+    "mna:pixie",
+    
+    "mna:demon_imp",
+    "mna:lantern_wraith",
+    
+    "mna:hulking_zombie",
+    "mna:skeleton_assassin",
+    "mna:chatterer"
+  ]
+}

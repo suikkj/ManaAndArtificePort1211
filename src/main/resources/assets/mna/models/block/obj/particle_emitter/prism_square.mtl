@@ -1,0 +1,5 @@
+# Blender MTL File: 'prisms.blend'
+# Material Count: 1
+
+newmtl MAIN
+map_Kd mna:block/artifice/prism

@@ -1,0 +1,53 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.fume_filter_bellows.bellow": {
+			"loop": true,
+			"animation_length": 2.88,
+			"bones": {
+				"bellows_top": {
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"1.12": {
+							"vector": [0, 3, 0],
+							"easing": "linear"
+						},
+						"2.16": {
+							"vector": [0, -2, 0],
+							"easing": "easeInOutCirc"
+						},
+						"2.88": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"bellows": {
+					"scale": {
+						"0.0": {
+							"vector": [1, 1, 1]
+						},
+						"1.12": {
+							"vector": [1, 1.7, 1],
+							"easing": "linear"
+						},
+						"2.16": {
+							"vector": [1, 0.6, 1],
+							"easing": "easeInOutCirc"
+						},
+						"2.88": {
+							"vector": [1, 1, 1]
+						}
+					}
+				}
+			},
+			"sound_effects": {
+				"1.64": {
+					"effect": "bellow"
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

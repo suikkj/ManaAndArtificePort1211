@@ -1,0 +1,15 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 2,
+	"output": "mna:magic_broom",		
+	"items": [
+		"minecraft:stick",
+		"minecraft:hay_block",
+		"mna:vinteum_dust",
+		"mna:vinteum_dust"
+	],
+	"patterns": [
+		"mna:circle",
+		"mna:knot"
+	]
+}

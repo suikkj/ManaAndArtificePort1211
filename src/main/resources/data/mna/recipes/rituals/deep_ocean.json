@@ -1,0 +1,70 @@
+﻿{
+	"type": "mna:ritual",
+	"tier": 2,
+	"pattern":
+	[
+		[ 0, 0, 0, 1, 0, 0, 0 ],
+		[ 0, 0, 1, 1, 1, 0, 0 ],
+		[ 0, 0, 1, 1, 1, 1, 0 ],
+		[ 0, 1, 1, 1, 0, 1, 0 ],
+		[ 1, 1, 1, 0, 0, 0, 0 ],
+		[ 1, 1, 1, 1, 1, 1, 0 ],
+		[ 1, 1, 1, 1, 1, 1, 1 ]
+	],
+	"displayPattern":
+	[
+		[ 0, 0, 0,13, 0, 0, 0 ],
+		[ 0, 0,12,-1,14, 0, 0 ],
+		[ 0, 0,11,-1,-1,15, 0 ],
+		[ 0,10,-1,-1, 0,16, 0 ],
+		[ 9,-1,-1, 0, 0, 0, 0 ],
+		[ 8,-1,-1,-1,-1,-1, 0 ],
+		[ 7, 6, 5, 4, 3, 2, 1 ]
+	],
+	"reagents":
+	[
+		"       ",
+		"   F   ",
+		"  F F  ",
+		" F   F ",
+		"  F    ",
+		" S S S ",
+		"CC C CC"
+	],
+	"keys":
+	{
+		"C": 
+		{ 
+			"item": "c:sand",
+			"optional": false,
+			"consume": true
+		},
+		"S": 
+		{ 
+			"item": "seagrass",
+			"optional": false,
+			"consume": true
+		},
+		"F": 
+		{ 
+			"item": "minecraft:fishes",
+			"optional": false,
+			"consume": true
+		}		
+	},
+	"manaweave":
+	[
+		"mna:manaweave_patterns/triangle",
+		"mna:manaweave_patterns/inverted_triangle",
+		"mna:manaweave_patterns/inverted_triangle"		
+	],
+	"parameters":
+	{
+		"innerColor": "0x0D3D63",
+		"outerColor": "0x66B9F9",
+		"displayIndexes": false,
+		"connectBeam": false,
+		"beamColor": "0x020470"
+	},
+	"createsItem":	"mna:mote_water"
+}

@@ -1,0 +1,27 @@
+{
+	"parent": "mna:tier_0/codex_trade",
+	"display": {
+		"icon": {
+			"item": "mna:spell"
+		},
+		"title": {
+			"translate": "mna:tier_1/advance_tier_2.title"
+		},
+		"description": {
+			"translate": "mna:tier_1/advance_tier_2.description"
+		},
+		"frame": "challenge",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": false
+	},
+	"criteria": {
+		"tier": {
+			"trigger": "mna:tier",
+			"conditions": {
+				"tier": 2	
+			}
+		}
+	},
+	"requirements": []
+}

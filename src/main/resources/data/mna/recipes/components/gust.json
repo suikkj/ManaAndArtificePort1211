@@ -1,0 +1,17 @@
+﻿{
+	"type": "mna:component",
+	"output": "mna:gust",
+	"tier": 1,
+	"items":
+	[
+		"mna:stone_rune_white",	
+		"c:seeds",
+		"minecraft:feather",
+		"minecraft:dandelion",
+		"minecraft:poppy"		
+	],
+	"patterns":
+	[
+		"mna:manaweave_patterns/triangle"
+	]
+}

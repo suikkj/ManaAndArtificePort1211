@@ -1,0 +1,100 @@
+{
+	"type": "mna:ritual",
+	"tier": 3,
+	"pattern":
+	[
+		[ 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+		[ 1, 1, 1, 1, 0, 0, 1, 1, 1 ],
+		[ 1, 1, 1, 1, 0, 1, 0, 1, 1 ],
+		[ 1, 0, 1, 0, 0, 0, 1, 0, 1 ],
+		[ 0, 1, 0, 1, 1, 1, 0, 1, 0 ],
+		[ 1, 0, 1, 0, 0, 0, 1, 0, 0 ],
+		[ 0, 1, 0, 1, 0, 1, 1, 1, 1 ],
+		[ 1, 0, 1, 0, 0, 1, 1, 1, 1 ],
+		[ 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+	],
+	"displayPattern":
+	[
+		[38, 0, 0, 0, 0, 0, 0, 0, 0 ],
+		[ 1,-1, 8,-1, 0, 0,17,16,40 ],
+		[-1, 1,-1, 9, 0,18, 0,20,24 ],
+		[ 2, 0,10, 0, 0, 0,21, 0,25 ],
+		[ 0, 3, 0,11,39,22, 0,26, 0 ],
+		[ 4, 0,12, 0, 0, 0,27, 0, 0 ],
+		[ 0, 5, 0,13, 0,29,31,33,35 ],
+		[ 6, 0,14, 0, 0,30,32,34,36 ],
+		[ 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+	],
+	"reagents":
+	[
+		"         ",
+		"IDDD  YYF",
+		"DDDD Y YY",
+		"S S   Y Y",
+		" S STY Y ",
+		"S S   Y  ",
+		" S S GGGG",
+		"S S  GGGG",
+		"         "
+	],
+	"keys":
+	{
+		"I":
+		{
+			"item": "mna:mote_water",
+			"optional": false,
+			"consume": true
+		},
+		"D":
+		{
+			"item": "minecraft:gray_dye",
+			"optional": false,
+			"consume": true
+		},
+		"S": 
+		{ 
+			"item": "minecraft:snowball",
+			"optional": false,
+			"consume": true
+		},
+		"F":
+		{
+			"item": "mna:mote_fire",
+			"optional": false,
+			"consume": true
+		},		
+		"Y":
+		{
+			"item": "minecraft:yellow_dye",
+			"optional": false,
+			"consume": true			
+		},
+		"G":
+		{
+			"item": "minecraft:grass",
+			"optional": false,
+			"consume": true			
+		},
+		"T":
+		{
+			"item": "mna:ritual/fey_flowers",
+			"optional": false,
+			"consume": true			
+		}
+		
+	},
+	"manaweave":
+	[
+		"mna:manaweave_patterns/split_triangle",
+		"mna:manaweave_patterns/slash",
+		"mna:manaweave_patterns/circle"
+	],
+	"parameters":
+	{
+		"innerColor": "0x34D8EB",
+		"outerColor": "0xD67220",
+		"displayIndexes": false,
+		"kittable": true,
+		"beamColor": "0x858585"
+	}
+}

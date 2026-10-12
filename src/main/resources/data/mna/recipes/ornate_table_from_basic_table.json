@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [  
+    "CCC",	
+  	" T "
+  ],
+  "key": {
+  	"T": {
+  		"item": "mna:basic_table"
+  	},
+  	"C": {
+  		"tag": "minecraft:wool_carpets"
+  	}
+  },
+  "result": {
+    "item": "mna:ornate_table"    
+  }
+}

@@ -1,0 +1,6 @@
+﻿{
+	"type": "c:add_features",
+	"biomes": "#mna:spawns_tarma_root",
+	"features": "mna:tarma_root",
+	"step": "vegetal_decoration"
+}

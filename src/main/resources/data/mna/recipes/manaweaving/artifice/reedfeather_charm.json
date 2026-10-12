@@ -1,0 +1,18 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"output": "mna:drown_charm",
+	"tier": 1,
+	"items": [
+		"minecraft:sugar_cane",
+		"minecraft:feather",
+		"minecraft:feather",
+		"minecraft:string",
+		"minecraft:black_dye",		
+		"mna:vinteum_dust"
+	],
+	"patterns": [
+		"mna:circle",
+		"mna:triangle",
+		"mna:circle"
+	]
+}

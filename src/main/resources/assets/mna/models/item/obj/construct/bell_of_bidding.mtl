@@ -1,0 +1,5 @@
+# Blender MTL File: 'bell_of_bidding.blend'
+# Material Count: 1
+
+newmtl MAIN
+map_Kd mna:item/constructs/bell_of_bidding

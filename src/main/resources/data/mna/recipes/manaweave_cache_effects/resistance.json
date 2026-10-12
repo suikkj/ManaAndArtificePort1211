@@ -1,0 +1,8 @@
+{
+	"type": "mna:manaweave-cache-effect",
+	"tier": 2,
+	"effect": "minecraft:resistance",
+	"duration_min": 300,
+	"duration_max": 600,
+	"magnitude": 0
+}

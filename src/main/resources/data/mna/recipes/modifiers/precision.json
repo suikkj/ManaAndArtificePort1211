@@ -1,0 +1,13 @@
+{
+	"type": "mna:modifier",
+	"output": "mna:precision",
+	"tier": 3,
+	"items":
+	[
+		"target",
+		"arrow",
+		"mna:redstone_trigger",
+		"mna:rune_marking"
+	],
+	"patterns":[]
+}

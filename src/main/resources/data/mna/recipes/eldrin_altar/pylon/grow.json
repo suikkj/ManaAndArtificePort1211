@@ -1,0 +1,26 @@
+{
+	"type": "mna:eldrin-altar",
+	"output": "mna:pylon/grow",
+	"tier": 4,
+	"items": [
+		"mna:rune_aura",
+		"mna:rune_ender",
+		"mna:rune_ender",
+		"mna:rune_ritual_metal",
+		"mna:rune_ritual_metal",
+		"mna:rune_ritual_metal",
+		"mna:pylon/inert",
+		"mna:living_flame",
+		"minecraft:pufferfish"
+	],
+	"power_requirements": [
+		{
+			"affinity": "ENDER",
+			"amount": 1750
+		}
+	],
+	"colors": [		
+		15096587,
+		14919300
+	]
+}
