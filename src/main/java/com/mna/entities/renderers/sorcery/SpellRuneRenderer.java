@@ -65,10 +65,10 @@ extends EntityRenderer<SpellSigil> {
         Matrix3f normalMatrix = matrixstack$entry.normal();
         float nrmV = 1.0f;
         float nrmH = 1.0f;
-        SpellRuneRenderer.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLightIn, 0.0f, 0.0f, 0.0f, 1.0f, nrmH, nrmV, alpha);
-        SpellRuneRenderer.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLightIn, 1.0f, 0.0f, 1.0f, 1.0f, nrmH, nrmV, alpha);
-        SpellRuneRenderer.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLightIn, 1.0f, 1.0f, 1.0f, 0.0f, nrmH, nrmV, alpha);
-        SpellRuneRenderer.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLightIn, 0.0f, 1.0f, 0.0f, 0.0f, nrmH, nrmV, alpha);
+        SpellRuneRenderer.addVertex(vertexBuilder, matrixstack$entry, packedLightIn, 0.0f, 0.0f, 0.0f, 1.0f, nrmH, nrmV, alpha);
+        SpellRuneRenderer.addVertex(vertexBuilder, matrixstack$entry, packedLightIn, 1.0f, 0.0f, 1.0f, 1.0f, nrmH, nrmV, alpha);
+        SpellRuneRenderer.addVertex(vertexBuilder, matrixstack$entry, packedLightIn, 1.0f, 1.0f, 1.0f, 0.0f, nrmH, nrmV, alpha);
+        SpellRuneRenderer.addVertex(vertexBuilder, matrixstack$entry, packedLightIn, 0.0f, 1.0f, 0.0f, 0.0f, nrmH, nrmV, alpha);
         matrixStackIn.popPose();
         if (entityIn.isPermanent()) {
             String text = String.format("%d", entityIn.getCharges());
@@ -89,8 +89,8 @@ extends EntityRenderer<SpellSigil> {
         }
     }
 
-    private static void addVertex(VertexConsumer vertexBuilder_, Matrix4f renderMatrix, Matrix3f normalMatrix, int packedLight, float x, float y, float u, float v, float nrmH, float nrmV, float alpha) {
-        vertexBuilder_.addVertex(renderMatrix, x - 0.5f, y - 0.25f, 0.0f).setColor(255, 255, 255, (int)alpha).setUv(u, v).setOverlay(OverlayTexture.NO_OVERLAY).setLight(packedLight).setNormal(normalMatrix, nrmH, nrmV, nrmH);
+    private static void addVertex(VertexConsumer vertexBuilder_, com.mojang.blaze3d.vertex.PoseStack.Pose pose, int packedLight, float x, float y, float u, float v, float nrmH, float nrmV, float alpha) {
+        vertexBuilder_.addVertex(pose, x - 0.5f, y - 0.25f, 0.0f).setColor(255, 255, 255, (int)alpha).setUv(u, v).setOverlay(OverlayTexture.NO_OVERLAY).setLight(packedLight).setNormal(pose, nrmH, nrmV, nrmH);
     }
 
     public ResourceLocation getTextureLocation(SpellSigil entity) {

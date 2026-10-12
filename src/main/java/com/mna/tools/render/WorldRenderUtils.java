@@ -71,7 +71,7 @@ implements IWorldRenderUtils {
             pose.mulPose(Axis.ZP.rotationDegrees(random.nextFloat() * 360.0f + 90.0f * rotationByAge / 5.0f));
             float hOffset = random.nextFloat() * 0.25f;
             float vOffset = random.nextFloat() * 0.25f;
-            Matrix4f matrix4f = pose.last().pose();
+            com.mojang.blaze3d.vertex.PoseStack.Pose matrix4f = pose.last();
             WorldRenderUtils.vertex01(vertexconsumer2, matrix4f, innerColor, alpha);
             WorldRenderUtils.vertex2(vertexconsumer2, matrix4f, hOffset, vOffset, outerColor);
             WorldRenderUtils.vertex3(vertexconsumer2, matrix4f, hOffset, 0.0f, innerColor);
@@ -100,7 +100,7 @@ implements IWorldRenderUtils {
             pose.mulPose(Axis.ZP.rotationDegrees(random.nextFloat() * 360.0f + 90.0f * rotationByAge));
             float hOffset = i % 3 == 0 ? random.nextFloat() * 0.55f : random.nextFloat() * 0.25f;
             float vOffset = random.nextFloat() * 0.25f;
-            Matrix4f matrix4f = pose.last().pose();
+            com.mojang.blaze3d.vertex.PoseStack.Pose matrix4f = pose.last();
             WorldRenderUtils.vertex01(vertexconsumer2, matrix4f, innerColor, alpha);
             WorldRenderUtils.vertex2(vertexconsumer2, matrix4f, hOffset, vOffset, outerColor);
             WorldRenderUtils.vertex3(vertexconsumer2, matrix4f, hOffset, vOffset, innerColor);
@@ -131,7 +131,7 @@ implements IWorldRenderUtils {
             pose.mulPose(Axis.YP.rotationDegrees(random.nextFloat() * 360.0f + 90.0f * rotationByAge));
             float hOffset = random.nextFloat() * 0.25f;
             float vOffset = random.nextFloat() * 0.25f;
-            Matrix4f currentMatrix = pose.last().pose();
+            com.mojang.blaze3d.vertex.PoseStack.Pose currentMatrix = pose.last();
             WorldRenderUtils.vertex01(lightingBuilder, currentMatrix, innerColor, alpha);
             WorldRenderUtils.vertex2(lightingBuilder, currentMatrix, hOffset, vOffset, outerColor);
             WorldRenderUtils.vertex3(lightingBuilder, currentMatrix, hOffset, vOffset, innerColor);
@@ -154,7 +154,7 @@ implements IWorldRenderUtils {
         pose.mulPose(Axis.ZP.rotationDegrees(angle));
         float hOffset = random.nextFloat() * 0.25f;
         float vOffset = random.nextFloat() * 0.25f;
-        Matrix4f matrix4f = pose.last().pose();
+        com.mojang.blaze3d.vertex.PoseStack.Pose matrix4f = pose.last();
         WorldRenderUtils.vertex1(vertexconsumer2, matrix4f, innerColor, alpha);
         WorldRenderUtils.vertex2(vertexconsumer2, matrix4f, hOffset, vOffset, outerColor);
         WorldRenderUtils.vertex3(vertexconsumer2, matrix4f, hOffset, 0.0f, innerColor);
@@ -169,7 +169,7 @@ implements IWorldRenderUtils {
         pose.scale(scale, scale, scale);
         pose.mulPose(Axis.ZP.rotationDegrees(angle));
         float vOffset = random.nextFloat() * 0.25f;
-        Matrix4f matrix4f = pose.last().pose();
+        com.mojang.blaze3d.vertex.PoseStack.Pose matrix4f = pose.last();
         vertexconsumer2.addVertex(matrix4f, -width * flareScale, 0.0f, 0.0f).setColor(innerColor[0], innerColor[1], innerColor[2], alpha);
         vertexconsumer2.addVertex(matrix4f, -width, vOffset, 0.0f).setColor(outerColor[0], outerColor[1], outerColor[2], 0);
         vertexconsumer2.addVertex(matrix4f, width, vOffset, 0.0f).setColor(outerColor[0], outerColor[1], outerColor[2], 0);
@@ -217,14 +217,14 @@ implements IWorldRenderUtils {
         PoseStack.Pose normalMatrix = activeStack;
         float uMin = 0.05f;
         float uMax = 0.95f;
-        WorldRenderUtils.createVertex(vertexBuilder, renderMatrix, normalMatrix, x1Start, beamLength, y1Start, red, green, blue, alpha, uMax, f30);
-        WorldRenderUtils.createVertex(vertexBuilder, renderMatrix, normalMatrix, x1Start, 0.0f, y1Start, red, green, blue, alpha, uMax, vSlide);
-        WorldRenderUtils.createVertex(vertexBuilder, renderMatrix, normalMatrix, x1End, 0.0f, y1End, red, green, blue, alpha, uMin, vSlide);
-        WorldRenderUtils.createVertex(vertexBuilder, renderMatrix, normalMatrix, x1End, beamLength, y1End, red, green, blue, alpha, uMin, f30);
-        WorldRenderUtils.createVertex(vertexBuilder, renderMatrix, normalMatrix, x2Start, beamLength, y2Start, red, green, blue, alpha, uMax, f30);
-        WorldRenderUtils.createVertex(vertexBuilder, renderMatrix, normalMatrix, x2Start, 0.0f, y2Start, red, green, blue, alpha, uMax, vSlide);
-        WorldRenderUtils.createVertex(vertexBuilder, renderMatrix, normalMatrix, x2End, 0.0f, y2End, red, green, blue, alpha, uMin, vSlide);
-        WorldRenderUtils.createVertex(vertexBuilder, renderMatrix, normalMatrix, x2End, beamLength, y2End, red, green, blue, alpha, uMin, f30);
+        WorldRenderUtils.createVertex(vertexBuilder, normalMatrix, x1Start, beamLength, y1Start, red, green, blue, alpha, uMax, f30);
+        WorldRenderUtils.createVertex(vertexBuilder, normalMatrix, x1Start, 0.0f, y1Start, red, green, blue, alpha, uMax, vSlide);
+        WorldRenderUtils.createVertex(vertexBuilder, normalMatrix, x1End, 0.0f, y1End, red, green, blue, alpha, uMin, vSlide);
+        WorldRenderUtils.createVertex(vertexBuilder, normalMatrix, x1End, beamLength, y1End, red, green, blue, alpha, uMin, f30);
+        WorldRenderUtils.createVertex(vertexBuilder, normalMatrix, x2Start, beamLength, y2Start, red, green, blue, alpha, uMax, f30);
+        WorldRenderUtils.createVertex(vertexBuilder, normalMatrix, x2Start, 0.0f, y2Start, red, green, blue, alpha, uMax, vSlide);
+        WorldRenderUtils.createVertex(vertexBuilder, normalMatrix, x2End, 0.0f, y2End, red, green, blue, alpha, uMin, vSlide);
+        WorldRenderUtils.createVertex(vertexBuilder, normalMatrix, x2End, beamLength, y2End, red, green, blue, alpha, uMin, f30);
         pose.popPose();
     }
 
@@ -264,17 +264,17 @@ implements IWorldRenderUtils {
                 if (points[i][j] != 1) continue;
                 float originX = offsetX - (float)j * 0.5f;
                 float originY = offsetY - (float)i * 0.5f;
-                WorldRenderUtils.createVertex(vertexBuilder, renderMatrix, normalMatrix, 0.0f + originX, 0.0f + originY, 0.0f, color[0], color[1], color[2], color[3], 0.0f, 1.0f);
-                WorldRenderUtils.createVertex(vertexBuilder, renderMatrix, normalMatrix, 1.0f + originX, 0.0f + originY, 0.0f, color[0], color[1], color[2], color[3], 1.0f, 1.0f);
-                WorldRenderUtils.createVertex(vertexBuilder, renderMatrix, normalMatrix, 1.0f + originX, 1.0f + originY, 0.0f, color[0], color[1], color[2], color[3], 1.0f, 0.0f);
-                WorldRenderUtils.createVertex(vertexBuilder, renderMatrix, normalMatrix, 0.0f + originX, 1.0f + originY, 0.0f, color[0], color[1], color[2], color[3], 0.0f, 0.0f);
+                WorldRenderUtils.createVertex(vertexBuilder, normalMatrix, 0.0f + originX, 0.0f + originY, 0.0f, color[0], color[1], color[2], color[3], 0.0f, 1.0f);
+                WorldRenderUtils.createVertex(vertexBuilder, normalMatrix, 1.0f + originX, 0.0f + originY, 0.0f, color[0], color[1], color[2], color[3], 1.0f, 1.0f);
+                WorldRenderUtils.createVertex(vertexBuilder, normalMatrix, 1.0f + originX, 1.0f + originY, 0.0f, color[0], color[1], color[2], color[3], 1.0f, 0.0f);
+                WorldRenderUtils.createVertex(vertexBuilder, normalMatrix, 0.0f + originX, 1.0f + originY, 0.0f, color[0], color[1], color[2], color[3], 0.0f, 0.0f);
             }
         }
         pose.popPose();
     }
 
     public static void renderProgressBar(PoseStack pose, MultiBufferSource bufferSource, float percent, int[] rgb, int alpha) {
-        Matrix4f matrix4f = pose.last().pose();
+        com.mojang.blaze3d.vertex.PoseStack.Pose matrix4f = pose.last();
         PoseStack.Pose normalMatrix = pose.last();
         VertexConsumer vertexconsumer = bufferSource.getBuffer(MARenderTypes.SOLID_RENDER_TYPE);
         vertexconsumer.addVertex(matrix4f, 0.5f, -0.5f, 0.0f).setColor(rgb[0], rgb[1], rgb[2], alpha).setLight(0xF000F0).setNormal(normalMatrix, 0.0f, 0.0f, 1.0f);
@@ -338,29 +338,29 @@ implements IWorldRenderUtils {
             u2 = tmp;
         }
         if (colorShiftPct == 1.0f) {
-            WorldRenderUtils.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLightIn, 0.0f, 0.0f, u, v2, nrmH, nrmV, activeColor);
-            WorldRenderUtils.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLightIn, 1.0f, 0.0f, u2, v2, nrmH, nrmV, activeColor);
-            WorldRenderUtils.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLightIn, 1.0f, 1.0f, u2, v, nrmH, nrmV, activeColor);
-            WorldRenderUtils.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLightIn, 0.0f, 1.0f, u, v, nrmH, nrmV, activeColor);
+            WorldRenderUtils.addVertex(vertexBuilder, normalMatrix, packedLightIn, 0.0f, 0.0f, u, v2, nrmH, nrmV, activeColor);
+            WorldRenderUtils.addVertex(vertexBuilder, normalMatrix, packedLightIn, 1.0f, 0.0f, u2, v2, nrmH, nrmV, activeColor);
+            WorldRenderUtils.addVertex(vertexBuilder, normalMatrix, packedLightIn, 1.0f, 1.0f, u2, v, nrmH, nrmV, activeColor);
+            WorldRenderUtils.addVertex(vertexBuilder, normalMatrix, packedLightIn, 0.0f, 1.0f, u, v, nrmH, nrmV, activeColor);
         } else if (colorShiftPct == 0.0f) {
-            WorldRenderUtils.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLightIn, 0.0f, 0.0f, u, v2, nrmH, nrmV, inactiveColor);
-            WorldRenderUtils.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLightIn, 1.0f, 0.0f, u2, v2, nrmH, nrmV, inactiveColor);
-            WorldRenderUtils.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLightIn, 1.0f, 1.0f, u2, v, nrmH, nrmV, inactiveColor);
-            WorldRenderUtils.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLightIn, 0.0f, 1.0f, u, v, nrmH, nrmV, inactiveColor);
+            WorldRenderUtils.addVertex(vertexBuilder, normalMatrix, packedLightIn, 0.0f, 0.0f, u, v2, nrmH, nrmV, inactiveColor);
+            WorldRenderUtils.addVertex(vertexBuilder, normalMatrix, packedLightIn, 1.0f, 0.0f, u2, v2, nrmH, nrmV, inactiveColor);
+            WorldRenderUtils.addVertex(vertexBuilder, normalMatrix, packedLightIn, 1.0f, 1.0f, u2, v, nrmH, nrmV, inactiveColor);
+            WorldRenderUtils.addVertex(vertexBuilder, normalMatrix, packedLightIn, 0.0f, 1.0f, u, v, nrmH, nrmV, inactiveColor);
         } else {
             if (colorShiftPct > 0.0f) {
                 v2 = v + 0.25f * (1.0f - colorShiftPct);
-                WorldRenderUtils.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLightIn, 0.0f, colorShiftPct, u, v2, nrmH, nrmV, inactiveColor);
-                WorldRenderUtils.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLightIn, 1.0f, colorShiftPct, u2, v2, nrmH, nrmV, inactiveColor);
-                WorldRenderUtils.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLightIn, 1.0f, 1.0f, u2, v, nrmH, nrmV, inactiveColor);
-                WorldRenderUtils.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLightIn, 0.0f, 1.0f, u, v, nrmH, nrmV, inactiveColor);
+                WorldRenderUtils.addVertex(vertexBuilder, normalMatrix, packedLightIn, 0.0f, colorShiftPct, u, v2, nrmH, nrmV, inactiveColor);
+                WorldRenderUtils.addVertex(vertexBuilder, normalMatrix, packedLightIn, 1.0f, colorShiftPct, u2, v2, nrmH, nrmV, inactiveColor);
+                WorldRenderUtils.addVertex(vertexBuilder, normalMatrix, packedLightIn, 1.0f, 1.0f, u2, v, nrmH, nrmV, inactiveColor);
+                WorldRenderUtils.addVertex(vertexBuilder, normalMatrix, packedLightIn, 0.0f, 1.0f, u, v, nrmH, nrmV, inactiveColor);
             }
             if (colorShiftPct < 1.0f) {
                 v2 = v + 0.25f;
-                WorldRenderUtils.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLightIn, 0.0f, 0.0f, u, v2, nrmH, nrmV, activeColor);
-                WorldRenderUtils.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLightIn, 1.0f, 0.0f, u2, v2, nrmH, nrmV, activeColor);
-                WorldRenderUtils.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLightIn, 1.0f, colorShiftPct, u2, v += 0.25f * (1.0f - colorShiftPct), nrmH, nrmV, activeColor);
-                WorldRenderUtils.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLightIn, 0.0f, colorShiftPct, u, v, nrmH, nrmV, activeColor);
+                WorldRenderUtils.addVertex(vertexBuilder, normalMatrix, packedLightIn, 0.0f, 0.0f, u, v2, nrmH, nrmV, activeColor);
+                WorldRenderUtils.addVertex(vertexBuilder, normalMatrix, packedLightIn, 1.0f, 0.0f, u2, v2, nrmH, nrmV, activeColor);
+                WorldRenderUtils.addVertex(vertexBuilder, normalMatrix, packedLightIn, 1.0f, colorShiftPct, u2, v += 0.25f * (1.0f - colorShiftPct), nrmH, nrmV, activeColor);
+                WorldRenderUtils.addVertex(vertexBuilder, normalMatrix, packedLightIn, 0.0f, colorShiftPct, u, v, nrmH, nrmV, activeColor);
             }
         }
     }
@@ -403,30 +403,30 @@ implements IWorldRenderUtils {
         r = 1.0f;
         g = 1.0f;
         b = 0.0f;
-        consumer.addVertex(matrix4f, hw1, y1, hw1).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
-        consumer.addVertex(matrix4f, hw2, y1, hw1).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
-        consumer.addVertex(matrix4f, hw2, y1, hw2).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
-        consumer.addVertex(matrix4f, hw1, y1, hw2).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
-        consumer.addVertex(matrix4f, ht1, y2, ht1).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
-        consumer.addVertex(matrix4f, ht2, y2, ht1).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
-        consumer.addVertex(matrix4f, ht2, y2, ht2).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
-        consumer.addVertex(matrix4f, ht1, y2, ht2).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
-        consumer.addVertex(matrix4f, hw1, y1, hw1).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
-        consumer.addVertex(matrix4f, ht1, y2, ht1).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
-        consumer.addVertex(matrix4f, ht1, y2, ht2).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
-        consumer.addVertex(matrix4f, hw1, y1, hw2).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
-        consumer.addVertex(matrix4f, hw2, y1, hw1).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
-        consumer.addVertex(matrix4f, ht2, y2, ht1).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
-        consumer.addVertex(matrix4f, ht2, y2, ht2).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
-        consumer.addVertex(matrix4f, hw2, y1, hw2).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
-        consumer.addVertex(matrix4f, hw1, y1, hw1).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
-        consumer.addVertex(matrix4f, ht1, y2, ht1).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
-        consumer.addVertex(matrix4f, ht2, y2, ht1).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
-        consumer.addVertex(matrix4f, hw2, y1, hw1).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
-        consumer.addVertex(matrix4f, hw1, y1, hw2).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
-        consumer.addVertex(matrix4f, ht1, y2, ht2).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
-        consumer.addVertex(matrix4f, ht2, y2, ht2).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
-        consumer.addVertex(matrix4f, hw2, y1, hw2).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
+        consumer.addVertex(matrix3f, hw1, y1, hw1).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
+        consumer.addVertex(matrix3f, hw2, y1, hw1).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
+        consumer.addVertex(matrix3f, hw2, y1, hw2).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
+        consumer.addVertex(matrix3f, hw1, y1, hw2).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
+        consumer.addVertex(matrix3f, ht1, y2, ht1).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
+        consumer.addVertex(matrix3f, ht2, y2, ht1).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
+        consumer.addVertex(matrix3f, ht2, y2, ht2).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
+        consumer.addVertex(matrix3f, ht1, y2, ht2).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
+        consumer.addVertex(matrix3f, hw1, y1, hw1).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
+        consumer.addVertex(matrix3f, ht1, y2, ht1).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
+        consumer.addVertex(matrix3f, ht1, y2, ht2).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
+        consumer.addVertex(matrix3f, hw1, y1, hw2).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
+        consumer.addVertex(matrix3f, hw2, y1, hw1).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
+        consumer.addVertex(matrix3f, ht2, y2, ht1).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
+        consumer.addVertex(matrix3f, ht2, y2, ht2).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
+        consumer.addVertex(matrix3f, hw2, y1, hw2).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
+        consumer.addVertex(matrix3f, hw1, y1, hw1).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
+        consumer.addVertex(matrix3f, ht1, y2, ht1).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
+        consumer.addVertex(matrix3f, ht2, y2, ht1).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
+        consumer.addVertex(matrix3f, hw2, y1, hw1).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
+        consumer.addVertex(matrix3f, hw1, y1, hw2).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
+        consumer.addVertex(matrix3f, ht1, y2, ht2).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
+        consumer.addVertex(matrix3f, ht2, y2, ht2).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
+        consumer.addVertex(matrix3f, hw2, y1, hw2).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
         matrixStack.popPose();
     }
 
@@ -441,30 +441,30 @@ implements IWorldRenderUtils {
         float z2 = (float)renderBounds.maxZ;
         float alpha = 0.25f;
         float alpha2 = 0.375f;
-        consumer.addVertex(matrix4f, x1, y1, z1).setColor(0.0f, 1.0f, 0.0f, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
-        consumer.addVertex(matrix4f, x2, y1, z1).setColor(0.0f, 1.0f, 0.0f, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
-        consumer.addVertex(matrix4f, x2, y1, z2).setColor(0.0f, 1.0f, 0.0f, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
-        consumer.addVertex(matrix4f, x1, y1, z2).setColor(0.0f, 1.0f, 0.0f, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
-        consumer.addVertex(matrix4f, x1, y2, z1).setColor(0.0f, 1.0f, 0.0f, alpha2).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
-        consumer.addVertex(matrix4f, x2, y2, z1).setColor(0.0f, 1.0f, 0.0f, alpha2).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
-        consumer.addVertex(matrix4f, x2, y2, z2).setColor(0.0f, 1.0f, 0.0f, alpha2).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
-        consumer.addVertex(matrix4f, x1, y2, z2).setColor(0.0f, 1.0f, 0.0f, alpha2).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
-        consumer.addVertex(matrix4f, x1, y1, z1).setColor(1.0f, 0.0f, 0.0f, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
-        consumer.addVertex(matrix4f, x1, y2, z1).setColor(1.0f, 0.0f, 0.0f, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
-        consumer.addVertex(matrix4f, x1, y2, z2).setColor(1.0f, 0.0f, 0.0f, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
-        consumer.addVertex(matrix4f, x1, y1, z2).setColor(1.0f, 0.0f, 0.0f, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
-        consumer.addVertex(matrix4f, x2, y1, z1).setColor(1.0f, 0.0f, 0.0f, alpha2).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
-        consumer.addVertex(matrix4f, x2, y2, z1).setColor(1.0f, 0.0f, 0.0f, alpha2).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
-        consumer.addVertex(matrix4f, x2, y2, z2).setColor(1.0f, 0.0f, 0.0f, alpha2).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
-        consumer.addVertex(matrix4f, x2, y1, z2).setColor(1.0f, 0.0f, 0.0f, alpha2).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
-        consumer.addVertex(matrix4f, x1, y1, z1).setColor(0.0f, 0.0f, 1.0f, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
-        consumer.addVertex(matrix4f, x1, y2, z1).setColor(0.0f, 0.0f, 1.0f, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
-        consumer.addVertex(matrix4f, x2, y2, z1).setColor(0.0f, 0.0f, 1.0f, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
-        consumer.addVertex(matrix4f, x2, y1, z1).setColor(0.0f, 0.0f, 1.0f, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
-        consumer.addVertex(matrix4f, x1, y1, z2).setColor(0.0f, 0.0f, 1.0f, alpha2).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
-        consumer.addVertex(matrix4f, x1, y2, z2).setColor(0.0f, 0.0f, 1.0f, alpha2).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
-        consumer.addVertex(matrix4f, x2, y2, z2).setColor(0.0f, 0.0f, 1.0f, alpha2).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
-        consumer.addVertex(matrix4f, x2, y1, z2).setColor(0.0f, 0.0f, 1.0f, alpha2).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
+        consumer.addVertex(matrix3f, x1, y1, z1).setColor(0.0f, 1.0f, 0.0f, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
+        consumer.addVertex(matrix3f, x2, y1, z1).setColor(0.0f, 1.0f, 0.0f, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
+        consumer.addVertex(matrix3f, x2, y1, z2).setColor(0.0f, 1.0f, 0.0f, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
+        consumer.addVertex(matrix3f, x1, y1, z2).setColor(0.0f, 1.0f, 0.0f, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
+        consumer.addVertex(matrix3f, x1, y2, z1).setColor(0.0f, 1.0f, 0.0f, alpha2).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
+        consumer.addVertex(matrix3f, x2, y2, z1).setColor(0.0f, 1.0f, 0.0f, alpha2).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
+        consumer.addVertex(matrix3f, x2, y2, z2).setColor(0.0f, 1.0f, 0.0f, alpha2).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
+        consumer.addVertex(matrix3f, x1, y2, z2).setColor(0.0f, 1.0f, 0.0f, alpha2).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
+        consumer.addVertex(matrix3f, x1, y1, z1).setColor(1.0f, 0.0f, 0.0f, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
+        consumer.addVertex(matrix3f, x1, y2, z1).setColor(1.0f, 0.0f, 0.0f, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
+        consumer.addVertex(matrix3f, x1, y2, z2).setColor(1.0f, 0.0f, 0.0f, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
+        consumer.addVertex(matrix3f, x1, y1, z2).setColor(1.0f, 0.0f, 0.0f, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
+        consumer.addVertex(matrix3f, x2, y1, z1).setColor(1.0f, 0.0f, 0.0f, alpha2).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
+        consumer.addVertex(matrix3f, x2, y2, z1).setColor(1.0f, 0.0f, 0.0f, alpha2).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
+        consumer.addVertex(matrix3f, x2, y2, z2).setColor(1.0f, 0.0f, 0.0f, alpha2).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
+        consumer.addVertex(matrix3f, x2, y1, z2).setColor(1.0f, 0.0f, 0.0f, alpha2).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
+        consumer.addVertex(matrix3f, x1, y1, z1).setColor(0.0f, 0.0f, 1.0f, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
+        consumer.addVertex(matrix3f, x1, y2, z1).setColor(0.0f, 0.0f, 1.0f, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
+        consumer.addVertex(matrix3f, x2, y2, z1).setColor(0.0f, 0.0f, 1.0f, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
+        consumer.addVertex(matrix3f, x2, y1, z1).setColor(0.0f, 0.0f, 1.0f, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
+        consumer.addVertex(matrix3f, x1, y1, z2).setColor(0.0f, 0.0f, 1.0f, alpha2).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
+        consumer.addVertex(matrix3f, x1, y2, z2).setColor(0.0f, 0.0f, 1.0f, alpha2).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
+        consumer.addVertex(matrix3f, x2, y2, z2).setColor(0.0f, 0.0f, 1.0f, alpha2).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
+        consumer.addVertex(matrix3f, x2, y1, z2).setColor(0.0f, 0.0f, 1.0f, alpha2).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
     }
 
     public static void renderWardBox(PoseStack matrixStack, VertexConsumer consumer, AABB renderBounds, int alpha) {
@@ -488,30 +488,30 @@ implements IWorldRenderUtils {
         float uvZSize = 1.0f - (float)Math.min(renderBounds.getZsize(), 1.0);
         float uvMinZ = uvZSize / 2.0f;
         float uvMaxZ = 1.0f - uvMinZ;
-        WorldRenderUtils.createVertex(consumer, matrix4f, matrix3f, x1, y1, z1, r, g, b, alpha, uvMinZ, uvMinX, 1.0f, 0.0f, 0.0f);
-        WorldRenderUtils.createVertex(consumer, matrix4f, matrix3f, x2, y1, z1, r, g, b, alpha, uvMaxZ, uvMinX, 1.0f, 0.0f, 0.0f);
-        WorldRenderUtils.createVertex(consumer, matrix4f, matrix3f, x2, y1, z2, r, g, b, alpha, uvMaxZ, uvMaxX, 1.0f, 0.0f, 0.0f);
-        WorldRenderUtils.createVertex(consumer, matrix4f, matrix3f, x1, y1, z2, r, g, b, alpha, uvMinZ, uvMaxX, 1.0f, 0.0f, 0.0f);
-        WorldRenderUtils.createVertex(consumer, matrix4f, matrix3f, x1, y2, z1, r, g, b, alpha, uvMinZ, uvMinX, 1.0f, 0.0f, 0.0f);
-        WorldRenderUtils.createVertex(consumer, matrix4f, matrix3f, x1, y2, z2, r, g, b, alpha, uvMaxZ, uvMinX, 1.0f, 0.0f, 0.0f);
-        WorldRenderUtils.createVertex(consumer, matrix4f, matrix3f, x2, y2, z2, r, g, b, alpha, uvMaxZ, uvMaxX, 1.0f, 0.0f, 0.0f);
-        WorldRenderUtils.createVertex(consumer, matrix4f, matrix3f, x2, y2, z1, r, g, b, alpha, uvMinZ, uvMaxX, 1.0f, 0.0f, 0.0f);
-        WorldRenderUtils.createVertex(consumer, matrix4f, matrix3f, x1, y1, z1, r, g, b, alpha, uvMinZ, uvMaxY, -1.0f, 0.0f, 0.0f);
-        WorldRenderUtils.createVertex(consumer, matrix4f, matrix3f, x1, y1, z2, r, g, b, alpha, uvMaxZ, uvMaxY, -1.0f, 0.0f, 0.0f);
-        WorldRenderUtils.createVertex(consumer, matrix4f, matrix3f, x1, y2, z2, r, g, b, alpha, uvMaxZ, uvMinY, -1.0f, 0.0f, 0.0f);
-        WorldRenderUtils.createVertex(consumer, matrix4f, matrix3f, x1, y2, z1, r, g, b, alpha, uvMinZ, uvMinY, -1.0f, 0.0f, 0.0f);
-        WorldRenderUtils.createVertex(consumer, matrix4f, matrix3f, x2, y2, z1, r, g, b, alpha, uvMinZ, uvMinY, 1.0f, 0.0f, 0.0f);
-        WorldRenderUtils.createVertex(consumer, matrix4f, matrix3f, x2, y2, z2, r, g, b, alpha, uvMaxZ, uvMinY, 1.0f, 0.0f, 0.0f);
-        WorldRenderUtils.createVertex(consumer, matrix4f, matrix3f, x2, y1, z2, r, g, b, alpha, uvMaxZ, uvMaxY, 1.0f, 0.0f, 0.0f);
-        WorldRenderUtils.createVertex(consumer, matrix4f, matrix3f, x2, y1, z1, r, g, b, alpha, uvMinZ, uvMaxY, 1.0f, 0.0f, 0.0f);
-        WorldRenderUtils.createVertex(consumer, matrix4f, matrix3f, x1, y2, z1, r, g, b, alpha, uvMinX, uvMinY, 1.0f, 0.0f, 0.0f);
-        WorldRenderUtils.createVertex(consumer, matrix4f, matrix3f, x2, y2, z1, r, g, b, alpha, uvMaxX, uvMinY, 1.0f, 0.0f, 0.0f);
-        WorldRenderUtils.createVertex(consumer, matrix4f, matrix3f, x2, y1, z1, r, g, b, alpha, uvMaxX, uvMaxY, 1.0f, 0.0f, 0.0f);
-        WorldRenderUtils.createVertex(consumer, matrix4f, matrix3f, x1, y1, z1, r, g, b, alpha, uvMinX, uvMaxY, 1.0f, 0.0f, 0.0f);
-        WorldRenderUtils.createVertex(consumer, matrix4f, matrix3f, x2, y2, z2, r, g, b, alpha, uvMinX, uvMinY, 1.0f, 0.0f, 0.0f);
-        WorldRenderUtils.createVertex(consumer, matrix4f, matrix3f, x1, y2, z2, r, g, b, alpha, uvMaxX, uvMinY, 1.0f, 0.0f, 0.0f);
-        WorldRenderUtils.createVertex(consumer, matrix4f, matrix3f, x1, y1, z2, r, g, b, alpha, uvMaxX, uvMaxY, 1.0f, 0.0f, 0.0f);
-        WorldRenderUtils.createVertex(consumer, matrix4f, matrix3f, x2, y1, z2, r, g, b, alpha, uvMinX, uvMaxY, 1.0f, 0.0f, 0.0f);
+        WorldRenderUtils.createVertex(consumer, matrix3f, x1, y1, z1, r, g, b, alpha, uvMinZ, uvMinX, 1.0f, 0.0f, 0.0f);
+        WorldRenderUtils.createVertex(consumer, matrix3f, x2, y1, z1, r, g, b, alpha, uvMaxZ, uvMinX, 1.0f, 0.0f, 0.0f);
+        WorldRenderUtils.createVertex(consumer, matrix3f, x2, y1, z2, r, g, b, alpha, uvMaxZ, uvMaxX, 1.0f, 0.0f, 0.0f);
+        WorldRenderUtils.createVertex(consumer, matrix3f, x1, y1, z2, r, g, b, alpha, uvMinZ, uvMaxX, 1.0f, 0.0f, 0.0f);
+        WorldRenderUtils.createVertex(consumer, matrix3f, x1, y2, z1, r, g, b, alpha, uvMinZ, uvMinX, 1.0f, 0.0f, 0.0f);
+        WorldRenderUtils.createVertex(consumer, matrix3f, x1, y2, z2, r, g, b, alpha, uvMaxZ, uvMinX, 1.0f, 0.0f, 0.0f);
+        WorldRenderUtils.createVertex(consumer, matrix3f, x2, y2, z2, r, g, b, alpha, uvMaxZ, uvMaxX, 1.0f, 0.0f, 0.0f);
+        WorldRenderUtils.createVertex(consumer, matrix3f, x2, y2, z1, r, g, b, alpha, uvMinZ, uvMaxX, 1.0f, 0.0f, 0.0f);
+        WorldRenderUtils.createVertex(consumer, matrix3f, x1, y1, z1, r, g, b, alpha, uvMinZ, uvMaxY, -1.0f, 0.0f, 0.0f);
+        WorldRenderUtils.createVertex(consumer, matrix3f, x1, y1, z2, r, g, b, alpha, uvMaxZ, uvMaxY, -1.0f, 0.0f, 0.0f);
+        WorldRenderUtils.createVertex(consumer, matrix3f, x1, y2, z2, r, g, b, alpha, uvMaxZ, uvMinY, -1.0f, 0.0f, 0.0f);
+        WorldRenderUtils.createVertex(consumer, matrix3f, x1, y2, z1, r, g, b, alpha, uvMinZ, uvMinY, -1.0f, 0.0f, 0.0f);
+        WorldRenderUtils.createVertex(consumer, matrix3f, x2, y2, z1, r, g, b, alpha, uvMinZ, uvMinY, 1.0f, 0.0f, 0.0f);
+        WorldRenderUtils.createVertex(consumer, matrix3f, x2, y2, z2, r, g, b, alpha, uvMaxZ, uvMinY, 1.0f, 0.0f, 0.0f);
+        WorldRenderUtils.createVertex(consumer, matrix3f, x2, y1, z2, r, g, b, alpha, uvMaxZ, uvMaxY, 1.0f, 0.0f, 0.0f);
+        WorldRenderUtils.createVertex(consumer, matrix3f, x2, y1, z1, r, g, b, alpha, uvMinZ, uvMaxY, 1.0f, 0.0f, 0.0f);
+        WorldRenderUtils.createVertex(consumer, matrix3f, x1, y2, z1, r, g, b, alpha, uvMinX, uvMinY, 1.0f, 0.0f, 0.0f);
+        WorldRenderUtils.createVertex(consumer, matrix3f, x2, y2, z1, r, g, b, alpha, uvMaxX, uvMinY, 1.0f, 0.0f, 0.0f);
+        WorldRenderUtils.createVertex(consumer, matrix3f, x2, y1, z1, r, g, b, alpha, uvMaxX, uvMaxY, 1.0f, 0.0f, 0.0f);
+        WorldRenderUtils.createVertex(consumer, matrix3f, x1, y1, z1, r, g, b, alpha, uvMinX, uvMaxY, 1.0f, 0.0f, 0.0f);
+        WorldRenderUtils.createVertex(consumer, matrix3f, x2, y2, z2, r, g, b, alpha, uvMinX, uvMinY, 1.0f, 0.0f, 0.0f);
+        WorldRenderUtils.createVertex(consumer, matrix3f, x1, y2, z2, r, g, b, alpha, uvMaxX, uvMinY, 1.0f, 0.0f, 0.0f);
+        WorldRenderUtils.createVertex(consumer, matrix3f, x1, y1, z2, r, g, b, alpha, uvMaxX, uvMaxY, 1.0f, 0.0f, 0.0f);
+        WorldRenderUtils.createVertex(consumer, matrix3f, x2, y1, z2, r, g, b, alpha, uvMinX, uvMaxY, 1.0f, 0.0f, 0.0f);
     }
 
     public static void spawnFirstPersonParticlesForStack(ItemStack stack, HumanoidArm hand) {
@@ -586,64 +586,64 @@ implements IWorldRenderUtils {
         float x2 = 0.5f;
         float y2 = 0.5f;
         float z2 = 0.5f;
-        consumer.addVertex(matrix4f, x1, y1, z1).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
-        consumer.addVertex(matrix4f, x2, y1, z1).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
-        consumer.addVertex(matrix4f, x2, y1, z2).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
-        consumer.addVertex(matrix4f, x1, y1, z2).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
-        consumer.addVertex(matrix4f, x1, y2, z1).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
-        consumer.addVertex(matrix4f, x2, y2, z1).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
-        consumer.addVertex(matrix4f, x2, y2, z2).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
-        consumer.addVertex(matrix4f, x1, y2, z2).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
-        consumer.addVertex(matrix4f, x1, y1, z1).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
-        consumer.addVertex(matrix4f, x1, y2, z1).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
-        consumer.addVertex(matrix4f, x1, y2, z2).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
-        consumer.addVertex(matrix4f, x1, y1, z2).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
-        consumer.addVertex(matrix4f, x2, y1, z1).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
-        consumer.addVertex(matrix4f, x2, y2, z1).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
-        consumer.addVertex(matrix4f, x2, y2, z2).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
-        consumer.addVertex(matrix4f, x2, y1, z2).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
-        consumer.addVertex(matrix4f, x1, y1, z1).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
-        consumer.addVertex(matrix4f, x1, y2, z1).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
-        consumer.addVertex(matrix4f, x2, y2, z1).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
-        consumer.addVertex(matrix4f, x2, y1, z1).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
-        consumer.addVertex(matrix4f, x1, y1, z2).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
-        consumer.addVertex(matrix4f, x1, y2, z2).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
-        consumer.addVertex(matrix4f, x2, y2, z2).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
-        consumer.addVertex(matrix4f, x2, y1, z2).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
+        consumer.addVertex(matrix3f, x1, y1, z1).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
+        consumer.addVertex(matrix3f, x2, y1, z1).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
+        consumer.addVertex(matrix3f, x2, y1, z2).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
+        consumer.addVertex(matrix3f, x1, y1, z2).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
+        consumer.addVertex(matrix3f, x1, y2, z1).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
+        consumer.addVertex(matrix3f, x2, y2, z1).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
+        consumer.addVertex(matrix3f, x2, y2, z2).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
+        consumer.addVertex(matrix3f, x1, y2, z2).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
+        consumer.addVertex(matrix3f, x1, y1, z1).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
+        consumer.addVertex(matrix3f, x1, y2, z1).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
+        consumer.addVertex(matrix3f, x1, y2, z2).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
+        consumer.addVertex(matrix3f, x1, y1, z2).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
+        consumer.addVertex(matrix3f, x2, y1, z1).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
+        consumer.addVertex(matrix3f, x2, y2, z1).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
+        consumer.addVertex(matrix3f, x2, y2, z2).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
+        consumer.addVertex(matrix3f, x2, y1, z2).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
+        consumer.addVertex(matrix3f, x1, y1, z1).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
+        consumer.addVertex(matrix3f, x1, y2, z1).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
+        consumer.addVertex(matrix3f, x2, y2, z1).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
+        consumer.addVertex(matrix3f, x2, y1, z1).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
+        consumer.addVertex(matrix3f, x1, y1, z2).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
+        consumer.addVertex(matrix3f, x1, y2, z2).setColor(r, g, b, alpha).setNormal(matrix3f, 1.0f, 0.0f, 0.0f);
+        consumer.addVertex(matrix3f, x2, y2, z2).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
+        consumer.addVertex(matrix3f, x2, y1, z2).setColor(r, g, b, alpha).setNormal(matrix3f, 0.0f, 1.0f, 0.0f);
     }
 
-    private static void vertex01(VertexConsumer vertexConsumer, Matrix4f renderMatrix, int[] rgb, int alpha) {
-        vertexConsumer.addVertex(renderMatrix, 0.0f, 0.0f, 0.0f).setColor(255, 255, 255, alpha);
-        vertexConsumer.addVertex(renderMatrix, 0.0f, 0.0f, 0.0f).setColor(rgb[0], rgb[1], rgb[2], alpha);
+    private static void vertex01(VertexConsumer vertexConsumer, com.mojang.blaze3d.vertex.PoseStack.Pose pose, int[] rgb, int alpha) {
+        vertexConsumer.addVertex(pose, 0.0f, 0.0f, 0.0f).setColor(255, 255, 255, alpha);
+        vertexConsumer.addVertex(pose, 0.0f, 0.0f, 0.0f).setColor(rgb[0], rgb[1], rgb[2], alpha);
     }
 
-    private static void vertex1(VertexConsumer vertexConsumer, Matrix4f renderMatrix, int[] rgb, int alpha) {
-        vertexConsumer.addVertex(renderMatrix, 0.0f, 0.0f, 0.0f).setColor(rgb[0], rgb[1], rgb[2], alpha);
-        vertexConsumer.addVertex(renderMatrix, 0.0f, 0.0f, 0.0f).setColor(rgb[0], rgb[1], rgb[2], alpha);
+    private static void vertex1(VertexConsumer vertexConsumer, com.mojang.blaze3d.vertex.PoseStack.Pose pose, int[] rgb, int alpha) {
+        vertexConsumer.addVertex(pose, 0.0f, 0.0f, 0.0f).setColor(rgb[0], rgb[1], rgb[2], alpha);
+        vertexConsumer.addVertex(pose, 0.0f, 0.0f, 0.0f).setColor(rgb[0], rgb[1], rgb[2], alpha);
     }
 
-    private static void vertex2(VertexConsumer vertexConsumer, Matrix4f renderMatrix, float y, float length, int[] rgb) {
-        vertexConsumer.addVertex(renderMatrix, -HALF_SQRT_3 * length, y, -0.2f * length).setColor(rgb[0], rgb[1], rgb[2], 0);
+    private static void vertex2(VertexConsumer vertexConsumer, com.mojang.blaze3d.vertex.PoseStack.Pose pose, float y, float length, int[] rgb) {
+        vertexConsumer.addVertex(pose, -HALF_SQRT_3 * length, y, -0.2f * length).setColor(rgb[0], rgb[1], rgb[2], 0);
     }
 
-    private static void vertex3(VertexConsumer vertexConsumer, Matrix4f renderMatrix, float y, float length, int[] rgb) {
-        vertexConsumer.addVertex(renderMatrix, HALF_SQRT_3 * length, y, -0.2f * length).setColor(rgb[0], rgb[1], rgb[2], 0);
+    private static void vertex3(VertexConsumer vertexConsumer, com.mojang.blaze3d.vertex.PoseStack.Pose pose, float y, float length, int[] rgb) {
+        vertexConsumer.addVertex(pose, HALF_SQRT_3 * length, y, -0.2f * length).setColor(rgb[0], rgb[1], rgb[2], 0);
     }
 
-    private static void vertex4(VertexConsumer vertexConsumer, Matrix4f renderMatrix, float y, float length, int[] rgb) {
-        vertexConsumer.addVertex(renderMatrix, 0.0f, y, 1.0f * length).setColor(rgb[0], rgb[1], rgb[2], 0);
+    private static void vertex4(VertexConsumer vertexConsumer, com.mojang.blaze3d.vertex.PoseStack.Pose pose, float y, float length, int[] rgb) {
+        vertexConsumer.addVertex(pose, 0.0f, y, 1.0f * length).setColor(rgb[0], rgb[1], rgb[2], 0);
     }
 
-    private static void createVertex(VertexConsumer vertexBuilder, Matrix4f renderMatrix, PoseStack.Pose normalMatrix, float x, float y, float z, int colorRed, int colorGreen, int colorBlue, int alpha, float u, float v) {
-        vertexBuilder.addVertex(renderMatrix, x, y, z).setColor(colorRed, colorGreen, colorBlue, alpha).setUv(u, v).setOverlay(OverlayTexture.NO_OVERLAY).setLight(0xF000F0).setNormal(normalMatrix, 1.0f, 0.0f, 0.0f);
+    private static void createVertex(VertexConsumer vertexBuilder, com.mojang.blaze3d.vertex.PoseStack.Pose pose, float x, float y, float z, int colorRed, int colorGreen, int colorBlue, int alpha, float u, float v) {
+        vertexBuilder.addVertex(pose, x, y, z).setColor(colorRed, colorGreen, colorBlue, alpha).setUv(u, v).setOverlay(OverlayTexture.NO_OVERLAY).setLight(0xF000F0).setNormal(pose, 1.0f, 0.0f, 0.0f);
     }
 
-    public static void createVertex(VertexConsumer vertexBuilder, Matrix4f renderMatrix, PoseStack.Pose normalMatrix, float x, float y, float z, int colorRed, int colorGreen, int colorBlue, int alpha, float u, float v, float nrmX, float nrmY, float nrmZ) {
-        vertexBuilder.addVertex(renderMatrix, x, y, z).setColor(colorRed, colorGreen, colorBlue, alpha).setUv(u, v).setOverlay(OverlayTexture.NO_OVERLAY).setLight(0xF000F0).setNormal(normalMatrix, nrmX, nrmY, nrmZ);
+    public static void createVertex(VertexConsumer vertexBuilder, com.mojang.blaze3d.vertex.PoseStack.Pose pose, float x, float y, float z, int colorRed, int colorGreen, int colorBlue, int alpha, float u, float v, float nrmX, float nrmY, float nrmZ) {
+        vertexBuilder.addVertex(pose, x, y, z).setColor(colorRed, colorGreen, colorBlue, alpha).setUv(u, v).setOverlay(OverlayTexture.NO_OVERLAY).setLight(0xF000F0).setNormal(pose, nrmX, nrmY, nrmZ);
     }
 
-    private static void addVertex(VertexConsumer vertexBuilder_, Matrix4f renderMatrix, PoseStack.Pose normalMatrix, int packedLight, float x, float y, float u, float v, float nrmH, float nrmV, int[] color) {
-        vertexBuilder_.addVertex(renderMatrix, x - 0.5f, y - 0.25f, 0.0f).setColor(color[0], color[1], color[2], 230).setUv(u, v).setOverlay(OverlayTexture.NO_OVERLAY).setLight(packedLight).setNormal(normalMatrix, nrmH, nrmV, nrmH);
+    private static void addVertex(VertexConsumer vertexBuilder_, com.mojang.blaze3d.vertex.PoseStack.Pose pose, int packedLight, float x, float y, float u, float v, float nrmH, float nrmV, int[] color) {
+        vertexBuilder_.addVertex(pose, x - 0.5f, y - 0.25f, 0.0f).setColor(color[0], color[1], color[2], 230).setUv(u, v).setOverlay(OverlayTexture.NO_OVERLAY).setLight(packedLight).setNormal(pose, nrmH, nrmV, nrmH);
     }
 
     @Override

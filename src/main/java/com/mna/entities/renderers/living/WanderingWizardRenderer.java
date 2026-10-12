@@ -111,10 +111,10 @@ extends MAGeckoRenderer<WanderingWizard> {
             Matrix3f normalMatrix = matrixstack$entry.normal();
             float nrmV = (float)Math.cos((double)portalSpinDegrees * Math.PI / 180.0);
             float nrmH = (float)Math.cos((double)(portalSpinDegrees - 90.0f) * Math.PI / 180.0);
-            WanderingWizardRenderer.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLightIn, 0.0f, 0.0f, 0.0f, 1.0f, nrmH, nrmV, colors);
-            WanderingWizardRenderer.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLightIn, 1.0f, 0.0f, 1.0f, 1.0f, nrmH, nrmV, colors);
-            WanderingWizardRenderer.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLightIn, 1.0f, 1.0f, 1.0f, 0.0f, nrmH, nrmV, colors);
-            WanderingWizardRenderer.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLightIn, 0.0f, 1.0f, 0.0f, 0.0f, nrmH, nrmV, colors);
+            WanderingWizardRenderer.addVertex(vertexBuilder, matrixstack$entry, packedLightIn, 0.0f, 0.0f, 0.0f, 1.0f, nrmH, nrmV, colors);
+            WanderingWizardRenderer.addVertex(vertexBuilder, matrixstack$entry, packedLightIn, 1.0f, 0.0f, 1.0f, 1.0f, nrmH, nrmV, colors);
+            WanderingWizardRenderer.addVertex(vertexBuilder, matrixstack$entry, packedLightIn, 1.0f, 1.0f, 1.0f, 0.0f, nrmH, nrmV, colors);
+            WanderingWizardRenderer.addVertex(vertexBuilder, matrixstack$entry, packedLightIn, 0.0f, 1.0f, 0.0f, 0.0f, nrmH, nrmV, colors);
             matrixStackIn.popPose();
             colors = new int[]{82, 167, 217};
             matrixStackIn.pushPose();
@@ -128,10 +128,10 @@ extends MAGeckoRenderer<WanderingWizard> {
             renderMatrix = matrixstack$entry.pose();
             normalMatrix = matrixstack$entry.normal();
             nrmH = (float)Math.cos((double)(portalSpinDegrees + 90.0f) * Math.PI / 180.0);
-            WanderingWizardRenderer.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLightIn, 0.0f, 0.0f, 0.0f, 1.0f, nrmH, nrmV, colors);
-            WanderingWizardRenderer.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLightIn, 1.0f, 0.0f, 1.0f, 1.0f, nrmH, nrmV, colors);
-            WanderingWizardRenderer.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLightIn, 1.0f, 1.0f, 1.0f, 0.0f, nrmH, nrmV, colors);
-            WanderingWizardRenderer.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLightIn, 0.0f, 1.0f, 0.0f, 0.0f, nrmH, nrmV, colors);
+            WanderingWizardRenderer.addVertex(vertexBuilder, matrixstack$entry, packedLightIn, 0.0f, 0.0f, 0.0f, 1.0f, nrmH, nrmV, colors);
+            WanderingWizardRenderer.addVertex(vertexBuilder, matrixstack$entry, packedLightIn, 1.0f, 0.0f, 1.0f, 1.0f, nrmH, nrmV, colors);
+            WanderingWizardRenderer.addVertex(vertexBuilder, matrixstack$entry, packedLightIn, 1.0f, 1.0f, 1.0f, 0.0f, nrmH, nrmV, colors);
+            WanderingWizardRenderer.addVertex(vertexBuilder, matrixstack$entry, packedLightIn, 0.0f, 1.0f, 0.0f, 0.0f, nrmH, nrmV, colors);
             matrixStackIn.popPose();
             RenderSystem.setShaderTexture((int)0, (ResourceLocation)this.getTextureLocation((Entity)entityIn));
         }
@@ -140,8 +140,8 @@ extends MAGeckoRenderer<WanderingWizard> {
         }
     }
 
-    private static void addVertex(VertexConsumer vertexBuilder_, Matrix4f renderMatrix, Matrix3f normalMatrix, int packedLight, float x, float y, float u, float v, float nrmH, float nrmV, int[] rgb) {
-        vertexBuilder_.addVertex(renderMatrix, x - 0.5f, y - 0.25f, 0.0f).setColor(rgb[0], rgb[1], rgb[2], 230).setUv(u, v).setOverlay(OverlayTexture.NO_OVERLAY).setLight(packedLight).setNormal(normalMatrix, nrmH, nrmV, nrmH);
+    private static void addVertex(VertexConsumer vertexBuilder_, com.mojang.blaze3d.vertex.PoseStack.Pose pose, int packedLight, float x, float y, float u, float v, float nrmH, float nrmV, int[] rgb) {
+        vertexBuilder_.addVertex(pose, x - 0.5f, y - 0.25f, 0.0f).setColor(rgb[0], rgb[1], rgb[2], 230).setUv(u, v).setOverlay(OverlayTexture.NO_OVERLAY).setLight(packedLight).setNormal(pose, nrmH, nrmV, nrmH);
     }
 }
 

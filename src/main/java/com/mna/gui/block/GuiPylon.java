@@ -28,7 +28,7 @@ extends AbstractContainerScreen<ContainerPylon> {
     protected ArrayList<Component> tooltip = new ArrayList();
 
     public GuiPylon(ContainerPylon container, Inventory inv, Component comp) {
-        super((AbstractContainerMenu)container, inv, (Component)Component.literal((String)""));
+        super(container, inv, (Component)Component.literal((String)""));
         this.imageWidth = 234;
         this.imageHeight = 155;
     }

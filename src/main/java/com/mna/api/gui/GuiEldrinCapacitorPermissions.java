@@ -36,7 +36,7 @@ extends AbstractContainerScreen<EldrinCapacitorPermissionsContainer> {
     protected ArrayList<Component> tooltip = new ArrayList();
 
     public GuiEldrinCapacitorPermissions(EldrinCapacitorPermissionsContainer pMenu, Inventory pPlayerInventory, Component title) {
-        super((AbstractContainerMenu)pMenu, pPlayerInventory, (Component)Component.empty());
+        super(pMenu, pPlayerInventory, (Component)Component.empty());
         this.imageWidth = 222;
         this.imageHeight = 143;
     }

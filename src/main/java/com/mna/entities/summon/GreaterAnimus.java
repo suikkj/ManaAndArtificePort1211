@@ -183,7 +183,7 @@ CrossbowAttackMob {
     }
 
     public void readSpawnData(FriendlyByteBuf additionalData) {
-        this.heldItem = additionalData.readItem();
+        this.heldItem = net.minecraft.world.item.ItemStack.OPTIONAL_STREAM_CODEC.decode(additionalData);
     }
 
     public void addAdditionalSaveData(CompoundTag pCompound) {

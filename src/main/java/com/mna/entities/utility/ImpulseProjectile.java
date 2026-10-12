@@ -196,7 +196,7 @@ extends ThrowableItemProjectile
     }
 
     public void readSpawnData(FriendlyByteBuf additionalData) {
-        this.defaultStack = additionalData.readItem();
+        this.defaultStack = net.minecraft.world.item.ItemStack.OPTIONAL_STREAM_CODEC.decode(additionalData);
     }
 }
 

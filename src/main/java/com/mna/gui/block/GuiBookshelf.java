@@ -13,7 +13,7 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 public class GuiBookshelf
 extends AbstractContainerScreen<ContainerBookshelf> {
     public GuiBookshelf(ContainerBookshelf pMenu, Inventory pPlayerInventory, Component pTitle) {
-        super((AbstractContainerMenu)pMenu, pPlayerInventory, pTitle);
+        super(pMenu, pPlayerInventory, pTitle);
     }
 
     public ResourceLocation texture() {

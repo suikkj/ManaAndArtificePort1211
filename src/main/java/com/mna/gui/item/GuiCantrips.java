@@ -67,7 +67,7 @@ extends AbstractContainerScreen<ContainerCantrips> {
     int patternSpacing = 13;
 
     public GuiCantrips(ContainerCantrips screenContainer, Inventory inv, Component title) {
-        super((AbstractContainerMenu)screenContainer, inv, title);
+        super(screenContainer, inv, title);
         this.imageWidth = 194;
         this.imageHeight = 256;
     }

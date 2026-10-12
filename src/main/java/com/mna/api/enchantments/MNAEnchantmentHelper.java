@@ -58,4 +58,9 @@ public final class MNAEnchantmentHelper {
     public static int getBlockEfficiency(net.minecraft.world.entity.LivingEntity entity) {
         return (int)EnchantmentHelper.getEnchantmentLevel(net.minecraft.world.item.enchantment.Enchantments.EFFICIENCY, entity);
     }
+
+    /** [PORT 1.21.1] EnchantmentHelper.getDamageBonus removido; o bonus agora passa pelo pipeline modifyDamage. */
+    public static float getDamageBonus(net.minecraft.world.item.ItemStack stack, net.minecraft.world.entity.LivingEntity target) {
+        return 0.0f;
+    }
 }

@@ -94,17 +94,17 @@ extends EntityRenderer<Manaweave> {
                 int r = (int)color.x;
                 int g = (int)color.y;
                 int b = (int)color.z;
-                ManaweaveRenderer.addVertex(vertexBuilder, renderMatrix, normalMatrix, 0.0f + originX, 0.0f + originY, 0.0f, 1.0f, r, g, b, loopA);
-                ManaweaveRenderer.addVertex(vertexBuilder, renderMatrix, normalMatrix, 1.0f + originX, 0.0f + originY, 1.0f, 1.0f, r, g, b, loopA);
-                ManaweaveRenderer.addVertex(vertexBuilder, renderMatrix, normalMatrix, 1.0f + originX, 1.0f + originY, 1.0f, 0.0f, r, g, b, loopA);
-                ManaweaveRenderer.addVertex(vertexBuilder, renderMatrix, normalMatrix, 0.0f + originX, 1.0f + originY, 0.0f, 0.0f, r, g, b, loopA);
+                ManaweaveRenderer.addVertex(vertexBuilder, matrixstack$entry, 0.0f + originX, 0.0f + originY, 0.0f, 1.0f, r, g, b, loopA);
+                ManaweaveRenderer.addVertex(vertexBuilder, matrixstack$entry, 1.0f + originX, 0.0f + originY, 1.0f, 1.0f, r, g, b, loopA);
+                ManaweaveRenderer.addVertex(vertexBuilder, matrixstack$entry, 1.0f + originX, 1.0f + originY, 1.0f, 0.0f, r, g, b, loopA);
+                ManaweaveRenderer.addVertex(vertexBuilder, matrixstack$entry, 0.0f + originX, 1.0f + originY, 0.0f, 0.0f, r, g, b, loopA);
             }
         }
         matrixStackIn.popPose();
     }
 
-    private static void addVertex(VertexConsumer vertexBuilder_, Matrix4f renderMatrix, Matrix3f normalMatrix, float x, float y, float u, float v, int r, int g, int b, int a) {
-        vertexBuilder_.addVertex(renderMatrix, x - 0.5f, y - 0.25f, 0.0f).setColor(r, g, b, a).setUv(u, v).setOverlay(OverlayTexture.NO_OVERLAY).setLight(0xF000F0).setNormal(normalMatrix, 0.0f, 1.0f, 0.0f);
+    private static void addVertex(VertexConsumer vertexBuilder_, com.mojang.blaze3d.vertex.PoseStack.Pose pose, float x, float y, float u, float v, int r, int g, int b, int a) {
+        vertexBuilder_.addVertex(pose, x - 0.5f, y - 0.25f, 0.0f).setColor(r, g, b, a).setUv(u, v).setOverlay(OverlayTexture.NO_OVERLAY).setLight(0xF000F0).setNormal(pose, 0.0f, 1.0f, 0.0f);
     }
 
     public ResourceLocation getTextureLocation(Manaweave entity) {

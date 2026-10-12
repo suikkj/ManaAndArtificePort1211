@@ -113,15 +113,15 @@ implements BlockEntityRenderer<PylonTileBase> {
         float nrmV = 1.0f;
         float nrmH = 1.0f;
         int[] activeColor = new int[]{255, 255, 255};
-        this.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLightIn, 0.0f, 0.0f, 0.0f, 1.0f, nrmH, nrmV, activeColor);
-        this.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLightIn, 1.0f, 0.0f, 1.0f, 1.0f, nrmH, nrmV, activeColor);
-        this.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLightIn, 1.0f, 1.0f, 1.0f, 0.0f, nrmH, nrmV, activeColor);
-        this.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLightIn, 0.0f, 1.0f, 0.0f, 0.0f, nrmH, nrmV, activeColor);
+        this.addVertex(vertexBuilder, matrixstack$entry, packedLightIn, 0.0f, 0.0f, 0.0f, 1.0f, nrmH, nrmV, activeColor);
+        this.addVertex(vertexBuilder, matrixstack$entry, packedLightIn, 1.0f, 0.0f, 1.0f, 1.0f, nrmH, nrmV, activeColor);
+        this.addVertex(vertexBuilder, matrixstack$entry, packedLightIn, 1.0f, 1.0f, 1.0f, 0.0f, nrmH, nrmV, activeColor);
+        this.addVertex(vertexBuilder, matrixstack$entry, packedLightIn, 0.0f, 1.0f, 0.0f, 0.0f, nrmH, nrmV, activeColor);
         matrixStackIn.popPose();
     }
 
-    private void addVertex(VertexConsumer vertexBuilder_, Matrix4f renderMatrix, Matrix3f normalMatrix, int packedLight, float x, float y, float u, float v, float nrmH, float nrmV, int[] color) {
-        vertexBuilder_.addVertex(renderMatrix, x - 0.5f, y - 0.25f, 0.0f).setColor(color[0], color[1], color[2], 230).setUv(u, v).setOverlay(OverlayTexture.NO_OVERLAY).setLight(packedLight).setNormal(normalMatrix, nrmH, nrmV, nrmH);
+    private void addVertex(VertexConsumer vertexBuilder_, com.mojang.blaze3d.vertex.PoseStack.Pose pose, int packedLight, float x, float y, float u, float v, float nrmH, float nrmV, int[] color) {
+        vertexBuilder_.addVertex(pose, x - 0.5f, y - 0.25f, 0.0f).setColor(color[0], color[1], color[2], 230).setUv(u, v).setOverlay(OverlayTexture.NO_OVERLAY).setLight(packedLight).setNormal(pose, nrmH, nrmV, nrmH);
     }
 }
 

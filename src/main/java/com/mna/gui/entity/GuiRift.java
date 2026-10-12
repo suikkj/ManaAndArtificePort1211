@@ -23,7 +23,7 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 public class GuiRift
 extends AbstractContainerScreen<ContainerRift> {
     public GuiRift(ContainerRift book, Inventory inv, Component comp) {
-        super((AbstractContainerMenu)book, inv, (Component)Component.literal((String)""));
+        super(book, inv, (Component)Component.literal((String)""));
         this.imageWidth = 176;
         this.imageHeight = 212;
     }

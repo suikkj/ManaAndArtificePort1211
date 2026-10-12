@@ -252,14 +252,14 @@ extends EntityRenderer<Portal> {
             Matrix4f renderMatrix = matrixstack$entry.pose();
             VertexConsumer vertexBuilder = bufferSource.getBuffer(RenderType.lightning());
             int hexagonAlpha = (int)((double)Math.min(200 + (int)(32.0 * Math.sin((double)((float)mc.level.getGameTime() + partialTick) * 0.05)), 230) * ((double)spawnPct - 0.9) * 10.0);
-            vertexBuilder.addVertex(renderMatrix, -0.5f, -1.0f, 0.0f).setColor(color[0], color[1], color[2], hexagonAlpha);
-            vertexBuilder.addVertex(renderMatrix, 0.5f, -1.0f, 0.0f).setColor(color[0], color[1], color[2], hexagonAlpha);
-            vertexBuilder.addVertex(renderMatrix, 1.0f, 0.0f, 0.0f).setColor(color[0], color[1], color[2], hexagonAlpha);
-            vertexBuilder.addVertex(renderMatrix, -1.0f, 0.0f, 0.0f).setColor(color[0], color[1], color[2], hexagonAlpha);
-            vertexBuilder.addVertex(renderMatrix, -1.0f, 0.0f, 0.0f).setColor(color[0], color[1], color[2], hexagonAlpha);
-            vertexBuilder.addVertex(renderMatrix, 1.0f, 0.0f, 0.0f).setColor(color[0], color[1], color[2], hexagonAlpha);
-            vertexBuilder.addVertex(renderMatrix, 0.5f, 1.0f, 0.0f).setColor(color[0], color[1], color[2], hexagonAlpha);
-            vertexBuilder.addVertex(renderMatrix, -0.5f, 1.0f, 0.0f).setColor(color[0], color[1], color[2], hexagonAlpha);
+            vertexBuilder.addVertex(pose, -0.5f, -1.0f, 0.0f).setColor(color[0], color[1], color[2], hexagonAlpha);
+            vertexBuilder.addVertex(pose, 0.5f, -1.0f, 0.0f).setColor(color[0], color[1], color[2], hexagonAlpha);
+            vertexBuilder.addVertex(pose, 1.0f, 0.0f, 0.0f).setColor(color[0], color[1], color[2], hexagonAlpha);
+            vertexBuilder.addVertex(pose, -1.0f, 0.0f, 0.0f).setColor(color[0], color[1], color[2], hexagonAlpha);
+            vertexBuilder.addVertex(pose, -1.0f, 0.0f, 0.0f).setColor(color[0], color[1], color[2], hexagonAlpha);
+            vertexBuilder.addVertex(pose, 1.0f, 0.0f, 0.0f).setColor(color[0], color[1], color[2], hexagonAlpha);
+            vertexBuilder.addVertex(pose, 0.5f, 1.0f, 0.0f).setColor(color[0], color[1], color[2], hexagonAlpha);
+            vertexBuilder.addVertex(pose, -0.5f, 1.0f, 0.0f).setColor(color[0], color[1], color[2], hexagonAlpha);
         }
         float jitterScale = 0.025f;
         float jitter = ((float)mc.level.getGameTime() + partialTick) * 0.01f;
@@ -514,15 +514,15 @@ extends EntityRenderer<Portal> {
         Matrix3f normalMatrix = matrixstack$entry.normal();
         float nrmV = (float)Math.cos((double)spin * Math.PI / 180.0);
         float nrmH = (float)Math.cos((double)(spin - 90.0f) * Math.PI / 180.0);
-        PortalRenderer.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLight, 0.0f, 0.0f, 0.0f, 1.0f, nrmH, nrmV, color, alpha);
-        PortalRenderer.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLight, 1.0f, 0.0f, 1.0f, 1.0f, nrmH, nrmV, color, alpha);
-        PortalRenderer.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLight, 1.0f, 1.0f, 1.0f, 0.0f, nrmH, nrmV, color, alpha);
-        PortalRenderer.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLight, 0.0f, 1.0f, 0.0f, 0.0f, nrmH, nrmV, color, alpha);
+        PortalRenderer.addVertex(vertexBuilder, matrixstack$entry, packedLight, 0.0f, 0.0f, 0.0f, 1.0f, nrmH, nrmV, color, alpha);
+        PortalRenderer.addVertex(vertexBuilder, matrixstack$entry, packedLight, 1.0f, 0.0f, 1.0f, 1.0f, nrmH, nrmV, color, alpha);
+        PortalRenderer.addVertex(vertexBuilder, matrixstack$entry, packedLight, 1.0f, 1.0f, 1.0f, 0.0f, nrmH, nrmV, color, alpha);
+        PortalRenderer.addVertex(vertexBuilder, matrixstack$entry, packedLight, 0.0f, 1.0f, 0.0f, 0.0f, nrmH, nrmV, color, alpha);
         pose.popPose();
     }
 
-    private static void addVertex(VertexConsumer vertexBuilder_, Matrix4f renderMatrix, Matrix3f normalMatrix, int packedLight, float x, float y, float u, float v, float nrmH, float nrmV, int[] rgb, int a) {
-        vertexBuilder_.addVertex(renderMatrix, x - 0.5f, y - 0.25f, 0.0f).setColor(rgb[0], rgb[1], rgb[2], a).setUv(u, v).setOverlay(OverlayTexture.NO_OVERLAY).setLight(packedLight).setNormal(normalMatrix, nrmH, nrmV, nrmH);
+    private static void addVertex(VertexConsumer vertexBuilder_, com.mojang.blaze3d.vertex.PoseStack.Pose pose, int packedLight, float x, float y, float u, float v, float nrmH, float nrmV, int[] rgb, int a) {
+        vertexBuilder_.addVertex(pose, x - 0.5f, y - 0.25f, 0.0f).setColor(rgb[0], rgb[1], rgb[2], a).setUv(u, v).setOverlay(OverlayTexture.NO_OVERLAY).setLight(packedLight).setNormal(pose, nrmH, nrmV, nrmH);
     }
 
     public ResourceLocation getTextureLocation(Portal entity) {

@@ -276,17 +276,17 @@ implements BlockEntityRenderer<ManaweavingAltarTile> {
                 if (points[i][j] != 1) continue;
                 float originX = offsetX - (float)j * pointSize;
                 float originY = offsetY - (float)i * pointSize;
-                ManaweavingAltarRenderer.addVertex(vertexBuilder, renderMatrix, normalMatrix, 0.0f + originX, 0.0f + originY, 0.0f, 1.0f);
-                ManaweavingAltarRenderer.addVertex(vertexBuilder, renderMatrix, normalMatrix, 1.0f + originX, 0.0f + originY, 1.0f, 1.0f);
-                ManaweavingAltarRenderer.addVertex(vertexBuilder, renderMatrix, normalMatrix, 1.0f + originX, 1.0f + originY, 1.0f, 0.0f);
-                ManaweavingAltarRenderer.addVertex(vertexBuilder, renderMatrix, normalMatrix, 0.0f + originX, 1.0f + originY, 0.0f, 0.0f);
+                ManaweavingAltarRenderer.addVertex(vertexBuilder, matrixstack$entry, 0.0f + originX, 0.0f + originY, 0.0f, 1.0f);
+                ManaweavingAltarRenderer.addVertex(vertexBuilder, matrixstack$entry, 1.0f + originX, 0.0f + originY, 1.0f, 1.0f);
+                ManaweavingAltarRenderer.addVertex(vertexBuilder, matrixstack$entry, 1.0f + originX, 1.0f + originY, 1.0f, 0.0f);
+                ManaweavingAltarRenderer.addVertex(vertexBuilder, matrixstack$entry, 0.0f + originX, 1.0f + originY, 0.0f, 0.0f);
             }
         }
         matrixStackIn.popPose();
     }
 
-    private static void addVertex(VertexConsumer vertexBuilder_, Matrix4f renderMatrix, Matrix3f normalMatrix, float x, float y, float u, float v) {
-        vertexBuilder_.addVertex(renderMatrix, x - 0.5f, y - 0.25f, 0.0f).setColor(109, 227, 220, 255).setUv(u, v).setOverlay(OverlayTexture.NO_OVERLAY).setLight(0xF000F0).setNormal(normalMatrix, 0.0f, 1.0f, 0.0f);
+    private static void addVertex(VertexConsumer vertexBuilder_, com.mojang.blaze3d.vertex.PoseStack.Pose pose, float x, float y, float u, float v) {
+        vertexBuilder_.addVertex(pose, x - 0.5f, y - 0.25f, 0.0f).setColor(109, 227, 220, 255).setUv(u, v).setOverlay(OverlayTexture.NO_OVERLAY).setLight(0xF000F0).setNormal(pose, 0.0f, 1.0f, 0.0f);
     }
 }
 

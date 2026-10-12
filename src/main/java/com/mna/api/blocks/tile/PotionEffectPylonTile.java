@@ -84,9 +84,9 @@ extends PylonTileBase {
             Objects.requireNonNull(tile);
             if (n == 60 && level.getGameTime() % 20L == 0L) {
                 tile.forAllPlayers(false, p -> {
-                    MobEffectInstance existing = p.getEffect(tile.getMobEffect());
+                    MobEffectInstance existing = p.getEffect(net.minecraft.core.registries.BuiltInRegistries.MOB_EFFECT.wrapAsHolder(tile.getMobEffect()));
                     if (existing == null || existing.endsWithin(tile.getReapplicationThreshold())) {
-                        p.addEffect(new MobEffectInstance(tile.getMobEffect(), tile.getDuration(), tile.getAmplifier(), tile.applyAsAmbient(), false, tile.effectVisible()));
+                        p.addEffect(new MobEffectInstance(net.minecraft.core.registries.BuiltInRegistries.MOB_EFFECT.wrapAsHolder(tile.getMobEffect()), tile.getDuration(), tile.getAmplifier(), tile.applyAsAmbient(), false, tile.effectVisible()));
                     }
                 });
             }

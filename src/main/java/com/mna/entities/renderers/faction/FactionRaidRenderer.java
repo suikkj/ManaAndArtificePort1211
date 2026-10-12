@@ -83,10 +83,10 @@ extends EntityRenderer<FactionRaid> {
         float maxU = 1.0f;
         float minV = 0.04f * (float)frame;
         float maxV = minV + 0.04f;
-        FactionRaidRenderer.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLightIn, 0.0f, 0.0f, minU, maxV, nrmH, nrmV, colors);
-        FactionRaidRenderer.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLightIn, 1.0f, 0.0f, maxU, maxV, nrmH, nrmV, colors);
-        FactionRaidRenderer.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLightIn, 1.0f, 1.0f, maxU, minV, nrmH, nrmV, colors);
-        FactionRaidRenderer.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLightIn, 0.0f, 1.0f, minU, minV, nrmH, nrmV, colors);
+        FactionRaidRenderer.addVertex(vertexBuilder, matrixstack$entry, packedLightIn, 0.0f, 0.0f, minU, maxV, nrmH, nrmV, colors);
+        FactionRaidRenderer.addVertex(vertexBuilder, matrixstack$entry, packedLightIn, 1.0f, 0.0f, maxU, maxV, nrmH, nrmV, colors);
+        FactionRaidRenderer.addVertex(vertexBuilder, matrixstack$entry, packedLightIn, 1.0f, 1.0f, maxU, minV, nrmH, nrmV, colors);
+        FactionRaidRenderer.addVertex(vertexBuilder, matrixstack$entry, packedLightIn, 0.0f, 1.0f, minU, minV, nrmH, nrmV, colors);
         matrixStackIn.popPose();
         matrixStackIn.pushPose();
         matrixStackIn.translate(0.0f, verticalOffset, 0.0f);
@@ -99,15 +99,15 @@ extends EntityRenderer<FactionRaid> {
         renderMatrix = matrixstack$entry.pose();
         normalMatrix = matrixstack$entry.normal();
         nrmH = (float)Math.cos((double)(portalSpinDegrees + 90.0f) * Math.PI / 180.0);
-        FactionRaidRenderer.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLightIn, 0.0f, 0.0f, minU, maxV, nrmH, nrmV, colors);
-        FactionRaidRenderer.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLightIn, 1.0f, 0.0f, maxU, maxV, nrmH, nrmV, colors);
-        FactionRaidRenderer.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLightIn, 1.0f, 1.0f, maxU, minV, nrmH, nrmV, colors);
-        FactionRaidRenderer.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLightIn, 0.0f, 1.0f, minU, minV, nrmH, nrmV, colors);
+        FactionRaidRenderer.addVertex(vertexBuilder, matrixstack$entry, packedLightIn, 0.0f, 0.0f, minU, maxV, nrmH, nrmV, colors);
+        FactionRaidRenderer.addVertex(vertexBuilder, matrixstack$entry, packedLightIn, 1.0f, 0.0f, maxU, maxV, nrmH, nrmV, colors);
+        FactionRaidRenderer.addVertex(vertexBuilder, matrixstack$entry, packedLightIn, 1.0f, 1.0f, maxU, minV, nrmH, nrmV, colors);
+        FactionRaidRenderer.addVertex(vertexBuilder, matrixstack$entry, packedLightIn, 0.0f, 1.0f, minU, minV, nrmH, nrmV, colors);
         matrixStackIn.popPose();
     }
 
-    private static void addVertex(VertexConsumer vertexBuilder_, Matrix4f renderMatrix, Matrix3f normalMatrix, int packedLight, float x, float y, float u, float v, float nrmH, float nrmV, int[] rgb) {
-        vertexBuilder_.addVertex(renderMatrix, x - 0.5f, y - 0.25f, 0.0f).setColor(rgb[0], rgb[1], rgb[2], 230).setUv(u, v).setOverlay(OverlayTexture.NO_OVERLAY).setLight(packedLight).setNormal(normalMatrix, nrmH, nrmV, nrmH);
+    private static void addVertex(VertexConsumer vertexBuilder_, com.mojang.blaze3d.vertex.PoseStack.Pose pose, int packedLight, float x, float y, float u, float v, float nrmH, float nrmV, int[] rgb) {
+        vertexBuilder_.addVertex(pose, x - 0.5f, y - 0.25f, 0.0f).setColor(rgb[0], rgb[1], rgb[2], 230).setUv(u, v).setOverlay(OverlayTexture.NO_OVERLAY).setLight(packedLight).setNormal(pose, nrmH, nrmV, nrmH);
     }
 
     public ResourceLocation getTextureLocation(FactionRaid entity) {

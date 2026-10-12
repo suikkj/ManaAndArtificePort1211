@@ -26,7 +26,7 @@ extends AbstractContainerScreen<ContainerSpectralCraftingTable> {
     private boolean widthTooNarrow;
 
     public GuiSpectralCraftingTable(ContainerSpectralCraftingTable screenContainer, Inventory inv, Component titleIn) {
-        super((AbstractContainerMenu)screenContainer, inv, titleIn);
+        super(screenContainer, inv, titleIn);
     }
 
     protected void init() {

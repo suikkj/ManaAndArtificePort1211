@@ -359,15 +359,15 @@ extends MAGeckoRenderer<Construct> {
         Matrix4f matrix4f = posestack$pose.pose();
         Matrix3f matrix3f = posestack$pose.normal();
         VertexConsumer vertexconsumer = bufferSource.getBuffer(BOBBER_RENDER);
-        ConstructRenderer.vertex(vertexconsumer, matrix4f, matrix3f, this.renderStack.packedLight, 0.0f, 0, 0, 1);
-        ConstructRenderer.vertex(vertexconsumer, matrix4f, matrix3f, this.renderStack.packedLight, 1.0f, 0, 1, 1);
-        ConstructRenderer.vertex(vertexconsumer, matrix4f, matrix3f, this.renderStack.packedLight, 1.0f, 1, 1, 0);
-        ConstructRenderer.vertex(vertexconsumer, matrix4f, matrix3f, this.renderStack.packedLight, 0.0f, 1, 0, 0);
+        ConstructRenderer.vertex(vertexconsumer, posestack$pose, this.renderStack.packedLight, 0.0f, 0, 0, 1);
+        ConstructRenderer.vertex(vertexconsumer, posestack$pose, this.renderStack.packedLight, 1.0f, 0, 1, 1);
+        ConstructRenderer.vertex(vertexconsumer, posestack$pose, this.renderStack.packedLight, 1.0f, 1, 1, 0);
+        ConstructRenderer.vertex(vertexconsumer, posestack$pose, this.renderStack.packedLight, 0.0f, 1, 0, 0);
         poseStack.popPose();
     }
 
-    private static void vertex(VertexConsumer bufferBuilder, Matrix4f pose, Matrix3f normal, int packedLight, float x, int p_114717_, int p_114718_, int p_114719_) {
-        bufferBuilder.addVertex(pose, x - 0.5f, (float)p_114717_ - 0.5f, 0.0f).setColor(255, 255, 255, 255).setUv((float)p_114718_, (float)p_114719_).setOverlay(OverlayTexture.NO_OVERLAY).setLight(packedLight).setNormal(normal, 0.0f, 1.0f, 0.0f);
+    private static void vertex(VertexConsumer bufferBuilder, com.mojang.blaze3d.vertex.PoseStack.Pose pose, int packedLight, float x, int p_114717_, int p_114718_, int p_114719_) {
+        bufferBuilder.addVertex(pose, x - 0.5f, (float)p_114717_ - 0.5f, 0.0f).setColor(255, 255, 255, 255).setUv((float)p_114718_, (float)p_114719_).setOverlay(OverlayTexture.NO_OVERLAY).setLight(packedLight).setNormal(pose, 0.0f, 1.0f, 0.0f);
     }
 
     private static float fraction(int numerator, int denominator) {

@@ -87,20 +87,20 @@ extends EntityRenderer<TimeChangeBall> {
     }
 
     private static void addStartVertices(VertexConsumer vertexBuilder, Matrix4f renderMatrix, int alpha, int[] colors) {
-        vertexBuilder.addVertex(renderMatrix, 0.0f, 0.0f, 0.0f).setColor(255, 255, 255, alpha);
-        vertexBuilder.addVertex(renderMatrix, 0.0f, 0.0f, 0.0f).setColor(colors[0], colors[1], colors[2], alpha);
+        vertexBuilder.addVertex(renderMatrix.transformPosition(0.0f, 0.0f, 0.0f)).setColor(255, 255, 255, alpha);
+        vertexBuilder.addVertex(renderMatrix.transformPosition(0.0f, 0.0f, 0.0f)).setColor(colors[0], colors[1], colors[2], alpha);
     }
 
     private static void addVertexNegativeOffset(VertexConsumer vertexBuilder, Matrix4f renderMatrix, float vOffset, float hOffset, int[] colors) {
-        vertexBuilder.addVertex(renderMatrix, -triangle_height * hOffset, vOffset, -0.5f * hOffset).setColor(colors[0], colors[1], colors[2], 0);
+        vertexBuilder.addVertex(renderMatrix.transformPosition(-triangle_height * hOffset, vOffset, -0.5f * hOffset)).setColor(colors[0], colors[1], colors[2], 0);
     }
 
     private static void addVertexPositiveOffset(VertexConsumer vertexBuilder, Matrix4f renderMatrix, float vOffset, float hOffset, int[] colors) {
-        vertexBuilder.addVertex(renderMatrix, triangle_height * hOffset, vOffset, -0.5f * hOffset).setColor(colors[0], colors[1], colors[2], 0);
+        vertexBuilder.addVertex(renderMatrix.transformPosition(triangle_height * hOffset, vOffset, -0.5f * hOffset)).setColor(colors[0], colors[1], colors[2], 0);
     }
 
     private static void addVertexNoOffset(VertexConsumer vertexBuilder, Matrix4f renderMatrix, float vOffset, float hOffset, int[] colors) {
-        vertexBuilder.addVertex(renderMatrix, 0.0f, vOffset, hOffset).setColor(colors[0], colors[1], colors[2], 0);
+        vertexBuilder.addVertex(renderMatrix.transformPosition(0.0f, vOffset, hOffset)).setColor(colors[0], colors[1], colors[2], 0);
     }
 
     public ResourceLocation getTextureLocation(TimeChangeBall entity) {

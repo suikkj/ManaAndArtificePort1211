@@ -166,7 +166,7 @@ AnimationController.SoundKeyframeHandler<BossMonster<?>> {
     }
 
     public boolean canBeAffected(MobEffectInstance pPotioneffect) {
-        return !Arrays.asList((MobEffect)EffectInit.REDUCE.get(), (MobEffect)EffectInit.ENLARGE.get(), (MobEffect)EffectInit.CHOOSING_WELLSPRING.get(), (MobEffect)EffectInit.LIFT.get(), (MobEffect)EffectInit.SILENCE.get(), (MobEffect)EffectInit.CIRCLE_OF_POWER.get(), (MobEffect)EffectInit.COLD_DARK.get(), (MobEffect)EffectInit.MIND_CONTROL.get(), (MobEffect)EffectInit.POSSESSION.get()).contains(pPotioneffect.getEffect());
+        return !Arrays.asList(EffectInit.REDUCE, EffectInit.ENLARGE, EffectInit.CHOOSING_WELLSPRING, EffectInit.LIFT, EffectInit.SILENCE, EffectInit.CIRCLE_OF_POWER, EffectInit.COLD_DARK, EffectInit.MIND_CONTROL, EffectInit.POSSESSION).contains(pPotioneffect.getEffect());
     }
 
     public boolean canChangeDimensions() {

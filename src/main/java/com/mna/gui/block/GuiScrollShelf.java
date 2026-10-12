@@ -13,7 +13,7 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 public class GuiScrollShelf
 extends AbstractContainerScreen<ContainerScrollShelf> {
     public GuiScrollShelf(ContainerScrollShelf pMenu, Inventory pPlayerInventory, Component pTitle) {
-        super((AbstractContainerMenu)pMenu, pPlayerInventory, pTitle);
+        super(pMenu, pPlayerInventory, pTitle);
         this.imageWidth = 256;
         this.imageHeight = 226;
     }

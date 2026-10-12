@@ -153,13 +153,13 @@ AnimationController.CustomKeyframeHandler<WitchHunter> {
     protected void registerGoals() {
         this.goalSelector.addGoal(0, (Goal)new FloatGoal((Mob)this));
         this.goalSelector.addGoal(0, (Goal)new DodgeGoal());
-        this.goalSelector.addGoal(1, (Goal)new FactionTierWrapperGoal(2, this, new TrickshotGoal((MobEffect)EffectInit.SILENCE.get(), 100, 0)));
+        this.goalSelector.addGoal(1, (Goal)new FactionTierWrapperGoal(2, this, new TrickshotGoal(EffectInit.SILENCE, 100, 0)));
         this.goalSelector.addGoal(1, (Goal)new FactionTierWrapperGoal(1, this, new TrickshotGoal(MobEffects.HARM, 1, 2, true)));
         this.goalSelector.addGoal(2, (Goal)new FactionTierWrapperGoal(0, this, new TrickshotGoal(MobEffects.MOVEMENT_SLOWDOWN, 240, 3, true)));
         this.goalSelector.addGoal(2, (Goal)new FactionTierWrapperGoal(0, this, new TrickshotGoal(MobEffects.WEAKNESS, 240, 3, true)));
         this.goalSelector.addGoal(2, (Goal)new FactionTierWrapperGoal(0, this, new TrickshotGoal(MobEffects.GLOWING, 160, 3)));
-        this.goalSelector.addGoal(3, (Goal)new FactionTierWrapperGoal(1, this, new TrickshotGoal((MobEffect)EffectInit.INSTANT_CHILL.get(), 1, 1)));
-        this.goalSelector.addGoal(3, (Goal)new FactionTierWrapperGoal(1, this, new TrickshotGoal((MobEffect)EffectInit.MANA_STUNT.get(), 400, 4)));
+        this.goalSelector.addGoal(3, (Goal)new FactionTierWrapperGoal(1, this, new TrickshotGoal(EffectInit.INSTANT_CHILL, 1, 1)));
+        this.goalSelector.addGoal(3, (Goal)new FactionTierWrapperGoal(1, this, new TrickshotGoal(EffectInit.MANA_STUNT, 400, 4)));
         this.goalSelector.addGoal(4, (Goal)new ShootGoal(1.2f, 40, 80, 12.0f));
         this.goalSelector.addGoal(5, (Goal)new RandomStrollGoal((PathfinderMob)this, 0.75));
         this.targetSelector.addGoal(1, (Goal)new HurtByTargetGoal((PathfinderMob)this, new Class[0]));

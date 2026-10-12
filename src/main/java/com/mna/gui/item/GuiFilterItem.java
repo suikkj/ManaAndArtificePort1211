@@ -30,7 +30,7 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 public class GuiFilterItem
 extends AbstractContainerScreen<ContainerFilterItem> {
     public GuiFilterItem(ContainerFilterItem container, Inventory inventory, Component title) {
-        super((AbstractContainerMenu)container, inventory, title);
+        super(container, inventory, title);
         this.imageWidth = 176;
         this.imageHeight = 188;
     }

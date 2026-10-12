@@ -209,7 +209,7 @@ implements IAnimPacketSync<PumpkinKing> {
         float f = (float)this.getAttributeValue(Attributes.ATTACK_DAMAGE);
         float f1 = (float)this.getAttributeValue(Attributes.ATTACK_KNOCKBACK);
         if (entityIn instanceof LivingEntity) {
-            f += EnchantmentHelper.getDamageBonus((ItemStack)this.getMainHandItem(), (LivingEntity)entityIn);
+            f += com.mna.api.enchantments.MNAEnchantmentHelper.getDamageBonus((ItemStack)this.getMainHandItem(), (LivingEntity)entityIn);
             f1 += (float)EnchantmentHelper.getKnockbackBonus((LivingEntity)this);
         }
         if ((i = EnchantmentHelper.getFireAspect((LivingEntity)this)) > 0) {

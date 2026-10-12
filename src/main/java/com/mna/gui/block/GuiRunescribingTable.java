@@ -52,7 +52,7 @@ extends AbstractContainerScreen<ContainerRunescribingTable> {
     boolean hasRequiredItems;
 
     public GuiRunescribingTable(ContainerRunescribingTable screenContainer, Inventory inv, Component titleIn) {
-        super((AbstractContainerMenu)screenContainer, inv, titleIn);
+        super(screenContainer, inv, titleIn);
         this.imageWidth = 314;
         this.imageHeight = 256;
         this.recipe = new RecipeRunescribing(324, 70);

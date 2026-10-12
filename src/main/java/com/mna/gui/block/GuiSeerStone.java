@@ -18,7 +18,7 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 public class GuiSeerStone
 extends AbstractContainerScreen<ContainerSeerStone> {
     public GuiSeerStone(ContainerSeerStone sentry, Inventory inv, Component comp) {
-        super((AbstractContainerMenu)sentry, inv, (Component)Component.literal((String)""));
+        super(sentry, inv, (Component)Component.literal((String)""));
         this.imageWidth = 234;
         this.imageHeight = 209;
     }

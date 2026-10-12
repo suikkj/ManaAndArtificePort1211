@@ -32,7 +32,7 @@ extends AbstractContainerScreen<ContainerMagiciansWorkbench> {
     List<Component> currentTooltip;
 
     public GuiMagiciansWorkbench(ContainerMagiciansWorkbench p_i51105_1_, Inventory p_i51105_2_, Component p_i51105_3_) {
-        super((AbstractContainerMenu)p_i51105_1_, p_i51105_2_, p_i51105_3_);
+        super(p_i51105_1_, p_i51105_2_, p_i51105_3_);
         this.imageWidth = 256;
         this.imageHeight = 202;
         this.currentTooltip = new ArrayList<Component>();

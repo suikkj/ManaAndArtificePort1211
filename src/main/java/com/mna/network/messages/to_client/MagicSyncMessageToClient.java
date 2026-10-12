@@ -138,14 +138,14 @@ extends BaseClientMessage implements CustomPacketPayload {
             if (msg._syncGrimoire) {
                 count = buf.readInt();
                 for (i = 0; i < count; ++i) {
-                    msg._grimoireInventory.add(buf.readItem());
+                    msg._grimoireInventory.add(net.minecraft.world.item.ItemStack.OPTIONAL_STREAM_CODEC.decode(buf));
                 }
             }
             msg._syncRote = buf.readBoolean();
             if (msg._syncRote) {
                 count = buf.readInt();
                 for (i = 0; i < count; ++i) {
-                    msg._roteInventory.add(buf.readItem());
+                    msg._roteInventory.add(net.minecraft.world.item.ItemStack.OPTIONAL_STREAM_CODEC.decode(buf));
                 }
             }
             msg._syncCantrips = buf.readBoolean();

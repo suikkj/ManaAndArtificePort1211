@@ -32,7 +32,7 @@ extends AbstractContainerScreen<ContainerPractitionersPouch> {
     private ArrayList<ItemStackButton> patchSelectButtons;
 
     public GuiPractitionersPouch(ContainerPractitionersPouch screenContainer, Inventory inv, Component titleIn) {
-        super((AbstractContainerMenu)screenContainer, inv, titleIn);
+        super(screenContainer, inv, titleIn);
         this.imageWidth = 256;
         this.imageHeight = 226;
         this.patchSelectButtons = new ArrayList();

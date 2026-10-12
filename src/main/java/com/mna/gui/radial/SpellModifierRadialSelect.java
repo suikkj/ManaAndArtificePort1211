@@ -220,13 +220,13 @@ public class SpellModifierRadialSelect {
     }
 
     private void drawItems(GuiGraphics pGuiGraphics, int x, int y, float z, int width, int height, Font font) {
-        this.iterateVisible((TriConsumer<RadialMenuItem, Float, Float>)((TriConsumer)(item, s, e) -> {
+        this.iterateVisible((TriConsumer<RadialMenuItem, Float, Float>)(item, s, e) -> {
             float middle = (s.floatValue() + e.floatValue()) * 0.5f;
             float posX = (float)x + this.itemRadius * (float)Math.cos(middle);
             float posY = (float)y + this.itemRadius * (float)Math.sin(middle);
             DrawingContext context = new DrawingContext(pGuiGraphics, width, height, posX, posY, z, font, this.host);
             item.draw(context);
-        }));
+        });
     }
 
     private void iterateVisible(TriConsumer<RadialMenuItem, Float, Float> consumer) {
@@ -243,10 +243,10 @@ public class SpellModifierRadialSelect {
         RenderSystem.enableBlend();
         Tesselator tessellator = Tesselator.getInstance();
         BufferBuilder buffer = tessellator.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
-        this.iterateVisible((TriConsumer<RadialMenuItem, Float, Float>)((TriConsumer)(item, s, e) -> {
+        this.iterateVisible((TriConsumer<RadialMenuItem, Float, Float>)(item, s, e) -> {
             int color = item.isHovered() ? this.backgroundColorHover : this.backgroundColor;
             this.drawPieArc(buffer, x, y, z, radiusIn, radiusOut, s.floatValue(), e.floatValue(), color);
-        }));
+        });
         com.mojang.blaze3d.vertex.BufferUploader.drawWithShader(buffer.buildOrThrow());
         RenderSystem.disableBlend();
     }

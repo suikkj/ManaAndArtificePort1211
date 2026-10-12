@@ -120,10 +120,10 @@ extends WizardLabRenderer<ArcanaAltarTile> {
                 PoseStack.Pose matrixstack$entry = poseStack.last();
                 Matrix4f renderMatrix = matrixstack$entry.pose();
                 Matrix3f normalMatrix = matrixstack$entry.normal();
-                ArcanaAltarRenderer.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLight, 0.0f, 0.0f, 0.0f, 1.0f, nrmH, nrmV, colors);
-                ArcanaAltarRenderer.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLight, 1.0f, 0.0f, 1.0f, 1.0f, nrmH, nrmV, colors);
-                ArcanaAltarRenderer.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLight, 1.0f, 1.0f, 1.0f, 0.0f, nrmH, nrmV, colors);
-                ArcanaAltarRenderer.addVertex(vertexBuilder, renderMatrix, normalMatrix, packedLight, 0.0f, 1.0f, 0.0f, 0.0f, nrmH, nrmV, colors);
+                ArcanaAltarRenderer.addVertex(vertexBuilder, matrixstack$entry, packedLight, 0.0f, 0.0f, 0.0f, 1.0f, nrmH, nrmV, colors);
+                ArcanaAltarRenderer.addVertex(vertexBuilder, matrixstack$entry, packedLight, 1.0f, 0.0f, 1.0f, 1.0f, nrmH, nrmV, colors);
+                ArcanaAltarRenderer.addVertex(vertexBuilder, matrixstack$entry, packedLight, 1.0f, 1.0f, 1.0f, 0.0f, nrmH, nrmV, colors);
+                ArcanaAltarRenderer.addVertex(vertexBuilder, matrixstack$entry, packedLight, 0.0f, 1.0f, 0.0f, 0.0f, nrmH, nrmV, colors);
                 poseStack.popPose();
             }
             if (tile.getRequestingPattern() != null) {
@@ -158,8 +158,8 @@ extends WizardLabRenderer<ArcanaAltarTile> {
         super.firePostRenderEvent(poseStack, model, bufferSource, partialTick, packedLight);
     }
 
-    private static void addVertex(VertexConsumer vertexBuilder_, Matrix4f renderMatrix, Matrix3f normalMatrix, int packedLight, float x, float y, float u, float v, float nrmH, float nrmV, int[] rgb) {
-        vertexBuilder_.addVertex(renderMatrix, x - 0.5f, y - 0.25f, 0.0f).setColor(rgb[0], rgb[1], rgb[2], 230).setUv(u, v).setOverlay(OverlayTexture.NO_OVERLAY).setLight(packedLight).setNormal(normalMatrix, nrmH, nrmV, nrmH);
+    private static void addVertex(VertexConsumer vertexBuilder_, com.mojang.blaze3d.vertex.PoseStack.Pose pose, int packedLight, float x, float y, float u, float v, float nrmH, float nrmV, int[] rgb) {
+        vertexBuilder_.addVertex(pose, x - 0.5f, y - 0.25f, 0.0f).setColor(rgb[0], rgb[1], rgb[2], 230).setUv(u, v).setOverlay(OverlayTexture.NO_OVERLAY).setLight(packedLight).setNormal(pose, nrmH, nrmV, nrmH);
     }
 }
 
