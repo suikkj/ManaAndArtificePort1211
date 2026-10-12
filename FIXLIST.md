@@ -1,7 +1,28 @@
 # FIXLIST — Mana and Artifice → NeoForge 1.21.1
 
-Lista viva de afazeres do port. Baseline medida em **2026-10-11** por clean compile
-(`gradle clean compileJava`): **5.086 erros**.
+## 🎉 ESTADO FINAL (2026-10-12): **0 ERROS — BUILD SUCCESSFUL**
+
+| Marco | Valor |
+|---|---|
+| Erros iniciais (clean compile, baseline real) | **46.940** |
+| Erros finais | **0** |
+| `gradle clean compileJava` | **exit=0** |
+| `gradle build` | **BUILD SUCCESSFUL** |
+| Jar gerado | `build/libs/mna-3.1.11.jar` (32 MB, 2.404 classes, `neoforge.mods.toml`) |
+| Commits | 41+ (repo `suikkj/ManaAndArtificePort1211`) |
+
+**Próximo passo:** teste em jogo (instalar o jar no pack) — ver seção
+"⚠️ VERIFICAÇÃO DE RUNTIME PENDENTE" abaixo. O mod **compila e empacota**;
+a validação de comportamento em runtime ainda não foi feita.
+
+**Últimos lotes:** `_fix67`–`_fix87` (522→0): effects artifacts do decompiler,
+lambdas effectively-final, `this$0` sintéticos, `lambda$X$N` sintéticos,
+`boolean equal = false` (InventoryUtilities), etc. + limpeza de 2.434 `.class`
+stale em `src/main/resources` (1.854+561 duplicados + 19 JEI órfãs sem fonte).
+
+Lista viva de afazeres do port. Baseline inicial medida em **2026-10-11** por clean compile
+(`gradle clean compileJava`): 5.086 erros; com o pipeline de build completo a medição
+real chegou a **46.940 erros**.
 
 Regra de ouro (do skill forge-to-neoforge-port): **nunca deixar o build pior**.
 Cada bloco é validado por clean compile. Bloco reverte se ficar pior.
@@ -347,9 +368,13 @@ Verificação por `grep` no `_build_last.log` do build atual (1.881 erros):
 
 ---
 
-## 🔜 FILA ATUAL DE ERROS — checada no build 1.116 (2026-10-12, pós lotes _fix20–_fix44)
+## ✅ FILA ATUAL DE ERROS — **VAZIA** (build final = **0 erros**, 2026-10-12)
 
-**Regra:** sempre que um lote for aplicado, re-verificar esta seção com
+Todos os itens abaixo (registros históricos dos builds 1.116–1.456 e anteriores)
+foram resolvidos até o build final com **0 erros / exit=0**. Seção mantida como
+histórico de diagnóstico; o que ainda falta é a verificação de runtime (seção final).
+
+**Regra (histórica):** sempre que um lote for aplicado, re-verificar esta seção com
 `grep 'error:' _build_last.log` e ATUALIZAR as contagens — nada sai daqui sem
 evidência de queda no build.
 
