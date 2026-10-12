@@ -657,7 +657,7 @@ PlayerRideableJumping {
         this.goalSelector.addGoal(2, (Goal)new AttackGoal(this));
         this.goalSelector.addGoal(3, (Goal)new FaceRandomGoal(this));
         this.goalSelector.addGoal(5, (Goal)new HopGoal(this));
-        this.targetSelector.addGoal(1, (Goal)new NearestAttackableTargetGoal((Mob)this, Mob.class, 10, true, false, e -> !(e instanceof AnimusBlock) && e instanceof Enemy && Math.abs(e.getY() - this.getY()) <= 4.0));
+        this.targetSelector.addGoal(1, (Goal)new NearestAttackableTargetGoal(this, Mob.class, 10, true, false, e -> !(e instanceof AnimusBlock) && e instanceof Enemy && Math.abs(e.getY() - this.getY()) <= 4.0));
     }
 
     static class MoveHelperController

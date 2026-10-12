@@ -486,8 +486,8 @@ extends BossMonster<Odin> {
         this.goalSelector.addGoal(5, (Goal)new RandomStrollGoal((PathfinderMob)this, (double)0.35f));
         this.goalSelector.addGoal(8, (Goal)new LookAtPlayerGoal((Mob)this, Player.class, 8.0f));
         this.targetSelector.addGoal(1, (Goal)new BossMonster.ThreatTableHurtByTargetGoal((PathfinderMob)this, new Class[0]));
-        this.targetSelector.addGoal(2, (Goal)new NearestAttackableTargetGoal((Mob)this, Player.class, 10, true, false, le -> true));
-        this.targetSelector.addGoal(3, (Goal)new NearestAttackableTargetGoal((Mob)this, BossMonster.class, 10, true, false, le -> le != this));
+        this.targetSelector.addGoal(2, (Goal)new NearestAttackableTargetGoal(this, Player.class, 10, true, false, le -> true));
+        this.targetSelector.addGoal(3, (Goal)new NearestAttackableTargetGoal(this, BossMonster.class, 10, true, false, le -> le != this));
     }
 
     protected SoundEvent getAmbientSound() {

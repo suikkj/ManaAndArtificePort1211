@@ -205,9 +205,9 @@ IAnimPacketSync<T> {
         this.goalSelector.addGoal(5, (Goal)new BaseFlyingFactionMobFlyGoal(this));
         this.goalSelector.addGoal(7, (Goal)new LookAroundGoal(this));
         this.targetSelector.addGoal(1, (Goal)new RetaliateOnAttackGoal((Mob)this, new Class[0]));
-        this.targetSelector.addGoal(2, (Goal)new NearestAttackableTargetGoal((Mob)this, Player.class, 10, true, false, this::factionTargetPlayerPredicate));
-        this.targetSelector.addGoal(3, (Goal)new NearestAttackableTargetGoal((Mob)this, Mob.class, 10, true, false, this::factionTargetHelpPredicate));
-        this.targetSelector.addGoal(4, (Goal)new NearestAttackableTargetGoal((Mob)this, Mob.class, 10, true, false, e -> e instanceof IFactionEnemy && ((IFactionEnemy)e).getFaction() != this.getFaction() && e.isAlive()));
+        this.targetSelector.addGoal(2, (Goal)new NearestAttackableTargetGoal(this, Player.class, 10, true, false, (java.util.function.Predicate<net.minecraft.world.entity.LivingEntity>)(t -> this.factionTargetPlayerPredicate(t))));
+        this.targetSelector.addGoal(3, (Goal)new NearestAttackableTargetGoal(this, Mob.class, 10, true, false, (java.util.function.Predicate<net.minecraft.world.entity.LivingEntity>)(t -> this.factionTargetHelpPredicate(t))));
+        this.targetSelector.addGoal(4, (Goal)new NearestAttackableTargetGoal(this, Mob.class, 10, true, false, e -> e instanceof IFactionEnemy && ((IFactionEnemy)e).getFaction() != this.getFaction() && e.isAlive()));
     }
 
     public float getStepHeight() {

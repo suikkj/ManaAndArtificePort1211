@@ -163,10 +163,10 @@ AnimationController.CustomKeyframeHandler<WitchHunter> {
         this.goalSelector.addGoal(4, (Goal)new ShootGoal(1.2f, 40, 80, 12.0f));
         this.goalSelector.addGoal(5, (Goal)new RandomStrollGoal((PathfinderMob)this, 0.75));
         this.targetSelector.addGoal(1, (Goal)new HurtByTargetGoal((PathfinderMob)this, new Class[0]));
-        this.targetSelector.addGoal(2, (Goal)new NearestAttackableTargetGoal((Mob)this, Player.class, 10, true, false, this::factionTargetPlayerPredicate));
-        this.targetSelector.addGoal(3, (Goal)new NearestAttackableTargetGoal((Mob)this, Witch.class, 10, true, false, e -> true));
-        this.targetSelector.addGoal(3, (Goal)new NearestAttackableTargetGoal((Mob)this, Mob.class, 10, true, false, this::factionTargetHelpPredicate));
-        this.targetSelector.addGoal(4, (Goal)new NearestAttackableTargetGoal((Mob)this, Mob.class, 10, true, false, e -> e instanceof IFactionEnemy && ((IFactionEnemy)e).getFaction() != this.getFaction()));
+        this.targetSelector.addGoal(2, (Goal)new NearestAttackableTargetGoal(this, Player.class, 10, true, false, (java.util.function.Predicate<net.minecraft.world.entity.LivingEntity>)(t -> this.factionTargetPlayerPredicate(t))));
+        this.targetSelector.addGoal(3, (Goal)new NearestAttackableTargetGoal(this, Witch.class, 10, true, false, e -> true));
+        this.targetSelector.addGoal(3, (Goal)new NearestAttackableTargetGoal(this, Mob.class, 10, true, false, (java.util.function.Predicate<net.minecraft.world.entity.LivingEntity>)(t -> this.factionTargetHelpPredicate(t))));
+        this.targetSelector.addGoal(4, (Goal)new NearestAttackableTargetGoal(this, Mob.class, 10, true, false, e -> e instanceof IFactionEnemy && ((IFactionEnemy)e).getFaction() != this.getFaction()));
     }
 
     public void performRangedAttack(LivingEntity target, float distanceFactor) {
