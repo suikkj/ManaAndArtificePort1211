@@ -31,7 +31,7 @@ extends GeoArmorRenderer<DemonArmorItem> {
     }
 
     public RenderType getRenderType(DemonArmorItem animatable, ResourceLocation texture, @Nullable MultiBufferSource bufferSource, float partialTick) {
-        return super.getRenderType((Item)animatable, texture, bufferSource, partialTick);
+        return super.getRenderType(animatable, texture, bufferSource, partialTick);
     }
 }
 

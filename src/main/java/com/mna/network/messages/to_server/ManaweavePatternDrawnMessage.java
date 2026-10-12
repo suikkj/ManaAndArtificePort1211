@@ -131,7 +131,7 @@ extends BaseServerMessage implements CustomPacketPayload {
                 player.level().addFreshEntity(weave);
             }
         } else {
-            tile.pushPattern((ManaweavingPattern)pattern, (Player)player);
+            tile.pushPattern((ManaweavingPattern)pattern.value(), (Player)player);
         }
         MNACap.get(player, PlayerProgressionProvider.PROGRESSION).ifPresent(p -> MNACap.get(player, PlayerMagicProvider.MAGIC).ifPresent(m -> m.addMagicXP(3, (Player)player, (IPlayerProgression)p)));
         player.getMainHandItem().hurtAndBreak(1, (net.minecraft.server.level.ServerLevel)player.level(), player, i -> {});

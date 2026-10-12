@@ -62,7 +62,7 @@ extends Item {
             BlockSnapshot blocksnapshot = BlockSnapshot.create((ResourceKey)context.getLevel().dimension(), (LevelAccessor)context.getLevel(), (BlockPos)pos);
             context.getLevel().setBlock(pos, ((CloudBlock)BlockInit.STORM_CLOUD.get()).defaultBlockState(), 11);
             if (true) {
-                blocksnapshot.restore(true, false);
+                blocksnapshot.restore(true);
                 return InteractionResult.FAIL;
             }
             if (context.getPlayer() instanceof ServerPlayer) {

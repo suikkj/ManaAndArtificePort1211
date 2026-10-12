@@ -2,6 +2,7 @@
 package com.mna.items;
 
 import com.mna.api.tools.RLoc;
+import com.mna.api.tools.MNADyeableItem;
 import com.mna.blocks.tileentities.models.RunescribingTableModel;
 import com.mna.items.ItemInit;
 import com.mna.items.SpellIconList;

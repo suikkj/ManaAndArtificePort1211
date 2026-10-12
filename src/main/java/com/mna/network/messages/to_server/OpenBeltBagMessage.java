@@ -37,7 +37,7 @@ extends BaseServerMessage implements CustomPacketPayload {
     public void Handle(ServerLevel world, ServerPlayer player) {
         CuriosApi.getCuriosInventory((LivingEntity)player).ifPresent(curioInventory -> {
             List slots = curioInventory.findCurios(new String[]{"belt"});
-            for (SlotResult slot : slots) {
+            for (SlotResult slot : (java.util.List<SlotResult>)slots) {
                 Item patt1024$temp = slot.stack().getItem();
                 if (!(patt1024$temp instanceof PractitionersPouch)) continue;
                 PractitionersPouch pouch = (PractitionersPouch)patt1024$temp;

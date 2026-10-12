@@ -196,7 +196,7 @@ extends TextureSheetParticle {
 
     protected float getV1() {
         if (this.stack != null && !this.stack.isEmpty()) {
-            return this.sprite.getV((double)((this.vo + 1.0f) / 4.0f * 16.0f));
+            return this.sprite.getV((float)((this.vo + 1.0f) / 4.0f * 16.0f));
         }
         return super.getV1();
     }

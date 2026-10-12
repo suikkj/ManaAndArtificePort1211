@@ -32,7 +32,7 @@ extends LootItemConditionalFunction {
             com.mojang.serialization.Codec.FLOAT.fieldOf("chanceForForceSelf").forGetter((RandomSpellStaff f) -> f.chanceForForceSelf),
         com.mojang.serialization.Codec.FLOAT.fieldOf("chanceForSkipTags").forGetter((RandomSpellStaff f) -> f.chanceForSkipTags),
         com.mojang.serialization.Codec.BOOL.fieldOf("allowMessWithMori").forGetter((RandomSpellStaff f) -> f.allowMessWithMori)
-    ).apply(inst, (conditions, a, b, c) -> new RandomSpellStaff(conditions, a, b, c))));
+    ).apply(inst, (java.util.List<net.minecraft.world.level.storage.loot.predicates.LootItemCondition> conditions, Float a, Float b, Boolean c) -> new RandomSpellStaff(conditions, a, b, c))));
     public static final LootItemFunctionType<RandomSpellStaff> TYPE = new LootItemFunctionType<RandomSpellStaff>(CODEC);
 
     private final float chanceForForceSelf;

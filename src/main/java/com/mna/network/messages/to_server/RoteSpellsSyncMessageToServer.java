@@ -71,7 +71,7 @@ extends BaseServerMessage implements CustomPacketPayload {
     public static final void encode(RoteSpellsSyncMessageToServer msg, FriendlyByteBuf buf) {
         buf.writeInt(msg._roteInventory.size());
         for (int i = 0; i < msg._roteInventory.size(); ++i) {
-            net.minecraft.world.item.ItemStack.OPTIONAL_STREAM_CODEC.encode(buf, (ItemStack)msg._roteInventory.get(i));
+            net.minecraft.world.item.ItemStack.OPTIONAL_STREAM_CODEC.encode((net.minecraft.network.RegistryFriendlyByteBuf)buf, (ItemStack)msg._roteInventory.get(i));
         }
     }
 

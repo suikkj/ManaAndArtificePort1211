@@ -68,8 +68,8 @@ extends BaseServerMessage implements CustomPacketPayload {
         if (entity != null && entity instanceof ServerPlayer) {
             ServerPlayer serverPlayer = (ServerPlayer)entity;
             entity.level().getRecipeManager().byKey(this.getRecipe()).ifPresent(r -> {
-                if (r instanceof MultiblockDefinition) {
-                    MultiblockDefinition mbd = (MultiblockDefinition)r;
+                if (r.value() instanceof MultiblockDefinition) {
+                    MultiblockDefinition mbd = (MultiblockDefinition)r.value();
                     ServerMessageDispatcher.sendStructureSyncMessage(mbd, serverPlayer);
                 }
             });

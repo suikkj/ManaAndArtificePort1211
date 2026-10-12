@@ -77,7 +77,7 @@ extends MAParticleBase {
     }
 
     protected static void endRenderCommon() {
-        Minecraft.getInstance().textureManager.getTexture(TextureAtlas.LOCATION_PARTICLES).restoreLastBlurMipmap();
+        Minecraft.getInstance().getTextureManager().getTexture(TextureAtlas.LOCATION_PARTICLES).restoreLastBlurMipmap();
         RenderSystem.disableBlend();
         RenderSystem.enableCull();
         RenderSystem.depthMask((boolean)true);

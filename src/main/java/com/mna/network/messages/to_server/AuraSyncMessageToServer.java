@@ -120,7 +120,7 @@ extends BaseServerMessage implements CustomPacketPayload {
             }
         } else if (player.getGameProfile() != null && player.getGameProfile().getId() != null && (ManaAndArtifice.instance.isDebug || ManaAndArtifice.instance.enabled_auras.contains(player.getGameProfile().getId()))) {
             MNACap.get(player, ParticleAuraProvider.AURA).ifPresent(a -> {
-                a.load(this.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag());
+                a.load(new CompoundTag());
                 ServerMessageDispatcher.sendAuraSyncMessage(player);
             });
         }

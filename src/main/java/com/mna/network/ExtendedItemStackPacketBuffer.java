@@ -110,7 +110,7 @@ extends FriendlyByteBuf {
     public <T> void writeExtendedCollection(Collection<T> p_178353_, BiConsumer<ExtendedItemStackPacketBuffer, T> p_178354_) {
         this.writeVarInt(p_178353_.size());
         for (T t : p_178353_) {
-            p_178354_.accept(this, (ExtendedItemStackPacketBuffer)(Object)t);
+            p_178354_.accept(this, t);
         }
     }
 }
