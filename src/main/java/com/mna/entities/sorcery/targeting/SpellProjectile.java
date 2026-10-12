@@ -508,7 +508,7 @@ extends AbstractHurtingProjectile {
         ++this.ticksInAir;
         Vec3 Vector3d2 = this.position();
         Vec3 Vector3d3 = Vector3d2.add(motion);
-        BlockHitResult raytraceresult = this.level().clip(new ClipContext(Vector3d2, Vector3d3, ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, (Entity)this));
+        net.minecraft.world.phys.HitResult raytraceresult = this.level().clip(new ClipContext(Vector3d2, Vector3d3, ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, (Entity)this));
         if (raytraceresult.getType() != HitResult.Type.MISS) {
             Vector3d3 = raytraceresult.getLocation();
         }

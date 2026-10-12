@@ -55,7 +55,7 @@ public class SpellTargetHelper {
     @Nullable
     public static HitResult rayTrace(@Nullable Entity caster, Level world, Vec3 casterPosition, Vec3 casterLook, boolean checkEntityCollision, boolean includeCaster, ClipContext.Block blockModeIn, Predicate<Entity> filter, AABB boundingBox, double range) {
         Vec3 look_projected = casterPosition.add(casterLook.multiply(range, range, range));
-        BlockHitResult raytraceresult = world.clip(new ClipContext(casterPosition, look_projected, blockModeIn, ClipContext.Fluid.NONE, caster));
+        net.minecraft.world.phys.HitResult raytraceresult = world.clip(new ClipContext(casterPosition, look_projected, blockModeIn, ClipContext.Fluid.NONE, caster));
         if (checkEntityCollision) {
             EntityHitResult entity_trace_result;
             if (raytraceresult.getType() != HitResult.Type.MISS) {
