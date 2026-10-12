@@ -59,14 +59,14 @@ implements INoCreeperLingering, com.mna.api.effects.IMNAEffectHook {
             return;
         }
         stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().put(NBT_DISJUNCTION, (Tag)listtag);
-        Map chants = EnchantmentUtils.enchantmentMap((ItemStack)stack);
-        List<Enchantment> keys = Arrays.asList(chants.keySet().toArray(new Enchantment[0]));
+        java.util.Map<net.minecraft.core.Holder<Enchantment>, Integer> chants = EnchantmentUtils.enchantmentMap((ItemStack)stack);
+        List<net.minecraft.core.Holder<Enchantment>> keys = new ArrayList<net.minecraft.core.Holder<Enchantment>>(chants.keySet());
         Collections.shuffle(keys);
         int total = chants.values().stream().mapToInt(Integer::intValue).sum();
         int suppression = (int)Math.min(Math.ceil((float)total / (float)chants.size()), (double)maxLevels);
         int totalSuppressed = 0;
-        for (Enchantment e : keys) {
-            if (GeneralConfigValues.DisjunctionBlacklist.contains(String.valueOf(com.mna.api.enchantments.MNAEnchantmentRegistry.idOf(e)))) continue;
+        for (net.minecraft.core.Holder<Enchantment> e : keys) {
+            if (GeneralConfigValues.DisjunctionBlacklist.contains(String.valueOf(com.mna.api.enchantments.MNAEnchantmentRegistry.idOf(e.value())))) continue;
             Integer existing = (Integer)chants.get(e);
             int loopSuppression = Math.min(suppression, maxLevels - totalSuppressed);
             if (existing > loopSuppression) {
@@ -79,7 +79,7 @@ implements INoCreeperLingering, com.mna.api.effects.IMNAEffectHook {
             if (totalSuppressed < maxLevels) continue;
             break;
         }
-        EnchantmentHelper.setEnchantments((Map)chants, (ItemStack)stack);
+        EnchantmentHelper.setEnchantments(chants, (ItemStack)stack);
     }
 
     public static void RemoveDisjunction(ItemStack stack) {

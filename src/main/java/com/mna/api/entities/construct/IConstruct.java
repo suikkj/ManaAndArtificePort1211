@@ -70,7 +70,7 @@ OwnableEntity {
 
     default public void pushDiagnosticMessage(String message, @Nullable ResourceLocation icon, boolean allowDuplicates) {
         ConstructDiagnosticMessageLoggedEvent event = new ConstructDiagnosticMessageLoggedEvent(this, message);
-        NeoForge.EVENT_BUS.post((Event)event);
+        NeoForge.EVENT_BUS.post(event);
         this.getDiagnostics().pushDiagnosticMessage(event.getMessage(), icon, allowDuplicates);
     }
 

@@ -64,7 +64,7 @@ implements IGuideBookRegistry {
         this.guidebookPaths = new ArrayList<ResourceLocation>();
         this._entries = new HashMap<String, GuidebookEntry>();
         this.guidebookPaths.add(ResourceLocation.fromNamespaceAndPath("mna", "guide"));
-        NeoForge.EVENT_BUS.post((Event)new RegisterGuidebooksEvent(this));
+        NeoForge.EVENT_BUS.post(new RegisterGuidebooksEvent(this));
     }
 
     public GuidebookEntry getEntry(String id) {

@@ -354,7 +354,7 @@ implements IRadialInventorySelect {
                 ConstructCommandFollowLodestar lodestar = (ConstructCommandFollowLodestar)ConstructTasks.LODESTAR.instantiateTask((IConstruct<?>)commandedEntity);
                 lodestar.setTileEntity(adjClickPos, Direction.DOWN);
                 if (commandedEntity.setCurrentCommand(context.getPlayer(), lodestar)) {
-                    NeoForge.EVENT_BUS.post((Event)new GenericProgressionEvent(context.getPlayer(), ProgressionEventIDs.CONSTRUCT_LODESTAR_ASSIGNED));
+                    NeoForge.EVENT_BUS.post(new GenericProgressionEvent(context.getPlayer(), ProgressionEventIDs.CONSTRUCT_LODESTAR_ASSIGNED));
                     Player patt16154$temp = context.getPlayer();
                     if (patt16154$temp instanceof ServerPlayer) {
                         ServerPlayer serverPlayer = (ServerPlayer)patt16154$temp;

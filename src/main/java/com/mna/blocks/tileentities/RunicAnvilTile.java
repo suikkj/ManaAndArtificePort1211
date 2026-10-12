@@ -281,7 +281,7 @@ GeoBlockEntity {
 
     private boolean cacheSpecialRecipes(int playerTier) {
         RunicAnvilShouldActivateEvent event = new RunicAnvilShouldActivateEvent(this.getItem(0), this.getItem(1));
-        NeoForge.EVENT_BUS.post((Event)event);
+        NeoForge.EVENT_BUS.post(event);
         if (event.getResult() == Result.ALLOW) {
             return true;
         }

@@ -42,7 +42,7 @@ extends GuiJEIDisable<ContainerAreaAdjust> {
     }
 
     protected void renderBg(GuiGraphics pGuiGraphics, float partialTick, int mouseX, int mouseY) {
-        NeoForge.EVENT_BUS.post((Event)new ScreenEvent.BackgroundRendered((Screen)this, pGuiGraphics));
+        NeoForge.EVENT_BUS.post(new ScreenEvent.BackgroundRendered((Screen)this, pGuiGraphics));
         pGuiGraphics.blit(GuiTextures.Widgets.WIDGETS, this.width / 2 - 65, this.height - 83, 45.0f, 54.0f, 50, 41, 128, 128);
         pGuiGraphics.blit(GuiTextures.Widgets.WIDGETS, this.width / 2 - 62, this.height - 80, 53.0f, 96.0f, 7, 7, 128, 128);
         pGuiGraphics.blit(GuiTextures.Widgets.WIDGETS, this.width / 2 + 15, this.height - 83, 45.0f, 54.0f, 50, 41, 128, 128);

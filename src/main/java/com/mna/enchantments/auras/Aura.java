@@ -56,7 +56,7 @@ extends MAEnchantmentBase {
         boolean canEnchant = this.canEnchant(stack);
         AuraEvent.Compatibility event = new AuraEvent.Compatibility(this, null, stack, (LivingEntity)enchanter);
         event.setResult(canEnchant ? Result.ALLOW : Result.DENY);
-        NeoForge.EVENT_BUS.post((Event)event);
+        NeoForge.EVENT_BUS.post(event);
         return event.getResult() == Result.ALLOW;
     }
 
@@ -72,7 +72,7 @@ extends MAEnchantmentBase {
         boolean isCompatible = this.isCompatibleWith(other);
         AuraEvent.Compatibility event = new AuraEvent.Compatibility(this, other, ItemStack.EMPTY, (LivingEntity)enchanter);
         event.setResult(isCompatible ? Result.ALLOW : Result.DENY);
-        NeoForge.EVENT_BUS.post((Event)event);
+        NeoForge.EVENT_BUS.post(event);
         return event.getResult() == Result.ALLOW;
     }
 
@@ -132,7 +132,7 @@ extends MAEnchantmentBase {
         if (this._applicationPredicate != null && !this._applicationPredicate.test(source)) {
             return;
         }
-        if (NeoForge.EVENT_BUS.post((Event)new AuraEvent.Tick(this, (LivingEntity)source))) {
+        if (NeoForge.EVENT_BUS.post(new AuraEvent.Tick(this, (LivingEntity)source))) {
             return;
         }
         MNACap.get(source, PlayerMagicProvider.MAGIC).ifPresent(m -> {
@@ -143,7 +143,7 @@ extends MAEnchantmentBase {
                 players = Arrays.asList(source);
             } else {
                 AuraEvent.Radius radiusEvent = new AuraEvent.Radius(this, source, this._radius);
-                NeoForge.EVENT_BUS.post((Event)radiusEvent);
+                NeoForge.EVENT_BUS.post(radiusEvent);
                 radius = radiusEvent.getRadius();
                 players = source.level().getEntitiesOfClass(Player.class, source.getBoundingBox().inflate(radius));
             }
@@ -151,7 +151,7 @@ extends MAEnchantmentBase {
             for (Player player : players) {
                 float adjustedManaCost = this._manaCost * (float)(hasBelt ? 2 : 5);
                 AuraEvent.Numerics numericsEvent = new AuraEvent.Numerics(this, source, (LivingEntity)player, radius, magnitude, adjustedManaCost, hasBelt);
-                NeoForge.EVENT_BUS.post((Event)numericsEvent);
+                NeoForge.EVENT_BUS.post(numericsEvent);
                 if (!m.getCastingResource().hasEnoughAbsolute((LivingEntity)player, numericsEvent.getManaCost())) break;
                 if (source.getTeam() != null && !player.isAlliedTo((Entity)source)) continue;
                 if (!manaOnly) {

@@ -94,7 +94,7 @@ public class FluidParameterRegistry {
     public static void onLoadComplete(FMLLoadCompleteEvent event) {
         INSTANCE.registerDefaults();
         FluidParameterRegistrationEvent evt = new FluidParameterRegistrationEvent(INSTANCE);
-        NeoForge.EVENT_BUS.post((Event)evt);
+        NeoForge.EVENT_BUS.post(evt);
     }
 
     public static class FluidParameter {

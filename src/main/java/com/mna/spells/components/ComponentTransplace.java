@@ -69,10 +69,10 @@ extends SpellEffect {
                 Vec3 casterPos = source.getOrigin();
                 Vec3 targetPos = target.getLivingEntity().position();
                 EntityTeleportEvent tpEventCaster = new EntityTeleportEvent((Entity)source.getCaster(), targetPos.x, targetPos.y, targetPos.z);
-                if (!NeoForge.EVENT_BUS.post((Event)tpEventCaster)) {
+                if (!NeoForge.EVENT_BUS.post(tpEventCaster)) {
                     source.getCaster().teleportTo(targetPos.x, targetPos.y, targetPos.z);
                 }
-                if (!NeoForge.EVENT_BUS.post((Event)(tpEventTarget = new EntityTeleportEvent((Entity)target.getLivingEntity(), casterPos.x, casterPos.y, casterPos.z)))) {
+                if (!NeoForge.EVENT_BUS.post((tpEventTarget = new EntityTeleportEvent((Entity)target.getLivingEntity(), casterPos.x, casterPos.y, casterPos.z)))) {
                     target.getLivingEntity().teleportTo(casterPos.x, casterPos.y, casterPos.z);
                 }
                 return ComponentApplicationResult.SUCCESS;

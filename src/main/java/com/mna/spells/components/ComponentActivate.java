@@ -61,7 +61,7 @@ extends SpellEffect {
             BlockHitResult result = new BlockHitResult(target.getPosition(), target.getBlockFace(this), target.getBlock(), false);
             BlockState state = context.getServerLevel().getBlockState(target.getBlock());
             PlayerInteractEvent.RightClickBlock event = new PlayerInteractEvent.RightClickBlock(source.getPlayer(), source.getHand(), target.getBlock(), result);
-            if (NeoForge.EVENT_BUS.post((Event)event)) {
+            if (NeoForge.EVENT_BUS.post(event)) {
                 return ComponentApplicationResult.FAIL;
             }
             if (state.use((Level)context.getServerLevel(), source.getPlayer(), InteractionHand.MAIN_HAND, result) == InteractionResult.SUCCESS) {

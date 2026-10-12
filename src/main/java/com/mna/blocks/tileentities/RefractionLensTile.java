@@ -126,7 +126,7 @@ extends MultiblockTile {
             return;
         }
         if (crafter != null) {
-            NeoForge.EVENT_BUS.post((Event)new GenericProgressionEvent(crafter, ProgressionEventIDs.CAPTURE_WELLSPRING));
+            NeoForge.EVENT_BUS.post(new GenericProgressionEvent(crafter, ProgressionEventIDs.CAPTURE_WELLSPRING));
             if (crafter instanceof ServerPlayer) {
                 CustomAdvancementTriggers.CAPTURE_WELLSPRING.trigger((ServerPlayer)crafter, this.affinity);
             }

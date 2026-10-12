@@ -699,7 +699,7 @@ public static void onLivingDamage_Insight(LivingDamageEvent.Pre event) {
                 player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ITEM_BREAK, SoundSource.PLAYERS, 1.0f, 1.0f);
                 event.setCanceled(true);
                 BonefeatherCharmUsedEvent bfe = new BonefeatherCharmUsedEvent(player);
-                NeoForge.EVENT_BUS.post((Event)bfe);
+                NeoForge.EVENT_BUS.post(bfe);
                 if (player instanceof ServerPlayer) {
                     CustomAdvancementTriggers.USE_CHARM.trigger((ServerPlayer)player, charmStack);
                     player.awardStat(Stats.ITEM_USED.get(((Item)ItemInit.FALL_CHARM.get())));
@@ -726,7 +726,7 @@ public static void onLivingDamage_Insight(LivingDamageEvent.Pre event) {
                 player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ITEM_BREAK, SoundSource.PLAYERS, 1.0f, 1.0f);
                 event.setCanceled(true);
                 ReedfeatherCharmUsedEvent bfe = new ReedfeatherCharmUsedEvent(player);
-                NeoForge.EVENT_BUS.post((Event)bfe);
+                NeoForge.EVENT_BUS.post(bfe);
                 if (player instanceof ServerPlayer) {
                     CustomAdvancementTriggers.USE_CHARM.trigger((ServerPlayer)player, charmStack);
                     player.awardStat(Stats.ITEM_USED.get(((Item)ItemInit.DROWN_CHARM.get())));
@@ -759,7 +759,7 @@ public static void onLivingDamage_Insight(LivingDamageEvent.Pre event) {
                 player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ITEM_BREAK, SoundSource.PLAYERS, 1.0f, 1.0f);
                 event.setCanceled(true);
                 CoalfeatherCharmUsedEvent bfe = new CoalfeatherCharmUsedEvent(player);
-                NeoForge.EVENT_BUS.post((Event)bfe);
+                NeoForge.EVENT_BUS.post(bfe);
                 if (player instanceof ServerPlayer) {
                     CustomAdvancementTriggers.USE_CHARM.trigger((ServerPlayer)player, charmStack);
                     player.awardStat(Stats.ITEM_USED.get(((Item)ItemInit.BURN_CHARM.get())));

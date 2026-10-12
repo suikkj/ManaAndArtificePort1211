@@ -96,7 +96,7 @@ extends SpellEffect {
         }
         Vec3 targetPos = Vec3.atCenterOf((Vec3i)pos);
         EntityTeleportEvent tpEvent = new EntityTeleportEvent(target.getEntity(), targetPos.x, targetPos.y, targetPos.z);
-        if (!NeoForge.EVENT_BUS.post((Event)tpEvent)) {
+        if (!NeoForge.EVENT_BUS.post(tpEvent)) {
             TeleportHelper.teleportEntity(target.getEntity(), (ResourceKey<Level>)context.getServerLevel().dimension(), targetPos);
             return ComponentApplicationResult.SUCCESS;
         }

@@ -178,7 +178,7 @@ Consumer<FriendlyByteBuf> {
         }
         float actualAmount = IEldrinCapacitorTile.super.supply(requester, destPos, affinity, amount, true);
         EldrinPowerTransferredEvent event = new EldrinPowerTransferredEvent(affinity, actualAmount, this.getVFXOriginOffset(), destPos);
-        if (NeoForge.EVENT_BUS.post((Event)event)) {
+        if (NeoForge.EVENT_BUS.post(event)) {
             return 0.0f;
         }
         return IEldrinCapacitorTile.super.supply(requester, destPos, affinity, amount, false);

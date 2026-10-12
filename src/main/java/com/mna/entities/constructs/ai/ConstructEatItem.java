@@ -45,7 +45,7 @@ extends ConstructAITask<ConstructEatItem> {
         } else if (--this.eat_counter <= 0) {
             this.pushDiagnosticMessage(this.translate("mna.constructs.feedback.eat_success", new Object[0]));
             ItemStack stackCopy = this.construct.asEntity().getItemInHand(hand).copy();
-            NeoForge.EVENT_BUS.post((Event)new ConstructEatItemEvent(this.construct, stackCopy));
+            NeoForge.EVENT_BUS.post(new ConstructEatItemEvent(this.construct, stackCopy));
             this.construct.asEntity().setItemInHand(hand, ItemStack.EMPTY);
             this.construct.setHappy(100);
             this.construct.resetActions();

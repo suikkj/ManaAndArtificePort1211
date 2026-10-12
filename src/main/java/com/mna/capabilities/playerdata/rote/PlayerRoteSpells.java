@@ -54,7 +54,7 @@ implements IPlayerRoteSpells {
         }
         if (player != null) {
             RoteProgressGainedEvent evt = new RoteProgressGainedEvent(player, part, xp);
-            if (NeoForge.EVENT_BUS.post((Event)evt)) {
+            if (NeoForge.EVENT_BUS.post(evt)) {
                 return false;
             }
             xp = evt.getAmount();
@@ -171,7 +171,7 @@ implements IPlayerRoteSpells {
         float amt = existing + amount;
         if (player != null) {
             MasteryGainedEvent evt = new MasteryGainedEvent(player, part, amt);
-            if (NeoForge.EVENT_BUS.post((Event)evt)) {
+            if (NeoForge.EVENT_BUS.post(evt)) {
                 return false;
             }
             amt = evt.getAmount();

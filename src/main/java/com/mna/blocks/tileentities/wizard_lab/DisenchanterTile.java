@@ -213,7 +213,7 @@ implements IEldrinConsumerTile {
         }
         EnchantmentHelper.setEnchantments((Map)enchantments, (ItemStack)input);
         if (this.getCrafter() != null && !this.getLevel().isClientSide() && (crafter = this.getCrafter()) != null) {
-            NeoForge.EVENT_BUS.post((Event)new GenericProgressionEvent(crafter, ProgressionEventIDs.REMOVE_ENCHANTMENT));
+            NeoForge.EVENT_BUS.post(new GenericProgressionEvent(crafter, ProgressionEventIDs.REMOVE_ENCHANTMENT));
             if (crafter instanceof ServerPlayer) {
                 CustomAdvancementTriggers.DISENCHANT.trigger((ServerPlayer)crafter, output);
             }

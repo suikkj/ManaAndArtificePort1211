@@ -48,64 +48,64 @@ import net.neoforged.bus.api.Event;
 public class EventDispatcher {
     public static void DispatchRitualComplete(IRitualRecipe ritual, NonNullList<RitualEffect> handlers, BlockPos center, List<ItemStack> reagents, Player caster) {
         RitualCompleteEvent evt = new RitualCompleteEvent(ritual, handlers, center, caster, reagents);
-        NeoForge.EVENT_BUS.post((Event)evt);
+        NeoForge.EVENT_BUS.post(evt);
     }
 
     public static boolean DispatchManaweaveCrafting(IManaweavingRecipe recipe, ItemStack output, Player crafter) {
         ManaweaveCraftingEvent evt = new ManaweaveCraftingEvent(recipe, output, crafter);
-        NeoForge.EVENT_BUS.post((Event)evt);
+        NeoForge.EVENT_BUS.post(evt);
         return !evt.isCanceled();
     }
 
     public static boolean DispatchRuneforgeCraft(IRuneforgeRecipe recipe, ItemStack output, Player crafter) {
         RuneforgeCraftingEvent evt = new RuneforgeCraftingEvent(recipe, output, crafter);
-        NeoForge.EVENT_BUS.post((Event)evt);
+        NeoForge.EVENT_BUS.post(evt);
         return !evt.isCanceled();
     }
 
     public static boolean DispatchRuneforgeEnchant(ItemStack output, Player crafter) {
         RuneforgeEnchantEvent evt = new RuneforgeEnchantEvent(output, crafter);
-        NeoForge.EVENT_BUS.post((Event)evt);
+        NeoForge.EVENT_BUS.post(evt);
         return !evt.isCanceled();
     }
 
     public static boolean DispatchRunescribeCraft(IRunescribeRecipe recipe, ItemStack output, Player crafter) {
         RunescribeCraftingEvent evt = new RunescribeCraftingEvent(recipe, output, crafter);
-        NeoForge.EVENT_BUS.post((Event)evt);
+        NeoForge.EVENT_BUS.post(evt);
         return !evt.isCanceled();
     }
 
     public static boolean DispatchManaweavePatternDrawn(IManaweavePattern pattern, LivingEntity caster) {
         ManaweavePatternDrawnEvent evt = new ManaweavePatternDrawnEvent(pattern, caster);
-        NeoForge.EVENT_BUS.post((Event)evt);
+        NeoForge.EVENT_BUS.post(evt);
         return !evt.isCanceled();
     }
 
     public static boolean DispatchPlayerLevelUp(Player player, int newLevel) {
         PlayerMagicLevelUpEvent evt = new PlayerMagicLevelUpEvent(player, newLevel);
-        NeoForge.EVENT_BUS.post((Event)evt);
+        NeoForge.EVENT_BUS.post(evt);
         return !evt.isCanceled();
     }
 
     public static boolean DispatchSpellCast(ISpellDefinition spell, SpellSource source, ItemStack stack, @Nullable SpellContext context) {
         SpellCastEvent evt = new SpellCastEvent(spell, source, stack, context);
-        NeoForge.EVENT_BUS.post((Event)evt);
+        NeoForge.EVENT_BUS.post(evt);
         return !evt.isCanceled();
     }
 
     public static void DispatchSpellCrafted(ISpellDefinition spell, Player caster) {
         SpellCraftedEvent evt = new SpellCraftedEvent(spell, caster);
-        NeoForge.EVENT_BUS.post((Event)evt);
+        NeoForge.EVENT_BUS.post(evt);
     }
 
     public static void DispatchConstructCrafted(IConstruct<?> construct, Player caster) {
         ConstructCraftedEvent evt = new ConstructCraftedEvent(construct, caster);
-        NeoForge.EVENT_BUS.post((Event)evt);
+        NeoForge.EVENT_BUS.post(evt);
     }
 
     public static void DispatchCantripCast(ICantrip cantrip, Player caster) {
         CantripCastEvent evt = new CantripCastEvent(cantrip, caster);
-        NeoForge.EVENT_BUS.post((Event)evt);
+        NeoForge.EVENT_BUS.post(evt);
     }
 }
 

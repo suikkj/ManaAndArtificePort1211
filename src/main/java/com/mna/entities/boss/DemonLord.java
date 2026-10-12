@@ -450,7 +450,7 @@ implements IFactionEnemy<DemonLord> {
         this.goalSelector.addGoal(0, (Goal)new PhaseTransitionGoal(this));
         this.goalSelector.addGoal(1, (Goal)new HellballGoal(hellball));
         this.goalSelector.addGoal(2, (Goal)new GraspOfFireGoal());
-        this.goalSelector.addGoal(3, (Goal)new BossMonster.CastSpellAtTargetGoal(sparks, moveSpeed, 300, 32.0f, 8.0f, true, 1025, 10, 20, null, () -> {
+        this.goalSelector.addGoal(3, (Goal)new CastSpellAtTargetGoal(sparks, moveSpeed, 300, 32.0f, 8.0f, true, 1025, 10, 20, null, () -> {
             this.setAction(Action.IDLE);
             this.setAttackAction(AttackAction.NONE);
             this.globalSpellCooldown = (Byte)this.entityData.get(PHASE) == 3 ? 10 + (int)(Math.random() * 30.0) : 40 + (int)(Math.random() * 60.0);
@@ -471,7 +471,7 @@ implements IFactionEnemy<DemonLord> {
             this.setAction(Action.ATTACKING);
             return true;
         }).setUsePredicate(e -> this.getAction() == Action.IDLE && this.globalSpellCooldown == 0));
-        this.goalSelector.addGoal(3, (Goal)new BossMonster.CastSpellAtTargetGoal(thunder, moveSpeed, 300, 16.0f, 4.0f, true, 1026, 10, 20, null, () -> {
+        this.goalSelector.addGoal(3, (Goal)new CastSpellAtTargetGoal(thunder, moveSpeed, 300, 16.0f, 4.0f, true, 1026, 10, 20, null, () -> {
             this.setAction(Action.IDLE);
             this.setAttackAction(AttackAction.NONE);
             this.globalSpellCooldown = (Byte)this.entityData.get(PHASE) == 3 ? 10 + (int)(Math.random() * 30.0) : 40 + (int)(Math.random() * 60.0);

@@ -106,7 +106,7 @@ extends ItemConstructPart {
                     return living.hasLineOfSight(e);
                 }).stream().map(e -> (LivingEntity)e).forEach(e -> {
                     ConstructSprayEffectEvent effectEvt = new ConstructSprayEffectEvent(living, (LivingEntity)e, backpackFluid.getFluid(), false, false);
-                    NeoForge.EVENT_BUS.post((Event)effectEvt);
+                    NeoForge.EVENT_BUS.post(effectEvt);
                 });
             }
         } else {

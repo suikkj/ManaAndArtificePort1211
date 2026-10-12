@@ -54,7 +54,7 @@ public interface IFaction {
 
     default public List<IFaction> getAlliedFactions() {
         FactionAllegianceEvent event = new FactionAllegianceEvent(this, Arrays.asList(this));
-        NeoForge.EVENT_BUS.post((Event)event);
+        NeoForge.EVENT_BUS.post(event);
         return event.getAllegiances();
     }
 

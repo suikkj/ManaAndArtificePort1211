@@ -688,7 +688,7 @@ IEldrinConsumerTile {
     private void tickLogic_complete() {
         if (this.stageTicks >= 130) {
             Vec3 center = Vec3.atCenterOf((Vec3i)this.getBlockPos());
-            NeoForge.EVENT_BUS.post((Event)new EldrinCraftingEvent(this.getCachedRecipe(), this.getCachedRecipe().getResultItem(), this.getCrafter()));
+            NeoForge.EVENT_BUS.post(new EldrinCraftingEvent(this.getCachedRecipe(), this.getCachedRecipe().getResultItem(), this.getCrafter()));
             Player crafter = this.getCrafter();
             if (crafter != null && crafter instanceof ServerPlayer) {
                 CustomAdvancementTriggers.ELDRIN_ALTAR_CRAFT.trigger((ServerPlayer)crafter, this.getCachedRecipe().getResultItem());

@@ -71,14 +71,14 @@ extends Slot {
         if (i > 0) {
             this.onQuickCraft(par2ItemStack, i);
             PlayerEvent.ItemCraftedEvent event = new PlayerEvent.ItemCraftedEvent(this.thePlayer, par2ItemStack, this.craftMatrix);
-            NeoForge.EVENT_BUS.post((Event)event);
+            NeoForge.EVENT_BUS.post(event);
         }
     }
 
     public void onTake(Player par1EntityPlayer, ItemStack par2ItemStack) {
         this.checkTakeAchievements(par2ItemStack);
         PlayerEvent.ItemCraftedEvent event = new PlayerEvent.ItemCraftedEvent(par1EntityPlayer, par2ItemStack, this.craftMatrix);
-        NeoForge.EVENT_BUS.post((Event)event);
+        NeoForge.EVENT_BUS.post(event);
         this.doComponentDecrements(par1EntityPlayer);
     }
 

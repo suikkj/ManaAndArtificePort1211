@@ -213,7 +213,7 @@ implements IEldrinConsumerTile {
         }
         this.setItem(3, output);
         if (this.getCrafter() != null && !this.getLevel().isClientSide() && (crafter = this.getCrafter()) != null) {
-            NeoForge.EVENT_BUS.post((Event)new GenericProgressionEvent(crafter, ProgressionEventIDs.TRANSCRIBE_SPELL));
+            NeoForge.EVENT_BUS.post(new GenericProgressionEvent(crafter, ProgressionEventIDs.TRANSCRIBE_SPELL));
             if (crafter instanceof ServerPlayer) {
                 CustomAdvancementTriggers.TRANSCRIBE_SPELL.trigger((ServerPlayer)crafter, this.copyRecipe, output);
             }

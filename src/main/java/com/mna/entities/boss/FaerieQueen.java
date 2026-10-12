@@ -207,21 +207,21 @@ implements IFactionEnemy<FaerieQueen> {
             this.setCooldown(1026, 100);
         }, 21));
         this.goalSelector.addGoal(1, (Goal)new FaerieQueenSummonIllusions());
-        this.goalSelector.addGoal(1, (Goal)new BossMonster.CastSpellAtTargetGoal(flingSpell, moveSpeed, 100, 10.0f, 0.0f, true, 1025, 8, 12, null, this::spellCastReset, this::simpleSpellCastPrecast).setUsePredicate(this::shouldFlingTarget));
-        this.goalSelector.addGoal(2, (Goal)new BossMonster.CastSpellAtTargetGoal(disjunctionSpell, moveSpeed, 400, 28.0f, 0.0f, true, 1027, 20, 28, null, this::spellCastReset, this::snapSpellCastPrecast).setUsePredicate(this::spellCastPredicate));
-        this.goalSelector.addGoal(2, (Goal)new BossMonster.CastSpellAtTargetGoal(mindControlSpell, moveSpeed, 500, 28.0f, 0.0f, true, 1028, 20, 28, null, this::spellCastReset, this::snapSpellCastPrecast).setUsePredicate(this::shouldMindControlTarget));
+        this.goalSelector.addGoal(1, (Goal)new CastSpellAtTargetGoal(flingSpell, moveSpeed, 100, 10.0f, 0.0f, true, 1025, 8, 12, null, this::spellCastReset, this::simpleSpellCastPrecast).setUsePredicate(this::shouldFlingTarget));
+        this.goalSelector.addGoal(2, (Goal)new CastSpellAtTargetGoal(disjunctionSpell, moveSpeed, 400, 28.0f, 0.0f, true, 1027, 20, 28, null, this::spellCastReset, this::snapSpellCastPrecast).setUsePredicate(this::spellCastPredicate));
+        this.goalSelector.addGoal(2, (Goal)new CastSpellAtTargetGoal(mindControlSpell, moveSpeed, 500, 28.0f, 0.0f, true, 1028, 20, 28, null, this::spellCastReset, this::snapSpellCastPrecast).setUsePredicate(this::shouldMindControlTarget));
         if (this.isWinter()) {
-            this.goalSelector.addGoal(1, (Goal)new BossMonster.CastSpellAtTargetGoal(chillSpell, moveSpeed, 300, 28.0f, 0.0f, true, 1031, 5, 13, null, this::spellCastReset, this::spinSpellCastPrecast).setUsePredicate(this::shouldHighPriorityChillTarget));
-            this.goalSelector.addGoal(1, (Goal)new BossMonster.CastSpellAtTargetGoal(frailtySpell, moveSpeed, 500, 28.0f, 0.0f, true, 1033, 20, 28, null, this::spellCastReset, this::snapSpellCastPrecast).setUsePredicate(this::shouldHighPriorityFrailtyTarget));
-            this.goalSelector.addGoal(5, (Goal)new BossMonster.CastSpellAtTargetGoal(chillSpell, moveSpeed, 300, 28.0f, 0.0f, true, 1031, 5, 13, null, this::spellCastReset, this::spinSpellCastPrecast).setUsePredicate(this::spellCastPredicate));
-            this.goalSelector.addGoal(5, (Goal)new BossMonster.CastSpellAtTargetGoal(frailtySpell, moveSpeed, 500, 28.0f, 0.0f, true, 1033, 20, 28, null, this::spellCastReset, this::snapSpellCastPrecast).setUsePredicate(this::spellCastPredicate));
-            this.goalSelector.addGoal(5, (Goal)new BossMonster.CastSpellAtTargetGoal(iceSpikeSpell, moveSpeed, 300, 28.0f, 0.0f, true, 1032, 5, 13, null, this::spellCastReset, this::simpleSpellCastPrecast).setUsePredicate(this::spellCastPredicate));
-            this.goalSelector.addGoal(6, (Goal)new BossMonster.CastSpellAtTargetGoal(winterIceSpell, moveSpeed, 0, 28.0f, 0.0f, true, 1030, 5, 13, null, this::spellCastReset, this::simpleSpellCastPrecast).setUsePredicate(this::spellCastPredicate));
+            this.goalSelector.addGoal(1, (Goal)new CastSpellAtTargetGoal(chillSpell, moveSpeed, 300, 28.0f, 0.0f, true, 1031, 5, 13, null, this::spellCastReset, this::spinSpellCastPrecast).setUsePredicate(this::shouldHighPriorityChillTarget));
+            this.goalSelector.addGoal(1, (Goal)new CastSpellAtTargetGoal(frailtySpell, moveSpeed, 500, 28.0f, 0.0f, true, 1033, 20, 28, null, this::spellCastReset, this::snapSpellCastPrecast).setUsePredicate(this::shouldHighPriorityFrailtyTarget));
+            this.goalSelector.addGoal(5, (Goal)new CastSpellAtTargetGoal(chillSpell, moveSpeed, 300, 28.0f, 0.0f, true, 1031, 5, 13, null, this::spellCastReset, this::spinSpellCastPrecast).setUsePredicate(this::spellCastPredicate));
+            this.goalSelector.addGoal(5, (Goal)new CastSpellAtTargetGoal(frailtySpell, moveSpeed, 500, 28.0f, 0.0f, true, 1033, 20, 28, null, this::spellCastReset, this::snapSpellCastPrecast).setUsePredicate(this::spellCastPredicate));
+            this.goalSelector.addGoal(5, (Goal)new CastSpellAtTargetGoal(iceSpikeSpell, moveSpeed, 300, 28.0f, 0.0f, true, 1032, 5, 13, null, this::spellCastReset, this::simpleSpellCastPrecast).setUsePredicate(this::spellCastPredicate));
+            this.goalSelector.addGoal(6, (Goal)new CastSpellAtTargetGoal(winterIceSpell, moveSpeed, 0, 28.0f, 0.0f, true, 1030, 5, 13, null, this::spellCastReset, this::simpleSpellCastPrecast).setUsePredicate(this::spellCastPredicate));
         } else {
-            this.goalSelector.addGoal(1, (Goal)new BossMonster.CastSpellAtTargetGoal(heatwaveSpell, moveSpeed, 300, 28.0f, 0.0f, true, 1035, 5, 13, null, this::spellCastReset, this::spinSpellCastPrecast).setUsePredicate(this::shouldHighPriorityHeatwaveTarget));
-            this.goalSelector.addGoal(5, (Goal)new BossMonster.CastSpellAtTargetGoal(heatwaveSpell, moveSpeed, 300, 28.0f, 0.0f, true, 1035, 5, 13, null, this::spellCastReset, this::spinSpellCastPrecast).setUsePredicate(this::spellCastPredicate));
-            this.goalSelector.addGoal(5, (Goal)new BossMonster.CastSpellAtTargetGoal(sunderSpell, moveSpeed, 500, 28.0f, 0.0f, true, 1036, 20, 28, null, this::spellCastReset, this::snapSpellCastPrecast).setUsePredicate(this::spellCastPredicate));
-            this.goalSelector.addGoal(6, (Goal)new BossMonster.CastSpellAtTargetGoal(summerFireSpell, moveSpeed, 0, 28.0f, 0.0f, true, 1034, 5, 13, null, this::spellCastReset, this::simpleSpellCastPrecast).setUsePredicate(this::spellCastPredicate));
+            this.goalSelector.addGoal(1, (Goal)new CastSpellAtTargetGoal(heatwaveSpell, moveSpeed, 300, 28.0f, 0.0f, true, 1035, 5, 13, null, this::spellCastReset, this::spinSpellCastPrecast).setUsePredicate(this::shouldHighPriorityHeatwaveTarget));
+            this.goalSelector.addGoal(5, (Goal)new CastSpellAtTargetGoal(heatwaveSpell, moveSpeed, 300, 28.0f, 0.0f, true, 1035, 5, 13, null, this::spellCastReset, this::spinSpellCastPrecast).setUsePredicate(this::spellCastPredicate));
+            this.goalSelector.addGoal(5, (Goal)new CastSpellAtTargetGoal(sunderSpell, moveSpeed, 500, 28.0f, 0.0f, true, 1036, 20, 28, null, this::spellCastReset, this::snapSpellCastPrecast).setUsePredicate(this::spellCastPredicate));
+            this.goalSelector.addGoal(6, (Goal)new CastSpellAtTargetGoal(summerFireSpell, moveSpeed, 0, 28.0f, 0.0f, true, 1034, 5, 13, null, this::spellCastReset, this::simpleSpellCastPrecast).setUsePredicate(this::spellCastPredicate));
         }
         if (com.mna.tools.MNAGoalSelectorAccess.availableGoals(this.targetSelector).size() == 0) {
             this.targetSelector.addGoal(1, (Goal)new BossMonster.ThreatTableHurtByTargetGoal((PathfinderMob)this, FaerieQueen.class));

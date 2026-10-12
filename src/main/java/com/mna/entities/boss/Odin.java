@@ -453,28 +453,28 @@ extends BossMonster<Odin> {
         this.goalSelector.addGoal(0, (Goal)new BossMonster.DoNothingGoal(64));
         this.goalSelector.addGoal(1, (Goal)new Enrage());
         this.goalSelector.addGoal(1, (Goal)new FloatGoal((Mob)this));
-        this.goalSelector.addGoal(2, (Goal)new BossMonster.CastSpellAtTargetGoal(wrath.createAsSpell(), 0.35f, 1200, 16.0f, 0.0f, false, 128, 12, 120, () -> {
+        this.goalSelector.addGoal(2, (Goal)new CastSpellAtTargetGoal(wrath.createAsSpell(), 0.35f, 1200, 16.0f, 0.0f, false, 128, 12, 120, () -> {
             this.setState(1);
             this.setState(128);
         }, () -> {
             this.clearState(1);
             this.setCooldown(1, (Boolean)this.entityData.get(ENRAGED) != false ? 10 : 20);
         }, null).setUsePredicate(b -> (Boolean)this.entityData.get(ENRAGED)).setChannelTime(100));
-        this.goalSelector.addGoal(3, (Goal)new BossMonster.CastSpellAtTargetGoal(frost.createAsSpell(), 0.35f, 200, 32.0f, 2.0f, true, 2, 12, 20, () -> {
+        this.goalSelector.addGoal(3, (Goal)new CastSpellAtTargetGoal(frost.createAsSpell(), 0.35f, 200, 32.0f, 2.0f, true, 2, 12, 20, () -> {
             this.setState(1);
             this.setState(2);
         }, () -> {
             this.clearState(1);
             this.setCooldown(1, (Boolean)this.entityData.get(ENRAGED) != false ? 10 : 20);
         }, null));
-        this.goalSelector.addGoal(3, (Goal)new BossMonster.CastSpellAtTargetGoal(smite.createAsSpell(), 0.35f, 300, 30.0f, 0.0f, true, 256, 12, 20, () -> {
+        this.goalSelector.addGoal(3, (Goal)new CastSpellAtTargetGoal(smite.createAsSpell(), 0.35f, 300, 30.0f, 0.0f, true, 256, 12, 20, () -> {
             this.setState(1);
             this.setState(256);
         }, () -> {
             this.clearState(1);
             this.setCooldown(1, (Boolean)this.entityData.get(ENRAGED) != false ? 10 : 20);
         }, null));
-        this.goalSelector.addGoal(4, (Goal)new BossMonster.CastSpellAtTargetGoal(lightning.createAsSpell(), 0.35f, 200, 32.0f, 2.0f, true, 4, 12, 20, () -> {
+        this.goalSelector.addGoal(4, (Goal)new CastSpellAtTargetGoal(lightning.createAsSpell(), 0.35f, 200, 32.0f, 2.0f, true, 4, 12, 20, () -> {
             this.setState(1);
             this.setState(4);
         }, () -> {

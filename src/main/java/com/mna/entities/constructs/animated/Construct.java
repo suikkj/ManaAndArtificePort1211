@@ -2316,11 +2316,11 @@ IItemHandlerModifiable {
                         return false;
                     }
                     ConstructSprayTargetingEvent targetEvt = new ConstructSprayTargetingEvent(this, (Entity)e, this.__cachedFluid, e == this.getOwner(), isFriendly);
-                    NeoForge.EVENT_BUS.post((Event)targetEvt);
+                    NeoForge.EVENT_BUS.post(targetEvt);
                     return !targetEvt.isCanceled();
                 }).stream().map(e -> e).forEach(e -> {
                     ConstructSprayEffectEvent effectEvt = new ConstructSprayEffectEvent((LivingEntity)this, (LivingEntity)e, this.__cachedFluid, e == this.getOwner(), SummonUtils.isTargetFriendly((Entity)e, (LivingEntity)this.getOwner()));
-                    NeoForge.EVENT_BUS.post((Event)effectEvt);
+                    NeoForge.EVENT_BUS.post(effectEvt);
                 });
             }
         }

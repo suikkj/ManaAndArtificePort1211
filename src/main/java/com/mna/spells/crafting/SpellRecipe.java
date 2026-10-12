@@ -689,7 +689,7 @@ IFactionSpecific {
             reagents.addAll(component_reagents);
         }
         SpellReagentsEvent event = new SpellReagentsEvent(this, caster, reagents);
-        NeoForge.EVENT_BUS.post((Event)event);
+        NeoForge.EVENT_BUS.post(event);
         return event.getRequiredReagents();
     }
 

@@ -149,7 +149,7 @@ SimpleWaterloggedBlock {
                 if (amt >= 100 && (be = world.getBlockEntity(position)) != null && be instanceof FluidJugTile) {
                     FluidJugTile fluidTile = (FluidJugTile)be;
                     fluidTile.drain(100, IFluidHandler.FluidAction.EXECUTE);
-                    player.setItemInHand(hand, ItemUtils.createFilledResult((ItemStack)heldItem, (Player)player, (ItemStack)new ItemStack((ItemLike)Items.POTION).set(DataComponents.POTION_CONTENTS, new PotionContents(Potions.WATER))));
+                    player.setItemInHand(hand, ItemUtils.createFilledResult((ItemStack)heldItem, (Player)player, (ItemStack)com.mna.api.tools.MNAItemData.setPotionContents(new ItemStack((ItemLike)Items.POTION), new PotionContents(Potions.WATER))));
                     player.swing(hand);
                     return InteractionResult.sidedSuccess((boolean)world.isClientSide);
                 }

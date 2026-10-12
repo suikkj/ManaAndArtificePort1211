@@ -228,7 +228,7 @@ public class BlockUtils {
             return false;
         }
         BlockEvent.BreakEvent event = new BlockEvent.BreakEvent(world, pos, state, playerEntity);
-        if (NeoForge.EVENT_BUS.post((Event)event)) {
+        if (NeoForge.EVENT_BUS.post(event)) {
             return false;
         }
         if (fortuneLevel > 0) {
@@ -273,7 +273,7 @@ public class BlockUtils {
             return drops;
         }
         BlockEvent.BreakEvent event = new BlockEvent.BreakEvent(world, pos, state, playerEntity);
-        if (NeoForge.EVENT_BUS.post((Event)event)) {
+        if (NeoForge.EVENT_BUS.post(event)) {
             return drops;
         }
         ItemStack stack = new ItemStack((ItemLike)Items.DIAMOND_PICKAXE);
@@ -313,7 +313,7 @@ public class BlockUtils {
             return false;
         }
         BlockEvent.BreakEvent event = new BlockEvent.BreakEvent(world, pos, state, playerEntity);
-        return !NeoForge.EVENT_BUS.post((Event)event);
+        return !NeoForge.EVENT_BUS.post(event);
     }
 
     public static void updateBlockState(Level world, BlockPos pos, BlockState state) {
@@ -336,7 +336,7 @@ public class BlockUtils {
             return false;
         }
         Object object = playerEntity = caster instanceof Player ? (Player)caster : FakePlayerFactory.getMinecraft((ServerLevel)((ServerLevel)world));
-        if (NeoForge.EVENT_BUS.post((Event)new BlockEvent.BreakEvent(world, pos, world.getBlockState(pos), playerEntity))) {
+        if (NeoForge.EVENT_BUS.post(new BlockEvent.BreakEvent(world, pos, world.getBlockState(pos), playerEntity))) {
             return false;
         }
         return BlockUtils.destroyBlockSilent(world, pos, dropBlock);

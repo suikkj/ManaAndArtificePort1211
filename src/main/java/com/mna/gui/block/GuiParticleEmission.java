@@ -204,7 +204,7 @@ extends GuiJEIDisable<ParticleEmissionContainer> {
     }
 
     protected void renderBg(GuiGraphics pGuiGraphics, float partialTick, int mouseX, int mouseY) {
-        NeoForge.EVENT_BUS.post((Event)new ScreenEvent.BackgroundRendered((Screen)this, pGuiGraphics));
+        NeoForge.EVENT_BUS.post(new ScreenEvent.BackgroundRendered((Screen)this, pGuiGraphics));
     }
 
     protected void renderLabels(GuiGraphics pGuiGraphics, int p_97809_, int p_97810_) {

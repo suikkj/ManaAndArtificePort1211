@@ -441,16 +441,16 @@ implements IFactionEnemy<WitherLich> {
         insectSwarmSpell.setShape(Shapes.SELF);
         insectSwarmSpell.addComponent(Components.INSECT_SWARM);
         insectSwarmSpell.writeToNBT(insectSwarm.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag());
-        this.goalSelector.addGoal(4, (Goal)new BossMonster.CastSpellAtTargetGoal(witherBolt, moveSpeed, 400, 20.0f, 0.0f, true, 1026, 8, 12, null, this::spellCastReset, this::spellCastPrecast).setUsePredicate(this::spellCastPredicate));
-        this.goalSelector.addGoal(4, (Goal)new BossMonster.CastSpellAtTargetGoal(fossilizeBolt, moveSpeed, 400, 26.0f, 0.0f, true, 1027, 8, 12, null, this::spellCastReset, this::spellCastPrecast).setUsePredicate(this::spellCastPredicate));
-        this.goalSelector.addGoal(5, (Goal)new BossMonster.CastSpellAtTargetGoal(frostBolt, moveSpeed, 60, 64.0f, 0.0f, true, 1025, 8, 12, null, this::spellCastReset, this::spellCastPrecast).setUsePredicate(this::spellCastPredicate));
-        this.goalSelector.addGoal(3, (Goal)new BossMonster.CastSpellAtTargetGoal(insectSwarm, moveSpeed, 800, 20.0f, 0.0f, false, 1028, 20, 55, null, this::spellCastReset, me -> {
+        this.goalSelector.addGoal(4, (Goal)new CastSpellAtTargetGoal(witherBolt, moveSpeed, 400, 20.0f, 0.0f, true, 1026, 8, 12, null, this::spellCastReset, this::spellCastPrecast).setUsePredicate(this::spellCastPredicate));
+        this.goalSelector.addGoal(4, (Goal)new CastSpellAtTargetGoal(fossilizeBolt, moveSpeed, 400, 26.0f, 0.0f, true, 1027, 8, 12, null, this::spellCastReset, this::spellCastPrecast).setUsePredicate(this::spellCastPredicate));
+        this.goalSelector.addGoal(5, (Goal)new CastSpellAtTargetGoal(frostBolt, moveSpeed, 60, 64.0f, 0.0f, true, 1025, 8, 12, null, this::spellCastReset, this::spellCastPrecast).setUsePredicate(this::spellCastPredicate));
+        this.goalSelector.addGoal(3, (Goal)new CastSpellAtTargetGoal(insectSwarm, moveSpeed, 800, 20.0f, 0.0f, false, 1028, 20, 55, null, this::spellCastReset, me -> {
             this.setAction(Action.ATTACKING);
             this.setAttackAction(AttackAction.BREATH_INSECTS);
             this.playSound(SFX.Entity.WitherLich.BREATH_ATTACK, 1.0f, 0.8f + (float)(Math.random() * 0.4));
             return true;
         }).setUninterruptable().setUsePredicate(this::spellCastPredicate));
-        this.goalSelector.addGoal(3, (Goal)new BossMonster.CastSpellAtTargetGoal(frostBolt, moveSpeed, 600, 20.0f, 0.0f, false, 1029, 20, 55, null, this::spellCastReset, me -> {
+        this.goalSelector.addGoal(3, (Goal)new CastSpellAtTargetGoal(frostBolt, moveSpeed, 600, 20.0f, 0.0f, false, 1029, 20, 55, null, this::spellCastReset, me -> {
             this.setAction(Action.ATTACKING);
             this.setAttackAction(AttackAction.BREATH_FROST);
             this.playSound(SFX.Entity.WitherLich.BREATH_ATTACK, 1.0f, 0.8f + (float)(Math.random() * 0.4));

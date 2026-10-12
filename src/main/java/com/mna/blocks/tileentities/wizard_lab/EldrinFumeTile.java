@@ -158,7 +158,7 @@ extends WizardLabTile {
             burnableStack.shrink(1);
         }
         if (crafter != null && !crafter.level().isClientSide()) {
-            NeoForge.EVENT_BUS.post((Event)new GenericProgressionEvent(crafter, ProgressionEventIDs.ELDRIN_FUME_LIT));
+            NeoForge.EVENT_BUS.post(new GenericProgressionEvent(crafter, ProgressionEventIDs.ELDRIN_FUME_LIT));
             if (crafter instanceof ServerPlayer) {
                 CustomAdvancementTriggers.LIGHT_FUME.trigger((ServerPlayer)crafter, this.selectedAffinity);
             }

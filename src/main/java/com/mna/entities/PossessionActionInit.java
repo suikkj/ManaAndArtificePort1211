@@ -71,7 +71,7 @@ public class PossessionActionInit {
         PossessionActions.RegisterLeftClickAction(EntityType.WITCH, e -> {
             Vec3 vector3d = e.getViewVector(1.0f);
             ThrownPotion potionentity = new ThrownPotion(e.level(), (LivingEntity)e);
-            potionentity.setItem(new ItemStack((ItemLike)Items.SPLASH_POTION).set(DataComponents.POTION_CONTENTS, new PotionContents(Potions.POISON)));
+            potionentity.setItem(com.mna.api.tools.MNAItemData.setPotionContents(new ItemStack((ItemLike)Items.SPLASH_POTION), new PotionContents(Potions.POISON)));
             potionentity.setXRot(potionentity.getXRot() - 20.0f);
             potionentity.shoot(vector3d.x, vector3d.y, vector3d.z, 0.75f, 8.0f);
             e.level().playSound((Player)null, e.getX(), e.getY(), e.getZ(), SoundEvents.WITCH_THROW, e.getSoundSource(), 1.0f, 0.8f + e.level().getRandom().nextFloat() * 0.4f);

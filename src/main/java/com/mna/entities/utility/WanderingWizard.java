@@ -300,7 +300,7 @@ IAnimPacketSync<WanderingWizard> {
         });
         givenMerchantOffers.add(new MerchantOffer(costItem.copy(), new ItemStack((ItemLike)Items.MAP), 1, 0, 1.0f));
         givenMerchantOffers.add(new MerchantOffer(costItem.copy(), new ItemStack((ItemLike)Items.COMPASS), 1, 0, 1.0f));
-        NeoForge.EVENT_BUS.post((Event)new WanderingWizardSelectingTradesEvent((Merchant)this, givenMerchantOffers, newTrades, maxNumbers));
+        NeoForge.EVENT_BUS.post(new WanderingWizardSelectingTradesEvent((Merchant)this, givenMerchantOffers, newTrades, maxNumbers));
     }
 
     @Override

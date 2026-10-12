@@ -392,7 +392,7 @@ implements ISpellHelper {
         }
         recipe.iterateComponents(c -> {
             int delayInSeconds = (int)(c.getValue(Attribute.DELAY) * 20.0f);
-            if (NeoForge.EVENT_BUS.post((Event)new ComponentApplyingEvent(source, context, target, (SpellEffect)c.getPart()))) {
+            if (NeoForge.EVENT_BUS.post(new ComponentApplyingEvent(source, context, target, (SpellEffect)c.getPart()))) {
                 return;
             }
             if (target.isBlock() && ((SpellEffect)c.getPart()).targetsBlocks() && !context.hasBlockBeenAffected((SpellEffect)c.getPart(), target.getBlock())) {
@@ -542,7 +542,7 @@ implements ISpellHelper {
             adjuster.modify(stack, recipe, caster, hand, curioCast);
         }
         CalculatingManaCostEvent event = new CalculatingManaCostEvent(caster, recipe, recipe.getManaCost());
-        NeoForge.EVENT_BUS.post((Event)event);
+        NeoForge.EVENT_BUS.post(event);
         if (event.getManaCost() != recipe.getManaCost()) {
             recipe.setManaCost(event.getManaCost());
         }
@@ -582,7 +582,7 @@ implements ISpellHelper {
         int quickCharge = MNAEnchantmentHelper.getItemEnchantmentLevel(Enchantments.QUICK_CHARGE, stack);
         durationInTicks = (int)((float)durationInTicks * (1.0f - 0.1f * (float)quickCharge));
         SpellCooldownCalculatingEvent event = new SpellCooldownCalculatingEvent(player, SpellRecipe.fromNBT(stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag()), durationInTicks);
-        NeoForge.EVENT_BUS.post((Event)event);
+        NeoForge.EVENT_BUS.post(event);
         if (event.getCooldown() == 0) {
             return;
         }

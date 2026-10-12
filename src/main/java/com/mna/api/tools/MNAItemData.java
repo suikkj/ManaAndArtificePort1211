@@ -91,4 +91,10 @@ public final class MNAItemData {
         stack.set(DataComponents.CUSTOM_DATA, CustomData.of(tag));
         return element;
     }
+
+    /** [PORT 1.21.1] ItemStack.set(...) retorna o valor ANTERIOR; em expressoes, usar este helper. */
+    public static ItemStack setPotionContents(ItemStack stack, net.minecraft.world.item.alchemy.PotionContents contents) {
+        stack.set(DataComponents.POTION_CONTENTS, contents);
+        return stack;
+    }
 }

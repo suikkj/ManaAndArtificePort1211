@@ -398,21 +398,21 @@ implements IFactionEnemy<CouncilWarden> {
     }
 
     private void registerBoltGravWell(int priority, ItemStack bolt_gravity_well) {
-        this.goalSelector.addGoal(priority, (Goal)new BossMonster.CastSpellAtTargetGoal(bolt_gravity_well, this.getAttributeValue(Attributes.MOVEMENT_SPEED), 100, 42.0f, 2.0f, false, 1001, 7, 5, null, () -> this.resetAfterSpellcast(30), me -> {
+        this.goalSelector.addGoal(priority, (Goal)new CastSpellAtTargetGoal(bolt_gravity_well, this.getAttributeValue(Attributes.MOVEMENT_SPEED), 100, 42.0f, 2.0f, false, 1001, 7, 5, null, () -> this.resetAfterSpellcast(30), me -> {
             this.setCastAnimation();
             return true;
         }).setUsePredicate(e -> this.getAction() == Action.IDLE && this.globalSpellCooldown == 0 && !this.getTarget().onGround()));
     }
 
     private void registerPull(int priority, ItemStack pull) {
-        this.goalSelector.addGoal(priority, (Goal)new BossMonster.CastSpellAtTargetGoal(pull, this.getAttributeValue(Attributes.MOVEMENT_SPEED), 100, 42.0f, 2.0f, true, 1002, 7, 5, null, () -> this.resetAfterSpellcast(30), me -> {
+        this.goalSelector.addGoal(priority, (Goal)new CastSpellAtTargetGoal(pull, this.getAttributeValue(Attributes.MOVEMENT_SPEED), 100, 42.0f, 2.0f, true, 1002, 7, 5, null, () -> this.resetAfterSpellcast(30), me -> {
             this.setCastAnimation();
             return true;
         }).setUsePredicate(e -> this.getAction() == Action.IDLE && this.globalSpellCooldown == 0 && !this.getTarget().onGround()).setTargetPredicate(e -> e.distanceTo((Entity)this) > 8.0f));
     }
 
     private void registerSmite(int priority, ItemStack arcane_smite) {
-        this.goalSelector.addGoal(priority, (Goal)new BossMonster.CastSpellAtTargetGoal(arcane_smite, this.getAttributeValue(Attributes.MOVEMENT_SPEED), 200, 42.0f, 2.0f, true, 1005, 7, 5, null, () -> this.resetAfterSpellcast(30), me -> {
+        this.goalSelector.addGoal(priority, (Goal)new CastSpellAtTargetGoal(arcane_smite, this.getAttributeValue(Attributes.MOVEMENT_SPEED), 200, 42.0f, 2.0f, true, 1005, 7, 5, null, () -> this.resetAfterSpellcast(30), me -> {
             this.setSlamCastAnimation();
             return true;
         }).setUsePredicate(e -> this.getAction() == Action.IDLE && this.globalSpellCooldown == 0 && !this.getTarget().onGround()).setTargetPredicate(e -> e.distanceTo((Entity)this) > 2.0f));

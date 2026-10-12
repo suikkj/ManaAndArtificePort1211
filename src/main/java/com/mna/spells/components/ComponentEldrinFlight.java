@@ -87,7 +87,7 @@ extends SpellEffect {
                     });
                     Vec3 end = (Vec3)selectedWellspring.getValue();
                     EntityTeleportEvent tpEvent = new EntityTeleportEvent(target.getEntity(), end.x, end.y, end.z);
-                    if (!NeoForge.EVENT_BUS.post((Event)tpEvent)) {
+                    if (!NeoForge.EVENT_BUS.post(tpEvent)) {
                         target.getLivingEntity().addEffect(new MobEffectInstance(com.mna.api.tools.MAEffects.holder(EffectInit.ELDRIN_FLIGHT.get()), 600));
                         EldrinFlight travel = new EldrinFlight((Level)context.getServerLevel(), (Player)target.getEntity(), target.getEntity().position(), end);
                         context.getServerLevel().addFreshEntity((Entity)travel);

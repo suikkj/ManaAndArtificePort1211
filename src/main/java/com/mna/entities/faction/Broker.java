@@ -251,7 +251,7 @@ implements GeoEntity {
             MerchantOffer offer = new MerchantOffer(costItem.copy(), costItemB.copy(), stack, 1, 0, 1.0f);
             givenMerchantOffers.add(offer);
         });
-        NeoForge.EVENT_BUS.post((Event)new BrokerSelectingTradesEvent((Merchant)this, givenMerchantOffers, newTrades, maxNumbers, (ImmutableList<Item>)ImmutableList.copyOf(allFactionItems)));
+        NeoForge.EVENT_BUS.post(new BrokerSelectingTradesEvent((Merchant)this, givenMerchantOffers, newTrades, maxNumbers, (ImmutableList<Item>)ImmutableList.copyOf(allFactionItems)));
     }
 
     private ItemStack getRandomOpposingToken(IFaction faction) {

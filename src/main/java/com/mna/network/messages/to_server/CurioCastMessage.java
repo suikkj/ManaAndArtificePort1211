@@ -71,7 +71,7 @@ extends BaseServerMessage implements CustomPacketPayload {
                 if (!(patt1806$temp instanceof ICanContainSpell)) continue;
                 ICanContainSpell iSpell = (ICanContainSpell)patt1806$temp;
                 LivingEntityUseItemEvent.Start event = new LivingEntityUseItemEvent.Start((LivingEntity)player, stack, 0);
-                if (!NeoForge.EVENT_BUS.post((Event)event) && iSpell.castFromCurioSlot(stack, (Player)player)) break;
+                if (!NeoForge.EVENT_BUS.post(event) && iSpell.castFromCurioSlot(stack, (Player)player)) break;
             }
         });
     }

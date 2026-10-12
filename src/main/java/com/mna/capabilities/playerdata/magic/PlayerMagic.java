@@ -413,7 +413,7 @@ implements IPlayerMagic {
             return;
         }
         MagicXPGainedEvent evt = new MagicXPGainedEvent(player, amount);
-        if (NeoForge.EVENT_BUS.post((Event)evt)) {
+        if (NeoForge.EVENT_BUS.post(evt)) {
             return;
         }
         amount = evt.getAmount();
@@ -440,7 +440,7 @@ implements IPlayerMagic {
             return;
         }
         AffinityChangedEvent evt = new AffinityChangedEvent(player, affinity, this.affinityDepths.get(affinity.getShiftAffinity()).floatValue(), amount);
-        if (player != null && NeoForge.EVENT_BUS.post((Event)evt)) {
+        if (player != null && NeoForge.EVENT_BUS.post(evt)) {
             return;
         }
         amount = evt.getShift();
@@ -493,7 +493,7 @@ implements IPlayerMagic {
             airCasts.setValue(10000);
         }
         AirCastLimitEvent event = new AirCastLimitEvent(player, spell, this.getAirCasts(), airCasts.intValue());
-        NeoForge.EVENT_BUS.post((Event)event);
+        NeoForge.EVENT_BUS.post(event);
         return event.getLimit();
     }
 

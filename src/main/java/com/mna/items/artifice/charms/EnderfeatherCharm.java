@@ -66,7 +66,7 @@ extends CharmBaseItem {
         }
         if (this.consume(spe, hand)) {
             EnderfeatherCharmUsedEvent event = new EnderfeatherCharmUsedEvent((Player)spe);
-            NeoForge.EVENT_BUS.post((Event)event);
+            NeoForge.EVENT_BUS.post(event);
             if (event.isCanceled()) {
                 spe.addItem(new ItemStack((ItemLike)this));
                 return InteractionResultHolder.fail(stack);

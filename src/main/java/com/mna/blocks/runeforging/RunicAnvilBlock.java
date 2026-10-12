@@ -142,7 +142,7 @@ EntityBlock {
                 return InteractionResult.FAIL;
             }
             RunicAnvilItemUsedEvent event = new RunicAnvilItemUsedEvent(te.getItem(0), te.getItem(1), activeStack, player);
-            if (NeoForge.EVENT_BUS.post((Event)event)) {
+            if (NeoForge.EVENT_BUS.post(event)) {
                 te.setItem(0, event.pattern.isEmpty() ? ItemStack.EMPTY : event.pattern.copy());
                 te.setItem(1, event.material.isEmpty() ? ItemStack.EMPTY : event.material.copy());
                 player.setItemInHand(hand, event.catalyst.isEmpty() ? ItemStack.EMPTY : event.catalyst.copy());
@@ -262,7 +262,7 @@ EntityBlock {
             activeStack.hurtAndBreak(1, (net.minecraft.server.level.ServerLevel)player.level(), player, e -> {});
             worldIn.playSound(player, (double)pos.getX(), (double)pos.getY(), (double)pos.getZ(), SoundEvents.ARMOR_EQUIP_GENERIC, SoundSource.BLOCKS, 1.0f, 1.0f);
             if (!worldIn.isClientSide) {
-                NeoForge.EVENT_BUS.post((Event)new GenericProgressionEvent(player, ProgressionEventIDs.APPLY_POUCH_PATCH));
+                NeoForge.EVENT_BUS.post(new GenericProgressionEvent(player, ProgressionEventIDs.APPLY_POUCH_PATCH));
                 if (player instanceof ServerPlayer) {
                     CustomAdvancementTriggers.RUNIC_ANVIL_CRAFT.trigger((ServerPlayer)player, sewable);
                 }

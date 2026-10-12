@@ -142,7 +142,7 @@ implements IEldrinConsumerTile {
         this.setItem(0, ItemStack.EMPTY);
         this.setItem(1, output);
         if (this.getCrafter() != null && !this.getLevel().isClientSide() && (crafter = this.getCrafter()) != null) {
-            NeoForge.EVENT_BUS.post((Event)new GenericProgressionEvent(crafter, ProgressionEventIDs.SPELL_AFFINITY_TINKERED));
+            NeoForge.EVENT_BUS.post(new GenericProgressionEvent(crafter, ProgressionEventIDs.SPELL_AFFINITY_TINKERED));
             if (crafter instanceof ServerPlayer) {
                 CustomAdvancementTriggers.AFFINITY_TINKER.trigger((ServerPlayer)crafter, recipe, original, this.selectedAffinity);
             }

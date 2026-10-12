@@ -127,7 +127,7 @@ implements ILootrBridge {
         this.getLevel().playSound(null, (double)this.getBlockPos().getX(), (double)this.getBlockPos().getY(), (double)this.getBlockPos().getZ(), SoundEvents.EXPERIENCE_ORB_PICKUP, SoundSource.PLAYERS, 1.0f, 1.0f);
         if (this.addedPatterns.size() >= 3) {
             this.open();
-            NeoForge.EVENT_BUS.post((Event)new GenericProgressionEvent(player, ProgressionEventIDs.OPEN_CACHE));
+            NeoForge.EVENT_BUS.post(new GenericProgressionEvent(player, ProgressionEventIDs.OPEN_CACHE));
             if (player instanceof ServerPlayer) {
                 CustomAdvancementTriggers.OPEN_CACHE.trigger((ServerPlayer)player, this.tier);
             }

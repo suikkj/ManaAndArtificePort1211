@@ -120,7 +120,7 @@ extends AbstractWidget {
         }
         ItemStack stack = this.getCurrentIndex(stackToRender);
         if (stack.getItem() == Items.POTION && stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag() == null) {
-            stack = stack.set(DataComponents.POTION_CONTENTS, new PotionContents(Potions.WATER));
+            stack.set(DataComponents.POTION_CONTENTS, new PotionContents(Potions.WATER));
         }
         if (stack.getCount() > 1) {
             float oX = 8.0f / scale;
