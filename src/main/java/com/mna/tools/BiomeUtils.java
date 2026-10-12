@@ -23,7 +23,7 @@ public class BiomeUtils {
     public static List<ResourceLocation> getAllBiomeIDs(ServerLevel world) {
         ArrayList<ResourceLocation> result = new ArrayList<ResourceLocation>();
         Registry registry = world.registryAccess().registryOrThrow(Registries.BIOME);
-        registry.entrySet().forEach(entry -> result.add(((ResourceKey)entry.getKey()).location()));
+        registry.entrySet().forEach(entry -> result.add((ResourceKey)entry.getKey().location()));
         return result;
     }
 

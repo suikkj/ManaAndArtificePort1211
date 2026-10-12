@@ -60,7 +60,7 @@ extends SpellEffect {
             target.getLivingEntity().heal(magnitude);
         }
         if (magnitude >= 15.0f && target.getEntity() instanceof ZombieVillager) {
-            ((ZombieVillager)target.getEntity()).startConverting(source.isPlayerCaster() ? source.getPlayer().getUUID() : null, 20);
+            com.mna.tools.MNAReflection.startConverting((net.minecraft.world.entity.monster.ZombieVillager)target.getEntity(), source.isPlayerCaster() ? source.getPlayer().getUUID() : null, 20);
         }
         return ComponentApplicationResult.SUCCESS;
     }

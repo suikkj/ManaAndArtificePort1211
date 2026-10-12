@@ -128,7 +128,7 @@ extends SpellEffect {
         worroa.getPersistentData().putBoolean("return_on_next_arrow_shot", true);
         ItemStack returnItem = offhandItem.copy();
         returnItem.setCount(1);
-        worroa.getPersistentData().put("return_stack", (Tag)returnItem.save(new CompoundTag()));
+        worroa.getPersistentData().put("return_stack", (Tag)com.mna.api.tools.MNAItemData.save(returnItem, new CompoundTag()));
         worroa.getPersistentData().putBoolean(NBT_CANNONSHOT, true);
         context.getLevel().addFreshEntity((Entity)worroa);
     }

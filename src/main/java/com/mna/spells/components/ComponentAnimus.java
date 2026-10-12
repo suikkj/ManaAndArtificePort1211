@@ -78,7 +78,7 @@ extends SpellEffect {
             attributeValuePairArray = attributeValuePairArray3;
             attributeValuePairArray3[0] = new AttributeValuePair(Attribute.DURATION, 10.0f, 5.0f, 60.0f, 5.0f, 2.0f);
         }
-        super(guiIcon, attributeValuePairArray);
+        super(guiIcon, attributeValuePairArray != null ? attributeValuePairArray : new AttributeValuePair[0]);
         this.greater = greater;
     }
 

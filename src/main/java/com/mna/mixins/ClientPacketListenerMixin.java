@@ -50,7 +50,7 @@ public class ClientPacketListenerMixin {
     public void mna$handleUpdateMobEffect(ClientboundUpdateMobEffectPacket packet, CallbackInfo cir) {
         MobEffect mobeffect;
         Entity entity = this.level.getEntity(packet.getEntityId());
-        if (entity != null && entity instanceof LivingEntity && (mobeffect = packet.effect().value()) != null && entity instanceof LivingEntity && mobeffect == EffectInit.REDUCE.get()) {
+        if (entity != null && entity instanceof LivingEntity && (mobeffect = packet.getEffect().value()) != null && entity instanceof LivingEntity && mobeffect == EffectInit.REDUCE.get()) {
             entity.refreshDimensions();
         }
     }

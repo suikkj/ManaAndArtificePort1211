@@ -86,7 +86,7 @@ extends ShapeRaytrace {
                 ItemStack itemStack = phylactery = source.getHand() == InteractionHand.MAIN_HAND ? source.getCaster().getOffhandItem() : source.getCaster().getMainHandItem();
                 if (phylactery.isEmpty() || !PhylacteryStaff.isFilled(phylactery)) {
                     List results = CuriosApi.getCuriosHelper().findCurios(source.getCaster(), is -> is.getItem() == ItemInit.STAFF_PHYLACTERY.get() || is.getItem() == ItemInit.CRYSTAL_PHYLACTERY.get());
-                    for (SlotResult sr : results) {
+                    for (SlotResult sr : (java.util.List<SlotResult>)results) {
                         if (sr.stack().isEmpty()) continue;
                         phylactery = sr.stack().copy();
                     }

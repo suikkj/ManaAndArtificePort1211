@@ -94,8 +94,8 @@ extends RitualEffect {
         }
         MutableBoolean successfullyReplaced = new MutableBoolean(false);
         ItemModifierBook.getModifier(dataStack).ifPresent(m -> ItemModifierBook.getRecipe(m, context.getLevel()).ifPresent(r -> {
-            context.replaceReagents(ResourceLocation.parse("mna:dynamic-modifier-1"), (NonNullList<ResourceLocation>)NonNullList.of(ResourceLocation.parse(""), (Object[])r.getRequiredItems()));
-            context.replacePatterns((NonNullList<ResourceLocation>)NonNullList.of(ResourceLocation.parse(""), (Object[])r.getRequiredPatterns()));
+            context.replaceReagents(ResourceLocation.parse("mna:dynamic-modifier-1"), (NonNullList<ResourceLocation>)(NonNullList)NonNullList.of(ResourceLocation.parse(""), (Object[])r.getRequiredItems()));
+            context.replacePatterns((NonNullList<ResourceLocation>)(NonNullList)NonNullList.of(ResourceLocation.parse(""), (Object[])r.getRequiredPatterns()));
             successfullyReplaced.setTrue();
         }));
         return successfullyReplaced.booleanValue();

@@ -78,7 +78,7 @@ extends SpellEffect {
             LivingEntity tgt = target.getLivingEntity();
             tgt.heal(amount);
             if (amount > 9.0f) {
-                Stream<MobEffectInstance> effects = tgt.getActiveEffects().stream().filter(e -> e.getEffect().getCategory() == MobEffectCategory.HARMFUL);
+                Stream<MobEffectInstance> effects = tgt.getActiveEffects().stream().filter(e -> e.getEffect().value().getCategory() == MobEffectCategory.HARMFUL);
                 effects.forEach(e -> tgt.removeEffect(e.getEffect()));
             }
             if (amount > 19.0f && tgt instanceof ZombieVillager) {

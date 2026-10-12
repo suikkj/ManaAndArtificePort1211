@@ -83,13 +83,13 @@ public class SpellBalanceCalculator {
     private static List<Shape> getShapesForTier(int tier) {
         Minecraft mc = Minecraft.getInstance();
         RecipeManager rm = mc.level.getRecipeManager();
-        return rm.getRecipes().stream().filter(r -> r.value().getType() == RecipeInit.SHAPE_TYPE.get()).map(r -> (ShapeRecipe)r.value()).filter(r -> r.getTier() <= tier).map(r -> (Shape)Registries.Shape.getValue(r.id())).filter(r -> r != null).collect(Collectors.toList());
+        return rm.getRecipes().stream().filter(r -> r.value().getType() == RecipeInit.SHAPE_TYPE.get()).map(r -> (ShapeRecipe)r.value()).filter(r -> r.getTier() <= tier).map(r -> (Shape)Registries.Shape.getValue(r.getId())).filter(r -> r != null).collect(Collectors.toList());
     }
 
     private static List<SpellEffect> getComponentsForTier(int tier) {
         Minecraft mc = Minecraft.getInstance();
         RecipeManager rm = mc.level.getRecipeManager();
-        return rm.getRecipes().stream().filter(r -> r.value().getType() == RecipeInit.COMPONENT_TYPE.get()).map(r -> (ComponentRecipe)r.value()).filter(r -> r.getTier() <= tier).map(r -> (SpellEffect)Registries.SpellEffect.getValue(r.id())).filter(r -> r != null).collect(Collectors.toList());
+        return rm.getRecipes().stream().filter(r -> r.value().getType() == RecipeInit.COMPONENT_TYPE.get()).map(r -> (ComponentRecipe)r.value()).filter(r -> r.getTier() <= tier).map(r -> (SpellEffect)Registries.SpellEffect.getValue(r.getId())).filter(r -> r != null).collect(Collectors.toList());
     }
 }
 

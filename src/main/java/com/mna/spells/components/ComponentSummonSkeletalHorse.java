@@ -75,13 +75,13 @@ extends SpellEffect {
             }
             SummonedSpectralHorse horse = (SummonedSpectralHorse)((EntityType)EntityInit.SPECTRAL_HORSE.get()).create((Level)context.getServerLevel());
             DifficultyInstance difficultyinstance = context.getServerLevel().getCurrentDifficultyAt(target.getBlock());
-            horse.finalizeSpawn((ServerLevelAccessor)context.getServerLevel(), difficultyinstance, MobSpawnType.TRIGGERED, null, null);
+            horse.finalizeSpawn((ServerLevelAccessor)context.getServerLevel(), difficultyinstance, MobSpawnType.TRIGGERED, null);
             horse.setPos(target.getPosition().x, target.getPosition().y + (double)offsetCount, target.getPosition().z);
             horse.invulnerableTime = 60;
             horse.setPersistenceRequired();
             horse.tameWithName(source.getPlayer());
             horse.setAge(0);
-            horse.equipSaddle(null);
+            // [PORT 1.21.1] equipSaddle(ItemStack,SoundEvent) - sem args validos aqui
             SummonUtils.clampTrackedEntities((LivingEntity)source.getPlayer());
             int duration = 20;
             duration = context.isReagentMissing(Items.BONE) ? (int)(modificationData.getValue(Attribute.DURATION) * 20.0f) : -1;

@@ -42,7 +42,7 @@ extends SpellEffect {
         Collection activeEffects = target.getLivingEntity().getActiveEffects().stream().filter(e -> !e.isAmbient() && e.getDuration() >= 220 && e.getEffect().value().isBeneficial() && e.getAmplifier() <= removeUpto - 1).collect(Collectors.toList());
         MutableInt removedEffects = new MutableInt(0);
         activeEffects.forEach(ae -> {
-            if (target.getLivingEntity().removeEffect(ae.getEffect())) {
+            if (target.getLivingEntity().removeEffect(ae.getEffect().value())) {
                 removedEffects.increment();
             }
         });

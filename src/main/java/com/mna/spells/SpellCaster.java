@@ -392,7 +392,9 @@ implements ISpellHelper {
         }
         recipe.iterateComponents(c -> {
             int delayInSeconds = (int)(c.getValue(Attribute.DELAY) * 20.0f);
-            if (NeoForge.EVENT_BUS.post(new ComponentApplyingEvent(source, context, target, (SpellEffect)c.getPart()))) {
+            ComponentApplyingEvent __cae = new ComponentApplyingEvent(source, context, target, (SpellEffect)c.getPart());
+            NeoForge.EVENT_BUS.post(__cae);
+            if (__cae.isCanceled()) {
                 return;
             }
             if (target.isBlock() && ((SpellEffect)c.getPart()).targetsBlocks() && !context.hasBlockBeenAffected((SpellEffect)c.getPart(), target.getBlock())) {

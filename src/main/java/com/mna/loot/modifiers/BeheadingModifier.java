@@ -24,7 +24,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 
 public class BeheadingModifier
 extends LootModifier {
-    public static final Supplier<com.mojang.serialization.MapCodec<BeheadingModifier>> CODEC = Suppliers.memoize(() -> RecordCodecBuilder.mapCodec(inst -> BeheadingModifier.codecStart((RecordCodecBuilder.Instance)inst).and(Codec.FLOAT.fieldOf("chancePerLevel").forGetter(m -> Float.valueOf(m.chancePerLevel))).and(BuiltInRegistries.ENTITY_TYPE.getCodec().fieldOf("mobType").forGetter(m -> m.mobType)).and(BuiltInRegistries.ITEM.getCodec().fieldOf("head").forGetter(m -> m.head)).apply(inst, BeheadingModifier::new)));
+    public static final Supplier<com.mojang.serialization.MapCodec<BeheadingModifier>> CODEC = Suppliers.memoize(() -> RecordCodecBuilder.mapCodec(inst -> BeheadingModifier.codecStart((RecordCodecBuilder.Instance)inst).and(Codec.FLOAT.fieldOf("chancePerLevel").forGetter(m -> Float.valueOf(m.chancePerLevel))).and(BuiltInRegistries.ENTITY_TYPE.getCodec().fieldOf("mobType").forGetter(m -> m.mobType)).and(BuiltInRegistries.ITEM.byNameCodec().fieldOf("head").forGetter(m -> m.head)).apply(inst, BeheadingModifier::new)));
     private final float chancePerLevel;
     private final Item head;
     private final EntityType<?> mobType;
@@ -40,7 +40,7 @@ extends LootModifier {
         LivingEntity killerLiving;
         int level;
         Entity dead = (Entity)context.getParamOrNull(LootContextParams.THIS_ENTITY);
-        Entity killer = (Entity)context.getParamOrNull(LootContextParams.KILLER_ENTITY);
+        Entity killer = (Entity)context.getParamOrNull(LootContextParams.ATTACKING_ENTITY);
         if (dead != null && killer != null && killer instanceof LivingEntity && dead.getType().equals(this.mobType) && (level = Math.max(com.mna.api.enchantments.MNAEnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.BEHEADING, (killerLiving = (LivingEntity)killer).getMainHandItem()), com.mna.api.enchantments.MNAEnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.BEHEADING, killerLiving.getOffhandItem()))) > 0 && Math.random() < (double)((float)level * this.chancePerLevel) && generatedLoot.stream().noneMatch(i -> i.getItem() == this.head)) {
             generatedLoot.add(new ItemStack((ItemLike)this.head));
         }

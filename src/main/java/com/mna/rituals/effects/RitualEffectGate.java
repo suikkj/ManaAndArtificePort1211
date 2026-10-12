@@ -89,8 +89,8 @@ extends RitualEffect {
                     portal.setRTP();
                 }
                 if (context.getCaster() != null) {
-                    IPlayerProgression p = MNACap.get((IPlayerProgression)context.getCaster(), PlayerProgressionProvider.PROGRESSION);
-                    IPlayerMagic m = MNACap.get((IPlayerMagic)context.getCaster(), PlayerMagicProvider.MAGIC);
+                    IPlayerProgression p = MNACap.get(context.getCaster(), PlayerProgressionProvider.PROGRESSION);
+                    IPlayerMagic m = MNACap.get(context.getCaster(), PlayerMagicProvider.MAGIC);
                     if (p != null && m != null && p.hasAlliedFaction()) {
                         IFaction faction = p.getAlliedFaction();
                         int idx = 0;

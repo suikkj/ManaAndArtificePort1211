@@ -62,7 +62,7 @@ extends SpellEffect {
         }
         InsectSwarm swarm = (InsectSwarm)((EntityType)EntityInit.INSECT_SWARM.get()).create((Level)context.getServerLevel());
         DifficultyInstance difficultyinstance = context.getServerLevel().getCurrentDifficultyAt(target.getBlock());
-        swarm.finalizeSpawn((ServerLevelAccessor)context.getServerLevel(), difficultyinstance, MobSpawnType.TRIGGERED, null, null);
+        swarm.finalizeSpawn((ServerLevelAccessor)context.getServerLevel(), difficultyinstance, MobSpawnType.TRIGGERED, null);
         swarm.setPos(target.getPosition().x, target.getPosition().y + (double)offsetCount, target.getPosition().z);
         swarm.invulnerableTime = 60;
         swarm.setPersistenceRequired();

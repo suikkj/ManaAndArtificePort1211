@@ -65,7 +65,7 @@ extends SpellEffect {
             if (event.isCanceled()) {
                 return ComponentApplicationResult.FAIL;
             }
-            if (state.use((Level)context.getServerLevel(), source.getPlayer(), InteractionHand.MAIN_HAND, result) == InteractionResult.SUCCESS) {
+            if (state.useItemOn(source.getPlayer().getItemInHand(InteractionHand.MAIN_HAND), (Level)context.getServerLevel(), source.getPlayer(), InteractionHand.MAIN_HAND, result).consumesAction()) {
                 return ComponentApplicationResult.SUCCESS;
             }
         }

@@ -92,9 +92,9 @@ extends RitualEffect {
                 return false;
             }
             if (existing == null) {
-                CrystalPhylactery.setEntityType(phylacteryStack, crystalType, context.getLevel());
+                CrystalPhylactery.setEntityType(phylacteryStack, (net.minecraft.world.entity.EntityType)crystalType, context.getLevel());
             }
-            ((IPhylacteryItem)phylacteryStack.getItem()).fill(phylacteryStack, crystalType, (float)((IPhylacteryItem)phylacteryStack.getItem()).getMaximumFill() * 0.25f, context.getLevel());
+            ((IPhylacteryItem)phylacteryStack.getItem()).fill(phylacteryStack, (net.minecraft.world.entity.EntityType)crystalType, (float)((IPhylacteryItem)phylacteryStack.getItem()).getMaximumFill() * 0.25f, context.getLevel());
             Vec3 center = Vec3.atCenterOf((Vec3i)context.getCenter());
             PresentItem epi = new PresentItem(context.getLevel(), center.x, center.y, center.z, phylacteryStack);
             context.getLevel().addFreshEntity((Entity)epi);

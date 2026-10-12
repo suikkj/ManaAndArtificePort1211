@@ -108,7 +108,8 @@ extends SpellEffect {
                 return ComponentApplicationResult.FAIL;
             }
             EntityTeleportEvent tpEvent = new EntityTeleportEvent((Entity)tgt, targetPosition.x, targetPosition.y, targetPosition.z);
-            if (!NeoForge.EVENT_BUS.post(tpEvent)) {
+            NeoForge.EVENT_BUS.post(tpEvent);
+            if (tpEvent.isCanceled()) {
                 tgt.teleportTo(targetPosition.x, targetPosition.y, targetPosition.z);
             }
             return ComponentApplicationResult.SUCCESS;

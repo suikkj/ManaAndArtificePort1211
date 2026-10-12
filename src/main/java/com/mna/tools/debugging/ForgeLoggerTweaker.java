@@ -30,7 +30,7 @@ public class ForgeLoggerTweaker {
         ArrayList<LoggerConfig> foundLog4JLoggers = new ArrayList<LoggerConfig>();
         LoggerContext logContext = (LoggerContext)LogManager.getContext((boolean)false);
         Map map = logContext.getConfiguration().getLoggers();
-        for (LoggerConfig logger : map.values()) {
+        for (LoggerConfig logger : (java.util.Collection<LoggerConfig>)map.values()) {
             if (foundLog4JLoggers.contains(logger)) continue;
             logger.addFilter((org.apache.logging.log4j.core.Filter)mbeLogFilter);
             foundLog4JLoggers.add(logger);

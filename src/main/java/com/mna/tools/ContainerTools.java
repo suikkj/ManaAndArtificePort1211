@@ -22,7 +22,7 @@ import net.minecraft.world.item.ItemStack;
 
 public class ContainerTools {
     public static CraftingContainer createTemporaryContainer(ItemStack item) {
-        return ContainerTools.createTemporaryContainer(1, 1, (NonNullList<ItemStack>)NonNullList.of(item, (Object[])new ItemStack[]{item}));
+        return ContainerTools.createTemporaryContainer(1, 1, (NonNullList<ItemStack>)(NonNullList)NonNullList.of(item, (Object[])new ItemStack[]{item}));
     }
 
     public static CraftingContainer createTemporaryContainer(int width, int height, NonNullList<ItemStack> items) {
