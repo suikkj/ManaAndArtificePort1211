@@ -49,7 +49,7 @@ implements ICyclingRecipeRenderer<RecipeFumeFilter> {
 
     private Optional<? extends Recipe<?>> resolveRecipe(ResourceLocation recipeLocation) {
         if (recipeLocation.getNamespace().equals("mna") && !recipeLocation.getPath().startsWith("fume_filter/")) {
-            recipeLocation = new ResourceLocation(recipeLocation.getNamespace(), "fume_filter/" + recipeLocation.getPath());
+            recipeLocation = ResourceLocation.fromNamespaceAndPath(recipeLocation.getNamespace(), "fume_filter/" + recipeLocation.getPath());
         }
         return this.minecraft.level.getRecipeManager().byKey(recipeLocation);
     }

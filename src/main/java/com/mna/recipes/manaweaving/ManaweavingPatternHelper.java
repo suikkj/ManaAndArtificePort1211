@@ -31,7 +31,7 @@ public class ManaweavingPatternHelper {
             return null;
         }
         if (rLoc.getNamespace().equals("mna") && !rLoc.getPath().startsWith("manaweave_patterns/")) {
-            rLoc = new ResourceLocation(rLoc.getNamespace(), "manaweave_patterns/" + rLoc.getPath());
+            rLoc = ResourceLocation.fromNamespaceAndPath(rLoc.getNamespace(), "manaweave_patterns/" + rLoc.getPath());
         }
         if ((mwpList = world.getRecipeManager().getRecipesFor((RecipeType)RecipeInit.MANAWEAVING_PATTERN_TYPE.get(), (Container)ContainerTools.createTemporaryContainer(ItemStack.EMPTY), world)) == null || mwpList.size() == 0) {
             return null;

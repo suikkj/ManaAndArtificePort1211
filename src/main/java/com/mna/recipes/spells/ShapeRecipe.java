@@ -65,7 +65,7 @@ implements ISpellComponentRecipe {
 
     @Override
     public ISpellComponent getComponent() {
-        ResourceLocation myLocation = this.output.getNamespace().equals("mna") ? new ResourceLocation(this.output.getNamespace(), "shapes/" + this.output.getPath()) : this.output;
+        ResourceLocation myLocation = this.output.getNamespace().equals("mna") ? ResourceLocation.fromNamespaceAndPath(this.output.getNamespace(), "shapes/" + this.output.getPath()) : this.output;
         Shape me = (Shape)Registries.Shape.getValue(myLocation);
         if (me == null) {
             throw new InvalidParameterException("Shape not found, the recipe is incorrect: " + myLocation.toString());

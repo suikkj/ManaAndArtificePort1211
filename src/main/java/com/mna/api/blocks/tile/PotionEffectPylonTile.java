@@ -41,7 +41,7 @@ extends PylonTileBase {
     public ResourceLocation getIcon() {
         if (this.cachedIcon == null) {
             ResourceLocation effectKey = BuiltInRegistries.MOB_EFFECT.getKey(this.getMobEffect());
-            this.cachedIcon = effectKey != null ? new ResourceLocation(effectKey.getNamespace(), "textures/mob_effect/" + effectKey.getPath() + ".png") : ResourceLocation.parse("");
+            this.cachedIcon = effectKey != null ? ResourceLocation.fromNamespaceAndPath(effectKey.getNamespace(), "textures/mob_effect/" + effectKey.getPath() + ".png") : ResourceLocation.parse("");
         }
         return this.cachedIcon;
     }

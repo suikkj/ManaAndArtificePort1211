@@ -84,7 +84,7 @@ extends SpellEffect {
                     if (hasBracelet && !hasSet) {
                         shouldHeal = ((EmberglowBracelet)ItemInit.EMBERGLOW_BRACELET.get()).isEquippedAndHasMana((LivingEntity)playerTarget, damage * 4, true);
                     } else if (!hasBracelet && hasSet) {
-                        playerTarget.getArmorSlots().forEach(is -> is.hurtAndBreak(damage * 4, (LivingEntity)playerTarget, e -> {}));
+                        playerTarget.getArmorSlots().forEach(is -> is.hurtAndBreak(damage * 4, (LivingEntity)playerTarget, ((LivingEntity)playerTarget).getEquipmentSlotForItem(is)));
                         shouldHeal = true;
                     } else if (hasBracelet && hasSet) {
                         shouldHeal = true;

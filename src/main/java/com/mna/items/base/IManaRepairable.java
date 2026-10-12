@@ -44,7 +44,7 @@ public interface IManaRepairable {
                     consumedMana.setValue(true);
                 }
                 if (((Boolean)consumedMana.getValue()).booleanValue() && (repairAmount = m.bankArmorRepair(itemSlot, repairPerTick)) > 0) {
-                    stack.hurtAndBreak(-repairAmount, (LivingEntity)player, p -> {});
+                    stack.hurtAndBreak(-repairAmount, (LivingEntity)player, ((LivingEntity)player).getEquipmentSlotForItem(stack));
                 }
             });
         }

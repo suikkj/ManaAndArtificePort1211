@@ -60,7 +60,7 @@ extends ItemConstructPart {
     }
 
     public boolean hurtEnemy(ItemStack stack, LivingEntity living, LivingEntity target) {
-        stack.hurtAndBreak(1, target, breaker -> breaker.broadcastBreakEvent(EquipmentSlot.MAINHAND));
+        stack.hurtAndBreak(1, target, EquipmentSlot.MAINHAND);
         return true;
     }
 

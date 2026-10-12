@@ -169,15 +169,15 @@ implements IGuideBookRegistry {
         Minecraft mc = Minecraft.getInstance();
         for (ResourceLocation rLoc : this.guidebookPaths) {
             if (!mc.options.languageCode.equalsIgnoreCase("en_us")) {
-                ResourceLocation rLoc_localized = new ResourceLocation(rLoc.getNamespace(), rLoc.getPath() + "/en_us.json");
+                ResourceLocation rLoc_localized = ResourceLocation.fromNamespaceAndPath(rLoc.getNamespace(), rLoc.getPath() + "/en_us.json");
                 this.readEntries(resourceManager, rLoc_localized);
-                ResourceLocation rLoc_packAdds = new ResourceLocation(rLoc.getNamespace(), rLoc.getPath() + "/pack_adds/en_us.json");
+                ResourceLocation rLoc_packAdds = ResourceLocation.fromNamespaceAndPath(rLoc.getNamespace(), rLoc.getPath() + "/pack_adds/en_us.json");
                 this.readEntries(resourceManager, rLoc_packAdds);
             }
             String guidebook_localized = String.format("%s.json", mc.options.languageCode);
-            ResourceLocation rLoc_localized = new ResourceLocation(rLoc.getNamespace(), rLoc.getPath() + "/" + guidebook_localized);
+            ResourceLocation rLoc_localized = ResourceLocation.fromNamespaceAndPath(rLoc.getNamespace(), rLoc.getPath() + "/" + guidebook_localized);
             this.readEntries(resourceManager, rLoc_localized);
-            ResourceLocation rLoc_packAdds = new ResourceLocation(rLoc.getNamespace(), rLoc.getPath() + "/pack_adds/" + guidebook_localized);
+            ResourceLocation rLoc_packAdds = ResourceLocation.fromNamespaceAndPath(rLoc.getNamespace(), rLoc.getPath() + "/pack_adds/" + guidebook_localized);
             this.readEntries(resourceManager, rLoc_packAdds);
         }
     }

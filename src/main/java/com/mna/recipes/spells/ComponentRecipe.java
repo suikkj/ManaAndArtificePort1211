@@ -64,7 +64,7 @@ implements ISpellComponentRecipe {
 
     @Override
     public ISpellComponent getComponent() {
-        ResourceLocation myLocation = this.output.getNamespace().equals("mna") ? new ResourceLocation(this.output.getNamespace(), "components/" + this.output.getPath()) : this.output;
+        ResourceLocation myLocation = this.output.getNamespace().equals("mna") ? ResourceLocation.fromNamespaceAndPath(this.output.getNamespace(), "components/" + this.output.getPath()) : this.output;
         SpellEffect me = (SpellEffect)Registries.SpellEffect.getValue(myLocation);
         return me;
     }

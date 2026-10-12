@@ -128,7 +128,13 @@ public class CuriosInterop {
     }
 
     public static void DamageCurioInSlot(Item item, LivingEntity entity, SlotTypePreset slot, int damage) {
-        CuriosApi.getCuriosInventory((LivingEntity)entity).ifPresent(handler -> handler.findFirstCurio(item).ifPresent(slotResult -> slotResult.stack().hurtAndBreak(damage, entity, damager -> CuriosApi.broadcastCurioBreakEvent((SlotContext)slotResult.slotContext()))));
+        CuriosApi.getCuriosInventory((LivingEntity)entity).ifPresent(handler -> handler.findFirstCurio(item).ifPresent(slotResult -> {
+            if (entity.level() instanceof net.minecraft.server.level.ServerLevel serverLevel) {
+                slotResult.stack().hurtAndBreak(damage, serverLevel, entity, damager -> CuriosApi.broadcastCurioBreakEvent((SlotContext)slotResult.slotContext()));
+            } else {
+                slotResult.stack().hurtAndBreak(damage, entity, entity.getEquipmentSlotForItem(slotResult.stack()));
+            }
+        }));
     }
 
     public static ItemStack getCurioFromSlot(LivingEntity entity, SlotContext curioSlotContext) {

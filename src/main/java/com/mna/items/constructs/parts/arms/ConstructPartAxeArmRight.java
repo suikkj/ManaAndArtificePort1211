@@ -124,13 +124,13 @@ extends ItemConstructPart {
     }
 
     public boolean hurtEnemy(ItemStack p_40994_, LivingEntity p_40995_, LivingEntity p_40996_) {
-        p_40994_.hurtAndBreak(2, p_40996_, p_41007_ -> p_41007_.broadcastBreakEvent(EquipmentSlot.MAINHAND));
+        p_40994_.hurtAndBreak(2, p_40996_, EquipmentSlot.MAINHAND);
         return true;
     }
 
     public boolean mineBlock(ItemStack p_40998_, Level p_40999_, BlockState p_41000_, BlockPos p_41001_, LivingEntity p_41002_) {
         if (!p_40999_.isClientSide && p_41000_.getDestroySpeed((BlockGetter)p_40999_, p_41001_) != 0.0f) {
-            p_40998_.hurtAndBreak(1, p_41002_, p_40992_ -> p_40992_.broadcastBreakEvent(EquipmentSlot.MAINHAND));
+            p_40998_.hurtAndBreak(1, p_41002_, EquipmentSlot.MAINHAND);
         }
         return true;
     }

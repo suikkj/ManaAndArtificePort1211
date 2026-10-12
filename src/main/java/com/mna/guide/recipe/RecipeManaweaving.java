@@ -60,7 +60,7 @@ implements ICyclingRecipeRenderer<RecipeManaweaving> {
         Optional resolved = this.minecraft.level.getRecipeManager().byKey(recipeLocation);
         if (!resolved.isPresent()) {
             if (recipeLocation.getNamespace().equals("mna") && !recipeLocation.getPath().startsWith("manaweaving/")) {
-                recipeLocation = new ResourceLocation(recipeLocation.getNamespace(), "manaweaving/" + recipeLocation.getPath());
+                recipeLocation = ResourceLocation.fromNamespaceAndPath(recipeLocation.getNamespace(), "manaweaving/" + recipeLocation.getPath());
             }
             resolved = this.minecraft.level.getRecipeManager().byKey(recipeLocation);
         }

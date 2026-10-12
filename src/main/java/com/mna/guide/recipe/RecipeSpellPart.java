@@ -128,14 +128,14 @@ extends RecipeRendererBase {
         if (this.recipe != null) {
             ResourceLocation rLoc = this.recipe.getOutput();
             if (rLoc.getNamespace().equals("mna")) {
-                rLoc = new ResourceLocation("mna", "shapes/" + this.recipe.getOutput().getPath());
+                rLoc = ResourceLocation.fromNamespaceAndPath("mna", "shapes/" + this.recipe.getOutput().getPath());
                 this.output = (ISpellComponent)Registries.Shape.getValue(rLoc);
                 if (this.output == null) {
-                    rLoc = new ResourceLocation("mna", "components/" + this.recipe.getOutput().getPath());
+                    rLoc = ResourceLocation.fromNamespaceAndPath("mna", "components/" + this.recipe.getOutput().getPath());
                     this.output = (ISpellComponent)Registries.SpellEffect.getValue(rLoc);
                 }
                 if (this.output == null) {
-                    rLoc = new ResourceLocation("mna", "modifiers/" + this.recipe.getOutput().getPath());
+                    rLoc = ResourceLocation.fromNamespaceAndPath("mna", "modifiers/" + this.recipe.getOutput().getPath());
                     this.output = (ISpellComponent)Registries.Modifier.getValue(rLoc);
                 }
             } else {

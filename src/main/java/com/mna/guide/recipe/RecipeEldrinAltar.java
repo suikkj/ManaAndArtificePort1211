@@ -54,7 +54,7 @@ implements ICyclingRecipeRenderer<RecipeEldrinAltar> {
         Optional resolved = this.minecraft.level.getRecipeManager().byKey(recipeLocation);
         if (!resolved.isPresent()) {
             if (recipeLocation.getNamespace().equals("mna") && !recipeLocation.getPath().startsWith("eldrin_altar/")) {
-                recipeLocation = new ResourceLocation(recipeLocation.getNamespace(), "eldrin_altar/" + recipeLocation.getPath());
+                recipeLocation = ResourceLocation.fromNamespaceAndPath(recipeLocation.getNamespace(), "eldrin_altar/" + recipeLocation.getPath());
             }
             resolved = this.minecraft.level.getRecipeManager().byKey(recipeLocation);
         }

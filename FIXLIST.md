@@ -9,6 +9,10 @@ Cada bloco é validado por clean compile. Bloco reverte se ficar pior.
 Snapshot de segurança: `_snapshots/snap-20261011-024252-pre-analise/` (1.861 .java).
 Restaurar: `cp -r _snapshots/snap-.../src .`
 
+**Repositório remoto:** https://github.com/suikkj/ManaAndArtificePort1211 (branch `main`).
+Push: `GIT_TERMINAL_PROMPT=0 git push -u origin main` (repo git próprio do workspace —
+⚠ o home `C:\Users\lucas\.git` é um repo acidental e NÃO deve ser usado).
+
 ---
 
 ## AUDITORIA PRÉVIA (fase B pedida pelo usuário)
@@ -223,13 +227,6 @@ perderam o `getResult()/setResult()` herdado. Migrados para enum próprio
 | ✅ `ItemStack.getTag()` → `getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag()` (9 arq) | 3.236 | −18 |
 | ✅ `Optional.resolve().get()` (artefato do patch de LazyOptional) → `.get()` (36 arq) | 3.188 | −48 |
 | ✅ `ItemStack.getEnchantmentLevel(...)` REMOVIDO → `EnchantmentHelper.getEnchantmentLevel(Holder, LivingEntity)` (caso a caso, 6 arq) | **3.181** | −7 |
-| ✅ **B19a** `Enchantment` virou record: bases (`MAEnchantmentBase`, `MADamageEnchantmentBase`) deixam de estender `Enchantment`; bridge `MAEnchantmentBridge` | 3.343 | −53 |
-| ✅ `TierSortingRegistry` REMOVIDO → `MNAtierSorting` | 3.312 | −31 |
-| ✅ `IForgeBlockEntity` → `IBlockEntityExtension` | 3.298 | −14 |
-| ✅ `event.player.` → `event.getEntity().` | 3.254 | −44 |
-| ✅ `ItemStack.getTag()` → CUSTOM_DATA | 3.236 | −18 |
-| ✅ `Optional.resolve()` cleanup | 3.188 | −48 |
-| ✅ `getEnchantmentLevel` → `EnchantmentHelper` | 3.181 | −7 |
 | ✅ **SESSÃO 2026-10-12 (lotes 2-6)**: _fix2 (addAttributeModifier, readBlockPos, GlassBlock, GeckoLib, MAParticleType, ring_large, setLootTable) | 3.055 | −126 |
 | ✅ _fix3+_fix4 (WorldRenderUtils Pose, ImageButton swap, GuiGuideBook casts, ArmorMaterial record) | 2.955 | −100 |
 | ✅ _fix5 (damageItem, RecordItem, render→renderWidget ×9, AttributeModifier strings) | 2.931 | −24 |
@@ -292,3 +289,100 @@ O `@ObjectHolder` foi removido no 1.21.1. Todas essas classes tinham campos `= n
 > Método reutilizável: `java -jar vineflower.jar --only=<pkg> jar.jar out/`
 > preserva `@ObjectHolder`, ao contrário do CFR. Use para qualquer outra classe
 > que esteja com campos nulos.
+
+---
+
+## ✅ REVISÃO DA LISTA (2026-10-12) — o que os blocos antigos viraram
+
+Verificação por `grep` no `_build_last.log` do build atual (1.881 erros):
+
+| Bloco | Status | Evidência |
+|---|---|---|
+| B1 x0/y0/x1/y1 | ✅ | 0 erros de x0/y0 restantes |
+| B2 `new ResourceLocation(a,b)` | ⚠️ 15 restantes | `ResourceLocation(String,String) has private access` = 15 |
+| B3 `ModelResourceLocation` | ⚠️ 19 restantes (era 156) | grep = 19 |
+| B4 `Matrix3f`→`Pose` | ⚠️ 15 restantes (era 96) | `Matrix3f cannot be converted to Pose` = 15 |
+| B5 `addRenderableWidget` | ✅ 0 | grep = 0 |
+| B6 imports `BuiltInRegistries` | ✅ 0 | |
+| B7 `MobEffect`↔Holder | ✅ base feita | 14 residuais de `Holder<MobEffect>` |
+| B8/B19 encantamentos | ✅ feito (B19a+b+c + `MNAEnchantmentRegistry`) | ver B19 |
+| B9 NBT de ItemStack | ✅ 0 | |
+| B10 capabilities/LazyOptional | ✅ 0 | |
+| B11 networking | ✅ NetworkHooks 0 / StreamCodec 0 | |
+| B12 `IForgeMenuType` | ✅ 0 | |
+| B13 `ForgeCapabilities` | ✅ (→ `MNACaps`) | |
+| B14 misc | ✅ PotionUtils 0 / RenderGuiOverlayEvent 0 / DyeableLeatherItem migrado | |
+| B15 genéricos | 🔄 em andamento | inference T = 90, Object→X = 77, method refs = 37 |
+| B16 pipeline de dano | 🔄 10 restantes (era 109) | `DamageEventHandler.java` = 10 |
+| B17 `EntityInit` builders | 🔄 12 restantes (era 73) | grep = 12 |
+| B18 codecs | ✅ StreamCodec 0 | |
+| B20 Curios 9.x | ✅ | |
+| B21 eventos removidos | ⚠️ features desativadas (jump/visibility/sleep) — reimplementar via mixin | |
+| B22 `Event.HasResult` | ✅ | |
+| B23 atributos | ✅ | |
+| B24 `DyeableLeatherItem` | ✅ | |
+| B25–B41 (lotes 2–6) | ✅ | ver tabela de Progresso |
+
+---
+
+## 🔜 FILA ATUAL DE ERROS — checada no build 1.881 (2026-10-12)
+
+**Regra:** sempre que um lote for aplicado, re-verificar esta seção com
+`grep 'error:' _build_last.log` e ATUALIZAR as contagens — nada sai daqui sem
+evidência de queda no build.
+
+### Maiores arquivos (por contagem)
+- [ ] `Construct.java` (31)
+- [ ] `DemonLord.java` (29)
+- [ ] `GuiOcculus.java` (27)
+- [ ] `ItemInteractionsInit.java` (21)
+- [ ] `PractitionersPouch.java` (19)
+- [ ] `BlockUtils.java` (19)
+- [ ] `ConstructNodeEvaluator.java` (18)
+- [ ] `GuiLodestarV2.java` (17)
+- [ ] `FaerieQueen.java` (17)
+- [ ] `GuiGuideBook.java` (16)
+- [ ] `HUDOverlayRenderer.java` (15)
+- [ ] `VillagerRegistry.java` (15)
+
+### Padrões (prioridade de lote; contagens do build 1.881)
+- [ ] `inference variable T has incompatible equality constraints` (90) — chamadas `MNACap.get(...)`/holders em tipos concretos; analisar por arquivo
+- [ ] `Object cannot be converted to X` (77) — resíduos de raw types do CFR
+- [ ] `invalid method reference` (37) — method-refs em interfaces raw (padrão `(TriConsumer)((TriConsumer)X::m)`)
+- [ ] `Entity cannot be converted to X` (30) — casts em renderers/GeckoLib (setupAnim/render)
+- [ ] `ResourceLocation cannot be converted` (19) — API que agora pede `ResourceKey` (ex.: `dimension()`)
+- [ ] `symbol: get()` (18) — `.get()` em tipo errado (resíduo de Optional/Holder)
+- [ ] `RecipeHolder<CAP#1>` (16) — mais sites `getRecipes()/byKey` → `.value()`/`.id()`
+- [ ] **`new ResourceLocation(a,b)` private (15)** — trocar por `ResourceLocation.fromNamespaceAndPath(...)`
+- [ ] **`ClipContext is ambiguous` (15)** — `new ClipContext(...)` com args raw; tipar `Vec3`/`ClipContext.Block/Fluid`
+- [ ] `Matrix3f cannot be converted to Pose` (15) — B4 residual
+- [ ] **`TooltipContext cannot be converted` (15)** — `appendHoverText` com `Item.TooltipContext` errado
+- [ ] **`symbol: MNAItemData` (14)** — arquivos usando `MNAItemData.*` sem import (faltou nos lotes 8/17)
+- [ ] `symbol: level` (14) — vars renomeadas (`world`→`level`)
+- [ ] `Holder<MobEffect> cannot be converted` (14) — mais sites `MobEffectInstance`/`hasEffect`/`getEffect`
+- [ ] **`blockState has private access in FallingBlockEntity` (14)** — usar getter/reflexão
+- [ ] **`EquipmentSlot is not a functional interface` (14)** — `hurtAndBreak(n, ent, e -> {})` → `hurtAndBreak(n, ent, slot)`
+- [ ] `MACapabilityForgeEventHandlers` (13) — `event.addCapability` não existe → registrar handlers via `RegisterCapabilitiesEvent` (NeoForge)
+- [ ] `EntityInit` (12) — B17 residual
+- [ ] `DamageEventHandler` (10) — B16 residual
+- [ ] `ModelResourceLocation` (19) — B3 residual
+
+---
+
+## ⚠️ VERIFICAÇÃO DE RUNTIME PENDENTE (compila; ainda não testado em jogo)
+
+- [ ] `MAEffectHooks`/`IMNAEffectHook` — hooks via `MobEffectEvent.Added/Remove/Expired`; validar ordem e casos (morte do mob, `/effect clear`)
+- [ ] `MNAEnchantmentRegistry` — depende de server ativo (retorna `null` no cliente cedo); auditar chamadas em GUI/render
+- [ ] **Enchants do MNA via `MAEnchantmentBridge.build()` têm `DataComponentMap.EMPTY`** → efeitos vanilla (dano/durabilidade/etc.) NÃO aplicam sozinhos; a lógica custom vive em `EnchantmentBehaviors`. Revisar quais precisam de `DataComponents.ENCHANTMENT_EFFECTS`
+- [ ] `MNAMenuAccess` / `LootTableHelper` — reflexão em campos `private` do vanilla; validar em runtime
+- [ ] Tiles com `getCapability` removido (FluidJugTile, ManaweavingAltarTile, InfiniteFluidCapabilityHandler) — expor handlers via `RegisterCapabilitiesEvent` (NeoForge)
+- [ ] `MNACaps.itemHandler` — validar com baús/máquinas do MNA em jogo
+- [ ] B16 pipeline de dano — validar reduções (escudo/armadura) com `LivingDamageEvent.Pre/Post`
+- [ ] B21 eventos removidos — features desativadas (jump boost/camuflagem/sleep); mixin se necessário
+- [ ] `MAEnchantmentBase`/`MADamageEnchantmentBase` são marcadores vazios — decidir se reimplementar via data
+- [ ] `_snapshots/` fica fora do git (pesado) — o histórico do repo remoto cumpre o papel de ponto de retorno
+
+> **COMO MANTER ESTA LISTA VIVA (pedido do usuário):** ao encontrar qualquer erro novo
+> no caminho, adicionar aqui (arquivo/padrão + contagem) ANTES de seguir para o próximo
+> lote, e re-checar as contagens ao final de cada lote. A tabela de Progresso registra
+> o que já caiu; esta seção registra o que falta.

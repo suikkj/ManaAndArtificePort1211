@@ -64,7 +64,7 @@ implements ISpellComponentRecipe {
 
     @Override
     public ISpellComponent getComponent() {
-        ResourceLocation myLocation = this.output.getNamespace().equals("mna") ? new ResourceLocation(this.output.getNamespace(), "modifiers/" + this.output.getPath()) : this.output;
+        ResourceLocation myLocation = this.output.getNamespace().equals("mna") ? ResourceLocation.fromNamespaceAndPath(this.output.getNamespace(), "modifiers/" + this.output.getPath()) : this.output;
         Modifier me = (Modifier)Registries.Modifier.getValue(myLocation);
         return me;
     }

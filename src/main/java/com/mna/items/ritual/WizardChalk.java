@@ -46,7 +46,7 @@ extends TieredItem {
         if (!context.getLevel().isClientSide()) {
             if (context.getLevel().getBlockState(context.getClickedPos()).isFaceSturdy((BlockGetter)context.getLevel(), context.getClickedPos(), Direction.UP) && context.getLevel().isEmptyBlock(context.getClickedPos().above())) {
                 context.getLevel().setBlockAndUpdate(context.getClickedPos().above(), (BlockState)((BlockState)((BlockState)((Block)BlockInit.CHALK_RUNE.get()).defaultBlockState().setValue((Property)ChalkRuneBlock.RUNEINDEX, (Comparable)Integer.valueOf((int)Math.floor(Math.random() * (double)(ChalkRuneBlock.RUNEINDEX.getPossibleValues().size() - 1))))).setValue((Property)ChalkRuneBlock.METAL, (Comparable)Boolean.valueOf(false))).setValue((Property)ChalkRuneBlock.ACTIVATED, (Comparable)Boolean.valueOf(false)));
-                context.getItemInHand().hurtAndBreak(1, (LivingEntity)context.getPlayer(), player -> player.broadcastBreakEvent(context.getHand()));
+                context.getItemInHand().hurtAndBreak(1, (LivingEntity)context.getPlayer(), ((LivingEntity)context.getPlayer()).getEquipmentSlotForItem(context.getItemInHand()));
                 return InteractionResult.SUCCESS;
             }
             return InteractionResult.FAIL;
