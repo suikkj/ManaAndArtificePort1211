@@ -687,7 +687,9 @@ extends Entity {
         ritualData.put("valid_locations", (Tag)this.entityData.get(VALID_LOCATIONS));
         ritualData.putBoolean("forceCollectAllReagents", this.forceCollectAllReagents);
         ritualData.putBoolean("__dynamicReagentsCached", this.__dynamicReagentsCached);
-        ritualData.put("dynamicSourceCache", (Tag)this.cachedDynamicStack.serializeNBT());
+        CompoundTag __dyn = new CompoundTag();
+        com.mna.api.tools.MNAItemData.save(this.cachedDynamicStack, __dyn);
+        ritualData.put("dynamicSourceCache", __dyn);
         ritualData.put("collected_reagents", (Tag)this.writeCollectedReagents());
         CompoundTag collected_patterns = new CompoundTag();
         collected_patterns.putInt("count", this.collectedPatterns.size());

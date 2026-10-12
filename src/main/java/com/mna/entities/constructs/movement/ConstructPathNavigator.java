@@ -55,7 +55,7 @@ extends GroundPathNavigation {
 
     protected boolean canUpdatePath() {
         if (this.construct.canFly() && !this.construct.onGround()) {
-            return this.canFloat() && this.isInLiquid() || !this.mob.isPassenger();
+            return this.canFloat() && this.mob.isInWater() || !this.mob.isPassenger();
         }
         return super.canUpdatePath();
     }
@@ -76,7 +76,7 @@ extends GroundPathNavigation {
     }
 
     protected boolean canMoveDirectly(Vec3 from, Vec3 to) {
-        if (this.isInLiquid()) {
+        if (this.mob.isInWater()) {
             return ConstructPathNavigator.isClearForMovementBetween((Mob)this.mob, (Vec3)from, (Vec3)to, (boolean)true);
         }
         return false;

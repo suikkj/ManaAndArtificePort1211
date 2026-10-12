@@ -265,7 +265,7 @@ extends Entity {
         if (caster.distanceToSqr((Entity)this) > 25.0) {
             return;
         }
-        ICantrip cantrip = magic.getCantripData().matchAndCastCantrip(player, hand, this.getPatterns().stream().map(r -> (Recipe)r).collect(Collectors.toList()));
+        ICantrip cantrip = magic.getCantripData().matchAndCastCantrip(player, hand, (java.util.List<net.minecraft.world.item.crafting.Recipe<?>>)(java.util.List)this.getPatterns().stream().map(r -> (Recipe)r).collect(Collectors.toList()));
         if (cantrip != null) {
             EventDispatcher.DispatchCantripCast(cantrip, player);
             if (player instanceof ServerPlayer) {

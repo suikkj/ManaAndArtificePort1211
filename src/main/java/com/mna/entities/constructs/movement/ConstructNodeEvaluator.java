@@ -385,7 +385,7 @@ extends NodeEvaluator {
                     i = Mth.floor((double)(this.mob.getY() + 0.5));
                 } else {
                     BlockPos blockpos = this.mob.blockPosition();
-                    while ((this.mob.level().getBlockState(blockpos).isAir() || this.mob.level().getBlockState(blockpos).isPathfindable((BlockGetter)this.mob.level(), blockpos, PathComputationType.LAND)) && blockpos.getY() > this.mob.level().getMinBuildHeight()) {
+                    while ((this.mob.level().getBlockState(blockpos).isAir() || this.mob.level().getBlockState(blockpos).isPathfindable(PathComputationType.LAND)) && blockpos.getY() > this.mob.level().getMinBuildHeight()) {
                         blockpos = blockpos.below();
                     }
                     i = blockpos.above().getY();

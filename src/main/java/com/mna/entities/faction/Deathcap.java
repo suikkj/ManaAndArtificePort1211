@@ -329,7 +329,7 @@ implements AnimationController.CustomKeyframeHandler<Deathcap> {
                         areaeffectcloud.setRadiusOnUse(-0.5f);
                         areaeffectcloud.setWaitTime(10);
                         areaeffectcloud.setRadiusPerTick(-areaeffectcloud.getRadius() / (float)areaeffectcloud.getDuration());
-                        areaeffectcloud.setPotion(Potions.POISON);
+                        areaeffectcloud.setPotionContents(new net.minecraft.world.item.alchemy.PotionContents(Potions.POISON));
                         this.level().addFreshEntity((Entity)areaeffectcloud);
                         break;
                     }

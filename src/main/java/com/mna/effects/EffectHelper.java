@@ -33,7 +33,7 @@ public class EffectHelper {
             net.minecraft.core.Holder<MobEffect> patt1067$temp = e.getEffect();
             return patt1067$temp.value() instanceof IDoubleTapEndEarly && (iee = (IDoubleTapEndEarly)patt1067$temp.value()).canEndEarly(living, (MobEffectInstance)e);
         }).collect(Collectors.toList());
-        for (MobEffectInstance inst : toRemove) {
+        for (MobEffectInstance inst : (java.util.List<MobEffectInstance>)(java.util.List)toRemove) {
             if (inst == null) continue;
             ((IDoubleTapEndEarly)inst.getEffect().value()).onRemoved(living, inst);
             if (living.level().isClientSide()) continue;

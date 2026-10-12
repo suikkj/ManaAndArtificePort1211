@@ -83,7 +83,7 @@ extends ConstructAITask<ConstructActivate> {
             player.setPose(Pose.CROUCHING);
         }
         BlockHitResult brtr = new BlockHitResult(new Vec3((double)this.interactPos.getX() + 0.5, (double)this.interactPos.getY() + 0.5, (double)this.interactPos.getZ() + 0.5), Direction.DOWN, this.interactPos, true);
-        state.getBlock().useItemOn(player.getItemInHand(InteractionHand.MAIN_HAND), state, c.level(), this.interactPos, player, InteractionHand.MAIN_HAND, brtr);
+        state.useItemOn(player.getItemInHand(InteractionHand.MAIN_HAND), c.level(), player, InteractionHand.MAIN_HAND, brtr);
         this.interactTimer = 20;
         c.swing(Math.random() < 0.5 ? InteractionHand.MAIN_HAND : InteractionHand.OFF_HAND);
         player.setPose(Pose.STANDING);

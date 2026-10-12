@@ -514,7 +514,7 @@ implements IConstructConstruction {
             return ConstructMaterial.UNKNOWN;
         }
         java.util.List<net.minecraft.world.item.Tier> sortedTiers = MNAtierSorting.getSortedTiers();
-        Collections.sort(mats, (a, b) -> Integer.compare(sortedTiers.indexOf(a.getEquivalentTier()), sortedTiers.indexOf(b.getEquivalentTier())));
+        Collections.sort(mats, (a, b) -> Integer.compare(sortedTiers.indexOf(((com.mna.api.entities.construct.ConstructMaterial)a).getEquivalentTier()), sortedTiers.indexOf(((com.mna.api.entities.construct.ConstructMaterial)b).getEquivalentTier())));
         return (ConstructMaterial)mats.get(0);
     }
 

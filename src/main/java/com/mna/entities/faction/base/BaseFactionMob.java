@@ -173,8 +173,8 @@ IAnimPacketSync<T> {
         this.tier = tier;
         AttributeInstance maxHPAttr = this.getAttribute(Attributes.MAX_HEALTH);
         AttributeInstance maxArmorAttr = this.getAttribute(Attributes.ARMOR);
-        maxHPAttr.removePermanentModifier(TierHealthID);
-        maxArmorAttr.removePermanentModifier(TierArmorID);
+        maxHPAttr.removeModifier(TierHealthID);
+        maxArmorAttr.removeModifier(TierArmorID);
         maxHPAttr.addPermanentModifier(new AttributeModifier(TierHealthID, (double)(tier + 1), AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
         maxArmorAttr.addPermanentModifier(new AttributeModifier(TierArmorID, (double)(5 * tier), AttributeModifier.Operation.ADD_VALUE));
         this.setHealth(this.getMaxHealth());

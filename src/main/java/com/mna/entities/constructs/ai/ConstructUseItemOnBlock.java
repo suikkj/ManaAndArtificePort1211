@@ -104,7 +104,7 @@ extends ConstructAITask<ConstructUseItemOnBlock> {
                         if (result.consumesAction()) {
                             output = ((ItemStack)useResult.getObject()).copy();
                         } else {
-                            result = state.getBlock().use(state, c.level(), this.interactPos, player, playerHand, simResult);
+                            result = state.useItemOn(player.getItemInHand(playerHand), c.level(), player, playerHand, simResult);
                             if (result.consumesAction()) {
                                 output = player.getItemInHand(playerHand).copy();
                             }

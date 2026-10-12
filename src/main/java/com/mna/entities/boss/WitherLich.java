@@ -142,7 +142,7 @@ implements IFactionEnemy<WitherLich> {
         this.setNoGravity(true);
         this.moveControl = new MoveHelperController(this);
         this.getPersistentData().putFloat("life_tap_pct", 0.25f);
-        this.entityData.set(SHIELD_COUNT, 5);
+        this.entityData.set(SHIELD_COUNT, (byte)5);
         this.setCooldown(1024, 0);
         this.powerWordDeathTicks = 1;
     }

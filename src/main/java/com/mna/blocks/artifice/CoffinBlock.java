@@ -75,7 +75,7 @@ extends BedBlock {
                 player.sendSystemMessage((Component)Component.translatable((String)"mna.faction.cant_use_generic"));
                 return InteractionResult.FAIL;
             }
-            net.minecraft.world.ItemInteractionResult __ir = super.useItemOn(player.getItemInHand(handIn), state, worldIn, pos, player, handIn, hit);
+            net.minecraft.world.ItemInteractionResult __ir = state.useItemOn(player.getItemInHand(handIn), worldIn, player, handIn, hit);
             return __ir.consumesAction() ? InteractionResult.sidedSuccess(worldIn.isClientSide) : InteractionResult.FAIL;
         }
         return InteractionResult.FAIL;

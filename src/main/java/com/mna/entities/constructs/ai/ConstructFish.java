@@ -85,7 +85,7 @@ extends ConstructAITask<ConstructFish> {
             if (--this.fish_counter <= 0) {
                 AbstractGolem c = this.construct.asEntity();
                 this.construct.stopFishing();
-                List<ItemStack> fishingLoot = this.getLootRoll(BuiltInLootTables.FISHING, new ItemStack((ItemLike)Items.FISHING_ROD), LootContextParamSets.FISHING);
+                List<ItemStack> fishingLoot = this.getLootRoll(BuiltInLootTables.FISHING.location(), new ItemStack((ItemLike)Items.FISHING_ROD), LootContextParamSets.FISHING);
                 for (ItemStack itemstack : fishingLoot) {
                     Vec3 center = Vec3.atCenterOf((Vec3i)this.blockPos).add(0.0, 0.5, 0.0);
                     ItemEntity itementity = new ItemEntity(c.level(), center.x, center.y, center.z, itemstack);

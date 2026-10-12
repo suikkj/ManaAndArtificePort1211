@@ -117,9 +117,9 @@ extends ConstructAITask<ConstructAdventure> {
         }
         ServerLevel serverWorld = (ServerLevel)this.construct.asEntity().level();
         ResourceLocation lootTableId = RLoc.create("entities/construct/adventure_" + serverWorld.dimension().location().toString().replace(':', '_'));
-        LootTable loottable = serverWorld.getServer().reloadableRegistries().getLootTable(lootTableId);
+        LootTable loottable = serverWorld.getServer().reloadableRegistries().getLootTable(net.minecraft.resources.ResourceKey.create(net.minecraft.core.registries.Registries.LOOT_TABLE, lootTableId));
         if (loottable == LootTable.EMPTY) {
-            loottable = serverWorld.getServer().reloadableRegistries().getLootTable(ADVENTURE_LOOT_OVERWORLD);
+            loottable = serverWorld.getServer().reloadableRegistries().getLootTable(net.minecraft.resources.ResourceKey.create(net.minecraft.core.registries.Registries.LOOT_TABLE, ADVENTURE_LOOT_OVERWORLD));
         }
         if (loottable == null) {
             return;

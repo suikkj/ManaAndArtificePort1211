@@ -27,7 +27,7 @@ extends ConstructConditional<ConstructHasName> {
     @Override
     protected boolean evaluate() {
         Component cName = this.construct.asEntity().getCustomName();
-        if (cName != null && this.nameTagStack.hasCustomHoverName()) {
+        if (cName != null && this.nameTagStack.has(DataComponents.CUSTOM_NAME)) {
             if (this.caseInsensitive) {
                 return cName.getString().toLowerCase().equals(this.nameTagStack.getHoverName().getString().toLowerCase());
             }

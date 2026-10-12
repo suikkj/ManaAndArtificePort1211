@@ -210,7 +210,7 @@ extends MoveControl {
     private boolean isWalkable(float pRelativeX, float pRelativeZ) {
         NodeEvaluator nodeevaluator;
         PathNavigation pathnavigation = this.mob.getNavigation();
-        return pathnavigation == null || (nodeevaluator = pathnavigation.getNodeEvaluator()) == null || nodeevaluator.getBlockPathType((BlockGetter)this.mob.level(), Mth.floor((double)(this.mob.getX() + (double)pRelativeX)), this.mob.getBlockY(), Mth.floor((double)(this.mob.getZ() + (double)pRelativeZ))) == PathType.WALKABLE;
+        return pathnavigation == null || (nodeevaluator = pathnavigation.getNodeEvaluator()) == null || WalkNodeEvaluator.getPathTypeStatic((Mob)this.mob, new BlockPos(Mth.floor((double)(this.mob.getX() + (double)pRelativeX)), this.mob.getBlockY(), Mth.floor((double)(this.mob.getZ() + (double)pRelativeZ)))) == PathType.WALKABLE;
     }
 }
 

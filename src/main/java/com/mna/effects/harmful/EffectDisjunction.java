@@ -2,6 +2,7 @@
 package com.mna.effects.harmful;
 
 import com.mna.tools.EnchantmentUtils;
+import java.util.ArrayList;
 import net.minecraft.world.item.component.CustomData;
 import net.minecraft.core.component.DataComponents;
 import com.mna.api.config.GeneralConfigValues;

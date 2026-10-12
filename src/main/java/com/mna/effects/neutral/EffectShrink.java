@@ -28,7 +28,7 @@ extends SimpleNeutralEffect implements com.mna.api.effects.IMNAEffectHook {
     public void onEffectAdded(LivingEntity pLivingEntity, int pAmplifier) {
         AttributeMap pAttributeMap = pLivingEntity.getAttributes();
             MobEffectInstance mobEffectInstance = pLivingEntity.getEffect(com.mna.api.tools.MAEffects.holder(EffectInit.REDUCE.get()));
-            PacketDistributor.sendToPlayersTrackingEntity(pLivingEntity, new ClientboundUpdateMobEffectPacket(pLivingEntity.getId(), mobEffectInstance, false));
+            ((net.minecraft.server.level.ServerLevel)pLivingEntity.level()).getChunkSource().broadcastAndSend(pLivingEntity, new ClientboundUpdateMobEffectPacket(pLivingEntity.getId(), mobEffectInstance, false));
             float healthPct = pLivingEntity.getHealth() / pLivingEntity.getMaxHealth();
             boolean modifierAdded = false;
             for (Map.Entry entry : java.util.Collections.<Map.Entry>emptyList()) {
@@ -46,7 +46,7 @@ extends SimpleNeutralEffect implements com.mna.api.effects.IMNAEffectHook {
     }
 
     public void onEffectRemoved(LivingEntity pLivingEntity, int pAmplifier) {
-            PacketDistributor.sendToPlayersTrackingEntity(pLivingEntity, new ClientboundRemoveMobEffectPacket(pLivingEntity.getId(), EffectInit.REDUCE));        float healthPct = pLivingEntity.getHealth() / pLivingEntity.getMaxHealth();
+            ((net.minecraft.server.level.ServerLevel)pLivingEntity.level()).getChunkSource().broadcastAndSend(pLivingEntity, new ClientboundRemoveMobEffectPacket(pLivingEntity.getId(), EffectInit.REDUCE));        float healthPct = pLivingEntity.getHealth() / pLivingEntity.getMaxHealth();
             pLivingEntity.setHealth(pLivingEntity.getMaxHealth() * healthPct);
     
     }

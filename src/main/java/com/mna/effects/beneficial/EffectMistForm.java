@@ -88,7 +88,7 @@ INoCreeperLingering, com.mna.api.effects.IMNAEffectHook {
         return true;
     }
                 } else {
-                    boolean bl = shouldNoClip = !player.getFeetBlockState().canOcclude();
+                    boolean bl = shouldNoClip = !player.level().getBlockState(player.blockPosition()).canOcclude();
                 }
                 if (shouldNoClip) {
                     Direction offset = player.getMotionDirection();

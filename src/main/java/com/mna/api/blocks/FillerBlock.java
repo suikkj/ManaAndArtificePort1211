@@ -107,7 +107,7 @@ EntityBlock {
         BlockPos offsetPos = this.getOffsetPos((BlockGetter)world, pos);
         if (!world.isEmptyBlock(offsetPos) && !offsetPos.equals(pos)) {
             BlockHitResult brtr = new BlockHitResult(rayTrace.getLocation(), rayTrace.getDirection(), offsetPos, rayTrace.isInside());
-            net.minecraft.world.ItemInteractionResult __ir = world.getBlockState(offsetPos).getBlock().useItemOn(player.getItemInHand(hand), world.getBlockState(offsetPos), world, offsetPos, player, hand, brtr);
+            net.minecraft.world.ItemInteractionResult __ir = world.getBlockState(offsetPos).useItemOn(player.getItemInHand(hand), world, player, hand, brtr);
             return __ir.consumesAction() ? InteractionResult.sidedSuccess(world.isClientSide) : InteractionResult.PASS;
         }
         return InteractionResult.CONSUME;

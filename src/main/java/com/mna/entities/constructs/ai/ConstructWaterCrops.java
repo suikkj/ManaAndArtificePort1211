@@ -105,8 +105,8 @@ extends ConstructAITask<ConstructWaterCrops> {
                     boolean no_age = MATags.isBlockIn(state.getBlock(), RLoc.create("construct_harvestables_no_age"));
                     boolean bl = valid = no_age || MATags.isBlockIn(state.getBlock(), RLoc.create("construct_harvestables"));
                     if (!valid) continue;
-                    if (state.getBlock().isRandomlyTicking(state)) {
-                        state.getBlock().randomTick(state, (ServerLevel)c.level(), pos, c.level().getRandom());
+                    if (state.isRandomlyTicking()) {
+                        state.randomTick((ServerLevel)c.level(), pos, c.level().getRandom());
                     }
                     c.level().scheduleTick(pos, state.getBlock(), 1);
                 }

@@ -16,6 +16,7 @@
 package com.mna.entities.faction.util;
 
 import com.mna.entities.EntityInit;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;

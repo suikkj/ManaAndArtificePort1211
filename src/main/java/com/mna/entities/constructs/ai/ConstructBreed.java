@@ -2,6 +2,7 @@
 package com.mna.entities.constructs.ai;
 
 import com.mna.Registries;
+import net.minecraft.world.entity.EntityType;
 import com.mna.api.entities.construct.ConstructCapability;
 import com.mna.api.entities.construct.IConstruct;
 import com.mna.api.entities.construct.ai.ConstructAITask;

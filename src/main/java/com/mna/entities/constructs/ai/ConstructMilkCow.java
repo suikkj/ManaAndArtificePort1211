@@ -75,7 +75,7 @@ extends ConstructEntityAreaTask<Cow, ConstructMilkCow> {
             return null;
         }
         Cow candidate2 = null;
-        for (Cow candidate2 : entities) {
+        for (Cow candidate3 : entities) {
             if (!this.claimEntityMutex((Entity)candidate2)) continue;
             this.pushDiagnosticMessage(this.translate("mna.constructs.feedback.milk_target", this.translate((Entity)candidate2)), false);
             return candidate2;

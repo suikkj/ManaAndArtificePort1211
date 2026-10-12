@@ -990,7 +990,7 @@ implements IFactionEnemy<DemonLord> {
 
         private void fireHellball() {
             SpellProjectile projectile = new SpellProjectile((LivingEntity)this.entity, DemonLord.this.level());
-            projectile.setSpellRecipe(this.hellball.getTag());
+            projectile.setSpellRecipe(this.hellball.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag());
             projectile.setHellball((Entity)this.target, 0.1f);
             projectile.shoot((Entity)this.entity, ((DemonLord)this.entity).getForward(), 0.1f, 0.0f);
             DemonLord.this.level().addFreshEntity((Entity)projectile);

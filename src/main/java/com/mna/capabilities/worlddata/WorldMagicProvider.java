@@ -22,7 +22,7 @@ import java.util.function.Supplier;
 public class WorldMagicProvider {
     private boolean isOverworld = false;
     public static final java.util.function.Supplier<net.neoforged.neoforge.attachment.AttachmentType<com.mna.api.capabilities.IWorldMagic>> MAGIC = com.mna.capabilities.CapabilitiesInit.WORLD_MAGIC;
-    IWorldMagic holder = () -> new WorldMagic(this.isOverworld);
+    IWorldMagic holder = new WorldMagic(this.isOverworld);
     private final String KEY_TELEPORT_LOCATIONS = "teleport_locations";
     private final String KEY_TELEPORT_LOCATION_COUNT = "teleport_locations_size";
     private final String KEY_TELEPORT_LOCATION_PREFIX = "teleport_location_";

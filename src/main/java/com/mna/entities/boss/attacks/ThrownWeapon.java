@@ -163,7 +163,7 @@ extends AbstractHurtingProjectile
 
     public void writeSpawnData(net.minecraft.network.RegistryFriendlyByteBuf buffer) {
         net.minecraft.world.item.ItemStack.OPTIONAL_STREAM_CODEC.encode(buffer, this.renderStack);
-        buffer.writeUtf(this.trailParticle.writeToString());
+        buffer.writeUtf(String.valueOf(net.minecraft.core.registries.BuiltInRegistries.PARTICLE_TYPE.getKey(this.trailParticle)));
         buffer.writeFloat(this.renderScale);
     }
 
@@ -171,9 +171,9 @@ extends AbstractHurtingProjectile
         this.renderStack = net.minecraft.world.item.ItemStack.OPTIONAL_STREAM_CODEC.decode((net.minecraft.network.RegistryFriendlyByteBuf)additionalData);
         String trailParticle = additionalData.readUtf();
         try {
-            this.trailParticle = ParticleArgument.readParticle((StringReader)new StringReader(trailParticle), (HolderLookup)this.level().holderLookup(Registries.PARTICLE_TYPE));
+            this.trailParticle = net.minecraft.core.registries.BuiltInRegistries.PARTICLE_TYPE.get(net.minecraft.resources.ResourceLocation.parse(trailParticle));
         }
-        catch (CommandSyntaxException commandsyntaxexception) {
+        catch (Exception commandsyntaxexception) {
             ManaAndArtifice.LOGGER.warn("Couldn't load custom particle {}", trailParticle, commandsyntaxexception);
         }
         this.renderScale = additionalData.readFloat();

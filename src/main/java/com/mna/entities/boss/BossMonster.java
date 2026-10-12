@@ -313,7 +313,7 @@ AnimationController.SoundKeyframeHandler<BossMonster<?>> {
                     if (level instanceof ServerLevel) {
                         ServerLevel serverLevel = (ServerLevel)level;
                         this.gameEvent(GameEvent.ENTITY_DIE);
-                        this.dropAllDeathLoot(pCause);
+                        this.dropAllDeathLoot(serverLevel, pCause);
                         this.level().broadcastEntityEvent((Entity)this, (byte)3);
                     }
                 }

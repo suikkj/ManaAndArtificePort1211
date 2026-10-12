@@ -73,7 +73,7 @@ extends Entity {
     }
 
     private void resolveTarget() {
-        ((Optional)this.entityData.get(TARGET)).ifPresent(u -> {
+        ((Optional<java.util.UUID>)this.entityData.get(TARGET)).ifPresent(u -> {
             Player player = this.level().getPlayerByUUID(u);
             Vec3 movement = player.position().subtract(this.origin).normalize();
             movement = movement.scale(0.25);
