@@ -272,18 +272,18 @@ public class EntityInit {
 
     @SubscribeEvent
     public static void handleSpawnPlacementRegistration(RegisterSpawnPlacementsEvent event) {
-        event.register((EntityType)DEMON_IMP.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.WORLD_SURFACE, DemonImp::canSpawnPredicate, RegisterSpawnPlacementsEvent.Operation.AND);
-        event.register((EntityType)LANTERN_WRAITH.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, LanternWraith::canSpawnPredicate, RegisterSpawnPlacementsEvent.Operation.AND);
-        event.register((EntityType)SPELLBREAKER.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, IFactionEnemy::checkMonsterSpawnRules, RegisterSpawnPlacementsEvent.Operation.AND);
-        event.register((EntityType)WITCH_HUNTER.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, IFactionEnemy::checkMonsterSpawnRules, RegisterSpawnPlacementsEvent.Operation.AND);
-        event.register((EntityType)LIVING_WARD.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, LivingWard::canSpawnPredicate, RegisterSpawnPlacementsEvent.Operation.AND);
-        event.register((EntityType)PIXIE.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Pixie::canSpawnPredicate, RegisterSpawnPlacementsEvent.Operation.AND);
-        event.register((EntityType)MUSHROOM_SOLDIER.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, IFactionEnemy::checkMonsterSpawnRules, RegisterSpawnPlacementsEvent.Operation.AND);
-        event.register((EntityType)BARKLING.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, IFactionEnemy::checkMonsterSpawnRules, RegisterSpawnPlacementsEvent.Operation.AND);
-        event.register((EntityType)HULKING_ZOMBIE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, IFactionEnemy::checkMonsterSpawnRules, RegisterSpawnPlacementsEvent.Operation.AND);
-        event.register((EntityType)SKELETON_ASSASSIN.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, IFactionEnemy::checkMonsterSpawnRules, RegisterSpawnPlacementsEvent.Operation.AND);
-        event.register((EntityType)CHATTERER.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Chatterer::canSpawnPredicate, RegisterSpawnPlacementsEvent.Operation.AND);
-        event.register((EntityType)FACTION_WAR.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, FactionWar::checkMonsterSpawnRules, RegisterSpawnPlacementsEvent.Operation.AND);
+        event.register((EntityType)DEMON_IMP.get(), net.minecraft.world.entity.SpawnPlacementTypes.ON_GROUND, Heightmap.Types.WORLD_SURFACE, DemonImp::canSpawnPredicate, RegisterSpawnPlacementsEvent.Operation.AND);
+        event.register((EntityType)LANTERN_WRAITH.get(), net.minecraft.world.entity.SpawnPlacementTypes.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, LanternWraith::canSpawnPredicate, RegisterSpawnPlacementsEvent.Operation.AND);
+        event.register((EntityType)SPELLBREAKER.get(), net.minecraft.world.entity.SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, IFactionEnemy::checkMonsterSpawnRules, RegisterSpawnPlacementsEvent.Operation.AND);
+        event.register((EntityType)WITCH_HUNTER.get(), net.minecraft.world.entity.SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, IFactionEnemy::checkMonsterSpawnRules, RegisterSpawnPlacementsEvent.Operation.AND);
+        event.register((EntityType)LIVING_WARD.get(), net.minecraft.world.entity.SpawnPlacementTypes.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, LivingWard::canSpawnPredicate, RegisterSpawnPlacementsEvent.Operation.AND);
+        event.register((EntityType)PIXIE.get(), net.minecraft.world.entity.SpawnPlacementTypes.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Pixie::canSpawnPredicate, RegisterSpawnPlacementsEvent.Operation.AND);
+        event.register((EntityType)MUSHROOM_SOLDIER.get(), net.minecraft.world.entity.SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, IFactionEnemy::checkMonsterSpawnRules, RegisterSpawnPlacementsEvent.Operation.AND);
+        event.register((EntityType)BARKLING.get(), net.minecraft.world.entity.SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, IFactionEnemy::checkMonsterSpawnRules, RegisterSpawnPlacementsEvent.Operation.AND);
+        event.register((EntityType)HULKING_ZOMBIE.get(), net.minecraft.world.entity.SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, IFactionEnemy::checkMonsterSpawnRules, RegisterSpawnPlacementsEvent.Operation.AND);
+        event.register((EntityType)SKELETON_ASSASSIN.get(), net.minecraft.world.entity.SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, IFactionEnemy::checkMonsterSpawnRules, RegisterSpawnPlacementsEvent.Operation.AND);
+        event.register((EntityType)CHATTERER.get(), net.minecraft.world.entity.SpawnPlacementTypes.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Chatterer::canSpawnPredicate, RegisterSpawnPlacementsEvent.Operation.AND);
+        event.register((EntityType)FACTION_WAR.get(), net.minecraft.world.entity.SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, FactionWar::checkMonsterSpawnRules, RegisterSpawnPlacementsEvent.Operation.AND);
     }
 
     @SubscribeEvent

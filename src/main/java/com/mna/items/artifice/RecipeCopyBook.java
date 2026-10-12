@@ -193,9 +193,9 @@ IRadialInventorySelect {
         int tier = data.getInt(NBT_RECIPE_TIER);
         int patternCount = data.getInt(NBT_RECIPE_PATTERN_COUNT);
         String factionID = data.getString(NBT_RECIPE_FACTION);
-        ItemStack output = ItemStack.parseOptional(com.mna.api.tools.MNAItemData.provider(), (CompoundTag)outputTag).orElse(ItemStack.EMPTY);
+        ItemStack output = ItemStack.parseOptional(com.mna.api.tools.MNAItemData.provider(), (CompoundTag)outputTag);
         ArrayList<ItemStack> inputs = new ArrayList<ItemStack>();
-        inputTag.forEach(tag -> inputs.add(ItemStack.parseOptional(com.mna.api.tools.MNAItemData.provider(), (CompoundTag)((CompoundTag)tag)).orElse(ItemStack.EMPTY)));
+        inputTag.forEach(tag -> inputs.add(ItemStack.parseOptional(com.mna.api.tools.MNAItemData.provider(), (CompoundTag)((CompoundTag)tag))));
         IFaction faction = (IFaction)Registries.Factions.getValue(ResourceLocation.parse(factionID));
         tile.setReCraftRecipe(output, inputs, faction, tier, patternCount);
         if (player != null) {
@@ -215,9 +215,9 @@ IRadialInventorySelect {
         ListTag inputTag = data.getList(NBT_RECIPE_INPUTS, 10);
         int tier = data.getInt(NBT_RECIPE_TIER);
         String factionID = data.getString(NBT_RECIPE_FACTION);
-        ItemStack output = ItemStack.parseOptional(com.mna.api.tools.MNAItemData.provider(), (CompoundTag)outputTag).orElse(ItemStack.EMPTY);
+        ItemStack output = ItemStack.parseOptional(com.mna.api.tools.MNAItemData.provider(), (CompoundTag)outputTag);
         ArrayList<ItemStack> inputs = new ArrayList<ItemStack>();
-        inputTag.forEach(tag -> inputs.add(ItemStack.parseOptional(com.mna.api.tools.MNAItemData.provider(), (CompoundTag)((CompoundTag)tag)).orElse(ItemStack.EMPTY)));
+        inputTag.forEach(tag -> inputs.add(ItemStack.parseOptional(com.mna.api.tools.MNAItemData.provider(), (CompoundTag)((CompoundTag)tag))));
         IFaction faction = (IFaction)Registries.Factions.getValue(ResourceLocation.parse(factionID));
         HashMap<Affinity, Float> powerRequirements = new HashMap<Affinity, Float>();
         for (Affinity aff : Affinity.values()) {
@@ -333,7 +333,7 @@ IRadialInventorySelect {
         if (tag == null || !tag.contains(NBT_RECIPE_OUTPUT, 10)) {
             return ItemStack.EMPTY;
         }
-        return ItemStack.parseOptional(com.mna.api.tools.MNAItemData.provider(), (CompoundTag)tag.getCompound(NBT_RECIPE_OUTPUT)).orElse(ItemStack.EMPTY);
+        return ItemStack.parseOptional(com.mna.api.tools.MNAItemData.provider(), (CompoundTag)tag.getCompound(NBT_RECIPE_OUTPUT));
     }
 
     public static int getTileType(ItemStack stack, int slot) {

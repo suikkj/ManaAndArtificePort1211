@@ -27,7 +27,7 @@ extends SimpleContainer {
         for (int i = 0; i < list.size(); ++i) {
             CompoundTag nbt = (CompoundTag)list.get(i);
             if (!nbt.contains("item") || !nbt.contains("index")) continue;
-            ItemStack itemstack = ItemStack.parseOptional(com.mna.api.tools.MNAItemData.provider(), (CompoundTag)nbt.getCompound("item")).orElse(ItemStack.EMPTY);
+            ItemStack itemstack = ItemStack.parseOptional(com.mna.api.tools.MNAItemData.provider(), (CompoundTag)nbt.getCompound("item"));
             int index = nbt.getInt("index");
             this.setItem(index, itemstack);
         }

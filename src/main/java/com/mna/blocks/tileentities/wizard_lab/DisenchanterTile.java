@@ -190,11 +190,11 @@ implements IEldrinConsumerTile {
         Player crafter;
         ItemStack input = this.getItem(0);
         ItemStack output = this.getItem(1);
-        Map enchantments = EnchantmentUtils.enchantmentMap((ItemStack)input);
+        java.util.Map<net.minecraft.core.Holder<net.minecraft.world.item.enchantment.Enchantment>, Integer> enchantments = EnchantmentUtils.enchantmentMap((ItemStack)input);
         int indexToMove = (int)((double)enchantments.size() * Math.random());
         enchantments.entrySet().stream().skip(indexToMove).findFirst().ifPresent(e -> {
-            HashMap<Enchantment, Integer> moved = new HashMap<Enchantment, Integer>();
-            moved.put((Enchantment)e.getKey(), (Integer)e.getValue());
+            HashMap<net.minecraft.core.Holder<Enchantment>, Integer> moved = new HashMap<>();
+            moved.put(e.getKey(), (Integer)e.getValue());
             EnchantmentHelper.setEnchantments(moved, (ItemStack)output);
             enchantments.remove(e.getKey());
         });

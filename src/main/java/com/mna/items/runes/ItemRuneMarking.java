@@ -156,7 +156,7 @@ MNADyeableItem {
     @Override
     @Nullable
     public BlockPos getLocation(ItemStack stack) {
-        if (!stack.hasTag()) {
+        if (!stack.has(net.minecraft.core.component.DataComponents.CUSTOM_DATA)) {
             return null;
         }
         CompoundTag nbt = stack.getOrCreateTagElement("mark");
@@ -168,7 +168,7 @@ MNADyeableItem {
 
     @Override
     public Direction getFace(ItemStack stack) {
-        if (!stack.hasTag()) {
+        if (!stack.has(net.minecraft.core.component.DataComponents.CUSTOM_DATA)) {
             return Direction.DOWN;
         }
         CompoundTag nbt = stack.getOrCreateTagElement("mark");
@@ -181,7 +181,7 @@ MNADyeableItem {
     @Override
     @Nullable
     public String getBlockTranslateKey(ItemStack stack) {
-        if (!stack.hasTag()) {
+        if (!stack.has(net.minecraft.core.component.DataComponents.CUSTOM_DATA)) {
             return null;
         }
         CompoundTag nbt = stack.getOrCreateTagElement("mark");
@@ -190,7 +190,7 @@ MNADyeableItem {
 
     @Override
     public ResourceLocation getMarkedBlockId(ItemStack stack) {
-        if (!stack.hasTag()) {
+        if (!stack.has(net.minecraft.core.component.DataComponents.CUSTOM_DATA)) {
             return null;
         }
         CompoundTag nbt = stack.getOrCreateTagElement("mark");
@@ -201,7 +201,7 @@ MNADyeableItem {
     @Nullable
     public Component getBlockName(ItemStack stack) {
         String blockID;
-        if (!stack.hasTag()) {
+        if (!stack.has(net.minecraft.core.component.DataComponents.CUSTOM_DATA)) {
             return null;
         }
         CompoundTag nbt = stack.getOrCreateTagElement("mark");

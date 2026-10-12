@@ -439,7 +439,7 @@ implements IWellspringNodeRegistry {
                 CompoundTag playerStrength = new CompoundTag();
                 playerStrength.putUUID("uuid", (UUID)e.getKey());
                 ListTag strengths = new ListTag();
-                ((HashMap)e.getValue()).entrySet().forEach(str -> {
+                ((HashMap<Affinity, Float>)e.getValue()).entrySet().forEach(str -> {
                     CompoundTag str_entry = new CompoundTag();
                     str_entry.putInt("affinity", ((Affinity)(((str.getKey())))).getShiftAffinity().ordinal());
                     str_entry.putFloat("strength", ((Float)str.getValue()).floatValue());
@@ -452,7 +452,7 @@ implements IWellspringNodeRegistry {
                 CompoundTag playerAmount = new CompoundTag();
                 playerAmount.putString("uuid", ((UUID)e.getKey()).toString());
                 ListTag strengths = new ListTag();
-                ((HashMap)e.getValue()).entrySet().forEach(str -> {
+                ((HashMap<Affinity, Float>)e.getValue()).entrySet().forEach(str -> {
                     CompoundTag str_entry = new CompoundTag();
                     str_entry.putInt("affinity", ((Affinity)(((str.getKey())))).getShiftAffinity().ordinal());
                     str_entry.putFloat("strength", ((Float)str.getValue()).floatValue());

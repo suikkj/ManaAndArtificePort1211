@@ -467,7 +467,7 @@ implements IMultiblockDefinition {
         if (world.isClientSide && !this.hasLoaded) {
             return null;
         }
-        HashMap blockCounts = new HashMap();
+        HashMap<Block, Integer> blockCounts = new HashMap<>();
         this.structureBlocks.structureBlocks.entrySet().forEach(e -> {
             BlockState state = this.blockStates.get((Integer)((Pair)e.getValue()).getFirst());
             if (!state.isAir()) {

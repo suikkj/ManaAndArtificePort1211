@@ -164,7 +164,7 @@ MNADyeableItem {
 
     @Override
     public AABB getBounds(ItemStack stack) {
-        if (!stack.hasTag()) {
+        if (!stack.has(net.minecraft.core.component.DataComponents.CUSTOM_DATA)) {
             return null;
         }
         CompoundTag nbt = MNAItemData.element(stack, "mark");

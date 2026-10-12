@@ -388,7 +388,7 @@ IFactionSpecific {
 
     public static boolean isMysterious(ItemStack stack) {
         CompoundTag spellTag;
-        if (!stack.hasTag()) {
+        if (!stack.has(net.minecraft.core.component.DataComponents.CUSTOM_DATA)) {
             return false;
         }
         CompoundTag nbt = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
@@ -531,7 +531,7 @@ IFactionSpecific {
     }
 
     public static boolean stackContainsSpell(ItemStack stack) {
-        if (!stack.hasTag()) {
+        if (!stack.has(net.minecraft.core.component.DataComponents.CUSTOM_DATA)) {
             return false;
         }
         CompoundTag tag = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();

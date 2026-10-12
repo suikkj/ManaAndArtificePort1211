@@ -839,7 +839,7 @@ public class CommonEventHandler {
             if (((AbstractArrow)event.getProjectile()).pickup == AbstractArrow.Pickup.DISALLOWED) {
                 return;
             }
-            ItemStack returnStack = ItemStack.parseOptional(com.mna.api.tools.MNAItemData.provider(), (CompoundTag)((CompoundTag)event.getProjectile().getPersistentData().get("return_stack"))).orElse(ItemStack.EMPTY);
+            ItemStack returnStack = ItemStack.parseOptional(com.mna.api.tools.MNAItemData.provider(), (CompoundTag)((CompoundTag)event.getProjectile().getPersistentData().get("return_stack")));
             if (!returnStack.isEmpty() && !((Player)owner).isCreative()) {
                 boolean drop = true;
                 if (event.getProjectile().getPersistentData().getBoolean("cannon_shot")) {
@@ -918,7 +918,7 @@ public class CommonEventHandler {
         for (int i = 0; i < original.getInventory().getContainerSize(); ++i) {
             if (!soulbound_inventory.contains("slot_" + i)) continue;
             CompoundTag itemTag = soulbound_inventory.getCompound("slot_" + i);
-            ItemStack soulboundStack = ItemStack.parseOptional(com.mna.api.tools.MNAItemData.provider(), (CompoundTag)itemTag).orElse(ItemStack.EMPTY);
+            ItemStack soulboundStack = ItemStack.parseOptional(com.mna.api.tools.MNAItemData.provider(), (CompoundTag)itemTag);
             player.getInventory().setItem(i, soulboundStack);
         }
         CuriosApi.getCuriosHelper().getCuriosHandler((LivingEntity)player).ifPresent(c -> c.getCurios().forEach((identifier, stackHandler) -> {
@@ -927,7 +927,7 @@ public class CommonEventHandler {
                 for (int i = 0; i < stackHandler.getSlots(); ++i) {
                     if (!tagForIdentifier.contains("slot_" + i)) continue;
                     CompoundTag itemTag = tagForIdentifier.getCompound("slot_" + i);
-                    ItemStack soulboundStack = ItemStack.parseOptional(com.mna.api.tools.MNAItemData.provider(), (CompoundTag)itemTag).orElse(ItemStack.EMPTY);
+                    ItemStack soulboundStack = ItemStack.parseOptional(com.mna.api.tools.MNAItemData.provider(), (CompoundTag)itemTag);
                     stackHandler.getStacks().setStackInSlot(i, soulboundStack);
                 }
             }

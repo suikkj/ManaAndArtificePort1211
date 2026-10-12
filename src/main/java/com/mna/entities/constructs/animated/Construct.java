@@ -2953,7 +2953,7 @@ IItemHandlerModifiable {
     private PlayState handleAnimState(AnimationState<Construct> state) {
         block53: {
             block54: {
-                if (!this.isAddedToWorld()) {
+                if (!this.isAddedToLevel()) {
                     return PlayState.STOP;
                 }
                 if (this.forcedAnimation == null) break block53;

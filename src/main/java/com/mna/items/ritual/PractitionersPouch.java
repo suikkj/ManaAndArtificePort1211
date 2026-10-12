@@ -275,7 +275,7 @@ MNADyeableItem {
                 return out;
             }
             CompoundTag reagent_data = nbt.getCompound(TAG_RITUAL_REAGENT_PREFIX + i);
-            ItemStack reagent = ItemStack.parseOptional(com.mna.api.tools.MNAItemData.provider(), (CompoundTag)reagent_data).orElse(ItemStack.EMPTY);
+            ItemStack reagent = ItemStack.parseOptional(com.mna.api.tools.MNAItemData.provider(), (CompoundTag)reagent_data);
             if (reagent == null) {
                 out.clear();
                 return out;
@@ -412,7 +412,7 @@ MNADyeableItem {
         for (ItemStack reagent : combinedReagents) {
             int totalCount = 0;
             ItemStack searchCopy = reagent.copy();
-            if (searchCopy.hasTag()) {
+            if (searchCopy.has(net.minecraft.core.component.DataComponents.CUSTOM_DATA)) {
                 searchCopy.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().remove("ritual_tags");
                 if (searchCopy.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getAllKeys().size() == 0) {
                     searchCopy.setTag(DataComponents.CUSTOM_DATA, CustomData.of(null));
@@ -560,7 +560,7 @@ MNADyeableItem {
         ArrayList<ItemStack> reagents = this.getReagents(stack);
         for (ItemStack reagent : reagents) {
             ItemStack searchCopy = reagent.copy();
-            if (searchCopy.hasTag()) {
+            if (searchCopy.has(net.minecraft.core.component.DataComponents.CUSTOM_DATA)) {
                 if (MNAItemData.element(searchCopy, "ritual_tags").getBoolean("noConsumeReagent")) continue;
                 searchCopy.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().remove("ritual_tags");
                 if (searchCopy.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().isEmpty()) {
@@ -694,7 +694,7 @@ MNADyeableItem {
     @Nullable
     private static CompoundTag getCurrentCompound(ItemStack stack, int index) {
         ListTag list;
-        if (stack == null || !stack.hasTag() || !stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().contains(TAG_MASTER)) {
+        if (stack == null || !stack.has(net.minecraft.core.component.DataComponents.CUSTOM_DATA) || !stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().contains(TAG_MASTER)) {
             return null;
         }
         CompoundTag tag = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
@@ -721,7 +721,7 @@ MNADyeableItem {
     }
 
     public static int getIndex(ItemStack stack) {
-        if (stack.hasTag()) {
+        if (stack.has(net.minecraft.core.component.DataComponents.CUSTOM_DATA)) {
             return stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getInt(KEY_INDEX);
         }
         return 0;
@@ -942,7 +942,7 @@ MNADyeableItem {
                 for (ItemStack listStack : combinedReagents) {
                     if (listStack.isEmpty()) continue;
                     ItemStack searchCopy = listStack.copy();
-                    if (searchCopy.hasTag()) {
+                    if (searchCopy.has(net.minecraft.core.component.DataComponents.CUSTOM_DATA)) {
                         searchCopy.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().remove("ritual_tags");
                         if (searchCopy.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getAllKeys().size() == 0) {
                             searchCopy.setTag(DataComponents.CUSTOM_DATA, CustomData.of(null));

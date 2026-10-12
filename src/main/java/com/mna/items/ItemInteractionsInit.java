@@ -126,20 +126,20 @@ public class ItemInteractionsInit {
 
     @SubscribeEvent
     public static void setupInteractions(FMLCommonSetupEvent event) {
-        CauldronInteraction.WATER.put(Items.LEATHER, LEATHER_TO_VELLUM);
-        CauldronInteraction.WATER.put((Item)ItemInit.MAGE_BOOTS.get(), CauldronInteraction.DYED_ITEM);
-        CauldronInteraction.WATER.put((Item)ItemInit.MAGE_HOOD.get(), CauldronInteraction.DYED_ITEM);
-        CauldronInteraction.WATER.put((Item)ItemInit.MAGE_LEGGINGS.get(), CauldronInteraction.DYED_ITEM);
-        CauldronInteraction.WATER.put((Item)ItemInit.MAGE_ROBES.get(), CauldronInteraction.DYED_ITEM);
-        CauldronInteraction.WATER.put((Item)ItemInit.RECIPE_COPY_BOOK.get(), CauldronInteraction.DYED_ITEM);
-        CauldronInteraction.WATER.put((Item)ItemInit.BANGLE.get(), CauldronInteraction.DYED_ITEM);
-        CauldronInteraction.WATER.put((Item)ItemInit.PRACTITIONERS_POUCH.get(), CauldronInteraction.DYED_ITEM);
-        CauldronInteraction.WATER.put((Item)ItemInit.RUNE_MARKING.get(), CauldronInteraction.DYED_ITEM);
-        CauldronInteraction.WATER.put((Item)ItemInit.RUNE_MARKING_PAIR.get(), CauldronInteraction.DYED_ITEM);
-        CauldronInteraction.WATER.put((Item)ItemInit.SPELL_BOOK.get(), CauldronInteraction.DYED_ITEM);
-        CauldronInteraction.WATER.put((Item)ItemInit.ROTE_BOOK.get(), CauldronInteraction.DYED_ITEM);
-        CauldronInteraction.WATER.put((Item)ItemInit.GRIMOIRE.get(), CauldronInteraction.DYED_ITEM);
-        CauldronInteraction.EMPTY.put((Item)ItemInit.FLUID_JUG.get(), (blockState, level, pos, player, hand, stack) -> {
+        CauldronInteraction.WATER.map().put(Items.LEATHER, LEATHER_TO_VELLUM);
+        CauldronInteraction.WATER.map().put((Item)ItemInit.MAGE_BOOTS.get(), CauldronInteraction.DYED_ITEM);
+        CauldronInteraction.WATER.map().put((Item)ItemInit.MAGE_HOOD.get(), CauldronInteraction.DYED_ITEM);
+        CauldronInteraction.WATER.map().put((Item)ItemInit.MAGE_LEGGINGS.get(), CauldronInteraction.DYED_ITEM);
+        CauldronInteraction.WATER.map().put((Item)ItemInit.MAGE_ROBES.get(), CauldronInteraction.DYED_ITEM);
+        CauldronInteraction.WATER.map().put((Item)ItemInit.RECIPE_COPY_BOOK.get(), CauldronInteraction.DYED_ITEM);
+        CauldronInteraction.WATER.map().put((Item)ItemInit.BANGLE.get(), CauldronInteraction.DYED_ITEM);
+        CauldronInteraction.WATER.map().put((Item)ItemInit.PRACTITIONERS_POUCH.get(), CauldronInteraction.DYED_ITEM);
+        CauldronInteraction.WATER.map().put((Item)ItemInit.RUNE_MARKING.get(), CauldronInteraction.DYED_ITEM);
+        CauldronInteraction.WATER.map().put((Item)ItemInit.RUNE_MARKING_PAIR.get(), CauldronInteraction.DYED_ITEM);
+        CauldronInteraction.WATER.map().put((Item)ItemInit.SPELL_BOOK.get(), CauldronInteraction.DYED_ITEM);
+        CauldronInteraction.WATER.map().put((Item)ItemInit.ROTE_BOOK.get(), CauldronInteraction.DYED_ITEM);
+        CauldronInteraction.WATER.map().put((Item)ItemInit.GRIMOIRE.get(), CauldronInteraction.DYED_ITEM);
+        CauldronInteraction.EMPTY.map().put((Item)ItemInit.FLUID_JUG.get(), (blockState, level, pos, player, hand, stack) -> {
             FluidStack contained = ((FluidJug)ItemInit.FLUID_JUG.get()).getFluidTagData(stack);
             if (contained.isEmpty() || contained.getAmount() < 1000 || contained.getFluid() != Fluids.WATER && contained.getFluid() != Fluids.LAVA) {
                 return InteractionResult.FAIL;
@@ -149,12 +149,12 @@ public class ItemInteractionsInit {
             BlockState targetState = contained.getFluid() == Fluids.WATER ? (BlockState)Blocks.WATER_CAULDRON.defaultBlockState().setValue((Property)LayeredCauldronBlock.LEVEL, (Comparable)Integer.valueOf(3)) : Blocks.LAVA_CAULDRON.defaultBlockState();
             return ItemInteractionsInit.emptyFluidJug(blockState, level, pos, player, hand, stack, toExtract, targetState, SoundEvents.BUCKET_EMPTY);
         });
-        CauldronInteraction.EMPTY.put((Item)ItemInit.FLUID_JUG_INFINITE_WATER.get(), (blockState, level, pos, player, hand, stack) -> ItemInteractionsInit.emptyFluidJug(blockState, level, pos, player, hand, stack, new FluidStack((Fluid)Fluids.WATER, 1000), (BlockState)Blocks.WATER_CAULDRON.defaultBlockState().setValue((Property)LayeredCauldronBlock.LEVEL, (Comparable)Integer.valueOf(3)), SoundEvents.BUCKET_EMPTY));
-        CauldronInteraction.EMPTY.put((Item)ItemInit.FLUID_JUG_INFINITE_LAVA.get(), (blockState, level, pos, player, hand, stack) -> ItemInteractionsInit.emptyFluidJug(blockState, level, pos, player, hand, stack, new FluidStack((Fluid)Fluids.LAVA, 1000), Blocks.LAVA_CAULDRON.defaultBlockState(), SoundEvents.BUCKET_EMPTY));
-        CauldronInteraction.WATER.put((Item)ItemInit.FLUID_JUG.get(), (blockState, level, pos, player, hand, stack) -> ItemInteractionsInit.fillFluidJug(blockState, level, pos, player, hand, stack, new FluidStack((Fluid)Fluids.WATER, 1000), predicateBlockState -> (Integer)predicateBlockState.getValue((Property)LayeredCauldronBlock.LEVEL) == 3, SoundEvents.BUCKET_FILL));
-        CauldronInteraction.WATER.put((Item)ItemInit.FLUID_JUG_INFINITE_WATER.get(), (blockState, level, pos, player, hand, stack) -> ItemInteractionsInit.fillFluidJug(blockState, level, pos, player, hand, stack, new FluidStack((Fluid)Fluids.WATER, 1000), predicateBlockState -> (Integer)predicateBlockState.getValue((Property)LayeredCauldronBlock.LEVEL) == 3, SoundEvents.BUCKET_FILL));
-        CauldronInteraction.LAVA.put((Item)ItemInit.FLUID_JUG.get(), (blockState, level, pos, player, hand, stack) -> ItemInteractionsInit.fillFluidJug(blockState, level, pos, player, hand, stack, new FluidStack((Fluid)Fluids.LAVA, 1000), predicateBlockState -> true, SoundEvents.BUCKET_FILL));
-        CauldronInteraction.LAVA.put((Item)ItemInit.FLUID_JUG_INFINITE_LAVA.get(), (blockState, level, pos, player, hand, stack) -> ItemInteractionsInit.fillFluidJug(blockState, level, pos, player, hand, stack, new FluidStack((Fluid)Fluids.LAVA, 1000), predicateBlockState -> true, SoundEvents.BUCKET_FILL));
+        CauldronInteraction.EMPTY.map().put((Item)ItemInit.FLUID_JUG_INFINITE_WATER.get(), (blockState, level, pos, player, hand, stack) -> ItemInteractionsInit.emptyFluidJug(blockState, level, pos, player, hand, stack, new FluidStack((Fluid)Fluids.WATER, 1000), (BlockState)Blocks.WATER_CAULDRON.defaultBlockState().setValue((Property)LayeredCauldronBlock.LEVEL, (Comparable)Integer.valueOf(3)), SoundEvents.BUCKET_EMPTY));
+        CauldronInteraction.EMPTY.map().put((Item)ItemInit.FLUID_JUG_INFINITE_LAVA.get(), (blockState, level, pos, player, hand, stack) -> ItemInteractionsInit.emptyFluidJug(blockState, level, pos, player, hand, stack, new FluidStack((Fluid)Fluids.LAVA, 1000), Blocks.LAVA_CAULDRON.defaultBlockState(), SoundEvents.BUCKET_EMPTY));
+        CauldronInteraction.WATER.map().put((Item)ItemInit.FLUID_JUG.get(), (blockState, level, pos, player, hand, stack) -> ItemInteractionsInit.fillFluidJug(blockState, level, pos, player, hand, stack, new FluidStack((Fluid)Fluids.WATER, 1000), predicateBlockState -> (Integer)predicateBlockState.getValue((Property)LayeredCauldronBlock.LEVEL) == 3, SoundEvents.BUCKET_FILL));
+        CauldronInteraction.WATER.map().put((Item)ItemInit.FLUID_JUG_INFINITE_WATER.get(), (blockState, level, pos, player, hand, stack) -> ItemInteractionsInit.fillFluidJug(blockState, level, pos, player, hand, stack, new FluidStack((Fluid)Fluids.WATER, 1000), predicateBlockState -> (Integer)predicateBlockState.getValue((Property)LayeredCauldronBlock.LEVEL) == 3, SoundEvents.BUCKET_FILL));
+        CauldronInteraction.LAVA.map().put((Item)ItemInit.FLUID_JUG.get(), (blockState, level, pos, player, hand, stack) -> ItemInteractionsInit.fillFluidJug(blockState, level, pos, player, hand, stack, new FluidStack((Fluid)Fluids.LAVA, 1000), predicateBlockState -> true, SoundEvents.BUCKET_FILL));
+        CauldronInteraction.LAVA.map().put((Item)ItemInit.FLUID_JUG_INFINITE_LAVA.get(), (blockState, level, pos, player, hand, stack) -> ItemInteractionsInit.fillFluidJug(blockState, level, pos, player, hand, stack, new FluidStack((Fluid)Fluids.LAVA, 1000), predicateBlockState -> true, SoundEvents.BUCKET_FILL));
     }
 }
 

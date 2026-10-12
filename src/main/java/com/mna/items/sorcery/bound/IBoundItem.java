@@ -62,7 +62,7 @@ IShowHud {
         bound.set(DataComponents.ITEM_NAME, originalItem.getHoverName());
         spell.writeToNBT(bound.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag());
         CuriosInterop.GetSingleItem(caster, BoundCharm.class).ifPresent(slotResult -> {
-            Map enchantments = EnchantmentUtils.enchantmentMap((ItemStack)slotResult.stack());
+            java.util.Map<net.minecraft.core.Holder<net.minecraft.world.item.enchantment.Enchantment>, Integer> enchantments = EnchantmentUtils.enchantmentMap((ItemStack)slotResult.stack());
             EnchantmentHelper.setEnchantments((Map)enchantments, (ItemStack)bound);
         });
         NeoForge.EVENT_BUS.post((Event)new BoundItemSummonedEvent(bound));
@@ -70,7 +70,7 @@ IShowHud {
     }
 
     default public ItemStack restoreItem(ItemStack stack) {
-        ItemStack restored = ItemStack.parseOptional(com.mna.api.tools.MNAItemData.provider(), (CompoundTag)MNAItemData.element(stack, "original_item")).orElse(ItemStack.EMPTY);
+        ItemStack restored = ItemStack.parseOptional(com.mna.api.tools.MNAItemData.provider(), (CompoundTag)MNAItemData.element(stack, "original_item"));
         NeoForge.EVENT_BUS.post((Event)new BoundItemDismissedEvent(stack, restored));
         return restored;
     }

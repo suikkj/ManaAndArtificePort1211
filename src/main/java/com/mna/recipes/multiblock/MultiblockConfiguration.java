@@ -295,7 +295,7 @@ public class MultiblockConfiguration {
     }
 
     public JsonObject computeRecipeDiff(MultiblockConfiguration other, ArrayList<BlockState> blockIndex) {
-        HashMap changes = new HashMap();
+        HashMap<Long, Integer> changes = new HashMap<>();
         other.structureBlocks.keySet().stream().forEach(k -> {
             if (this.structureBlocks.containsKey(k)) {
                 if (this.structureBlocks.get(k).getFirst() != other.structureBlocks.get(k).getFirst()) {

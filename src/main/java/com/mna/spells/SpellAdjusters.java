@@ -256,7 +256,7 @@ public final class SpellAdjusters {
             return;
         }
         ItemStack spellStack = context.stack;
-        Map enchantments = EnchantmentUtils.enchantmentMap((ItemStack)spellStack);
+        java.util.Map<net.minecraft.core.Holder<net.minecraft.world.item.enchantment.Enchantment>, Integer> enchantments = EnchantmentUtils.enchantmentMap((ItemStack)spellStack);
         for (Map.Entry e : enchantments.entrySet()) {
             if (!(e.getKey() instanceof ModifierEnchantment)) continue;
             ModifierEnchantment me = (ModifierEnchantment)(e.getKey());

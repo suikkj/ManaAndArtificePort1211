@@ -53,10 +53,10 @@ public interface ITieredItem<T extends Item> {
         if (recipes.size() == 0) {
             return -2;
         }
-        Map itemEnchantments = EnchantmentUtils.enchantmentMap((ItemStack)stack);
+        java.util.Map<net.minecraft.core.Holder<net.minecraft.world.item.enchantment.Enchantment>, Integer> itemEnchantments = EnchantmentUtils.enchantmentMap((ItemStack)stack);
         if (itemEnchantments.size() == 1) {
             recipes = recipes.stream().filter(r -> {
-                Map enchs = EnchantmentUtils.enchantmentMap((ItemStack)r.value().getResultItem(world.registryAccess()));
+                java.util.Map<net.minecraft.core.Holder<net.minecraft.world.item.enchantment.Enchantment>, Integer> enchs = EnchantmentUtils.enchantmentMap((ItemStack)r.value().getResultItem(world.registryAccess()));
                 if (enchs.size() != 1) {
                     return false;
                 }

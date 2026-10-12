@@ -174,7 +174,7 @@ implements IWorldMagic {
         }
         if (this.knownRunes.containsKey(rune)) {
             Entity runeEntity = this.knownRunes.get(rune);
-            if (runeEntity != null && runeEntity.isAddedToWorld()) {
+            if (runeEntity != null && runeEntity.isAddedToLevel()) {
                 runeEntity.remove(Entity.RemovalReason.DISCARDED);
             }
             this.knownRunes.remove(rune);

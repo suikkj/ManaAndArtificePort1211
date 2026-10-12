@@ -199,7 +199,7 @@ GeoBlockEntity {
     }
 
     private int cacheEnchantRecipe(ItemStack rune, Player player, int playerTier) {
-        Map enchantments = EnchantmentUtils.enchantmentMap((ItemStack)rune);
+        java.util.Map<net.minecraft.core.Holder<net.minecraft.world.item.enchantment.Enchantment>, Integer> enchantments = EnchantmentUtils.enchantmentMap((ItemStack)rune);
         if (enchantments.size() == 0) {
             this.__cachedEnchantRecipe = null;
             this.__cachedRecipeOutput = ItemStack.EMPTY;

@@ -167,7 +167,7 @@ implements GeoEntity {
             }
         } else if (((Boolean)this.entityData.get(DESPAWNING_HOSTILE)).booleanValue()) {
             Vec3 bEyepos = this.position();
-            this.level().getEntities((Entity)this, this.getBoundingBox().inflate(6.0), e -> e instanceof LivingEntity && e.isAlive() && e.isAddedToWorld()).stream().map(e -> (LivingEntity)e).forEach(e -> {
+            this.level().getEntities((Entity)this, this.getBoundingBox().inflate(6.0), e -> e instanceof LivingEntity && e.isAlive() && e.isAddedToLevel()).stream().map(e -> (LivingEntity)e).forEach(e -> {
                 Vec3 direction = e.getEyePosition().subtract(bEyepos);
                 ComponentFling.flingTarget(e, direction, 6.0f, 3.0f, 0.0f);
             });

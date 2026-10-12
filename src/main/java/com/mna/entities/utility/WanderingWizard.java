@@ -316,7 +316,7 @@ IAnimPacketSync<WanderingWizard> {
     public void handlePacketData(CompoundTag nbt) {
         this.setState(State.values()[nbt.getInt("state")]);
         this.idleAnim = nbt.getString("idleAnim");
-        this.staffStack = ItemStack.parseOptional(com.mna.api.tools.MNAItemData.provider(), (CompoundTag)nbt.getCompound("staff")).orElse(ItemStack.EMPTY);
+        this.staffStack = ItemStack.parseOptional(com.mna.api.tools.MNAItemData.provider(), (CompoundTag)nbt.getCompound("staff"));
     }
 
     public AnimatableInstanceCache getAnimatableInstanceCache() {

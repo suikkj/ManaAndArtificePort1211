@@ -80,7 +80,7 @@ extends ConstructEntityAreaTask<Animal, ConstructBreed> {
     @Override
     protected Animal selectTarget(Collection<Animal> entities) {
         this.currentBreedIndex = 0;
-        HashMap locatedEntities = new HashMap();
+        HashMap<EntityType<?>, List<Animal>> locatedEntities = new HashMap<>();
         entities.forEach(e -> {
             if (!locatedEntities.containsKey(e.getType())) {
                 locatedEntities.put(e.getType(), new ArrayList<Animal>(Arrays.asList(e)));

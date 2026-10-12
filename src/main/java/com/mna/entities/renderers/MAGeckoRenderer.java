@@ -52,7 +52,7 @@ extends GeoEntityRenderer<T> {
             float curScale = entity.getPersistentData().getFloat("mna_entity_scale");
             float prevScale = entity.getPersistentData().getFloat("mna_entity_scale_prev");
             float scale = curScale + (curScale - prevScale) * partialTicks;
-            if (!entity.isAddedToWorld()) {
+            if (!entity.isAddedToLevel()) {
                 scale = 1.0f;
             }
             stack.pushPose();

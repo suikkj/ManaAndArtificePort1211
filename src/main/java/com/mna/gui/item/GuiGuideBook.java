@@ -328,7 +328,7 @@ extends GuiJEIDisable<ContainerGuideBook> {
             } else if (e.isRecipe()) {
                 MutableComponent ttc = Component.translatable((String)("gui.mna.codex_search.recipe." + e.getRecipe().getType()));
                 if (e.getOutputStack().isEnchanted()) {
-                    Map enchs = EnchantmentUtils.enchantmentMap((ItemStack)e.getOutputStack());
+                    java.util.Map<net.minecraft.core.Holder<net.minecraft.world.item.enchantment.Enchantment>, Integer> enchs = EnchantmentUtils.enchantmentMap((ItemStack)e.getOutputStack());
                     for (Map.Entry enchantment : enchs.entrySet()) {
                         ttc.append(((Enchantment)enchantment.getKey()).getFullname(((Integer)enchantment.getValue()).intValue()));
                     }
