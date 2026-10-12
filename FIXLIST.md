@@ -259,8 +259,12 @@ perderam o `getResult()/setResult()` herdado. Migrados para enum próprio
 | ✅ _fix35 (inner class raw outer fix, `stack.set` statement, `MNAItemData.setPotionContents`, `EVENT_BUS.post` cast, EffectDisjunction maps Holder) | 1.302 | −29 |
 | ✅ _fix36/_fix37 (`PoseStack.Pose` nos helpers addVertex — 15 renderers + WorldRenderUtils; transformPosition p/ helpers sem normal; OPTIONAL_STREAM_CODEC; wrapAsHolder; getDamageBonus no-op) | 1.284 | −18 |
 | ✅ _fix38 (`canPlaceLiquid` body, `MNAEnchantmentHelper.getKnockbackBonus`, toArray casts, BlockInit `.value()/.get()`, moodlets) | 1.244 | −40 |
-| ✅ _fix39 (`MNAGoalSelectorAccess.getRunningGoals`, `getFeetBlockState`→`getBlockStateOn`, dimensions→`getDimensions(getPose())`) | **1.238** | −6 |
-| **➜ ATUAL** | **1.238** | **−45.702 desde o início (46.940)** |
+| ✅ _fix39 (`MNAGoalSelectorAccess.getRunningGoals`, `getFeetBlockState`→`getBlockStateOn`, dimensions→`getDimensions(getPose())`) | 1.238 | −6 |
+| ✅ _fix40/_fix41 (EnchantmentDefinition FQN, byKey holder `.value()`, pouch MNACap.orElse, mixin setReturnValue, loot codecs `commonFields.and(...)`, for-loops Entity cast) | 1.209 | −29 |
+| ✅ _fix42 (`MNAPoseStackAccess` reflexão, AttributeModifier UUID→RLoc, `hasModifier(.id())`, STEP_HEIGHT, transformPosition Vector3f, writeItem codec, PortalRenderer) | 1.178 | −31 |
+| ✅ _fix43 (getFireAspect helper, `getSkin().texture()`, setRenderSelection removido, renderList→renderWidget) | 1.159 | −19 |
+| ✅ _fix44 (ObjectSelectionList 1.21.1: self-ref qualificado, super 5-args, casts raw; `MNAItemData.setComponent` genérico — 40 sites) | **1.116** | −43 |
+| **➜ ATUAL** | **1.116** | **−45.824 desde o início (46.940)** |
 
 ### 🔴 Bug de medição que quase passou (2026-10-11)
 Ao migrar `getEnchantmentLevel`, um `.replace()` removeu o `(` de abertura de
@@ -343,7 +347,7 @@ Verificação por `grep` no `_build_last.log` do build atual (1.881 erros):
 
 ---
 
-## 🔜 FILA ATUAL DE ERROS — checada no build 1.238 (2026-10-12, pós lotes _fix20–_fix39)
+## 🔜 FILA ATUAL DE ERROS — checada no build 1.116 (2026-10-12, pós lotes _fix20–_fix44)
 
 **Regra:** sempre que um lote for aplicado, re-verificar esta seção com
 `grep 'error:' _build_last.log` e ATUALIZAR as contagens — nada sai daqui sem
