@@ -216,11 +216,11 @@ implements ILootrBridge {
     }
 
     private List<ResourceLocation> getPatternsForTier() {
-        return this.getLevel().getRecipeManager().getAllRecipesFor((RecipeType)RecipeInit.MANAWEAVING_PATTERN_TYPE.get()).stream().filter(r -> r.getTier() <= this.tier).map(r -> r.getId()).collect(Collectors.toList());
+        return this.getLevel().getRecipeManager().getAllRecipesFor(RecipeInit.MANAWEAVING_PATTERN_TYPE.get()).stream().filter(r -> r.value().getTier() <= this.tier).map(r -> r.id()).collect(Collectors.toList());
     }
 
     private void pickEffectForTier() {
-        List effects = this.getLevel().getRecipeManager().getAllRecipesFor((RecipeType)RecipeInit.MANAWEAVE_CACHE_EFFECT_TYPE.get()).stream().filter(r -> r.getTier() <= this.tier).collect(Collectors.toList());
+        List effects = this.getLevel().getRecipeManager().getAllRecipesFor(RecipeInit.MANAWEAVE_CACHE_EFFECT_TYPE.get()).stream().filter(r -> r.value().getTier() <= this.tier).map(r -> r.value()).collect(Collectors.toList());
         if (effects.size() == 0) {
             this.isBuff = false;
             return;

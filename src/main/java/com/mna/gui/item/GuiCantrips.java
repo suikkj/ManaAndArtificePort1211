@@ -77,9 +77,9 @@ extends AbstractContainerScreen<ContainerCantrips> {
         this.playerKnownPatterns = new ArrayList();
         this.progression = (IPlayerProgression)this.minecraft.player.getData(PlayerProgressionProvider.PROGRESSION.get());
         this.magic = (IPlayerMagic)this.minecraft.player.getData(PlayerMagicProvider.MAGIC.get());
-        this.minecraft.level.getRecipeManager().getAllRecipesFor((RecipeType)RecipeInit.MANAWEAVING_PATTERN_TYPE.get()).stream().forEach(p -> {
-            if (p.getTier() <= this.progression.getTier()) {
-                this.playerKnownPatterns.add((ManaweavingPattern)p);
+        this.minecraft.level.getRecipeManager().getAllRecipesFor(RecipeInit.MANAWEAVING_PATTERN_TYPE.get()).stream().forEach(p -> {
+            if (p.value().getTier() <= this.progression.getTier()) {
+                this.playerKnownPatterns.add(p.value());
             }
         });
         this.cantripPatterns = new HashMap();

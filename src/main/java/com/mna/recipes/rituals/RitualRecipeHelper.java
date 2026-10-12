@@ -23,12 +23,12 @@ public class RitualRecipeHelper {
         if (world == null) {
             return null;
         }
-        Optional<RitualRecipe> recipe = world.getRecipeManager().getRecipesFor((RecipeType)RecipeInit.RITUAL_TYPE.get(), null, world).stream().filter(r -> r.getId().toString().equals(rLoc.toString())).findFirst();
+        Optional<RitualRecipe> recipe = world.getRecipeManager().getRecipesFor(RecipeInit.RITUAL_TYPE.get(), null, world).stream().filter(r -> r.id().toString().equals(rLoc.toString())).map(r -> r.value()).findFirst();
         return recipe.isPresent() ? recipe.get() : null;
     }
 
     public static Collection<RitualRecipe> getAllRituals(Level world) {
-        List collection = world.getRecipeManager().getRecipesFor((RecipeType)RecipeInit.RITUAL_TYPE.get(), null, world);
+        List collection = world.getRecipeManager().getRecipesFor(RecipeInit.RITUAL_TYPE.get(), null, world).stream().map(r -> r.value()).collect(java.util.stream.Collectors.toList());
         return collection.stream().sorted((c1, c2) -> c2.getLowerBound() - c1.getLowerBound()).collect(Collectors.toList());
     }
 }

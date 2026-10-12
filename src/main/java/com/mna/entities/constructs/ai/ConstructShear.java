@@ -32,7 +32,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.state.BlockState;
-import net.neoforged.neoforge.common.IForgeShearable;
+import net.neoforged.neoforge.common.IShearable;
 
 public class ConstructShear
 extends ConstructBlockAreaTask<ConstructShear> {
@@ -133,7 +133,7 @@ extends ConstructBlockAreaTask<ConstructShear> {
     private boolean locateShearEntity() {
         AbstractGolem c = this.getConstructAsEntity();
         this.currentShearIndex = 0;
-        this.currentShearTargets = c.level().getEntitiesOfClass(Animal.class, this.area, e -> e.isAlive() && (e instanceof IForgeShearable && ((IForgeShearable)e).isShearable(this.shearsStack, c.level(), e.blockPosition()) || e instanceof Chicken && this.canChickenBeSheared((Chicken)e)));
+        this.currentShearTargets = c.level().getEntitiesOfClass(Animal.class, this.area, e -> e.isAlive() && (e instanceof IShearable && ((IShearable)e).isShearable(this.createFakePlayer(), this.shearsStack, c.level(), e.blockPosition()) || e instanceof Chicken && this.canChickenBeSheared((Chicken)e)));
         this.pushDiagnosticMessage(this.translate("mna.constructs.feedback.shear_target", this.currentShearTargets.size()), false);
         return this.currentShearTargets.size() > 0;
     }
@@ -219,7 +219,7 @@ extends ConstructBlockAreaTask<ConstructShear> {
 
     @Override
     protected boolean isValidBlock(BlockState state, BlockPos pos) {
-        return ShearHelper.canBlockBeSheared(this.construct.asEntity().level(), state, pos);
+        return ShearHelper.canBlockBeSheared(this.construct.asEntity().level(), this.createFakePlayer(), state, pos);
     }
 
     @Override

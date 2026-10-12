@@ -45,7 +45,7 @@ extends LootItemConditionalFunction {
 
     protected ItemStack run(ItemStack stack, LootContext context) {
         ItemStack mwRecipe = new ItemStack((ItemLike)ItemInit.RECIPE_SCRAP_RUNESCRIBING.get());
-        List patterns = context.getLevel().getRecipeManager().getAllRecipesFor((RecipeType)RecipeInit.RUNESCRIBING_TYPE.get());
+        List<RunescribingRecipe> patterns = context.getLevel().getRecipeManager().getAllRecipesFor(RecipeInit.RUNESCRIBING_TYPE.get()).stream().map(r -> r.value()).collect(java.util.stream.Collectors.toList());
         if (patterns.size() == 0) {
             return ItemStack.EMPTY;
         }

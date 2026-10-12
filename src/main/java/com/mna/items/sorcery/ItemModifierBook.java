@@ -63,7 +63,7 @@ implements IRadialMenuItem {
     }
 
     public static final Optional<ModifierRecipe> getRecipe(Modifier modifier, Level world) {
-        return world.getRecipeManager().getAllRecipesFor((RecipeType)RecipeInit.MODIFIER_TYPE.get()).stream().filter(m -> m.getComponent() == modifier).findFirst();
+        return world.getRecipeManager().getAllRecipesFor(RecipeInit.MODIFIER_TYPE.get()).stream().filter(m -> m.value().getComponent() == modifier).map(m -> m.value()).findFirst();
     }
 
     public static final void setModifier(ItemStack stack, ResourceLocation modifierRloc) {

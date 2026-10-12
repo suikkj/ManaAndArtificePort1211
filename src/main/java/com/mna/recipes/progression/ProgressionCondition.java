@@ -95,7 +95,7 @@ extends AMRecipeBase {
     }
 
     public static Optional<ProgressionCondition> get(Level world, ResourceLocation rLoc) {
-        return world.getRecipeManager().getAllRecipesFor((RecipeType)RecipeInit.PROGRESSION_TYPE.get()).stream().filter(r -> r.getId().equals(rLoc)).findFirst();
+        return world.getRecipeManager().getAllRecipesFor(RecipeInit.PROGRESSION_TYPE.get()).stream().filter(r -> r.id().equals(rLoc)).map(r -> r.value()).findFirst();
     }
 
     public static List<ProgressionCondition> get(Level world, int tier) {
@@ -103,7 +103,7 @@ extends AMRecipeBase {
     }
 
     public static List<ProgressionCondition> get(Level world, int tier, List<ResourceLocation> except) {
-        return world.getRecipeManager().getAllRecipesFor((RecipeType)RecipeInit.PROGRESSION_TYPE.get()).stream().filter(r -> r.getTier() == tier && !except.contains(r.getId())).collect(Collectors.toList());
+        return world.getRecipeManager().getAllRecipesFor(RecipeInit.PROGRESSION_TYPE.get()).stream().filter(r -> r.value().getTier() == tier && !except.contains(r.id())).map(r -> r.value()).collect(Collectors.toList());
     }
 
     public static int getCompletionRequirementForTier(Level world, int tier) {

@@ -93,7 +93,7 @@ implements IPlayerProgression {
                 modifierAmount = GeneralConfigValues.TierHealthBoosts.size() >= index ? GeneralConfigValues.TierHealthBoosts.get(index) : 0;
                 modifier = new AttributeModifier(UUID.fromString(Tier_Health_Boost_IDs[index]), "Tier Health Boost " + t, (double)modifierAmount, AttributeModifier.Operation.ADD_VALUE);
                 if (!inst.hasModifier(modifier)) continue;
-                inst.removeModifier(modifier.getId());
+                inst.removeModifier(modifier.id());
             }
             for (t = 1; t <= 5; ++t) {
                 index = t - 1;

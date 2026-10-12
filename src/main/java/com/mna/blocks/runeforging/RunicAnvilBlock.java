@@ -175,11 +175,11 @@ EntityBlock {
         if (te.getItem(1).getItem() != Items.PAPER) {
             return InteractionResult.FAIL;
         }
-        Optional<RuneforgingRecipe> forgeRecipe = worldIn.getRecipeManager().getAllRecipesFor((RecipeType)RecipeInit.RUNEFORGING_TYPE.get()).stream().filter(r -> r.getOutputResource().toString().equals(BuiltInRegistries.ITEM.getKey(rune.getItem()).toString())).findFirst();
+        Optional<RuneforgingRecipe> forgeRecipe = worldIn.getRecipeManager().getAllRecipesFor(RecipeInit.RUNEFORGING_TYPE.get()).stream().filter(r -> r.value().getOutputResource().toString().equals(BuiltInRegistries.ITEM.getKey(rune.getItem()).toString())).map(r -> r.value()).findFirst();
         if (!forgeRecipe.isPresent()) {
             return InteractionResult.FAIL;
         }
-        Optional<RunescribingRecipe> scribeRecipe = worldIn.getRecipeManager().getAllRecipesFor((RecipeType)RecipeInit.RUNESCRIBING_TYPE.get()).stream().filter(r -> r.getOutputResource().toString().equals(((RuneforgingRecipe)forgeRecipe.get()).getPatternResource().toString())).findFirst();
+        Optional<RunescribingRecipe> scribeRecipe = worldIn.getRecipeManager().getAllRecipesFor(RecipeInit.RUNESCRIBING_TYPE.get()).stream().filter(r -> r.value().getOutputResource().toString().equals(((RuneforgingRecipe)forgeRecipe.get()).getPatternResource().toString())).map(r -> r.value()).findFirst();
         if (!scribeRecipe.isPresent()) {
             return InteractionResult.FAIL;
         }

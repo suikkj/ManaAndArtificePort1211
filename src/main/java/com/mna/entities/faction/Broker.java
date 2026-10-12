@@ -290,11 +290,11 @@ implements GeoEntity {
                     Item output = offer.assemble().getItem();
                     if (output == ItemInit.TORN_JOURNAL_PAGE.get() || output instanceof IRelic) continue;
                     int requiredTier = 0;
-                    Optional<ManaweavingRecipe> recipe = this.level().getRecipeManager().getAllRecipesFor((RecipeType)RecipeInit.MANAWEAVING_RECIPE_TYPE.get()).stream().filter(r -> r.getResultItem().getItem() == output).findFirst();
+                    Optional<ManaweavingRecipe> recipe = this.level().getRecipeManager().getAllRecipesFor(RecipeInit.MANAWEAVING_RECIPE_TYPE.get()).stream().filter(r -> r.value().getResultItem().getItem() == output).map(r -> r.value()).findFirst();
                     if (recipe.isPresent()) {
                         requiredTier = recipe.get().getTier();
                     } else {
-                        Optional<EldrinAltarRecipe> altar_recipe = this.level().getRecipeManager().getAllRecipesFor((RecipeType)RecipeInit.ELDRIN_ALTAR_TYPE.get()).stream().filter(r -> r.getResultItem().getItem() == output).findFirst();
+                        Optional<EldrinAltarRecipe> altar_recipe = this.level().getRecipeManager().getAllRecipesFor(RecipeInit.ELDRIN_ALTAR_TYPE.get()).stream().filter(r -> r.value().getResultItem().getItem() == output).map(r -> r.value()).findFirst();
                         if (altar_recipe.isPresent()) {
                             requiredTier = altar_recipe.get().getTier();
                         }

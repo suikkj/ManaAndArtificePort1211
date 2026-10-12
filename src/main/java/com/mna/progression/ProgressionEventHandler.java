@@ -47,7 +47,7 @@ public class ProgressionEventHandler {
             List<ProgressionCondition> conditions = ProgressionCondition.get(player.level(), progression.getTier(), progression.getCompletedProgressionSteps());
             boolean advanced = false;
             for (ProgressionCondition condition : conditions) {
-                if (!condition.getAdvancementID().equals(event.getAdvancement().getId())) continue;
+                if (!condition.getAdvancementID().equals(event.getAdvancement().id())) continue;
                 advanced = true;
                 progression.addTierProgressionComplete(condition.getId());
             }
@@ -74,7 +74,7 @@ public class ProgressionEventHandler {
         ServerAdvancementManager advancementMgr = ((ServerLevel)player.level()).getServer().getAdvancements();
         for (ProgressionCondition condition : conditions) {
             for (Advancement adv : advancementMgr.getAllAdvancements()) {
-                if (!advancements.getOrStartProgress(adv).isDone() || !condition.getAdvancementID().equals(adv.getId())) continue;
+                if (!advancements.getOrStartProgress(adv).isDone() || !condition.getAdvancementID().equals(adv.id())) continue;
                 progression.addTierProgressionComplete(condition.getId());
             }
         }

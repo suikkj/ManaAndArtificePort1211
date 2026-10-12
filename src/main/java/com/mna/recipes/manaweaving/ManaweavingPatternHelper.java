@@ -26,14 +26,14 @@ import net.minecraft.world.level.Level;
 public class ManaweavingPatternHelper {
     @Nullable
     public static ManaweavingPattern GetManaweavingRecipe(Level world, ResourceLocation rLoc) {
-        List mwpList;
+        List<ManaweavingPattern> mwpList;
         if (world == null || rLoc == null) {
             return null;
         }
         if (rLoc.getNamespace().equals("mna") && !rLoc.getPath().startsWith("manaweave_patterns/")) {
             rLoc = ResourceLocation.fromNamespaceAndPath(rLoc.getNamespace(), "manaweave_patterns/" + rLoc.getPath());
         }
-        if ((mwpList = world.getRecipeManager().getRecipesFor((RecipeType)RecipeInit.MANAWEAVING_PATTERN_TYPE.get(), (Container)ContainerTools.createTemporaryContainer(ItemStack.EMPTY), world)) == null || mwpList.size() == 0) {
+        if ((mwpList = world.getRecipeManager().getRecipesFor(RecipeInit.MANAWEAVING_PATTERN_TYPE.get(), (Container)ContainerTools.createTemporaryContainer(ItemStack.EMPTY), world).stream().map(r -> r.value()).collect(java.util.stream.Collectors.toList())) == null || mwpList.size() == 0) {
             return null;
         }
         for (ManaweavingPattern pattern : mwpList) {
@@ -44,7 +44,7 @@ public class ManaweavingPatternHelper {
     }
 
     public static Collection<ManaweavingPattern> getAllPatterns(Level world) {
-        return world.getRecipeManager().getRecipesFor((RecipeType)RecipeInit.MANAWEAVING_PATTERN_TYPE.get(), (Container)ContainerTools.createTemporaryContainer(ItemStack.EMPTY), world);
+        return world.getRecipeManager().getRecipesFor(RecipeInit.MANAWEAVING_PATTERN_TYPE.get(), (Container)ContainerTools.createTemporaryContainer(ItemStack.EMPTY), world).stream().map(r -> r.value()).collect(java.util.stream.Collectors.toList());
     }
 }
 

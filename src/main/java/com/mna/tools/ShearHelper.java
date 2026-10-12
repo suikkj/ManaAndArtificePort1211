@@ -25,7 +25,7 @@
  *  net.minecraft.world.phys.AABB
  *  net.minecraft.world.phys.BlockHitResult
  *  net.minecraft.world.phys.Vec3
- *  net.minecraftforge.common.IForgeShearable
+ *  net.minecraftforge.common.IShearable
  *  net.minecraftforge.common.capabilities.ForgeCapabilities
  *  net.minecraftforge.common.util.FakePlayer
  *  net.minecraftforge.common.util.FakePlayerFactory
@@ -62,7 +62,7 @@ import net.minecraft.world.level.entity.EntityTypeTest;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
-import net.neoforged.neoforge.common.IForgeShearable;
+import net.neoforged.neoforge.common.IShearable;
 import net.neoforged.neoforge.capabilities.ForgeCapabilities;
 import net.neoforged.neoforge.common.util.FakePlayer;
 import net.neoforged.neoforge.common.util.FakePlayerFactory;
@@ -82,7 +82,7 @@ public class ShearHelper {
             return output;
         }
         BlockState targetState = world.getBlockState(position);
-        if (targetState.getBlock() instanceof IForgeShearable && (output = ShearHelper.shearIForgeShearable((IForgeShearable)targetState.getBlock(), player, position, shearStack, (Level)world)).size() > 0) {
+        if (targetState.getBlock() instanceof IShearable && (output = ShearHelper.shearIShearable((IShearable)targetState.getBlock(), player, position, shearStack, (Level)world)).size() > 0) {
             return output;
         }
         BlockEntity te = world.getBlockEntity(position);
@@ -122,14 +122,14 @@ public class ShearHelper {
         if (entity.level().isClientSide()) {
             return output;
         }
-        if (entity instanceof IForgeShearable) {
-            return ShearHelper.shearIForgeShearable((IForgeShearable)entity, player, entity.blockPosition(), player.getItemInHand(hand), (Level)world);
+        if (entity instanceof IShearable) {
+            return ShearHelper.shearIShearable((IShearable)entity, player, entity.blockPosition(), player.getItemInHand(hand), (Level)world);
         }
         return output;
     }
 
-    public static boolean canBlockBeSheared(Level world, BlockState state, BlockPos pos) {
-        if (state.getBlock() instanceof IForgeShearable && ((IForgeShearable)state.getBlock()).isShearable(new ItemStack((ItemLike)Items.SHEARS), world, pos)) {
+    public static boolean canBlockBeSheared(Level world, Player player, BlockState state, BlockPos pos) {
+        if (state.getBlock() instanceof IShearable && ((IShearable)state.getBlock()).isShearable(player, new ItemStack((ItemLike)Items.SHEARS), world, pos)) {
             return true;
         }
         if (state.getBlock() instanceof BeehiveBlock) {
@@ -138,11 +138,10 @@ public class ShearHelper {
         return MATags.isBlockIn(state.getBlock(), MATags.Blocks.SHEARABLES);
     }
 
-    private static List<ItemStack> shearIForgeShearable(IForgeShearable target, Player player, BlockPos pos, ItemStack heldItem, Level world) {
-        List<Object> output = new ArrayList<ItemStack>();
-        if (target.isShearable(heldItem, world, pos)) {
-            int enchantmentLevel = MNAEnchantmentHelper.getItemEnchantmentLevel(Enchantments.BLOCK_FORTUNE, heldItem);
-            output = target.onSheared(player, heldItem, world, pos, enchantmentLevel);
+    private static List<ItemStack> shearIShearable(IShearable target, Player player, BlockPos pos, ItemStack heldItem, Level world) {
+        List<ItemStack> output = new ArrayList<ItemStack>();
+        if (target.isShearable(player, heldItem, world, pos)) {
+            output = target.onSheared(player, heldItem, world, pos);
         }
         return output;
     }

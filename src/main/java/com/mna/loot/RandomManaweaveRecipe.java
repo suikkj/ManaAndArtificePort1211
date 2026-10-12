@@ -45,7 +45,7 @@ extends LootItemConditionalFunction {
 
     protected ItemStack run(ItemStack stack, LootContext context) {
         ItemStack mwRecipe = new ItemStack((ItemLike)ItemInit.RECIPE_SCRAP_MANAWEAVING_PATTERN.get());
-        List patterns = context.getLevel().getRecipeManager().getAllRecipesFor((RecipeType)RecipeInit.MANAWEAVING_PATTERN_TYPE.get());
+        List<ManaweavingPattern> patterns = context.getLevel().getRecipeManager().getAllRecipesFor(RecipeInit.MANAWEAVING_PATTERN_TYPE.get()).stream().map(r -> r.value()).collect(java.util.stream.Collectors.toList());
         if (patterns.size() == 0) {
             return ItemStack.EMPTY;
         }

@@ -87,13 +87,13 @@ Consumer<FriendlyByteBuf> {
         }
         RecipeUtil.lookupCraftingRecipe(this.getLevel(), recipeItems).ifPresent(resolvedRecipe -> {
             for (RememberedRecipe recipe : this.rememberedRecipes) {
-                if (!recipe.recipeId.equals(resolvedRecipe.getId())) continue;
+                if (!recipe.recipeId.equals(resolvedRecipe.id())) continue;
                 return;
             }
             if (!this.popRecipe()) {
                 return;
             }
-            this.rememberedRecipes.add(new RememberedRecipe(resolvedRecipe.getId(), output));
+            this.rememberedRecipes.add(new RememberedRecipe(resolvedRecipe.id(), output));
             this.getLevel().sendBlockUpdated(this.getBlockPos(), this.getBlockState(), this.getBlockState(), 3);
         });
     }

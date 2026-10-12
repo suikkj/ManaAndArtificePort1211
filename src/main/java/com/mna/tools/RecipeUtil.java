@@ -23,7 +23,7 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 
 public class RecipeUtil {
-    public static Optional<CraftingRecipe> lookupCraftingRecipe(Level world, ItemStack[] items) {
+    public static Optional<net.minecraft.world.item.crafting.RecipeHolder<CraftingRecipe>> lookupCraftingRecipe(Level world, ItemStack[] items) {
         NonNullList invItems = NonNullList.create();
         for (int i = 0; i < 3; ++i) {
             for (int j = 0; j < 3; ++j) {
