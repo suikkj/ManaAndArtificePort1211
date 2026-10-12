@@ -168,7 +168,7 @@ extends Screen {
         }
         int size = 18;
         if (this.isCursorWithin(x, y, size, size)) {
-            this.tooltip.addAll(stack.getTooltipLines((Player)this.minecraft.player, (TooltipFlag)TooltipFlag.Default.NORMAL));
+            this.tooltip.addAll(stack.getTooltipLines(net.minecraft.world.item.Item.TooltipContext.EMPTY, (Player)this.minecraft.player, (TooltipFlag)TooltipFlag.Default.NORMAL));
             this.hoveredSlot = index;
         }
         pGuiGraphics.renderItem(stack, x, y);

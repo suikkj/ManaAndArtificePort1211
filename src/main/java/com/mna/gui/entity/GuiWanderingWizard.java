@@ -182,7 +182,7 @@ extends SearchableGui<ContainerWanderingWizard> {
         }
 
         public void reInit(String searchTerm) {
-            this.addItems(this.initialOffers.stream().filter(o -> searchTerm == "" || o.getResult().getTooltipLines((Player)this.minecraft.player, (TooltipFlag)TooltipFlag.Default.NORMAL).stream().anyMatch(l -> l.toString().toLowerCase().contains(searchTerm.toLowerCase()))).collect(Collectors.toList()), (o, i) -> GuiWanderingWizard.this.OnItemClicked((MerchantOffer)o, (int)i));
+            this.addItems(this.initialOffers.stream().filter(o -> searchTerm == "" || o.getResult().getTooltipLines(net.minecraft.world.item.Item.TooltipContext.EMPTY, (Player)this.minecraft.player, (TooltipFlag)TooltipFlag.Default.NORMAL).stream().anyMatch(l -> l.toString().toLowerCase().contains(searchTerm.toLowerCase()))).collect(Collectors.toList()), (o, i) -> GuiWanderingWizard.this.OnItemClicked((MerchantOffer)o, (int)i));
         }
 
         public void renderWidget(GuiGraphics pGuiGraphics, int mouseX, int mouseY, float partialTicks) {

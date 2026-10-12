@@ -228,7 +228,7 @@ extends ObjectSelectionList<ReagentListEntry> {
                 if (!this.isMouseOver(mouseX, mouseY) || !isOverMe || !((float)mouseX >= (float)x * scale) || !((float)mouseX <= (float)(x + this.spacing + 5) * scale) || ReagentList.this.tooltipFunction == null) continue;
                 if (ReagentList.this.fullTooltip) {
                     Minecraft mc = Minecraft.getInstance();
-                    stack.getTooltipLines((Player)mc.player, (TooltipFlag)TooltipFlag.Default.NORMAL).forEach(ReagentList.this.tooltipFunction);
+                    stack.getTooltipLines(net.minecraft.world.item.Item.TooltipContext.EMPTY, (Player)mc.player, (TooltipFlag)TooltipFlag.Default.NORMAL).forEach(ReagentList.this.tooltipFunction);
                     continue;
                 }
                 ReagentList.this.tooltipFunction.accept((Component)Component.translatable((String)stack.getDescriptionId()));

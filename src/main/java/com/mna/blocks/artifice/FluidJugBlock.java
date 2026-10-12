@@ -109,10 +109,6 @@ SimpleWaterloggedBlock {
         return (Boolean)state.getValue((Property)BlockStateProperties.WATERLOGGED) != false ? Fluids.WATER.getSource(false) : Fluids.EMPTY.defaultFluidState();
     }
 
-    public boolean placeLiquid(LevelAccessor worldIn, BlockPos pos, BlockState state, FluidState fluidStateIn) {
-        return super.placeLiquid(worldIn, pos, state, fluidStateIn);
-    }
-
     public boolean canPlaceLiquid(BlockGetter worldIn, BlockPos pos, BlockState state, Fluid fluidIn) {
         return super.canPlaceLiquid(worldIn, pos, state, fluidIn);
     }

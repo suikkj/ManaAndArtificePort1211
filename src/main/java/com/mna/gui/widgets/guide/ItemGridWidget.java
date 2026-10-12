@@ -69,7 +69,7 @@ extends AbstractWidget {
                 this.hoveredStack = this.renderStacks[i];
                 if (this.tooltipFunction != null) {
                     Minecraft mc = Minecraft.getInstance();
-                    this.tooltipFunction.accept(this.hoveredStack.getTooltipLines((Player)mc.player, (TooltipFlag)(mc.options.advancedItemTooltips ? TooltipFlag.Default.ADVANCED : TooltipFlag.Default.ADVANCED)));
+                    this.tooltipFunction.accept(this.hoveredStack.getTooltipLines(net.minecraft.world.item.Item.TooltipContext.EMPTY, (Player)mc.player, (TooltipFlag)(mc.options.advancedItemTooltips ? TooltipFlag.Default.ADVANCED : TooltipFlag.Default.ADVANCED)));
                 }
             }
             if (i % this.items_per_row == 0 && i != 0) {

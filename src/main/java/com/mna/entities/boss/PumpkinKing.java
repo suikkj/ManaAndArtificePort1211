@@ -235,7 +235,7 @@ implements IAnimPacketSync<PumpkinKing> {
 
     private void maybeDisableShield(Player player, ItemStack playerItem) {
         if (!playerItem.isEmpty() && playerItem.getItem().canPerformAction(playerItem, ItemAbilities.SHIELD_BLOCK)) {
-            float f = 0.25f + (float)EnchantmentHelper.getBlockEfficiency((LivingEntity)this) * 0.05f;
+            float f = 0.25f + (float)com.mna.api.enchantments.MNAEnchantmentHelper.getBlockEfficiency((LivingEntity)this) * 0.05f;
             if (this.random.nextFloat() < f) {
                 player.getCooldowns().addCooldown(Items.SHIELD, 100);
                 this.level().broadcastEntityEvent((Entity)player, (byte)30);

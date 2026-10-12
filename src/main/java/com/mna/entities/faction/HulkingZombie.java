@@ -225,7 +225,7 @@ extends BaseFactionMob<HulkingZombie> {
 
     private void maybeDisableShield(Player p_233655_1_, ItemStack p_233655_2_, ItemStack p_233655_3_) {
         if (!p_233655_2_.isEmpty() && !p_233655_3_.isEmpty() && p_233655_2_.getItem() instanceof AxeItem && p_233655_3_.getItem() == Items.SHIELD) {
-            float f = 0.25f + (float)EnchantmentHelper.getBlockEfficiency((LivingEntity)this) * 0.05f;
+            float f = 0.25f + (float)com.mna.api.enchantments.MNAEnchantmentHelper.getBlockEfficiency((LivingEntity)this) * 0.05f;
             if (this.random.nextFloat() < f) {
                 p_233655_1_.getCooldowns().addCooldown(Items.SHIELD, 100);
                 this.level().broadcastEntityEvent((Entity)p_233655_1_, (byte)30);

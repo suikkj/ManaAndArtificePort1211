@@ -65,7 +65,7 @@ extends ConstructConditional<ConstructIsFluidInContainer> {
         }
         BlockState state = world.getBlockState(this.pos.getPosition());
         if (state.getBlock() instanceof LayeredCauldronBlock) {
-            FlowingFluid fluid = state.getBlock() == Blocks.LAVA_CAULDRON ? Fluids.LAVA : (state.getBlock() == Blocks.WATER_CAULDRON ? Fluids.WATER : Fluids.EMPTY);
+            net.minecraft.world.level.material.Fluid fluid = state.getBlock() == Blocks.LAVA_CAULDRON ? Fluids.LAVA : (state.getBlock() == Blocks.WATER_CAULDRON ? Fluids.WATER : Fluids.EMPTY);
             int amount = ((LayeredCauldronBlock)state.getBlock()).isFull(state) ? 1000 : (Integer)state.getValue((Property)LayeredCauldronBlock.LEVEL) * 333;
             FluidStack contained = new FluidStack((Fluid)fluid, amount);
             if ((searchFluid.isEmpty() || searchFluid.isFluidEqual(contained)) && amount > 0) {

@@ -68,7 +68,7 @@ extends GuiJEIDisable<ContainerSpellRecipe> {
         pGuiGraphics.drawString(this.font, sb.toString(), x + 16, y + 3, FastColor.ARGB32.color((int)255, (int)71, (int)71, (int)71), false);
         int adjustedX = (int)((float)x * scale + 16.0f * scale);
         int adjustedY = (int)((float)y * scale + 16.0f * scale);
-        if (adjustedX >= mouseX && (float)adjustedX <= (float)mouseX + 16.0f * scale && adjustedY >= mouseY && (float)adjustedY <= (float)mouseY + 16.0f * scale && (toolTip = stack.getTooltipLines(null, (TooltipFlag)TooltipFlag.Default.NORMAL)) != null) {
+        if (adjustedX >= mouseX && (float)adjustedX <= (float)mouseX + 16.0f * scale && adjustedY >= mouseY && (float)adjustedY <= (float)mouseY + 16.0f * scale && (toolTip = stack.getTooltipLines(net.minecraft.world.item.Item.TooltipContext.EMPTY, null, (TooltipFlag)TooltipFlag.Default.NORMAL)) != null) {
             pGuiGraphics.renderTooltip(this.font, Lists.transform((List)toolTip, Component::getVisualOrderText), (int)((float)mouseX / scale), (int)((float)mouseY / scale));
         }
         return x + 16 + this.font.width(sb.toString());

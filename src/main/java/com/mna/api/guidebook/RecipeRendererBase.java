@@ -139,7 +139,7 @@ extends AbstractWidget {
         int adjustedX = (int)((float)x + 16.0f * scale);
         int adjustedY = (int)((float)y + 16.0f * scale);
         if (this.tooltipFunction != null && adjustedX >= this.curMouseX && (float)adjustedX <= (float)this.curMouseX + 16.0f * scale && adjustedY >= this.curMouseY && (float)adjustedY <= (float)this.curMouseY + 16.0f * scale) {
-            List toolTip = stack.getTooltipLines(null, (TooltipFlag)TooltipFlag.Default.NORMAL);
+            List toolTip = stack.getTooltipLines(net.minecraft.world.item.Item.TooltipContext.EMPTY, null, (TooltipFlag)TooltipFlag.Default.NORMAL);
             ArrayList<Component> tt = new ArrayList<Component>();
             tt.addAll(toolTip);
             tt.addAll(additionalTooltip);

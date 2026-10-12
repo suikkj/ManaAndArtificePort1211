@@ -53,4 +53,9 @@ public final class MNAEnchantmentHelper {
         }
         return total;
     }
+
+    /** [PORT 1.21.1] com.mna.api.enchantments.MNAEnchantmentHelper.getBlockEfficiency(LivingEntity) foi removido. */
+    public static int getBlockEfficiency(net.minecraft.world.entity.LivingEntity entity) {
+        return (int)EnchantmentHelper.getEnchantmentLevel(net.minecraft.world.item.enchantment.Enchantments.EFFICIENCY, entity);
+    }
 }

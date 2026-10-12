@@ -156,7 +156,7 @@ implements GeoEntity {
 
     private void maybeDisableShield(Player pPlayer, ItemStack pMobItemStack, ItemStack pPlayerItemStack) {
         if (!pMobItemStack.isEmpty() && !pPlayerItemStack.isEmpty() && pMobItemStack.getItem() instanceof AxeItem && pPlayerItemStack.is(Items.SHIELD)) {
-            float f = 0.25f + (float)EnchantmentHelper.getBlockEfficiency((LivingEntity)this) * 0.05f;
+            float f = 0.25f + (float)com.mna.api.enchantments.MNAEnchantmentHelper.getBlockEfficiency((LivingEntity)this) * 0.05f;
             if (this.random.nextFloat() < f) {
                 pPlayer.getCooldowns().addCooldown(Items.SHIELD, 100);
                 this.level().broadcastEntityEvent((Entity)pPlayer, (byte)30);

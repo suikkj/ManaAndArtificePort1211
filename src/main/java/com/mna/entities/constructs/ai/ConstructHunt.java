@@ -207,7 +207,7 @@ extends ConstructAITask<ConstructHunt> {
             lootparams$builder.withParameter(LootContextParams.THIS_ENTITY, living);
             lootparams$builder.withParameter(LootContextParams.ORIGIN, c.position());
             LootParams lootparams = lootparams$builder.create(LootContextParamSets.ENTITY);
-            LootTable loottable = world.getServer().getLootData().getLootTable(resourcelocation);
+            LootTable loottable = world.getServer().reloadableRegistries().getLootTable(resourcelocation);
             return loottable.getRandomItems(lootparams);
         }
         return new ArrayList<ItemStack>();

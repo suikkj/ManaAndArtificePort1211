@@ -540,7 +540,7 @@ extends GuiJEIDisable<ContainerOcculus> {
             if (this.active && this.isHovered) {
                 List lines;
                 if (this.includeTooltip) {
-                    lines = this.iconStack.getTooltipLines((Player)((GuiOcculus)GuiOcculus.this).minecraft.player, (TooltipFlag)TooltipFlag.Default.NORMAL);
+                    lines = this.iconStack.getTooltipLines(net.minecraft.world.item.Item.TooltipContext.EMPTY, (Player)((GuiOcculus)GuiOcculus.this).minecraft.player, (TooltipFlag)TooltipFlag.Default.NORMAL);
                 } else {
                     lines = new ArrayList<Component>();
                     lines.add(this.iconStack.getHoverName());

@@ -465,7 +465,7 @@ extends Goal {
     protected List<ItemStack> getLootRoll(ResourceLocation lootTable, ItemStack tool, LootContextParamSet paramSet) {
         AbstractGolem c = this.construct.asEntity();
         LootParams lootparams = new LootParams.Builder((ServerLevel)c.level()).withParameter(LootContextParams.THIS_ENTITY, this.construct.asEntity()).withParameter(LootContextParams.ORIGIN, this.construct.asEntity().position()).withParameter(LootContextParams.TOOL, tool).create(paramSet);
-        LootTable loottable = c.level().getServer().getLootData().getLootTable(lootTable);
+        LootTable loottable = c.level().getServer().reloadableRegistries().getLootTable(lootTable);
         return loottable.getRandomItems(lootparams);
     }
 

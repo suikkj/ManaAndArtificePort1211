@@ -70,7 +70,7 @@ extends MNAImageButton {
         if (this.active && this.isHovered) {
             List lines;
             if (this.includeTooltip) {
-                lines = this.iconStack.getTooltipLines(ManaAndArtifice.instance.proxy.getClientPlayer(), (TooltipFlag)TooltipFlag.Default.NORMAL);
+                lines = this.iconStack.getTooltipLines(net.minecraft.world.item.Item.TooltipContext.EMPTY, ManaAndArtifice.instance.proxy.getClientPlayer(), (TooltipFlag)TooltipFlag.Default.NORMAL);
             } else {
                 lines = new ArrayList<Component>();
                 lines.add(this.iconStack.getHoverName());
