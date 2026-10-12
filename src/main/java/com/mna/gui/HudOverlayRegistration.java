@@ -31,29 +31,29 @@ public class HudOverlayRegistration {
     @OnlyIn(value=Dist.CLIENT)
     @SubscribeEvent
     public static void onRegistrGuiOverlays(RegisterGuiLayersEvent event) {
-        event.registerAboveAll(com.mna.api.tools.RLoc.create("mna_overlays"), (gui, mStack, partialTicks, screenWidth, screenHeight) -> {
+        event.registerAboveAll(com.mna.api.tools.RLoc.create("mna_overlays"), (gui, deltaTracker) -> {
             com.mojang.blaze3d.systems.RenderSystem.enableBlend(); com.mojang.blaze3d.systems.RenderSystem.disableDepthTest();
             Minecraft mc = Minecraft.getInstance();
             if (mc.player.hasEffect(com.mna.api.tools.MAEffects.holder(EffectInit.MIST_FORM.get()))) {
                 HUDOverlayRenderer.instance.renderTextureOverlay(GuiTextures.Overlay.MIST_FORM, 0.8f);
             }
         });
-        event.registerAboveAll(com.mna.api.tools.RLoc.create("mna_main_hud"), (gui, mStack, partialTicks, screenWidth, screenHeight) -> {
+        event.registerAboveAll(com.mna.api.tools.RLoc.create("mna_main_hud"), (gui, deltaTracker) -> {
             com.mojang.blaze3d.systems.RenderSystem.enableBlend(); com.mojang.blaze3d.systems.RenderSystem.disableDepthTest();
             if (ClientConfigValues.ShowHudMode == ClientConfigValues.HudMode.AlwaysShow || HudOverlayRegistration.shouldConditionalShow()) {
-                HUDOverlayRenderer.instance.renderHUD(mStack, screenWidth, screenHeight, partialTicks);
+                HUDOverlayRenderer.instance.renderHUD(gui, gui.guiWidth(), gui.guiHeight(), deltaTracker.getGameTimeDeltaPartialTick(false));
             }
         });
-        event.registerAboveAll(com.mna.api.tools.RLoc.create("mna_pinned_recipe"), (gui, mStack, partialTicks, screenWidth, screenHeight) -> {
+        event.registerAboveAll(com.mna.api.tools.RLoc.create("mna_pinned_recipe"), (gui, deltaTracker) -> {
             com.mojang.blaze3d.systems.RenderSystem.enableBlend(); com.mojang.blaze3d.systems.RenderSystem.disableDepthTest();
-            HUDOverlayRenderer.instance.renderPinnedRecipe(mStack, screenWidth, screenHeight);
-            HUDOverlayRenderer.instance.renderPinnedDiagnostics(mStack, screenWidth, screenHeight);
+            HUDOverlayRenderer.instance.renderPinnedRecipe(gui, gui.guiWidth(), gui.guiHeight());
+            HUDOverlayRenderer.instance.renderPinnedDiagnostics(gui, gui.guiWidth(), gui.guiHeight());
         });
-        event.registerAboveAll(com.mna.api.tools.RLoc.create("mna_cantrip_timer"), (gui, mStack, partialTicks, screenWidth, screenHeight) -> {
+        event.registerAboveAll(com.mna.api.tools.RLoc.create("mna_cantrip_timer"), (gui, deltaTracker) -> {
             com.mojang.blaze3d.systems.RenderSystem.enableBlend(); com.mojang.blaze3d.systems.RenderSystem.disableDepthTest();
-            HUDOverlayRenderer.instance.renderCantripTimer(mStack, screenWidth, screenHeight, partialTicks);
+            HUDOverlayRenderer.instance.renderCantripTimer(gui, gui.guiWidth(), gui.guiHeight(), deltaTracker.getGameTimeDeltaPartialTick(false));
         });
-        event.registerAboveAll(com.mna.api.tools.RLoc.create("mna_manaweave_timer"), (gui, mStack, partialTicks, screenWidth, screenHeight) -> {
+        event.registerAboveAll(com.mna.api.tools.RLoc.create("mna_manaweave_timer"), (gui, deltaTracker) -> {
             com.mojang.blaze3d.systems.RenderSystem.enableBlend(); com.mojang.blaze3d.systems.RenderSystem.disableDepthTest();
             Minecraft mc = Minecraft.getInstance();
             LocalPlayer player = mc.player;
@@ -69,17 +69,17 @@ public class HudOverlayRegistration {
                     if (color == null) {
                         color = new int[]{50, 0, 128};
                     }
-                    HUDOverlayRenderer.instance.renderCenteredTimer(mStack, pct, 255, screenWidth, screenHeight, 50, color[0], color[1], color[2]);
+                    HUDOverlayRenderer.instance.renderCenteredTimer(gui, pct, 255, gui.guiWidth(), gui.guiHeight(), 50, color[0], color[1], color[2]);
                 } else {
-                    HUDOverlayRenderer.instance.renderCenteredTimer(mStack, pct, 255, screenWidth, screenHeight, 50, 0, 255, 0);
+                    HUDOverlayRenderer.instance.renderCenteredTimer(gui, pct, 255, gui.guiWidth(), gui.guiHeight(), 50, 0, 255, 0);
                 }
             }
         });
-        event.registerAboveAll(com.mna.api.tools.RLoc.create("mna_spellbook_chord_hud"), (gui, mStack, partialTicks, screenWidth, screenHeight) -> {
+        event.registerAboveAll(com.mna.api.tools.RLoc.create("mna_spellbook_chord_hud"), (gui, deltaTracker) -> {
             com.mojang.blaze3d.systems.RenderSystem.enableBlend(); com.mojang.blaze3d.systems.RenderSystem.disableDepthTest();
             Minecraft mc = Minecraft.getInstance();
             LocalPlayer player = mc.player;
-            HUDOverlayRenderer.instance.renderSpellBookChordsHud((Player)player, mStack);
+            HUDOverlayRenderer.instance.renderSpellBookChordsHud((Player)player, gui);
         });
     }
 
