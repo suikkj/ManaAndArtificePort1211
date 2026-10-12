@@ -128,9 +128,9 @@ implements IGuideBookRegistry {
                 break;
             }
         }));
-        List results = relatedRecipes.entrySet().stream().map(r -> new GuidebookSearchResult((RelatedRecipe)((Map.Entry)r).getKey(), (ItemStack)((Map.Entry)r).getValue())).collect(Collectors.toList());
+        List results = (List)relatedRecipes.entrySet().stream().map(r -> new GuidebookSearchResult((RelatedRecipe)((Map.Entry)r).getKey(), (ItemStack)((Map.Entry)r).getValue())).collect(Collectors.toList());
         results.addAll((java.util.Collection)matchingContents.stream().map(e -> new GuidebookSearchResult((GuidebookEntry)e)).collect(Collectors.toList()));
-        return results.stream().filter(this.distinctByKey(GuidebookSearchResult::toString)).limit(limit).collect(Collectors.toList());
+        return ((java.util.List<GuidebookSearchResult>)results).stream().filter(this.distinctByKey(GuidebookSearchResult::toString)).limit(limit).collect(Collectors.toList());
     }
 
     private <T> Predicate<T> distinctByKey(Function<? super T, ?> keyExtractor) {
@@ -213,7 +213,7 @@ implements IGuideBookRegistry {
             if (unlocked.size() > lastCount) {
                 long[] entryHashes = new long[unlocked.size()];
                 int count = 0;
-                for (String s : unlocked) {
+                for (String s : (java.util.List<String>)unlocked) {
                     entryHashes[count++] = s.hashCode();
                 }
                 ClientMessageDispatcher.updateCodexEntryUnlocks(entryHashes);

@@ -32,4 +32,13 @@ public final class MNAPoseStackAccess {
             throw new RuntimeException(e);
         }
     }
+
+    @SuppressWarnings("unchecked")
+    public static int size(PoseStack stack) {
+        try {
+            return ((Deque<PoseStack.Pose>)FIELD.get(stack)).size();
+        } catch (IllegalAccessException e) {
+            return 0;
+        }
+    }
 }

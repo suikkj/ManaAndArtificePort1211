@@ -2,6 +2,7 @@
 package com.mna.entities.constructs.ai;
 
 import com.mna.Registries;
+import net.minecraft.world.entity.EntityType;
 import com.mna.api.entities.construct.ConstructCapability;
 import com.mna.api.entities.construct.IConstruct;
 import com.mna.api.entities.construct.ai.ConstructAITask;
@@ -71,7 +72,7 @@ extends ConstructEntityAreaTask<Animal, ConstructButcher> {
             return null;
         }
         List<Animal> potentials = (List<Animal>)target.get();
-        Optional<Object> potential = potentials.stream().filter(a -> a.getAge() != 0).findAny();
+        Optional<Animal> potential = potentials.stream().filter(a -> a.getAge() != 0).findAny();
         if (!(potential.isPresent() && potential.get() != null || (potential = potentials.stream().findAny()).isPresent() && potential.get() != null)) {
             return null;
         }

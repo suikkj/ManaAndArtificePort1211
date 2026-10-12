@@ -38,14 +38,14 @@ extends ItemEntityRenderer {
     public void render(ItemEntity entityIn, float entityYaw, float partialTicks, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn) {
         int[] innerColor = new int[]{156, 56, 207};
         int[] outerColor = new int[]{42, 90, 173};
-        int preRadiantSize = matrixStackIn.poseStack.size();
+        int preRadiantSize = com.mna.tools.MNAPoseStackAccess.size(matrixStackIn);
         matrixStackIn.pushPose();
         BakedModel ibakedmodel = Minecraft.getInstance().getItemRenderer().getModel(entityIn.getItem(), entityIn.level(), (LivingEntity)null, 0);
         float f1 = Mth.sin((float)(((float)entityIn.getAge() + partialTicks) / 10.0f + entityIn.bobOffs)) * 0.1f + 0.1f;
-        float f2 = this.shouldBob() ? ibakedmodel.getTransforms().getTransform((ItemDisplayContext)ItemDisplayContext.GROUND).scale.y() : 0.0f;
+        float f2 = true ? ibakedmodel.getTransforms().getTransform((ItemDisplayContext)ItemDisplayContext.GROUND).scale.y() : 0.0f;
         matrixStackIn.translate(0.0, (double)(f1 + 0.5f * f2), 0.0);
         WorldRenderUtils.renderRadiant((Entity)entityIn, matrixStackIn, bufferIn, innerColor, outerColor, 128, 0.1f);
-        while (matrixStackIn.poseStack.size() > preRadiantSize) {
+        while (com.mna.tools.MNAPoseStackAccess.size(matrixStackIn) > preRadiantSize) {
             matrixStackIn.popPose();
         }
         super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);

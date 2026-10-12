@@ -34,11 +34,11 @@ extends AbstractArrow {
     }
 
     public WitchHunterArrow(Level worldIn, double x, double y, double z) {
-        super((EntityType)EntityInit.WITCH_HUNTER_ARROW.get(), x, y, z, worldIn);
+        super((EntityType)EntityInit.WITCH_HUNTER_ARROW.get(), x, y, z, worldIn, new ItemStack((ItemLike)Items.ARROW), null);
     }
 
     public WitchHunterArrow(Level worldIn, LivingEntity shooter) {
-        super((EntityType)EntityInit.WITCH_HUNTER_ARROW.get(), shooter, worldIn);
+        super((EntityType)EntityInit.WITCH_HUNTER_ARROW.get(), shooter, worldIn, new ItemStack((ItemLike)Items.ARROW), null);
     }
 
     protected boolean canHitEntity(Entity target) {

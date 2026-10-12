@@ -416,7 +416,7 @@ public class CommonEventHandler {
             java.lang.reflect.Field f = AreaEffectCloud.class.getDeclaredField("potionContents");
             f.setAccessible(true);
             net.minecraft.world.item.alchemy.PotionContents pc = (net.minecraft.world.item.alchemy.PotionContents)f.get(cloud);
-            return pc != null && pc.getAllEffects().stream().anyMatch(e -> e.getEffect().value() instanceof INoCreeperLingering);
+            return pc != null && pc.getActiveEffects().stream().anyMatch(e -> e.getEffect().value() instanceof INoCreeperLingering);
         } catch (ReflectiveOperationException e) {
             return false;
         }
@@ -1035,8 +1035,8 @@ public class CommonEventHandler {
     }
 
     private static BlockPos getExplosionExtent(Explosion explosion, Direction dir) {
-        BlockPos pos = BlockPos.containing((Position)explosion.getPosition());
-        Vec3i offset = dir.getNormal().multiply((int)Math.ceil(explosion.radius));
+        BlockPos pos = BlockPos.containing(explosion.x, explosion.y, explosion.z);
+        Vec3i offset = dir.getNormal().multiply((int)Math.ceil(com.mna.tools.MNAReflection.explosionRadius(explosion)));
         return pos.offset(offset);
     }
 }

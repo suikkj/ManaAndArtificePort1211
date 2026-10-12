@@ -30,7 +30,7 @@ extends SavedData {
     public MAInventoryData(UUID id, int size, Function<Integer, T> builder) {
         this.id = id;
         this.size = size;
-        this.inventory = (IExtendedItemHandler)builder.apply(this.size);
+        this.inventory = builder.apply(this.size);
     }
 
     public T getInventory() {
@@ -41,7 +41,7 @@ extends SavedData {
         return this.id;
     }
 
-    public CompoundTag save(CompoundTag compound) {
+    public CompoundTag save(CompoundTag compound, net.minecraft.core.HolderLookup.Provider provider) {
         compound.putInt("size", this.size);
         compound.putUUID("id", this.id);
         if (this.inventory != null) {
@@ -51,10 +51,6 @@ extends SavedData {
             compound.put("inventory", (Tag)new CompoundTag());
         }
         return compound;
-    }
-
-    public void save(File fileIn) {
-        super.save(fileIn);
     }
 
     public void setDirty() {

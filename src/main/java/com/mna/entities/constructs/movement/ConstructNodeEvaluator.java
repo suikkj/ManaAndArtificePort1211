@@ -750,7 +750,7 @@ extends NodeEvaluator {
                         return PathType.LEAVES;
                     }
                     if (!(blockstate.is(BlockTags.FENCES) || blockstate.is(BlockTags.WALLS) || block instanceof FenceGateBlock && !((Boolean)blockstate.getValue((Property)FenceGateBlock.OPEN)).booleanValue())) {
-                        if (!blockstate.isPathfindable(pLevel, pPos, PathComputationType.LAND)) {
+                        if (!blockstate.isPathfindable(PathComputationType.LAND)) {
                             return PathType.BLOCKED;
                         }
                         PathType loggableFluidPathType = fluidstate.getBlockPathType(pLevel, pPos, null, true);

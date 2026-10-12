@@ -131,7 +131,7 @@ extends HeldContainerBase {
                         bonus += 1.0f;
                     }
                     if (!bonuses.containsKey(ench)) {
-                        bonuses.put((Enchantment)ench, Float.valueOf(bonus - 1.0f));
+                        bonuses.put((net.minecraft.core.Holder<Enchantment>)ench, Float.valueOf(bonus - 1.0f));
                     } else {
                         bonuses.put((Enchantment)ench, Float.valueOf(((Float)bonuses.get(ench)).floatValue() + bonus));
                     }

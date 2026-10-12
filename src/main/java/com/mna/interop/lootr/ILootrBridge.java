@@ -15,7 +15,7 @@ public interface ILootrBridge {
 
     public UUID getTileId();
 
-    public ResourceLocation getLootTable();
+    public net.minecraft.resources.ResourceKey<net.minecraft.world.level.storage.loot.LootTable> getLootTable();
 
     public void setLootrOpened(boolean var1);
 

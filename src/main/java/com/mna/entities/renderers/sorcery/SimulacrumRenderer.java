@@ -142,13 +142,13 @@ extends LivingEntityRenderer<Simulacrum, PlayerModel<Simulacrum>> {
         pPoseStack.scale(0.9375f, 0.9375f, 0.9375f);
     }
 
-    protected void setupRotations(Simulacrum pEntityLiving, PoseStack pPoseStack, float pAgeInTicks, float pRotationYaw, float pPartialTicks) {
+    protected void setupRotations(Simulacrum pEntityLiving, PoseStack pPoseStack, float pAgeInTicks, float pRotationYaw, float pPartialTicks, float pScale) {
         Player owner = pEntityLiving.getOwner();
         if (owner instanceof AbstractClientPlayer) {
             AbstractClientPlayer acp = (AbstractClientPlayer)owner;
             float f = pEntityLiving.getSwimAmount(pPartialTicks);
             if (pEntityLiving.isFallFlying()) {
-                super.setupRotations(pEntityLiving, pPoseStack, pAgeInTicks, pRotationYaw, pPartialTicks);
+                super.setupRotations(pEntityLiving, pPoseStack, pAgeInTicks, pRotationYaw, pPartialTicks, pScale);
                 float f1 = (float)pEntityLiving.getFallFlyingTicks() + pPartialTicks;
                 float f2 = Mth.clamp((float)(f1 * f1 / 100.0f), (float)0.0f, (float)1.0f);
                 if (!pEntityLiving.isAutoSpinAttack()) {
@@ -164,7 +164,7 @@ extends LivingEntityRenderer<Simulacrum, PlayerModel<Simulacrum>> {
                     pPoseStack.mulPose(Axis.YP.rotation((float)(Math.signum(d3) * Math.acos(d2))));
                 }
             } else if (f > 0.0f) {
-                super.setupRotations(pEntityLiving, pPoseStack, pAgeInTicks, pRotationYaw, pPartialTicks);
+                super.setupRotations(pEntityLiving, pPoseStack, pAgeInTicks, pRotationYaw, pPartialTicks, pScale);
                 float f3 = pEntityLiving.isInWater() || pEntityLiving.isInFluidType((fluidType, height) -> pEntityLiving.canSwimInFluidType((FluidType)fluidType)) ? -90.0f - pEntityLiving.getXRot() : -90.0f;
                 float f4 = Mth.lerp((float)f, (float)0.0f, (float)f3);
                 pPoseStack.mulPose(Axis.XP.rotationDegrees(f4));
@@ -172,7 +172,7 @@ extends LivingEntityRenderer<Simulacrum, PlayerModel<Simulacrum>> {
                     pPoseStack.translate(0.0f, -1.0f, 0.3f);
                 }
             } else {
-                super.setupRotations(pEntityLiving, pPoseStack, pAgeInTicks, pRotationYaw, pPartialTicks);
+                super.setupRotations(pEntityLiving, pPoseStack, pAgeInTicks, pRotationYaw, pPartialTicks, pScale);
             }
         }
     }

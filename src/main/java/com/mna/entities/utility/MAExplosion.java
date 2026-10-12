@@ -133,7 +133,7 @@ extends Explosion {
         }
         for (ServerPlayer serverplayerentity : world.players()) {
             if (!(serverplayerentity.distanceToSqr(x, y, x) < 4096.0)) continue;
-            serverplayerentity.connection.send((Packet)new ClientboundExplodePacket(x, y, z, radius, explosion.getToBlow(), explosion.getHitPlayers().get(serverplayerentity), mode, null, null, net.minecraft.core.registries.BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.GENERIC_EXPLODE)));
+            serverplayerentity.connection.send((Packet)new ClientboundExplodePacket(x, y, z, radius, explosion.getToBlow(), explosion.getHitPlayers().get(serverplayerentity), mode, null, null, SoundEvents.GENERIC_EXPLODE.value()));
         }
         world.playSound(null, x, y, z, SoundEvents.GENERIC_EXPLODE, SoundSource.NEUTRAL, (float)(0.9 + Math.random() * 0.2), (float)(0.9 + Math.random() * 0.2));
         return explosion;
@@ -264,7 +264,7 @@ extends Explosion {
     public void finalizeExplosion(boolean p_77279_1_) {
         boolean flag;
         if (this.level.isClientSide()) {
-            this.level.playLocalSound(this.x, this.y, this.z, SoundEvents.GENERIC_EXPLODE, SoundSource.BLOCKS, 4.0f, (1.0f + (this.level.random.nextFloat() - this.level.random.nextFloat()) * 0.2f) * 0.7f, false);
+            this.level.playLocalSound(this.x, this.y, this.z, SoundEvents.GENERIC_EXPLODE.value(), SoundSource.BLOCKS, 4.0f, (1.0f + (this.level.random.nextFloat() - this.level.random.nextFloat()) * 0.2f) * 0.7f, false);
         }
         boolean bl = flag = this.blockInteraction != Explosion.BlockInteraction.KEEP;
         if (p_77279_1_) {
@@ -297,7 +297,7 @@ extends Explosion {
                 blockstate.onBlockExploded(this.level, blockpos, (Explosion)this);
                 this.level.getProfiler().pop();
             }
-            for (Pair pair : objectarraylist) {
+            for (Pair pair : (java.util.List<Pair>)objectarraylist) {
                 Block.popResource((Level)this.level, (BlockPos)((BlockPos)pair.getSecond()), (ItemStack)((ItemStack)pair.getFirst()));
             }
         }

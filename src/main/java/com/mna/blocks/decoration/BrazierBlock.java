@@ -138,7 +138,7 @@ ISpellInteractibleBlock<BrazierBlock> {
             int color = -1;
             BlockEntity be = worldIn.getBlockEntity(pos);
             if (be != null && be instanceof BrazierTile) {
-                color = ((MNADyeableItem)be).getColor();
+                color = spell.getParticleColorOverride();
             }
             for (int i = 0; i < 20; ++i) {
                 MAParticleType pfx = new MAParticleType((ParticleType<MAParticleType>)((ParticleType)ParticleInit.FLAME.get())).setMaxAge((int)(20.0 + 20.0 * Math.random())).setScale(0.03f);
@@ -197,7 +197,7 @@ ISpellInteractibleBlock<BrazierBlock> {
     public boolean onHitBySpell(Level world, BlockPos pos, ISpellDefinition spell) {
         BlockEntity be = world.getBlockEntity(pos);
         if (be != null && be instanceof BrazierTile && spell.containsPart(Components.LIGHT.getRegistryName())) {
-            ((MNADyeableItem)be).setColor(spell.getParticleColorOverride());
+            // [PORT 1.21.1] MNADyeableItem.setColor agora exige ItemStack (sem stack neste contexto)
             return true;
         }
         return false;

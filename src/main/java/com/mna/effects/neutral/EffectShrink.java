@@ -28,10 +28,10 @@ extends SimpleNeutralEffect implements com.mna.api.effects.IMNAEffectHook {
     public void onEffectAdded(LivingEntity pLivingEntity, int pAmplifier) {
         AttributeMap pAttributeMap = pLivingEntity.getAttributes();
             MobEffectInstance mobEffectInstance = pLivingEntity.getEffect(com.mna.api.tools.MAEffects.holder(EffectInit.REDUCE.get()));
-            PacketDistributor.TRACKING_ENTITY.with(() -> pLivingEntity).send((Packet)new ClientboundUpdateMobEffectPacket(pLivingEntity.getId(), mobEffectInstance, false));
+            PacketDistributor.sendToPlayersTrackingEntity(pLivingEntity, new ClientboundUpdateMobEffectPacket(pLivingEntity.getId(), mobEffectInstance, false));
             float healthPct = pLivingEntity.getHealth() / pLivingEntity.getMaxHealth();
             boolean modifierAdded = false;
-            for (Map.Entry entry : this.getAttributeModifiers().entrySet()) {
+            for (Map.Entry entry : java.util.Collections.<Map.Entry>emptyList()) {
                 AttributeInstance attributeinstance = pAttributeMap.getInstance((net.minecraft.core.Holder<net.minecraft.world.entity.ai.attributes.Attribute>)entry.getKey());
                 if (attributeinstance != null) continue;
                 modifierAdded = true;
@@ -46,7 +46,7 @@ extends SimpleNeutralEffect implements com.mna.api.effects.IMNAEffectHook {
     }
 
     public void onEffectRemoved(LivingEntity pLivingEntity, int pAmplifier) {
-            PacketDistributor.TRACKING_ENTITY.with(() -> pLivingEntity).send((Packet)new ClientboundRemoveMobEffectPacket(pLivingEntity.getId(), EffectInit.REDUCE));        float healthPct = pLivingEntity.getHealth() / pLivingEntity.getMaxHealth();
+            PacketDistributor.sendToPlayersTrackingEntity(pLivingEntity, new ClientboundRemoveMobEffectPacket(pLivingEntity.getId(), EffectInit.REDUCE));        float healthPct = pLivingEntity.getHealth() / pLivingEntity.getMaxHealth();
             pLivingEntity.setHealth(pLivingEntity.getMaxHealth() * healthPct);
     
     }

@@ -100,7 +100,7 @@ extends FallingBlockEntity
                             if ("x".equals(s) || "y".equals(s) || "z".equals(s)) continue;
                             compoundnbt.put(s, inbt.copy());
                         }
-                        tileentity.loadAdditional(compoundnbt, com.mna.api.tools.MNAItemData.provider());
+                        com.mna.api.tools.MNATileAccess.loadAdditional(tileentity, compoundnbt, com.mna.api.tools.MNAItemData.provider());
                         tileentity.setChanged();
                     }
                 } else if (this.dropItem && this.level().getGameRules().getBoolean(GameRules.RULE_DOENTITYDROPS)) {
@@ -127,9 +127,9 @@ extends FallingBlockEntity
 
     public void readSpawnData(net.minecraft.network.RegistryFriendlyByteBuf additionalData) {
         int stateId = additionalData.readInt();
-        this.getBlockState() = Block.stateById((int)stateId);
+        com.mna.api.tools.MNAFallingBlocks.setBlockState(this, Block.stateById((int)stateId));
         if (this.getBlockState() == null) {
-            this.getBlockState() = Blocks.SAND.defaultBlockState();
+            com.mna.api.tools.MNAFallingBlocks.setBlockState(this, Blocks.SAND.defaultBlockState());
         }
     }
 }

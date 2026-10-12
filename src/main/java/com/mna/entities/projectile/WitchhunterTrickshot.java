@@ -122,12 +122,12 @@ extends Entity {
         if (this.level().isClientSide()) {
             return;
         }
-        MobEffect effect = this.getEffect().value();
+        net.minecraft.core.Holder<MobEffect> effect = this.getEffect();
         if (effect == null) {
             return;
         }
         List targets = this.level().getEntities((Entity)this, new AABB(BlockPos.containing((Position)this.getDestination())).inflate(4.0), e -> !SummonUtils.isTargetFriendly(e, (LivingEntity)this.shooter)).stream().map(e -> (LivingEntity)e).collect(Collectors.toList());
-        for (LivingEntity e2 : targets) {
+        for (LivingEntity e2 : (java.util.List<LivingEntity>)targets) {
             if (effect.isInstantenous()) {
                 effect.applyInstantenousEffect((Entity)this.shooter, (Entity)this, e2, this.effectMagnitude, 0.5);
                 continue;
