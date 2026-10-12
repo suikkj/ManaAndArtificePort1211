@@ -94,16 +94,29 @@ public class VillageStructures {
             return;
         }
         SinglePoolElement piece = (SinglePoolElement)SinglePoolElement.legacy((String)nbtPieceRL.toString(), (Holder)emptyProcessorList).apply(StructureTemplatePool.Projection.RIGID);
-        for (int i = 0; i < weight; ++i) {
-            pool.templates.add(piece);
-        }
-        ArrayList<Pair> listOfPieceEntries = new ArrayList<Pair>(pool.rawTemplates);
-        listOfPieceEntries.add(new Pair(piece, weight));
-        pool.rawTemplates = listOfPieceEntries;
+        addToPool(pool, piece, weight);
     }
 
     static {
         EMPTY_PROCESSOR_LIST_KEY = ResourceKey.create((ResourceKey)Registries.PROCESSOR_LIST, (ResourceLocation)ResourceLocation.fromNamespaceAndPath("minecraft", "empty"));
+    }
+
+    /** [PORT 1.21.1] StructureTemplatePool.templates/rawTemplates viraram private. */
+    @SuppressWarnings("unchecked")
+    private static void addToPool(StructureTemplatePool pool, SinglePoolElement piece, int weight) {
+        try {
+            java.lang.reflect.Field f = StructureTemplatePool.class.getDeclaredField("templates");
+            f.setAccessible(true);
+            java.util.List<StructurePoolElement> templates = (java.util.List<StructurePoolElement>)f.get(pool);
+            for (int i = 0; i < weight; ++i) {
+                templates.add(piece);
+            }
+            java.lang.reflect.Field f2 = StructureTemplatePool.class.getDeclaredField("rawTemplates");
+            f2.setAccessible(true);
+            java.util.List<Pair<StructurePoolElement, Integer>> raw = (java.util.List<Pair<StructurePoolElement, Integer>>)f2.get(pool);
+            raw.add(new Pair(piece, weight));
+        } catch (Throwable t) {
+        }
     }
 }
 

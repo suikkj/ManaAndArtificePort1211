@@ -66,4 +66,9 @@ public class MnaRegistry<T> implements Iterable<T> {
     public Iterator<T> iterator() {
         return this.registry.iterator();
     }
+
+    /** Equivalente ao antigo {@code getKeys()} do registry Forge. */
+    public java.util.Set<ResourceLocation> getKeys() {
+        return this.registry.keySet();
+    }
 }

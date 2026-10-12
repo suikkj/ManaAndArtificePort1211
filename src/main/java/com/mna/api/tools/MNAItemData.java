@@ -65,12 +65,7 @@ public final class MNAItemData {
 
     /** [PORT 1.21.1] ItemStack.save agora exige provider. */
     public static CompoundTag save(ItemStack stack, CompoundTag tag) {
-        return stack.save(provider(), tag);
-    }
-
-    /** [PORT 1.21.1] ItemStack.load agora exige provider. */
-    public static void load(ItemStack stack, CompoundTag tag) {
-        stack.load(provider(), tag);
+        return (CompoundTag)stack.save(provider(), tag);
     }
 
     /** [PORT 1.21.1] ContainerHelper.loadAllItems agora exige provider (ultimo arg). */
@@ -87,7 +82,8 @@ public final class MNAItemData {
     public static CompoundTag getOrCreateTagElement(ItemStack stack, String key) {
         CustomData data = stack.get(DataComponents.CUSTOM_DATA);
         CompoundTag tag = data == null ? new CompoundTag() : data.copyTag();
-        CompoundTag element = tag.getOrCreate(key);
+        CompoundTag element = tag.contains(key) ? tag.getCompound(key) : new CompoundTag();
+        tag.put(key, element);
         stack.set(DataComponents.CUSTOM_DATA, CustomData.of(tag));
         return element;
     }

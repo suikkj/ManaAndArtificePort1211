@@ -497,7 +497,7 @@ extends GuiJEIDisable<ContainerGuideBook> {
         }
     }
 
-    private void pushBreadcrumb(CodexBreadcrumb.breadcrumbType type, String key, String ... metadata) {
+    private void pushBreadcrumb(CodexBreadcrumb.Type type, String key, String ... metadata) {
         this.progression.pushCodexBreadcrumb(type, key, this.page, metadata);
     }
 
@@ -892,7 +892,6 @@ extends GuiJEIDisable<ContainerGuideBook> {
         private List<FormattedText> split_lines;
 
         public CodexSearchResult(int x, int y, String text, Button.OnPress pressedAction) {
-            Objects.requireNonNull(GuiGuideBook.this.font);
             super(x, y, 205, 9 * GuiGuideBook.this.font.getSplitter().splitLines((FormattedText)Component.literal((String)text), 200, Style.EMPTY).size(), (Component)Component.literal((String)text), pressedAction, DEFAULT_NARRATION);
             this.split_lines = GuiGuideBook.this.font.getSplitter().splitLines((FormattedText)Component.literal((String)text), 200, Style.EMPTY);
         }

@@ -70,7 +70,7 @@ public class FactionRaidRegistry {
             return null;
         }
         Map.Entry entry = (Map.Entry)possibles.get(new Random().nextInt(possibles.size()));
-        int maxStr = (Integer)Collections.max(((HashMap)entry.getValue()).keySet().stream().filter(i -> i <= raidStrength).collect(Collectors.toList()));
+        int maxStr = (Integer)Collections.max((java.util.Collection)((HashMap)entry.getValue()).keySet().stream().filter(i -> (Integer)i <= raidStrength).collect(Collectors.toList()));
         int tier = (Integer)((HashMap)entry.getValue()).get(maxStr);
         return new Pair(((EntityType)entry.getKey()), tier);
     }

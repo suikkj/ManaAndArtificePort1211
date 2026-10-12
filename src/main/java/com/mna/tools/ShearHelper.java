@@ -63,7 +63,6 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.common.IShearable;
-import net.neoforged.neoforge.capabilities.ForgeCapabilities;
 import net.neoforged.neoforge.common.util.FakePlayer;
 import net.neoforged.neoforge.common.util.FakePlayerFactory;
 import com.mna.api.enchantments.MNAEnchantmentHelper;
@@ -86,7 +85,7 @@ public class ShearHelper {
             return output;
         }
         BlockEntity te = world.getBlockEntity(position);
-        if (te != null && (world.getCapability(ForgeCapabilities.ITEM_HANDLER).isPresent() || te instanceof TileEntityWithInventory)) {
+        if (te != null && te instanceof TileEntityWithInventory) {
             return output;
         }
         FakePlayer entity = FakePlayerFactory.get((ServerLevel)world, (GameProfile)player.getGameProfile());
@@ -95,8 +94,8 @@ public class ShearHelper {
         entity.setPos((double)position.getX(), (double)position.getY(), (double)position.getZ());
         output = new ArrayList();
         BlockHitResult brtr = new BlockHitResult(new Vec3((double)position.getX() + 0.5, (double)position.getY() + 0.5, (double)position.getZ() + 0.5), face, position, true);
-        InteractionResult interRes = world.getBlockState(position).use((Level)world, (Player)entity, InteractionHand.MAIN_HAND, brtr);
-        if (interRes == InteractionResult.FAIL || interRes == InteractionResult.PASS || interRes == InteractionResult.CONSUME) {
+        net.minecraft.world.ItemInteractionResult interRes = world.getBlockState(position).useItemOn((ItemStack)shearStack, (Level)world, (Player)entity, InteractionHand.MAIN_HAND, brtr);
+        if (interRes == net.minecraft.world.ItemInteractionResult.FAIL || interRes == net.minecraft.world.ItemInteractionResult.PASS || interRes == net.minecraft.world.ItemInteractionResult.CONSUME) {
             List shearDrops = Block.getDrops((BlockState)targetState, (ServerLevel)world, (BlockPos)position, (BlockEntity)te, (Entity)entity, (ItemStack)shearStack);
             List nonShearDrops = Block.getDrops((BlockState)targetState, (ServerLevel)world, (BlockPos)position, (BlockEntity)te, (Entity)entity, (ItemStack)ItemStack.EMPTY);
             if (shearDrops.size() != nonShearDrops.size()) {

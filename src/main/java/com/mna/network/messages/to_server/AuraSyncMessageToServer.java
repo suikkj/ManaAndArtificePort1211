@@ -98,8 +98,8 @@ extends BaseServerMessage implements CustomPacketPayload {
     }
 
     public static AuraSyncMessageToServer fromPlayer(Player player) {
-        java.util.Optional<ParticleAuraProvider> aura = MNACap.get(player, ParticleAuraProvider.AURA);
-        CompoundTag tag = aura.isPresent() ? ((ParticleAura)aura.get()).save() : new CompoundTag();
+        java.util.Optional<com.mna.capabilities.particles.ParticleAura> aura = MNACap.get(player, ParticleAuraProvider.AURA);
+        CompoundTag tag = aura.isPresent() ? aura.get().save() : new CompoundTag();
         AuraSyncMessageToServer msg = new AuraSyncMessageToServer(player.getId(), tag);
         return msg;
     }
@@ -115,7 +115,7 @@ extends BaseServerMessage implements CustomPacketPayload {
             BlockEntity be = player.level().getBlockEntity(this.getBlockPos());
             if (be != null && be instanceof ParticleEmitterTile) {
                 ParticleEmitterTile pEmitter = (ParticleEmitterTile)be;
-                pEmitter.setData(this.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag());
+                pEmitter.setData(this.tag.copy());
                 ServerMessageDispatcher.sendAuraSyncMessage(pEmitter);
             }
         } else if (player.getGameProfile() != null && player.getGameProfile().getId() != null && (ManaAndArtifice.instance.isDebug || ManaAndArtifice.instance.enabled_auras.contains(player.getGameProfile().getId()))) {
