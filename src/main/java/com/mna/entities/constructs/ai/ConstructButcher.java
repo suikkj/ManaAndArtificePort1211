@@ -66,11 +66,11 @@ extends ConstructEntityAreaTask<Animal, ConstructButcher> {
                 ((List)locatedEntities.get(e.getType())).add(e);
             }
         });
-        Optional<List> target = locatedEntities.entrySet().stream().filter(e -> ((List)e.getValue()).size() > this.pairs * 2).map(e -> (List)e.getValue()).findAny();
+        Optional target = locatedEntities.entrySet().stream().filter(e -> ((List)e.getValue()).size() > this.pairs * 2).map(e -> (List)e.getValue()).findAny();
         if (!target.isPresent()) {
             return null;
         }
-        List potentials = target.get();
+        List<Animal> potentials = (List<Animal>)target.get();
         Optional<Object> potential = potentials.stream().filter(a -> a.getAge() != 0).findAny();
         if (!(potential.isPresent() && potential.get() != null || (potential = potentials.stream().findAny()).isPresent() && potential.get() != null)) {
             return null;

@@ -85,7 +85,7 @@ extends WizardLabRenderer<ArcanaAltarTile> {
             int[] color = new int[]{30, 60, 170};
             poseStack.pushPose();
             poseStack.translate(0.0, 2.5, 0.0);
-            WorldRenderUtil.renderRadiant(tile.getLevel().getGameTime(), poseStack, bufferSource, color, color, 255, 3.0f - 3.0f * completionPct, false);
+            WorldRenderUtils.renderRadiant(tile.getLevel().getGameTime(), poseStack, bufferSource, color, color, 255, 3.0f - 3.0f * completionPct, false);
             poseStack.popPose();
         }
         if (tile.isActive()) {
@@ -132,7 +132,7 @@ extends WizardLabRenderer<ArcanaAltarTile> {
                 poseStack.pushPose();
                 poseStack.translate(0.0, 1.3, 0.0);
                 poseStack.scale(scale, scale, scale);
-                WorldRenderUtil.renderManaweavePattern(tile.getRequestingPattern(), patternRotation, poseStack, bufferSource, false);
+                WorldRenderUtils.renderManaweavePattern(tile.getRequestingPattern(), patternRotation, poseStack, bufferSource, false);
                 poseStack.popPose();
             } else if (tile.getRequestingStack().size() > 0) {
                 int index = (int)(ManaAndArtifice.instance.proxy.getGameTicks() / 20L % (long)tile.getRequestingStack().size());
@@ -151,7 +151,7 @@ extends WizardLabRenderer<ArcanaAltarTile> {
                 Vec3 start = Vec3.upFromBottomCenterOf((Vec3i)tile.getBlockPos(), (double)1.0);
                 Vec3 end = Vec3.upFromBottomCenterOf((Vec3i)tile.getBlockPos(), (double)2.5);
                 poseStack.translate(0.0, 2.5, 0.0);
-                WorldRenderUtil.renderBeam(tile.getLevel(), partialTick, poseStack, bufferSource, packedLight, end, start, beamPct, new int[]{200, 200, 255}, 255, 0.065f * (1.0f - completionPct), MARenderTypes.RITUAL_BEAM_RENDER_TYPE);
+                WorldRenderUtils.renderBeam(tile.getLevel(), partialTick, poseStack, bufferSource, packedLight, end, start, beamPct, new int[]{200, 200, 255}, 255, 0.065f * (1.0f - completionPct), MARenderTypes.RITUAL_BEAM_RENDER_TYPE);
                 poseStack.popPose();
             }
         }

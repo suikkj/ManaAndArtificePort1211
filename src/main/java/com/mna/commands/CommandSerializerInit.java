@@ -25,9 +25,9 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 
 public class CommandSerializerInit {
     public static final DeferredRegister<ArgumentTypeInfo<?, ?>> ARGUMENTS = DeferredRegister.create(Registries.COMMAND_ARGUMENT_TYPE, "mna");
-    public static final DeferredHolder<ArgumentTypeInfo<?, ?>, ? extends ArgumentTypeInfo<?, ?>> SPELL_PART_ARG = ARGUMENTS.register("spell_part_arg", () -> ArgumentTypeInfos.registerByClass(SpellPartArgument.class, (ArgumentTypeInfo)SingletonArgumentInfo.contextFree(SpellPartArgument::spell)));
-    public static final DeferredHolder<ArgumentTypeInfo<?, ?>, ? extends ArgumentTypeInfo<?, ?>> AFFINITY_ARG = ARGUMENTS.register("affinity_arg", () -> ArgumentTypeInfos.registerByClass(AffinityArgument.class, (ArgumentTypeInfo)SingletonArgumentInfo.contextFree(AffinityArgument::affinity)));
-    public static final DeferredHolder<ArgumentTypeInfo<?, ?>, ? extends ArgumentTypeInfo<?, ?>> FACTION_ARG = ARGUMENTS.register("faction_arg", () -> ArgumentTypeInfos.registerByClass(FactionArgument.class, (ArgumentTypeInfo)SingletonArgumentInfo.contextFree(FactionArgument::faction)));
+    public static final DeferredHolder<ArgumentTypeInfo<?, ?>, ArgumentTypeInfo<?, ?>> SPELL_PART_ARG = ARGUMENTS.register("spell_part_arg", () -> ArgumentTypeInfos.registerByClass(SpellPartArgument.class, (ArgumentTypeInfo)SingletonArgumentInfo.contextFree(SpellPartArgument::spell)));
+    public static final DeferredHolder<ArgumentTypeInfo<?, ?>, ArgumentTypeInfo<?, ?>> AFFINITY_ARG = ARGUMENTS.register("affinity_arg", () -> ArgumentTypeInfos.registerByClass(AffinityArgument.class, (ArgumentTypeInfo)SingletonArgumentInfo.contextFree(AffinityArgument::affinity)));
+    public static final DeferredHolder<ArgumentTypeInfo<?, ?>, ArgumentTypeInfo<?, ?>> FACTION_ARG = ARGUMENTS.register("faction_arg", () -> ArgumentTypeInfos.registerByClass(FactionArgument.class, (ArgumentTypeInfo)SingletonArgumentInfo.contextFree(FactionArgument::faction)));
 }
 
 

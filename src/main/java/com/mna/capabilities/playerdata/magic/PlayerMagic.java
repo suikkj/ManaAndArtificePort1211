@@ -441,7 +441,8 @@ implements IPlayerMagic {
             return;
         }
         AffinityChangedEvent evt = new AffinityChangedEvent(player, affinity, this.affinityDepths.get(affinity.getShiftAffinity()).floatValue(), amount);
-        if (player != null && NeoForge.EVENT_BUS.post(evt)) {
+        NeoForge.EVENT_BUS.post(evt);
+        if (player != null && evt.isCanceled()) {
             return;
         }
         amount = evt.getShift();
@@ -681,7 +682,7 @@ implements IPlayerMagic {
         for (int i = 0; i < spellInv.getActiveSpells().length; ++i) {
             ItemStack stack = spellInv.getActiveSpells()[i];
             if (stack.getItem() == ItemInit.SPELL.get()) continue;
-            ItemStack replacement = new ItemStack((ItemLike)ItemInit.SPELL.get(), 1, stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag());
+            ItemStack replacement = com.mna.api.tools.MNAItemData.setComponent(new ItemStack((ItemLike)ItemInit.SPELL.get()), DataComponents.CUSTOM_DATA, stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY));
             spellInv.setItem(i, replacement);
         }
     }

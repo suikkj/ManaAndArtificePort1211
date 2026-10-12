@@ -140,7 +140,7 @@ extends WizardLabTile {
         this.calculateMultipliers();
         if (this.getActiveTicks() <= 0) {
             ItemStack potentialFuel = this.getItem(0);
-            int fuelBurnTicks = CommonHooks.getBurnTime((ItemStack)potentialFuel, null);
+            int fuelBurnTicks = ((ItemStack)potentialFuel).getBurnTime(null);
             if (fuelBurnTicks == 0) {
                 this.setInactive();
                 return;
@@ -304,7 +304,7 @@ extends WizardLabTile {
                 return false;
             }
         } else if (index == 0) {
-            if (CommonHooks.getBurnTime((ItemStack)stack, null) == 0) {
+            if (((ItemStack)stack).getBurnTime(null) == 0) {
                 return false;
             }
         } else {

@@ -60,7 +60,7 @@ IFactionSpecific {
         }
         if (player != null && !(this instanceof ManaBatteryItem)) {
             List invItems = player.getInventory().items.stream().filter(i -> i.getItem() instanceof ManaBatteryItem).collect(Collectors.toList());
-            for (ItemStack invStack : invItems) {
+            for (ItemStack invStack : (java.util.List<ItemStack>)invItems) {
                 ManaBatteryItem item = (ManaBatteryItem)invStack.getItem();
                 float contained = item.getMana(invStack);
                 float toConsume = amount;
@@ -118,7 +118,7 @@ IFactionSpecific {
                 }
             });
         }
-        return super.initCapabilities(stack, nbt);
+        return null;
     }
 
     public void inventoryTick(ItemStack stack, Level worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
@@ -228,7 +228,7 @@ IFactionSpecific {
     public void onUseTick(Level pLevel, LivingEntity living, ItemStack stack, int pRemainingUseDuration) {
         if (living instanceof Player) {
             if (!living.level().isClientSide()) {
-                ((Player)living).getCapability(ManaAndArtificeMod.getMagicCapability()).ifPresent(m -> {
+                com.mna.api.tools.MNACap.get((Player)living, com.mna.capabilities.CapabilitiesInit.PLAYER_MAGIC).ifPresent(m -> {
                     if (m.getCastingResource().hasEnoughAbsolute(living, this.manaPerRechargeTick()) && this.getMana(stack) < this.getMaxMana()) {
                         m.getCastingResource().consume(living, this.manaPerRechargeTick());
                         this.refundMana(stack, ((Player)living).isCreative() ? (float)(this.repairPerRechargeTick() * 100) : (float)this.repairPerRechargeTick(), (Player)living);

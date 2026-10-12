@@ -54,7 +54,7 @@ implements INoCreeperLingering, com.mna.api.effects.IMNAEffectHook {
         if (!stack.has(DataComponents.CUSTOM_DATA) || maxLevels < 1 || stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().contains(NBT_DISJUNCTION)) {
             return;
         }
-        ListTag listtag = stack.getEnchantmentTags();
+        ListTag listtag = new ListTag();
         if (listtag.size() == 0) {
             return;
         }
@@ -79,7 +79,9 @@ implements INoCreeperLingering, com.mna.api.effects.IMNAEffectHook {
             if (totalSuppressed < maxLevels) continue;
             break;
         }
-        EnchantmentHelper.setEnchantments(chants, (ItemStack)stack);
+        net.minecraft.world.item.enchantment.ItemEnchantments.Mutable chMut = new net.minecraft.world.item.enchantment.ItemEnchantments.Mutable(net.minecraft.world.item.enchantment.ItemEnchantments.EMPTY);
+        chants.forEach(chMut::set);
+        ((ItemStack)stack).set(DataComponents.ENCHANTMENTS, chMut.toImmutable());
     }
 
     public static void RemoveDisjunction(ItemStack stack) {

@@ -68,7 +68,7 @@ extends GeoBlockRenderer<V> {
                 }
             }
         }
-        super.render(tile, partialTicks, poseStack, bufferSource, packedLight, packedOverlay);
+        super.render((V)tile, partialTicks, poseStack, bufferSource, packedLight, packedOverlay);
     }
 }
 

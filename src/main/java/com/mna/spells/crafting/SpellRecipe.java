@@ -339,13 +339,13 @@ IFactionSpecific {
                 return;
             }
             modified_attrs.addAll(this.shape.getContainedAttributes().stream().filter(a -> this.shape.getValueWithoutMultipliers((Attribute)((a))) != this.shape.getDefaultValue((Attribute)((a)))).collect(Collectors.toList()));
-            this.components.forEach((Consumer<ModifiedSpellPart<SpellEffect>>)((Consumer<ModifiedSpellPart>)c -> {
+            ((java.util.List<ModifiedSpellPart<SpellEffect>>)this.components).forEach(c -> {
                 if (!r.isRote((ISpellComponent)c.getPart())) {
                     valid.setFalse();
                     return;
                 }
                 modified_attrs.addAll((java.util.Collection)c.getContainedAttributes().stream().filter(a -> this.shape.getValueWithoutMultipliers((Attribute)(((a)))) != this.shape.getDefaultValue((Attribute)(((a))))).collect(Collectors.toList()));
-            }));
+            });
             modified_attrs.forEach(a -> {
                 boolean modifier_attr_rote = false;
                 for (int i = 0; i < this.modifiers.length; ++i) {
@@ -845,7 +845,9 @@ IFactionSpecific {
 
     public ItemStack createAsSpell() {
         ItemStack newSpell = new ItemStack((ItemLike)ItemInit.SPELL.get());
-        this.writeToNBT(newSpell.getTag());
+        CompoundTag spellTag = com.mna.api.tools.MNAItemData.tag(newSpell);
+        this.writeToNBT(spellTag);
+        newSpell.set(DataComponents.CUSTOM_DATA, CustomData.of(spellTag));
         return newSpell;
     }
 

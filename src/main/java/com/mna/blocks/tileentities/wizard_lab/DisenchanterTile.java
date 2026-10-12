@@ -195,23 +195,31 @@ implements IEldrinConsumerTile {
         enchantments.entrySet().stream().skip(indexToMove).findFirst().ifPresent(e -> {
             HashMap<net.minecraft.core.Holder<Enchantment>, Integer> moved = new HashMap<>();
             moved.put(e.getKey(), (Integer)e.getValue());
-            EnchantmentHelper.setEnchantments(moved, (ItemStack)output);
+            net.minecraft.world.item.enchantment.ItemEnchantments.Mutable movedMut = new net.minecraft.world.item.enchantment.ItemEnchantments.Mutable(net.minecraft.world.item.enchantment.ItemEnchantments.EMPTY);
+            moved.forEach(movedMut::set);
+            ((ItemStack)output).set(DataComponents.ENCHANTMENTS, movedMut.toImmutable());
             enchantments.remove(e.getKey());
         });
         Item item = input.getItem();
         if (item instanceof EnchantedBookItem) {
             EnchantedBookItem enchBook = (EnchantedBookItem)item;
             if (input.has(DataComponents.CUSTOM_DATA)) {
-                ListTag bookChants = EnchantedBookItem.getEnchantments((ItemStack)input);
-                bookChants.remove(indexToMove % bookChants.size());
-                if (bookChants.size() == 0) {
-                    this.setItem(0, new ItemStack((ItemLike)Items.BOOK));
-                } else {
-                    input.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().put("StoredEnchantments", (Tag)new ListTag());
+                net.minecraft.world.item.enchantment.ItemEnchantments bookChants = ((ItemStack)input).getOrDefault(DataComponents.STORED_ENCHANTMENTS, net.minecraft.world.item.enchantment.ItemEnchantments.EMPTY);
+                java.util.List<net.minecraft.core.Holder<Enchantment>> bookKeys = new java.util.ArrayList<>(bookChants.keySet());
+                if (!bookKeys.isEmpty()) {
+                    bookKeys.remove(indexToMove % bookKeys.size());
+                    net.minecraft.world.item.enchantment.ItemEnchantments.Mutable bookMut = new net.minecraft.world.item.enchantment.ItemEnchantments.Mutable(net.minecraft.world.item.enchantment.ItemEnchantments.EMPTY);
+                    bookKeys.forEach(k -> bookMut.set(k, bookChants.getLevel(k)));
+                    ((ItemStack)input).set(DataComponents.STORED_ENCHANTMENTS, bookMut.toImmutable());
+                    if (bookKeys.isEmpty()) {
+                        this.setItem(0, new ItemStack((ItemLike)Items.BOOK));
+                    }
                 }
             }
         }
-        EnchantmentHelper.setEnchantments((Map)enchantments, (ItemStack)input);
+        net.minecraft.world.item.enchantment.ItemEnchantments.Mutable inMut = new net.minecraft.world.item.enchantment.ItemEnchantments.Mutable(net.minecraft.world.item.enchantment.ItemEnchantments.EMPTY);
+        enchantments.forEach(inMut::set);
+        ((ItemStack)input).set(DataComponents.ENCHANTMENTS, inMut.toImmutable());
         if (this.getCrafter() != null && !this.getLevel().isClientSide() && (crafter = this.getCrafter()) != null) {
             NeoForge.EVENT_BUS.post(new GenericProgressionEvent(crafter, ProgressionEventIDs.REMOVE_ENCHANTMENT));
             if (crafter instanceof ServerPlayer) {

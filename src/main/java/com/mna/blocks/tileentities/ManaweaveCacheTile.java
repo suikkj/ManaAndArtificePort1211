@@ -189,7 +189,7 @@ implements ILootrBridge {
     }
 
     public AABB getRenderBoundingBox() {
-        return super.getRenderBoundingBox().inflate(5.0);
+        return new net.minecraft.world.phys.AABB(this.worldPosition).inflate(5.0);
     }
 
     private void generate() {
@@ -374,7 +374,7 @@ implements ILootrBridge {
     }
 
     @Override
-    public ResourceLocation getLootTable() {
+    public net.minecraft.resources.ResourceKey<net.minecraft.world.level.storage.loot.LootTable> getLootTable() {
         return this.lootTableId;
     }
 

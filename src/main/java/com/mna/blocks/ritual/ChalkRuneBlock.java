@@ -151,11 +151,11 @@ EntityBlock {
         if (ItemFilterGroup.GROUND_RUNE_NON_PLACEABLE.anyMatchesFilter(activeStack)) {
             return InteractionResult.PASS;
         }
-        if (((Boolean)state.getValue((Property)ACTIVATED)).booleanValue() && (rituals = worldIn.getEntities((EntityTypeTest)EntityInit.RITUAL_ENTITY.get(), new AABB(pos).inflate(16.0), e -> true)).size() > 0 && rituals.stream().anyMatch(r -> r.getState() != Ritual.RitualState.GUIDING_REAGENT_PLACEMENT)) {
+        if (state.getValue(ACTIVATED) && (rituals = worldIn.getEntities((EntityTypeTest)EntityInit.RITUAL_ENTITY.get(), new AABB(pos).inflate(16.0), e -> true)).size() > 0 && rituals.stream().anyMatch(r -> r.getState() != Ritual.RitualState.GUIDING_REAGENT_PLACEMENT)) {
             return InteractionResult.PASS;
         }
         if (worldIn.isClientSide) {
-            if (!activeStack.isEmpty() && ((Boolean)state.getValue((Property)ACTIVATED)).booleanValue()) {
+            if (!activeStack.isEmpty() && state.getValue(ACTIVATED)) {
                 if (worldIn.getGameTime() - this.lastActivateTime < 200L) {
                     ++this.heldItemActivateCount;
                     if (this.heldItemActivateCount >= 4) {
@@ -238,7 +238,7 @@ EntityBlock {
     }
 
     public int getLightEmission(BlockState state, BlockGetter world, BlockPos pos) {
-        if (((Boolean)state.getValue((Property)ACTIVATED)).booleanValue()) {
+        if (state.getValue(ACTIVATED)) {
             return 6;
         }
         return 0;
@@ -266,7 +266,7 @@ EntityBlock {
         if (world.isClientSide) {
             return;
         }
-        List<Ritual> rituals = world.getEntities((net.minecraft.world.level.entity.EntityTypeTest<Ritual, ?>)EntityInit.RITUAL_ENTITY.get(), new AABB(pos).inflate(16.0), e -> true);
+        List<Ritual> rituals = world.getEntitiesOfClass(Ritual.class, new AABB(pos).inflate(16.0), e -> true);
         for (Ritual ritual : rituals) {
             ritual.checkForExplosion(false);
         }
@@ -275,7 +275,7 @@ EntityBlock {
     @Override
     public boolean canPlaceLiquid(BlockGetter worldIn, BlockPos pos, BlockState state, Fluid fluidIn) {
         if (state.hasProperty((Property)METAL) && ((Boolean)state.getValue((Property)METAL)).booleanValue()) {
-            return !(Boolean)state.getValue((Property)BlockStateProperties.WATERLOGGED);
+            return !state.getValue(BlockStateProperties.WATERLOGGED);
         }
         return true;
     }
@@ -290,7 +290,7 @@ EntityBlock {
     }
 
     public ItemStack getCloneItemStack(BlockState state, HitResult target, BlockGetter level, BlockPos pos, Player player) {
-        if (((Boolean)state.getValue((Property)ACTIVATED)).booleanValue()) {
+        if (state.getValue(ACTIVATED)) {
             return new ItemStack((ItemLike)ItemInit.RUNE_RITUAL_METAL.get());
         }
         return new ItemStack((ItemLike)ItemInit.WIZARD_CHALK.get());
