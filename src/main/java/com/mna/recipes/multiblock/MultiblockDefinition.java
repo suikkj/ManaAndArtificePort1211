@@ -477,7 +477,7 @@ implements IMultiblockDefinition {
         });
         ArrayList<List<ItemStack>> blocksList = new ArrayList<List<ItemStack>>();
         blockCounts.entrySet().forEach(e -> {
-            List<Object> valid = this.getValidItemsFor((Block)e.getKey());
+            List<ItemStack> valid = this.getValidItemsFor((Block)e.getKey());
             valid.forEach(s -> s.setCount(((Integer)e.getValue()).intValue()));
             valid = valid.stream().filter(s -> !s.isEmpty()).collect(Collectors.toList());
             if (valid.size() > 0) {

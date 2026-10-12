@@ -79,7 +79,7 @@ extends LivingEntityRenderer<Simulacrum, PlayerModel<Simulacrum>> {
         String s;
         Player owner = pEntity.getOwner();
         this.model = this.normal;
-        if (owner != null && (s = ((AbstractClientPlayer)owner).getSkin().model()) == net.minecraft.client.resources.PlayerSkin.Model.SLIM) {
+        if (owner != null && ((AbstractClientPlayer)owner).getSkin().model() == net.minecraft.client.resources.PlayerSkin.Model.SLIM) {
             this.model = this.slim;
         }
         if (owner instanceof AbstractClientPlayer) {

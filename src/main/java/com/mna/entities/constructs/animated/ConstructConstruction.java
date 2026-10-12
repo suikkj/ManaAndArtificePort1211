@@ -416,7 +416,7 @@ implements IConstructConstruction {
         for (ConstructSlot slot : ConstructSlot.values()) {
             Item item;
             ResourceLocation rLoc;
-            if (!constructData.contains(slot.toString()) || (rLoc = new ResourceLocation(constructData.getString(slot.toString()))).getPath().isEmpty() || (item = (Item)BuiltInRegistries.ITEM.get(rLoc)) == null || !(item instanceof ItemConstructPart)) continue;
+            if (!constructData.contains(slot.toString()) || (rLoc = ResourceLocation.parse(constructData.getString(slot.toString()))).getPath().isEmpty() || (item = (Item)BuiltInRegistries.ITEM.get(rLoc)) == null || !(item instanceof ItemConstructPart)) continue;
             this.partsList.put(((ItemConstructPart)item).getSlot(), (ItemConstructPart)item);
         }
         if (constructData.contains(KEY_AFFINITY)) {
@@ -483,7 +483,7 @@ implements IConstructConstruction {
     public ConstructMaterial getLowestMaterialCooldownMultiplierForCapability(ConstructCapability capability) {
         List possibleParts = this.partsList.values().stream().filter(p -> this.arrayContains(p.getEnabledCapabilities(), capability)).collect(Collectors.toList());
         ConstructMaterial highest = ConstructMaterial.UNKNOWN;
-        for (ItemConstructPart p2 : possibleParts) {
+        for (ItemConstructPart p2 : (java.util.List<ItemConstructPart>)possibleParts) {
             if (!(p2.getMaterial().getCooldownMultiplierFor(capability) < highest.getCooldownMultiplierFor(capability))) continue;
             highest = p2.getMaterial();
         }
@@ -513,7 +513,7 @@ implements IConstructConstruction {
         if (mats.size() == 0) {
             return ConstructMaterial.UNKNOWN;
         }
-        List sortedTiers = MNAtierSorting.getSortedTiers();
+        java.util.List<net.minecraft.world.item.Tier> sortedTiers = MNAtierSorting.getSortedTiers();
         Collections.sort(mats, (a, b) -> Integer.compare(sortedTiers.indexOf(a.getEquivalentTier()), sortedTiers.indexOf(b.getEquivalentTier())));
         return (ConstructMaterial)mats.get(0);
     }

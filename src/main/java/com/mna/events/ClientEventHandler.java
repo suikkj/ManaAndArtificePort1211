@@ -618,7 +618,7 @@ public class ClientEventHandler {
             ItemStack boots = mc.player.getItemBySlot(EquipmentSlot.FEET);
             int enchLevel = EnchantmentHelper.getEnchantmentLevel(EnchantmentInit.CLOUDSTEP, mc.player);
             if (!boots.isEmpty() && enchLevel > 0) {
-                mc.player.noJumpDelay = 10;
+                // [PORT 1.21.1] noJumpDelay virou private
                 ClientMessageDispatcher.sendPlayerJump();
             }
         }
@@ -677,7 +677,7 @@ public class ClientEventHandler {
         matrixStack.pushPose();
         matrixStack.translate(-projectedView.x, -projectedView.y, -projectedView.z);
         ClientEventHandler.renderMarkingRunes(mc, matrixStack, projectedView, buffers);
-        ClientEventHandler.renderWardedBlocks((Level)mc.level, rwl.getPartialTick(), matrixStack, (MultiBufferSource)buffers, (Player)mc.player);
+        ClientEventHandler.renderWardedBlocks((Level)mc.level, rwl.getPartialTick().getGameTimeDeltaPartialTick(false), matrixStack, (MultiBufferSource)buffers, (Player)mc.player);
         ClientEventHandler.renderConstructWorldDiagnostics(mc, matrixStack, projectedView, buffers);
         MobEffectInstance inst = mc.player.getEffect(com.mna.api.tools.MAEffects.holder(EffectInit.DIVINATION.get()));
         if (inst != null) {
@@ -960,8 +960,12 @@ public class ClientEventHandler {
             IRelic relic;
             Item c;
             Item item = event.getItemStack().getItem();
-            if (item instanceof IRelic && (c = (relic = (IRelic)item).getHoverAddition(event.getItemStack(), world, event.getToolTip(), event.getFlags())) != null) {
-                event.getToolTip().add(1, c);
+            if (item instanceof IRelic) {
+                relic = (IRelic)item;
+                net.minecraft.network.chat.Component hover = relic.getHoverAddition(event.getItemStack(), world, event.getToolTip(), event.getFlags());
+                if (hover != null) {
+                    event.getToolTip().add(1, hover);
+                }
             }
             if ((c = event.getItemStack().getItem()) instanceof ITieredItem) {
                 ITieredItem item2 = (ITieredItem)c;

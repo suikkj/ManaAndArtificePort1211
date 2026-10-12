@@ -86,7 +86,7 @@ implements Comparable<LootDrop> {
     }
 
     public LootDrop(Item item, CompoundTag tag, int minDrop, int maxDrop, Conditional ... conditionals) {
-        this(new ItemStack((ItemLike)item, 1, tag), minDrop, maxDrop, 1.0f, 0, conditionals);
+        this(tagged(new ItemStack((ItemLike)item, 1), tag), minDrop, maxDrop, 1.0f, 0, conditionals);
     }
 
     public LootDrop(Item item, int minDrop, int maxDrop, float chance, Conditional ... conditionals) {
@@ -94,7 +94,7 @@ implements Comparable<LootDrop> {
     }
 
     public LootDrop(Item item, CompoundTag tag, int minDrop, int maxDrop, float chance, Conditional ... conditionals) {
-        this(new ItemStack((ItemLike)item, 1, tag), minDrop, maxDrop, chance, 0, conditionals);
+        this(tagged(new ItemStack((ItemLike)item, 1), tag), minDrop, maxDrop, chance, 0, conditionals);
     }
 
     public LootDrop(ItemStack item, int minDrop, int maxDrop, float chance, Conditional ... conditionals) {
@@ -261,6 +261,14 @@ implements Comparable<LootDrop> {
         buf.writeFloat(this.chance);
         buf.writeFloat(this.sortIndex);
         buf.writeBoolean(this.enchanted);
+    }
+
+    /** [PORT 1.21.1] ItemStack(ItemLike,int,CompoundTag) removido. */
+    private static ItemStack tagged(ItemStack stack, CompoundTag tag) {
+        if (tag != null) {
+            stack.set(net.minecraft.core.component.DataComponents.CUSTOM_DATA, net.minecraft.world.item.component.CustomData.of(tag));
+        }
+        return stack;
     }
 }
 

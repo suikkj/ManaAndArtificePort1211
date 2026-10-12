@@ -153,8 +153,8 @@ extends SpellEffect {
         return (int)modificationData.getValue(Attribute.MAGNITUDE) - 1;
     }
 
-    private MobEffect getEffect() {
-        return this.effect != null ? this.effect : (MobEffect)this.registry_effect.get();
+    private net.minecraft.core.Holder<MobEffect> getEffect() {
+        return this.effect != null ? net.minecraft.core.registries.BuiltInRegistries.MOB_EFFECT.wrapAsHolder(this.effect) : this.registry_effect;
     }
 
     protected boolean applicationPredicate(LivingEntity target) {

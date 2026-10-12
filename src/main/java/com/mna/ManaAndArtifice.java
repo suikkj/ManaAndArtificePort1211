@@ -103,7 +103,8 @@ public class ManaAndArtifice {
         LOGGER.info("M&A -> Configs Registered");
         NeoForgeMod.enableMilkFluid();
         instance = this;
-        ItemInit.ITEMS.register(this.modEventBus);
+        ItemInit.ITEMS.register(this.modEventBus);
+        com.mna.items.artifice.FluidJug.COMPONENTS.register(this.modEventBus);
         com.mna.items.armor.ArmorMaterialInit.MATERIALS.register(this.modEventBus);
         BlockInit.BLOCKS.register(this.modEventBus);
         TileEntityInit.TILE_ENTITY_TYPES.register(this.modEventBus);

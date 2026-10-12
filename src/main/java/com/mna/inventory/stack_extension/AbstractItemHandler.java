@@ -96,7 +96,7 @@ implements IExtendedItemHandler {
         ItemStack existing = entry.getStackOriginal();
         int limit = this.getSlotLimit(slot, stack);
         if (!existing.isEmpty()) {
-            if (!ItemHandlerHelper.canItemStacksStack((ItemStack)stack, (ItemStack)existing)) {
+            if (!ItemStack.isSameItemSameComponents((ItemStack)stack, (ItemStack)existing)) {
                 return stack;
             }
             limit -= existing.getCount();
@@ -120,7 +120,7 @@ implements IExtendedItemHandler {
             }
             this.onContentsChanged(slot);
         }
-        return reachedLimit ? ItemHandlerHelper.copyStackWithSize((ItemStack)stack, (int)(stack.getCount() - limit)) : ItemStack.EMPTY;
+        return reachedLimit ? (ItemStack)stack.copyWithCount((int)(stack.getCount() - limit)) : ItemStack.EMPTY;
     }
 
     @Nonnull
@@ -144,11 +144,11 @@ implements IExtendedItemHandler {
             return existing.copy();
         }
         if (!simulate) {
-            entry = new ItemStackEntry(ItemHandlerHelper.copyStackWithSize((ItemStack)existing, (int)(existing.getCount() - toExtract)));
+            entry = new ItemStackEntry((ItemStack)existing.copyWithCount((int)(existing.getCount() - toExtract)));
             this.stacks.set(slot, entry);
             this.onContentsChanged(slot);
         }
-        return ItemHandlerHelper.copyStackWithSize((ItemStack)existing, (int)toExtract);
+        return (ItemStack)existing.copyWithCount((int)toExtract);
     }
 
     public abstract boolean isItemValid(int var1, @Nonnull ItemStack var2);

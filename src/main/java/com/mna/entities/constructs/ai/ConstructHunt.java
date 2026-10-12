@@ -196,14 +196,14 @@ extends ConstructAITask<ConstructHunt> {
         AbstractGolem c = this.construct.asEntity();
         if (e instanceof LivingEntity) {
             LivingEntity living = (LivingEntity)e;
-            ResourceLocation resourcelocation = living.getLootTable();
+            net.minecraft.resources.ResourceKey<net.minecraft.world.level.storage.loot.LootTable> resourcelocation = living.getLootTable();
             LootParams.Builder lootparams$builder = new LootParams.Builder(world);
             if ((float)constructIntelligence >= 36.0f && (float)constructPerception >= 28.0f) {
                 lootparams$builder.withParameter(LootContextParams.LAST_DAMAGE_PLAYER, this.createFakePlayer());
             }
             lootparams$builder.withParameter(LootContextParams.DAMAGE_SOURCE, living.damageSources().magic());
-            lootparams$builder.withOptionalParameter(LootContextParams.DIRECT_KILLER_ENTITY, c);
-            lootparams$builder.withOptionalParameter(LootContextParams.KILLER_ENTITY, c);
+            lootparams$builder.withOptionalParameter(LootContextParams.DIRECT_ATTACKING_ENTITY, c);
+            lootparams$builder.withOptionalParameter(LootContextParams.ATTACKING_ENTITY, c);
             lootparams$builder.withParameter(LootContextParams.THIS_ENTITY, living);
             lootparams$builder.withParameter(LootContextParams.ORIGIN, c.position());
             LootParams lootparams = lootparams$builder.create(LootContextParamSets.ENTITY);

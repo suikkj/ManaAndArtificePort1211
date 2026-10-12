@@ -182,7 +182,7 @@ extends GuiJEIDisable<ContainerOcculus> {
         for (net.minecraft.world.item.crafting.RecipeHolder<T> __h : recipes) {
             AMRecipeBase recipe = __h.value();
             if (predicate != null && !predicate.apply((T)recipe).booleanValue()) continue;
-            appendTo.add(new ListEntry(this, recipe, iconType));
+            appendTo.add(new ListEntry(recipe, iconType));
         }
         return appendTo;
     }
@@ -409,7 +409,7 @@ extends GuiJEIDisable<ContainerOcculus> {
         this.backgroundPositionX = (float)((double)this.backgroundPositionX - deltaX);
         this.backgroundPositionY = (float)((double)this.backgroundPositionY - deltaY);
         for (OcculusEntryList list : this.lists.values()) {
-            list.mouseScrolled(mouseX, mouseY, deltaY / 20.0);
+            list.mouseScrolled(mouseX, mouseY, 0.0, deltaY / 20.0);
         }
         if (this.currentList == this.lists.get(IconTypes.PROGRESSION)) {
             this.tooltipYPos += (int)Math.ceil(deltaY);
@@ -547,7 +547,7 @@ extends GuiJEIDisable<ContainerOcculus> {
                     lines.add(this.iconStack.getHoverName());
                 }
                 ArrayList<Component> tt = new ArrayList<Component>();
-                for (Component comp : lines) {
+                for (Component comp : (java.util.List<Component>)lines) {
                     if (!this.includeTooltip) {
                         String unformatted = ChatFormatting.stripFormatting((String)comp.getString());
                         MutableComponent stc = Component.literal((String)unformatted);
@@ -574,7 +574,7 @@ extends GuiJEIDisable<ContainerOcculus> {
         private OcculusEntry current;
 
         public <T extends AMRecipeBase> OcculusEntryList(Minecraft mcIn, int x, int y, int widthIn, int heightIn) {
-            super(mcIn, widthIn, heightIn, y, y + heightIn, 50);
+            super(mcIn, widthIn, heightIn, y, 50);
             this.x = x;
             this.y0 = y;
             this.y1 = y + heightIn;

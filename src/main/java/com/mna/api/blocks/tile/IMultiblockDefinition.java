@@ -32,7 +32,7 @@ import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
 
 public interface IMultiblockDefinition
-extends Recipe<CraftingContainer> {
+extends Recipe<net.minecraft.world.item.crafting.CraftingInput> {
     public boolean match(Level var1, BlockPos var2);
 
     public boolean match(Level var1, BlockPos var2, Rotation var3, boolean var4);

@@ -52,6 +52,8 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 
 public class FluidJug
 extends TieredBlockItem {
+    public static final net.neoforged.neoforge.registries.DeferredRegister<net.minecraft.core.component.DataComponentType<?>> COMPONENTS = net.neoforged.neoforge.registries.DeferredRegister.create(net.minecraft.core.registries.Registries.DATA_COMPONENT_TYPE, "mna");
+    public static final java.util.function.Supplier<net.minecraft.core.component.DataComponentType<net.neoforged.neoforge.fluids.SimpleFluidContent>> SIMPLE_FLUID_COMPONENT = COMPONENTS.register("simple_fluid", () -> new net.minecraft.core.component.DataComponentType.Builder<net.neoforged.neoforge.fluids.SimpleFluidContent>().persistent(net.neoforged.neoforge.fluids.SimpleFluidContent.CODEC).networkSynchronized(net.neoforged.neoforge.fluids.SimpleFluidContent.STREAM_CODEC).build());
     public static final int CAPACITY = 16000;
 
     public FluidJug(FluidJugBlock forBlock) {
@@ -69,7 +71,7 @@ extends TieredBlockItem {
     }
 
     public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt) {
-        return new FluidHandlerItemStack(stack, 16000);
+        return new FluidHandlerItemStack(SIMPLE_FLUID_COMPONENT, stack, 16000);
     }
 
     public void appendHoverText(ItemStack stack, net.minecraft.world.item.Item.TooltipContext world, List<Component> tooltip, TooltipFlag flag) {
@@ -109,7 +111,7 @@ extends TieredBlockItem {
         if (cowHit != null) {
             FluidStack insertStack = new FluidStack((Fluid)NeoForgeMod.MILK.get(), 1000);
             if (flStack.getFluid().isSame((Fluid)NeoForgeMod.MILK.get()) || flStack.isEmpty()) {
-                java.util.Optional<net.neoforged.neoforge.fluids.capability.IFluidHandler> handler = FluidUtil.getFluidHandler((ItemStack)itemstack);
+                java.util.Optional<net.neoforged.neoforge.fluids.capability.IFluidHandlerItem> handler = FluidUtil.getFluidHandler((ItemStack)itemstack);
                 if (handler.isPresent()) {
                     IFluidHandlerItem handlerResolved = (IFluidHandlerItem)handler.get();
                     handlerResolved.fill(insertStack, IFluidHandler.FluidAction.EXECUTE);
@@ -156,7 +158,7 @@ extends TieredBlockItem {
     }
 
     private boolean canBlockContainFluid(Level worldIn, BlockPos posIn, BlockState blockstate, FluidStack myFluid) {
-        return blockstate.getBlock() instanceof LiquidBlockContainer && ((LiquidBlockContainer)blockstate.getBlock()).canPlaceLiquid((BlockGetter)worldIn, posIn, blockstate, myFluid.getFluid());
+        return blockstate.getBlock() instanceof LiquidBlockContainer && ((LiquidBlockContainer)blockstate.getBlock()).canPlaceLiquid((Player)null, (BlockGetter)worldIn, posIn, blockstate, myFluid.getFluid());
     }
 }
 

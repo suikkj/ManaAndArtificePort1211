@@ -64,7 +64,7 @@ public class PossessionActionInit {
         PossessionActions.RegisterLeftClickAction(EntityType.GHAST, e -> {
             Vec3 vector3d = e.getViewVector(1.0f);
             e.level().levelEvent((Player)null, 1016, e.blockPosition(), 0);
-            LargeFireball fireballentity = new LargeFireball(e.level(), (LivingEntity)e, vector3d.x, vector3d.y, vector3d.z, e.getExplosionPower());
+            LargeFireball fireballentity = new LargeFireball(e.level(), (LivingEntity)e, vector3d, e.getExplosionPower());
             fireballentity.setPos(e.getX() + vector3d.x * 4.0, e.getY(0.5) + 0.5, fireballentity.getZ() + vector3d.z * 4.0);
             e.level().addFreshEntity((Entity)fireballentity);
         });
@@ -79,10 +79,7 @@ public class PossessionActionInit {
         });
         PossessionActions.RegisterLeftClickAction(EntityType.SKELETON, e -> {
             ItemStack itemstack = e.getProjectile(e.getItemInHand(ProjectileUtil.getWeaponHoldingHand((LivingEntity)e, item -> item == Items.BOW)));
-            AbstractArrow abstractarrowentity = ProjectileUtil.getMobArrow((LivingEntity)e, (ItemStack)itemstack, (float)BowItem.getPowerForTime((int)40));
-            if (e.getMainHandItem().getItem() instanceof BowItem) {
-                abstractarrowentity = ((BowItem)e.getMainHandItem().getItem()).customArrow(abstractarrowentity);
-            }
+            AbstractArrow abstractarrowentity = ProjectileUtil.getMobArrow((LivingEntity)e, (ItemStack)itemstack, (float)BowItem.getPowerForTime((int)40), e.getMainHandItem());
             Vec3 fwd = Vec3.directionFromRotation((Vec2)e.getRotationVector()).normalize();
             abstractarrowentity.shoot(fwd.x, fwd.y, fwd.z, 1.6f, (float)(14 - e.level().getDifficulty().getId() * 4));
             e.playSound(SoundEvents.SKELETON_SHOOT, 1.0f, 1.0f / (e.getRandom().nextFloat() * 0.4f + 0.8f));
@@ -96,7 +93,7 @@ public class PossessionActionInit {
             } else {
                 BlockState clickState = e.level().getBlockState(bhr.getBlockPos());
                 if (clickState.is(BlockTags.FLOWERS)) {
-                    e.setHasNectar(true);
+                    // [PORT 1.21.1] Bee.setHasNectar virou private
                 }
             }
         });

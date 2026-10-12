@@ -139,7 +139,7 @@ extends NodeEvaluator {
         if (this.flying && !this.isInWater) {
             return new Target(super.getNode(Mth.floor((double)x), Mth.floor((double)y), Mth.floor((double)z)));
         }
-        return this.getTargetFromNode(this.getNode(Mth.floor((double)x), Mth.floor((double)y), Mth.floor((double)z)));
+        return new Target(this.getNode(Mth.floor((double)x), Mth.floor((double)y), Mth.floor((double)z)));
     }
 
     public int getNeighbors(Node[] p_77640_, Node current) {
@@ -780,6 +780,11 @@ extends NodeEvaluator {
 
     private static boolean doesBlockHavePartialCollision(PathType pBlockPathType) {
         return pBlockPathType == PathType.FENCE || pBlockPathType == PathType.DOOR_WOOD_CLOSED || pBlockPathType == PathType.DOOR_IRON_CLOSED;
+    }
+
+    @Override
+    public net.minecraft.world.level.pathfinder.PathType getPathTypeOfMob(net.minecraft.world.level.pathfinder.PathfindingContext ctx, int x, int y, int z, net.minecraft.world.entity.Mob mob) {
+        return net.minecraft.world.level.pathfinder.PathType.OPEN;
     }
 }
 

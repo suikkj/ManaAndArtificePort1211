@@ -58,7 +58,7 @@ implements IFactionSpecific {
     }
 
     public ICapabilityProvider initCapabilities(final ItemStack stack, CompoundTag nbt) {
-        return CurioItemCapability.createProvider(new ICurio(){
+        return CurioItemCapability.createProvider(new ICurioItem(){
 
             public void curioTick(String identifier, int index, LivingEntity livingEntity) {
                 if (livingEntity instanceof Player) {
@@ -92,12 +92,12 @@ implements IFactionSpecific {
         if ((dispelExhaustion = player.getEffect(com.mna.api.tools.MAEffects.holder(EffectInit.DISPEL_EXHAUSTION.get()))) == null) {
             int effectsRemoved = 0;
             this.usedByPlayer(player);
-            ArrayList<MobEffect> toRemove = new ArrayList<MobEffect>();
+            ArrayList<net.minecraft.core.Holder<MobEffect>> toRemove = new ArrayList<net.minecraft.core.Holder<MobEffect>>();
             for (MobEffectInstance inst : player.getActiveEffects()) {
-                if (inst.getEffect().getCategory() != MobEffectCategory.HARMFUL) continue;
+                if (inst.getEffect().value().getCategory() != MobEffectCategory.HARMFUL) continue;
                 toRemove.add(inst.getEffect());
             }
-            for (MobEffect e : toRemove) {
+            for (net.minecraft.core.Holder<MobEffect> e : toRemove) {
                 if (!player.removeEffect(e)) continue;
                 ++effectsRemoved;
             }

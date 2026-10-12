@@ -202,7 +202,7 @@ Consumer<FriendlyByteBuf> {
 
     public CompoundTag getUpdateTag(net.minecraft.core.HolderLookup.Provider registries) {
         CompoundTag tag = new CompoundTag();
-        this.saveAdditional(tag);
+        this.saveAdditional(tag, com.mna.api.tools.MNAItemData.provider());
         return tag;
     }
 
@@ -292,8 +292,8 @@ Consumer<FriendlyByteBuf> {
         private void resolveRecipe(Level world) {
             world.getRecipeManager().byKey(this.recipeId).ifPresent(recipe -> {
                 if (recipe.value() instanceof CraftingRecipe) {
-                    this.output = recipe.getResultItem(world.registryAccess());
-                    this.ingredients = (Ingredient[])recipe.getIngredients().toArray((Object[])new Ingredient[0]);
+                    this.output = recipe.value().getResultItem(world.registryAccess());
+                    this.ingredients = (Ingredient[])recipe.value().getIngredients().toArray((Object[])new Ingredient[0]);
                     this.recipe = (CraftingRecipe)recipe.value();
                 }
             });

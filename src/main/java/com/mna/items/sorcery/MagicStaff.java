@@ -82,7 +82,7 @@ implements ITieredItem<MagicStaff> {
     }
 
     public MagicStaff(float attackDamage, float attackSpeed) {
-        super(new Item.Properties().defaultDurability(100).durability(100).setNoRepair());
+        super(new Item.Properties().durability(100));
         this.attackDamage = attackDamage;
         ImmutableMultimap.Builder builder = ImmutableMultimap.builder();
         builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_ID, (double)this.attackDamage, AttributeModifier.Operation.ADD_VALUE));
@@ -188,7 +188,7 @@ implements ITieredItem<MagicStaff> {
         int newDamage = (int)((float)spellStack.getMaxDamage() * damagePct);
         if (charges <= 0) {
             if (handIn != null) {
-                player.broadcastBreakEvent(handIn == net.minecraft.world.InteractionHand.MAIN_HAND ? net.minecraft.world.entity.EquipmentSlot.MAINHAND : net.minecraft.world.entity.EquipmentSlot.OFFHAND);
+                player.onEquippedItemBroken(this, handIn == net.minecraft.world.InteractionHand.MAIN_HAND ? net.minecraft.world.entity.EquipmentSlot.MAINHAND : net.minecraft.world.entity.EquipmentSlot.OFFHAND);
             }
             Item item = spellStack.getItem();
             spellStack.shrink(1);
@@ -210,7 +210,7 @@ implements ITieredItem<MagicStaff> {
     }
 
     public Multimap<net.minecraft.world.entity.ai.attributes.Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack) {
-        return slot == EquipmentSlot.MAINHAND ? this.attributeModifiers : super.getAttributeModifiers(slot, stack);
+        return this.attributeModifiers;
     }
 
     public int getEnchantmentValue(ItemStack stack) {
@@ -323,7 +323,7 @@ implements ITieredItem<MagicStaff> {
         if (randomRecipe.getComponents().size() == 0) {
             return stack;
         }
-        for (Attribute attr : ((ModifiedSpellPart)randomRecipe.getShape()).getContainedAttributes()) {
+        for (Attribute attr : (java.util.List<Attribute>)((ModifiedSpellPart)randomRecipe.getShape()).getContainedAttributes()) {
             if (attr == Attribute.DELAY) continue;
             ((ModifiedSpellPart)randomRecipe.getShape()).setValue(attr, ((ModifiedSpellPart)randomRecipe.getShape()).getMinimumValue(attr) + (((ModifiedSpellPart)randomRecipe.getShape()).getMaximumValue(attr) - ((ModifiedSpellPart)randomRecipe.getShape()).getMinimumValue(attr)) * (float)Math.random());
         }

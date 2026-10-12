@@ -55,7 +55,7 @@ public class PossessionActions {
     private static HashMap<EntityType<?>, PosessionActionCollection<?>> _registeredActions = new HashMap();
 
     public static <T extends Mob> void RegisterLeftClickAction(EntityType<T> entityType, Consumer<T> callback) {
-        PosessionActionCollection<T> registry = _registeredActions.getOrDefault(entityType, new PosessionActionCollection());
+        PosessionActionCollection<T> registry = (PosessionActionCollection<T>)_registeredActions.getOrDefault(entityType, new PosessionActionCollection());
         registry.AddAction(callback);
         _registeredActions.put(entityType, registry);
     }
@@ -115,7 +115,7 @@ public class PossessionActions {
         }
 
         public void Invoke(T e) {
-            this.actions.forEach((Consumer<Consumer<T>>)((Consumer<Consumer>)a -> a.accept(e)));
+            this.actions.forEach(a -> a.accept(e));
         }
     }
 }

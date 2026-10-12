@@ -113,21 +113,21 @@ implements IManaweavePattern {
     public static final ManaweavingPattern match(Level world, int tier, Vector3f[] points, Vector3f[] directions) {
         int j;
         int i;
-        Object newPoints;
-        if (((Vector3f[])points).length == 1) {
+        Vector3f[] newPoints;
+        if (points.length == 1) {
             return null;
         }
-        if (((Vector3f[])points).length == 2) {
+        if (points.length == 2) {
             newPoints = new Vector3f[3];
             newPoints[0] = points[0];
             newPoints[2] = points[1];
             newPoints[1] = new Vector3f((points[0].x() + points[1].x()) / 2.0f, (points[0].y() + points[1].y()) / 2.0f, (points[0].z() + points[1].z()) / 2.0f);
             points = newPoints;
         }
-        while (((Vector3f[])points).length < 100) {
+        while (points.length < 100) {
             int next;
             newPoints = new ArrayList();
-            for (i = 0; i < ((Vector3f[])points).length && (next = i + 1) != ((Vector3f[])points).length; ++i) {
+            for (i = 0; i < points.length && (next = i + 1) != points.length; ++i) {
                 ((ArrayList)newPoints).add(points[i]);
                 ((ArrayList)newPoints).add(new Vector3f((points[i].x() + points[next].x()) / 2.0f, (points[i].y() + points[next].y()) / 2.0f, (points[i].z() + points[next].z()) / 2.0f));
             }

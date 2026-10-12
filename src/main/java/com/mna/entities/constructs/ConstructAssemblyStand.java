@@ -188,7 +188,7 @@ implements ISpellInteractibleEntity<ConstructAssemblyStand> {
     public void setItemSlot(EquipmentSlot slot, ItemStack stack) {
         this.verifyEquippedItem(stack);
         if (!stack.isEmpty()) {
-            this.playSound(SoundEvents.ARMOR_EQUIP_LEATHER, 1.0f, 1.0f);
+            this.playSound(SoundEvents.ARMOR_EQUIP_LEATHER.value(), 1.0f, 1.0f);
         }
         if (slot.getType() == EquipmentSlot.Type.HAND) {
             this.armItems.set(slot.getIndex(), stack);
@@ -198,7 +198,7 @@ implements ISpellInteractibleEntity<ConstructAssemblyStand> {
     }
 
     public boolean canTakeItem(ItemStack p_31638_) {
-        EquipmentSlot equipmentslot = Mob.getEquipmentSlotForItem((ItemStack)p_31638_);
+        EquipmentSlot equipmentslot = this.getEquipmentSlotForItem((ItemStack)p_31638_);
         return this.getItemBySlot(equipmentslot).isEmpty();
     }
 
@@ -556,7 +556,7 @@ implements ISpellInteractibleEntity<ConstructAssemblyStand> {
 
     private void brokenByAnything(DamageSource p_31654_) {
         this.playBrokenSound();
-        this.dropAllDeathLoot(p_31654_);
+        this.dropAllDeathLoot((net.minecraft.server.level.ServerLevel)this.level(), p_31654_);
         for (int i = 0; i < this.armItems.size(); ++i) {
             ItemStack itemstack = (ItemStack)this.armItems.get(i);
             if (itemstack.isEmpty()) continue;
@@ -576,7 +576,7 @@ implements ISpellInteractibleEntity<ConstructAssemblyStand> {
     }
 
     protected float getStandingEyeHeight(Pose p_31614_, EntityDimensions p_31615_) {
-        return p_31615_.height * (this.isBaby() ? 0.5f : 0.9f);
+        return p_31615_.height() * (this.isBaby() ? 0.5f : 0.9f);
     }
 
     public double getMyRidingOffset() {

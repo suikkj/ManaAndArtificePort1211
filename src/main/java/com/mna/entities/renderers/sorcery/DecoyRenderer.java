@@ -23,7 +23,7 @@ extends LivingEntityRenderer<EntityDecoy, PlayerModel<EntityDecoy>> {
     private PlayerModel<EntityDecoy> normal = null;
 
     public DecoyRenderer(EntityRendererProvider.Context context) {
-        super(context, (EntityModel)new PlayerModel(context.bakeLayer(ModelLayers.PLAYER), false), 0.5f);
+        super(context, new PlayerModel<EntityDecoy>(context.bakeLayer(ModelLayers.PLAYER), false), 0.5f);
         this.normal = new PlayerModel(context.bakeLayer(ModelLayers.PLAYER), false);
         this.slim = new PlayerModel(context.bakeLayer(ModelLayers.PLAYER_SLIM), true);
     }
@@ -32,7 +32,7 @@ extends LivingEntityRenderer<EntityDecoy, PlayerModel<EntityDecoy>> {
         String s;
         Player owner = pEntity.getPlayer();
         this.model = this.normal;
-        if (owner != null && (s = ((AbstractClientPlayer)owner).getModelName()) == "slim") {
+        if (owner != null && ((AbstractClientPlayer)owner).getSkin().model() == net.minecraft.client.resources.PlayerSkin.Model.SLIM) {
             this.model = this.slim;
         }
         super.render(pEntity, pEntityYaw, pPartialTicks, pPoseStack, pBuffer, pPackedLight);
@@ -51,9 +51,9 @@ extends LivingEntityRenderer<EntityDecoy, PlayerModel<EntityDecoy>> {
         return true;
     }
 
-    protected void renderNameTag(EntityDecoy entityIn, Component displayNameIn, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn) {
+    protected void renderNameTag(EntityDecoy entityIn, Component displayNameIn, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn, float partialTick) {
         if (entityIn.getPlayer() != null) {
-            super.renderNameTag((Entity)entityIn, entityIn.getPlayer().getDisplayName(), matrixStackIn, bufferIn, packedLightIn);
+            super.renderNameTag(entityIn, entityIn.getPlayer().getDisplayName(), matrixStackIn, bufferIn, packedLightIn, partialTick);
         }
     }
 }
