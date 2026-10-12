@@ -188,7 +188,7 @@ implements ITieredItem<MagicStaff> {
         int newDamage = (int)((float)spellStack.getMaxDamage() * damagePct);
         if (charges <= 0) {
             if (handIn != null) {
-                player.broadcastBreakEvent(handIn);
+                player.broadcastBreakEvent(handIn == net.minecraft.world.InteractionHand.MAIN_HAND ? net.minecraft.world.entity.EquipmentSlot.MAINHAND : net.minecraft.world.entity.EquipmentSlot.OFFHAND);
             }
             Item item = spellStack.getItem();
             spellStack.shrink(1);

@@ -342,7 +342,7 @@ PlayerRideableJumping {
             int i = 3;
             if (this.distanceToSqr((Entity)entityIn) < 0.6 * (double)i * 0.6 * (double)i && this.getSensing().hasLineOfSight((Entity)entityIn) && entityIn.hurt(this.damageSources().mobAttack((LivingEntity)this), this.getAttackDamage())) {
                 this.playSound(SoundEvents.SLIME_ATTACK, 1.0f, (this.random.nextFloat() - this.random.nextFloat()) * 0.2f + 1.0f);
-                this.doEnchantDamageEffects((LivingEntity)this, (Entity)entityIn);
+                com.mna.tools.MATools.doEnchantDamageEffects(this, entityIn);
             }
         }
     }

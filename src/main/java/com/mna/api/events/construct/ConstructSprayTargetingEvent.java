@@ -14,7 +14,7 @@ import net.minecraft.world.level.material.Fluid;
 import net.neoforged.bus.api.Event;
 
 public class ConstructSprayTargetingEvent
-extends Event {
+extends Event implements net.neoforged.bus.api.ICancellableEvent {
     final IConstruct<?> construct;
     final Entity potentialTarget;
     final Fluid fluid;

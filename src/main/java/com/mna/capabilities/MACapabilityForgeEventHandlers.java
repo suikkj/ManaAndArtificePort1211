@@ -245,7 +245,7 @@ public class MACapabilityForgeEventHandlers {
         if (com.mna.tools.MATools.canChangeDimensions(event.getEntity())) {
             MNACap.get(event.getEntity().level(), WorldMagicProvider.MAGIC).ifPresent(w -> {
                 if (w.isWithinWardingCandle(event.getEntity().blockPosition()) && !GeneralConfigValues.WardingCandleWhitelist.contains(BuiltInRegistries.ENTITY_TYPE.getKey(event.getEntity().getType()).toString())) {
-                    event.setResult(Result.DENY);
+                    event.setCanceled(true);
                 }
             });
         }

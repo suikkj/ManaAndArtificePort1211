@@ -307,7 +307,7 @@ implements RangedAttackMob {
                 Player playerentity = (Player)entityIn;
                 this.maybeDisableShield(playerentity, this.getMainHandItem(), playerentity.isUsingItem() ? playerentity.getUseItem() : ItemStack.EMPTY);
             }
-            this.doEnchantDamageEffects((LivingEntity)this, entityIn);
+            com.mna.tools.MATools.doEnchantDamageEffects(this, entityIn);
             this.setLastHurtMob(entityIn);
         }
         return flag;

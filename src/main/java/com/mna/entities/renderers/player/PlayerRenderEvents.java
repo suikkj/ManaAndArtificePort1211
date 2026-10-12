@@ -29,7 +29,7 @@ public class PlayerRenderEvents {
     @SubscribeEvent(priority=EventPriority.LOWEST)
     public static void onPlayerRenderPre(RenderPlayerEvent.Pre event) {
         if (event.getEntity().getPersistentData().getBoolean("eldrin_flight") || EntityUtil.shouldBeInvisible((LivingEntity)event.getEntity())) {
-            event.setResult(Result.DENY);
+            event.setCanceled(true);
             event.setCanceled(true);
             return;
         }

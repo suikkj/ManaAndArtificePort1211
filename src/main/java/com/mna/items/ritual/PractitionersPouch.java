@@ -592,7 +592,7 @@ MNADyeableItem {
     }
 
     private CompoundTag getPatchTag(ItemStack stack) {
-        return stack.getOrCreateTagElement(TAG_PATCHES);
+        return com.mna.api.tools.MNAItemData.getOrCreateTagElement(stack, TAG_PATCHES);
     }
 
     public boolean isPatchValid(ItemStack stack, PractitionersPouchPatches patch, int level) {

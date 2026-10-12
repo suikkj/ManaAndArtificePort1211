@@ -32,7 +32,7 @@ public final class MNAItemData {
         return tag;
     }
 
-    /** Equivalente ao antigo {@code stack.getOrCreateTagElement(key)}. */
+    /** Equivalente ao antigo {@code com.mna.api.tools.MNAItemData.getOrCreateTagElement(stack, key)}. */
     public static CompoundTag element(ItemStack stack, String key) {
         CompoundTag tag = createTag(stack);
         if (!tag.contains(key, 10)) {

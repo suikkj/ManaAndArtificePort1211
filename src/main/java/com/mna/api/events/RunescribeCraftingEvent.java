@@ -14,7 +14,7 @@ import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.Event;
 
 public class RunescribeCraftingEvent
-extends Event {
+extends Event implements net.neoforged.bus.api.ICancellableEvent {
     private ItemStack output;
     private Player crafter;
     private IRunescribeRecipe recipe;

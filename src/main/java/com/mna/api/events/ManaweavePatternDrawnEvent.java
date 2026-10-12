@@ -12,7 +12,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.neoforged.bus.api.Event;
 
 public class ManaweavePatternDrawnEvent
-extends Event {
+extends Event implements net.neoforged.bus.api.ICancellableEvent {
     private LivingEntity crafter;
     private IManaweavePattern pattern;
 

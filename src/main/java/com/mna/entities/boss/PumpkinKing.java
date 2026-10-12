@@ -224,7 +224,7 @@ implements IAnimPacketSync<PumpkinKing> {
                 Player playerentity;
                 this.maybeDisableShield(playerentity, (playerentity = (Player)entityIn).isUsingItem() ? playerentity.getUseItem() : ItemStack.EMPTY);
             }
-            this.doEnchantDamageEffects((LivingEntity)this, entityIn);
+            com.mna.tools.MATools.doEnchantDamageEffects(this, entityIn);
             this.setLastHurtMob(entityIn);
             if (this.random.nextFloat() < 0.4f && entityIn instanceof Mob) {
                 ((Mob)entityIn).setTarget((LivingEntity)this);

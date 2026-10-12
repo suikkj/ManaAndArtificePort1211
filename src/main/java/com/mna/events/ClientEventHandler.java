@@ -584,7 +584,7 @@ public class ClientEventHandler {
                     m.offsetFocusDistance(delta, maximum);
                     ClientMessageDispatcher.sendPlayerFocusDistanceChange(delta, maximum);
                 });
-                event.setResult(Result.DENY);
+                event.setCanceled(true);
             }
         }
     }

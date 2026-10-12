@@ -13,7 +13,7 @@ import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.Event;
 
 public class RuneforgeEnchantEvent
-extends Event {
+extends Event implements net.neoforged.bus.api.ICancellableEvent {
     private ItemStack output;
     private Player crafter;
 

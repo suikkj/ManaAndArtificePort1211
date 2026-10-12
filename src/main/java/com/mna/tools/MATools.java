@@ -28,4 +28,19 @@ public class MATools {
     public static boolean canChangeDimensions(net.minecraft.world.entity.Entity entity) {
         return entity.canChangeDimensions(entity.level(), entity.level());
     }
+
+    /** [PORT 1.21.1] doEnchantDamageEffects foi removido; efeitos de encantamento passam pelo pipeline de dano. */
+    public static void doEnchantDamageEffects(net.minecraft.world.entity.LivingEntity attacker, net.minecraft.world.entity.Entity target) {
+    }
+
+    /** [PORT 1.21.1] Tier.getLevel() removido (Tiers virou enum). Mapeia tier -> nivel vanilla. */
+    public static int getTierLevel(net.minecraft.world.item.Tier tier) {
+        if (tier == net.minecraft.world.item.Tiers.WOOD) return 1;
+        if (tier == net.minecraft.world.item.Tiers.GOLD) return 2;
+        if (tier == net.minecraft.world.item.Tiers.STONE) return 2;
+        if (tier == net.minecraft.world.item.Tiers.IRON) return 3;
+        if (tier == net.minecraft.world.item.Tiers.DIAMOND) return 4;
+        if (tier == net.minecraft.world.item.Tiers.NETHERITE) return 5;
+        return 0;
+    }
 }

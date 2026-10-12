@@ -216,7 +216,7 @@ extends BossMonster<PigDragon> {
         for (Entity entity : pEntities) {
             if (!(entity instanceof LivingEntity)) continue;
             entity.hurt(this.damageSources().mobAttack((LivingEntity)this), (float)this.getAttribute(Attributes.ATTACK_DAMAGE).getValue());
-            this.doEnchantDamageEffects((LivingEntity)this, entity);
+            com.mna.tools.MATools.doEnchantDamageEffects(this, entity);
         }
     }
 
@@ -231,7 +231,7 @@ extends BossMonster<PigDragon> {
             entity.push(d2 / d4 * 4.0, (double)0.2f, d3 / d4 * 4.0);
             if (((LivingEntity)entity).getLastHurtByMobTimestamp() >= entity.tickCount - 2) continue;
             entity.hurt(this.damageSources().mobAttack((LivingEntity)this), 5.0f);
-            this.doEnchantDamageEffects((LivingEntity)this, entity);
+            com.mna.tools.MATools.doEnchantDamageEffects(this, entity);
         }
     }
 

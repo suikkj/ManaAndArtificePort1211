@@ -25,16 +25,16 @@ public class LivingRenderEvents {
             return;
         }
         if (EntityUtil.shouldBeInvisible(event.getEntity())) {
-            event.setResult(Result.DENY);
+            event.setCanceled(true);
             event.setCanceled(true);
             return;
         }
         MNACap.get(event.getEntity(), MAPFXProvider.MAPFX).ifPresent(pfx -> {
             if (pfx.getFlag(event.getEntity(), MAPFX.Flag.TRUE_INVISIBILITY) && !ComponentTrueInvisibility.IsDisabledFor(event.getEntity())) {
-                event.setResult(Result.DENY);
+                event.setCanceled(true);
                 event.setCanceled(true);
             } else if (pfx.getFlag(event.getEntity(), MAPFX.Flag.CANCEL_RENDER)) {
-                event.setResult(Result.DENY);
+                event.setCanceled(true);
                 event.setCanceled(true);
             }
         });

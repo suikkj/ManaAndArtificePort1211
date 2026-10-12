@@ -92,7 +92,7 @@ extends ItemConstructPart {
         if (MNAtierSorting.isTierSorted((Tier)this.getMaterial().getEquivalentTier())) {
             return MNAtierSorting.isCorrectTierForDrops((Tier)this.getMaterial().getEquivalentTier(), (BlockState)p_150816_) && p_150816_.is(this.blocks);
         }
-        int i = this.getMaterial().getEquivalentTier().getLevel();
+        int i = com.mna.tools.MATools.getTierLevel(this.getMaterial().getEquivalentTier());
         if (i < 3 && p_150816_.is(BlockTags.NEEDS_DIAMOND_TOOL)) {
             return false;
         }

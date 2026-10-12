@@ -458,7 +458,7 @@ public static void onLivingDamage(LivingDamageEvent.Pre event) {
         living = event.getEntity();
         if (living instanceof ServerPlayer) {
             ServerPlayer player = (ServerPlayer)living;
-            if (!event.isCanceled()) {
+            if (event.getNewDamage() > 0) {
                 MobEffectInstance effect;
                 if (player.getHealth() <= player.getMaxHealth() * 0.25f) {
                     ContingencyCharm.CheckAndConsumeCharmCharge(player, ContingencyCharm.ContingencyEvent.LOW_HEALTH);

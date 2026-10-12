@@ -11,7 +11,7 @@ import net.minecraft.world.entity.player.Player;
 import net.neoforged.bus.api.Event;
 
 public class EnderfeatherCharmUsedEvent
-extends Event {
+extends Event implements net.neoforged.bus.api.ICancellableEvent {
     Player player;
 
     public EnderfeatherCharmUsedEvent(Player player) {

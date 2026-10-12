@@ -161,7 +161,7 @@ implements ISpellInteractibleEntity<Spellbreaker> {
                 Player playerentity = (Player)entityIn;
                 this.maybeDisableShield(playerentity, this.getMainHandItem(), playerentity.isUsingItem() ? playerentity.getUseItem() : ItemStack.EMPTY);
             }
-            this.doEnchantDamageEffects((LivingEntity)this, entityIn);
+            com.mna.tools.MATools.doEnchantDamageEffects(this, entityIn);
             this.setLastHurtMob(entityIn);
             if (this.random.nextFloat() < 0.4f && entityIn instanceof Mob) {
                 ((Mob)entityIn).setTarget((LivingEntity)this);

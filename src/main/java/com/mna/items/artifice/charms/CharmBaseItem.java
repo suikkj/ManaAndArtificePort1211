@@ -29,7 +29,7 @@ extends TieredItem {
         if (stack.getItem() != this) {
             return false;
         }
-        stack.hurtAndBreak(1, (net.minecraft.server.level.ServerLevel)player.level(), player, e -> e.broadcastBreakEvent(hand));
+        stack.hurtAndBreak(1, player, hand == net.minecraft.world.InteractionHand.MAIN_HAND ? net.minecraft.world.entity.EquipmentSlot.MAINHAND : net.minecraft.world.entity.EquipmentSlot.OFFHAND);
         return stack.isEmpty() || player.isCreative();
     }
 

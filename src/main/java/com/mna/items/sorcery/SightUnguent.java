@@ -56,7 +56,7 @@ implements IFactionSpecific {
         } else {
             player.addEffect(new MobEffectInstance(com.mna.api.tools.MAEffects.holder(EffectInit.WELLSPRING_SIGHT.get()), 12000, 0));
         }
-        player.getItemInHand(hand).hurtAndBreak(1, (net.minecraft.server.level.ServerLevel)player.level(), player, p -> p.broadcastBreakEvent(hand));
+        player.getItemInHand(hand).hurtAndBreak(1, player, hand == net.minecraft.world.InteractionHand.MAIN_HAND ? net.minecraft.world.entity.EquipmentSlot.MAINHAND : net.minecraft.world.entity.EquipmentSlot.OFFHAND);
     }
 
     public void appendHoverText(ItemStack stack, net.minecraft.world.item.Item.TooltipContext worldIn, List<Component> tooltip, TooltipFlag flagIn) {

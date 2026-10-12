@@ -252,7 +252,7 @@ implements ISpellInteractibleEntity<Barkling> {
                 ((LivingEntity)entityIn).knockback((double)(f1 * 0.5f), (double)Mth.sin((float)(this.getYRot() * ((float)Math.PI / 180))), (double)(-Mth.cos((float)(this.getYRot() * ((float)Math.PI / 180)))));
                 this.setDeltaMovement(this.getDeltaMovement().multiply(0.6, 1.0, 0.6));
             }
-            this.doEnchantDamageEffects((LivingEntity)this, entityIn);
+            com.mna.tools.MATools.doEnchantDamageEffects(this, entityIn);
             this.setLastHurtMob(entityIn);
             if (this.random.nextFloat() < 0.2f && entityIn instanceof Mob) {
                 ((Mob)entityIn).setTarget((LivingEntity)this);

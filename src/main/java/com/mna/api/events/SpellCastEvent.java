@@ -18,7 +18,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.Event;
 public class SpellCastEvent
-extends Event {
+extends Event implements net.neoforged.bus.api.ICancellableEvent {
     ISpellDefinition spell;
     SpellSource source;
     SpellContext context;

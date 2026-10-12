@@ -110,7 +110,7 @@ MNADyeableItem {
 
     @Override
     public void setLocation(ItemStack stack, BlockPos pos, Direction face, Level world) {
-        CompoundTag nbt = stack.getOrCreateTagElement("mark");
+        CompoundTag nbt = com.mna.api.tools.MNAItemData.getOrCreateTagElement(stack, "mark");
         nbt.putInt("x", pos.getX());
         nbt.putInt("y", pos.getY());
         nbt.putInt("z", pos.getZ());
@@ -124,7 +124,7 @@ MNADyeableItem {
 
     @Override
     public void setLocation(ItemStack stack, BlockPos pos, Direction face) {
-        CompoundTag nbt = stack.getOrCreateTagElement("mark");
+        CompoundTag nbt = com.mna.api.tools.MNAItemData.getOrCreateTagElement(stack, "mark");
         nbt.putInt("x", pos.getX());
         nbt.putInt("y", pos.getY());
         nbt.putInt("z", pos.getZ());
@@ -133,7 +133,7 @@ MNADyeableItem {
 
     @Override
     public void setLocation(ItemStack stack, DirectionalPoint point) {
-        CompoundTag nbt = stack.getOrCreateTagElement("mark");
+        CompoundTag nbt = com.mna.api.tools.MNAItemData.getOrCreateTagElement(stack, "mark");
         nbt.putInt("x", point.getPosition().getX());
         nbt.putInt("y", point.getPosition().getY());
         nbt.putInt("z", point.getPosition().getZ());
@@ -159,7 +159,7 @@ MNADyeableItem {
         if (!stack.has(net.minecraft.core.component.DataComponents.CUSTOM_DATA)) {
             return null;
         }
-        CompoundTag nbt = stack.getOrCreateTagElement("mark");
+        CompoundTag nbt = com.mna.api.tools.MNAItemData.getOrCreateTagElement(stack, "mark");
         if (nbt.contains("x") && nbt.contains("y") && nbt.contains("z")) {
             return new BlockPos(nbt.getInt("x"), nbt.getInt("y"), nbt.getInt("z"));
         }
@@ -171,7 +171,7 @@ MNADyeableItem {
         if (!stack.has(net.minecraft.core.component.DataComponents.CUSTOM_DATA)) {
             return Direction.DOWN;
         }
-        CompoundTag nbt = stack.getOrCreateTagElement("mark");
+        CompoundTag nbt = com.mna.api.tools.MNAItemData.getOrCreateTagElement(stack, "mark");
         if (nbt.contains("face")) {
             return Direction.from3DDataValue((int)nbt.getInt("face"));
         }
@@ -184,7 +184,7 @@ MNADyeableItem {
         if (!stack.has(net.minecraft.core.component.DataComponents.CUSTOM_DATA)) {
             return null;
         }
-        CompoundTag nbt = stack.getOrCreateTagElement("mark");
+        CompoundTag nbt = com.mna.api.tools.MNAItemData.getOrCreateTagElement(stack, "mark");
         return nbt.contains("block") ? nbt.getString("block") : null;
     }
 
@@ -193,7 +193,7 @@ MNADyeableItem {
         if (!stack.has(net.minecraft.core.component.DataComponents.CUSTOM_DATA)) {
             return null;
         }
-        CompoundTag nbt = stack.getOrCreateTagElement("mark");
+        CompoundTag nbt = com.mna.api.tools.MNAItemData.getOrCreateTagElement(stack, "mark");
         return nbt.contains("block_id") ? ResourceLocation.parse(nbt.getString("block_id")) : null;
     }
 
@@ -204,7 +204,7 @@ MNADyeableItem {
         if (!stack.has(net.minecraft.core.component.DataComponents.CUSTOM_DATA)) {
             return null;
         }
-        CompoundTag nbt = stack.getOrCreateTagElement("mark");
+        CompoundTag nbt = com.mna.api.tools.MNAItemData.getOrCreateTagElement(stack, "mark");
         if (nbt.contains("block") && (blockID = nbt.getString("block")) != null) {
             return Component.translatable((String)blockID);
         }
@@ -216,8 +216,8 @@ MNADyeableItem {
         if (!(source.getItem() instanceof IPositionalItem) || !(destination.getItem() instanceof IPositionalItem)) {
             return;
         }
-        CompoundTag srcNbt = source.getOrCreateTagElement("mark");
-        CompoundTag destNbt = destination.getOrCreateTagElement("mark");
+        CompoundTag srcNbt = com.mna.api.tools.MNAItemData.getOrCreateTagElement(source, "mark");
+        CompoundTag destNbt = com.mna.api.tools.MNAItemData.getOrCreateTagElement(destination, "mark");
         destNbt.putInt("x", srcNbt.getInt("x"));
         destNbt.putInt("y", srcNbt.getInt("y"));
         destNbt.putInt("z", srcNbt.getInt("z"));
