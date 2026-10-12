@@ -14,7 +14,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import net.neoforged.neoforge.event.entity.player.AdvancementEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
-import net.neoforged.neoforge.event.entity.player.PlayerSleepInBedEvent;
+import net.neoforged.neoforge.event.entity.player.CanPlayerSleepEvent;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
@@ -23,7 +23,7 @@ import com.mna.api.tools.MNACap;
 @EventBusSubscriber(modid="mna", bus=EventBusSubscriber.Bus.GAME)
 public class ProgressionEventHandler {
     @SubscribeEvent
-    public static void onPlayerSleep(PlayerSleepInBedEvent event) {
+    public static void onPlayerSleep(CanPlayerSleepEvent event) {
         IPlayerProgression progression = MNACap.get((IPlayerProgression)event.getEntity(), PlayerProgressionProvider.PROGRESSION).orElse(null);
         if (progression != null && progression.getTier() == 1 && progression.getTierProgress(event.getEntity().level()) >= 1.0f) {
             progression.setTier(progression.getTier() + 1, event.getEntity());
@@ -73,7 +73,7 @@ public class ProgressionEventHandler {
         PlayerAdvancements advancements = ((ServerLevel)player.level()).getServer().getPlayerList().getPlayerAdvancements((ServerPlayer)player);
         ServerAdvancementManager advancementMgr = ((ServerLevel)player.level()).getServer().getAdvancements();
         for (ProgressionCondition condition : conditions) {
-            for (Advancement adv : advancementMgr.getAllAdvancements()) {
+            for (net.minecraft.advancements.AdvancementHolder adv : advancementMgr.getAllAdvancements()) {
                 if (!advancements.getOrStartProgress(adv).isDone() || !condition.getAdvancementID().equals(adv.id())) continue;
                 progression.addTierProgressionComplete(condition.getId());
             }

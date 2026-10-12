@@ -88,11 +88,11 @@ extends ConstructEntityAreaTask<Animal, ConstructBreed> {
                 ((List)locatedEntities.get(e.getType())).add(e);
             }
         });
-        Optional<List> target = locatedEntities.entrySet().stream().filter(e -> ((List)e.getValue()).size() >= 2).filter(e -> !this.getHeldBreedItem((Animal)((List)e.getValue()).get(0)).isEmpty()).map(e -> (List)e.getValue()).findAny();
+        Optional target = locatedEntities.entrySet().stream().filter(e -> ((List)e.getValue()).size() >= 2).filter(e -> !this.getHeldBreedItem((Animal)((List)e.getValue()).get(0)).isEmpty()).map(e -> (List)e.getValue()).findAny();
         if (!target.isPresent()) {
             return null;
         }
-        List potentials = target.get();
+        List<Animal> potentials = (List<Animal>)target.get();
         this.foundOneAnimalInLove = potentials.stream().anyMatch(e -> e.isInLove());
         if ((potentials = potentials.stream().filter(e -> !e.isInLove()).collect(Collectors.toList())).size() < (this.foundOneAnimalInLove ? 1 : 2)) {
             return null;

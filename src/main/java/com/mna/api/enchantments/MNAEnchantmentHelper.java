@@ -86,4 +86,9 @@ public final class MNAEnchantmentHelper {
     public static boolean hasChanneling(ItemStack stack) {
         return false;
     }
+
+    /** [PORT 1.21.1] overload para DeferredHolder/Holder (ex.: EnchantmentInit.X). */
+    public static int getItemEnchantmentLevel(net.minecraft.core.Holder<Enchantment> holder, ItemStack stack) {
+        return getItemEnchantmentLevel(MNAEnchantmentRegistry.keyOf(holder.value()), stack);
+    }
 }

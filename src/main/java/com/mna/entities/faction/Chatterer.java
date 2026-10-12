@@ -97,7 +97,7 @@ implements AnimationController.SoundKeyframeHandler<Chatterer> {
                 }
             }
         });
-        for (Player p2 : players) {
+        for (Player p2 : (java.util.List<Player>)players) {
             EntityHitResult hitResult = SpellTargetHelper.rayTraceEntities(this.level(), (Entity)p2, p2.getEyePosition(), p2.getEyePosition().add(p2.getForward().scale(10.0)), p2.getBoundingBox().inflate(10.0), e -> e == this);
             if (!p2.hasEffect(MobEffects.GLOWING) && (hitResult == null || hitResult.getType() != HitResult.Type.ENTITY)) continue;
             this.setAction(Action.PARALYZED);
@@ -275,7 +275,7 @@ implements AnimationController.SoundKeyframeHandler<Chatterer> {
                 int tier = Chatterer.this.getTier();
                 int numSkeletons = 0;
                 int numZombies = 0;
-                ArrayList spawns = new ArrayList();
+                ArrayList<net.minecraft.world.entity.Mob> spawns = new ArrayList<net.minecraft.world.entity.Mob>();
                 spawns.add(new SkeletonAssassin(Chatterer.this.level()));
                 if (tier == 0) {
                     numZombies = 1 + (int)(Math.random() * 2.0);

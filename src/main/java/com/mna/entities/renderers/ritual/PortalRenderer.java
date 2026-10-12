@@ -77,12 +77,12 @@ extends EntityRenderer<Portal> {
         DyeColor dc = entityIn.getDyeColor();
         if (dc != null) {
             int[] nArray = new int[3];
-            nArray[0] = (int)(dc.getTextureDiffuseColors()[0] * 255.0f);
-            nArray[1] = (int)(dc.getTextureDiffuseColors()[1] * 255.0f);
-            v1 = nArray;
-            nArray[2] = (int)(dc.getTextureDiffuseColors()[2] * 255.0f);
+            nArray[0] = (dc.getTextureDiffuseColor() >> 16) & 0xFF;
+            nArray[1] = (dc.getTextureDiffuseColor() >> 8) & 0xFF;
+            portalDye = nArray;
+            nArray[2] = dc.getTextureDiffuseColor() & 0xFF;
         } else {
-            v1 = portalDye = null;
+            portalDye = null;
         }
         if (entityIn.isRTP()) {
             this.renderDefaultPortal(entityIn, matrixStackIn, bufferIn, packedLightIn, partialTicks, new int[]{255, 255, 255});

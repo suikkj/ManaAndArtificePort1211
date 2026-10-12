@@ -66,7 +66,7 @@ extends ItemConstructPart {
 
     public boolean mineBlock(ItemStack stack, Level world, BlockState state, BlockPos pos, LivingEntity living) {
         if (state.getDestroySpeed((BlockGetter)world, pos) != 0.0f) {
-            stack.hurtAndBreak(2, (net.minecraft.server.level.ServerLevel)living.level(), living, p_43276_ -> p_43276_.broadcastBreakEvent(EquipmentSlot.MAINHAND));
+            stack.hurtAndBreak(2, (net.minecraft.server.level.ServerLevel)living.level(), living, brokenItem -> living.onEquippedItemBroken(brokenItem, EquipmentSlot.MAINHAND));
         }
         return true;
     }

@@ -305,7 +305,7 @@ public class HUDOverlayRenderer {
         MutableFloat lowestPct = new MutableFloat(1.0f);
         this.mc.player.getInventory().armor.stream().forEach(is -> lowestPct.setValue(Math.min(lowestPct.getValue().floatValue(), this.getChargePct((ItemStack)is))));
         this.mc.player.getInventory().items.stream().forEach(is -> lowestPct.setValue(Math.min(lowestPct.getValue().floatValue(), this.getChargePct((ItemStack)is))));
-        java.util.Optional<Object> lazyCurios = CuriosApi.getCuriosHelper().getEquippedCurios((LivingEntity)this.mc.player);
+        var lazyCurios = CuriosApi.getCuriosHelper().getEquippedCurios((LivingEntity)this.mc.player);
         if (lazyCurios.isPresent()) {
             IItemHandlerModifiable curios = (IItemHandlerModifiable)lazyCurios.get();
             for (int i = 0; i < curios.getSlots(); ++i) {
@@ -358,7 +358,8 @@ public class HUDOverlayRenderer {
             int amt = 9 + 6;
             y = above ? (y -= amt) : (y += amt);
         }
-        for (Map.Entry aff : affs) {
+        for (Object __e : affs) {
+            Map.Entry aff = (Map.Entry)__e;
             ItemStack affStack = GuiTextures.affinityIcons.get(aff.getKey());
             if (affStack.isEmpty()) continue;
             pGuiGraphics.renderItem(affStack, x, y);
@@ -404,7 +405,7 @@ public class HUDOverlayRenderer {
         Optional<ICantrip> cantrip = CantripRegistry.INSTANCE.getCantrip(ResourceLocation.parse(this.castingCantrip));
         if (cantrip == null || !cantrip.isPresent()) {
         }
-        RenderSystem.setShader(GameRenderer::getPositionColorTexShader);
+        RenderSystem.setShader(GameRenderer::getPositionTexColorShader);
         int x = screenWidth / 2 - GuiTextures.Cantrip_Icon_Size.x / 2;
         int y = screenHeight / 2 - GuiTextures.Cantrip_Icon_Size.y;
         float alphaF = MathUtils.clamp01(this.cantripAlpha);
@@ -423,7 +424,7 @@ public class HUDOverlayRenderer {
     }
 
     private void renderTimer(GuiGraphics pGuiGraphics, float pct, int alpha, int x, int y, int width, int r, int g, int b) {
-        pGuiGraphics.fill(x, y, (int)((float)x + (float)width * pct), y + 3, FastColor.ARGB32.setColor((int)255, (int)r, (int)g, (int)b));
+        pGuiGraphics.fill(x, y, (int)((float)x + (float)width * pct), y + 3, FastColor.ARGB32.color((int)255, (int)r, (int)g, (int)b));
     }
 
     protected boolean renderColdDarkFade(int width, int height, GuiGraphics pGuiGraphics) {

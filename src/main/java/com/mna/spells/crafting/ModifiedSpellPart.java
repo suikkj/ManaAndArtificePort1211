@@ -170,7 +170,7 @@ implements IModifiedSpellPart<T> {
         for (int i = 0; i < this.attributeValues.size(); ++i) {
             attrs[i] = ((AttributeValuePair)this.attributeValues.get(i)).getAttribute();
         }
-        return ImmutableList.copyOf((Object[])attrs);
+        return ImmutableList.copyOf(attrs);
     }
 
     public CompoundTag toNBT() {
@@ -212,8 +212,8 @@ implements IModifiedSpellPart<T> {
         if (!registry.containsKey(rLoc)) {
             return null;
         }
-        IModifiable inst = (IModifiable)registry.getValue(rLoc);
-        ModifiedSpellPart<IModifiable> msp = new ModifiedSpellPart<IModifiable>(inst);
+        T inst = registry.getValue(rLoc);
+        ModifiedSpellPart<T> msp = new ModifiedSpellPart<T>(inst);
         if (!nbt.contains("num_attributes")) {
             return msp;
         }

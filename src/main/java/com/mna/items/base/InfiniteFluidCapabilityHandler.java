@@ -7,7 +7,6 @@ import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.material.Fluid;
 import net.neoforged.neoforge.capabilities.Capability;
-import net.neoforged.neoforge.capabilities.ICapabilityProvider;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 import net.neoforged.neoforge.fluids.capability.IFluidHandlerItem;
@@ -18,7 +17,6 @@ ICapabilityProvider {
     private final Fluid contained;
     private final int CAPACITY = 8000;
     public static final String FLUID_NBT_KEY = "Fluid";
-    IFluidHandlerItem holder = () -> this;
     @Nonnull
     protected ItemStack container;
 
@@ -86,7 +84,7 @@ ICapabilityProvider {
     }
 
     protected void setContainerToEmpty() {
-        this.container.removeTagKey(FLUID_NBT_KEY);
+        com.mna.api.tools.MNAItemData.remove(this.container, FLUID_NBT_KEY);
     }
 
 }

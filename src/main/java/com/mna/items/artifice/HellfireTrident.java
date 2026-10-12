@@ -155,13 +155,13 @@ implements IFactionSpecific {
     }
 
     public boolean hurtEnemy(ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker) {
-        pStack.hurtAndBreak(1, (net.minecraft.server.level.ServerLevel)pAttacker.level(), pAttacker, p_43414_ -> p_43414_.broadcastBreakEvent(EquipmentSlot.MAINHAND));
+        pStack.hurtAndBreak(1, (net.minecraft.server.level.ServerLevel)pAttacker.level(), pAttacker, brokenItem -> pAttacker.onEquippedItemBroken(brokenItem, EquipmentSlot.MAINHAND));
         return true;
     }
 
     public boolean mineBlock(ItemStack pStack, Level pLevel, BlockState pState, BlockPos pPos, LivingEntity pEntityLiving) {
         if ((double)pState.getDestroySpeed((BlockGetter)pLevel, pPos) != 0.0) {
-            pStack.hurtAndBreak(2, (net.minecraft.server.level.ServerLevel)pEntityLiving.level(), pEntityLiving, p_43385_ -> p_43385_.broadcastBreakEvent(EquipmentSlot.MAINHAND));
+            pStack.hurtAndBreak(2, (net.minecraft.server.level.ServerLevel)pEntityLiving.level(), pEntityLiving, brokenItem -> pEntityLiving.onEquippedItemBroken(brokenItem, EquipmentSlot.MAINHAND));
         }
         return true;
     }

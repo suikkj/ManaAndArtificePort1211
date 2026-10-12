@@ -362,7 +362,7 @@ public class BlockUtils {
     }
 
     public static Tier tierFromHarvestLevel(int harvestLevel) {
-        ArrayList<? extends String> configuredTiers = new ArrayList<String>(GeneralConfigValues.BreakMagnitudeMapping);
+        ArrayList<String> configuredTiers = new ArrayList<String>(GeneralConfigValues.BreakMagnitudeMapping);
         if (configuredTiers.size() == 0) {
             configuredTiers.add("minecraft:stone");
         }
@@ -379,7 +379,7 @@ public class BlockUtils {
         catch (Throwable t) {
             rLoc = ResourceLocation.parse("minecraft:stone");
         }
-        Tier resolved = TierSortingRegistry.byName((ResourceLocation)rLoc);
+        Tier resolved = (Tier)com.mna.api.tools.MNAtierSorting.getSortedTiers().get(Math.min(harvestLevel, com.mna.api.tools.MNAtierSorting.getSortedTiers().size() - 1));
         if (resolved == null) {
             resolved = (Tier)MNAtierSorting.getSortedTiers().get(0);
         }

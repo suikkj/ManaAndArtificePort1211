@@ -18,14 +18,14 @@ import top.theillusivec4.curios.api.CuriosApi;
 public class InventorySoulboundDrop {
     @Inject(at={@At(value="HEAD")}, method={"dropAll"}, cancellable=false)
     public void saveSoulboundItems(CallbackInfo callbackInfo) {
-        Inventory self = (Inventory)this;
+        Inventory self = (Inventory)(Object)this;
         CompoundTag inventory = new CompoundTag();
         CompoundTag curios = new CompoundTag();
         for (int i = 0; i < self.getContainerSize(); ++i) {
             ItemStack stackInSlot = self.getItem(i);
             if (stackInSlot.isEmpty() || com.mna.api.enchantments.MNAEnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.SOULBOUND, stackInSlot) <= 0) continue;
             CompoundTag item = new CompoundTag();
-            stackInSlot.save(item);
+            com.mna.api.tools.MNAItemData.save(stackInSlot, item);
             inventory.put("slot_" + i, (Tag)item);
             self.setItem(i, ItemStack.EMPTY);
         }
@@ -35,7 +35,7 @@ public class InventorySoulboundDrop {
                 ItemStack stackInSlot = stackHandler.getStacks().getStackInSlot(i);
                 if (stackInSlot.isEmpty() || com.mna.api.enchantments.MNAEnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.SOULBOUND, stackInSlot) <= 0) continue;
                 CompoundTag item = new CompoundTag();
-                stackInSlot.save(item);
+                com.mna.api.tools.MNAItemData.save(stackInSlot, item);
                 tagForIdentifier.put("slot_" + i, (Tag)item);
                 stackHandler.getStacks().setStackInSlot(i, ItemStack.EMPTY);
             }

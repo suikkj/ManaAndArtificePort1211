@@ -16,16 +16,16 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePrope
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemKilledByPlayerCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
-import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceWithLootingCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceWithEnchantedBonusCondition;
 
 public class LootConditionHelper {
     public static void applyCondition(LootItemCondition condition, LootDrop lootDrop) {
         if (condition instanceof LootItemKilledByPlayerCondition) {
             lootDrop.addConditional(Conditional.playerKill);
         } else if (condition instanceof LootItemRandomChanceCondition) {
-            lootDrop.chance = ((LootItemRandomChanceCondition)condition).probability;
-        } else if (condition instanceof LootItemRandomChanceWithLootingCondition) {
-            lootDrop.chance = ((LootItemRandomChanceWithLootingCondition)condition).percent;
+            lootDrop.chance = 1.0f; // [PORT 1.21.1] probability virou NumberProvider (exige LootContext)
+        } else if (condition instanceof LootItemRandomChanceWithEnchantedBonusCondition) {
+            lootDrop.chance = ((LootItemRandomChanceWithEnchantedBonusCondition)condition).unenchantedChance();
             lootDrop.addConditional(Conditional.affectedByLooting);
         } else if (condition instanceof LootItemBlockStatePropertyCondition) {
             // empty if block

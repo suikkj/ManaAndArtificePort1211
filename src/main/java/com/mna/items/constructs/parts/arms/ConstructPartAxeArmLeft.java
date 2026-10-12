@@ -83,7 +83,7 @@ extends ItemConstructPart {
         Optional<BlockState> optional1 = Optional.ofNullable(blockstate.getToolModifiedState(ctx, ItemAbilities.AXE_SCRAPE, false));
         Optional<BlockState> optional2 = Optional.ofNullable(blockstate.getToolModifiedState(ctx, ItemAbilities.AXE_WAX_OFF, false));
         ItemStack itemstack = ctx.getItemInHand();
-        Optional<Object> optional3 = Optional.empty();
+        Optional<BlockState> optional3 = Optional.empty();
         if (optional.isPresent()) {
             level.playSound(player, blockpos, SoundEvents.AXE_STRIP, SoundSource.BLOCKS, 1.0f, 1.0f);
             optional3 = optional;
@@ -102,7 +102,7 @@ extends ItemConstructPart {
             }
             level.setBlock(blockpos, (BlockState)optional3.get(), 11);
             if (player != null) {
-                itemstack.hurtAndBreak(1, (net.minecraft.server.level.ServerLevel)player.level(), player, p_150686_ -> p_150686_.broadcastBreakEvent(ctx.getHand()));
+                itemstack.hurtAndBreak(1, (net.minecraft.server.level.ServerLevel)player.level(), player, brokenItem -> player.onEquippedItemBroken(brokenItem, ctx.getHand()));
             }
             return InteractionResult.sidedSuccess((boolean)level.isClientSide());
         }

@@ -344,7 +344,7 @@ IFactionSpecific {
                     valid.setFalse();
                     return;
                 }
-                modified_attrs.addAll(c.getContainedAttributes().stream().filter(a -> this.shape.getValueWithoutMultipliers((Attribute)(((a)))) != this.shape.getDefaultValue((Attribute)(((a))))).collect(Collectors.toList()));
+                modified_attrs.addAll((java.util.Collection)c.getContainedAttributes().stream().filter(a -> this.shape.getValueWithoutMultipliers((Attribute)(((a)))) != this.shape.getDefaultValue((Attribute)(((a))))).collect(Collectors.toList()));
             }));
             modified_attrs.forEach(a -> {
                 boolean modifier_attr_rote = false;
@@ -812,7 +812,7 @@ IFactionSpecific {
     }
 
     public static boolean isReagentContainer(ItemStack recipeStack) {
-        CompoundTag nbt = recipeStack.getTag();
+        CompoundTag nbt = com.mna.api.tools.MNAItemData.tag(recipeStack);
         return nbt != null && nbt.contains("ritual_reagent_data");
     }
 

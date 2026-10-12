@@ -237,7 +237,7 @@ CrossbowAttackMob {
     }
 
     protected AbstractArrow getArrow(ItemStack pArrowStack, float pDistanceFactor) {
-        return ProjectileUtil.getMobArrow((LivingEntity)this, (ItemStack)pArrowStack, (float)pDistanceFactor);
+        return ProjectileUtil.getMobArrow((LivingEntity)this, (ItemStack)pArrowStack, (float)pDistanceFactor, this.getMainHandItem());
     }
 
     public void consumeMana(ISpellDefinition spell) {
@@ -246,7 +246,7 @@ CrossbowAttackMob {
         }
         this.mana -= spell.getManaCost();
         if (this.mana <= 0.0f) {
-            this.dropAllDeathLoot(this.damageSources().fellOutOfWorld());
+            this.dropAllDeathLoot((net.minecraft.server.level.ServerLevel)this.level(), this.damageSources().fellOutOfWorld());
             this.remove(Entity.RemovalReason.KILLED);
         }
     }

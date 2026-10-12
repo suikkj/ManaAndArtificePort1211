@@ -1,6 +1,7 @@
  
 package com.mna.api.particles.parameters;
 
+import com.mna.ManaAndArtifice;
 import javax.annotation.Nullable;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
@@ -42,7 +43,7 @@ public class ParticleItemStack {
     public static ParticleItemStack deserialize(FriendlyByteBuf packetBuffer) {
         try {
             if (packetBuffer.readBoolean()) {
-                return new ParticleItemStack(ItemStack.parseOptional(ManaAndArtifice.instance.proxy.getClientWorld() == null ? net.minecraft.server.MinecraftServer.getServer().registryAccess() : ManaAndArtifice.instance.proxy.getClientWorld().registryAccess(), packetBuffer.readNbt()));
+                return new ParticleItemStack(ItemStack.parseOptional(ManaAndArtifice.instance.proxy.getClientWorld() == null ? net.neoforged.neoforge.server.ServerLifecycleHooks.getCurrentServer() != null ? net.neoforged.neoforge.server.ServerLifecycleHooks.getCurrentServer().registryAccess() : net.minecraft.core.RegistryAccess.EMPTY : ManaAndArtifice.instance.proxy.getClientWorld().registryAccess(), packetBuffer.readNbt()));
             }
         }
         catch (Exception ex) {
@@ -54,7 +55,7 @@ public class ParticleItemStack {
     public static void serialize(@Nullable ParticleItemStack inst, FriendlyByteBuf packetBuffer) {
         if (inst != null && !inst.value.isEmpty()) {
             packetBuffer.writeBoolean(true);
-            packetBuffer.writeNbt(inst.value().serializeNBT());
+            packetBuffer.writeNbt((net.minecraft.nbt.Tag)inst.value().save(com.mna.api.tools.MNAItemData.provider()));
         } else {
             packetBuffer.writeBoolean(false);
         }
