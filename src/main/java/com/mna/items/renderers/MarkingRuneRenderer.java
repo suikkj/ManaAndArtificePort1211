@@ -50,7 +50,7 @@ extends BlockEntityWithoutLevelRenderer {
         Block block;
         Item item;
         if (this.resolvedModel == null) {
-            this.resolvedModel = Minecraft.getInstance().getModelManager().getModel(markingRuneItemModel);
+            this.resolvedModel = Minecraft.getInstance().getModelManager().getModel(net.minecraft.client.resources.model.ModelResourceLocation.standalone(markingRuneItemModel));
         }
         pPoseStack.translate(0.5f, 0.5f, 0.5f);
         Minecraft.getInstance().getItemRenderer().render(pStack, pDisplayContext, false, pPoseStack, pBuffer, pPackedLight, pPackedOverlay, this.resolvedModel);

@@ -39,7 +39,7 @@ implements IConstructModelRegistrationHelper {
     public static void onRegisterSpecialModels(ModelEvent.RegisterAdditional event) {
         ConstructMaterial.ALL_MATERIALS.forEach(mat -> {
             if (material_model.containsKey(mat)) {
-                material_model.get(mat).getModelIdentifiers().forEach(rLoc -> event.register(rLoc));
+                material_model.get(mat).getModelIdentifiers().forEach(rLoc -> event.register(net.minecraft.client.resources.model.ModelResourceLocation.standalone(rLoc)));
             }
         });
     }

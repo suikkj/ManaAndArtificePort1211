@@ -118,15 +118,15 @@ extends BlockEntityWithoutLevelRenderer {
             return this.getDefaultSpellModel(false);
         }
         if (!bakedSpellModels.containsKey(customIconIndex)) {
-            bakedSpellModels.put(customIconIndex, Minecraft.getInstance().getModelManager().getModel(SpellIconList.ALL[customIconIndex]));
+            bakedSpellModels.put(customIconIndex, Minecraft.getInstance().getModelManager().getModel(net.minecraft.client.resources.model.ModelResourceLocation.standalone(SpellIconList.ALL[customIconIndex])));
         }
         return (customModel = bakedSpellModels.get(customIconIndex)) != null ? customModel : this.getDefaultSpellModel(false);
     }
 
     private BakedModel getDefaultSpellModel(boolean bangle) {
         if (this.defaultSpellModel == null) {
-            this.defaultSpellModel = Minecraft.getInstance().getModelManager().getModel(location_spell);
-            this.defaultBangleModel = Minecraft.getInstance().getModelManager().getModel(location_bangle);
+            this.defaultSpellModel = Minecraft.getInstance().getModelManager().getModel(net.minecraft.client.resources.model.ModelResourceLocation.standalone(location_spell));
+            this.defaultBangleModel = Minecraft.getInstance().getModelManager().getModel(net.minecraft.client.resources.model.ModelResourceLocation.standalone(location_bangle));
         }
         return bangle ? this.defaultBangleModel : this.defaultSpellModel;
     }

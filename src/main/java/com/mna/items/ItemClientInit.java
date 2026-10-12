@@ -75,7 +75,7 @@ public class ItemClientInit {
         event.register(ModelResourceLocation.standalone(CrystallizedWindRenderer.gem_model));
         event.register(ModelResourceLocation.standalone(CrystallizedWindRenderer.wisps_model));
         for (ResourceLocation spell : SpellIconList.ALL) {
-            event.register(spell);
+            event.register(net.minecraft.client.resources.model.ModelResourceLocation.standalone(spell));
         }
     }
 

@@ -75,7 +75,7 @@ extends BlockEntityWithoutLevelRenderer {
         if (itemDisplayContext == ItemDisplayContext.FIXED || itemDisplayContext == ItemDisplayContext.GROUND || itemDisplayContext == ItemDisplayContext.GUI || itemDisplayContext == ItemDisplayContext.NONE) {
             if (this.bookClosed == null) {
                 this.bookClosed = new ArrayList();
-                this.book_closed.forEach(m -> this.bookClosed.add(Minecraft.getInstance().getModelManager().getModel(m)));
+                this.book_closed.forEach(m -> this.bookClosed.add(Minecraft.getInstance().getModelManager().getModel(net.minecraft.client.resources.model.ModelResourceLocation.standalone(m))));
             }
             model_layers = this.bookClosed;
             if (itemDisplayContext == ItemDisplayContext.FIXED) {
@@ -93,7 +93,7 @@ extends BlockEntityWithoutLevelRenderer {
         } else {
             if (this.bookOpen == null) {
                 this.bookOpen = new ArrayList();
-                this.book_open.forEach(m -> this.bookOpen.add(Minecraft.getInstance().getModelManager().getModel(m)));
+                this.book_open.forEach(m -> this.bookOpen.add(Minecraft.getInstance().getModelManager().getModel(net.minecraft.client.resources.model.ModelResourceLocation.standalone(m))));
             }
             model_layers = this.bookOpen;
             matrixStack.mulPose(Axis.YP.rotationDegrees(-90.0f));

@@ -204,10 +204,10 @@ public class EntityClientInit {
         event.register(ModelResourceLocation.standalone(PortalRenderer.model_demon_portal));
         event.register(ModelResourceLocation.standalone(PortalRenderer.model_demon_portal_ring));
         for (ResourceLocation rLoc : PortalRenderer.model_demon_portal_runes) {
-            event.register(rLoc);
+            event.register(net.minecraft.client.resources.model.ModelResourceLocation.standalone(rLoc));
         }
         for (ResourceLocation rLoc : PortalRenderer.model_demon_portal_stones) {
-            event.register(rLoc);
+            event.register(net.minecraft.client.resources.model.ModelResourceLocation.standalone(rLoc));
         }
     }
 }

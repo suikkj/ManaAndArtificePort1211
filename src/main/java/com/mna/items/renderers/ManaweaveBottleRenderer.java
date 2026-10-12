@@ -48,7 +48,7 @@ extends BlockEntityWithoutLevelRenderer {
     public void renderByItem(ItemStack stack, ItemDisplayContext itemDisplayContext, PoseStack matrixStack, MultiBufferSource buffer, int combinedLight, int combinedOverlay) {
         ManaweavingPattern p;
         if (this.bottleModel == null) {
-            this.bottleModel = Minecraft.getInstance().getModelManager().getModel(this.bottle_texture_location);
+            this.bottleModel = Minecraft.getInstance().getModelManager().getModel(net.minecraft.client.resources.model.ModelResourceLocation.standalone(this.bottle_texture_location));
         }
         matrixStack.popPose();
         matrixStack.pushPose();

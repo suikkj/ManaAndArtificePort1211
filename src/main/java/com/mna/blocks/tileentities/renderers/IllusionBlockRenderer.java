@@ -40,7 +40,7 @@ implements BlockEntityRenderer<IllusionBlockTile> {
             Minecraft mc = Minecraft.getInstance();
             BlockRenderDispatcher brd = mc.getBlockRenderer();
             BlockState state = tile.getBlockState();
-            BakedModel ibakedmodel = Minecraft.getInstance().getModelManager().getModel(this.baseModel);
+            BakedModel ibakedmodel = Minecraft.getInstance().getModelManager().getModel(net.minecraft.client.resources.model.ModelResourceLocation.standalone(this.baseModel));
             int i = -1;
             float f = (float)(i >> 16 & 0xFF) / 255.0f;
             float f1 = (float)(i >> 8 & 0xFF) / 255.0f;

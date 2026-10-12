@@ -41,7 +41,7 @@ public class ModelUtils {
 
     public static void renderModel(MultiBufferSource buffer, Level world, BlockPos pos, BlockState state, ResourceLocation modelLoc, PoseStack stack, int combinedLight, int combinedOverlay) {
         VertexConsumer vertexBuilder = buffer.getBuffer(ItemBlockRenderTypes.getRenderType((BlockState)state, (boolean)false));
-        BakedModel model = Minecraft.getInstance().getModelManager().getModel(modelLoc);
+        BakedModel model = Minecraft.getInstance().getModelManager().getModel(net.minecraft.client.resources.model.ModelResourceLocation.standalone(modelLoc));
         ModelData worldModelData = world.getModelDataManager().getAt(pos);
         ModelData data = model.getModelData((BlockAndTintGetter)world, pos, state, worldModelData == null ? ModelData.EMPTY : worldModelData);
         for (BakedQuad quad : model.getQuads(state, null, rnd, data, null)) {
@@ -51,7 +51,7 @@ public class ModelUtils {
 
     public static void renderModel(MultiBufferSource buffer, Level world, BlockPos pos, BlockState state, ResourceLocation modelLoc, PoseStack stack, int combinedLight, int combinedOverlay, RenderType renderType) {
         VertexConsumer vertexBuilder = buffer.getBuffer(renderType);
-        BakedModel model = Minecraft.getInstance().getModelManager().getModel(modelLoc);
+        BakedModel model = Minecraft.getInstance().getModelManager().getModel(net.minecraft.client.resources.model.ModelResourceLocation.standalone(modelLoc));
         ModelData worldModelData = world.getModelDataManager().getAt(pos);
         ModelData data = model.getModelData((BlockAndTintGetter)world, pos, state, worldModelData == null ? ModelData.EMPTY : worldModelData);
         for (BakedQuad quad : model.getQuads(state, null, rnd, data, null)) {
@@ -61,7 +61,7 @@ public class ModelUtils {
 
     public static void renderModel(MultiBufferSource buffer, Level world, BlockPos pos, BlockState state, ResourceLocation modelLoc, PoseStack stack, int combinedLight, int combinedOverlay, float[] rgba) {
         VertexConsumer vertexBuilder = buffer.getBuffer(ItemBlockRenderTypes.getRenderType((BlockState)state, (boolean)false));
-        BakedModel model = Minecraft.getInstance().getModelManager().getModel(modelLoc);
+        BakedModel model = Minecraft.getInstance().getModelManager().getModel(net.minecraft.client.resources.model.ModelResourceLocation.standalone(modelLoc));
         ModelData worldModelData = world.getModelDataManager().getAt(pos);
         ModelData data = model.getModelData((BlockAndTintGetter)world, pos, state, worldModelData == null ? ModelData.EMPTY : worldModelData);
         for (BakedQuad quad : model.getQuads(state, null, rnd, data, null)) {
@@ -70,7 +70,7 @@ public class ModelUtils {
     }
 
     public static void renderEntityModel(VertexConsumer vertexBuilder, Level world, ResourceLocation modelLoc, PoseStack stack, int combinedLight, int combinedOverlay) {
-        BakedModel model = Minecraft.getInstance().getModelManager().getModel(modelLoc);
+        BakedModel model = Minecraft.getInstance().getModelManager().getModel(net.minecraft.client.resources.model.ModelResourceLocation.standalone(modelLoc));
         ModelData data = ModelData.EMPTY;
         for (BakedQuad quad : model.getQuads(null, null, rnd, data, null)) {
             vertexBuilder.putBulkData(stack.last(), quad, 1.0f, 1.0f, 1.0f, 1.0f, combinedLight, combinedOverlay, true);
@@ -78,7 +78,7 @@ public class ModelUtils {
     }
 
     public static void renderEntityModel(VertexConsumer vertexBuilder, Level world, ResourceLocation modelLoc, PoseStack stack, int combinedLight, int combinedOverlay, float[] rgb, float a) {
-        BakedModel model = Minecraft.getInstance().getModelManager().getModel(modelLoc);
+        BakedModel model = Minecraft.getInstance().getModelManager().getModel(net.minecraft.client.resources.model.ModelResourceLocation.standalone(modelLoc));
         ModelData data = ModelData.EMPTY;
         for (BakedQuad quad : model.getQuads(null, null, rnd, data, null)) {
             vertexBuilder.putBulkData(stack.last(), quad, rgb[0], rgb[1], rgb[2], a, combinedLight, combinedOverlay, false);
@@ -90,7 +90,7 @@ public class ModelUtils {
     }
 
     public static void renderModel(VertexConsumer vertexBuilder, Level world, BlockPos pos, BlockState state, ResourceLocation modelLoc, PoseStack stack, float[] argb, int combinedLight, int combinedOverlay) {
-        BakedModel model = Minecraft.getInstance().getModelManager().getModel(modelLoc);
+        BakedModel model = Minecraft.getInstance().getModelManager().getModel(net.minecraft.client.resources.model.ModelResourceLocation.standalone(modelLoc));
         for (BakedQuad quad : model.getQuads(state, null, rnd, ModelData.EMPTY, null)) {
             vertexBuilder.putBulkData(stack.last(), quad, argb[1], argb[2], argb[3], argb[0], combinedLight, combinedOverlay, true);
         }

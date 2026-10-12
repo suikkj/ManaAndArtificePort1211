@@ -53,7 +53,7 @@ extends BlockEntityWithoutLevelRenderer {
         if (!(stack.getItem() instanceof FluidJug)) {
         }
         if (this.jugModel == null) {
-            this.jugModel = Minecraft.getInstance().getModelManager().getModel(this.modelRLoc);
+            this.jugModel = Minecraft.getInstance().getModelManager().getModel(net.minecraft.client.resources.model.ModelResourceLocation.standalone(this.modelRLoc));
         }
         FluidStack containedFluid = ((FluidJug)ItemInit.FLUID_JUG.get()).getFluidTagData(stack);
         IClientFluidTypeExtensions extension = IClientFluidTypeExtensions.of((Fluid)containedFluid.getFluid());
