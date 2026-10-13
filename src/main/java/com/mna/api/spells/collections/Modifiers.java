@@ -9,19 +9,19 @@ import net.minecraft.resources.ResourceLocation;
  */
 public class Modifiers {
     public static final Modifier DAMAGE =
-            com.mna.Registries.Modifier.getValue(ResourceLocation.parse("modifiers/damage"));
+            com.mna.Registries.Modifier.getValue(com.mna.api.tools.RLoc.create("modifiers/damage"));
     public static final Modifier RANGE =
-            com.mna.Registries.Modifier.getValue(ResourceLocation.parse("modifiers/range"));
+            com.mna.Registries.Modifier.getValue(com.mna.api.tools.RLoc.create("modifiers/range"));
     public static final Modifier DURATION =
-            com.mna.Registries.Modifier.getValue(ResourceLocation.parse("modifiers/duration"));
+            com.mna.Registries.Modifier.getValue(com.mna.api.tools.RLoc.create("modifiers/duration"));
     public static final Modifier SPEED =
-            com.mna.Registries.Modifier.getValue(ResourceLocation.parse("modifiers/speed"));
+            com.mna.Registries.Modifier.getValue(com.mna.api.tools.RLoc.create("modifiers/speed"));
     public static final Modifier RADIUS =
-            com.mna.Registries.Modifier.getValue(ResourceLocation.parse("modifiers/radius"));
+            com.mna.Registries.Modifier.getValue(com.mna.api.tools.RLoc.create("modifiers/radius"));
     public static final Modifier MAGNITUDE =
-            com.mna.Registries.Modifier.getValue(ResourceLocation.parse("modifiers/magnitude"));
+            com.mna.Registries.Modifier.getValue(com.mna.api.tools.RLoc.create("modifiers/magnitude"));
     public static final Modifier DELAY =
-            com.mna.Registries.Modifier.getValue(ResourceLocation.parse("modifiers/delay"));
+            com.mna.Registries.Modifier.getValue(com.mna.api.tools.RLoc.create("modifiers/delay"));
     public static final Modifier PRECISION =
-            com.mna.Registries.Modifier.getValue(ResourceLocation.parse("modifiers/precision"));
+            com.mna.Registries.Modifier.getValue(com.mna.api.tools.RLoc.create("modifiers/precision"));
 }

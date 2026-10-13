@@ -1,13 +1,13 @@
 {
   "parent": "forge:item/default",
-  "loader": "forge:composite",
+  "loader": "neoforge:composite",
   "textures": {
   	"runic": "mna:block/artifice/decoration/runic_lights_orange",
   	"particle": "#runic"
   },
   "children": {
     "base": {
-      "loader": "forge:obj",
+      "loader": "neoforge:obj",
       "automatic_culling": false,
 	  "shade_quads": true,
 	  "flip_v": true,
@@ -18,7 +18,7 @@
 	  }
     },
     "deco": {
-      "loader": "forge:obj",
+      "loader": "neoforge:obj",
       "automatic_culling": false,
 	  "shade_quads": true,
 	  "flip_v": true,

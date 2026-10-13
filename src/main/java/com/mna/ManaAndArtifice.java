@@ -104,7 +104,8 @@ public class ManaAndArtifice {
         NeoForgeMod.enableMilkFluid();
         instance = this;
         ItemInit.ITEMS.register(this.modEventBus);
-        com.mna.items.artifice.FluidJug.COMPONENTS.register(this.modEventBus);
+        com.mna.items.artifice.FluidJug.COMPONENTS.register(this.modEventBus);
+
         com.mna.items.armor.ArmorMaterialInit.MATERIALS.register(this.modEventBus);
         BlockInit.BLOCKS.register(this.modEventBus);
         TileEntityInit.TILE_ENTITY_TYPES.register(this.modEventBus);
@@ -121,12 +122,12 @@ public class ManaAndArtifice {
         EffectInit.EFFECTS.register(this.modEventBus);
         EnchantmentInit.ENCHANTMENTS.register(this.modEventBus);
         BrewingInit.POTIONS.register(this.modEventBus);
+        com.mna.capabilities.CapabilitiesInit.ATTACHMENT_TYPES.register(this.modEventBus);
         Registries.register(this.modEventBus);
         if (FMLEnvironment.dist == Dist.CLIENT) {
             NeoForge.EVENT_BUS.register(HUDOverlayRenderer.class);
             NeoForge.EVENT_BUS.register(ClientEventHandler.class);
             NeoForge.EVENT_BUS.register(EffectParticleSpawner.class);
-            NeoForge.EVENT_BUS.register(GuideBookEntries.class);
             this.modEventBus.addListener(this::clientInit);
             this.modEventBus.register(GuiInit.class);
             this.modEventBus.register(ParticleClientInit.class);
@@ -140,7 +141,6 @@ public class ManaAndArtifice {
             this.proxy = new ServerProxy();
         }
         NeoForge.EVENT_BUS.register(CommandInit.class);
-        this.modEventBus.register(CommandSerializerInit.class);
         try {
             String inputLine;
             URL url = new URL("https://manaandartifice.com/auras_enabled.txt");

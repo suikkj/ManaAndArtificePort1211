@@ -1,8 +1,7 @@
-﻿{
+{
     "required":  true,
     "package":  "com.mna.mixins",
     "compatibilityLevel":  "JAVA_21",
-    "refmap":  "mna.refmap.json",
     "plugin":  "com.mna.mixins.MixinPlugin",
     "mixins":  [
                    "PiglinGoldMixin",
@@ -15,6 +14,7 @@
                    "LivingEntityElytra",
                    "InventorySoulboundDrop",
                    "EntityMixin",
+                   "PlayerPoseMixin",
                    "ClientPacketListenerMixin",
                    "WebBlockMixin",
                    "CreeperIgniteMixin",

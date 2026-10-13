@@ -18,7 +18,6 @@ import net.neoforged.neoforge.common.ModConfigSpec;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 
-@EventBusSubscriber(modid="mna", bus=EventBusSubscriber.Bus.GAME)
 public class GeneralConfigProvider {
     static ModConfigSpec.BooleanValue MODIFY_VILLAGER_TRADES;
     static ModConfigSpec.BooleanValue DISABLE_VILLAGER_REGISTRATION;

@@ -59,6 +59,7 @@ extends MAGeckoRenderer<WanderingWizard> {
 
     public void renderRecursively(PoseStack poseStack, WanderingWizard animatable, GeoBone bone, RenderType renderType, MultiBufferSource bufferSource, VertexConsumer buffer, boolean isReRender, float partialTick, int packedLight, int packedOverlay, int colour) {
         if (bone.getName().equals("scroll") && !((WanderingWizard)this.animatable).renderScroll()) {
+            return;
         }
         if (bone.getName().equals("staff_planted") && ((WanderingWizard)this.animatable).renderPlantedStaff()) {
             poseStack.pushPose();

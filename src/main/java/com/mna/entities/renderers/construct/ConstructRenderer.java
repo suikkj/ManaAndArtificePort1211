@@ -192,12 +192,14 @@ extends MAGeckoRenderer<Construct> {
             matrixStackIn.popPose();
         }
         if (entityIn.isRenderDisabled()) {
+            return;
         }
         super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
     }
 
     private void renderChargeBar(int packedLight, float partialTicks, MultiBufferSource bufferSource) {
         if (bufferSource == null || this.pos == null || this.normal == null) {
+            return;
         }
         float alpha = this.fillPct > 0.2f ? 1.0f : Math.abs((float)Math.sin(partialTicks));
         float[] fullColor = new float[]{0.0f, 1.0f, 0.0f, alpha};
@@ -237,6 +239,7 @@ extends MAGeckoRenderer<Construct> {
 
     private void renderFluidBar(MultiBufferSource bufferIn, int packedLight, float partialTicks, Construct entity, PoseStack matrixStackIn) {
         if (this.pos == null || this.normal == null || entity == null || entity.getStoredFluid() == null) {
+            return;
         }
         boolean isBone = entity.getConstructData().getSlotMaterial(ConstructSlot.TORSO) == ConstructMaterial.BONE;
         float width = 0.1f;
@@ -246,6 +249,7 @@ extends MAGeckoRenderer<Construct> {
         IClientFluidTypeExtensions extension = IClientFluidTypeExtensions.of((FluidType)attrs);
         ResourceLocation fluidTexBase = extension.getStillTexture();
         if (fluidTexBase == null) {
+            return;
         }
         TextureAtlasSprite sp = (TextureAtlasSprite)Minecraft.getInstance().getTextureAtlas(TextureAtlas.LOCATION_BLOCKS).apply(fluidTexBase);
         RenderType liquid = RenderType.armorCutoutNoCull((ResourceLocation)TextureAtlas.LOCATION_BLOCKS);
@@ -331,8 +335,10 @@ extends MAGeckoRenderer<Construct> {
 
     private void renderFishingLine(MultiBufferSource bufferSource, Construct construct, float partialTicks, PoseStack poseStack) {
         if (!construct.isFishing()) {
+            return;
         }
         if (poseStack == null || construct.getFishingTarget() == null || !construct.blockPosition().closerThan((Vec3i)construct.getFishingTarget(), 8.0)) {
+            return;
         }
         VertexConsumer lineStrips = bufferSource.getBuffer(RenderType.lineStrip());
         float bob = (float)(Math.sin(((float)ManaAndArtifice.instance.proxy.getGameTicks() + partialTicks) / 20.0f) / 12.0);
@@ -551,6 +557,7 @@ extends MAGeckoRenderer<Construct> {
         public void setVisibilityMatrix(Construct entity, ConstructMaterial matl) {
             this.matl = matl;
             if (this.model == null || this.data == null || matl == null || entity == null) {
+                return;
             }
             this.model.resetMutexVisibility();
             this.model.setActiveMaterial(matl);

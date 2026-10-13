@@ -50,6 +50,7 @@ extends EntityRenderer<Manaweave> {
     public void render(Manaweave entityIn, float entityYaw, float partialTicks, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn) {
         ArrayList<IManaweavePattern> patterns = entityIn.getPatterns();
         if (patterns == null) {
+            return;
         }
         matrixStackIn.pushPose();
         matrixStackIn.translate(0.0, 0.5, 0.0);

@@ -170,6 +170,7 @@ extends EntityRenderer<Portal> {
             pose.popPose();
         }
         if (spawnPct < 0.6f) {
+            return;
         }
         float raySpawnPct = Math.min(spawnPct - 0.6f, 0.3f) / 0.3f;
         int rayAngleStep = 2;
@@ -188,6 +189,7 @@ extends EntityRenderer<Portal> {
         }
         pose.popPose();
         if (spawnPct < 0.9f) {
+            return;
         }
         float ringSpawnPct = (spawnPct - 0.9f) * 10.0f;
         pose.pushPose();
@@ -215,11 +217,13 @@ extends EntityRenderer<Portal> {
             pose.popPose();
         }
         if (spawnPct < 0.6f) {
+            return;
         }
         float ringSpawnPct = Math.min((spawnPct - 0.6f) * 10.0f, 1.0f);
         int spin = 60;
         this.renderPortalTexture(pose, bufferSource.getBuffer(MARenderTypes.BRIGHT_LIGHT_RENDER), packedLight, color, (int)(230.0f * ringSpawnPct), 0.05f, 4.0f, spin, 90.0f, false);
         if (spawnPct < 0.7f) {
+            return;
         }
         float raySpawnPct = Math.min(spawnPct - 0.7f, 0.3f) / 0.3f;
         int rayAngleStep = 15;

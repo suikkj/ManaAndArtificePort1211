@@ -180,7 +180,7 @@ public class MultiblockRenderer {
     }
 
     @SubscribeEvent
-    public static void onClientTick(ClientTickEvent event) {
+    public static void onClientTick(ClientTickEvent.Post event) {
         if (ManaAndArtifice.instance.proxy.getClientWorld() == null) {
             hasMultiblock = false;
         } else if (posLocked && !syncWait && blocks == blocksDone) {

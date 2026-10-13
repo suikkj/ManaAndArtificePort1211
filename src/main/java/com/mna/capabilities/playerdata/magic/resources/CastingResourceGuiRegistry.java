@@ -40,7 +40,6 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 
 @OnlyIn(value=Dist.CLIENT)
-@EventBusSubscriber(modid="mna", bus=EventBusSubscriber.Bus.MOD, value={Dist.CLIENT})
 public class CastingResourceGuiRegistry
 implements ICastingResourceGuiRegistry {
     private HashMap<ResourceLocation, ICastingResourceGuiProvider> _guiProviders = new HashMap();

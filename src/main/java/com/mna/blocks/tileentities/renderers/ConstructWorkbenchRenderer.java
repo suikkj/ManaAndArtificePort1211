@@ -90,6 +90,7 @@ extends GeoBlockRenderer<ConstructWorkbenchTile> {
 
     public void renderRecursively(PoseStack stack, ConstructWorkbenchTile animatable, GeoBone bone, RenderType renderType, MultiBufferSource bufferSource, VertexConsumer buffer, boolean isReRender, float partialTick, int packedLightIn, int packedOverlayIn, int colour) {
         if (this.mc == null) {
+            return;
         }
         stack.pushPose();
         RenderUtil.translateMatrixToBone((PoseStack)stack, (GeoBone)bone);

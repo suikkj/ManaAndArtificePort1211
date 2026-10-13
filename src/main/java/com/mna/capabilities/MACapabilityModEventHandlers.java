@@ -10,7 +10,6 @@ package com.mna.capabilities;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 
-@EventBusSubscriber(modid="mna", bus=EventBusSubscriber.Bus.MOD)
 public class MACapabilityModEventHandlers {
 }
 

@@ -1,12 +1,12 @@
 {
   "parent": "forge:item/default",
-  "loader": "forge:composite",
+  "loader": "neoforge:composite",
   "textures": {
   	"particle": "mna:block/artifice/warding_candle"
   },
   "children": {
     "model": {
-      "loader": "forge:obj",
+      "loader": "neoforge:obj",
       "automatic_culling": true,
 	  "shade_quads": true,
 	  "flip_v": true,

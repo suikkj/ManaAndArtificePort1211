@@ -49,6 +49,7 @@ public class GuiRenderUtils {
 
     public static void renderManaweavePattern(GuiGraphics pGuiGraphics, int x, int y, float scale, IManaweavePattern p) {
         if (p == null) {
+            return;
         }
         RenderSystem.enableBlend();
         pGuiGraphics.pose().pushPose();
@@ -132,6 +133,7 @@ public class GuiRenderUtils {
 
     public static void lineStrip2d(GuiGraphics pGuiGraphics, Vec2[] points, float zLevel, float weight, int startColor, int endColor) {
         if (points.length < 2) {
+            return;
         }
         RenderSystem.setShader(GameRenderer::getRendertypeLinesShader);
         GlStateManager._depthMask((boolean)false);
@@ -191,6 +193,7 @@ public class GuiRenderUtils {
 
     public static void renderByproducts(GuiGraphics pGuiGraphics, int posX, int posY, AMRecipeBase recipe, boolean plusOnLeft) {
         if (recipe.getByproducts().size() == 0) {
+            return;
         }
         Minecraft minecraft = Minecraft.getInstance();
         RenderSystem.enableBlend();

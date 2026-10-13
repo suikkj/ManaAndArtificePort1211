@@ -29,6 +29,8 @@ public class LootConditionHelper {
             lootDrop.addConditional(Conditional.affectedByLooting);
         } else if (condition instanceof LootItemBlockStatePropertyCondition) {
             // empty if block
+        
+            return;
         }
     }
 }

@@ -72,7 +72,6 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
-@EventBusSubscriber(modid="mna", bus=EventBusSubscriber.Bus.MOD)
 public class VillagerRegistry {
     public static DeferredRegister<PoiType> POI_TYPES = DeferredRegister.create(net.minecraft.core.registries.Registries.POINT_OF_INTEREST_TYPE, "mna");
     public static DeferredRegister<VillagerProfession> PROFESSIONS = DeferredRegister.create(net.minecraft.core.registries.Registries.VILLAGER_PROFESSION, "mna");

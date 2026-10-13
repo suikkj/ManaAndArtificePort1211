@@ -52,7 +52,6 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
-@EventBusSubscriber(modid="mna", bus=EventBusSubscriber.Bus.MOD)
 public class ContainerInit {
     public static final DeferredRegister<MenuType<?>> CONTAINERS = DeferredRegister.create(Registries.MENU, "mna");
     public static DeferredHolder<MenuType<?>, ? extends MenuType<ContainerInscriptionTable>> INSCRIPTION_TABLE = CONTAINERS.register(ContainerInit.of(BlockInit.INSCRIPTION_TABLE), () -> IMenuTypeExtension.create(ContainerInscriptionTable::new));

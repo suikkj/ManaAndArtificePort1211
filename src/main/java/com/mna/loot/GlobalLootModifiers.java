@@ -56,17 +56,21 @@ public class GlobalLootModifiers {
     public static final DeferredHolder<com.mojang.serialization.MapCodec<? extends IGlobalLootModifier>, ? extends com.mojang.serialization.MapCodec<? extends IGlobalLootModifier>> BEHEADING = LOOT_MODIFIERS.register("beheading", BeheadingModifier.CODEC);
 
     @SubscribeEvent
-    public static final void init(FMLCommonSetupEvent event) {
-        Registry.register((Registry)BuiltInRegistries.LOOT_FUNCTION_TYPE, (ResourceLocation)RLoc.create("random_spell_staff"), RandomSpellStaff.TYPE);
-        Registry.register((Registry)BuiltInRegistries.LOOT_FUNCTION_TYPE, (ResourceLocation)RLoc.create("random_journal_page"), RandomJournalPage.TYPE);
-        Registry.register((Registry)BuiltInRegistries.LOOT_FUNCTION_TYPE, (ResourceLocation)RLoc.create("random_manaweave_recipe"), RandomManaweaveRecipe.TYPE);
-        Registry.register((Registry)BuiltInRegistries.LOOT_FUNCTION_TYPE, (ResourceLocation)RLoc.create("random_runescribe_recipe"), RandomRunescribeRecipe.TYPE);
-        Registry.register((Registry)BuiltInRegistries.LOOT_FUNCTION_TYPE, (ResourceLocation)RLoc.create("random_construct_part"), RandomConstructPart.TYPE);
-        Registry.register((Registry)BuiltInRegistries.LOOT_FUNCTION_TYPE, (ResourceLocation)RLoc.create("random_thaumaturgic_link"), RandomThaumaturgicLink.TYPE);
-        Registry.register((Registry)BuiltInRegistries.LOOT_FUNCTION_TYPE, (ResourceLocation)RLoc.create("random_joke_spell"), RandomJokeSpell.TYPE);
-        Registry.register((Registry)BuiltInRegistries.LOOT_FUNCTION_TYPE, (ResourceLocation)RLoc.create("random_artifact_spell"), RandomArtifactSpell.TYPE);
-        Registry.register((Registry)BuiltInRegistries.LOOT_FUNCTION_TYPE, (ResourceLocation)RLoc.create("random_silver_spell"), RandomSilverSpell.TYPE);
-        Registry.register((Registry)BuiltInRegistries.LOOT_FUNCTION_TYPE, (ResourceLocation)RLoc.create("random_hat"), RandomHat.TYPE);
+    public static final void registerLootFunctions(net.neoforged.neoforge.registries.RegisterEvent event) {
+        // [PORT 1.21.1] Forge 1.20.1 permitia registrar em vanilla registries no common setup;
+        // o NeoForge congela os registries antes disso -> registrar via RegisterEvent.
+        event.register(BuiltInRegistries.LOOT_FUNCTION_TYPE.key(), helper -> {
+            helper.register(RLoc.create("random_spell_staff"), RandomSpellStaff.TYPE);
+            helper.register(RLoc.create("random_journal_page"), RandomJournalPage.TYPE);
+            helper.register(RLoc.create("random_manaweave_recipe"), RandomManaweaveRecipe.TYPE);
+            helper.register(RLoc.create("random_runescribe_recipe"), RandomRunescribeRecipe.TYPE);
+            helper.register(RLoc.create("random_construct_part"), RandomConstructPart.TYPE);
+            helper.register(RLoc.create("random_thaumaturgic_link"), RandomThaumaturgicLink.TYPE);
+            helper.register(RLoc.create("random_joke_spell"), RandomJokeSpell.TYPE);
+            helper.register(RLoc.create("random_artifact_spell"), RandomArtifactSpell.TYPE);
+            helper.register(RLoc.create("random_silver_spell"), RandomSilverSpell.TYPE);
+            helper.register(RLoc.create("random_hat"), RandomHat.TYPE);
+        });
         ManaAndArtifice.LOGGER.info("Mana And Artifice >> Registered loot functions");
     }
 }

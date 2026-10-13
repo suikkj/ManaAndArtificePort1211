@@ -890,7 +890,8 @@ MNADyeableItem {
             if (result == PurifiedVinteumDust.RitualInteractResult.SPAWN) {
                 ((PurifiedVinteumDust)ItemInit.PURIFIED_VINTEUM_DUST.get()).spawnRitualEntity(context, ritualMatch.getRitual(), ritualMatch.getPositions());
             } else if (result == PurifiedVinteumDust.RitualInteractResult.STARTED) {
-                 
+                // [PORT 1.21.1] branch vazio no original (no-op); metodo retorna InteractionResult,
+                // entao NAO inserir return aqui.
             }
         }
         return InteractionResult.SUCCESS;

@@ -137,12 +137,15 @@ implements BlockEntityRenderer<ManaweavingAltarTile> {
 
     private void renderLastRecipe(ManaweavingAltarTile tileEntityIn, PoseStack matrixStackIn, MultiBufferSource bufferIn, int combinedLightIn, int combinedOverlayIn) {
         if (!tileEntityIn.isEmpty() || tileEntityIn.getAddedPatterns().size() != 0 || tileEntityIn.getReCraftOutput().isEmpty()) {
+            return;
         }
         Minecraft mc = Minecraft.getInstance();
         if (mc.hitResult == null || mc.hitResult.getType() != HitResult.Type.BLOCK) {
+            return;
         }
         BlockHitResult brtr = (BlockHitResult)mc.hitResult;
         if (!brtr.getBlockPos().equals(tileEntityIn.getBlockPos())) {
+            return;
         }
         List<ItemStack> itemstacks = tileEntityIn.getReCraftInput();
         float scale = 0.15f;

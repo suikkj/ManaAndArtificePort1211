@@ -169,7 +169,7 @@ public class ClientEventHandler {
     }
 
     @SubscribeEvent
-    public static void handleKeys(net.neoforged.neoforge.client.event.ClientTickEvent ev) {
+    public static void handleKeys(net.neoforged.neoforge.client.event.ClientTickEvent.Post ev) {
         Minecraft mc = Minecraft.getInstance();
         if (mc.screen == null) {
             ClientEventHandler.handleRadialKeyDown();
@@ -326,9 +326,10 @@ public class ClientEventHandler {
     }
 
     @SubscribeEvent
-    public static void clientTick(net.neoforged.neoforge.client.event.ClientTickEvent event) {
+    public static void clientTick(net.neoforged.neoforge.client.event.ClientTickEvent.Post event) {
         Level world;
         if (Minecraft.getInstance().isPaused()) {
+            return;
         }
         Player player = ManaAndArtifice.instance.proxy.getClientPlayer();
         if (player != null) {
@@ -405,8 +406,10 @@ public class ClientEventHandler {
             int i;
             float spread;
             if (!(node.isClaimed() || player.hasEffect(com.mna.api.tools.MAEffects.holder(EffectInit.ELDRIN_SIGHT.get())) || player.hasEffect(com.mna.api.tools.MAEffects.holder(EffectInit.WELLSPRING_SIGHT.get())))) {
+                return;
             }
             if (node.hasForcedYLevel() && Math.abs(player.getY() - (double)node.getYLevel()) > 32.0) {
+                return;
             }
             Affinity aff = node.getAffinity().getShiftAffinity();
             double yPos = node.hasForcedYLevel() ? (double)node.getYLevel() : player.getY();
@@ -530,11 +533,15 @@ public class ClientEventHandler {
     }
 
     @SubscribeEvent
-    public static void entityTick(EntityTickEvent event) {
+    public static void entityTick(EntityTickEvent.Post event) {
         Minecraft mc = Minecraft.getInstance();
-        if (mc == null || mc.player == null || (LivingEntity)event.getEntity() == null) {
+        // [PORT 1.21.1] guards restaurados (o decompiler deixou blocos vazios -> NPE com mc.player null);
+        // instanceof LivingEntity porque EntityTickEvent.Post dispara para TODAS as entidades.
+        if (mc == null || mc.player == null || !(event.getEntity() instanceof LivingEntity living)) {
+            return;
         }
-        if ((LivingEntity)event.getEntity() == mc.player) {
+        if (living == mc.player) {
+            return;
         }
         MobEffectInstance eldrinSight = mc.player.getEffect(com.mna.api.tools.MAEffects.holder(EffectInit.ELDRIN_SIGHT.get()));
         MobEffectInstance senseLife = mc.player.getEffect(com.mna.api.tools.MAEffects.holder(EffectInit.SENSE_LIFE.get()));
@@ -545,12 +552,14 @@ public class ClientEventHandler {
             range = 64 * (senseLife.getAmplifier() + 1);
         }
         if (range == 0) {
+            return;
         }
-        if (((LivingEntity)event.getEntity()).distanceToSqr((Entity)mc.player) > (double)range) {
+        if (living.distanceToSqr((Entity)mc.player) > (double)range) {
+            return;
         }
-        MobEffectInstance existingEffect = ((LivingEntity)event.getEntity()).getEffect(MobEffects.GLOWING);
+        MobEffectInstance existingEffect = living.getEffect(MobEffects.GLOWING);
         if (existingEffect == null || existingEffect.getDuration() < 5) {
-            ((LivingEntity)event.getEntity()).addEffect(new MobEffectInstance(MobEffects.GLOWING, 20, 0, false, false));
+            living.addEffect(new MobEffectInstance(MobEffects.GLOWING, 20, 0, false, false));
         }
     }
 
@@ -558,6 +567,7 @@ public class ClientEventHandler {
     public static void onMouseClick(InputEvent.InteractionKeyMappingTriggered event) {
         Minecraft mc = Minecraft.getInstance();
         if (mc.player == null) {
+            return;
         }
         MobEffectInstance posession = mc.player.getEffect(com.mna.api.tools.MAEffects.holder(EffectInit.POSSESSION.get()));
         if (event.isAttack() && posession != null && posession.getAmplifier() > 0) {
@@ -570,6 +580,7 @@ public class ClientEventHandler {
     public static void onMouseWheel(InputEvent.MouseScrollingEvent event) {
         Minecraft mc = Minecraft.getInstance();
         if (mc.player == null) {
+            return;
         }
         if (mc.player.isUsingItem()) {
             ItemStack using = mc.player.getUseItem();
@@ -598,6 +609,7 @@ public class ClientEventHandler {
         MobEffectInstance posession;
         Minecraft mc = Minecraft.getInstance();
         if (mc.player == null) {
+            return;
         }
         if (spaceTapTimer > 0L) {
             --spaceTapTimer;
@@ -673,6 +685,7 @@ public class ClientEventHandler {
     @SubscribeEvent
     public static void onRenderWorldLast(RenderLevelStageEvent rwl) {
         if (rwl.getStage() != RenderLevelStageEvent.Stage.AFTER_PARTICLES) {
+            return;
         }
         PoseStack matrixStack = rwl.getPoseStack();
         Minecraft mc = Minecraft.getInstance();
@@ -715,8 +728,10 @@ public class ClientEventHandler {
             double distAdjusted;
             double distPct;
             if (!(node.isClaimed() || player.hasEffect(com.mna.api.tools.MAEffects.holder(EffectInit.ELDRIN_SIGHT.get())) || player.hasEffect(com.mna.api.tools.MAEffects.holder(EffectInit.WELLSPRING_SIGHT.get())))) {
+                return;
             }
             if (node.hasForcedYLevel() && Math.abs(player.getY() - (double)node.getYLevel()) > 32.0) {
+                return;
             }
             BlockPos adjPos = new BlockPos(pos.getX(), player.blockPosition().getY(), pos.getZ());
             double dist = Math.sqrt(player.blockPosition().distSqr((Vec3i)adjPos));
@@ -744,9 +759,11 @@ public class ClientEventHandler {
     private static void renderConstructWorldDiagnostics(Minecraft mc, PoseStack matrixStack, Vec3 projectedView, MultiBufferSource.BufferSource buffers) {
         Construct c = HUDOverlayRenderer.instance.getTrackedConstruct();
         if (c == null) {
+            return;
         }
         LinkedList<ConstructDiagnostics.TaskHistoryEntry> taskHistory = c.getDiagnostics().getTaskHistory();
         if (taskHistory.size() == 0) {
+            return;
         }
         int drawDist = 4096;
         float opacity = 1.0f;
@@ -835,6 +852,7 @@ public class ClientEventHandler {
             }
         }
         if (!render) {
+            return;
         }
         RenderSystem.disableDepthTest();
         if (mainHandPos != null && mainHandPos.isValid() && mc.player.distanceToSqr((double)mainHandPos.getPosition().getX(), (double)mainHandPos.getPosition().getY(), (double)mainHandPos.getPosition().getZ()) < (double)drawDist) {
@@ -974,6 +992,7 @@ public class ClientEventHandler {
             if ((c = event.getItemStack().getItem()) instanceof ITieredItem) {
                 ITieredItem item2 = (ITieredItem)c;
                 if (event.getItemStack().has(DataComponents.CUSTOM_DATA) && event.getItemStack().getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().contains("hideTier")) {
+                    return;
                 }
                 int tier = item2.getTier(world, event.getItemStack());
                 if (tier == -2) {

@@ -15,7 +15,7 @@ import net.minecraft.world.item.enchantment.EnchantmentHelper;
 @EventBusSubscriber(modid="mna", bus=EventBusSubscriber.Bus.GAME)
 public class EnchantmentEventHandler {
     @SubscribeEvent
-    public static void onPlayerTick(PlayerTickEvent event) {
+    public static void onPlayerTick(PlayerTickEvent.Post event) {
         Inventory inv = event.getEntity().getInventory();
         int numSlots = event.getEntity().getInventory().getContainerSize();
         for (int i = 0; i < numSlots; ++i) {

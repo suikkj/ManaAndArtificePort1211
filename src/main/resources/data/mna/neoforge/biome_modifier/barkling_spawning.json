@@ -1,5 +1,5 @@
-﻿{
-	"type": "c:add_spawns",
+{
+	"type": "neoforge:add_spawns",
 	"biomes": "#mna:mob_spawns_overworld",
 	"spawners": {
 		"type": "mna:barkling",

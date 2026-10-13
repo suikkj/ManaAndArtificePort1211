@@ -78,7 +78,7 @@ implements IShowHud {
 
     public void releaseUsing(ItemStack stack, Level world, LivingEntity living, int ticksRemaining) {
         if (ticksRemaining == 0) {
-             
+            return;
         }
     }
 }

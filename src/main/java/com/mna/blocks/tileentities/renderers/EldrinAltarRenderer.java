@@ -110,12 +110,15 @@ implements BlockEntityRenderer<EldrinAltarTile> {
 
     private void renderLastRecipe(EldrinAltarTile tileEntityIn, PoseStack matrixStackIn, MultiBufferSource bufferIn, int combinedLightIn, int combinedOverlayIn) {
         if (!tileEntityIn.isEmpty() || tileEntityIn.getStage() != EldrinAltarTile.Stage.IDLE || tileEntityIn.getReCraftOutput().isEmpty()) {
+            return;
         }
         Minecraft mc = Minecraft.getInstance();
         if (mc.hitResult == null || mc.hitResult.getType() != HitResult.Type.BLOCK) {
+            return;
         }
         BlockHitResult brtr = (BlockHitResult)mc.hitResult;
         if (!brtr.getBlockPos().equals(tileEntityIn.getBlockPos())) {
+            return;
         }
         List<ItemStack> itemstacks = tileEntityIn.getReCraftInput();
         HashMap<Affinity, Float> eldrin = tileEntityIn.getReCraftEldrin();
@@ -245,6 +248,7 @@ implements BlockEntityRenderer<EldrinAltarTile> {
 
     private void renderCollectedItems(EldrinAltarTile tileEntityIn, float partialTick, PoseStack matrixStackIn, MultiBufferSource bufferIn, int combinedLightIn, Vec3 center) {
         if (tileEntityIn.getStage() != EldrinAltarTile.Stage.CONSUMING_REAGENTS) {
+            return;
         }
         float rotation = (float)tileEntityIn.getStageTicks() + partialTick;
         int maxItems = tileEntityIn.getCollectedItems().size() - tileEntityIn.getStageTicks() / 20;
@@ -278,6 +282,7 @@ implements BlockEntityRenderer<EldrinAltarTile> {
 
     private void renderPowerRequirements(EldrinAltarTile tileEntityIn, float partialTick, PoseStack matrixStackIn, MultiBufferSource bufferIn, int combinedLightIn, Vec3 center) {
         if (tileEntityIn.getStage() != EldrinAltarTile.Stage.CONSUMING_POWER) {
+            return;
         }
         List<Affinity> missingPower = tileEntityIn.getPowerRequirementStatus().entrySet().stream().filter(e -> (Boolean)e.getValue() == false).map(e -> (Affinity)((e.getKey()))).collect(Collectors.toList());
         double xOffset = 0.5;

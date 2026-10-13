@@ -1,4 +1,4 @@
-﻿modLoader="javafml"
+modLoader="javafml"
 loaderVersion="[4,)"
 license="All rights reserved"
 issueTrackerURL="https://github.com/Mithion/Mana-And-Artifice/issues"
@@ -16,6 +16,9 @@ authors="Mithion" #optional
 description='''
 A splash of magic returns to Minecraft.
 '''
+
+[[mixins]]
+config="mna.mixins.json"
 
 [[dependencies.mna]]
     modId="neoforge"

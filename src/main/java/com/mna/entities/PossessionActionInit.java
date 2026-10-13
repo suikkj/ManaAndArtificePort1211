@@ -94,6 +94,8 @@ public class PossessionActionInit {
                 BlockState clickState = e.level().getBlockState(bhr.getBlockPos());
                 if (clickState.is(BlockTags.FLOWERS)) {
                     // [PORT 1.21.1] Bee.setHasNectar virou private
+                
+                    return;
                 }
             }
         });

@@ -94,7 +94,7 @@ public class MACapabilityForgeEventHandlers {
     }
 
     @SubscribeEvent
-    public static void onLivingTick(EntityTickEvent event) {
+    public static void onLivingTick(EntityTickEvent.Post event) {
         MNACap.get((LivingEntity)event.getEntity(), MAPFXProvider.MAPFX).ifPresent(pfx -> pfx.sync((LivingEntity)event.getEntity()));
     }
 
@@ -198,6 +198,8 @@ public class MACapabilityForgeEventHandlers {
             MNACap.get((Level)event.getLevel(), WorldMagicProvider.MAGIC).ifPresent(w -> {
                 if (WardingCandleBlock.shouldEntityBeBlocked(event.getEntityType()) && w.isWithinWardingCandle(event.getPos())) {
                     // [PORT 1.21.1] MobSpawnEvent.SpawnPlacementCheck nao tem setResult/setCanGrief; bloqueio de spawn perdido
+                
+                    return;
                 }
             });
         }

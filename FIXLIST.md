@@ -424,3 +424,37 @@ evidência de queda no build.
 > no caminho, adicionar aqui (arquivo/padrão + contagem) ANTES de seguir para o próximo
 > lote, e re-checar as contagens ao final de cada lote. A tabela de Progresso registra
 > o que já caiu; esta seção registra o que falta.
+
+---
+
+## 🚀 FASE DE RUNTIME (em jogo) — fixes encontrados nos launches
+
+Estado: **o jogo ABRE até a tela inicial e CARREGA MUNDO** com `mna + curios 9.5.1 + geckolib 4.9.3` (paridade com a pasta mods do Source 1.20.1: curios-forge-5.14.1+1.20.1 / geckolib-forge-1.20.1-4.7 / mna-forge-1.20.1-3.1.11-all).
+
+Fixes aplicados (ordem de descoberta):
+
+1. **[FEITO] Mixins não aplicados** — NeoForge 21.1 ignora `MixinConfigs` do MANIFEST; adicionar `[[mixins]]` no `neoforge.mods.toml`. (verificar se a seção está presente no toml final)
+2. **[FEITO] Mods no classpath** — removidos de `mna_cp.txt` (FML pulava como "already located earlier").
+3. **[FEITO] `canEnterPose` removido no 1.21.1** — `PlayerPoseMixin` (Player.canPlayerFitWithinBlocksAndEntitiesWhen).
+4. **[FEITO] `@EventBusSubscriber` sem handlers próprios** — removidas de 7 classes (NeoForge 21.1 lança no register).
+5. **[FEITO] `EffectChill` UUID com maiúsculas** → lowercase (ResourceLocation inválido).
+6. **[FEITO] Shims `@ObjectHolder` → nulos em runtime** (NeoForge removeu @ObjectHolder):
+   - `Shapes`/`Components`/`Modifiers`: `ResourceLocation.parse("...")` gerava **`minecraft:`** (namespace errado) → trocado por `RLoc.create` (147 lookups). Sintoma: `DemonImp` clinit → `SpellRecipe.addComponent(part=null)` NPE.
+   - `Components.FOSSILIZE` → aponta p/ `components/fortification` (nome real registrado); `CANNON` = stub morto (nunca registrado, sem usos — mantido null).
+   - `Music.Construct.DANCE_MIX` (era @ObjectHolder `mna:music_big_car_theft`) → instância criada direto. Sintoma: NPE em todo som (`SoundEventListener.onPlaySound`).
+   - `MAEffects`/`SFX` já tinham sido migrados para DeferredHolder/instâncias diretas ✓.
+7. **[FEITO] Registros tardios (Forge 1.20.1 permitia; NeoForge congela)**:
+   - `GlobalLootModifiers` (10 loot functions) — `FMLCommonSetupEvent` → `RegisterEvent`.
+   - `CustomAdvancementTriggers` (29 triggers) — idem; e namespace: registrar como **`mna:<nome>`** (os advancement JSONs usam `mna:affinity_tinker` etc.).
+8. **[FEITO] Modelos `"loader": "forge:obj/composite"`** → `neoforge:` (807 JSONs).
+9. **[FEITO] Shader `portal_uv_rotate_vert.vsh`** — `fog_distance(ModelViewMat, pos, shape)` (3 args, 1.20.1) → `fog_distance(pos, FogShape)` (2 args, 1.21.1).
+10. **[FEITO] Biome modifiers `"type": "c:add_features/add_spawns"`** → `neoforge:add_features/add_spawns` (24 JSONs). Sintoma: "Failed to load registries due to above errors" → crash ao abrir QUALQUER tela.
+11. **[FEITO] `CapabilitiesInit.ATTACHMENT_TYPES` não registrado no mod bus** → "Trying to access unbound value: mna:world_magic" no load do mundo. Registrado em `ManaAndArtifice.java` junto aos demais DeferredRegisters (auditados os 18: só ele faltava).
+
+Pendências de runtime (a verificar nos próximos launches):
+- [ ] Curios: renderers (CurioRenderer/StaffRenderer/WandRenderer/HatRenderer/BookRenderer) em entidades com itens equipados
+- [ ] GeckoLib: modelos/animations de entidades MNA em jogo (log dizia "Loaded 0 entity animations" no boot — normal? confirmar animação de um construct/imp)
+- [ ] Capabilities de tiles (FluidJugTile etc.) e baús (MNACaps.itemHandler)
+- [ ] Spells/casting em jogo (Shape/Component shims agora resolvem — validar cast real)
+- [ ] Dimensão Reverie + estruturas/features do MNA na geração de mundo
+- [ ] Mixins (`[[mixins]]` do toml) aplicando de fato (verificar log "mna.mixins.json" no startup)

@@ -55,6 +55,8 @@ public class DefaultFluidEventHandlers {
             event.getTarget().knockback(0.5, event.getConstruct().getX() - event.getTarget().getX(), event.getConstruct().getZ() - event.getTarget().getZ());
         } else if (event.getFluid().isSame((Fluid)NeoForgeMod.MILK.get())) {
             // [PORT 1.21.1] curePotionEffects removido
+        
+            return;
         }
     }
 }

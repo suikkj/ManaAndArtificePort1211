@@ -29,7 +29,11 @@ public abstract class RitualEffect {
 
     public RitualEffect(ResourceLocation ritualName) {
         this.ritualName = ritualName;
-        NeoForge.EVENT_BUS.register(this);
+        try {
+            NeoForge.EVENT_BUS.register(this);
+        } catch (IllegalArgumentException ex) {
+            // [PORT 1.21.1] bus 8.x lanca para classes sem @SubscribeEvent (Forge 1.20.1 tolerava)
+        }
     }
 
     public final boolean matchRitual(ResourceLocation completedRecipeId) {

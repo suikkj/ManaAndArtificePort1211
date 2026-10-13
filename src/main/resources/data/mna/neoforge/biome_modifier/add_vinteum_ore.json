@@ -1,5 +1,5 @@
-﻿{
-	"type": "c:add_features",
+{
+	"type": "neoforge:add_features",
 	"biomes": "#minecraft:is_overworld",
 	"features": "mna:overworld_vinteum_ore",
 	"step": "underground_ores"

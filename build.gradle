@@ -73,7 +73,7 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
     implementation files('libs/curios-neoforge-9.5.1+1.21.1.jar')
-    implementation files('libs/geckolib-neoforge-1.21.1-4.8.4.jar')
+    implementation files('libs/geckolib-neoforge-1.21.1-4.9.3.jar')
 }
 
 tasks.withType(ProcessResources).configureEach {

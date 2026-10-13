@@ -19,7 +19,6 @@ import net.neoforged.neoforge.common.ModConfigSpec;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 
-@EventBusSubscriber(modid="mna", bus=EventBusSubscriber.Bus.GAME, value={Dist.CLIENT})
 public class ClientConfigProvider {
     public static ModConfigSpec.IntValue CODEX_BACK_STYLE;
     public static ModConfigSpec.IntValue SHOW_HUD_MODE;

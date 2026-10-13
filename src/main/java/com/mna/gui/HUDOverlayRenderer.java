@@ -90,6 +90,7 @@ public class HUDOverlayRenderer {
         HUDOverlayRenderer.instance.screenWidth = HUDOverlayRenderer.instance.mc.getWindow().getGuiScaledWidth();
         HUDOverlayRenderer.instance.screenHeight = HUDOverlayRenderer.instance.mc.getWindow().getGuiScaledHeight();
         if (entityPlayerSP == null) {
+            return;
         }
         if (!entityPlayerSP.isAlive()) {
             instance.setPinnedRecipe(null);
@@ -112,7 +113,7 @@ public class HUDOverlayRenderer {
 
     @SubscribeEvent
     @OnlyIn(value=Dist.CLIENT)
-    public static void onClientTick(ClientTickEvent event) {
+    public static void onClientTick(ClientTickEvent.Post event) {
         if (HUDOverlayRenderer.instance.cantripTimer > 0) {
             --HUDOverlayRenderer.instance.cantripTimer;
             if (HUDOverlayRenderer.instance.cantripTimer <= 10) {
@@ -139,6 +140,7 @@ public class HUDOverlayRenderer {
         Font fr = this.mc.font;
         IPlayerMagic magic = (IPlayerMagic)player.getData(PlayerMagicProvider.MAGIC.get());
         if (magic == null || !magic.isMagicUnlocked()) {
+            return;
         }
         Pair<Integer, Integer> coord = this.getHudCoordinates(screenWidth, screenHeight);
         int yPos = (Integer)coord.getSecond();
@@ -211,6 +213,7 @@ public class HUDOverlayRenderer {
 
     private void renderManaBar(GuiGraphics pGuiGraphics, int xPos, int yPos, IPlayerMagic magic, Player player, float partialTicks) {
         if (magic.getCastingResource().getMaxAmount() <= 0.0f) {
+            return;
         }
         ICastingResourceGuiProvider provider = CastingResourceGuiRegistry.Instance.getGuiProvider(magic.getCastingResource().getRegistryName());
         pGuiGraphics.pose().pushPose();
@@ -339,9 +342,11 @@ public class HUDOverlayRenderer {
         if (magic == null) {
             LocalPlayer p = mc.player;
             if (p == null) {
+                return;
             }
             java.util.Optional<com.mna.api.capabilities.IPlayerMagic> cap = MNACap.get(p, PlayerMagicProvider.MAGIC);
             if (!cap.isPresent()) {
+                return;
             }
             magic = (IPlayerMagic)cap.get();
         }
@@ -401,9 +406,11 @@ public class HUDOverlayRenderer {
 
     public void renderCantripTimer(GuiGraphics pGuiGraphics, int screenWidth, int screenHeight, float partialTicks) {
         if (this.castingCantrip == null) {
+            return;
         }
         Optional<ICantrip> cantrip = CantripRegistry.INSTANCE.getCantrip(ResourceLocation.parse(this.castingCantrip));
         if (cantrip == null || !cantrip.isPresent()) {
+            return;
         }
         RenderSystem.setShader(GameRenderer::getPositionTexColorShader);
         int x = screenWidth / 2 - GuiTextures.Cantrip_Icon_Size.x / 2;
@@ -516,9 +523,11 @@ public class HUDOverlayRenderer {
     protected void renderSpellBookChordsHud(Player player, GuiGraphics pGuiGraphics) {
         int i;
         if (!this.isRenderingSpellBookChords) {
+            return;
         }
         IPlayerMagic magic = (IPlayerMagic)player.getData(PlayerMagicProvider.MAGIC.get());
         if (magic == null) {
+            return;
         }
         ItemStack mhStack = player.getItemInHand(InteractionHand.MAIN_HAND);
         ItemStack ohStack = player.getItemInHand(InteractionHand.OFF_HAND);
@@ -529,9 +538,11 @@ public class HUDOverlayRenderer {
             bookInv = ((SpellBook)ohStack.getItem()).getInventory(ohStack, magic);
         }
         if (bookInv == null) {
+            return;
         }
         ItemStack[] spells = bookInv.getActiveSpells();
         if (spells.length == 0) {
+            return;
         }
         int loops = Math.min(spells.length, 9);
         int xStep = loops * 4;

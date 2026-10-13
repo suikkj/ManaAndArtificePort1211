@@ -9,245 +9,246 @@ import net.minecraft.resources.ResourceLocation;
  */
 public class Components {
     public static final SpellEffect FIRE_DAMAGE =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/fire_damage"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/fire_damage"));
     public static final SpellEffect FROST_DAMAGE =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/frost_damage"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/frost_damage"));
     public static final SpellEffect LIGHTNING_DAMAGE =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/lightning_damage"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/lightning_damage"));
     public static final SpellEffect BREAK =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/break"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/break"));
     public static final SpellEffect FLING =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/fling"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/fling"));
     public static final SpellEffect LEAP =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/leap"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/leap"));
     public static final SpellEffect SHIELD =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/shield"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/shield"));
     public static final SpellEffect SLOWFALL =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/slowfall"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/slowfall"));
     public static final SpellEffect HEAL =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/heal"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/heal"));
     public static final SpellEffect RIFT =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/rift"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/rift"));
     public static final SpellEffect TRANSPLACE =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/transplace"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/transplace"));
     public static final SpellEffect BLINK =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/blink"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/blink"));
     public static final SpellEffect GUST =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/gust"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/gust"));
     public static final SpellEffect INVISIBILITY =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/invisibility"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/invisibility"));
     public static final SpellEffect LIGHT =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/light"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/light"));
     public static final SpellEffect HASTE =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/haste"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/haste"));
     public static final SpellEffect SLOW =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/slow"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/slow"));
     public static final SpellEffect STRENGTH =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/strength"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/strength"));
     public static final SpellEffect WEAKNESS =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/weakness"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/weakness"));
     public static final SpellEffect NIGHT_VISION =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/night_vision"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/night_vision"));
     public static final SpellEffect BLIND =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/blind"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/blind"));
     public static final SpellEffect SWIFT_SWIM =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/swift_swim"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/swift_swim"));
     public static final SpellEffect WATERY_GRAVE =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/watery_grave"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/watery_grave"));
     public static final SpellEffect ENTANGLE =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/entangle"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/entangle"));
     public static final SpellEffect GRAVITY_WELL =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/gravity_well"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/gravity_well"));
     public static final SpellEffect CHRONO_ANCHOR =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/chrono_anchor"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/chrono_anchor"));
     public static final SpellEffect SILENCE =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/silence"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/silence"));
     public static final SpellEffect TRANSITORY_TILE =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/transitory_tile"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/transitory_tile"));
     public static final SpellEffect ACTIVATE =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/activate"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/activate"));
     public static final SpellEffect POISON =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/poison"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/poison"));
     public static final SpellEffect DROWN =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/drown"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/drown"));
     public static final SpellEffect CAUTERIZE =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/cauterize"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/cauterize"));
     public static final SpellEffect MAGIC_DAMAGE =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/magic_damage"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/magic_damage"));
     public static final SpellEffect EXPLOSION =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/explosion"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/explosion"));
     public static final SpellEffect LIFE_TAP =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/life_tap"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/life_tap"));
     public static final SpellEffect FIRE_SHIELD =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/fire_shield"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/fire_shield"));
     public static final SpellEffect MANA_SHIELD =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/mana_shield"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/mana_shield"));
     public static final SpellEffect BRIARTHORN_BARRIER =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/briarthorn_barrier"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/briarthorn_barrier"));
     public static final SpellEffect ABSORPTION =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/absorption"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/absorption"));
     public static final SpellEffect MANA_TRANSFER =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/mana_transfer"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/mana_transfer"));
     public static final SpellEffect DECOY =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/decoy"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/decoy"));
     public static final SpellEffect BLOOM =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/bloom"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/bloom"));
     public static final SpellEffect CRYSTALLIZE =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/crystallize"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/crystallize"));
     public static final SpellEffect COLLAPSE =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/collapse"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/collapse"));
     public static final SpellEffect EARTHSKY =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/earthsky"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/earthsky"));
     public static final SpellEffect TRUE_INVISIBILITY =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/true_invisibility"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/true_invisibility"));
     public static final SpellEffect ANIMUS =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/animus"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/animus"));
     public static final SpellEffect CONFUSE =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/confuse"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/confuse"));
     public static final SpellEffect MIND_CONTROL =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/mind_control"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/mind_control"));
     public static final SpellEffect SPECTRAL_CRAFTING_TABLE =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/spectral_crafting_table"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/spectral_crafting_table"));
     public static final SpellEffect DIVINATION =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/divination"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/divination"));
     public static final SpellEffect MIST_FORM =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/mist_form"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/mist_form"));
     public static final SpellEffect RECALL =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/recall"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/recall"));
     public static final SpellEffect ELDRIN_FLIGHT =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/eldrin_flight"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/eldrin_flight"));
     public static final SpellEffect MIND_VISION =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/mind_vision"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/mind_vision"));
     public static final SpellEffect SUMMON_SKELETAL_HORSE =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/summon_skeletal_horse"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/summon_skeletal_horse"));
     public static final SpellEffect POSESSION =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/posession"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/posession"));
     public static final SpellEffect GREATER_POSSESSION =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/greater_possession"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/greater_possession"));
     public static final SpellEffect LIVING_BOMB =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/living_bomb"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/living_bomb"));
     public static final SpellEffect WITHER =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/wither"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/wither"));
     public static final SpellEffect TRANSITORY_TUNNEL =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/transitory_tunnel"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/transitory_tunnel"));
     public static final SpellEffect FELLED_OAK =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/felled_oak"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/felled_oak"));
     public static final SpellEffect WIND_WALL =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/wind_wall"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/wind_wall"));
     public static final SpellEffect LEVITATION =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/levitation"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/levitation"));
     // REMOVIDO no 1.21.1 (sem registro correspondente): FOSSILIZE
-    public static final SpellEffect FOSSILIZE = null;
+    public static final SpellEffect FOSSILIZE = com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/fortification"));
     public static final SpellEffect EXCHANGE =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/exchange"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/exchange"));
     public static final SpellEffect SHEAR =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/shear"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/shear"));
     public static final SpellEffect BIND_WOUNDS =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/bind_wounds"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/bind_wounds"));
     public static final SpellEffect FILL_HOLE =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/fill_hole"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/fill_hole"));
     public static final SpellEffect SPECTRAL_ANVIL =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/spectral_anvil"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/spectral_anvil"));
     public static final SpellEffect SPECTRAL_STONECUTTER =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/spectral_stonecutter"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/spectral_stonecutter"));
     public static final SpellEffect LMNOP =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/lmnop"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/lmnop"));
     public static final SpellEffect TRANSMUTE =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/transmute"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/transmute"));
     public static final SpellEffect IMPALE =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/impale"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/impale"));
     public static final SpellEffect EARTHQUAKE =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/earthquake"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/earthquake"));
     public static final SpellEffect REDSTONE_PULSE =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/redstone_pulse"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/redstone_pulse"));
     public static final SpellEffect PULL =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/pull"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/pull"));
     // REMOVIDO no 1.21.1 (sem registro correspondente): CANNON
+    // CANNON: o original tambem nao registrava components/cannon (stub morto, sem usos) - mantido null.
     public static final SpellEffect CANNON = null;
     public static final SpellEffect WIND_SHEAR =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/wind_shear"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/wind_shear"));
     public static final SpellEffect BACKDRAFT =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/backdraft"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/backdraft"));
     public static final SpellEffect PURGE =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/purge"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/purge"));
     public static final SpellEffect AMPLIFY_MAGIC =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/amplify_magic"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/amplify_magic"));
     public static final SpellEffect DAMPEN_MAGIC =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/dampen_magic"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/dampen_magic"));
     public static final SpellEffect SUNDER =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/sunder"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/sunder"));
     public static final SpellEffect FRAILTY =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/frailty"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/frailty"));
     public static final SpellEffect SPLASH =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/splash"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/splash"));
     public static final SpellEffect SACRIFICE =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/sacrifice"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/sacrifice"));
     public static final SpellEffect SHATTER =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/shatter"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/shatter"));
     public static final SpellEffect INSIGHT =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/insight"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/insight"));
     public static final SpellEffect TELEKINESIS =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/telekinesis"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/telekinesis"));
     public static final SpellEffect DISJUNCTION =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/disjunction"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/disjunction"));
     public static final SpellEffect CRUCIBLE =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/crucible"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/crucible"));
     public static final SpellEffect ICE_SPIKE =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/ice_spike"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/ice_spike"));
     public static final SpellEffect SPECTRAL_LADDER =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/spectral_ladder"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/spectral_ladder"));
     public static final SpellEffect SPECTRAL_WEB =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/spectral_web"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/spectral_web"));
     public static final SpellEffect WATER_WALKING =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/water_walking"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/water_walking"));
     public static final SpellEffect SPIDER_CLIMBING =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/spider_climbing"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/spider_climbing"));
     public static final SpellEffect INSECT_SWARM =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/insect_swarm"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/insect_swarm"));
     public static final SpellEffect FLIGHT =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/eldrin_flight"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/eldrin_flight"));
     public static final SpellEffect LACERATE =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/lacerate"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/lacerate"));
     public static final SpellEffect PHANTOM_SOUND =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/phantom_sound"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/phantom_sound"));
     public static final SpellEffect ILLUSORY_CREEPER =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/illusory_creeper"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/illusory_creeper"));
     public static final SpellEffect PLACE_BLCOK =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/place_block"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/place_block"));
     public static final SpellEffect GREATER_ANIMUS =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/greater_animus"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/greater_animus"));
     public static final SpellEffect GROW =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/grow"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/grow"));
     public static final SpellEffect SHRINK =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/shrink"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/shrink"));
     public static final SpellEffect LIFE_DRAIN =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/life_drain"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/life_drain"));
     public static final SpellEffect CAMOUFLAGE =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/camouflage"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/camouflage"));
     public static final SpellEffect CHILL =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/chill"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/chill"));
     public static final SpellEffect HEATWAVE =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/heatwave"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/heatwave"));
     public static final SpellEffect ICARIAN_FLIGHT =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/icarian_flight"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/icarian_flight"));
     public static final SpellEffect CURSE_OF_AGONY =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/curse_of_agony"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/curse_of_agony"));
     public static final SpellEffect BLOOD_SACRIFICE =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/blood_sacrifice"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/blood_sacrifice"));
     public static final SpellEffect SHACKLES_OF_PAIN =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/shackles_of_pain"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/shackles_of_pain"));
     public static final SpellEffect SENSE_LIFE =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/sense_life"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/sense_life"));
     public static final SpellEffect SOUL_TRAP =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/soul_trap"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/soul_trap"));
     public static final SpellEffect HEMMORHAGE =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/hemmorhage"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/hemmorhage"));
     public static final SpellEffect BLOOD_TENDRILS =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/blood_tendrils"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/blood_tendrils"));
     public static final SpellEffect BLOOD_GOLEM =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/blood_golem"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/blood_golem"));
     public static final SpellEffect SIMULACRUM =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/simulacrum"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/simulacrum"));
     public static final SpellEffect SPECTRAL_FENCE =
-            com.mna.Registries.SpellEffect.getValue(ResourceLocation.parse("components/spectral_fence"));
+            com.mna.Registries.SpellEffect.getValue(com.mna.api.tools.RLoc.create("components/spectral_fence"));
 }

@@ -132,7 +132,7 @@ public class EnchantmentInit {
     }
 
     @SubscribeEvent
-    public static void onPlayerTick(PlayerTickEvent event) {
+    public static void onPlayerTick(PlayerTickEvent.Post event) {
         ItemStack boots;
         if (event.getEntity().level().getGameTime() % 5L == 0L) {
             EnchantmentInit.tickAuras(event.getEntity(), event.getEntity().level().isClientSide() || event.getEntity().level().getGameTime() % 60L != 0L);

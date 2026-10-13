@@ -99,6 +99,8 @@ extends SpellEffect {
             ItemStack heldItem = player.getItemInHand(hand);
             if (heldItem.getItem() instanceof DyeItem) {
                 // [PORT 1.21.1] setColor(Level,BlockPos,int) nao existe na fachada; cor do tile nao aplicada
+            
+                return;
             }
         } else {
             // [PORT 1.21.1] setColor(Level,BlockPos,int) nao existe na fachada; cor do tile nao aplicada

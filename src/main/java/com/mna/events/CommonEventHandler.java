@@ -307,7 +307,7 @@ public class CommonEventHandler {
     }
 
     @SubscribeEvent
-    public static void onPlayerTick(PlayerTickEvent event) {
+    public static void onPlayerTick(PlayerTickEvent.Post event) {
         Optional trickery;
         int wardCD;
         int breakCD;
@@ -493,7 +493,7 @@ public class CommonEventHandler {
     }
 
     @SubscribeEvent
-    public static void onLivingTick(EntityTickEvent event) {
+    public static void onLivingTick(EntityTickEvent.Post event) {
         MobEffectInstance effect;
         LivingEntity living = (LivingEntity)event.getEntity();
         if (living.getPersistentData().contains("mna_remove_ginvis")) {
@@ -732,7 +732,7 @@ public class CommonEventHandler {
     }
 
     @SubscribeEvent
-    public static void onExplosionStart(ExplosionEvent event) {
+    public static void onCreeperExplosionEnderguard(ExplosionEvent.Start event) {
         Creeper creeper;
         Optional player;
         Entity entity = event.getExplosion().getDirectSourceEntity();
@@ -989,7 +989,7 @@ public class CommonEventHandler {
     }
 
     @SubscribeEvent
-    public static void onWorldTick(LevelTickEvent event) {
+    public static void onWorldTick(LevelTickEvent.Post event) {
         if (true) {
             MNACap.get(event.getLevel(), WorldMagicProvider.MAGIC).ifPresent(m -> m.getWellspringRegistry().resetDiminishing());
             int chunkRadius = 5;

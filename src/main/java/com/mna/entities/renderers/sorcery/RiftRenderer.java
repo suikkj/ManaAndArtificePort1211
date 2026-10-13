@@ -123,6 +123,7 @@ extends EntityRenderer<Rift> {
 
     private static void addVertex(VertexConsumer vertexBuilder_, com.mojang.blaze3d.vertex.PoseStack.Pose pose, int packedLight, float x, float y, float u, float v, float nrmH, float nrmV, int[] color) {
         if (color.length != 4) {
+            return;
         }
         vertexBuilder_.addVertex(pose, x - 0.5f, y - 0.25f, 0.0f).setColor(color[0], color[1], color[2], color[3]).setUv(u, v).setOverlay(OverlayTexture.NO_OVERLAY).setLight(packedLight).setNormal(pose, nrmH, nrmV, nrmH);
     }

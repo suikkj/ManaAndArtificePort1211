@@ -10,7 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 public class EffectChill
 extends SimpleHarmfulEffect {
     public EffectChill() {
-        this.addAttributeModifier(Attributes.MOVEMENT_SPEED, ResourceLocation.parse("7107DE5E-7CE8-4030-940E-514C1F160890"), -0.15f, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
+        this.addAttributeModifier(Attributes.MOVEMENT_SPEED, ResourceLocation.parse("7107de5e-7ce8-4030-940e-514c1f160890"), -0.15f, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
     }
 
     public boolean isDurationEffectTick(int pDuration, int pAmplifier) {

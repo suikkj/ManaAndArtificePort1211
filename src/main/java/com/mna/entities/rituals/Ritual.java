@@ -136,7 +136,11 @@ extends Entity {
         this.collectedReagents = NonNullList.create();
         this.collectedPatterns = NonNullList.create();
         this.requiredPatterns = NonNullList.create();
-        NeoForge.EVENT_BUS.register(this);
+        try {
+            NeoForge.EVENT_BUS.register(this);
+        } catch (IllegalArgumentException ex) {
+            // [PORT 1.21.1] bus 8.x lanca para classes sem @SubscribeEvent (Forge 1.20.1 tolerava)
+        }
     }
 
     private void runStateLogic() {

@@ -153,6 +153,7 @@ public class GenericRadialMenu {
     public void draw(GuiGraphics pGuiGraphics, float partialTicks, int mouseX, int mouseY) {
         this.updateAnimationState(partialTicks);
         if (this.isClosed()) {
+            return;
         }
         if (this.isReady()) {
             this.processMouse(mouseX, mouseY);
@@ -320,6 +321,7 @@ public class GenericRadialMenu {
     private void processMouse(int mouseX, int mouseY) {
         double a = 0.0;
         if (!this.isReady()) {
+            return;
         }
         int numItems = this.getVisibleItemCount();
         Screen owner = this.host.getScreen();

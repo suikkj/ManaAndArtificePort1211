@@ -51,6 +51,7 @@ extends BlockEntityWithoutLevelRenderer {
 
     public void renderByItem(ItemStack stack, ItemDisplayContext ItemDisplayContext2, PoseStack matrixStack, MultiBufferSource buffer, int combinedLight, int combinedOverlay) {
         if (!(stack.getItem() instanceof FluidJug)) {
+            return;
         }
         if (this.jugModel == null) {
             this.jugModel = Minecraft.getInstance().getModelManager().getModel(net.minecraft.client.resources.model.ModelResourceLocation.standalone(this.modelRLoc));
@@ -104,6 +105,7 @@ extends BlockEntityWithoutLevelRenderer {
         float height = infinite ? 0.2f : 0.5f;
         ResourceLocation fluidTexBase = attrs.getStillTexture();
         if (fluidTexBase == null) {
+            return;
         }
         TextureAtlasSprite sp = (TextureAtlasSprite)Minecraft.getInstance().getTextureAtlas(TextureAtlas.LOCATION_BLOCKS).apply(fluidTexBase);
         RenderType liquid = RenderType.armorCutoutNoCull((ResourceLocation)TextureAtlas.LOCATION_BLOCKS);

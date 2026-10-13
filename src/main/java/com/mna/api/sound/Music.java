@@ -36,8 +36,11 @@ public final class Music {
     }
 
     public static final class Construct {
-        
-        public static final SoundEvent DANCE_MIX = null;
+        // [PORT 1.21.1] No 1.20.1 este campo usava @ObjectHolder("mna:music_big_car_theft")
+        // (Forge injetava o SoundEvent em runtime); o NeoForge removeu @ObjectHolder,
+        // entao a instancia e criada diretamente com a MESMA ResourceLocation registrada acima.
+        public static final SoundEvent DANCE_MIX =
+                SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("mna", "music_big_car_theft"));
     }
 }
 

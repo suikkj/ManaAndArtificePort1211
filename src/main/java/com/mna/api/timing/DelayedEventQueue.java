@@ -16,7 +16,7 @@ public class DelayedEventQueue {
     private static HashMap<ResourceKey<Level>, ArrayList<IDelayedEvent>> _events = new HashMap();
 
     @SubscribeEvent
-    public static void worldTick(LevelTickEvent event) {
+    public static void worldTick(LevelTickEvent.Post event) {
         if (event.getLevel().isClientSide()) {
             return;
         }

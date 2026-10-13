@@ -23,7 +23,7 @@ import com.mna.api.tools.MNACap;
 
 public class EffectParticleSpawner {
     @SubscribeEvent
-    public static void onLivingTick(EntityTickEvent event) {
+    public static void onLivingTick(EntityTickEvent.Post event) {
         LivingEntity entity = (LivingEntity)event.getEntity();
         Level world = entity.level();
         boolean isThirdPerson = entity != ManaAndArtifice.instance.proxy.getClientPlayer() || Minecraft.getInstance().gameRenderer.getMainCamera().isDetached();

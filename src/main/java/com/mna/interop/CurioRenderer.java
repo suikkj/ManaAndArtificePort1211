@@ -64,6 +64,7 @@ implements ICurioRenderer {
         float height = infinite ? 0.2f : 0.5f;
         ResourceLocation fluidTexBase = attrs.getStillTexture();
         if (fluidTexBase == null) {
+            return;
         }
         TextureAtlasSprite sp = (TextureAtlasSprite)Minecraft.getInstance().getTextureAtlas(TextureAtlas.LOCATION_BLOCKS).apply(fluidTexBase);
         RenderType liquid = RenderType.armorCutoutNoCull((ResourceLocation)TextureAtlas.LOCATION_BLOCKS);

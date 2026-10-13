@@ -80,36 +80,41 @@ public class CustomAdvancementTriggers {
     public static final TranscribeSpellTrigger TRANSCRIBE_SPELL = new TranscribeSpellTrigger();
 
     @SubscribeEvent
-    public static void commonLoad(FMLCommonSetupEvent event) {
-        CriteriaTriggers.register("affinity_tinker", AFFINITY_TINKER);
-        CriteriaTriggers.register("arcane_furnace_smelt", ARCANE_FURNACE_SMELT);
-        CriteriaTriggers.register("animus_mana_tea", BE_OUR_GUEST);
-        CriteriaTriggers.register("cast_cantrip", CANTRIP_CAST);
-        CriteriaTriggers.register("capture_wellspring", CAPTURE_WELLSPRING);
-        CriteriaTriggers.register("cast_spell", CAST_SPELL);
-        CriteriaTriggers.register("multiblock_complete", COMPLETE_MULTIBLOCK);
-        CriteriaTriggers.register("craft_spell", CRAFT_SPELL);
-        CriteriaTriggers.register("defeat_boss", DEFEAT_BOSS);
-        CriteriaTriggers.register("disenchant", DISENCHANT);
-        CriteriaTriggers.register("draw_manaweave_pattern", DRAW_MANAWEAVE);
-        CriteriaTriggers.register("eldrin_altar_craft", ELDRIN_ALTAR_CRAFT);
-        CriteriaTriggers.register("faction_join", FACTION_JOIN);
-        CriteriaTriggers.register("light_fume", LIGHT_FUME);
-        CriteriaTriggers.register("magic_level", MAGIC_LEVEL);
-        CriteriaTriggers.register("manaweave_altar_craft", MANAWEAVE_CRAFT);
-        CriteriaTriggers.register("not_so_easy", NOT_SO_EASY);
-        CriteriaTriggers.register("open_manaweave_cache", OPEN_CACHE);
-        CriteriaTriggers.register("perform_ritual", PERFORM_RITUAL);
-        CriteriaTriggers.register("runescribe", RUNESCRIBE);
-        CriteriaTriggers.register("runeforge", RUNIC_ANVIL_CRAFT);
-        CriteriaTriggers.register("set_bonus", SET_BONUS);
-        CriteriaTriggers.register("shaman", SHAMAN);
-        CriteriaTriggers.register("study_desk_rote", STUDY_DESK_ROTE);
-        CriteriaTriggers.register("summon_construct", SUMMON_CONSTRUCT);
-        CriteriaTriggers.register("thrown_runescribe_pattern", THROWN_RUNESCRIBE_PATTERN);
-        CriteriaTriggers.register("tier", TIER_CHANGE);
-        CriteriaTriggers.register("transcribe_spell", TRANSCRIBE_SPELL);
-        CriteriaTriggers.register("use_charm", USE_CHARM);
+    public static void registerTriggers(net.neoforged.neoforge.registries.RegisterEvent event) {
+        // [PORT 1.21.1] Forge 1.20.1 registrava triggers no common setup com namespace do mod
+        // (CriteriaTriggers.register 1-arg); o NeoForge congela antes do setup e o overload 2-arg
+        // usa minecraft: -> registrar explicitamente como mna:<nome> via RegisterEvent.
+        event.register(net.minecraft.core.registries.BuiltInRegistries.TRIGGER_TYPES.key(), helper -> {
+            helper.register(com.mna.api.tools.RLoc.create("affinity_tinker"), AFFINITY_TINKER);
+            helper.register(com.mna.api.tools.RLoc.create("arcane_furnace_smelt"), ARCANE_FURNACE_SMELT);
+            helper.register(com.mna.api.tools.RLoc.create("animus_mana_tea"), BE_OUR_GUEST);
+            helper.register(com.mna.api.tools.RLoc.create("cast_cantrip"), CANTRIP_CAST);
+            helper.register(com.mna.api.tools.RLoc.create("capture_wellspring"), CAPTURE_WELLSPRING);
+            helper.register(com.mna.api.tools.RLoc.create("cast_spell"), CAST_SPELL);
+            helper.register(com.mna.api.tools.RLoc.create("multiblock_complete"), COMPLETE_MULTIBLOCK);
+            helper.register(com.mna.api.tools.RLoc.create("craft_spell"), CRAFT_SPELL);
+            helper.register(com.mna.api.tools.RLoc.create("defeat_boss"), DEFEAT_BOSS);
+            helper.register(com.mna.api.tools.RLoc.create("disenchant"), DISENCHANT);
+            helper.register(com.mna.api.tools.RLoc.create("draw_manaweave_pattern"), DRAW_MANAWEAVE);
+            helper.register(com.mna.api.tools.RLoc.create("eldrin_altar_craft"), ELDRIN_ALTAR_CRAFT);
+            helper.register(com.mna.api.tools.RLoc.create("faction_join"), FACTION_JOIN);
+            helper.register(com.mna.api.tools.RLoc.create("light_fume"), LIGHT_FUME);
+            helper.register(com.mna.api.tools.RLoc.create("magic_level"), MAGIC_LEVEL);
+            helper.register(com.mna.api.tools.RLoc.create("manaweave_altar_craft"), MANAWEAVE_CRAFT);
+            helper.register(com.mna.api.tools.RLoc.create("not_so_easy"), NOT_SO_EASY);
+            helper.register(com.mna.api.tools.RLoc.create("open_manaweave_cache"), OPEN_CACHE);
+            helper.register(com.mna.api.tools.RLoc.create("perform_ritual"), PERFORM_RITUAL);
+            helper.register(com.mna.api.tools.RLoc.create("runescribe"), RUNESCRIBE);
+            helper.register(com.mna.api.tools.RLoc.create("runeforge"), RUNIC_ANVIL_CRAFT);
+            helper.register(com.mna.api.tools.RLoc.create("set_bonus"), SET_BONUS);
+            helper.register(com.mna.api.tools.RLoc.create("shaman"), SHAMAN);
+            helper.register(com.mna.api.tools.RLoc.create("study_desk_rote"), STUDY_DESK_ROTE);
+            helper.register(com.mna.api.tools.RLoc.create("summon_construct"), SUMMON_CONSTRUCT);
+            helper.register(com.mna.api.tools.RLoc.create("thrown_runescribe_pattern"), THROWN_RUNESCRIBE_PATTERN);
+            helper.register(com.mna.api.tools.RLoc.create("tier"), TIER_CHANGE);
+            helper.register(com.mna.api.tools.RLoc.create("transcribe_spell"), TRANSCRIBE_SPELL);
+            helper.register(com.mna.api.tools.RLoc.create("use_charm"), USE_CHARM);
+        });
     }
 }
 

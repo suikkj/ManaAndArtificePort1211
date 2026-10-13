@@ -324,6 +324,7 @@ implements IWorldRenderUtils {
         PoseStack.Pose normalMatrix = matrixstack$entry;
         boolean bl = flip = (index & 0x10) > 0;
         if ((index &= 0xF) < 0 || index > 15) {
+            return;
         }
         float nrmV = 1.0f;
         float nrmH = 1.0f;
@@ -516,8 +517,10 @@ implements IWorldRenderUtils {
 
     public static void spawnFirstPersonParticlesForStack(ItemStack stack, HumanoidArm hand) {
         if (Minecraft.getInstance().isPaused()) {
+            return;
         }
         if (!(stack.getItem() instanceof ItemSpell)) {
+            return;
         }
         Minecraft mc = Minecraft.getInstance();
         LocalPlayer player = mc.player;
