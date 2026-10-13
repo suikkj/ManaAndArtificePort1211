@@ -91,8 +91,8 @@ extends AbstractContainerScreen<ContainerCantrips> {
             this.cantripPatterns.put(cantrip.getId(), new Integer[3]);
             for (int j = 0; j < 3; ++j) {
                 Optional<IPlayerCantrip> playerCantrip = this.magic.getCantripData().getCantrip(cantrip.getId());
-                Optional pattern = clientRecipeManager.byKey(playerCantrip.get().getPattern(j));
-                this.cantripPatterns.get(cantrip.getId())[j] = pattern.isPresent() && pattern.get() instanceof ManaweavingPattern ? Integer.valueOf(pattern != null ? this.playerKnownPatterns.indexOf(pattern.get()) : -1) : Integer.valueOf(-1);
+                Optional<net.minecraft.world.item.crafting.RecipeHolder<?>> pattern = clientRecipeManager.byKey(playerCantrip.get().getPattern(j));
+                this.cantripPatterns.get(cantrip.getId())[j] = pattern.isPresent() && pattern.get().value() instanceof ManaweavingPattern ? Integer.valueOf(pattern != null ? this.playerKnownPatterns.indexOf(pattern.get().value()) : -1) : Integer.valueOf(-1);
             }
         });
         this.numPages = (int)Math.ceil(this.cantripPatterns.size() / 8);
@@ -174,7 +174,7 @@ extends AbstractContainerScreen<ContainerCantrips> {
 
     protected void renderBg(GuiGraphics pGuiGraphics, float partialTicks, int mouseX, int mouseY) {
         ItemStack wandStack;
-        this.renderBackground(pGuiGraphics, mouseX, mouseY, partialTicks);
+        // [PORT 1.21.1] renderBackground removido (AbstractContainerScreen chama renderBg -> loop).
         MutableObject tt = new MutableObject(null);
         RenderSystem.setShader(GameRenderer::getPositionTexShader);
         int topLeftCornerX = (this.width - this.imageWidth) / 2;

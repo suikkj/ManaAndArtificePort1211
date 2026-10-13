@@ -44,7 +44,7 @@ extends BaseServerMessage implements CustomPacketPayload {
         if (player.isInWater()) {
             return;
         }
-        int enchLevel = com.mna.api.enchantments.MNAEnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.CLOUDSTEP, player.getItemBySlot(EquipmentSlot.FEET));
+        int enchLevel = com.mna.api.enchantments.MNAEnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.CLOUDSTEP.getKey(), player.getItemBySlot(EquipmentSlot.FEET));
         MNACap.get(player, PlayerMagicProvider.MAGIC).ifPresent(m -> {
             if (m.getAirJumps() < enchLevel) {
                 m.incrementAirJumps((Player)player);

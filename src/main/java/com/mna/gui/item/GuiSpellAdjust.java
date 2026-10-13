@@ -261,7 +261,8 @@ extends GuiJEIDisable<ContainerSpellAdjustments> {
     }
 
     protected void renderBg(GuiGraphics pGuiGraphics, float partialTicks, int mouseX, int mouseY) {
-        this.renderBackground(pGuiGraphics, mouseX, mouseY, partialTicks);
+        // [PORT 1.21.1] NAO chamar renderBackground aqui: AbstractContainerScreen.renderBackground
+        // chama renderBg -> recursao infinita (StackOverflow).
         int i = this.leftPos;
         int j = this.topPos;
         pGuiGraphics.blit(GuiTextures.Items.SPELL_VALUES, i, j, 0.0f, 145.0f, 247, 30, this.imageWidth, this.imageHeight);

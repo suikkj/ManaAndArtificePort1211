@@ -23,7 +23,7 @@ public class InventorySoulboundDrop {
         CompoundTag curios = new CompoundTag();
         for (int i = 0; i < self.getContainerSize(); ++i) {
             ItemStack stackInSlot = self.getItem(i);
-            if (stackInSlot.isEmpty() || com.mna.api.enchantments.MNAEnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.SOULBOUND, stackInSlot) <= 0) continue;
+            if (stackInSlot.isEmpty() || com.mna.api.enchantments.MNAEnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.SOULBOUND.getKey(), stackInSlot) <= 0) continue;
             CompoundTag item = new CompoundTag();
             com.mna.api.tools.MNAItemData.save(stackInSlot, item);
             inventory.put("slot_" + i, (Tag)item);
@@ -33,7 +33,7 @@ public class InventorySoulboundDrop {
             CompoundTag tagForIdentifier = new CompoundTag();
             for (int i = 0; i < stackHandler.getSlots(); ++i) {
                 ItemStack stackInSlot = stackHandler.getStacks().getStackInSlot(i);
-                if (stackInSlot.isEmpty() || com.mna.api.enchantments.MNAEnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.SOULBOUND, stackInSlot) <= 0) continue;
+                if (stackInSlot.isEmpty() || com.mna.api.enchantments.MNAEnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.SOULBOUND.getKey(), stackInSlot) <= 0) continue;
                 CompoundTag item = new CompoundTag();
                 com.mna.api.tools.MNAItemData.save(stackInSlot, item);
                 tagForIdentifier.put("slot_" + i, (Tag)item);

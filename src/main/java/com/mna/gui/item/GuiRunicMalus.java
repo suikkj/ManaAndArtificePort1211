@@ -24,7 +24,8 @@ extends GuiBagBase<ContainerRunicMalus> {
 
     @Override
     protected void renderBg(GuiGraphics pGuiGraphics, float partialTicks, int mouseX, int mouseY) {
-        this.renderBackground(pGuiGraphics, mouseX, mouseY, partialTicks);
+        // [PORT 1.21.1] NAO chamar renderBackground aqui: AbstractContainerScreen.renderBackground
+        // chama renderBg -> recursao infinita (StackOverflow).
         int i = this.leftPos + this.imageWidth / 2 - 53;
         int j = this.topPos;
         pGuiGraphics.blit(this.texture(), i, j, 0, 0, 106, 114);

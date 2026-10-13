@@ -101,9 +101,9 @@ extends RecipeRendererBase {
 
     @Override
     protected void init_internal(ResourceLocation recipeLocation) {
-        Optional pattern = this.minecraft.level.getRecipeManager().byKey(recipeLocation);
-        if (pattern.isPresent() && pattern.get() instanceof MultiblockDefinition) {
-            this._recipe = (MultiblockDefinition)pattern.get();
+        Optional<net.minecraft.world.item.crafting.RecipeHolder<?>> pattern = this.minecraft.level.getRecipeManager().byKey(recipeLocation);
+        if (pattern.isPresent() && pattern.get().value() instanceof MultiblockDefinition) {
+            this._recipe = (MultiblockDefinition)pattern.get().value();
         }
     }
 

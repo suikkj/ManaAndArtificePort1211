@@ -47,9 +47,9 @@ implements ICyclingRecipeRenderer<Recipe3x3> {
 
     @Override
     public void init_internal(ResourceLocation recipeLocation) {
-        Optional pattern = this.minecraft.level.getRecipeManager().byKey(recipeLocation);
+        Optional<net.minecraft.world.item.crafting.RecipeHolder<?>> pattern = this.minecraft.level.getRecipeManager().byKey(recipeLocation);
         if (pattern.isPresent()) {
-            this.recipes = new CraftingRecipe[]{(CraftingRecipe)pattern.get()};
+            this.recipes = new CraftingRecipe[]{(CraftingRecipe)pattern.get().value()};
         }
     }
 
@@ -132,9 +132,9 @@ implements ICyclingRecipeRenderer<Recipe3x3> {
     public void init_cycling(ResourceLocation[] rLocs) {
         ArrayList<CraftingRecipe> recipes = new ArrayList<CraftingRecipe>();
         for (ResourceLocation rLoc : rLocs) {
-            Optional pattern = this.minecraft.level.getRecipeManager().byKey(rLoc);
+            Optional<net.minecraft.world.item.crafting.RecipeHolder<?>> pattern = this.minecraft.level.getRecipeManager().byKey(rLoc);
             if (!pattern.isPresent()) continue;
-            recipes.add((CraftingRecipe)pattern.get());
+            recipes.add((CraftingRecipe)pattern.get().value());
         }
         this.recipes = recipes.toArray(new CraftingRecipe[0]);
     }

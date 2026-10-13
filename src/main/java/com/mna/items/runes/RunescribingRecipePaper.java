@@ -52,11 +52,11 @@ extends TieredItem {
             return null;
         }
         ResourceLocation rLoc = ResourceLocation.parse(nbt.get(NBT_RECIPEID).getAsString());
-        Optional optRecipe = world.getRecipeManager().byKey(rLoc);
-        if (!optRecipe.isPresent() || !(optRecipe.get() instanceof RunescribingRecipe)) {
+        Optional<net.minecraft.world.item.crafting.RecipeHolder<?>> optRecipe = world.getRecipeManager().byKey(rLoc);
+        if (!optRecipe.isPresent() || !(optRecipe.get().value() instanceof RunescribingRecipe)) {
             return null;
         }
-        return (RunescribingRecipe)optRecipe.get();
+        return (RunescribingRecipe)optRecipe.get().value();
     }
 
     public static void setRecipe(ItemStack stack, RunescribingRecipe recipe) {

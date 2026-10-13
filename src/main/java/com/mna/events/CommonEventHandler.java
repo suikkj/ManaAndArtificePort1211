@@ -225,8 +225,7 @@ public class CommonEventHandler {
             }
             return;
         }
-        Map map = EnchantmentUtils.enchantmentMap((ItemStack)event.getItemStack());
-        if (map.containsKey(EnchantmentInit.RETURNING.get()) && (state = event.getLevel().getBlockState(event.getPos())).getBlock() != BlockInit.RUNIC_ANVIL.get()) {
+        if (com.mna.api.enchantments.MNAEnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.RETURNING.getKey(), event.getItemStack()) > 0 && (state = event.getLevel().getBlockState(event.getPos())).getBlock() != BlockInit.RUNIC_ANVIL.get()) {
             event.setCanceled(true);
         }
     }
@@ -495,7 +494,10 @@ public class CommonEventHandler {
     @SubscribeEvent
     public static void onLivingTick(EntityTickEvent.Post event) {
         MobEffectInstance effect;
-        LivingEntity living = (LivingEntity)event.getEntity();
+        // [PORT 1.21.1] EntityTickEvent.Post cobre TODAS as entidades -> guard instanceof (evita CCE)
+        if (!(event.getEntity() instanceof LivingEntity living)) {
+            return;
+        }
         if (living.getPersistentData().contains("mna_remove_ginvis")) {
             int remaining = living.getPersistentData().getInt("mna_remove_ginvis") - 1;
             EntityUtil.removeInvisibility(living);
@@ -528,8 +530,9 @@ public class CommonEventHandler {
             living.push(0.0, -0.2, 0.0);
         }
         if (!living.hasEffect(com.mna.api.tools.MAEffects.holder(EffectInit.SOAKED.get()))) {
-            Player player = (Player)living;
-            if (!(!isWet || living instanceof Player && player.isSpectator())) {
+            // [PORT 1.21.1] cast movido para dentro do short-circuit (o decompiler iceou o cast
+            // p/ fora -> ClassCastException em entidades nao-Player, ex.: Turtle).
+            if (!(!isWet || living instanceof Player player && player.isSpectator())) {
                 living.addEffect(new MobEffectInstance(com.mna.api.tools.MAEffects.holder(EffectInit.SOAKED.get()), 300, 0));
             }
         } else if (living.isOnFire()) {
@@ -793,7 +796,7 @@ public class CommonEventHandler {
         Player player = event.getEntity();
         MNACap.get(player, PlayerProgressionProvider.PROGRESSION).ifPresent(p -> {
             int enchantMagnitude;
-            if (p.getAlliedFaction() == Factions.UNDEAD && (enchantMagnitude = EnchantmentHelper.getEnchantmentLevel(EnchantmentInit.XP_TO_SOULS, (LivingEntity)player)) > 0) {
+            if (p.getAlliedFaction() == Factions.UNDEAD && (enchantMagnitude = com.mna.api.enchantments.MNAEnchantmentHelper.getEnchantmentLevel(EnchantmentInit.XP_TO_SOULS.getKey(), (LivingEntity)player)) > 0) {
                 event.setCanceled(true);
                 ExperienceOrb orb = event.getOrb();
                 player.takeXpDelay = 2;
@@ -858,7 +861,7 @@ public class CommonEventHandler {
     @SubscribeEvent
     public static void onArrowLoose(ArrowLooseEvent event) {
         ItemStack itemstack;
-        if (event.hasAmmo() && event.getEntity() instanceof Player && !(itemstack = event.getEntity().getProjectile(event.getBow())).isEmpty() && EnchantmentHelper.getEnchantmentLevel(EnchantmentInit.RETURNING, (LivingEntity)event.getEntity()) > 0) {
+        if (event.hasAmmo() && event.getEntity() instanceof Player && !(itemstack = event.getEntity().getProjectile(event.getBow())).isEmpty() && com.mna.api.enchantments.MNAEnchantmentHelper.getEnchantmentLevel(EnchantmentInit.RETURNING.getKey(), (LivingEntity)event.getEntity()) > 0) {
             event.getEntity().getPersistentData().putBoolean("return_on_next_arrow_shot", true);
             ItemStack toReturn = itemstack.copy();
             toReturn.setCount(1);

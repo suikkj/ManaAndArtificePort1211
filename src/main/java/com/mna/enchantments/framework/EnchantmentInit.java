@@ -137,7 +137,7 @@ public class EnchantmentInit {
         if (event.getEntity().level().getGameTime() % 5L == 0L) {
             EnchantmentInit.tickAuras(event.getEntity(), event.getEntity().level().isClientSide() || event.getEntity().level().getGameTime() % 60L != 0L);
         }
-        if (EnchantmentHelper.getEnchantmentLevel(TRANSITORY_STEP, event.getEntity()) > 0) {
+        if (com.mna.api.enchantments.MNAEnchantmentHelper.getEnchantmentLevel(TRANSITORY_STEP.getKey(), event.getEntity()) > 0) {
             ((TransitoryStep)EnchantmentBehaviors.get(TRANSITORY_STEP)).apply(event.getEntity(), 1);
         }
     }
@@ -149,7 +149,7 @@ public class EnchantmentInit {
         if (event.isCanceled()) {
             return;
         }
-        if (event.getEntity() instanceof Player && event.getDistance() > 2.0f && !(player = (Player)event.getEntity()).isShiftKeyDown() && player.getEffect(com.mna.api.tools.MAEffects.holder(EffectInit.GRAVITY_WELL.get())) == null && !(boots = player.getItemBySlot(EquipmentSlot.FEET)).isEmpty() && EnchantmentHelper.getEnchantmentLevel(BOUNCING, event.getEntity()) > 0) {
+        if (event.getEntity() instanceof Player && event.getDistance() > 2.0f && !(player = (Player)event.getEntity()).isShiftKeyDown() && player.getEffect(com.mna.api.tools.MAEffects.holder(EffectInit.GRAVITY_WELL.get())) == null && !(boots = player.getItemBySlot(EquipmentSlot.FEET)).isEmpty() && com.mna.api.enchantments.MNAEnchantmentHelper.getEnchantmentLevel(BOUNCING.getKey(), event.getEntity()) > 0) {
             event.setCanceled(true);
             if (player.level().isClientSide()) {
                 float maxVelocity = 4.0f;
@@ -167,7 +167,7 @@ public class EnchantmentInit {
             for (DeferredHolder<Enchantment, ? extends Enchantment> enchantment : ENCHANTMENTS.getEntries()) {
                 MAEnchantmentBase behavior = EnchantmentBehaviors.get(enchantment);
                 int level;
-                if (!(behavior instanceof Aura) || (level = EnchantmentHelper.getEnchantmentLevel(enchantment, player)) <= 0) continue;
+                if (!(behavior instanceof Aura) || (level = com.mna.api.enchantments.MNAEnchantmentHelper.getEnchantmentLevel(enchantment.getKey(), player)) <= 0) continue;
                 ((Aura)behavior).apply(player, level, manaOnly);
             }
         }

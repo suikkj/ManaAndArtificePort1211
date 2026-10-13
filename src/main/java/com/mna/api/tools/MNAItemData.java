@@ -63,8 +63,12 @@ public final class MNAItemData {
         return srv != null ? srv.registryAccess() : net.minecraft.core.RegistryAccess.EMPTY;
     }
 
-    /** [PORT 1.21.1] ItemStack.save agora exige provider. */
+    /** [PORT 1.21.1] ItemStack.save agora exige provider E lanca "Cannot encode empty ItemStack";
+     *  no 1.20.1 salvar um stack vazio apenas retornava o tag intacto. */
     public static CompoundTag save(ItemStack stack, CompoundTag tag) {
+        if (stack == null || stack.isEmpty()) {
+            return tag;
+        }
         return (CompoundTag)stack.save(provider(), tag);
     }
 

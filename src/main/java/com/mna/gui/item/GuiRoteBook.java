@@ -631,7 +631,8 @@ extends SearchableGuiJeiDisable<ContainerRoteBook> {
     }
 
     protected void renderBg(GuiGraphics pGuiGraphics, float partialTicks, int mouseX, int mouseY) {
-        this.renderBackground(pGuiGraphics, mouseX, mouseY, partialTicks);
+        // [PORT 1.21.1] NAO chamar renderBackground aqui: AbstractContainerScreen.renderBackground
+        // chama renderBg -> recursao infinita (StackOverflow).
         int i = this.leftPos;
         int j = this.topPos;
         pGuiGraphics.blit(GuiTextures.Items.BOOK_OF_ROTE, i, j, 0, 0, this.imageWidth, this.imageHeight);

@@ -341,7 +341,8 @@ extends GuiJEIDisable<ContainerLodestar> {
     }
 
     protected void renderBg(GuiGraphics pGuiGraphics, float partialTick, int mouseX, int mouseY) {
-        this.renderBackground(pGuiGraphics, mouseX, mouseY, partialTick);
+        // [PORT 1.21.1] NAO chamar renderBackground aqui: AbstractContainerScreen.renderBackground
+        // chama renderBg -> recursao infinita (StackOverflow).
         RenderSystem.setShader(GameRenderer::getPositionTexShader);
         pGuiGraphics.blit(this.getMainTexture(), this.leftPos - 45, this.topPos - 45, 166, 166, 90, 90);
         pGuiGraphics.blit(this.getMainTexture(), this.leftPos + 211, this.topPos + 121, 166, 166, 90, 90);

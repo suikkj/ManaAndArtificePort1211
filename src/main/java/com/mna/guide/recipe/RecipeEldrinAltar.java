@@ -37,21 +37,21 @@ implements ICyclingRecipeRenderer<RecipeEldrinAltar> {
     public void init_cycling(ResourceLocation[] rLocs) {
         ArrayList<EldrinAltarRecipe> patternList = new ArrayList<EldrinAltarRecipe>();
         for (ResourceLocation rLoc : rLocs) {
-            Optional<? extends Recipe<?>> pattern = this.resolveRecipe(rLoc);
-            if (!pattern.isPresent() || !(pattern.get() instanceof EldrinAltarRecipe)) continue;
-            patternList.add((EldrinAltarRecipe)pattern.get());
+            Optional<net.minecraft.world.item.crafting.RecipeHolder<?>> pattern = this.resolveRecipe(rLoc);
+            if (!pattern.isPresent() || !(pattern.get().value() instanceof EldrinAltarRecipe)) continue;
+            patternList.add((EldrinAltarRecipe)pattern.get().value());
         }
         this.patterns = patternList.toArray(new EldrinAltarRecipe[0]);
     }
 
     @Override
     public void init_internal(ResourceLocation recipeLocation) {
-        Optional<? extends Recipe<?>> pattern = this.resolveRecipe(recipeLocation);
-        this.patterns = pattern.isPresent() && pattern.get() instanceof EldrinAltarRecipe ? new EldrinAltarRecipe[]{(EldrinAltarRecipe)pattern.get()} : null;
+        Optional<net.minecraft.world.item.crafting.RecipeHolder<?>> pattern = this.resolveRecipe(recipeLocation);
+        this.patterns = pattern.isPresent() && pattern.get().value() instanceof EldrinAltarRecipe ? new EldrinAltarRecipe[]{(EldrinAltarRecipe)pattern.get().value()} : null;
     }
 
-    private Optional<? extends Recipe<?>> resolveRecipe(ResourceLocation recipeLocation) {
-        Optional resolved = this.minecraft.level.getRecipeManager().byKey(recipeLocation);
+    private Optional<net.minecraft.world.item.crafting.RecipeHolder<?>> resolveRecipe(ResourceLocation recipeLocation) {
+        Optional<net.minecraft.world.item.crafting.RecipeHolder<?>> resolved = this.minecraft.level.getRecipeManager().byKey(recipeLocation);
         if (!resolved.isPresent()) {
             if (recipeLocation.getNamespace().equals("mna") && !recipeLocation.getPath().startsWith("eldrin_altar/")) {
                 recipeLocation = ResourceLocation.fromNamespaceAndPath(recipeLocation.getNamespace(), "eldrin_altar/" + recipeLocation.getPath());

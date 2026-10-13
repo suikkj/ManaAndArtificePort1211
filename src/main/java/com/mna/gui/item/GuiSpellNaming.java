@@ -134,7 +134,8 @@ extends GuiJEIDisable<ContainerSpellName> {
     }
 
     protected void renderBg(GuiGraphics pGuiGraphics, float pPartialTick, int pMouseX, int pMouseY) {
-        this.renderBackground(pGuiGraphics, pMouseX, pMouseY, pPartialTick);
+        // [PORT 1.21.1] NAO chamar renderBackground aqui: AbstractContainerScreen.renderBackground
+        // chama renderBg -> recursao infinita (StackOverflow).
         int i = this.leftPos;
         int j = this.topPos;
         int bannerWidth = 246;

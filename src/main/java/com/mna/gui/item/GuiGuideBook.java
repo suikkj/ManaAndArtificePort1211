@@ -781,10 +781,10 @@ extends GuiJEIDisable<ContainerGuideBook> {
                 this.addRenderableWidget(btn);
                 this.relatedTabs.add(btn);
             } else {
-                Optional pattern;
+                Optional<net.minecraft.world.item.crafting.RecipeHolder<?>> pattern;
                 ItemStack stack = this.lookupResource(rr.getResourceLocations()[0]);
                 if (stack.isEmpty() && (pattern = this.minecraft.level.getRecipeManager().byKey(rr.getResourceLocations()[0])).isPresent()) {
-                    stack = pattern.get() instanceof AMRecipeBase ? ((AMRecipeBase)pattern.get()).getGuiRepresentationStack() : ((Recipe)pattern.get()).getResultItem(this.minecraft.level.registryAccess());
+                    stack = pattern.get().value() instanceof AMRecipeBase ? ((AMRecipeBase)pattern.get().value()).getGuiRepresentationStack() : ((Recipe)pattern.get().value()).getResultItem(this.minecraft.level.registryAccess());
                 }
                 if (!stack.isEmpty()) {
                     ImageButton btn = new ImageItemStackButton(x, y, 28, 18, 56, 0, 18, GuiTextures.Items.GUIDE_BOOK_WIDGETS, 256, 256, button -> this.displayRecipe(rr, true), this::setTooltip, stack);
@@ -828,7 +828,8 @@ extends GuiJEIDisable<ContainerGuideBook> {
     }
 
     protected void renderBg(GuiGraphics pGuiGraphics, float partialTicks, int mouseX, int mouseY) {
-        this.renderBackground(pGuiGraphics, mouseX, mouseY, partialTicks);
+        // [PORT 1.21.1] NAO chamar renderBackground aqui: AbstractContainerScreen.renderBackground
+        // chama renderBg -> recursao infinita (StackOverflow). O original 1.20.1 nao tinha esse loop.
         int i = this.leftPos;
         int j = this.topPos;
         pGuiGraphics.blit(GuiTextures.Items.GUIDE_BOOK, i, j, 0, 0, this.imageWidth, this.imageHeight);

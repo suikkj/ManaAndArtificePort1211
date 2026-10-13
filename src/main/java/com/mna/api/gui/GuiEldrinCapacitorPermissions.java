@@ -60,8 +60,8 @@ extends AbstractContainerScreen<EldrinCapacitorPermissionsContainer> {
     }
 
     protected void renderBg(GuiGraphics pGuiGraphics, float pPartialTick, int pMouseX, int pMouseY) {
+        // [PORT 1.21.1] NAO chamar renderBackground aqui (AbstractContainerScreen.renderBackground chama renderBg -> loop).
         int i;
-        this.renderBackground(pGuiGraphics, pMouseX, pMouseY, pPartialTick);
         int barWidgetX = this.leftPos + 10;
         int barWidgetStep = 34;
         int barWidgetY = this.topPos - 12;

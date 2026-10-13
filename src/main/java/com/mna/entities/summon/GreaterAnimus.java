@@ -210,7 +210,7 @@ CrossbowAttackMob {
                 ItemStack dropStack = this.heldItem.copy();
                 this.heldItem = ItemStack.EMPTY;
                 Map enchants = EnchantmentUtils.enchantmentMap((ItemStack)dropStack);
-                if ((enchants.containsKey(Enchantments.LOYALTY) || enchants.containsKey(EnchantmentInit.RETURNING.get())) && summoner.isAlive()) {
+                if ((com.mna.api.enchantments.MNAEnchantmentHelper.getItemEnchantmentLevel(Enchantments.LOYALTY, dropStack) > 0 || com.mna.api.enchantments.MNAEnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.RETURNING.getKey(), dropStack) > 0) && summoner.isAlive()) {
                     dropStack = InventoryUtilities.mergeToPlayerInvPrioritizeOffhand((Player)summoner, dropStack);
                 }
                 if (!dropStack.isEmpty()) {

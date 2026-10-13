@@ -203,7 +203,8 @@ extends AbstractContainerScreen<ContainerRunescribingTable> {
     }
 
     protected void renderBg(GuiGraphics pGuiGraphics, float partialTicks, int mouseX, int mouseY) {
-        this.renderBackground(pGuiGraphics, mouseX, mouseY, partialTicks);
+        // [PORT 1.21.1] NAO chamar renderBackground aqui: AbstractContainerScreen.renderBackground
+        // chama renderBg -> recursao infinita (StackOverflow).
         int i = this.leftPos;
         int j = this.topPos;
         pGuiGraphics.blit(GuiTextures.WizardLab.RUNESCRIBING_TABLE, i, j, 0, 0, 198, 238);

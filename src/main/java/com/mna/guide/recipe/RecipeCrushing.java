@@ -66,9 +66,9 @@ extends RecipeRendererBase {
 
     @Override
     public void init_internal(ResourceLocation recipeLocation) {
-        Optional pattern = this.minecraft.level.getRecipeManager().byKey(recipeLocation);
-        if (pattern.isPresent() && pattern.get() instanceof CrushingRecipe) {
-            this.recipe = (CrushingRecipe)pattern.get();
+        Optional<net.minecraft.world.item.crafting.RecipeHolder<?>> pattern = this.minecraft.level.getRecipeManager().byKey(recipeLocation);
+        if (pattern.isPresent() && pattern.get().value() instanceof CrushingRecipe) {
+            this.recipe = (CrushingRecipe)pattern.get().value();
             if (this.recipe != null) {
                 this.inputs = MATags.smartLookupItem(this.recipe.getInputResource()).stream().map(i -> new ItemStack((ItemLike)i)).collect(Collectors.toList());
                 this.outputs = MATags.smartLookupItem(this.recipe.getOutputResource()).stream().map(i -> new ItemStack((ItemLike)i)).collect(Collectors.toList());

@@ -34,7 +34,8 @@ extends SimpleWizardLabDeskGui<ContainerEldrinFume> {
 
     @Override
     protected void renderBg(GuiGraphics pGuiGraphics, float partialTicks, int mouseX, int mouseY) {
-        this.renderBackground(pGuiGraphics, mouseX, mouseY, partialTicks);
+        // [PORT 1.21.1] NAO chamar renderBackground aqui: AbstractContainerScreen.renderBackground
+        // chama renderBg -> recursao infinita (StackOverflow).
         if (ManaAndArtifice.instance.proxy.getGameTicks() % 20L == 0L) {
             ClientMessageDispatcher.sendRequestWellspringNetworkSyncMessage(false);
         }

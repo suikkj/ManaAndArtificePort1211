@@ -18,7 +18,7 @@ public class PowderSnowBlockMixin {
     private static void mna$canEntityWalkOnPowderSnow(Entity entity, CallbackInfoReturnable<Boolean> cir) {
         if (entity instanceof LivingEntity) {
             LivingEntity living = (LivingEntity)entity;
-            int level = EnchantmentHelper.getEnchantmentLevel(EnchantmentInit.CLOUDSTEP, (LivingEntity)living);
+            int level = com.mna.api.enchantments.MNAEnchantmentHelper.getEnchantmentLevel(EnchantmentInit.CLOUDSTEP.getKey(), (LivingEntity)living);
             if (level > 0) {
                 cir.setReturnValue(true);
             }

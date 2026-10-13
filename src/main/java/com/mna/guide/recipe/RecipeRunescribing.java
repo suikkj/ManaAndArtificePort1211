@@ -29,8 +29,8 @@ extends RecipeRendererBase {
 
     @Override
     public void init_internal(ResourceLocation recipeLocation) {
-        Optional pattern = this.minecraft.level.getRecipeManager().byKey(recipeLocation);
-        this.pattern = pattern.isPresent() && pattern.get() instanceof RunescribingRecipe ? (RunescribingRecipe)pattern.get() : null;
+        Optional<net.minecraft.world.item.crafting.RecipeHolder<?>> pattern = this.minecraft.level.getRecipeManager().byKey(recipeLocation);
+        this.pattern = pattern.isPresent() && pattern.get().value() instanceof RunescribingRecipe ? (RunescribingRecipe)pattern.get().value() : null;
     }
 
     @Override

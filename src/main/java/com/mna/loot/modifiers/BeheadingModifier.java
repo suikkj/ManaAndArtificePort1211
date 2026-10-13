@@ -45,7 +45,7 @@ extends LootModifier {
         int level;
         Entity dead = (Entity)context.getParamOrNull(LootContextParams.THIS_ENTITY);
         Entity killer = (Entity)context.getParamOrNull(LootContextParams.ATTACKING_ENTITY);
-        if (dead != null && killer != null && killer instanceof LivingEntity && dead.getType().equals(this.mobType) && (level = Math.max(com.mna.api.enchantments.MNAEnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.BEHEADING, (killerLiving = (LivingEntity)killer).getMainHandItem()), com.mna.api.enchantments.MNAEnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.BEHEADING, killerLiving.getOffhandItem()))) > 0 && Math.random() < (double)((float)level * this.chancePerLevel) && generatedLoot.stream().noneMatch(i -> i.getItem() == this.head)) {
+        if (dead != null && killer != null && killer instanceof LivingEntity && dead.getType().equals(this.mobType) && (level = Math.max(com.mna.api.enchantments.MNAEnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.BEHEADING.getKey(), (killerLiving = (LivingEntity)killer).getMainHandItem()), com.mna.api.enchantments.MNAEnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.BEHEADING.getKey(), killerLiving.getOffhandItem()))) > 0 && Math.random() < (double)((float)level * this.chancePerLevel) && generatedLoot.stream().noneMatch(i -> i.getItem() == this.head)) {
             generatedLoot.add(new ItemStack((ItemLike)this.head));
         }
         return generatedLoot;

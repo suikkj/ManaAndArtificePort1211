@@ -254,7 +254,8 @@ extends GuiJEIDisable<ContainerOcculus> {
     }
 
     protected void renderBg(GuiGraphics pGuiGraphics, float partialTick, int pMouseX, int pMouseY) {
-        this.renderBackground(pGuiGraphics, pMouseX, pMouseY, partialTick);
+        // [PORT 1.21.1] NAO chamar renderBackground aqui: AbstractContainerScreen.renderBackground
+        // chama renderBg -> recursao infinita (StackOverflow).
         int i = this.leftPos;
         int j = this.topPos;
         if (this.progression != null && (this.currentList == this.lists.get(IconTypes.PROGRESSION) || this.currentList == this.lists.get(IconTypes.FACTION_AFFINITY))) {

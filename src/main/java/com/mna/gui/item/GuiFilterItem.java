@@ -53,7 +53,8 @@ extends AbstractContainerScreen<ContainerFilterItem> {
     }
 
     protected void renderBg(GuiGraphics pGuiGraphics, float partialTicks, int mouse_x, int mouse_y) {
-        this.renderBackground(pGuiGraphics, 0, 0, 0.0f);
+        // [PORT 1.21.1] NAO chamar renderBackground aqui: AbstractContainerScreen.renderBackground
+        // chama renderBg -> recursao infinita (StackOverflow).
         int xPos = this.leftPos;
         int yPos = this.topPos;
         GuiRenderUtils.renderStandardPlayerInventory(pGuiGraphics, xPos + this.imageWidth / 2, yPos + this.imageHeight - 45);

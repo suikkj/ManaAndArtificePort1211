@@ -95,7 +95,11 @@ public class MACapabilityForgeEventHandlers {
 
     @SubscribeEvent
     public static void onLivingTick(EntityTickEvent.Post event) {
-        MNACap.get((LivingEntity)event.getEntity(), MAPFXProvider.MAPFX).ifPresent(pfx -> pfx.sync((LivingEntity)event.getEntity()));
+        // [PORT 1.21.1] EntityTickEvent.Post cobre TODAS as entidades -> guard instanceof (evita CCE)
+        if (!(event.getEntity() instanceof LivingEntity living)) {
+            return;
+        }
+        MNACap.get(living, MAPFXProvider.MAPFX).ifPresent(pfx -> pfx.sync(living));
     }
 
     private static void tickMagic(net.neoforged.neoforge.event.tick.PlayerTickEvent.Post event) {

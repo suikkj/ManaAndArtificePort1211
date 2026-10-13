@@ -308,8 +308,8 @@ public static void onLivingHurt(LivingDamageEvent.Pre event) {
         }
         if (event.getNewDamage() > 0.0f) {
             MobEffectInstance lev;
-            Player player = (Player)hurtEntity;
-            if (hurtEntity instanceof Player && !CrystallizedWind.FindOn((LivingEntity)player) && (lev = hurtEntity.getEffect(com.mna.api.tools.MAEffects.holder(EffectInit.LEVITATION.get()))) != null) {
+            // [PORT 1.21.1] cast dentro do short-circuit (era ansioso -> CCE p/ entidades nao-Player)
+            if (hurtEntity instanceof Player player && !CrystallizedWind.FindOn((LivingEntity)player) && (lev = hurtEntity.getEffect(com.mna.api.tools.MAEffects.holder(EffectInit.LEVITATION.get()))) != null) {
                 Player target = (Player)event.getEntity();
                 boolean wasFlying = target.getAbilities().flying;
                 int amplifier = lev.getAmplifier();

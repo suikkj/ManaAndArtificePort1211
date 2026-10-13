@@ -34,24 +34,24 @@ implements ICyclingRecipeRenderer<RecipeFumeFilter> {
     public void init_cycling(ResourceLocation[] rLocs) {
         ArrayList<FumeFilterRecipe> patternList = new ArrayList<FumeFilterRecipe>();
         for (ResourceLocation rLoc : rLocs) {
-            Optional pattern = this.resolveRecipe(rLoc);
-            if (!pattern.isPresent() || !(pattern.get() instanceof FumeFilterRecipe)) continue;
-            patternList.add((FumeFilterRecipe)pattern.get());
+            Optional<net.minecraft.world.item.crafting.RecipeHolder<?>> pattern = this.resolveRecipe(rLoc);
+            if (!pattern.isPresent() || !(pattern.get().value() instanceof FumeFilterRecipe)) continue;
+            patternList.add((FumeFilterRecipe)pattern.get().value());
         }
         this.patterns = patternList.toArray(new FumeFilterRecipe[0]);
     }
 
     @Override
     public void init_internal(ResourceLocation recipeLocation) {
-        Optional pattern = this.resolveRecipe(recipeLocation);
-        this.patterns = pattern.isPresent() && pattern.get() instanceof FumeFilterRecipe ? new FumeFilterRecipe[]{(FumeFilterRecipe)pattern.get()} : null;
+        Optional<net.minecraft.world.item.crafting.RecipeHolder<?>> pattern = this.resolveRecipe(recipeLocation);
+        this.patterns = pattern.isPresent() && pattern.get().value() instanceof FumeFilterRecipe ? new FumeFilterRecipe[]{(FumeFilterRecipe)pattern.get().value()} : null;
     }
 
-    private Optional<? extends Recipe<?>> resolveRecipe(ResourceLocation recipeLocation) {
+    private Optional<net.minecraft.world.item.crafting.RecipeHolder<?>> resolveRecipe(ResourceLocation recipeLocation) {
         if (recipeLocation.getNamespace().equals("mna") && !recipeLocation.getPath().startsWith("fume_filter/")) {
             recipeLocation = ResourceLocation.fromNamespaceAndPath(recipeLocation.getNamespace(), "fume_filter/" + recipeLocation.getPath());
         }
-        return (Optional)this.minecraft.level.getRecipeManager().byKey(recipeLocation);
+        return this.minecraft.level.getRecipeManager().byKey(recipeLocation);
     }
 
     @Override

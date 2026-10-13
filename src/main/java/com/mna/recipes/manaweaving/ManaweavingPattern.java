@@ -155,9 +155,9 @@ implements IManaweavePattern {
         if (matched == null) {
             return null;
         }
-        Optional recipe = world.getRecipeManager().byKey(matched);
-        if (recipe != null && recipe.isPresent() && recipe.get() instanceof ManaweavingPattern) {
-            return (ManaweavingPattern)recipe.get();
+        Optional<net.minecraft.world.item.crafting.RecipeHolder<?>> recipe = world.getRecipeManager().byKey(matched);
+        if (recipe != null && recipe.isPresent() && recipe.get().value() instanceof ManaweavingPattern) {
+            return (ManaweavingPattern)recipe.get().value();
         }
         return null;
     }

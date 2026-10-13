@@ -631,7 +631,7 @@ public class ClientEventHandler {
         }
         if (!mc.player.onGround() && event.getInput().jumping) {
             ItemStack boots = mc.player.getItemBySlot(EquipmentSlot.FEET);
-            int enchLevel = EnchantmentHelper.getEnchantmentLevel(EnchantmentInit.CLOUDSTEP, mc.player);
+            int enchLevel = com.mna.api.enchantments.MNAEnchantmentHelper.getEnchantmentLevel(EnchantmentInit.CLOUDSTEP.getKey(), mc.player);
             if (!boots.isEmpty() && enchLevel > 0) {
                 // [PORT 1.21.1] noJumpDelay virou private
                 ClientMessageDispatcher.sendPlayerJump();

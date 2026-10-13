@@ -34,9 +34,9 @@ extends RecipeRendererBase {
 
     @Override
     public void init_internal(ResourceLocation recipeLocation) {
-        Optional pattern = this.minecraft.level.getRecipeManager().byKey(recipeLocation);
-        if (pattern.isPresent() && pattern.get() instanceof RuneforgingRecipe) {
-            this.pattern = (RuneforgingRecipe)pattern.get();
+        Optional<net.minecraft.world.item.crafting.RecipeHolder<?>> pattern = this.minecraft.level.getRecipeManager().byKey(recipeLocation);
+        if (pattern.isPresent() && pattern.get().value() instanceof RuneforgingRecipe) {
+            this.pattern = (RuneforgingRecipe)pattern.get().value();
             this._metal = new ItemStack((ItemLike)BuiltInRegistries.ITEM.get(this.pattern.getMaterial()));
             this._pattern = new ItemStack((ItemLike)BuiltInRegistries.ITEM.get(this.pattern.getPatternResource()));
             this._output = this.pattern.getResultItem();

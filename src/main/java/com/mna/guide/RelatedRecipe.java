@@ -74,11 +74,11 @@ public class RelatedRecipe {
             this._outputItems = NonNullList.create();
             RecipeManager recipes = world.getRecipeManager();
             for (ResourceLocation rLoc : this.getResourceLocations()) {
-                Optional recipe = recipes.byKey(rLoc);
+                Optional<net.minecraft.world.item.crafting.RecipeHolder<?>> recipe = recipes.byKey(rLoc);
                 if (recipe == null || !recipe.isPresent()) continue;
-                if (recipe.get() instanceof ISpellComponentRecipe) {
+                if (recipe.get().value() instanceof ISpellComponentRecipe) {
                     ItemStack dummy = new ItemStack((ItemLike)ItemInit.ENCHANTED_VELLUM.get());
-                    ISpellComponent relatedSpell = ((ISpellComponentRecipe)recipe.get()).getComponent();
+                    ISpellComponent relatedSpell = ((ISpellComponentRecipe)recipe.get().value()).getComponent();
                     if (relatedSpell != null) {
                         dummy.set(DataComponents.ITEM_NAME, (Component)Component.translatable((String)relatedSpell.getRegistryName().toString()));
                         this._outputItems.add(dummy);
@@ -87,7 +87,7 @@ public class RelatedRecipe {
                     ManaAndArtifice.LOGGER.warn("Error resolving component");
                     continue;
                 }
-                this._outputItems.add(((Recipe)recipe.get()).getResultItem(world.registryAccess()));
+                this._outputItems.add(((Recipe)recipe.get().value()).getResultItem(world.registryAccess()));
             }
         }
         return this._outputItems;

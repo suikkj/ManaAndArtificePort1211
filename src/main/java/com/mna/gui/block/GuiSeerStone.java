@@ -53,7 +53,8 @@ extends AbstractContainerScreen<ContainerSeerStone> {
     }
 
     protected void renderBg(GuiGraphics pGuiGraphics, float partialTicks, int mouseX, int mouseY) {
-        this.renderBackground(pGuiGraphics, mouseX, mouseY, partialTicks);
+        // [PORT 1.21.1] NAO chamar renderBackground aqui: AbstractContainerScreen.renderBackground
+        // chama renderBg -> recursao infinita (StackOverflow).
         RenderSystem.setShader(GameRenderer::getPositionTexShader);
         RenderSystem._setShaderTexture((int)0, (ResourceLocation)this.texture());
         int i = (this.width - this.imageWidth) / 2;

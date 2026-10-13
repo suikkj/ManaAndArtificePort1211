@@ -111,9 +111,9 @@ extends RecipeRendererBase {
 
     @Override
     public void init_internal(ResourceLocation recipeLocation) {
-        Optional pattern = this.minecraft.level.getRecipeManager().byKey(recipeLocation);
-        if (pattern.isPresent() && pattern.get() instanceof TransmutationRecipe) {
-            this.recipe = (TransmutationRecipe)pattern.get();
+        Optional<net.minecraft.world.item.crafting.RecipeHolder<?>> pattern = this.minecraft.level.getRecipeManager().byKey(recipeLocation);
+        if (pattern.isPresent() && pattern.get().value() instanceof TransmutationRecipe) {
+            this.recipe = (TransmutationRecipe)pattern.get().value();
             if (this.recipe != null) {
                 this.targetBlock = MATags.smartLookupItem(this.recipe.getTargetBlock()).stream().map(i -> new ItemStack((ItemLike)i)).collect(Collectors.toList());
                 if (this.recipe.getReplaceBlock() != null) {

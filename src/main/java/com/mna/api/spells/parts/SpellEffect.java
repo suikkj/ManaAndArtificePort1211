@@ -285,8 +285,8 @@ ISpellComponent {
             if (this.isSilverSpell()) {
                 this.tier = 5;
             } else {
-                Optional recipe = world.getRecipeManager().byKey(this.getRegistryName());
-                this.tier = recipe.isPresent() && recipe.get() instanceof IMARecipe ? Integer.valueOf(((IMARecipe)recipe.get()).getTier()) : Integer.valueOf(0);
+                Optional<net.minecraft.world.item.crafting.RecipeHolder<?>> recipe = world.getRecipeManager().byKey(this.getRegistryName());
+                this.tier = recipe.isPresent() && recipe.get().value() instanceof IMARecipe ? Integer.valueOf(((IMARecipe)recipe.get().value()).getTier()) : Integer.valueOf(0);
                 if (this.tier < 0) {
                     this.tier = 0;
                 }

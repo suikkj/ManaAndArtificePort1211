@@ -66,9 +66,9 @@ extends RecipeRendererBase {
 
     @Override
     public void init_internal(ResourceLocation recipeLocation) {
-        Optional pattern = this.minecraft.level.getRecipeManager().byKey(recipeLocation);
-        if (pattern.isPresent() && pattern.get() instanceof ArcaneFurnaceRecipe) {
-            this.recipe = (ArcaneFurnaceRecipe)pattern.get();
+        Optional<net.minecraft.world.item.crafting.RecipeHolder<?>> pattern = this.minecraft.level.getRecipeManager().byKey(recipeLocation);
+        if (pattern.isPresent() && pattern.get().value() instanceof ArcaneFurnaceRecipe) {
+            this.recipe = (ArcaneFurnaceRecipe)pattern.get().value();
         }
     }
 

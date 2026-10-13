@@ -43,21 +43,21 @@ implements ICyclingRecipeRenderer<RecipeManaweaving> {
     public void init_cycling(ResourceLocation[] rLocs) {
         ArrayList<ManaweavingRecipe> patternList = new ArrayList<ManaweavingRecipe>();
         for (ResourceLocation rLoc : rLocs) {
-            Optional<? extends Recipe<?>> pattern = this.resolveRecipe(rLoc);
-            if (!pattern.isPresent() || !(pattern.get() instanceof ManaweavingRecipe)) continue;
-            patternList.add((ManaweavingRecipe)pattern.get());
+            Optional<net.minecraft.world.item.crafting.RecipeHolder<?>> pattern = this.resolveRecipe(rLoc);
+            if (!pattern.isPresent() || !(pattern.get().value() instanceof ManaweavingRecipe)) continue;
+            patternList.add((ManaweavingRecipe)pattern.get().value());
         }
         this.patterns = patternList.toArray(new ManaweavingRecipe[0]);
     }
 
     @Override
     public void init_internal(ResourceLocation recipeLocation) {
-        Optional<? extends Recipe<?>> pattern = this.resolveRecipe(recipeLocation);
-        this.patterns = pattern.isPresent() && pattern.get() instanceof ManaweavingRecipe ? new ManaweavingRecipe[]{(ManaweavingRecipe)pattern.get()} : null;
+        Optional<net.minecraft.world.item.crafting.RecipeHolder<?>> pattern = this.resolveRecipe(recipeLocation);
+        this.patterns = pattern.isPresent() && pattern.get().value() instanceof ManaweavingRecipe ? new ManaweavingRecipe[]{(ManaweavingRecipe)pattern.get().value()} : null;
     }
 
-    private Optional<? extends Recipe<?>> resolveRecipe(ResourceLocation recipeLocation) {
-        Optional resolved = this.minecraft.level.getRecipeManager().byKey(recipeLocation);
+    private Optional<net.minecraft.world.item.crafting.RecipeHolder<?>> resolveRecipe(ResourceLocation recipeLocation) {
+        Optional<net.minecraft.world.item.crafting.RecipeHolder<?>> resolved = this.minecraft.level.getRecipeManager().byKey(recipeLocation);
         if (!resolved.isPresent()) {
             if (recipeLocation.getNamespace().equals("mna") && !recipeLocation.getPath().startsWith("manaweaving/")) {
                 recipeLocation = ResourceLocation.fromNamespaceAndPath(recipeLocation.getNamespace(), "manaweaving/" + recipeLocation.getPath());

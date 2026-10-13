@@ -24,7 +24,10 @@ import com.mna.api.tools.MNACap;
 public class EffectParticleSpawner {
     @SubscribeEvent
     public static void onLivingTick(EntityTickEvent.Post event) {
-        LivingEntity entity = (LivingEntity)event.getEntity();
+        // [PORT 1.21.1] EntityTickEvent.Post cobre TODAS as entidades -> guard instanceof (evita CCE)
+        if (!(event.getEntity() instanceof LivingEntity entity)) {
+            return;
+        }
         Level world = entity.level();
         boolean isThirdPerson = entity != ManaAndArtifice.instance.proxy.getClientPlayer() || Minecraft.getInstance().gameRenderer.getMainCamera().isDetached();
         MNACap.get(entity, MAPFXProvider.MAPFX).ifPresent(pfx -> {

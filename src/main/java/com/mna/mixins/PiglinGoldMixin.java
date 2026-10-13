@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class PiglinGoldMixin {
     @Inject(at={@At(value="RETURN")}, method={"isWearingGold"}, cancellable=true)
     private static void curios$isWearingGold(LivingEntity livingEntity, CallbackInfoReturnable<Boolean> cir) {
-        int level = EnchantmentHelper.getEnchantmentLevel(EnchantmentInit.GILDED, (LivingEntity)livingEntity);
+        int level = com.mna.api.enchantments.MNAEnchantmentHelper.getEnchantmentLevel(EnchantmentInit.GILDED.getKey(), (LivingEntity)livingEntity);
         if (level > 0) {
             cir.setReturnValue(true);
         }

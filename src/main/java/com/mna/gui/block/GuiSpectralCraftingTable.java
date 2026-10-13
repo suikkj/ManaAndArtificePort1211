@@ -63,7 +63,8 @@ extends AbstractContainerScreen<ContainerSpectralCraftingTable> {
     }
 
     protected void renderBg(GuiGraphics pGuiGraphics, float partialTicks, int x, int y) {
-        this.renderBackground(pGuiGraphics, 0, 0, 0.0f);
+        // [PORT 1.21.1] NAO chamar renderBackground aqui: AbstractContainerScreen.renderBackground
+        // chama renderBg -> recursao infinita (StackOverflow).
         RenderSystem.setShader(GameRenderer::getPositionTexShader);
         int i = this.leftPos;
         int j = (this.height - this.imageHeight) / 2;

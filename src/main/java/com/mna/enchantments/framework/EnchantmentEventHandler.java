@@ -20,7 +20,7 @@ public class EnchantmentEventHandler {
         int numSlots = event.getEntity().getInventory().getContainerSize();
         for (int i = 0; i < numSlots; ++i) {
             ItemStack invStack = inv.getItem(i);
-            if (!invStack.isRepairable() || EnchantmentHelper.getEnchantmentLevel(EnchantmentInit.MANA_REPAIR, event.getEntity()) <= 0) continue;
+            if (!invStack.isRepairable() || com.mna.api.enchantments.MNAEnchantmentHelper.getEnchantmentLevel(EnchantmentInit.MANA_REPAIR.getKey(), event.getEntity()) <= 0) continue;
             IManaRepairable.tickRepair(invStack, event.getEntity(), 0.25f, 0.01f, i);
         }
     }

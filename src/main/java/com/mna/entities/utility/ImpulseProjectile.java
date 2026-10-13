@@ -159,7 +159,7 @@ extends ThrowableItemProjectile
         }
         ItemStack dropStack = this.defaultStack.copy();
         Map enchants = EnchantmentUtils.enchantmentMap((ItemStack)dropStack);
-        if (owner != null && owner instanceof Player && !((Player)owner).isCreative() && enchants.containsKey(Enchantments.LOYALTY) || enchants.containsKey(EnchantmentInit.RETURNING.get())) {
+        if (owner != null && owner instanceof Player && !((Player)owner).isCreative() && com.mna.api.enchantments.MNAEnchantmentHelper.getItemEnchantmentLevel(Enchantments.LOYALTY, dropStack) > 0 || com.mna.api.enchantments.MNAEnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.RETURNING.getKey(), dropStack) > 0) {
             dropStack = InventoryUtilities.mergeToPlayerInvPrioritizeOffhand((Player)owner, dropStack);
         }
         if (dropStack.getCount() > 0 && ((double)this.chanceForItemBack > Math.random() || result instanceof BlockHitResult) && !this.level().isClientSide()) {
