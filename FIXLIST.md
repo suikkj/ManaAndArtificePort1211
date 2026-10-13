@@ -458,3 +458,30 @@ Pendências de runtime (a verificar nos próximos launches):
 - [ ] Spells/casting em jogo (Shape/Component shims agora resolvem — validar cast real)
 - [ ] Dimensão Reverie + estruturas/features do MNA na geração de mundo
 - [ ] Mixins (`[[mixins]]` do toml) aplicando de fato (verificar log "mna.mixins.json" no startup)
+
+---
+
+## 🎮 2º CICLO DE RUNTIME — DENTRO DO MUNDO (player logado, sem crash)
+
+**RESULTADO: o mod RODA EM JOGO** — mundo carrega, player spawna, advancements do MNA disparam, 5+ min in-game sem crash.
+
+Fixes (todos commitados):
+
+1. **[FEITO] `EntityTickEvent.Post` cobre TODAS as entidades** (nao so living) — guards `instanceof LivingEntity` em:
+   `CommonEventHandler.onLivingTick`, `ClientEventHandler.entityTick`, `EffectParticleSpawner`, `MACapabilityForgeEventHandlers.onLivingTick`.
+   Sintoma: `Turtle cannot be cast to Player`.
+2. **[FEITO] Casts ansiosos do decompiler** (içados p/ fora do short-circuit): `Player player = (Player)X; if (X instanceof Player && ...)` → cast movido p/ dentro:
+   `CommonEventHandler` (SOAKED), `DamageEventHandler` (LEVITATION). Sintoma: CCE em entidades nao-Player.
+3. **[FEITO] Enchantments = registry DINAMICO no 1.21.1** — `DeferredHolder.get()/value()` lanca `Registry not present`:
+   - todos os call-sites → `MNAEnchantmentHelper` key-based (`EnchantmentInit` 140/152/170, `EnchantmentEventHandler`, `ClientEventHandler`, `CommonEventHandler`, mixins `Fireproof`/`InventorySoulboundDrop`/`PiglinGold`/`PowderSnowBlock`, `BeheadingModifier`, `PlayerJumpMessage`)
+   - `enchants.containsKey(EnchantmentInit.X.get())` → `getItemEnchantmentLevel(X.getKey(), stack)` (`GreaterAnimus`, `ImpulseProjectile`, `CommonEventHandler:229`)
+4. **[FEITO] `RecipeHolder` (wrapper novo)** — `byKey`/`byType` devolvem `RecipeHolder` → `.value()` em ~20 arquivos (guide/recipe/*, `GuiCantrips`, `GuiGuideBook`, `RelatedRecipe`, `Shape`/`SpellEffect`/`Modifier`, `RunescribingRecipePaper`, `ManaweavingPattern`, `ContainerInscriptionTable`).
+5. **[FEITO] `renderBg` chamando `renderBackground` = StackOverflow** (no 1.21.1 `AbstractContainerScreen.renderBackground` chama `renderBg`) → removido de 24 GUIs (todas as telas do MNA).
+6. **[FEITO] `MNAItemData.save` com stack vazio** — 1.21.1 lanca `Cannot encode empty ItemStack`; agora retorna o tag intacto (semantica 1.20.1) → cobre 34 call-sites (`ChalkRuneTile.getUpdateTag` etc.).
+
+Pendências de verificacao manual em jogo (clicar/abrir):
+- [ ] Guide book: navegar capítulos (recipes renderizam agora que byKey unwrap ✓)
+- [ ] Casting real de spell (shape/component shims resolvem; falta testar cast)
+- [ ] Curios: equipar staff/wand e ver o renderer
+- [ ] Constructs/entidades MNA com modelos GeckoLib
+- [ ] Rituals + Eldrin altar crafting
