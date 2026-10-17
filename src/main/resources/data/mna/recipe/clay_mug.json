@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CCS",
+    "CDS",
+    "CCS"
+  ],
+  "key": {
+    "D": {
+      "tag": "c:dyes/purple"
+    },
+    "C": {
+      "item": "minecraft:clay_ball"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "id": "mna:clay_mug"
+  }
+}

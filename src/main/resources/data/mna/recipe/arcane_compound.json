@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mna:vinteum_dust"
+    },
+    {
+      "tag": "mna:ma_flowers"
+    },
+    {
+      "item": "mna:bone_ash"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "mna:arcane_compound"
+  }
+}

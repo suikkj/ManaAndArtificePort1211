@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "mna:pilgrims_path"
+  },
+  "result": {
+    "id": "mna:pilgrims_path_stairs",
+    "count": 1
+  }
+}

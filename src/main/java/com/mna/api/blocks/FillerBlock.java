@@ -139,6 +139,10 @@ EntityBlock {
             return origin;
         }
         BlockPos offset = tile.getOffset();
+        // [PORT 1.21.1] getOffset() pode ser null (tile recem-criado/estrutura em gen) -> guard
+        if (offset == null) {
+            return origin;
+        }
         return origin.offset((Vec3i)offset);
     }
 

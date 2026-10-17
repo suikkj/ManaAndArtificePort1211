@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "mna:decoration/arcane_stone"
-  },
-  "result": "mna:decoration/arcane_stone_pillar",
-  "count": 1
-}

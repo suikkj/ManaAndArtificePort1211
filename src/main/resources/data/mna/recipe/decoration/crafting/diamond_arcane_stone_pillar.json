@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "mna:decoration/diamond_arcane_stone"
+    }
+  },
+  "result": {
+    "count": 2,
+    "id": "mna:decoration/diamond_arcane_stone_pillar"
+  }
+}

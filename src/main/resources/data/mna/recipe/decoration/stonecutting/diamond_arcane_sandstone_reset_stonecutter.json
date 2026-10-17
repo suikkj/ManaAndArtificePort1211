@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "tag": "mna:stonecutter_resettable_diamond_arcane_sandstones"
+  },
+  "result": {
+    "id": "mna:decoration/diamond_arcane_sandstone",
+    "count": 1
+  }
+}

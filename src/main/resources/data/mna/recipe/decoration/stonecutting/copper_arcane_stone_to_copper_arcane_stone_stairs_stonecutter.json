@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "mna:decoration/copper_arcane_stone"
+  },
+  "result": {
+    "id": "mna:decoration/copper_arcane_stone_stairs",
+    "count": 1
+  }
+}

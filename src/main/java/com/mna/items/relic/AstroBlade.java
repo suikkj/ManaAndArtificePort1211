@@ -75,7 +75,7 @@ IRelic {
     public static final int INVENTORY_SIZE = 2;
     public static final int SLOT_HANDLE = 0;
     public static final int SLOT_BLADE = 1;
-    private final Multimap<net.minecraft.world.entity.ai.attributes.Attribute, AttributeModifier> defaultModifiers;
+    private final Multimap<net.minecraft.core.Holder<net.minecraft.world.entity.ai.attributes.Attribute>, AttributeModifier> defaultModifiers;
 
     public AstroBlade() {
         super(new Item.Properties().rarity(Rarity.EPIC).fireResistant().stacksTo(1));
@@ -188,7 +188,7 @@ IRelic {
 
     public net.minecraft.world.item.component.ItemAttributeModifiers getDefaultAttributeModifiers() {
         net.minecraft.world.item.component.ItemAttributeModifiers.Builder builder = net.minecraft.world.item.component.ItemAttributeModifiers.builder();
-        this.defaultModifiers.forEach((attribute, modifier) -> builder.add(net.minecraft.core.registries.BuiltInRegistries.ATTRIBUTE.wrapAsHolder(attribute), modifier, net.minecraft.world.entity.EquipmentSlotGroup.MAINHAND));
+        this.defaultModifiers.forEach((attribute, modifier) -> builder.add(attribute, modifier, net.minecraft.world.entity.EquipmentSlotGroup.MAINHAND));
         return builder.build();
     }
 

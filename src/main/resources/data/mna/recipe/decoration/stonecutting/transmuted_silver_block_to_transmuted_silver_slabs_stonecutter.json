@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "mna:decoration/transmuted_silver_block"
+  },
+  "result": {
+    "id": "mna:decoration/transmuted_silver_slab",
+    "count": 2
+  }
+}

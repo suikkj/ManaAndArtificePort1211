@@ -46,6 +46,12 @@ implements IMARecipe {
         return this.recipeId;
     }
 
+    /** [PORT 1.21.1] O codec de receita nao recebe o ResourceLocation (so o MapLike);
+     *  o ID real e' restaurado pos-load pelo RecipeIdFixer. */
+    public void setId(ResourceLocation idIn) {
+        this.recipeId = idIn;
+    }
+
     public final void parseJSON(JsonObject object) {
         this.parseExtraJson(object);
         if (object.has("tier")) {

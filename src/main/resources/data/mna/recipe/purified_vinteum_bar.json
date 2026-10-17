@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "mna:purified_vinteum_coated_iron"
+  },
+  "result": {
+    "id": "mna:purified_vinteum_ingot",
+    "count": 1
+  },
+  "experience": 0.7,
+  "cookingtime": 800
+}

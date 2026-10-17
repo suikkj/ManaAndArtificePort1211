@@ -28,10 +28,13 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 public class RandomSpellStaff
 extends LootItemConditionalFunction {
+    // [PORT 1.21.1] Campos OPCIONAIS com defaults (0f/0f/false) — o 1.20.1 usava defaults
+    // quando o campo não estava no JSON; o codec com fieldOf obrigatório quebrava os loot_tables
+    // que chamam mna:random_spell_staff sem esses campos.
     public static final com.mojang.serialization.MapCodec<RandomSpellStaff> CODEC = com.mojang.serialization.codecs.RecordCodecBuilder.mapCodec(inst -> inst.group(
-            com.mojang.serialization.Codec.FLOAT.fieldOf("chanceForForceSelf").forGetter((RandomSpellStaff f) -> f.chanceForForceSelf),
-            com.mojang.serialization.Codec.FLOAT.fieldOf("chanceForSkipTags").forGetter((RandomSpellStaff f) -> f.chanceForSkipTags),
-            com.mojang.serialization.Codec.BOOL.fieldOf("allowMessWithMori").forGetter((RandomSpellStaff f) -> f.allowMessWithMori)
+            com.mojang.serialization.Codec.FLOAT.optionalFieldOf("chanceForForceSelf", 0.0f).forGetter((RandomSpellStaff f) -> f.chanceForForceSelf),
+            com.mojang.serialization.Codec.FLOAT.optionalFieldOf("chanceForSkipTags", 0.0f).forGetter((RandomSpellStaff f) -> f.chanceForSkipTags),
+            com.mojang.serialization.Codec.BOOL.optionalFieldOf("allowMessWithMori", false).forGetter((RandomSpellStaff f) -> f.allowMessWithMori)
         ).apply(inst, (a, b, c) -> new RandomSpellStaff(java.util.List.of(), a, b, c)));
     public static final LootItemFunctionType<RandomSpellStaff> TYPE = new LootItemFunctionType<RandomSpellStaff>(CODEC);
 

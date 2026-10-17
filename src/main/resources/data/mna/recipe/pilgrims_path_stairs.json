@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "mna:pilgrims_path"
+    }
+  },
+  "result": {
+    "count": 4,
+    "id": "mna:pilgrims_path_stairs"
+  }
+}

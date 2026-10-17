@@ -89,8 +89,11 @@ public class CuriosInterop {
     }
 
     public static boolean IsItemInCurioSlot(Item item, LivingEntity entity, SlotTypePreset slot) {
+        // [PORT 1.21.1] RESTAURADO: o 1.20.1 checava o identifier do slot
+        // (slotResult.slotContext().identifier().equalsIgnoreCase(slot.getIdentifier())).
+        // A migração setava exists=true sem olhar o slot -> falso-positivo em qualquer slot.
         MutableBoolean exists = new MutableBoolean(false);
-        CuriosApi.getCuriosInventory((LivingEntity)entity).ifPresent(handler -> handler.findFirstCurio(item).ifPresent(slotResult -> exists.setValue(true)));
+        CuriosApi.getCuriosInventory((LivingEntity)entity).ifPresent(handler -> handler.findFirstCurio(item).ifPresent(slotResult -> exists.setValue(slotResult.slotContext().identifier().equalsIgnoreCase(slot.getIdentifier()))));
         return exists.booleanValue();
     }
 

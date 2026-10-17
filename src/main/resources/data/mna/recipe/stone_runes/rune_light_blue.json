@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:dyes/light_blue"
+    },
+    {
+      "item": "mna:stone_rune_blank"
+    }
+  ],
+  "result": {
+    "id": "mna:stone_rune_light_blue"
+  }
+}

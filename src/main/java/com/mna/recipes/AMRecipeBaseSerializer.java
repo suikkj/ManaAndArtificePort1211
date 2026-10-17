@@ -35,13 +35,61 @@ implements RecipeSerializer<T> {
 
     @Override
     public net.minecraft.network.codec.StreamCodec<net.minecraft.network.RegistryFriendlyByteBuf, T> streamCodec() {
-        return net.minecraft.network.codec.StreamCodec.of((buf, recipe) -> this.toNetwork(buf, recipe), buf -> this.fromNetwork(null, buf));
+        // [PORT 1.21.1] O RecipeHolder.STREAM_CODEC consome o ResourceLocation do holder ANTES de
+        // chamar o Recipe.STREAM_CODEC, e não o repassa ao serializer (o 1.20.1 chamava
+        // RecipeSerializer.fromNetwork(recipeId, buffer) com o ID). Sem o ID, receitas que o usam
+        // no decode (ex.: ManaweavingPattern -> RecognitionEngine.registerTrainingDataSample) quebram
+        // com NPE. Solução: serializar o ID dentro do próprio streamCodec (simétrico).
+        return net.minecraft.network.codec.StreamCodec.of(
+            (buf, recipe) -> {
+                buf.writeResourceLocation(((AMRecipeBase) recipe).getId());
+                this.toNetwork(buf, recipe);
+            },
+            buf -> {
+                net.minecraft.resources.ResourceLocation id = buf.readResourceLocation();
+                return this.fromNetwork(id, buf);
+            }
+        );
     }
+
+    /** [PORT 1.21.1] Placeholder de ID: o codec do 1.21.1 nao recebe o ResourceLocation
+     *  (o loader passa so o MapLike). O ID real e' restaurado pos-load (RecipeIdFixer). */
+    public static final ResourceLocation PENDING_ID = ResourceLocation.fromNamespaceAndPath("mna", "__pending__");
 
     @Override
     public com.mojang.serialization.MapCodec<T> codec() {
-        // [PORT 1.21.1 - RUNTIME TODO] codec real de receita nao migrado.
-        return com.mojang.serialization.MapCodec.unit((T)null);
+        // [PORT 1.21.1] O datapack loader do 1.21.1 usa codec() (MapCodec), nao fromJson.
+        // Bridge: converte o MapLike de volta p/ JsonObject e reusa readExtra(...) (logica 1.20.1 intacta).
+        final AMRecipeBaseSerializer<T> self = this;
+        return new com.mojang.serialization.MapCodec<T>() {
+            @Override
+            public <O> com.mojang.serialization.DataResult<T> decode(com.mojang.serialization.DynamicOps<O> ops, com.mojang.serialization.MapLike<O> input) {
+                try {
+                    JsonObject json = new JsonObject();
+                    input.entries().forEach(e -> {
+                        com.google.gson.JsonElement keyJson = ops.convertTo(com.mojang.serialization.JsonOps.INSTANCE, e.getFirst());
+                        com.google.gson.JsonElement valJson = ops.convertTo(com.mojang.serialization.JsonOps.INSTANCE, e.getSecond());
+                        json.add(keyJson.getAsString(), valJson);
+                    });
+                    T inst = self.readExtra(PENDING_ID, json);
+                    return inst == null
+                        ? com.mojang.serialization.DataResult.error(() -> "MNA recipe serializer returned null")
+                        : com.mojang.serialization.DataResult.success(inst);
+                } catch (Exception ex) {
+                    return com.mojang.serialization.DataResult.error(() -> "MNA recipe parse error: " + ex);
+                }
+            }
+
+            @Override
+            public <O> java.util.stream.Stream<O> keys(com.mojang.serialization.DynamicOps<O> ops) {
+                return java.util.stream.Stream.empty();
+            }
+
+            @Override
+            public <O> com.mojang.serialization.RecordBuilder<O> encode(T input, com.mojang.serialization.DynamicOps<O> ops, com.mojang.serialization.RecordBuilder<O> prefix) {
+                return prefix; // serializacao de volta nao e' usada no load de datapack
+            }
+        };
     }
 
     protected abstract T readExtra(ResourceLocation var1, JsonObject var2);

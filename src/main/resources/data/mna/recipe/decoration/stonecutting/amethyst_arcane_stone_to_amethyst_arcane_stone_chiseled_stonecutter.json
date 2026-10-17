@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "mna:decoration/amethyst_arcane_stone"
+  },
+  "result": {
+    "id": "mna:decoration/amethyst_arcane_stone_chiseled",
+    "count": 1
+  }
+}

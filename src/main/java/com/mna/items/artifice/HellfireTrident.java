@@ -48,7 +48,7 @@ implements IFactionSpecific {
     public static final float BASE_DAMAGE = 10.0f;
     public static final float SHOOT_POWER = 2.5f;
     private final int enchantability = 25;
-    private final Multimap<Attribute, AttributeModifier> defaultModifiers;
+    private final Multimap<net.minecraft.core.Holder<net.minecraft.world.entity.ai.attributes.Attribute>, AttributeModifier> defaultModifiers;
     private final ArrayList<net.minecraft.resources.ResourceKey<Enchantment>> allowedEnchantments = new ArrayList();
 
     public HellfireTrident() {
@@ -168,7 +168,7 @@ implements IFactionSpecific {
 
     public net.minecraft.world.item.component.ItemAttributeModifiers getDefaultAttributeModifiers() {
         net.minecraft.world.item.component.ItemAttributeModifiers.Builder builder = net.minecraft.world.item.component.ItemAttributeModifiers.builder();
-        this.defaultModifiers.forEach((attribute, modifier) -> builder.add(net.minecraft.core.registries.BuiltInRegistries.ATTRIBUTE.wrapAsHolder(attribute), modifier, net.minecraft.world.entity.EquipmentSlotGroup.MAINHAND));
+        this.defaultModifiers.forEach((attribute, modifier) -> builder.add(attribute, modifier, net.minecraft.world.entity.EquipmentSlotGroup.MAINHAND));
         return builder.build();
     }
 

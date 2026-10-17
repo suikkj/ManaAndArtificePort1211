@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "mna:decoration/arcane_stone"
+  },
+  "result": {
+    "id": "mna:decoration/arcane_stone_slab",
+    "count": 2
+  }
+}

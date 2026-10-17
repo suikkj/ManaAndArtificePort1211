@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " S ",
+    "SSS",
+    " S "
+  ],
+  "key": {
+    "S": {
+      "tag": "c:stone"
+    }
+  },
+  "result": {
+    "count": 2,
+    "id": "mna:stone_rune_blank"
+  }
+}

@@ -56,7 +56,7 @@ WorldlyContainer {
         this.sidedHandlers = new HashMap();
     }
 
-    protected IItemHandler getOrCreateSidedHandler(Direction side) {
+    public IItemHandler getOrCreateSidedHandler(Direction side) {
         if (!this.sidedHandlers.containsKey(side)) {
             this.sidedHandlers.put(side, new SidedInvWrapper((WorldlyContainer)this, side));
         }

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " S ",
+    "CSC",
+    "CMC"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:mossy_cobblestone_slab"
+    },
+    "C": {
+      "tag": "c:cobblestone/normal"
+    },
+    "M": {
+      "tag": "c:cobblestone/mossy"
+    }
+  },
+  "result": {
+    "id": "mna:pylon/inert"
+  }
+}

@@ -27,7 +27,7 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.DispenserBlock;
 import net.neoforged.neoforge.capabilities.ICapabilityProvider;
-import top.theillusivec4.curios.api.type.capability.ICurio;
+import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 public class ArcaneCrown
 extends TieredItem
@@ -55,6 +55,21 @@ implements IFactionSpecific {
 
     public void onArmorTick(ItemStack stack, Level world, Player player) {
         this.tickEffect(player, world);
+    }
+
+    public ICapabilityProvider initCapabilities(final ItemStack stack, @org.jetbrains.annotations.Nullable CompoundTag nbt) {
+        // [PORT 1.21.1] RESTAURADO: o 1.20.1 expunha um ICurio (via CurioItemCapability.createProvider)
+        // com curioTick -> tickEffect; a migração para ICurioItem removeu esse provider, então o
+        // efeito do ArcaneCrown só rodava como helmet (onArmorTick), não como curio.
+        return CurioItemCapability.createProvider(new ICurioItem(){
+
+            @Override
+            public void curioTick(top.theillusivec4.curios.api.SlotContext slotContext, ItemStack slotStack) {
+                if (slotContext.entity() instanceof Player) {
+                    ArcaneCrown.this.tickEffect((Player)slotContext.entity(), slotContext.entity().level());
+                }
+            }
+        });
     }
 
     @Override

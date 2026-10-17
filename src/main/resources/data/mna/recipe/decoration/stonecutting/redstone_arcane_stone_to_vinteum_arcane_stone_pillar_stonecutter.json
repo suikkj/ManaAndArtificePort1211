@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "mna:decoration/redstone_arcane_stone"
+  },
+  "result": {
+    "id": "mna:decoration/redstone_arcane_stone_pillar",
+    "count": 1
+  }
+}

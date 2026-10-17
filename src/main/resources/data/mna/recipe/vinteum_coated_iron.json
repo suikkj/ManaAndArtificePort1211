@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:ingots/iron"
+    },
+    {
+      "item": "mna:vinteum_dust"
+    }
+  ],
+  "result": {
+    "id": "mna:vinteum_coated_iron"
+  }
+}

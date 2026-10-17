@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "mna:decoration/quicksilver_arcane_sandstone"
+  },
+  "result": {
+    "id": "mna:decoration/quicksilver_arcane_sandstone_straight",
+    "count": 1
+  }
+}

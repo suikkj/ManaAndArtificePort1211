@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "## ",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "mna:decoration/quicksilver_arcane_sandstone"
+    }
+  },
+  "result": {
+    "count": 3,
+    "id": "mna:decoration/quicksilver_arcane_sandstone_corner"
+  }
+}
