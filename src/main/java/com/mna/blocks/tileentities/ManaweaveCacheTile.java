@@ -365,7 +365,9 @@ implements ILootrBridge {
     public void setLootTable(ResourceLocation lootTableIn, long seedIn) {
         this.lootTableId = lootTableIn;
         this.lootTableSeed = seedIn;
-        super.setLootTable(net.minecraft.resources.ResourceKey.create(net.minecraft.core.registries.Registries.LOOT_TABLE, lootTableIn), seedIn);
+        // [PORT 1.21.1] ResourceKey.create com location null gera uma key NAO-nula com location null;
+        // o default trySaveLootTable so checa key == null -> NPE em key.location().toString().
+        super.setLootTable(lootTableIn == null ? null : net.minecraft.resources.ResourceKey.create(net.minecraft.core.registries.Registries.LOOT_TABLE, lootTableIn), seedIn);
     }
 
     @Override
@@ -375,7 +377,8 @@ implements ILootrBridge {
 
     @Override
     public net.minecraft.resources.ResourceKey<net.minecraft.world.level.storage.loot.LootTable> getLootTable() {
-        return net.minecraft.resources.ResourceKey.create(net.minecraft.core.registries.Registries.LOOT_TABLE, this.lootTableId);
+        // [PORT 1.21.1] idem: retornar null (e nao uma key com location null) quando nao ha loot table.
+        return this.lootTableId == null ? null : net.minecraft.resources.ResourceKey.create(net.minecraft.core.registries.Registries.LOOT_TABLE, this.lootTableId);
     }
 
     @Override
