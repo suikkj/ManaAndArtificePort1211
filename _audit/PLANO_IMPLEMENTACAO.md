@@ -216,3 +216,4 @@ Cobertura funcional: os 5 relatórios setoriais (`_audit/01_spells`, `02_blocks_
 4. Instalação e publicação são ações **separadas e verificadas** (hash do jar; push no repo com verificação).
 5. `FIXLIST.md` continua como fila de erros viva; **este plano** como todo de subsistemas.
 6. Cada novo bug de runtime: entra na fila → verificação empírica (contra original/jar vanilla) → fix → build → launch → evidência.
+7. **Instalar o jar só com o jogo fechado** — `cp` sobre `mods/*.jar` com o jogo aberto (Windows) faz o classloader ler o jar inconsistente → `ClassNotFoundException` aleatório em classes ainda não carregadas (crash 14:50 do `ImageWidget`; artefato de hot-swap, NÃO bug do mod). Checar `Get-Process java` antes do cp.
