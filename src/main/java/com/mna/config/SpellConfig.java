@@ -52,6 +52,12 @@ public class SpellConfig {
 
     @SubscribeEvent
     public static void onModConfigEvent(ModConfigEvent configEvent) {
+        // [PORT 1.21.1] NeoForge dispara ModConfigEvent.Unloading no stop do servidor (handleServerStopped);
+        // ler valores de config nesse evento lanca "Cannot get config value before config is loaded"
+        // (a spec ja foi descarregada). No Forge 1.20.1 esse evento nao existia — ignorar no port.
+        if (configEvent instanceof ModConfigEvent.Unloading) {
+            return;
+        }
         if (configEvent.getConfig().getSpec() == SPELLS_CONFIG_SPEC) {
             SpellConfig.bakeConfig();
         }
