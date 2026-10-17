@@ -20,6 +20,5 @@
 			"trigger": "mna:draw_manaweave_pattern",
 			"conditions": {}
 		}
-	},
-	"requirements": []
+	}
 }

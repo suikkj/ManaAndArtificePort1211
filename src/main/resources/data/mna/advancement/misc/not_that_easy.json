@@ -20,6 +20,5 @@
 			"trigger": "mna:not_so_easy",
 			"conditions": {	}
 		}
-	},
-	"requirements": []
+	}
 }

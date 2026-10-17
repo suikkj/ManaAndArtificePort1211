@@ -20,6 +20,5 @@
 			"trigger": "mna:open_manaweave_cache",
 			"conditions": {		}
 		}
-	},
-	"requirements": []
+	}
 }

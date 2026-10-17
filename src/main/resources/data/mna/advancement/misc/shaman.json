@@ -20,6 +20,5 @@
 			"trigger": "mna:shaman",
 			"conditions": {	}
 		}
-	},
-	"requirements": []
+	}
 }

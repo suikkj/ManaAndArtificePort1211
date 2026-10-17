@@ -20,6 +20,5 @@
 			"trigger": "mna:runescribe",
 			"conditions": {	}
 		}
-	},
-	"requirements": []
+	}
 }

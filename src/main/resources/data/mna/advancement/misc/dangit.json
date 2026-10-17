@@ -20,6 +20,5 @@
 			"trigger": "mna:thrown_runescribe_pattern",
 			"conditions": {	}
 		}
-	},
-	"requirements": []
+	}
 }

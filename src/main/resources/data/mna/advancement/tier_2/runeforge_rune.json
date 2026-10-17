@@ -20,6 +20,5 @@
 			"trigger": "mna:runeforge",
 			"conditions": {	}
 		}
-	},
-	"requirements": []
+	}
 }

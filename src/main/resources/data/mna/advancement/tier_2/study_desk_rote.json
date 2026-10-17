@@ -20,6 +20,5 @@
 			"trigger": "mna:study_desk_rote",
 			"conditions": {	}
 		}
-	},
-	"requirements": []
+	}
 }

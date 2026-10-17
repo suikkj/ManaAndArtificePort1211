@@ -20,6 +20,5 @@
 			"trigger": "mna:disenchant",
 			"conditions": {	}
 		}
-	},
-	"requirements": []
+	}
 }

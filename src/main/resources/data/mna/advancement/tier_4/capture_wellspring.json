@@ -20,7 +20,5 @@
 			"trigger": "mna:capture_wellspring",
 			"conditions": {	}
 		}
-	},
-	"requirements": [
-	]
+	}
 }

@@ -20,6 +20,5 @@
 			"trigger": "mna:affinity_tinker",
 			"conditions": {	}
 		}
-	},
-	"requirements": []
+	}
 }

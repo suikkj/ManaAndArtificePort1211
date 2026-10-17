@@ -93,7 +93,20 @@ public class RandomTradeBuilder {
 
     public VillagerTrades.ItemListing build() {
         Random rnd = new Random();
-        return (entity, random) -> !this.canBuild() ? null : new MerchantOffer(new net.minecraft.world.item.trading.ItemCost(this.price.apply(rnd).getItem(), this.price.apply(rnd).getCount()), java.util.Optional.of(new net.minecraft.world.item.trading.ItemCost(this.price2.apply(rnd).getItem(), this.price2.apply(rnd).getCount())), this.forSale.apply(rnd), this.maxTrades, this.xp, this.priceMult);
+        return (entity, random) -> {
+            if (!this.canBuild()) {
+                return null;
+            }
+            // [PORT 1.21.1] MerchantOffer agora usa Optional<ItemCost> para o 2o custo; EMPTY = sem 2o custo.
+            // Antes: Optional.of(ItemCost(AIR, 0)) quando price2 e o default vazio -> save do villager
+            // crashava ("Item must not be minecraft:air; Value must be positive: 0"). Aplicar cada
+            // function UMA vez (o original aplicava 1x; aqui aplicava 2x -> RNG dobrado).
+            ItemStack priceStack = this.price.apply(rnd);
+            ItemStack price2Stack = this.price2.apply(rnd);
+            ItemStack forSaleStack = this.forSale.apply(rnd);
+            java.util.Optional<net.minecraft.world.item.trading.ItemCost> second = price2Stack.isEmpty() ? java.util.Optional.empty() : java.util.Optional.of(new net.minecraft.world.item.trading.ItemCost(price2Stack.getItem(), price2Stack.getCount()));
+            return new MerchantOffer(new net.minecraft.world.item.trading.ItemCost(priceStack.getItem(), priceStack.getCount()), second, forSaleStack, this.maxTrades, this.xp, this.priceMult);
+        };
     }
 
     public static Function<Random, ItemStack> createFunction(Item item, int min, int max) {

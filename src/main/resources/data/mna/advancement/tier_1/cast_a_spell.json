@@ -20,6 +20,5 @@
 			"trigger": "mna:cast_spell",
 			"conditions": {	}
 		}
-	},
-	"requirements": []
+	}
 }

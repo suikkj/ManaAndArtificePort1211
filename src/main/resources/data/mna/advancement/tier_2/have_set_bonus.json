@@ -20,6 +20,5 @@
 			"trigger": "mna:set_bonus",
 			"conditions": {	}
 		}
-	},
-	"requirements": []
+	}
 }

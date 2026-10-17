@@ -20,6 +20,5 @@
 			"trigger": "mna:manaweave_altar_craft",
 			"conditions": {	}
 		}
-	},
-	"requirements": []
+	}
 }

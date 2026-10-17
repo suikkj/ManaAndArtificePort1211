@@ -20,6 +20,5 @@
 			"trigger": "mna:animus_mana_tea",
 			"conditions": {	}
 		}
-	},
-	"requirements": []
+	}
 }

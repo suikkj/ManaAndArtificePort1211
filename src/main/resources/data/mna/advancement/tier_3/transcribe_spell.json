@@ -20,6 +20,5 @@
 			"trigger": "mna:transcribe_spell",
 			"conditions": {}
 		}
-	},
-	"requirements": []
+	}
 }

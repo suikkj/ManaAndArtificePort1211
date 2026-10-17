@@ -20,6 +20,5 @@
 			"trigger": "mna:light_fume",
 			"conditions": {	}
 		}
-	},
-	"requirements": []
+	}
 }
