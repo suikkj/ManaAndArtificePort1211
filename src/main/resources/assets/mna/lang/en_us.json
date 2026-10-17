@@ -1232,7 +1232,7 @@
 	"helptip.mna.modifier_shift_click": "Did you know?  You can hold shift while adjusting modifiers to have it go five steps at a time!",
 	"helptip.mna.damage_type_stacking": "Due to Minecraft's invulnerability frames after a mob takes damage, stacking damage types may not do what you think.  Look into the delay modifier to add multiple damage types to a single spell successfully.",
 	"helptip.mna.visualized_multiblock": "Did you know?  Multiblock visualization only shows one layer at a time by default, but you can change that  (or clear the visualization) by clicking the buttons near your character portrait in your inventory!",
-	"helptip.mna.pretty_models": "Did you know?  There's a forge config option that makes M&A models look much better, and I recommend you enable it.  It's in forge-client.toml and the option is 'experimentalForgeLightPipelineEnabled'.  Set it to true to enable it.",
+	"helptip.mna.pretty_models": "Did you know?  There's a NeoForge config option that makes M&A models look much better, and I recommend you enable it.  It's in neoforge-client.toml and the option is 'experimentalForgeLightPipelineEnabled'.  Set it to true to enable it.",
 	"helptip.mna.bind_wounds": "Did you know?  Bind wounds is removed if you move or take damage.  Stand still in a safe place for the full healing effect!",
 	"helptip.mna.pigdragon": "In the distance you hear a pig squeal and smell the sound of fresh baked cookies.  You get the sense that if items related to that were on the ground nearby, something else might happen.",
 	"helptip.mna.boss_break_denied": "A powerful force prevents this action from occurring.  You feel that in this area, your ability to manipulate the world is limited.",

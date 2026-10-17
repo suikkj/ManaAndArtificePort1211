@@ -869,7 +869,7 @@
 	"helptip.mna.modifier_shift_click": "아시나요? Shift 키를 누른 상태에서 보조효과를 조정하면 한 번에 다섯 단계씩 이동할 수 있습니다!",
 	"helptip.mna.damage_type_stacking": "마인크래프트의 피격무적 시스템 때문에 중첩 피해가 생각대로 작동하지 않을 수 있습니다. 하나의 스펠에 여러 피해 유형을 성공적으로 추가하려면 지연 보조효과를 살펴보세요.",
 	"helptip.mna.visualized_multiblock": "아시나요? 다중 블록 시각화는 기본적으로 한 번에 하나의 레이어만 표시하지만 인벤토리의 캐릭터 초상화 근처에 있는 버튼을 클릭하여 변경하거나 시각화를 지울 수 있습니다!",
-	"helptip.mna.pretty_models": "알고 계셨나요? M&A 모델을 훨씬 더 멋지게 보이게 해주는 Forge Config 옵션이 있는데, 사용 가능하게 해주시는 것을 추천합니다.forge-client.toml에 있으며 옵션은 'experimentalForgeLightPipelineEnabled'입니다. 활성화하려면 true로 설정하십시오.",
+	"helptip.mna.pretty_models": "알고 계셨나요? M&A 모델을 훨씬 더 멋지게 보이게 해주는 Forge Config 옵션이 있는데, 사용 가능하게 해주시는 것을 추천합니다.neoforge-client.toml에 있으며 옵션은 'experimentalForgeLightPipelineEnabled'입니다. 활성화하려면 true로 설정하십시오.",
 	"helptip.mna.bind_wounds": "아시나요? 상처 지혈은 움직이거나 피해를 입으면 비활성화됩니다. 완전한 치유 효과를 얻으려면 안전한 장소에 가만히 서 있으세요!",
 	"helptip.mna.pigdragon": "멀리서 돼지 비명 소리가 들리고 갓 구운 쿠키 냄새가 납니다. 그와 관련된 물건이 근처에 있다면 뭔가 다른 일이 일어날 수 있다는 느낌을 받습니다.",
 	"helptip.mna.boss_break_denied": "강력한 힘이 이 작용을 방해합니다.  이 월드에서는 세상을 조작하는 능력이 제한되어 있다고 느낍니다.",

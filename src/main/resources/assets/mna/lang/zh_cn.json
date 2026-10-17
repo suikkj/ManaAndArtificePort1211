@@ -971,7 +971,7 @@
 	"helptip.mna.modifier_shift_click": "你知道吗？你可以在调试修饰时按住 shift，这样相当于连点 5 次！",
 	"helptip.mna.damage_type_stacking": "由于在 Minecraft 中，生物受到伤害后的框架无法更改，伤害积累型构件的效果可能无法尽如人意。使用延迟修饰在单个法术中处理多种伤害类型，可以获得更好的效果。",
 	"helptip.mna.visualized_multiblock": "你知道吗？在默认情况下，多方块可视化每次只会显示单层，但你可以点击物品栏人物像旁的按钮进行模式更改（或是清除可视化）。",
-	"helptip.mna.pretty_models": "你知道吗？有一个 forge 配置选项可以让 MA 的模型看上去更精致美观，我推荐你打开它。它在 forge-client.toml 中，这个选项是 “experimentalForgeLightPipelineEnabled”。将其设定为“true”即可开启。",
+	"helptip.mna.pretty_models": "你知道吗？有一个 forge 配置选项可以让 MA 的模型看上去更精致美观，我推荐你打开它。它在 neoforge-client.toml 中，这个选项是 “experimentalForgeLightPipelineEnabled”。将其设定为“true”即可开启。",
 	"helptip.mna.bind_wounds": "你知道吗？如果你在包扎伤口时移动或是承受了伤害，包扎效果便会消失。所以若想让包扎伤口效果充分生效，你最好找到一个安全的地方，安静站定，静待恢复。",
 	"helptip.mna.pigdragon": "你可以在一定范围内听到一只猪的尖叫声和闻到新鲜出炉的饼干的味道。你会感觉到，如果与之相关的物品在附近的地面上，可能会发生其他事情。",
 	"helptip.mna.boss_break_denied": "强大的力量阻止了这种行为的发生。你觉得在这个领域，你操纵世界的能力是有限的。",

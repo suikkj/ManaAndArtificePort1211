@@ -97,7 +97,7 @@ Status: ✅ implementado **e verificado** · 🟢 implementado, verificação de
 | 19 | Item attributes | `Holder<Attribute>` (AstroBlade, HellfireTrident) | ✅ build / 🟢 equip | CCE corrigido (era crash ao segurar) |
 | 20 | Interop lucent | desabilitado (`disabled_src/`) | 🔵 | dep opcional ausente no pack; inerte (não é regressão) |
 | 21 | OffsetBlockTile / FillerBlock | guards de offset null (`getUpdateTag`/`saveAdditional`/`getOffsetPos`) | ✅ | launch atual: 0 NPE (era crash às 04:46) |
-| 22 | Config events (`ModConfigEvent.Unloading`) | guard nos 3 handlers (`GeneralConfig`/`ClientConfig`/`SpellConfig`) | 🟢 | build ok; validando no quit do servidor |
+| 22 | Config events (`ModConfigEvent.Unloading`) | guard nos 3 handlers (`GeneralConfig`/`ClientConfig`/`SpellConfig`) | ✅ | quit validado 14:41: "Unloading configs type SERVER" sem erro (era "Uncaught exception") |
 
 ---
 
@@ -119,6 +119,7 @@ Status: ✅ implementado **e verificado** · 🟢 implementado, verificação de
 | L | `@ObjectHolder` removido no NeoForge → instanciação direta (Music.DANCE_MIX etc.) | Forge injetava por anotação |
 | M | `interop/lucent` desabilitado | dep `com.legacy.lucent` ausente no pack 1.21.1 |
 | N | Guard em `ModConfigEvent.Unloading` (3 handlers de config) | evento **novo** do NeoForge no stop do servidor; ler config nele lança "Cannot get config value before config is loaded" |
+| O | Tip `helptip.mna.pretty_models` (`forge-client.toml` → `neoforge-client.toml`) | NeoForge mantém `experimentalForgeLightPipelineEnabled`, mas no arquivo `neoforge-client.toml` (6 langs) |
 
 ---
 

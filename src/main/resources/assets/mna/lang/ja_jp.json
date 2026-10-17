@@ -1009,7 +1009,7 @@
 	"helptip.mna.modifier_shift_click": "知っていますか？ モディファイアを調整する時にシフトを長押しすることで、５づつ変更できます！",
 	"helptip.mna.damage_type_stacking": "ダメージ受けた後の無敵時間のため、複数のダメージの種類を組み合わせるのは、思ったようにいかないかもしてません。 遅延のモディファイアを使う事で、複数の種類のダメージを与ることができます。",
 	"helptip.mna.visualized_multiblock": "知っていますか？ マルチブロックの視覚化はデフォルトで一段ずつしか表示しませんが、インベントリ内のプレイヤー表示の近くのボタンを押すことで変更（もしくは視覚化を解除）できます。",
-	"helptip.mna.pretty_models": "知っていますか？ forgeの設定でM&Aのモデルをかなり良く見えるようにできる設定があり、オンにすることを推奨します。 forge-client.tomlにあり、設定は'experimentalForgeLightPipelineEnabled'です。これをtrueに設定することで有効化できます。",
+	"helptip.mna.pretty_models": "知っていますか？ forgeの設定でM&Aのモデルをかなり良く見えるようにできる設定があり、オンにすることを推奨します。 neoforge-client.tomlにあり、設定は'experimentalForgeLightPipelineEnabled'です。これをtrueに設定することで有効化できます。",
 	"helptip.mna.bind_wounds": "知っていますか？ 傷口縛りは、ダメージを受けるか移動した場合に解除されます。安全な場所でじっとすることで、効果を最大限発揮できます！",
 	"helptip.mna.pigdragon": "遠くで豚の鳴き声が聞こえ、焼きたてのクッキーの匂いがします。それに関連が近くの地面にあった場合、何か違うことが起きそうだと勘が告げている。",
 	"helptip.mna.boss_break_denied": "強力な力がその行動を封じている。ここら一帯では、世界に変更を加えられないようだ。",
