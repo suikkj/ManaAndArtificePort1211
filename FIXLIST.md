@@ -507,3 +507,15 @@ Todos os fixes abaixo VALIDADOS em jogo (BUILD SUCCESSFUL + launch sem crash):
 
 Pendências de verificação MANUAL (clicar/interagir — código portado, sem bug conhecido): guidebook navegável, cast de spell, Curios renderer equipado, construct GeckoLib, multibloco Eldrin Altar, automação (hopper/pipe).
 Decisão de pack: `interop/lucent` (luz) segue desabilitado (opcional, sem o `com.legacy.lucent` no pack).
+
+---
+
+## 🎨 4º LOTE — Modelos/assets + guards + plano v2 (2026-10-17, metodologia Minecraft-Skills)
+
+1. **[FEITO] 807 modelos `"parent": "forge:item/default"` → `"neoforge:item/default"`.** O Forge 1.20.1 shipava `assets/forge/models/item/default.json`; o NeoForge shipa o equivalente em `assets/neoforge/` (**conteúdo byte-idêntico**, verificado). Sem o fix, o 1º modelo que referenciava o parent falhava (warning) e os outros 806 herdavam o `missingModel` do cache em silêncio → itens/blocos MNA sem os display transforms corretos.
+2. **[FEITO] `pylon_ring.obj` restaurado** (cópia de `pylon_ring_old.obj`): `mna:block/eldrin/pylon_ring` referencia um .obj ausente — **quebrado também no 1.20.1 original** (confirmado no log de lá). Corrigido no port.
+3. **[FEITO] `OffsetBlockTile` guards de offset null** (`saveAdditional` + `getUpdateTag`) — era crash NPE às 04:46 (mesmo padrão do FillerBlock).
+4. **[VALIDADO] Launch 14:23**: **0 "Unable to load model"/"Failed to load model"** (eram 2), 0 crashes, 3086 receitas, 1078 IDs, player no mundo. Jar build == jar instalado (sha256 `8b98a23d…`).
+5. **[EVIDÊNCIA] Guidebook (bug reportado)**: capturas 14:26–14:29 mostram o Codex aberto com **receita renderizando itens na grade 3×3** + tabs de relacionadas + navegação (usuário testando ao vivo, magic level 20).
+6. **[INFO] `updateJSONURL`** (`manaandartifice.com/update.json`) → erro benigno do VersionChecker do NeoForge (worker; não afeta gameplay). Candidato: apontar p/ o repo ou remover.
+7. **[NOVO] Plano v2** (`_audit/PLANO_IMPLEMENTACAO.md`) reformulado sob a metodologia do pacote "Minecraft Skills" (RochStudio): pedido estruturado, tupla de compatibilidade, contrato de comportamento, mapa de cobertura (21 subsistemas), adaptações declaradas, camadas de evidência, checkpoint.

@@ -1,6 +1,6 @@
 {
 "render_type": "minecraft:translucent",
-  "parent": "forge:item/default",
+  "parent": "neoforge:item/default",
   "loader": "neoforge:composite",
   "textures": {
   	"particle": "mna:block/material/spectral/conjures"

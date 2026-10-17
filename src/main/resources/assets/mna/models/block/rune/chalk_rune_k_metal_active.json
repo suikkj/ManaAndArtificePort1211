@@ -1,5 +1,5 @@
 {
-  "parent": "forge:item/default",
+  "parent": "neoforge:item/default",
   "loader": "neoforge:composite",
   "textures": {
   	"particle": "mna:block/artifice/decoration/purified_vinteum_ingot_block"

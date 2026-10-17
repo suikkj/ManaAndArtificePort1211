@@ -56,7 +56,9 @@ implements IOffsetTile {
     }
 
     public void saveAdditional(CompoundTag nbt, net.minecraft.core.HolderLookup.Provider registries) {
-        nbt.put("offset", (Tag)NbtUtils.writeBlockPos((BlockPos)this.offset));
+        if (this.offset != null) {
+            nbt.put("offset", (Tag)NbtUtils.writeBlockPos((BlockPos)this.offset));
+        }
     }
 
     public void loadAdditional(CompoundTag nbt, net.minecraft.core.HolderLookup.Provider registries) {
@@ -74,7 +76,9 @@ implements IOffsetTile {
 
     public CompoundTag getUpdateTag(net.minecraft.core.HolderLookup.Provider registries) {
         CompoundTag tag = super.getUpdateTag(registries);
-        tag.put("offset", (Tag)NbtUtils.writeBlockPos((BlockPos)this.offset));
+        if (this.offset != null) {
+            tag.put("offset", (Tag)NbtUtils.writeBlockPos((BlockPos)this.offset));
+        }
         return tag;
     }
 

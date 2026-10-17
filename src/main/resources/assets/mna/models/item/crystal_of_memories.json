@@ -1,5 +1,5 @@
 {
-	"parent": "forge:item/default",
+	"parent": "neoforge:item/default",
 	"loader": "neoforge:composite",
 	"textures": {
   		"particle": "mna:item/sorcery/crystal_of_memories"

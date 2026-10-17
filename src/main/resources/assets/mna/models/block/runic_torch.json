@@ -1,5 +1,5 @@
 {
-  "parent": "forge:item/default",
+  "parent": "neoforge:item/default",
   "loader": "neoforge:composite",
   "textures": {
   	"runic": "mna:block/artifice/decoration/runic_lights_orange",
