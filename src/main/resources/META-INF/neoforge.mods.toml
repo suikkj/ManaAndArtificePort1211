@@ -8,7 +8,7 @@ issueTrackerURL="https://github.com/Mithion/Mana-And-Artifice/issues"
 modId="mna"
 version="3.1.11"
 displayName="Mana and Artifice"
-updateJSONURL="https://manaandartifice.com/update.json"
+# updateJSONURL removido no port: o site original nao serve JSON valido p/ o VersionChecker do NeoForge (erro benigno no log)
 displayURL="https://manaandartifice.com/"
 logoFile="mna.png"
 credits="Thanks to DragonSmith, SunnyVisions, and Jobobminer for the structure builds!  Thanks to GrimTheWanderer, Aranai, and Dani Boye for the texture/model help!  Thanks to everyone else who helped to moderate the discord channel, suggest ideas, collaborate, test, and provide feedback.  There are far too many to list here, but I am so grateful to you all.  Additional credits are contained within Attributions.txt inside this jar file."
