@@ -485,3 +485,25 @@ Pendências de verificacao manual em jogo (clicar/abrir):
 - [ ] Curios: equipar staff/wand e ver o renderer
 - [ ] Constructs/entidades MNA com modelos GeckoLib
 - [ ] Rituals + Eldrin altar crafting
+
+---
+
+## 🎮 3º CICLO DE RUNTIME — Auditoria setorial + loot/capabilities/Curios/streamCodec
+
+Base: 5 relatórios setoriais em `_audit/01..05_*.md` + Plano em `_audit/PLANO_IMPLEMENTACAO.md`.
+Todos os fixes abaixo VALIDADOS em jogo (BUILD SUCCESSFUL + launch sem crash):
+
+1. **[FEITO] Datapack SINGULAR confirmado** — vanilla 1.21.1 usa `advancement/`(1400), `loot_table/`(1183), `recipe/`(1291); ZERO plural. Port já estava certo. Launch: **1407 advancements** carregam (claim do relatório 04 de "renomear p/ plural" era ERRADO — descartado por evidência).
+2. **[FEITO] LOOT 0 parse errors** (era 22):
+   - `minecraft:set_nbt` (removido no 1.21.1) → `set_components`+`minecraft:potion_contents` (8 arquivos, 22 ocorrências).
+   - `RandomSpellStaff` codec: 3 campos obrigatórios → **opcionais** com defaults 0/0/false (igual ao 1.20.1).
+   - `chalk_rune`: `"metal":true` → `"metal":"true"` (blockstate property espera string). `fluid_jug`: function `set_contents` removida (removida no 1.21.1; dropa o jug — mesmo efeito do 1.20.1). Ambos eram dados obsoletos/idênticos no jar 1.20.1 (não era regressão de port).
+3. **[FEITO] Capabilities de bloco** — `MACapabilityModEventHandlers` registra via `RegisterCapabilitiesEvent`: `ITEM_HANDLER` em 12 tiles (TileEntityWithInventory) + `FLUID_HANDLER` no FluidJug. `getOrCreateSidedHandler`→public. Paridade com o `getCapability` do 1.20.1 (hoppers/pipes voltam a interagir).
+4. **[FEITO] Curios R1** — `IsItemInCurioSlot` volta a comparar o identifier do slot (`slotResult.slotContext().identifier()`; `SlotContext` virou record no Curios 9.5.1 — accessor `.identifier()`).
+5. **[FEITO] Curios R2** — `ArcaneCrown.initCapabilities`/`curioTick` restaurado (provider `ICurioItem`).
+6. **[FEITO] streamCodec de receita** — `RecipeHolder.STREAM_CODEC` consome o ID antes do `Recipe.STREAM_CODEC`; sem ID no buffer, `ManaweavingPattern` NPEava no `RecognitionEngine.registerTrainingDataSample`. Agora o wrapper serializa o ID dentro do próprio streamCodec.
+7. **[FEITO] ItemAttributeModifiers** — `AstroBlade` e `HellfireTrident` faziam `BuiltInRegistries.ATTRIBUTE.wrapAsHolder(attribute)` sobre um mapa já populado com `Holder` (`Attributes.X` é Holder no 1.21.1) → CCE. Mapa virou `Holder<Attribute>` e `builder.add(attribute,...)` direto. 12 itens com `getDefaultAttributeModifiers` auditados; os ConstructPart retornam Multimap cru (sem wrap) — sem CCE.
+8. **[FEITO] FillerBlock.getOffsetPos** — null-guard no `tile.getOffset()`.
+
+Pendências de verificação MANUAL (clicar/interagir — código portado, sem bug conhecido): guidebook navegável, cast de spell, Curios renderer equipado, construct GeckoLib, multibloco Eldrin Altar, automação (hopper/pipe).
+Decisão de pack: `interop/lucent` (luz) segue desabilitado (opcional, sem o `com.legacy.lucent` no pack).
