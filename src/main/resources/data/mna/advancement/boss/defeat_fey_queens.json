@@ -2,7 +2,7 @@
 	"parent": "mna:root",
 	"display": {
 		"icon": {
-			"item": "mna:staff_tarma"
+			"id": "mna:staff_tarma"
 		},
 		"title": {
 			"translate": "mna:boss/defeat_fey_queens.title"

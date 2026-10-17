@@ -2,7 +2,7 @@
 	"parent": "mna:root",
 	"display": {
 		"icon": {
-			"item": "mna:allfather_axe"
+			"id": "mna:allfather_axe"
 		},
 		"title": {
 			"translate": "mna:boss/defeat_odin.title"

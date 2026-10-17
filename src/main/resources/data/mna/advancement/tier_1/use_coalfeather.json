@@ -2,7 +2,7 @@
 	"parent": "mna:tier_0/codex_trade",
 	"display": {
 		"icon": {
-			"item": "mna:burn_charm"
+			"id": "mna:burn_charm"
 		},
 		"title": {
 			"translate": "mna:tier_1/use_coalfeather.title"

@@ -2,7 +2,7 @@
 	"parent": "mna:root",
 	"display": {
 		"icon": {
-			"item": "mna:mark_of_the_nether"
+			"id": "mna:mark_of_the_nether"
 		},
 		"title": {
 			"translate": "mna:faction/join_demons.title"

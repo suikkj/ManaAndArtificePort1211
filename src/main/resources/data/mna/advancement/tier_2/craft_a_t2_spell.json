@@ -2,7 +2,7 @@
 	"parent": "mna:tier_1/advance_tier_2",
 	"display": {
 		"icon": {
-			"item": "mna:altar_of_arcana"
+			"id": "mna:altar_of_arcana"
 		},
 		"title": {
 			"translate": "mna:tier_2/craft_a_t2_spell.title"

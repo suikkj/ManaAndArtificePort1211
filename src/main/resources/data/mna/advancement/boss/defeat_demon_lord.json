@@ -2,7 +2,7 @@
 	"parent": "mna:root",
 	"display": {
 		"icon": {
-			"item": "mna:hellfire_staff"
+			"id": "mna:hellfire_staff"
 		},
 		"title": {
 			"translate": "mna:boss/defeat_demon_lord.title"

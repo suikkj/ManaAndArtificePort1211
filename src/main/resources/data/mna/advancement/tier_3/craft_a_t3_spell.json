@@ -2,7 +2,7 @@
 	"parent": "mna:tier_2/advance_tier_3",
 	"display": {
 		"icon": {
-			"item": "mna:staff_cerublossom"
+			"id": "mna:staff_cerublossom"
 		},
 		"title": {
 			"translate": "mna:tier_3/craft_a_t3_spell.title"

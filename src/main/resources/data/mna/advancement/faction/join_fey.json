@@ -2,7 +2,7 @@
 	"parent": "mna:root",
 	"display": {
 		"icon": {
-			"item": "mna:mark_of_the_fey"
+			"id": "mna:mark_of_the_fey"
 		},
 		"title": {
 			"translate": "mna:faction/join_fey.title"

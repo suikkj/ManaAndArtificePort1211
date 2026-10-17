@@ -16,7 +16,7 @@ public class ManaweaveAltarCraftTrigger extends SimpleCriterionTrigger<Manaweave
     public record Instance(Optional<ContextAwarePredicate> player, ItemPredicate item, boolean matchFaction) implements SimpleCriterionTrigger.SimpleInstance {
         public static final Codec<Instance> CODEC = RecordCodecBuilder.create(inst -> inst.group(
             EntityPredicate.ADVANCEMENT_CODEC.optionalFieldOf("player").forGetter(Instance::player),
-            ItemPredicate.CODEC.fieldOf("item").forGetter(Instance::item),
+            ItemPredicate.CODEC.optionalFieldOf("item", TriggerPredicates.ANY).forGetter(Instance::item),
             Codec.BOOL.optionalFieldOf("mustMatchFaction", false).forGetter(Instance::matchFaction)
         ).apply(inst, Instance::new));
         public boolean matches(ItemStack pItem, boolean factionMatch) { return this.item.test(pItem) && (!this.matchFaction || factionMatch); }

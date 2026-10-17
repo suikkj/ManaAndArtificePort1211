@@ -2,7 +2,7 @@
 	"parent": "mna:tier_3/advance_tier_4",
 	"display": {
 		"icon": {
-			"item": "mna:wizard_chalk"
+			"id": "mna:wizard_chalk"
 		},
 		"title": {
 			"translate": "mna:tier_4/perform_t4_ritual.title"

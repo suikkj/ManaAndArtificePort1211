@@ -2,7 +2,7 @@
 	"parent": "mna:tier_3/advance_tier_4",
 	"display": {
 		"icon": {
-			"item": "mna:transitory_tunnel"
+			"id": "mna:transitory_tunnel"
 		},
 		"title": {
 			"translate": "mna:tier_4/craft_transitory_tunnel.title"

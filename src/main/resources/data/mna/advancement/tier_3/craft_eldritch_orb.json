@@ -2,7 +2,7 @@
 	"parent": "mna:tier_2/advance_tier_3",
 	"display": {
 		"icon": {
-			"item": "mna:eldritch_orb"
+			"id": "mna:eldritch_orb"
 		},
 		"title": {
 			"translate": "mna:tier_3/craft_eldritch_orb.title"

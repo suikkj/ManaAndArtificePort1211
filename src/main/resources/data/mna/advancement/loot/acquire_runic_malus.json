@@ -2,7 +2,7 @@
 	"parent": "mna:tier_0/codex_trade",
 	"display": {
 		"icon": {
-			"item": "mna:runic_malus"
+			"id": "mna:runic_malus"
 		},
 		"title": {
 			"translate": "mna:loot/runic_malus.title"

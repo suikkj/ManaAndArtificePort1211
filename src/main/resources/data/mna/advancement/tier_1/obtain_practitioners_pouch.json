@@ -2,7 +2,7 @@
 	"parent": "mna:tier_0/codex_trade",
 	"display": {
 		"icon": {
-			"item": "mna:practitioners_pouch"
+			"id": "mna:practitioners_pouch"
 		},
 		"title": {
 			"translate": "mna:tier_1/obtain_practitioners_pouch.title"

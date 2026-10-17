@@ -2,7 +2,7 @@
 	"parent": "mna:tier_0/codex_trade",
 	"display": {
 		"icon": {
-			"item": "minecraft:map"
+			"id": "minecraft:map"
 		},
 		"title": {
 			"translate": "mna:tier_1/summon_wandering_wizard.title"

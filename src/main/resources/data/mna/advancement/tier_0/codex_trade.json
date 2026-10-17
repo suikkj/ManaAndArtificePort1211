@@ -2,7 +2,7 @@
 	"parent": "mna:tier_0/vinteum_bar",
 	"display": {
 		"icon": {
-			"item": "mna:guide_book"
+			"id": "mna:guide_book"
 		},
 		"title": {
 			"translate": "mna:tier_0/codex_trade.title"

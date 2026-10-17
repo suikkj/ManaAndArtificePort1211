@@ -2,7 +2,7 @@
 	"parent": "mna:tier_0/codex_trade",
 	"display": {
 		"icon": {
-			"item": "mna:bed_charm"
+			"id": "mna:bed_charm"
 		},
 		"title": {
 			"translate": "mna:tier_1/use_enderfeather.title"

@@ -2,7 +2,7 @@
 	"parent": "mna:tier_3/advance_tier_4",
 	"display": {
 		"icon": {
-			"item": "mna:runeforge"
+			"id": "mna:runeforge"
 		},
 		"title": {
 			"translate": "mna:tier_4/upgrade_runeforge.title"
@@ -36,7 +36,7 @@
 									"mna:runeforge"
 								],
 								"state": {
-									"material": 0
+									"material": "0"
 								}
 							}
 						}

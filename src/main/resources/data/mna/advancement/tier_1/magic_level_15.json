@@ -2,7 +2,7 @@
 	"parent": "mna:tier_0/codex_trade",
 	"display": {
 		"icon": {
-			"item": "mna:debug_wand"
+			"id": "mna:debug_wand"
 		},
 		"title": {
 			"translate": "mna:tier_1/magic_level_15.title"

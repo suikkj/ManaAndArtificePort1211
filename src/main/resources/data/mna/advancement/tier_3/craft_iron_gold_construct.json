@@ -2,7 +2,7 @@
 	"parent": "mna:tier_2/advance_tier_3",
 	"display": {
 		"icon": {
-			"item": "mna:constructs/construct_basic_head_gold"
+			"id": "mna:constructs/construct_basic_head_gold"
 		},
 		"title": {
 			"translate": "mna:tier_3/craft_iron_gold_construct.title"

@@ -2,7 +2,7 @@
 	"parent": "mna:tier_1/advance_tier_2",
 	"display": {
 		"icon": {
-			"item": "mna:runescribing_recipe_paper"
+			"id": "mna:runescribing_recipe_paper"
 		},
 		"title": {
 			"translate": "mna:tier_2/make_rune_pattern.title"

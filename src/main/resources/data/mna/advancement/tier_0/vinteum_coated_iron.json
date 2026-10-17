@@ -2,7 +2,7 @@
 	"parent": "mna:tier_0/smelt_vinteum",
 	"display": {
 		"icon": {
-			"item": "mna:vinteum_coated_iron"
+			"id": "mna:vinteum_coated_iron"
 		},
 		"title": {
 			"translate": "mna:tier_0/combine_vinteum.title"

@@ -2,7 +2,7 @@
 	"parent": "mna:tier_2/advance_tier_3",
 	"display": {
 		"icon": {
-			"item": "mna:manaweaver_wand_advanced"
+			"id": "mna:manaweaver_wand_advanced"
 		},
 		"title": {
 			"translate": "mna:tier_3/open_manaweave_cache.title"

@@ -2,7 +2,7 @@
 	"parent": "mna:root",
 	"display": {
 		"icon": {
-			"item": "mna:enchanted_vellum"
+			"id": "mna:enchanted_vellum"
 		},
 		"title": {
 			"translate": "mna:misc/not_that_easy.title"

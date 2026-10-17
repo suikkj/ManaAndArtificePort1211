@@ -2,7 +2,7 @@
 	"parent": "mna:tier_1/advance_tier_2",
 	"display": {
 		"icon": {
-			"item": "mna:mana_crystal_fragment"
+			"id": "mna:mana_crystal_fragment"
 		},
 		"title": {
 			"translate": "mna:tier_2/craft_mana_crystal_fragment.title"

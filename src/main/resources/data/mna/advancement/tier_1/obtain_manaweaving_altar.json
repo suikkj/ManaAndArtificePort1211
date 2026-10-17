@@ -2,7 +2,7 @@
 	"parent": "mna:tier_0/codex_trade",
 	"display": {
 		"icon": {
-			"item": "mna:manaweaving_altar"
+			"id": "mna:manaweaving_altar"
 		},
 		"title": {
 			"translate": "mna:tier_1/obtain_manaweaving_altar.title"

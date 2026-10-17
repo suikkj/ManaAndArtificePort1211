@@ -2,7 +2,7 @@
 	"parent": "mna:tier_1/advance_tier_2",
 	"display": {
 		"icon": {
-			"item": "mna:pylon/inert"
+			"id": "mna:pylon/inert"
 		},
 		"title": {
 			"translate": "mna:tier_2/craft_t2_pylon.title"

@@ -2,7 +2,7 @@
 	"parent": "mna:tier_2/advance_tier_3",
 	"display": {
 		"icon": {
-			"item": "mna:debug_wand"
+			"id": "mna:debug_wand"
 		},
 		"title": {
 			"translate": "mna:tier_3/magic_level_45.title"

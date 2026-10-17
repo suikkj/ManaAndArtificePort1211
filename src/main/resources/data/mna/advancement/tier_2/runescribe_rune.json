@@ -2,7 +2,7 @@
 	"parent": "mna:tier_1/advance_tier_2",
 	"display": {
 		"icon": {
-			"item": "mna:runescribing_table"
+			"id": "mna:runescribing_table"
 		},
 		"title": {
 			"translate": "mna:tier_2/runescribe_rune.title"

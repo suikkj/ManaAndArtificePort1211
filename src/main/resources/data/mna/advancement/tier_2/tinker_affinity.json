@@ -2,7 +2,7 @@
 	"parent": "mna:tier_1/advance_tier_2",
 	"display": {
 		"icon": {
-			"item": "mna:affinity_tinker"
+			"id": "mna:affinity_tinker"
 		},
 		"title": {
 			"translate": "mna:tier_2/tinker_affinity.title"

@@ -2,7 +2,7 @@
 	"parent": "mna:tier_2/advance_tier_3",
 	"display": {
 		"icon": {
-			"item": "mna:runic_anvil"
+			"id": "mna:runic_anvil"
 		},
 		"title": {
 			"translate": "mna:tier_3/runic_enchant.title"

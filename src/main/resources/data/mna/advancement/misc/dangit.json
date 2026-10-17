@@ -2,7 +2,7 @@
 	"parent": "mna:root",
 	"display": {
 		"icon": {
-			"item": "mna:rune_pattern"
+			"id": "mna:rune_pattern"
 		},
 		"title": {
 			"translate": "mna:misc/throw_rune_pattern.title"

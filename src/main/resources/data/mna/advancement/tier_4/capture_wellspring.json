@@ -2,7 +2,7 @@
 	"parent": "mna:tier_3/advance_tier_4",
 	"display": {
 		"icon": {
-			"item": "mna:refraction_lens_arcane"
+			"id": "mna:refraction_lens_arcane"
 		},
 		"title": {
 			"translate": "mna:tier_4/capture_wellspring.title"

@@ -2,7 +2,7 @@
 	"parent": "mna:tier_0/codex_trade",
 	"display": {
 		"icon": {
-			"item": "minecraft:compass"
+			"id": "minecraft:compass"
 		},
 		"title": {
 			"translate": "mna:tier_1/perform_locating.title"

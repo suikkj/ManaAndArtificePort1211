@@ -2,7 +2,7 @@
 	"parent": "mna:tier_2/advance_tier_3",
 	"display": {
 		"icon": {
-			"item": "mna:staff_redstone"
+			"id": "mna:staff_redstone"
 		},
 		"title": {
 			"translate": "mna:tier_3/transcribe_spell.title"

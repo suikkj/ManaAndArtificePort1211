@@ -80,7 +80,7 @@ Status: ✅ implementado **e verificado** · 🟢 implementado, verificação de
 | 2 | Registro geral | 380 blocos, 56 tiles, 40 menus, 84 renderers, 69 effects | ✅ | relatórios 02/03 + launch |
 | 3 | **Spells** (SHAPES 21 / COMPONENTS 122 / MODIFIERS 9) | shims via `RLoc.create`; casting/mana/cantrips portados | 🟢 | relatório 01; cast em jogo não testado |
 | 4 | **Receitas** (1867; manaweaving 530, eldrin_altar 122) | codec bridge MapLike→JsonObject + `RecipeIdFixer` + ID no streamCodec | ✅ dados / 🟢 GUI | launch: **3086 receitas**, **1078 IDs restaurados**, 0 parse errors |
-| 5 | Advancements (98; 29 triggers custom) | `RegisterEvent` + Codec | ✅ | launch: **1407 advancements** |
+| 5 | Advancements (98; 29 triggers custom) | `RegisterEvent` + Codec; ícones `{"id"}` (88 arquivos); triggers `item` opcional (`TriggerPredicates.ANY`); campos opcionais como `Optional` (NPE de default null); `material` string | 🟢 | launch: 1407 advancements — **77 do MNA falhavam o parse (corrigidos no lote atual; validar no próximo launch: esperado 0 erros)** |
 | 6 | Loot (402 tabelas + modifiers) | `set_components` (era `set_nbt`); codec `RandomSpellStaff` opcional | ✅ | launch: **0 parse errors** (era 22) |
 | 7 | Capabilities de bloco | `RegisterCapabilitiesEvent`: ITEM_HANDLER (12 tiles) + FLUID_HANDLER (FluidJug) | ✅ | log: `Registered block capabilities` |
 | 8 | Attachment `mna:world_magic` | `ATTACHMENT_TYPES` registrado no bus | ✅ | player entra sem "unbound value" |
@@ -99,6 +99,7 @@ Status: ✅ implementado **e verificado** · 🟢 implementado, verificação de
 | 21 | OffsetBlockTile / FillerBlock | guards de offset null (`getUpdateTag`/`saveAdditional`/`getOffsetPos`) | ✅ | launch atual: 0 NPE (era crash às 04:46) |
 | 22 | Config events (`ModConfigEvent.Unloading`) | guard nos 3 handlers (`GeneralConfig`/`ClientConfig`/`SpellConfig`) | ✅ | quit validado 14:41: "Unloading configs type SERVER" sem erro (era "Uncaught exception") |
 | 23 | `ManaweaveCacheTile` save (loot key) | `getLootTable()`/`setLootTable()` retornam `null` sem loot table (não criam key com location null) | 🟢 | fix buildado+instalado; valida no próximo reload do mundo |
+| 24 | `FluidJugTile` save (FluidStack vazio) | guard `!isEmpty()` antes de `FluidStack.save` | 🟢 | crash real 14:57 (server tick loop → PlayerChunkSender); validar no próximo launch |
 
 ---
 
@@ -122,6 +123,9 @@ Status: ✅ implementado **e verificado** · 🟢 implementado, verificação de
 | N | Guard em `ModConfigEvent.Unloading` (3 handlers de config) | evento **novo** do NeoForge no stop do servidor; ler config nele lança "Cannot get config value before config is loaded" |
 | O | Tip `helptip.mna.pretty_models` (`forge-client.toml` → `neoforge-client.toml`) | NeoForge mantém `experimentalForgeLightPipelineEnabled`, mas no arquivo `neoforge-client.toml` (6 langs) |
 | P | `ManaweaveCacheTile.getLootTable()`: `null` quando sem loot table | `ResourceKey.create(..., null)` gera key não-nula com location null; `trySaveLootTable` do vanilla NPE-a no `.location().toString()` |
+| Q | Advancements: `"icon": {"item"}` → `"id"` (88 arquivos) | formato de ItemStack do 1.21.1 exige `id` (mudou no 1.20.5+) |
+| R | Triggers de advancement: `item` opcional (default `TriggerPredicates.ANY`); campos opcionais viram `Optional<X>` | 1.21.1 removeu `ItemPredicate.ANY`; `optionalFieldOf(campo, null)` + ausente → NPE no RecordCodecBuilder (reproduzido com DFU isolado) |
+| S | `FluidJugTile`: guard de FluidStack vazio no save | NeoForge `FluidStack.save` lança "Cannot encode empty FluidStack" (1.20.1 `writeToNBT` tolerava) |
 
 ---
 

@@ -2,7 +2,7 @@
 	"parent": "mna:tier_3/advance_tier_4",
 	"display": {
 		"icon": {
-			"item": "mna:greater_mote_arcane"
+			"id": "mna:greater_mote_arcane"
 		},
 		"title": {
 			"translate": "mna:tier_4/craft_greater_mote.title"

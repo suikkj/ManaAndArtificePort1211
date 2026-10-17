@@ -1,7 +1,7 @@
 {
 	"display": {
 		"icon": {
-			"item": "mna:guide_book",
+			"id": "mna:guide_book",
 			"nbt": "{Damage:0}"
 		},
 		"title": {

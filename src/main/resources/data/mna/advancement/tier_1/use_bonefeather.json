@@ -2,7 +2,7 @@
 	"parent": "mna:tier_0/codex_trade",
 	"display": {
 		"icon": {
-			"item": "mna:fall_charm"
+			"id": "mna:fall_charm"
 		},
 		"title": {
 			"translate": "mna:tier_1/use_bonefeather.title"

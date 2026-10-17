@@ -2,7 +2,7 @@
 	"parent": "mna:tier_0/codex_trade",
 	"display": {
 		"icon": {
-			"item": "mna:ritual_focus_minor"
+			"id": "mna:ritual_focus_minor"
 		},
 		"title": {
 			"translate": "mna:tier_1/cast_transmute_cantrip.title"

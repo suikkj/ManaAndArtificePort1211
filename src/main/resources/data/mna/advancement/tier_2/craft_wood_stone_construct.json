@@ -2,7 +2,7 @@
 	"parent": "mna:tier_1/advance_tier_2",
 	"display": {
 		"icon": {
-			"item": "mna:constructs/construct_basic_head_wood"
+			"id": "mna:constructs/construct_basic_head_wood"
 		},
 		"title": {
 			"translate": "mna:tier_2/craft_wood_stone_construct.title"

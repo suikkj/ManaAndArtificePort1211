@@ -2,7 +2,7 @@
 	"parent": "mna:tier_2/advance_tier_3",
 	"display": {
 		"icon": {
-			"item": "mna:trickery_bracelet"
+			"id": "mna:trickery_bracelet"
 		},
 		"title": {
 			"translate": "mna:tier_3/craft_faction_item.title"

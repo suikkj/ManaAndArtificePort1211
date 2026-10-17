@@ -2,7 +2,7 @@
 	"parent": "mna:root",
 	"display": {
 		"icon": {
-			"item": "mna:pumpkin_staff"
+			"id": "mna:pumpkin_staff"
 		},
 		"title": {
 			"translate": "mna:boss/defeat_pumpkin_king.title"

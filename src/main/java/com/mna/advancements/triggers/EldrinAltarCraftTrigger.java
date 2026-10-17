@@ -16,7 +16,7 @@ public class EldrinAltarCraftTrigger extends SimpleCriterionTrigger<EldrinAltarC
     public record Instance(Optional<ContextAwarePredicate> player, ItemPredicate item) implements SimpleCriterionTrigger.SimpleInstance {
         public static final Codec<Instance> CODEC = RecordCodecBuilder.create(inst -> inst.group(
             EntityPredicate.ADVANCEMENT_CODEC.optionalFieldOf("player").forGetter(Instance::player),
-            ItemPredicate.CODEC.fieldOf("item").forGetter(Instance::item)
+            ItemPredicate.CODEC.optionalFieldOf("item", TriggerPredicates.ANY).forGetter(Instance::item)
         ).apply(inst, Instance::new));
         public boolean matches(ItemStack pItem){ return this.item.test(pItem); }
     }

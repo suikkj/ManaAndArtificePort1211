@@ -2,7 +2,7 @@
 	"parent": "mna:tier_0/codex_trade",
 	"display": {
 		"icon": {
-			"item": "minecraft:firework_rocket"
+			"id": "minecraft:firework_rocket"
 		},
 		"title": {
 			"translate": "mna:tier_1/cast_flare_cantrip.title"

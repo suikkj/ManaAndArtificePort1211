@@ -2,7 +2,7 @@
 	"parent": "mna:tier_0/codex_trade",
 	"display": {
 		"icon": {
-			"item": "mna:manaweaver_wand"
+			"id": "mna:manaweaver_wand"
 		},
 		"title": {
 			"translate": "mna:tier_1/draw_manaweave_pattern.title"

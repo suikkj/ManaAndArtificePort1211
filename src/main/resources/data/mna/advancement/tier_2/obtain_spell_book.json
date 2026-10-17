@@ -2,7 +2,7 @@
 	"parent": "mna:tier_1/advance_tier_2",
 	"display": {
 		"icon": {
-			"item": "mna:spell_book"
+			"id": "mna:spell_book"
 		},
 		"title": {
 			"translate": "mna:tier_2/obtain_spell_book.title"

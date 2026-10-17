@@ -2,7 +2,7 @@
 	"parent": "mna:tier_0/codex_trade",
 	"display": {
 		"icon": {
-			"item": "mna:constructs/construct_basic_head_wickerwood"
+			"id": "mna:constructs/construct_basic_head_wickerwood"
 		},
 		"title": {
 			"translate": "mna:tier_1/craft_wickerwood_construct.title"

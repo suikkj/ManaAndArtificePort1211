@@ -2,7 +2,7 @@
 	"parent": "mna:tier_1/advance_tier_2",
 	"display": {
 		"icon": {
-			"item": "mna:magic_broom"
+			"id": "mna:magic_broom"
 		},
 		"title": {
 			"translate": "mna:tier_2/craft_magic_broom.title"

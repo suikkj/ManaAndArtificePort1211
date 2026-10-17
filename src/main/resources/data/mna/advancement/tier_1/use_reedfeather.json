@@ -2,7 +2,7 @@
 	"parent": "mna:tier_0/codex_trade",
 	"display": {
 		"icon": {
-			"item": "mna:drown_charm"
+			"id": "mna:drown_charm"
 		},
 		"title": {
 			"translate": "mna:tier_1/use_reedfeather.title"

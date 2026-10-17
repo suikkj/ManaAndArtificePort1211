@@ -2,7 +2,7 @@
 	"parent": "mna:root",
 	"display": {
 		"icon": {
-			"item": "mna:animus_dust"
+			"id": "mna:animus_dust"
 		},
 		"title": {
 			"translate": "mna:misc/be_our_guest.title"

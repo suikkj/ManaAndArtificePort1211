@@ -2,7 +2,7 @@
 	"parent": "mna:tier_1/advance_tier_2",
 	"display": {
 		"icon": {
-			"item": "mna:patch_speed"
+			"id": "mna:patch_speed"
 		},
 		"title": {
 			"translate": "mna:tier_2/add_practitioner_patch.title"

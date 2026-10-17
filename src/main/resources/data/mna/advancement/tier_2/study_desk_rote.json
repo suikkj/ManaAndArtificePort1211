@@ -2,7 +2,7 @@
 	"parent": "mna:tier_1/advance_tier_2",
 	"display": {
 		"icon": {
-			"item": "mna:study_desk"
+			"id": "mna:study_desk"
 		},
 		"title": {
 			"translate": "mna:tier_2/study_desk_rote.title"

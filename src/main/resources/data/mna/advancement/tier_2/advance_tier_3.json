@@ -2,7 +2,7 @@
 	"parent": "mna:tier_1/advance_tier_2",
 	"display": {
 		"icon": {
-			"item": "mna:spell"
+			"id": "mna:spell"
 		},
 		"title": {
 			"translate": "mna:tier_2/advance_tier_3.title"

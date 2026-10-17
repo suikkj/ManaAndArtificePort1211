@@ -1,7 +1,7 @@
 {
 	"display": {
 		"icon": {
-			"item": "mna:bell_of_bidding"
+			"id": "mna:bell_of_bidding"
 		},
 		"title": {
 			"translate": "mna:tier_1/assign_delegation_station.title"

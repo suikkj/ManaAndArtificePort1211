@@ -2,7 +2,7 @@
 	"parent": "mna:root",
 	"display": {
 		"icon": {
-			"item": "mna:vinteum_ore"
+			"id": "mna:vinteum_ore"
 		},
 		"title": {
 			"translate": "mna:tier_0/mine_vinteum.title"

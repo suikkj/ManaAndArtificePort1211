@@ -2,7 +2,7 @@
 	"parent": "mna:root",
 	"display": {
 		"icon": {
-			"item": "mna:arcane_crown"
+			"id": "mna:arcane_crown"
 		},
 		"title": {
 			"translate": "mna:boss/defeat_wither_lich.title"

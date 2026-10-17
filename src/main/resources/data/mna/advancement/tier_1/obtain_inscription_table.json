@@ -2,7 +2,7 @@
 	"parent": "mna:tier_0/codex_trade",
 	"display": {
 		"icon": {
-			"item": "mna:inscription_table"
+			"id": "mna:inscription_table"
 		},
 		"title": {
 			"translate": "mna:tier_1/obtain_inscription_table.title"

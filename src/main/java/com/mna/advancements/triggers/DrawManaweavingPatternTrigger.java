@@ -13,14 +13,14 @@ import net.minecraft.resources.ResourceLocation;
 public class DrawManaweavingPatternTrigger extends SimpleCriterionTrigger<DrawManaweavingPatternTrigger.Instance> {
     @Override public Codec<Instance> codec() { return Instance.CODEC; }
     public void trigger(ServerPlayer player, ResourceLocation patternId) { this.trigger(player, instance -> instance.matches(patternId)); }
-    public record Instance(Optional<ContextAwarePredicate> player, @Nullable ResourceLocation patternId) implements SimpleCriterionTrigger.SimpleInstance {
+    public record Instance(Optional<ContextAwarePredicate> player, Optional<ResourceLocation> patternId) implements SimpleCriterionTrigger.SimpleInstance {
+        // [PORT 1.21.1] optionalFieldOf com default null -> NPE no RecordCodecBuilder (conditions sem "patternId"). Optional evita.
         public static final Codec<Instance> CODEC = RecordCodecBuilder.create(inst -> inst.group(
             EntityPredicate.ADVANCEMENT_CODEC.optionalFieldOf("player").forGetter(Instance::player),
-            ResourceLocation.CODEC.optionalFieldOf("patternId", (ResourceLocation)null).forGetter(Instance::patternId)
+            ResourceLocation.CODEC.optionalFieldOf("patternId").forGetter(Instance::patternId)
         ).apply(inst, Instance::new));
         public boolean matches(ResourceLocation patternId) {
-            if (this.patternId != null) return this.patternId.equals(patternId);
-            return true;
+            return this.patternId.isEmpty() || this.patternId.get().equals(patternId);
         }
     }
 }

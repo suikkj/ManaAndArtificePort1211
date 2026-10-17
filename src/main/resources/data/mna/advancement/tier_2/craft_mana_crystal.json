@@ -2,7 +2,7 @@
 	"parent": "mna:tier_2/craft_mana_crystal_fragment",
 	"display": {
 		"icon": {
-			"item": "mna:pylon/mana"
+			"id": "mna:pylon/mana"
 		},
 		"title": {
 			"translate": "mna:tier_2/craft_mana_crystal.title"

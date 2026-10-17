@@ -2,7 +2,7 @@
 	"parent": "mna:tier_1/advance_tier_2",
 	"display": {
 		"icon": {
-			"item": "mna:improvised_manaweaver_wand"
+			"id": "mna:improvised_manaweaver_wand"
 		},
 		"title": {
 			"translate": "mna:tier_2/cast_t2_cantrip.title"

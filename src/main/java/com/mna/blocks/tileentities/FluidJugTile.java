@@ -161,7 +161,11 @@ implements IFluidHandler {
 
     protected void saveAdditional(CompoundTag tag, net.minecraft.core.HolderLookup.Provider registries) {
         super.saveAdditional(tag, registries);
-        this.containedFluid.save(registries, tag);
+        // [PORT 1.21.1] FluidStack.save lanca "Cannot encode empty FluidStack" (o writeToNBT do 1.20.1
+        // tolerava vazio). Sem o guard, o getUpdateTag crasha o SERVIDOR ao enviar o chunk (PlayerChunkSender).
+        if (!this.containedFluid.isEmpty()) {
+            this.containedFluid.save(registries, tag);
+        }
     }
 
     public CompoundTag getUpdateTag(net.minecraft.core.HolderLookup.Provider registries) {

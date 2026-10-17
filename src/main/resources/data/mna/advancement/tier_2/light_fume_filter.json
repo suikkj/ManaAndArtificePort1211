@@ -2,7 +2,7 @@
 	"parent": "mna:tier_1/advance_tier_2",
 	"display": {
 		"icon": {
-			"item": "mna:eldrin_fume"
+			"id": "mna:eldrin_fume"
 		},
 		"title": {
 			"translate": "mna:tier_2/light_fume_filter.title"

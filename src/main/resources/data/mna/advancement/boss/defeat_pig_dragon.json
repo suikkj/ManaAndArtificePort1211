@@ -2,7 +2,7 @@
 	"parent": "mna:root",
 	"display": {
 		"icon": {
-			"item": "minecraft:porkchop"
+			"id": "minecraft:porkchop"
 		},
 		"title": {
 			"translate": "mna:boss/defeat_pig_dragon.title"

@@ -2,7 +2,7 @@
 	"parent": "mna:tier_1/advance_tier_2",
 	"display": {
 		"icon": {
-			"item": "mna:modifier_book"
+			"id": "mna:modifier_book"
 		},
 		"title": {
 			"translate": "mna:tier_2/perform_alteration_ritual.title"

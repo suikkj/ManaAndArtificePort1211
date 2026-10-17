@@ -2,7 +2,7 @@
 	"parent": "mna:tier_0/codex_trade",
 	"display": {
 		"icon": {
-			"item": "mna:spell_book"
+			"id": "mna:spell_book"
 		},
 		"title": {
 			"translate": "mna:tier_1/craft_a_spell.title"
